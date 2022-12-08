@@ -1,0 +1,129 @@
+Cerberus Content Management System, Registered Unix-Name: CerberusCMS and Cerberus-Content-Management-System
+
+==Origins==
+
+===Pagan-Like Theme===
+
+Cerberus Content Management System // Cerberus Web Application Framework, Officially Registered Unix Name: CerberusCMS which is not to be confused with any other Applications with the name
+Cerberus, features all Pagan-Like visible theming as well as Pagan-Like programming because of the Scandinavian Northern-Frisian and Western-Frisian Heathen ancestry of its author.
+
+The name Cerberus however comes from the Greek Hound of Hades who guarded the entrance to the after life in Greek Mythology. In computer binary: 1 is: on and 0 is: off also likened to 1 is alive or 0 is dead.
+Each release of CerberusCMS after CerberusCMS, Version: 4, Build: 0.8 comes with an alternate edition for installation where the entire system is themed around Grutte Pier, a legendary Frisian Pagan.
+In this alternate edition there is no mention of Cerberus and it is replaced instead with the spirit of Grutte Pier's father.
+
+==Project Development and Update Cycles==
+
+===Project Development Cycle===
+
+The development team may spend several weeks or months brainstorming, custom writing programming code, implementing that new programming code and also evaluating the system
+for places and things that can be improved. Adding new features to the system consists of exactly this.
+
+===Software Project Versioning System===
+
+The Cerberus Content Management System' Project versioning follows a logical pattern of versioning by ascending number and builds by ascending number.
+All builds are generated from a C++ application named Charon where this C++ application takes manually written P.H.P. programming code from the official
+CerberusCMS GIT repository and then it generates the organized directory structure to the hard disk drive where it can be further hand typed and manually hand updated.
+
+Once a build number reaches 100 where it has progressed to a level of development features a new version of the project is announced.
+
+Releases follow:
+CerberusCMS, Version: **Number**, Build: **Number** and Edit: **Number**
+
+===System Updates===
+
+System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
+Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
+
+The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
+The update process uses different terminal commands from the Web Server itself to download to a temporary directory in the system and then replace each Application Module to the new version.
+The entire system is modular where each Application Module is hashed in the Secure Hash Algorithm based on the exact file size of the Application Module in bytes.
+The Hash Strings are checked against the Master Server and Master GIT Repository where then the Master File allows or disallows the installation based on authentic integrity.
+
+===Debugging===
+Once new features and programming code updates are added there is a debugging process where every part of the system is thouroughly debugged and perfected by the development team.
+Once the system is completely perfected and functional an official release is announced and release into the public.
+
+==Project Release Cycles==
+
+CerberusCMS comes with around 100 Application Modules that are capable of performing daily tasks and management of content and data.
+With Version: 4, Build: 0.8 CerberusCMS comes with a secret Application Module that teaches the user how to mentally calculate at lightning speed due to the author's
+capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication. The Application Module teaches fundamentally how to Mentally Calculate all Mathematical Arithmetic up to 4 Digit * 4 Digit Numbers as well as Exponents.
+
+==Project Details==
+CerberusCMS as of Version: 4, Build: 0.8 has approximately 35,000 lines of PureP.H.P. programming code. All of the programming code is extremely documented and manageable.
+Adding features to this web application as a programmer is very simple and straightforward. The idea behind CerberusCMS is for it to stay and remain 100% PureP.H.P. programming code.
+
+===Bundled Software and Packages===
+CerberusCMS as of Version: 4, Build: 0.8 comes with Charon, a compilable C++ application that can be compiled with G.C.C. and other C++ compiling applications.
+Charon was combined from other C++ programming code that generated the theme files necessary to have a custom graphical theme on CerberusCMS. CerberusCMS also comes
+with Iris an Android Open Source Software Project application.
+
+Charon does numerous things such as:
+* Generates the clean, malware free organized directory structure of CerberusCMS to the local hard drive and then manually copies and pastes the CerberusCMS Project
+programming code from the official GIT Repository to each file. This eliminates any possibility of malware carryover from system to system.
+
+* Generates custom CerberusCMS themes.
+
+Iris does numerous things as well, such as:
+
+* Connects a mobile device that is flashed with AOSP to the specified CerberusCMS installation on the web server.
+* Capable of sending and receiving messenger messages
+
+Charon is named after the ferryman of Hades in Greek Mythology. Iris was the Greek Goddess of Messages in Greek Mythology
+
+The alternate edition comes with the same functionality but the applications are named:
+* Wodan / Odin
+* Freyja
+
+==User-Interfaces==
+
+===Programming Code Interface===
+
+===Terminal Interface===
+
+CerberusCMS has a feature where an Administrator can use a terminal on a personal computer to connect to it to issue low-level priviledge commands such as management of specific data
+in the system itself.
+
+===Graphical User-Interface===
+Unix-Like
+
+==Software Programming Features==
+
+Simplicity of Object-Oriented-Like Variables and Functions
+
+===Security Features===
+
+CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File directly from the software loaded
+into the web browser from the server running CerberusCMS itself and at the same time all of the data and information is secure
+from vulnerabilities and exploitation as well as being information secure because only certain details are actually displayed.
+
+All of the data that is stored in the Database Server is encrypted using the G.N.U.-Privacy Guard, Pretty-Good-Privacy, BCRYPT, AES256, AES512 and other
+algorithms deemed uncrackable by the information security community.
+
+It also allows for custom encryption algorithms and custom mathematics to be used system-wide so as to secure the storage and transimission of data.
+This is made for corporate-level security, medium to small business security and academic security so as to securely store the data and information of its users and their data.
+
+CerberusCMS features Master Security Modules where when each module is included by the Master File the programming code eliminates all possibility of:
+* Malicious S.Q.L. Injection Attacks
+* Malicious Cross-Site-Scripting Attacks
+* Malicious H.T.M.L. Code Attacks
+* Malicious Cookie Injection Attacks
+* Large File Upload Attacks
+* Local File Inclusion Attacks
+* Remote File Inclusion Attacks
+* PHP Buffer Overflows
+* PHP Function Overflows and Underruns
+
+===Other Features===
+
+CerberusCMS comes with a feature where each Registered Member Account is allotted an amount of storage data space specified by the Administration. It also has a Messenger
+written in PurePHP that allows for custom encryption, Pretty-Good-Privacy, AES512 encrypted messaging as well as sending and receiving cell phone text messages world-wide.
+
+===Software Licensing===
+
+==Project Development Team==
+
+==Project Copyrights==
+
+Every line of programming code in CerberusCMS up to CerberusCMS, Version: 4, Build: 0.8 is 100% original from and was written by the programmer G.C. Johnson.
+This web application was developed and written in Southern California. This project was started in 2001 when I was about 14 or maybe 15 years old... My girlfriend at the time... a nice laptop was given to me. I started learning computer programming back then. The updates for this specific project is slow because I don't have the time to work on it every day.
