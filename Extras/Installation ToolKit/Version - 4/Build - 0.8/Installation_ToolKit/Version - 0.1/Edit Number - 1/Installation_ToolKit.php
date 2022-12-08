@@ -1,12 +1,14 @@
 <?php
 /*
- ===========================================================================================
- + Cerberus Content Management System.
+ ============================================================================================================
+ + Cerberus Content Management System
  + ---
- + - Author : Gary Christopher Johnson
- + - E-Mail : TinkeSoftware@Protonmail.com
- + - Company: Tinke Software
- + - Notes  : View this file in a non-formatting text editor for correct indentation display
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
  + ---
  +
  +
@@ -20,8 +22,8 @@
  +
  +
  + ---
- + - File Location: root->Installation->Toolkit->Installation_ToolKit.php
- + - File Version:  0.6 - Wednesday, March 1st of 2023.
+ + - File Location: root->Cerberus->Architect->MySQL->ToolKit->Installation_ToolKit.php
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
  + ---
  + -------------------------------------------------------------------------------
  + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
@@ -33,14 +35,16 @@
  + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
  + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
  + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
- ===========================================================================================
+ ============================================================================================================
 */
 
 /*
  ================================================================
  +
  +
- + Installation ToolKit
+ +
+ + [ @ ] Cerberus Content Management System :: Installation :: Installation ToolKit
+ +
  +
  +
  ================================================================
@@ -60,13 +64,13 @@ echo ("
 <HTML>
 	<HEAD>
 		<TITLE>Cerberus Content Management System - Post Installation ToolKit</TITLE>
-		<LINK REL=\"stylesheet\" HREF=\"../../Theme/Cerberus/Style_Sheet/Style.css\" TYPE=\"text/css\">
+		<LINK REL=\"stylesheet\" HREF=\"../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
 		<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=utf-8\">
 		</HEAD>
 		
 		<BODY>
 				<CENTER>Cerberus Content Management System - Post-Installation ToolKit</CENTER>
-				<CENTER>[&nbsp;<A HREF=\"?\" TITLE=\"Close All Open Applications\">Close Open Applications</A>&nbsp;&middot;&nbsp;</A><A HREF=\"?Application&#61;Unpack\" TITLE=\":: Unpack Downloaded Archives of Cerberus Content Management System To This Web Server ::\">Unpack Cerberus Content Management System Compressed Package</A>&nbsp;&middot;&nbsp;<A HREF=\"?Application&#61;Terminal\" TITLE=\":: Open and Display The Post-Installation ToolKit Terminal Application ::\">Execute Terminal Commands</A>&nbsp;&middot;&nbsp;<A HREF=\"../../Install.php\" TITLE=\":: Open & Display The Installation Application ::\">Cerberus Content Management System Installation Application</A>&nbsp;]</CENTER>
+				<CENTER>[&nbsp;<A HREF=\"?\" TITLE=\"Close All Open Applications\">Close Open Applications</A>&nbsp;&middot;&nbsp;</A><A HREF=\"?Application&#61;Unpack\" TITLE=\":: Unpack Downloaded Archives of Cerberus Content Management System To This Web Server ::\">Unpack Cerberus Content Management System Compressed Package</A>&nbsp;&middot;&nbsp;<A HREF=\"?Application&#61;Terminal\" TITLE=\":: Open and Display The Post-Installation ToolKit Terminal Application ::\">Execute Terminal Commands</A>&nbsp;&middot;&nbsp;<A HREF=\"../../Architect.php\" TITLE=\":: Open & Display The Cerberus Content Management System Architect Installation Application ::\">Architect Installation Application</A>&nbsp;]</CENTER>
 				<HR>
 ");
 
