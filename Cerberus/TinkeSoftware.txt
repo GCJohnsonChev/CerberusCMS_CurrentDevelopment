@@ -1,0 +1,166 @@
+                             .-.							   
+                            {{@}}							   
+            <>               8@8							   
+          .::::.             888							   
+      @\\/W\/\/W\//@         8@8							   
+       \\/^\/\/^\//      _   )8(    _							   
+        \_O_<>_O_/     (@)__/8@8\__(@)							   
+   ____________________ `~"-=):(=-"~`							   
+  |<><><>  |  |  <><><>|     |.|							   
+  |<>      |  |      <>|     |T|							   
+  |<>      |  |      <>|     |'|							   
+  |<>   .--------.   <>|     |.|							   
+  |     |   ()   |     |     |I|							   
+  |_____| (O\/O) |_____|     |'|							   
+  |     \   /\   /     |     |.|							   
+  |------\  \/  /------|     |N|							   
+  |       '.__.'       |     |'|							   
+  |        |  |        |     |.|							   
+  :        |  |        :     |K|							   
+   \<>     |  |     <>/      |'|							   
+    \<>    |  |    <>/       |.|							   
+     \<>   |  |   <>/        |E|							   
+      `\<> |  | <>/'         |'|							   
+        `-.|  |.-`           \ /							   
+           '--'               ^			   TINKE SOFTWARE
+                                            Free and Open Source Software
+                            - 100% Free, Original, Clean and Quality Software Projects -
+
+Tinke Software is a Free and Open Source Software Organization that is named after a Frisian word, meaning: To Think.
+This Free and Open Source Software Organization stores, maintains, develops and dispenses Free and Open Source Software Projects owned by this organization.
+
+Tinke Software is associated with Sowilo Software, a Commercial Software Organization.
+
+Official Web Servers
+https://www.TinkeSoftware.com
+
+Official Electronic Mail Addresses
+TinkeSoftware@Protonmail.com
+
+Official GIT Software Project Hosting
+https://www.GitHub.com/TinkeSoftware
+https://www.BitBucket.com/TinkeSoftware
+https://www.LaunchPad.net/TinkeSoftware
+
+Official Software Project Hosting
+https://www.SourceForge.net/u/tinkesoftware/profile/
+
+Official Social Media Accounts
+TinkeSoftware @ Instagram
+TinkeSoftware @ Twitter
+TinkeSoftware @ FaceBook
+TinkeSoftware @ PhotoBucket
+
+- Tinke Software's Official Free and Open Source Software Projects -
+
+  _____        __                      _______  _______
+ / ___/__ ____/ /  ___ ______ _____   / ___/  |/  / __/
+/ /__/ -_) __/ _ \/ -_) __/ // (_-<  / /__/ /|_/ /\ \  
+\___/\__/_/ /_.__/\__/_/  \_,_/___/  \___/_/  /_/___/  
+                                                       
+- Free and Open Source & Paid Open Source
+* Cerberus Content Management System - Named From The Hound of Hades
+// Advanced Content Management System, Written In Pure PHP Programming Code, With AJAX and JavaScript Editions
+* Magysk Theme Writer - Named From The Frisian Word For Magic
+// GUI Application For Building Themes For Use With Cerberus Content Management System, Written In C++ Programming Code
+* Stokje Application Writer - Named From The Frisian Word For Wand
+// GUI Application For Building Web Application Module Includes For Use With Cerberus Content Management System, Written In C++ Programming Code
+
+  _____         __              _  _____  ____  _  __
+ / ___/__ ___  / /____  ___    | |/_/ _ )/ __ \| |/_/
+/ (_ / -_) _ \/ __/ _ \/ _ \  _>  </ _  / /_/ />  <
+\___/\__/_//_/\__/\___/\___/ /_/|_/____/\____/_/|_|
+
+- Free and Open Source
+* Gentoo-Linux XBOX - Named From The Gentoo Penguin
+// Gentoo-Linux Operating System For The Original Microsoft XBOX Game Consoles, Forked From GentooX.
+
+  _____         __  __        ____                   
+ / ___/_____ __/ /_/ /____   / __/__  ___________ ___
+/ (_ / __/ // / __/ __/ -_) / _// _ \/ __/ __/ -_|_-<
+\___/_/  \_,_/\__/\__/\__/ /_/  \___/_/  \__/\__/___/
+                                                     
+- Free and Open Source
+* Grutte Forces - Named From The Historical Frisian Pirate Lord Grutte Pier
+// Advanced Telemetry-Stylometry Scanner, Network and Profile Blocker, Written In C++ and Python Programming Code
+
+   __   _                          ____  ____        __ __            __                __
+  / /  (_)__  ___ ___ ____ ____   / __ \/ __/ ____  / // /__ ________/ /__ ___  ___ ___/ /
+ / /__/ / _ \/ -_) _ `/ _ `/ -_) / /_/ /\ \  /___/ / _  / _ `/ __/ _  / -_) _ \/ -_) _  /
+/____/_/_//_/\__/\_,_/\_, /\__/  \____/___/       /_//_/\_,_/_/  \_,_/\__/_//_/\__/\_,_/
+                     /___/
+
+- Free and Open Source
+* Lineage OS Security Hardened
+// Lineage OS Security Hardened and Preconfigured For Multiple Officially Supported Devices. Built and Preconfigured by Tinke Software
+
+   ___            _       ___   __     __        __       __
+  / _ \__ _____  (_)___  / _ | / /__  / /  ___ _/ /  ___ / /____
+ / , _/ // / _ \/ / __/ / __ |/ / _ \/ _ \/ _ `/ _ \/ -_) __(_-<
+/_/|_|\_,_/_//_/_/\__/ /_/ |_/_/ .__/_//_/\_,_/_.__/\__/\__/___/
+                              /_/
+* Runic Alphabets
+// Authentic and Correct Variations of the Runic Alphabets. Translated into English. For use with the Tinke Software Runic Keyboard and Runic Languages Operating System Language Packs
+
+  ___            _       _____     __            __
+  / _ \__ _____  (_)___  / ___/__ _/ /__ ___  ___/ /__ ________
+ / , _/ // / _ \/ / __/ / /__/ _ `/ / -_) _ \/ _  / _ `/ __(_-<
+/_/|_|\_,_/_//_/_/\__/  \___/\_,_/_/\__/_//_/\_,_/\_,_/_/ /___/
+
+* Runic Calendars
+// Authentic and Correct Variations of the Runic Calendar Systems. Translated into English. C++ Application and Post-HyperText-PreProcessor Web Application for use with Cerberus Content Management System
+
+   ___            _       __ __         __                    __  __                       __
+  / _ \__ _____  (_)___  / //_/__ __ __/ /  ___  ___ ________/ / / /  ___ ___ _____  __ __/ /____
+ / , _/ // / _ \/ / __/ / ,< / -_) // / _ \/ _ \/ _ `/ __/ _  / / /__/ _ `/ // / _ \/ // / __(_-<
+/_/|_|\_,_/_//_/_/\__/ /_/|_|\__/\_, /_.__/\___/\_,_/_/  \_,_/ /____/\_,_/\_, /\___/\_,_/\__/___/
+                                /___/                                    /___/
+- Free and Open Source
+* Runic Keyboard Layouts
+// Authentic and Correct Variations of the Runic Languages. For use with the Tinke Software Runic Keyboard Operating System Language Packs
+
+   ___            _       __ __         __                    __  ______  _     __
+  / _ \__ _____  (_)___  / //_/__ __ __/ /  ___  ___ ________/ / / __/ /_(_)___/ /_____ _______
+ / , _/ // / _ \/ / __/ / ,< / -_) // / _ \/ _ \/ _ `/ __/ _  / _\ \/ __/ / __/  '_/ -_) __(_-<
+/_/|_|\_,_/_//_/_/\__/ /_/|_|\__/\_, /_.__/\___/\_,_/_/  \_,_/ /___/\__/_/\__/_/\_\\__/_/ /___/
+                                /___/
+- Free and Open Source
+* Runic Keyboard Stickers
+// Authentic and Correct Variations of the Runic Languages. Printable Keyboard Stickers for placement on individual computer keyboard keys. For use with the Tinke Software Runic Language Operating System Language Packs
+
+   ___            _       __                                       ___           __
+  / _ \__ _____  (_)___  / /  ___ ____  ___ ___ _____ ____ ____   / _ \___ _____/ /__ ___
+ / , _/ // / _ \/ / __/ / /__/ _ `/ _ \/ _ `/ // / _ `/ _ `/ -_) / ___/ _ `/ __/  '_/(_-<
+/_/|_|\_,_/_//_/_/\__/ /____/\_,_/_//_/\_, /\_,_/\_,_/\_, /\__/ /_/   \_,_/\__/_/\_\/___/
+                                      /___/          /___/
+- Free and Open Source
+* Runic Language Packs
+// Authentic and Correct Variations of the Runic Languages
+
+   ___            _       __  ___
+  / _ \__ _____  (_)___  /  |/  /__ ___ ___ ___ ___  ___ ____ ____
+ / , _/ // / _ \/ / __/ / /|_/ / -_|_-<(_-</ -_) _ \/ _ `/ -_) __/
+/_/|_|\_,_/_//_/_/\__/ /_/  /_/\__/___/___/\__/_//_/\_, /\__/_/
+                                                   /___/
+                                                    ᚱᚢᚾᛁᚲ ᛗᛖᛊᛊᛖᛜᛖᚱ
+- Free and Open Source & Paid Open Source
+* Runic Messenger - Named From The Written Runic Languages.
+// Runic Messenger, an Open Source compilable C++ Application and Post-HyperText-PreProcessor Web Application For Sending and Receiving Signed and Encrypted Messages Using Non-Backdoored Open Source Cryptographic Algorithms
+
+   ____           _ __       ___           __   __                    __
+  / __/__ _    __(_) /__    / _ \___ ____ / /  / /  ___  ___ ________/ /
+ _\ \/ _ \ |/|/ / / / _ \  / // / _ `(_-</ _ \/ _ \/ _ \/ _ `/ __/ _  /
+/___/\___/__,__/_/_/\___/ /____/\_,_/___/_//_/_.__/\___/\_,_/_/  \_,_/
+
+- Free and Open Source
+* Sowilo Dashboard - Named From The Frisian-Runic Word For Sun-Energy.
+// Sowilo Dashboard, an Advanced Dashboard Forked From XBOX Media Center ( Now Kodi Media Center ) For Use With Flashing On Original XBOX Gaming Consoles
+
+  _____ _____ _        _____     __         __     __          
+ / ___// ___/( )___   / ___/__ _/ /_____ __/ /__ _/ /____  ____
+/ (_ // /___ |/(_-<  / /__/ _ `/ / __/ // / / _ `/ __/ _ \/ __/
+\___(_)___(_) /___/  \___/\_,_/_/\__/\_,_/_/\_,_/\__/\___/_/   
+
+- Free and Open Source & Paid Open Source
+* G.C.'s Calculator - Named From The Author's First Two Initials
+// G.C.'s Calculator - An Extremely Advanced Digital Calculator
