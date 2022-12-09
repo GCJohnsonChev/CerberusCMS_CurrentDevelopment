@@ -1907,7 +1907,27 @@ include_once "./System/Language/$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY/Language.cerb
  ================================================================
 */
 
+/*
+ ===============================================
+ + Check For Member Account Credentials
+ ===============================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+
+/*
+ ===============================================
+ + IF: Member Account Access Level Is: Administrator
+ ===============================================
+*/
+
+if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
+
 include_once "./Applications/Background/Log_Administration";
+
+} // [ + ] IF: Member Account Access Level Is: Administrator, Include Activity Logging Application
+
+} // [ + ] IF: Member Is Logged-In
 
 /*
  ================================================================
