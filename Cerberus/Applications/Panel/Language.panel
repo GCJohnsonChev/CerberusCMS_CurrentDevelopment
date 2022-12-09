@@ -1,0 +1,93 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Panel->Languages.panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Panel :: Language Selection
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Display All System Languages
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Specify and Open System Language Directories
+ +
+ ================================================================
+*/
+
+$_Application_Module_Block_Language_SPECIFY_LANGUAGE_DIRECTORY			= "./System/Language/";
+$_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY			= opendir($_Application_Module_Block_Language_SPECIFY_LANGUAGE_DIRECTORY);
+
+											echo ("<FORM ACTION=\"?InternalApplication&#61;Language\" METHOD=\"post\"><SELECT NAME=\"post_language\">");
+
+while (($_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY = readdir($_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY))) {
+
+if ($_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == "." || $_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == ".." || $_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ("<OPTION VALUE=\"$_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY\">$_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY</OPTION>");
+
+} // [ + ] IF_LANGUAGE_DIRECTORY
+
+} // [ + ] WHILE_READ_DIRECTORY
+											echo ("</SELECT><BR><INPUT TYPE=\"submit\" VALUE=\"Set Language\"></FORM><HR><CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Language\" TITLE=\":: Open & Display The Application Module :: Languages ::\">All Languages</A>&nbsp;]");
+
+/*
+ ================================================================
+ + Close System Languages Directory
+ ================================================================
+*/
+
+closedir($_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY);
+?>

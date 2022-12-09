@@ -1,0 +1,162 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Articles
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Articles
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Articles_Header);
+
+/*
+ ================================================================
+ +
+ + Retrieve All Article Entries
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles");
+
+if ($DB->num_rows($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES) <= 0) {
+
+											echo ($_Application_Module_Member_Message_Articles_NO_ARTICLES);
+
+} // [ + ] IF: Article Entry Number of Rows Is Less Than Or Equal To 0
+
+while ($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES)) {
+
+/*
+ ================================================================
+ +
+ + List All Article Entries
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Article Entry Variables :: Database Variables
+ ================================================================
+*/
+
+$_Application_Module_Member_Articles_LIST_ARTICLE_ID			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['id'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_AUTHOR		= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_author'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_DATA			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_data'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_TIME			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_time'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_TITLE			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_title'];
+
+/*
+ ================================================================
+ + Article Entry Variables :: Reduce Data To 50 Characters
+ ================================================================
+*/
+
+$_Application_Module_Member_Articles_LIST_ARTICLE_DATA_REDUCED		= substr($_Application_Module_Member_Articles_LIST_ARTICLE_DATA, 0, 50);
+
+/*
+ ================================================================
+ +
+ + Display All Articles
+ +
+ ================================================================
+*/
+
+if ($_GET["DisplayID"] == "All") {
+
+echo ("
+														<BR>Article Entry: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE
+														<HR>
+															<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID\" TITLE=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Article/Icon_Article.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" ALT=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE\" WIDTH=\"60\" HEIGHT=\"60\"></A><BR>
+															$_Application_Module_Member_Articles_LIST_ARTICLE_DATA_REDUCED...<BR>
+														<HR>
+															<B>This Article Was Written By</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_AUTHOR</I><BR>
+															<B>This Article Was Posted On</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_TIME</I><BR><BR>
+");
+
+} // [ + ] IF: Display All Articles
+
+/*
+ ================================================================
+ +
+ + Display Selected Article ID
+ +
+ ================================================================
+*/
+
+if ($_GET["DisplayID"] == "$_Application_Module_Member_Articles_LIST_ARTICLE_ID") {
+
+echo ("
+
+														<BR>Article Entry: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE
+														<HR>
+														<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID\" TITLE=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Article/Icon_Article.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" ALT=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE\" WIDTH=\"60\" HEIGHT=\"60\"></A><BR>
+														$_Application_Module_Member_Articles_LIST_ARTICLE_DATA<BR>
+														<HR>
+														<B>This Article Was Written By</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_AUTHOR</I><BR>
+														<B>This Article Was Posted On</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_TIME</I><BR><BR>
+														&#8212;&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forward_Friend\" TITLE=\":: Share This Article Entry Via Electronic Mail ::\">Share</A> - 
+														<A HREF=\"./System/Printable/Article/$_Application_Module_Member_Articles_LIST_ARTICLE_TITLE.html\" TITLE=\":: Print This Article Entry ::\">Print</A> - <A HREF=\"?$_INTERNAL_ADMINISTRATOR_MODULE&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;UpdateArticleID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID\" TITLE=\":: Update The Article Entry :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\">Update</A> - 
+														<A HREF=\"?$_INTERNAL_ADMINISTRATOR_MODULE&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;DeleteArticleID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID\" TITLE=\":: Delete The Article Entry :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\">Delete</A>&nbsp;&#8212;
+");
+
+} // [ + ] IF: Display Article By ID
+
+} // [ + ] WHILE: Retrieving All Article Entries
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select All Article Entries
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES);
+?>

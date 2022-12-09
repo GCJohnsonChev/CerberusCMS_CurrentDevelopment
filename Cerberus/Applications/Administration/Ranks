@@ -1,0 +1,165 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Ranks
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Administration :: Ranking System Management
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Select Ranks
+ +
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks ORDER BY id ASC LIMIT 1");
+
+while ($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS)) {
+
+/*
+ ================================================================
+ +
+ + List Ranks
+ +
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_LIST_RANK_1					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_1'];
+$_Application_Module_Administration_Ranks_LIST_RANK_2					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_2'];
+$_Application_Module_Administration_Ranks_LIST_RANK_3					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_3'];
+$_Application_Module_Administration_Ranks_LIST_RANK_4					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_4'];
+$_Application_Module_Administration_Ranks_LIST_RANK_5					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_5'];
+
+/*
+ ================================================================
+ +
+ + Update Ranks Form Post Variables
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Form Post Variables
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1				= $_POST['Module_Ranks_Update_Rank_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2				= $_POST['Module_Ranks_Update_Rank_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3				= $_POST['Module_Ranks_Update_Rank_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4				= $_POST['Module_Ranks_Update_Rank_4'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5				= $_POST['Module_Ranks_Update_Rank_5'];
+
+/*
+ ================================================================
+ + Character Replace
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5);
+
+/*
+ ================================================================
+ +
+ + Update Ranks Form
+ +
+ ================================================================
+*/
+
+if ((!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5)) {
+
+echo ("
+													<CENTER><B>Ranks</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Ranks\" METHOD=\"post\">
+															Rank Title #1:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_1\" MAXLENGTH=\"100\"><BR>
+															Rank Title #2:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_2\" MAXLENGTH=\"100\"><BR>
+															Rank Title #3:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_3\" MAXLENGTH=\"100\"><BR>
+															Rank Title #4:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_4\" MAXLENGTH=\"100\"><BR>
+															Rank Title #5:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_5\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_5\" MAXLENGTH=\"100\"><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update Ranks\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+$_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks SET rank_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1',rank_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2',rank_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3',rank_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4',rank_5='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5' WHERE id='1'");
+
+if ($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS) {
+													echo ($_Application_Module_Administration_Message_Ranks_RANKS_UPDATED_SUCCESSFULLY);
+} else {
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+} // [ + ] IF_UPDATE_RANK_DB_QUERY
+
+/*
+ ================================================================
+ + Kill DB Query
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS);
+
+} // [ + ] IF_NULL
+
+} // [ + ] WHILE_ARRAY
+
+/*
+ ================================================================
+ + Kill DB Query
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS);
+?>

@@ -1,0 +1,150 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Audio_Player
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Audio Player
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Audio_Player_Header);
+											echo ("<BR><HR><CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Audio_Player&amp;PlayAudioStream&#61;URL\">Play Audio By URL</A> - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Audio_Player&amp;PlayAudioStream&#61;FileName\">Play Audio By Audio File</A> ]</CENTER><HR><BR><BR>");
+
+/*
+ ================================================================
+ +
+ + Post Variables
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Audio Stream URL
+ ================================================================
+*/
+
+$_Application_Module_Member_Audio_Player_POST_AUDIO_URL							= $_POST['module_audio_player_audio_url'];
+
+/*
+ ================================================================
+ + Audio Stream File
+ ================================================================
+*/
+
+$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME						= $_POST['module_audio_player_audio_file_name'];
+
+
+/*
+ ================================================================
+ +
+ + Play Audio Stream URL
+ +
+ ================================================================
+*/
+
+if ($_GET["PlayAudioStream"] == "URL") {
+
+if (!$_Application_Module_Member_Audio_Player_POST_AUDIO_URL) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Audio_Player&amp;PlayAudioStream&#61;URL\" METHOD=\"POST\">
+												* Audio File Uniform Resource Location:<BR>
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"module_audio_player_audio_url\">Paste Audio Stream Uniform Resource Location String Here...</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Audio URL Stream\"><BR>
+											</FORM>
+");
+
+} else {
+
+echo ("
+											<CENTER>
+												<AUDIO CONTROLS>
+													<SOURCE SRC=\"$_Application_Module_Member_Audio_Player_POST_AUDIO_URL\" TYPE=\"AUDIO/MPEG\">
+											</CENTER>
+");
+
+} // [ + ] IF_!POST_AUDIO_URL
+
+} // [ + ] IF_PlayAudioStream_URL
+
+/*
+ ================================================================
+ +
+ + Play Audio Stream File
+ +
+ ================================================================
+*/
+
+if ($_GET["PlayAudioStream"] == "FileName") {
+
+if (!$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Audio_Player&amp;PlayAudioStream&#61;FileName\" METHOD=\"POST\">
+												* Video File Name Uniform Resource Location:<BR>
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"module_audio_player_audio_file_name\">Paste Audio Stream File Name Uniform Resource Location String Here...</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Audio File Stream\"><BR>
+											</FORM>
+");
+
+} else {
+
+echo ("
+											<CENTER>
+												<AUDIO CONTROLS>
+													<SOURCE SRC=\"$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME\" TYPE=\"AUDIO/MPEG\">
+											</CENTER>
+");
+
+} // [ + ] IF_!POST_AUDIO_URL
+
+} // [ + ] IF_PlayAudioStream_FileName
+?>

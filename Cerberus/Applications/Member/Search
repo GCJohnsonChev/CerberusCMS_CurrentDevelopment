@@ -1,0 +1,333 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Search
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Search
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+
+										echo ($_Application_Module_Member_Message_Search_Header);
+
+/*
+ ================================================================
+ +
+ + Search Form Post Variables
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Search_POST_KEYWORD						= $_POST['post_search_keyword'];
+$_Application_Module_Member_Search_POST_SECTION						= $_POST['post_search_section'];
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE[0]				= "'";
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE[1]				= "\"";
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH[0]				= "&#39;";
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH[0]				= "&quot;";
+$_Application_Module_Member_Search_POST_KEYWORD						= str_replace($_Application_Module_Member_Search_POST_KEYWORD_REPLACE, $_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH, $_Application_Module_Member_Search_POST_KEYWORD);
+
+if ((!$_Application_Module_Member_Search_POST_KEYWORD) || (!$_Application_Module_Member_Search_POST_SECTION)) {
+
+echo ("
+										<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Search\" METHOD=\"POST\">
+											Keyword(s):<BR>
+												<INPUT TYPE=\"TEXT\" NAME=\"post_search_keyword\"><BR>
+											Section:<BR>
+												<SELECT NAME=\"post_search_section\">
+													<OPTION VALUE=\"1\">Articles</OPTION>
+													<OPTION VALUE=\"2\">Files</OPTION>
+													<OPTION VALUE=\"3\">Forum</OPTION>
+													<OPTION VALUE=\"4\">Members</OPTION>
+													<OPTION VALUE=\"5\">News</OPTION>
+												</SELECT><BR>
+											<INPUT TYPE=\"SUBMIT\" VALUE=\"Search\">
+										</FORM>
+");
+} else {
+
+										echo ("<B>Search Result(s) For</B>: <I>$_Application_Module_Member_Search_POST_KEYWORD</I><BR>");
+
+/*
+ ================================================================
+ +
+ + SECTION 1: Articles
+ +
+ ================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 1) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles WHERE article_data LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_ARTICLE_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES)) {
+
+$_Application_Module_Member_Search_LIST_ARTICLE_ID 					= $_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array['id'];
+$_Application_Module_Member_Search_LIST_ARTICLE_DATA 					= $_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array['article_data'];
+$_Application_Module_Member_Search_LIST_ARTICLE_TITLE 					= $_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array['article_title'];
+$_Application_Module_Member_Search_LIST_ARTICLE_DATA_REDUCED 				= substr($_Application_Module_Member_Search_LIST_ARTICLE_DATA, 0, 30);
+
+echo ("
+										<CENTER>
+											<TABLE WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\" BORDER=\"1\">
+												<TR>
+													<TD WIDTH=\"100%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Member_Search_LIST_ARTICLE_ID\" TITLE=\"View Article\">$_Application_Module_Member_Search_LIST_ARTICLE_TITLE</A><BR>__________________________________<BR>$_Application_Module_Member_Search_LIST_ARTICLE_DATA_REDUCED...</TD>
+												</TR>
+											</TABLE>
+										</CENTER><BR>
+");
+
+} // [ + ] WHILE_ARRAY
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Articles
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES);
+
+} // [ + ] IF_SECTION_1
+
+/*
+ ================================================================
+ +
+ + SECTION 2: Files
+ +
+ ================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 2) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_FILES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files WHERE file_description LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_FILES) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_FILE_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_FILES)) {
+
+$_Application_Module_Member_Search_LIST_FILE_ID						= $_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array['id'];
+$_Application_Module_Member_Search_LIST_FILE_DATA					= $_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array['file_description'];
+$_Application_Module_Member_Search_LIST_FILE_TITLE					= $_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array['file_title'];
+$_Application_Module_Member_Search_LIST_FILE_DATA_REDUCED				= substr($_Application_Module_Member_Search_LIST_FILE_DATA, 0, 30);
+
+echo ("
+										<CENTER>
+											<TABLE WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\" BORDER=\"1\">
+												<TR>
+													<TD WIDTH=\"100%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Member_Search_LIST_FILE_ID\" TITLE=\"View File\">$_Application_Module_Member_Search_LIST_FILE_TITLE</A><BR>__________________________________<BR>$_Application_Module_Member_Search_LIST_FILE_DATA_REDUCED...</TD>
+												</TR>
+											</TABLE>
+										</CENTER><BR>
+");
+
+} // [ + ] WHILE_ARRAY
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Files
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_FILES);
+
+} // [ + ] IF_SECTION_2
+
+/*
+ ================================================================
+ +
+ + SECTION 3: Forum
+ +
+ ================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 3) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_FORUM 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post WHERE post_data LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_FORUM_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM)) {
+
+$_Application_Module_Member_Search_LIST_FORUM_ID					= $_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array['post_topic_id'];
+$_Application_Module_Member_Search_LIST_FORUM_AUTHOR					= $_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array['post_author'];
+$_Application_Module_Member_Search_LIST_FORUM_DATA					= $_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array['post_data'];
+$_Application_Module_Member_Search_LIST_FORUM_DATA_REDUCED				= substr($_Application_Module_Member_Search_LIST_FORUM_DATA, 0, 30);
+
+echo ("
+										<CENTER>
+											<TABLE WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\" BORDER=\"1\">
+												<TR>
+													<TD WIDTH=\"100%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Search_LIST_FORUM_ID\" TITLE=\"View Topic &amp; Post\">$_Application_Module_Member_Search_LIST_FORUM_AUTHOR</A> Wrote:<BR>__________________________________<BR>$_Application_Module_Member_Search_LIST_FORUM_DATA_REDUCED...</TD>
+												</TR>
+											</TABLE>
+										</CENTER><BR>
+");
+
+} // [ + ] WHILE_ARRAY
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Forum
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM);
+
+} // [ + ] IF_SECTION_3
+
+/*
+ ================================================================
+ +
+ + SECTION 4: Members
+ +
+ ================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 4) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_MEMBER_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS)) {
+
+$_Application_Module_Member_Search_LIST_MEMBER_USERNAME					= $_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS_Fetch_Array['member_username'];
+
+echo ("
+										<CENTER>
+											<TABLE WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\" BORDER=\"1\">
+												<TR>
+													<TD WIDTH=\"100%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Search_LIST_MEMBER_USERNAME\" TITLE=\"View Profile\">$_Application_Module_Member_Search_LIST_MEMBER_USERNAME</A></TD>
+												</TR>
+											</TABLE>
+										</CENTER>
+");
+
+} // [ + ] WHILE_ARRAY
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Members
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS);
+
+} // [ + ] IF_SECTION_4
+
+/*
+ ================================================================
+ +
+ + SECTION 5: News
+ +
+ ================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 5) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_NEWS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news WHERE news_data LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_NEWS_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS)) {
+
+$_Application_Module_Member_Search_LIST_NEWS_ID						= $_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array['id'];
+$_Application_Module_Member_Search_LIST_NEWS_DATA					= $_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array['news_data'];
+$_Application_Module_Member_Search_LIST_NEWS_TITLE					= $_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array['news_title'];
+$_Application_Module_Member_Search_LIST_NEWS_DATA_REDUCED				= substr($_Application_Module_Member_Search_LIST_NEWS_DATA, 0, 30);
+
+echo ("
+										<CENTER>
+											<TABLE WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\" BORDER=\"1\">
+												<TR>
+													<TD WIDTH=\"100%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;All_News&amp;DisplayID&#61;$_Application_Module_Member_Search_LIST_NEWS_ID\" TITLE=\"View News\">$_Application_Module_Member_Search_LIST_NEWS_TITLE</A><BR>__________________________________<BR>$_Application_Module_Member_Search_LIST_NEWS_DATA_REDUCED...</TD>
+												</TR>
+											</TABLE>
+										</CENTER><BR>
+");
+
+} // [ + ] WHILE_ARRAY
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS);
+
+} // [ + ] IF_SECTION_5
+
+} // [ + ] IF_POST
+?>

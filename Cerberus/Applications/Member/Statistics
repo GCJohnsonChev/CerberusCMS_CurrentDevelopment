@@ -1,0 +1,265 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Statistics
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Statistics
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+
+												echo ($_Application_Module_Member_Message_Statistics_Header);
+
+/*
+ ================================================================
+ +
+ + Fetch Statistics Data
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Select SQL Entries
+ ================================================================
+*/
+
+$_Application_Module_Member_Statistics_DB_Query_SELECT_STATISTICS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics ORDER BY id ASC LIMIT 1");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FILES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post");
+
+/*
+ ================================================================
+ + Count SQL Rows
+ ================================================================
+*/
+
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS		= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS		= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FILES			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FILES);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_MEMBERS			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS);
+
+/*
+ ================================================================
+ + List Statistics Entries
+ ================================================================
+*/
+
+$_Application_Module_Member_Statistics_DB_Query_FETCH_ARRAY_STATISTICS			= $DB->fetch_array($_Application_Module_Member_Statistics_DB_Query_SELECT_STATISTICS);
+
+$_Application_Module_Member_Statistics_LIST_NUMBER_OF_HITS				= $_Application_Module_Member_Statistics_DB_Query_FETCH_ARRAY_STATISTICS['statistics_total_number_of_page_views'];
+$_Application_Module_Member_Statistics_LIST_START_DATE					= $_Application_Module_Member_Statistics_DB_Query_FETCH_ARRAY_STATISTICS['statistics_installation_date'];
+
+/*
+ ================================================================
+ + Is GZIP Compression On or Off ?
+ ================================================================
+*/
+
+if ($_GLOBAL_SYSTEM_GZIP_STATUS <= 0) {
+
+	$_Application_Module_Member_Statistics_GZIP_STATUS		= "Off";
+
+} else {
+
+	$_Application_Module_Member_Statistics_GZIP_STATUS		= "On";
+
+} // [ + ] IF_GZIP ON || OFF
+
+/*
+ ================================================================
+ + Is The Safe-HTML Plugin On or Off ?
+ ================================================================
+*/
+
+if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS <= 0) {
+
+	$_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS	= "Off";
+
+} else {
+
+	$_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS	= "On";
+
+} // [ + ] $_GLOBAL_SYSTEM_SAFEHTML_STATUS  ON || OFF
+
+/*
+ ================================================================
+ +
+ + List Statistics
+ +
+ ================================================================
+*/
+
+echo ("
+												<B>System Statistical Information</B><HR>
+												*&nbsp;CerberusCMS Installation Date: $_Application_Module_Member_Statistics_LIST_START_DATE<BR>
+												*&nbsp;Total Number of Page Loads: $_Application_Module_Member_Statistics_LIST_NUMBER_OF_HITS<BR><BR>
+
+												<B>Current System Settings</B><HR>
+
+												<B>Data Compression Settings</B><BR>
+												*&nbsp;G.N.U. ZIP ( GZIP ) Compression: $_Application_Module_Member_Statistics_GZIP_STATUS<BR><BR>
+
+												<B>Theme Settings</B><BR>
+												*&nbsp;System Theme Image Format: $_GLOBAL_SYSTEM_IMAGE_EXTENSION<BR>
+												*&nbsp;System Theme Sound Format: $_GLOBAL_SYSTEM_SOUND_EXTENSION<BR>
+												*&nbsp;System Theme Directory: $_GLOBAL_SYSTEM_THEME_DIRECTORY<BR><BR>
+
+												<B>Language Settings</B><BR>
+												*&nbsp;System Language: $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY<BR><BR>
+
+												<B>Plug-In Settings</B><BR>
+												*&nbsp;Safe Hyper-Text-Markup-Language Plugin Directory: $_GLOBAL_SYSTEM_SAFEHTML_DIRECTORY<BR>
+												*&nbsp;Safe Hyper-Text-Markup-Language Plugin Status: $_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS<BR>
+												*&nbsp;Text-Editor ( BB ) Code Directory: $_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY<BR><BR>
+
+												<B>System Social Interaction Information & Statistics</B><HR>
+
+												<B>Forum Information</B><BR>
+												*&nbsp;Total Number of Forums: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM<BR>
+												*&nbsp;Total Number of Forum' Topics: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS<BR>
+												*&nbsp;Total Number of Forum' Topic' Posts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS<BR><BR>
+
+												<B>Commentation Information</B><BR>
+												*&nbsp;Total Number of Comments: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS<BR><BR>
+
+												<B>Registered Accounts Information</B><BR>
+												*&nbsp;Total Number of Registered Accounts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_MEMBERS<BR><BR>
+
+												<B>File System Information</B><BR>
+												*&nbsp;Total Number of Files Within The File System: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FILES<BR>
+												*&nbsp;File Size Upload Limitations ( Public ): $_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC KiloBits<BR>
+												*&nbsp;File Size Upload Limitations ( Private ): $_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE KiloBits<BR><BR>
+
+												<B>Connection and Server Information</B><HR>
+
+												<B>Visitor Connection Information</B><BR>
+												*&nbsp;Visitor Server Request Method: $_GLOBAL_SERVER_REQUEST_METHOD<BR>
+												*&nbsp;Visitor Server Request Time: $_GLOBAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Visitor Server Connection Type: $_GLOBAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+
+												<B>Local Server Information</B><BR>
+												*&nbsp;Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_SERVER_HTTP_HOST<BR>
+												*&nbsp;Local Server Gateway Interface: $_GLOBAL_SERVER_GATEWAY_INTERFACE<BR>
+												*&nbsp;Local Server Address: $_GLOBAL_SERVER_ADDRESS<BR>
+												*&nbsp;Local Server Software: $_GLOBAL_SERVER_SOFTWARE<BR>
+												*&nbsp;Local Server Request Time: $_GLOBAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Local Server Request Time ( Float ): $_GLOBAL_SERVER_REQUEST_TIME_FLOAT<BR>
+												*&nbsp;Local Server Document Root: $_GLOBAL_SERVER_DOCUMENT_ROOT<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Accept Type: $_GLOBAL_SERVER_HTTP_ACCEPT<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_SERVER_HTTP_ACCEPT_LOADING<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+											<HR>
+											<CENTER><B>[ <A HREF=\"$_TINKESOFTWARE_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_CERBERUS_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_CERBERUS_VERSION_EXTENDED</A> ]</B></CENTER><HR>
+");
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Statistics
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_STATISTICS);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Members
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Comments
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Files
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_FILES);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Forum
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Forum Topics
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Forum Posts
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS);
+?>

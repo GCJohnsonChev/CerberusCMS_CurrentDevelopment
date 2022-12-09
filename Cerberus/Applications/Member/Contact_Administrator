@@ -1,0 +1,122 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Contact_Administrator
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Contact Administrator
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+											echo ($_Application_Module_Member_Message_Contact_Administrator_Header);
+/*
+ ================================================================
+ +
+ + Form Post Variables
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Contact_Administrator_POST_NAME 				= $_POST['contact_systems_administrator_my_name'];
+$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS		= $_POST['contact_systems_administrator_electronic_mail_address'];
+$_Application_Module_Member_Contact_Administrator_POST_MESSAGE				= $_POST['contact_systems_administrator_message'];
+
+/*
+ ================================================================
+ +
+ + Contact Administrator Form
+ +
+ ================================================================
+*/
+
+if ((!$_Application_Module_Member_Contact_Administrator_POST_NAME) || (!$_Application_Module_Member_Contact_Administrator_POST_MESSAGE) || (!$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS)) {
+
+echo ("
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Contact_Administrator\" METHOD=\"post\">
+													* Your Full Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"contact_systems_administrator_my_name\" VALUE=\"$_GLOBAL_COOKIE_MEMBER_USERNAME\"><BR>
+													* Your Electronic Mail Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"contact_systems_administrator_electronic_mail_address\"><BR>
+													* Your Message:<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"contact_systems_administrator_message\"></TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Send Electronic Mail\">
+												</FORM>
+");
+
+} else {
+
+/*
+ ================================================================
+ +
+ + Send Electronic Mail Notification
+ +
+ ================================================================
+*/
+
+if (mail($_ACCESS_SYSTEM_ELECTRONIC_MAIL_ADDRESS,"Report From ~ $_GLOBAL_SYSTEM_SITE_TITLE","
+Dear $_ACCESS_SYSTEM_ELECTRONIC_MAIL_ADDRESS,
+=============================================================
+[ $_Application_Module_Member_Contact_Administrator_POST_NAME | $_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS ] has sent you this electronic mail message from the Contact Systems Administrator Application Module:
+
+$_Application_Module_Member_Contact_Administrator_POST_MESSAGE
+
+The Internet Protocol Address associated with the electronic mail message is: [ $_GLOBAL_REMOTE_SERVER_ADDRESS ] :: [ $_GLOBAL_COOKIE_MEMBER_USERNAME ]
+=============================================================
+Have a nice day,
+		    - Cerberus Content Management System.
+")) {
+
+											echo ($_Application_Module_Member_Message_Contact_Administrator_MESSAGE_SENT);
+} else {
+
+
+											echo ($_Application_Module_Member_Message_Contact_Administrator_MESSAGE_SENT_ERROR);
+} // [ + ] IF: Send Electronic Mail Message
+
+} // [ + ] IF: Electronic Mail Message From Has Not Posted
+?>

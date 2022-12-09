@@ -1,0 +1,243 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Background->Log_Member
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Background :: Log ::  Member-Level Activity
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Member-Level Variables
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Visitor Variables
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Member_GET_IP					= $_SERVER['REMOTE_ADDR'];
+$_Application_Module_Background_Log_Member_GET_HOST					= $_SERVER['REMOTE_HOST'];
+$_Application_Module_Background_Log_Member_GET_REFERRER					= $_SERVER['HTTP_REFERER'];
+$_Application_Module_Background_Log_Member_GET_USER_AGENT				= $_SERVER['HTTP_USER_AGENT'];
+$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME			= $_GLOBAL_COOKIE_MEMBER_USERNAME;
+
+/*
+ ================================================================
+ + Specify Member-Level Activity Log File
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME				= fopen("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Activity_Log.php", "a");
+
+/*
+ ================================================================
+ + Replace Harmful Characters
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS[0]			= "<";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS[1]			= ">";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS[2]			= "'";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS[3]			= "\"";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[0]			= "Z";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[1] 			= "Z";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[2] 			= "Z";
+$_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[3] 			= "Z";
+
+$_Application_Module_Background_Log_Member_GET_REFERRER					= str_replace($_Application_Module_Background_Log_Member_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Member_GET_REFERRER);
+$_Application_Module_Background_Log_Member_GET_USER_AGENT				= str_replace($_Application_Module_Background_Log_Member_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Member_GET_USER_AGENT);
+$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME			= str_replace($_Application_Module_Background_Log_Member_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME);
+
+/*
+ ================================================================
+ + IF: Internet Protocol Address String Length Is Greater Than
+ ================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Member_GET_IP) > "250") {
+
+	$_Application_Module_Background_Log_Member_GET_IP 				= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+if (strlen($_Application_Module_Background_Log_Member_GET_REFERRER) > "250") {
+
+	$_Application_Module_Background_Log_Member_GET_REFERRER 			= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+if (strlen($_Application_Module_Background_Log_Member_GET_USER_AGENT) > "250") {
+
+	$_Application_Module_Background_Log_Member_GET_USER_AGENT			= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+if (strlen($_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME) > "20") {
+
+	$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME 		= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+/*
+ ================================================================
+ + IF: Member Credentials Are Null, Print Non-Registered
+ ================================================================
+*/
+
+if ($_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME == "") {
+
+	$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME		= "Non-Registered";
+
+} // [ + ] IF_NULL_USER
+
+/*
+ ================================================================
+ + Write Data To File
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Log Interaction Details Data To Be Written To File :: Box Log
+ ================================================================
+*/
+
+fwrite($_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME, "
+<B>Detailed Visitor Information</B>
+<HR>
+<B>Visitor Machine and Connection Information</B><BR>
+Visitor' UserName: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME\" TITLE=\"$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME's Profile\">$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME</A><BR>
+Visitor Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+Visitor Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Member_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Member_GET_REFERRER</A><BR>
+Visitor' User-Agent ( Browser ): $_Application_Module_Background_Log_Member_GET_USER_AGENT<BR>
+Visitor' Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+Visitor' Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
+Visitor' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+Visitor Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
+
+<B>Visitor Connection Information</B><BR>
+Visitor Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+Visitor Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+Visitor Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+
+<B>Local Server Information</B><BR>
+Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
+Local Server Network Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
+Local Server Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For Local Server Internet Protocol Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
+Local Server Software: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
+Local Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+Local Server Request Time ( Float ): $_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT<BR>
+Local Server Document Root: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT<BR>
+Local Server Hyper-Text-Transfer-Protocol Accept Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
+Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
+Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
+Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
+Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+
+<A HREF=\"../../../Applications/Background/Log_Member\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
+");
+
+/*
+ ================================================================
+ + Log Interaction Details Data To Be Written To File :: Raw Log
+ ================================================================
+*/
+
+fwrite($_Application_Module_Background_Log_Member_Raw_OPEN_FILE_NAME, "
+<B>Detailed Visitor Information</B>
+<HR>
+<B>Visitor Machine and Connection Information</B><BR>
+Visitor' UserName: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME\" TITLE=\"$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME's Profile\">$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME</A><BR>
+Visitor Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+Visitor Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Member_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Member_GET_REFERRER</A><BR>
+Visitor' User-Agent ( Browser ): $_Application_Module_Background_Log_Member_GET_USER_AGENT<BR>
+Visitor' Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+Visitor' Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
+Visitor' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+Visitor Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
+
+<B>Visitor Connection Information</B><BR>
+Visitor Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+Visitor Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+Visitor Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+
+<B>Local Server Information</B><BR>
+Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
+Local Server Network Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
+Local Server Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For Local Server Internet Protocol Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
+Local Server Software: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
+Local Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+Local Server Request Time ( Float ): $_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT<BR>
+Local Server Document Root: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT<BR>
+Local Server Hyper-Text-Transfer-Protocol Accept Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
+Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
+Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
+Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
+Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+
+<A HREF=\"./Applications/Background/Log_Member\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
+");
+
+/*
+ ================================================================
+ + Close File :: Box Log
+ ================================================================
+*/
+
+fclose($_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME);
+
+/*
+ ================================================================
+ + Close File :: Raw Log
+ ================================================================
+*/
+
+fclose($_Application_Module_Background_Log_Member_Raw_OPEN_FILE_NAME);
+?>

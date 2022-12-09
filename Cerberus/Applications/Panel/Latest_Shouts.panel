@@ -1,0 +1,111 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Panel->Latest_Shouts.panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Panel :: Latest Shout Messages
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Retrieve Latest Shout Message Entries
+ ================================================================
+*/
+
+$_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_shout_messages ORDER BY id DESC LIMIT 10");
+
+/*
+ ================================================================
+ + If No Shout Message Entries Exist
+ ================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS) <= 0) {
+
+											echo ("No Shout Message Entries Exist<BR><BR>");
+
+} else {
+
+/*
+ ================================================================
+ + List Latest Shout Entries
+ ================================================================
+*/
+
+while ($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS_Fetch_Array = $DB->fetch_array($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS)) {
+
+$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_ID			= $_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS_Fetch_Array['id'];
+$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_AUTHOR		= $_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS_Fetch_Array['message_author'];
+$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_DATA		= $_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS_Fetch_Array['message_data'];
+$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_TIME		= $_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS_Fetch_Array['message_time'];
+
+echo ("
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_AUTHOR\" TITLE=\":: Open & Display The Application Module :: Profile :: For :: $_Application_Module_Block_Latest_Shouts_LIST_SHOUT_AUTHOR&amp;$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA256\">$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_AUTHOR</A> Shouted:<BR>
+											<B>&#34;</B><I>$_Application_Module_Block_Latest_Shouts_LIST_SHOUT_DATA</I><B>&#34;</B><BR>
+											On: $_Application_Module_Block_Latest_Shouts_LIST_SHOUT_TIME<BR><BR>
+");
+
+} // [ + ] WHILE_SHOUTS
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select Latest Shout Messages
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS);
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;All_Shouts\" METHOD=\"post\">
+												<I>Shout Message</I>:<BR>
+													<INPUT TYPE=\"text\" NAME=\"post_shout_message\" MAXLENGTH=\"250\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Post Shout Message\">
+											</FORM>
+											<HR>
+												<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;All_Shouts&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: Open & Display The Application Module :: All Shout Messages ::\">All Shout Messages</A> ]</CENTER>
+");
+?>

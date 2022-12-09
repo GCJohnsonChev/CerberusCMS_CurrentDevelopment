@@ -1,0 +1,122 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Terminal
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Administration :: Terminal
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + S.Q.L. Query Form Post Variables
+ +
+ ================================================================
+*/
+
+$_Application_Module_Administration_Terminal_SQL_Query_POST_SQL_QUERY			= $_POST['Module_Terminal_SQL_Query_Form_Query'];
+
+/*
+ ================================================================
+ +
+ + SQL Query Form
+ +
+ ================================================================
+*/
+
+if (!$_Application_Module_Administration_Terminal_Query_POST_SQL_QUERY) {
+
+echo ("
+													<CENTER><B>S.Q.L. Query</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Terminal\" METHOD=\"post\">
+															<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"Module_Terminal_SQL_Query_Form_Query\">Example: SELECT * FROM _some_table_ ~ Note: This text-area field is using double quotes and the variable handler is using an apostrophe.</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Execute Query\">
+														</FORM>
+
+echo ("
+													<CENTER><B>Terminal Command</B></CENTER><HR>
+													<FORM ACTION=\"?Application&#61;Terminal\" METHOD=\"POST\">
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"Installation_ToolKit_Terminal_Commands\">Execute Terminal Commands On This Operating System From This Post-HypterText-PreProcessor Script E.G.: 'wget -O Cerberus.zip https://GitHub.com/TinkeSoftware/<File_Name_Here.zip>'</TEXTAREA><BR>
+													<INPUT TYPE=\"SUBMIT\" VALUE=\"Execute\">
+													</FORM>
+");
+
+} else {
+	
+		echo ("Executing Terminal Command: '$_Installation_ToolKit_POST_TERMINAL_COMMANDS'<BR>");
+	
+$_Installation_ToolKit_EXECUTE_TERMINAL_COMMAND				= shell_exec($_Installation_ToolKit_POST_TERMINAL_COMMANDS);
+	
+		echo ("$_Installation_ToolKit_EXECUTE_TERMINAL_COMMAND");
+");
+
+} else {
+
+/*
+ ================================================================
+ +
+ + Execute SQL Query
+ +
+ ================================================================
+*/
+
+$_Application_Module_Administration_Terminal_Query_DB_Query_QUERY			= $DB->query($_Application_Module_Administration_Terminal_Query_POST_SQL_QUERY);
+
+if ($_Application_Module_Administration_Terminal_Query_DB_Query_QUERY) {
+													echo ($_Application_Module_Administration_Message_Terminal_COMMAND_SQL_EXECUTED_SUCCESSFULLY);
+} else {
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+} // [ + ] IF_QUERY
+
+/*
+ ================================================================
+ + Kill SQL Query
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Terminal_Query_DB_Query_QUERY);
+
+} // [ + ] IF_NULL
+?>

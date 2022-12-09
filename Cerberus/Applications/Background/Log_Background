@@ -1,0 +1,130 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Background->Log_Background
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Background :: Log ::  Background-Level Activity
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Fetch Statistics Data
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics");
+$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array 			= $DB->fetch_array($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
+
+/*
+ ================================================================
+ + Increment Total Number of Page Views By 1
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS 		= $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array['statistics_total_number_of_page_views'];
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS_INCREMENT 	= $_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS + 1;
+
+$_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics SET statistics_total_number_of_page_views='$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS_INCREMENT' WHERE id='1'");
+
+/*
+ ================================================================
+ + Update Statistics Data
+ ================================================================
+*/
+
+if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ($_Message_Log_Background_ERROR_SQL_STATISTICS);
+} // [ + ] IF_QUERY
+
+/*
+ ================================================================
+ + Update Member, Last Active
+ ================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME != null) {
+
+$_Application_Module_Background_Log_Background_DATE 							= date("HdmY");
+
+$_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_active_status='$_Application_Module_Background_Log_Background_DATE' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ($_Message_Log_Background_ERROR_SQL_MEMBERS);
+} // [ + ] IF_QUERY
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Update Member Data
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS);
+
+} // [ + ] IF_DB_Query_UPDATE_MEMBERS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select Statistics Table
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Update Statistics Data: Number of Page Views
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS);
+?>
