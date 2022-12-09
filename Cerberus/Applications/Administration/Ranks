@@ -42,7 +42,9 @@
  ================================================================
  +
  +
- + Application Module :: Administration :: Ranking System Management
+ +
+ + [ @ ] Application Module :: Administration :: Ranking System Management
+ +
  +
  +
  ================================================================
@@ -51,7 +53,9 @@
 /*
  ================================================================
  +
- + Select Ranks
+ +
+ + Retrieve All Ranks From Database Server
+ +
  +
  ================================================================
 */
@@ -63,48 +67,88 @@ while ($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Arr
 /*
  ================================================================
  +
- + List Ranks
+ + Retrieve Ranks :: Male :: 0 - 4
  +
  ================================================================
 */
 
-$_Application_Module_Administration_Ranks_LIST_RANK_1					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_1'];
-$_Application_Module_Administration_Ranks_LIST_RANK_2					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_2'];
-$_Application_Module_Administration_Ranks_LIST_RANK_3					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_3'];
-$_Application_Module_Administration_Ranks_LIST_RANK_4					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_4'];
-$_Application_Module_Administration_Ranks_LIST_RANK_5					= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_5'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_0			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_0'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_1			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_1'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_2			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_2'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_3			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_3'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_4'];
 
 /*
  ================================================================
  +
- + Update Ranks Form Post Variables
+ + Retrieve Ranks :: Female :: 0 - 4
+ +
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_0			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_0'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_1			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_1'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_2			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_2'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_3			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_3'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_4'];
+
+/*
+ ================================================================
+ +
+ +
+ + Update Ranks Form :: Variables
+ +
  +
  ================================================================
 */
 
 /*
  ================================================================
- + Form Post Variables
+ + Update Ranks Form :: Variables :: Post Variables :: Male Ranks
  ================================================================
 */
 
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1				= $_POST['Module_Ranks_Update_Rank_1'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2				= $_POST['Module_Ranks_Update_Rank_2'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3				= $_POST['Module_Ranks_Update_Rank_3'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4				= $_POST['Module_Ranks_Update_Rank_4'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5				= $_POST['Module_Ranks_Update_Rank_5'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0			= $_POST['Update_Rank_Male_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1			= $_POST['Update_Rank_Male_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2			= $_POST['Update_Rank_Male_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3			= $_POST['Update_Rank_Male_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4			= $_POST['Update_Rank_Male_4'];
 
 /*
  ================================================================
- + Character Replace
+ + Update Ranks Form :: Variables :: Post Variables :: Male Ranks :: Sanitization
  ================================================================
 */
 
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4);
+
+/*
+ ================================================================
+ + Update Ranks Form :: Variables :: Post Variables :: Female Ranks
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0			= $_POST['Update_Rank_Female_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1			= $_POST['Update_Rank_Female_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2			= $_POST['Update_Rank_Female_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3			= $_POST['Update_Rank_Female_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4			= $_POST['Update_Rank_Female_4'];
+
+/*
+ ================================================================
+ + Update Ranks Form :: Variables :: Post Variables :: Male Ranks :: Sanitization
+ ================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4);
 
 /*
  ================================================================
@@ -119,16 +163,29 @@ if ((!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1) || (!$_Appli
 echo ("
 													<CENTER><B>Ranks</B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Ranks\" METHOD=\"post\">
-															Rank Title #1:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_1\" MAXLENGTH=\"100\"><BR>
-															Rank Title #2:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_2\" MAXLENGTH=\"100\"><BR>
-															Rank Title #3:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_3\" MAXLENGTH=\"100\"><BR>
-															Rank Title #4:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_4\" MAXLENGTH=\"100\"><BR>
-															Rank Title #5:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Ranks_Update_Rank_5\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_5\" MAXLENGTH=\"100\"><BR>
+															Male Ranks<HR>
+															Male Rank #1:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_0\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_0\" MAXLENGTH=\"100\"><BR>
+															Male Rank #2:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_1\" MAXLENGTH=\"100\"><BR>
+															Male Rank #3:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_2\" MAXLENGTH=\"100\"><BR>
+															Male Rank #4:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_3\" MAXLENGTH=\"100\"><BR>
+															Male Rank #5:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4\" MAXLENGTH=\"100\"><BR>
+															
+															Female Ranks<HR>
+															Male Rank #1:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_0\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_0\" MAXLENGTH=\"100\"><BR>
+															Male Rank #2:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_1\" MAXLENGTH=\"100\"><BR>
+															Male Rank #3:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_2\" MAXLENGTH=\"100\"><BR>
+															Male Rank #4:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_3\" MAXLENGTH=\"100\"><BR>
+															Male Rank #5:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4\" MAXLENGTH=\"100\"><BR>
 															<INPUT TYPE=\"submit\" VALUE=\"Update Ranks\">
 														</FORM><BR><BR>
 ");
