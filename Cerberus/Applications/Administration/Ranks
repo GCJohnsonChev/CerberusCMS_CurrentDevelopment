@@ -163,7 +163,7 @@ if (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0) {
 echo ("
 													<CENTER><B>Ranks</B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Ranks\" METHOD=\"post\">
-															Male Ranks<HR>
+															<BR>Male Ranks<HR>
 															Male Rank #1:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_0\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_0\" MAXLENGTH=\"100\"><BR>
 															Male Rank #2:<BR>
@@ -173,18 +173,18 @@ echo ("
 															Male Rank #4:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_3\" MAXLENGTH=\"100\"><BR>
 															Male Rank #5:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4\" MAXLENGTH=\"100\"><BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4\" MAXLENGTH=\"100\"><BR><BR>
 															
 															Female Ranks<HR>
-															Male Rank #1:<BR>
+															Female Rank #1:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_0\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_0\" MAXLENGTH=\"100\"><BR>
-															Male Rank #2:<BR>
+															Female Rank #2:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_1\" MAXLENGTH=\"100\"><BR>
-															Male Rank #3:<BR>
+															Female Rank #3:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_2\" MAXLENGTH=\"100\"><BR>
-															Male Rank #4:<BR>
+															Female Rank #4:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_3\" MAXLENGTH=\"100\"><BR>
-															Male Rank #5:<BR>
+															Female Rank #5:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4\" MAXLENGTH=\"100\"><BR>
 															<INPUT TYPE=\"submit\" VALUE=\"Update Ranks\">
 														</FORM><BR><BR>
@@ -202,7 +202,7 @@ rank_gender_female_0='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK
 rank_gender_female_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1',
 rank_gender_female_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2',
 rank_gender_female_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3',
-rank_gender_female_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4',
+rank_gender_female_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4'
 WHERE id='1'");
 
 if ($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS) {
