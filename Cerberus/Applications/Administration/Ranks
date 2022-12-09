@@ -192,6 +192,14 @@ echo ("
 
 } else {
 
+/*
+ ================================================================
+ +
+ + Update S.Q.L. Database :: Member Ranks
+ +
+ ================================================================
+*/
+
 $_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks SET 
 rank_gender_male_0='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0',
 rank_gender_male_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1',
