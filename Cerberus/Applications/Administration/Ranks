@@ -43,7 +43,7 @@
  +
  +
  +
- + [ @ ] Application Module :: Administration :: Ranking System Management
+ + [ @ ] Application Module :: Administration :: Member Rank System Management
  +
  +
  +
@@ -54,7 +54,7 @@
  ================================================================
  +
  +
- + Retrieve All Ranks From Database Server
+ + Retrieve All Member Ranks From Database Server
  +
  +
  ================================================================
@@ -67,7 +67,7 @@ while ($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Arr
 /*
  ================================================================
  +
- + Retrieve Ranks :: Male :: 0 - 4
+ + Retrieve Member Ranks :: Male :: 0 - 4
  +
  ================================================================
 */
@@ -81,7 +81,7 @@ $_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4			= $_Applicat
 /*
  ================================================================
  +
- + Retrieve Ranks :: Female :: 0 - 4
+ + Retrieve Member Ranks :: Female :: 0 - 4
  +
  ================================================================
 */
@@ -96,7 +96,7 @@ $_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4			= $_Applic
  ================================================================
  +
  +
- + Update Ranks Form :: Variables
+ + Update Member Ranks Form :: Variables
  +
  +
  ================================================================
@@ -104,7 +104,7 @@ $_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4			= $_Applic
 
 /*
  ================================================================
- + Update Ranks Form :: Variables :: Post Variables :: Male Ranks
+ + Update Member Ranks Form :: Variables :: Post Variables :: Male Ranks
  ================================================================
 */
 
@@ -116,7 +116,7 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4			= $_POST['Up
 
 /*
  ================================================================
- + Update Ranks Form :: Variables :: Post Variables :: Male Ranks :: Sanitization
+ + Update Member Ranks Form :: Variables :: Post Variables :: Male Ranks :: Sanitization
  ================================================================
 */
 
@@ -128,7 +128,7 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4			= preg_repla
 
 /*
  ================================================================
- + Update Ranks Form :: Variables :: Post Variables :: Female Ranks
+ + Update Member Ranks Form :: Variables :: Post Variables :: Female Ranks
  ================================================================
 */
 
@@ -140,7 +140,7 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4			= $_POST['
 
 /*
  ================================================================
- + Update Ranks Form :: Variables :: Post Variables :: Male Ranks :: Sanitization
+ + Update Member Ranks Form :: Variables :: Post Variables :: Female Ranks :: Sanitization
  ================================================================
 */
 
@@ -153,12 +153,12 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4			= preg_rep
 /*
  ================================================================
  +
- + Update Ranks Form
+ + Update Member Ranks Form
  +
  ================================================================
 */
 
-if ((!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4) || (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5)) {
+if (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0) {
 
 echo ("
 													<CENTER><B>Ranks</B></CENTER><HR>
@@ -192,13 +192,28 @@ echo ("
 
 } else {
 
-$_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks SET rank_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_1',rank_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_2',rank_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_3',rank_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_4',rank_5='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_5' WHERE id='1'");
+$_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks SET 
+rank_gender_male_0='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0',
+rank_gender_male_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1',
+rank_gender_male_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2',
+rank_gender_male_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3',
+rank_gender_male_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4',
+rank_gender_female_0='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0',
+rank_gender_female_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1',
+rank_gender_female_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2',
+rank_gender_female_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3',
+rank_gender_female_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4',
+WHERE id='1'");
 
 if ($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS) {
+
 													echo ($_Application_Module_Administration_Message_Ranks_RANKS_UPDATED_SUCCESSFULLY);
+
 } else {
+
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_UPDATE_RANK_DB_QUERY
+
+} // [ + ] IF: S.Q.L. Query: Update Rank System
 
 /*
  ================================================================
@@ -208,9 +223,9 @@ if ($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS) {
 
 $DB->free($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Update Member Rank Form Variables Have Executed
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving All Member Ranks
 
 /*
  ================================================================
