@@ -92,7 +92,7 @@ $_Application_Module_Administration_Update_LIST_ARTICLE_DATA				= str_replace($_
 if ($_GET["DeleteArticleID"] == "$_Application_Module_Administration_Update_LIST_ARTICLE_ID") {
 
 $_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles WHERE id='$_Application_Module_Administration_Update_LIST_ARTICLE_ID'");
-$_Application_Module_Administration_Update_DELETE_ARTICLE_FILE				= unlink("System/Printable/Article/$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE.html");
+$_Application_Module_Administration_Update_DELETE_ARTICLE_FILE				= unlink("./System/Printable/Article/$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE.html");
 
 if (($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE) && ($_Application_Module_Administration_Update_DELETE_ARTICLE_FILE)) {
 
@@ -102,7 +102,7 @@ if (($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE) && ($_A
 
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
 
-} // [ + ] IF_DELETE_QUERY
+} // [ + ] IF: Internal Application: DeleteArticleID Is Activated
 
 /*
  =============================================================================================================
@@ -112,7 +112,7 @@ if (($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE) && ($_A
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE);
 
-} // [ + ] IF_DELETE_ARTICLE_ID
+} // [ + ] IF: Database Query: Delete Article Entry By ID AND Unlink Article Entry File
 
 /*
  ============================================================================================================
@@ -161,15 +161,15 @@ $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA			= str_repl
 if (!$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR) {
 
 echo ("
-													<CENTER><B>Currently Updating Article: <I>$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE</I></B></CENTER><HR>
+													<CENTER><B>Currently Updating Article Entry: <I>$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE</I></B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;UpdateArticleID&#61;$_Application_Module_Administration_Update_LIST_ARTICLE_ID\" METHOD=\"post\">
-															Article Author:<BR>
+															Article Entry Author:<BR>
 																<INPUT TYPE=\"text\" NAME=\"post_update_article_author\" VALUE=\"$_Application_Module_Administration_Update_LIST_ARTICLE_AUTHOR\" MAXLENGTH=\"50\"><BR>
-															Article Title:<BR>
+															Article Entry Title:<BR>
 																<INPUT TYPE=\"text\" NAME=\"post_update_article_title\" VALUE=\"$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE\" MAXLENGTH=\"50\"><BR>
-															Article Submission Date:<BR>
+															Article Entry Submission Date:<BR>
 																<INPUT TYPE=\"text\" NAME=\"post_update_article_time\" VALUE=\"$_Application_Module_Administration_Update_LIST_ARTICLE_TIME\" MAXLENGTH=\"50\"><BR>
-															Article Data:<BR>
+															Article Entry Data:<BR>
 																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"post_update_article_data\">$_Application_Module_Administration_Update_LIST_ARTICLE_DATA</TEXTAREA><BR>
 															<INPUT TYPE=\"submit\" VALUE=\"Update Article Entry\">
 														</FORM>
@@ -217,7 +217,7 @@ fclose($_Application_Module_Administration_Update_OPEN_ARTICLE_FILE);
 													echo ($_Application_Module_Administration_Message_Update_ARTICLE_UPDATED_SUCCESSFULLY);
 } else {
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_QUERY
+} // [ + ] IF: Database Query: Update Article Entry By ID
 
 /*
  =============================================================================================================
@@ -227,11 +227,11 @@ fclose($_Application_Module_Administration_Update_OPEN_ARTICLE_FILE);
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_ARTICLE);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Update Article Entry Form Variables Have Executed
 
-} // [ + ] IF_ID
+} // [ + ] IF: Internal Application: Update Article Entry By ID Is Activated
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieiving Article Entries From Database
 
 /*
  =============================================================================================================
@@ -241,7 +241,7 @@ $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_ARTICLE);
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES);
 
-} // [ + ] IF_Update_ARTICLES
+} // [ + ] IF: Internal Application: Update Article Entry By ID Is Activated
 
 /*
  ============================================================================================================
@@ -283,10 +283,14 @@ if ($_GET["DeleteLinkID"] == "$_Application_Module_Administration_Update_LIST_LI
 $_Application_Module_Administration_Update_DB_Query_DELETE_LINK				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links WHERE id='$_Application_Module_Administration_Update_LIST_LINK_ID'");
 
 if ($_Application_Module_Administration_Update_DB_Query_DELETE_LINK) {
+
 													echo ($_Application_Module_Administration_Message_Update_LINK_DELETED_SUCCESSFULLY);
+
 } else {
+
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_DELETE_QUERY
+
+} // [ + ] IF: Internal Application: Delete Link By ID Is Activated
 
 /*
  =============================================================================================================
@@ -296,7 +300,7 @@ if ($_Application_Module_Administration_Update_DB_Query_DELETE_LINK) {
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_LINK);
 
-} // [ + ] IF_DELETE
+} // [ + ] IF: Database Query: Delete Link By ID Variable Is Activated
 
 /*
  ============================================================================================================
@@ -333,19 +337,19 @@ $_Application_Module_Administration_Update_POST_UPDATE_LINK_URL				= preg_replac
 if ((!$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL)) {
 
 echo ("
-													<CENTER><B>Currently Updating Link: <I>$_Application_Module_Administration_Update_LIST_LINK_TITLE</I></B></CENTER><HR>
+													<CENTER><B>Currently Updating Link Entry: <I>$_Application_Module_Administration_Update_LIST_LINK_TITLE</I></B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Links&amp;UpdateLinkID&#61;$_Application_Module_Administration_Update_LIST_LINK_ID\" METHOD=\"post\">
-															Link Author:<BR>
+															Link Entry Author:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_link_author\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_AUTHOR\" MAXLENGTH=\"50\"><BR>
-															Link Title:<BR>
+															Link Entry Title:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_link_title\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_TITLE\" MAXLENGTH=\"50\"><BR>
-															Link Uniform Resource Locator:<BR>
+															Link Entry Uniform Resource Locator:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_link_url\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_URL\" MAXLENGTH=\"250\"><BR>
-															Link Submission Date:<BR>
+															Link Entry Submission Date:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_link_time\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_TIME\" MAXLENGTH=\"50\"><BR>
-															Link Description:<BR>
+															Link Entry Description:<BR>
 																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"update_link_description\">$_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION</TEXTAREA><BR>
-															<INPUT TYPE=\"submit\" VALUE=\"Update Link\">
+															<INPUT TYPE=\"submit\" VALUE=\"Update Link Entry\">
 														</FORM>
 ");
 
@@ -354,10 +358,14 @@ echo ("
 $_Application_Module_Administration_Update_DB_Query_UPDATE_LINK				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links SET link_author='$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR',link_description='$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION',link_time='$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME',link_title='$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE',link_url='$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL' WHERE id='$_Application_Module_Administration_Update_LIST_LINK_ID'");
 
 if ($_Application_Module_Administration_Update_DB_Query_UPDATE_LINK) {
+
 													echo ($_Application_Module_Administration_Message_Update_LINK_UPDATED_SUCCESSFULLY);
+
 } else {
+
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_LINK_QUERY
+
+} // [ + ] IF: Database Query: Update Link Entry Variable Has Executed
 
 /*
  =============================================================================================================
@@ -367,11 +375,11 @@ if ($_Application_Module_Administration_Update_DB_Query_UPDATE_LINK) {
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_LINK);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Update Link Entry Form Variables Have Executed
 
-} // [ + ] IF_UPDATE
+} // [ + ] IF: Internal Application: Update Link Entry Form Variables Have Executed
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieiving Link Entries From S.Q.L. Database
 
 /*
  =============================================================================================================
@@ -381,7 +389,7 @@ $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_LINK);
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_LINKS);
 
-} // [ + ] IF_Update_LINKS
+} // [ + ] IF: Internal Application: Data IS Links Is Activated
 
 /*
  ============================================================================================================
@@ -495,8 +503,10 @@ fclose($_OPEN_NEWS_FILE);
 
 													echo ($_Application_Module_Administration_Message_Update_NEWS_UPDATED_SUCCESSFULLY);
 } else {
+
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_UPDATE_QUERY
+
+} // [ + ] IF: Database Query: Update News Entry Variable Has Executed
 
 /*
  =============================================================================================================
@@ -506,9 +516,9 @@ fclose($_OPEN_NEWS_FILE);
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_NEWS);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Update News Entry Variables Have Executed
 
-} // [ + ] IF_UPDATE
+} // [ + ] IF: Internal Application: Update News Entry By ID
 
 /*
  ============================================================================================================
