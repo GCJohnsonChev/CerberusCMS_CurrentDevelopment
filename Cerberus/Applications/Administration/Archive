@@ -1,0 +1,187 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Archive
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Archive Files and Archive Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Archive Files Form Post Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Archive Files :: File Selection
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_FILES					= $_POST['File_Selection'];
+
+/*
+ ============================================================================================================
+ + Archive Files :: Date and Timestamp
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_DATE 					= date("l_F_j_Y_g:i:s-A");
+
+/*
+ ============================================================================================================
+ + IF: Archive Files Form Has Not Executed, Display Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Archive_POST_ARCHIVE_FILES) {
+
+/*
+ ============================================================================================================
+ + Archive Files Form
+ ============================================================================================================
+*/
+
+echo ("
+													<CENTER><B>Archive System</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Archive\" METHOD=\"post\">
+																Archive Specifications<BR>
+																<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"File_Selection\">Placing an Asterisk ( * ) character into this Terminal will archive this entire system</TEXTAREA><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Archive Selection\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+if (system("zip -r ./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_POST_ARCHIVE_DATE.zip $_Application_Module_Administration_Archive_POST_ARCHIVE_FILES")) {
+
+													echo ($_Application_Module_Administration_Message_Archive_PACKAGE_COMPRESSION_SUCCESSFUL);
+
+} else {
+
+													echo ("$_Message_ERROR_ACTION_UNIVERSAL [ PHP Version ]");
+
+} // [ + ] IF: System Function: ZIP Selected Files
+
+} // [ + ] IF: Archive Form Variables Have Not Executed
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Display Archived and Packaged Files
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Read Archive Directory
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_SPECIFY_ARCHIVE_DIRECTORY				= "./Applications/Administration/System_Archive/";
+$_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY				= opendir($_Application_Module_Administration_Archive_SPECIFY_ARCHIVE_DIRECTORY);
+
+													echo ("<HR><CENTER><B>Existing Archives</B></CENTER><HR>");
+
+while (($_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY = readdir($_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY))) {
+
+if ($_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY == "." || $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY == ".." || $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+echo ("
+													<CENTER>
+														<TABLE BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+															<TR>
+															<TD WIDTH=\"80%\"><A HREF=\"./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\" TITLE=\":: Download The Archived Package :: $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\">$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY</A></TD>
+															<TD WIDTH=\"30%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Archive&amp;Delete&#61;$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\" TITLE=\":: Delete The Archived Package :: $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\">Delete</A></TD>
+															</TR>
+														</TABLE>
+													</CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Delete Archive Packages
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Delete"] == "$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY") {
+
+if (unlink("./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY"))
+
+													echo ($_Application_Module_Administration_Message_Archive_PACKAGE_DELETE_SUCCESSFUL);
+
+} else {
+
+													//echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Unlink Selected File
+
+} // [ + ] WHILE: Reading Archive Directory
+
+} // [ + ] IF: Directory IS NOT The Archived Packages
+
+/*
+ ============================================================================================================
+ + Close Directory: Archive Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY);
+?>

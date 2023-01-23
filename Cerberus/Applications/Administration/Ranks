@@ -1,0 +1,245 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Ranks
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Member Rank System Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Retrieve All Member Ranks From Database Server
+ +
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks ORDER BY id ASC LIMIT 1");
+
+while ($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS)) {
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve Member Ranks :: Male :: 0 - 4
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_0			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_0'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_1			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_1'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_2			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_2'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_3			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_3'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_4'];
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve Member Ranks :: Female :: 0 - 4
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_0			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_0'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_1			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_1'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_2			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_2'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_3			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_3'];
+$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4			= $_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_4'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Update Member Ranks Form :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Update Member Ranks Form :: Variables :: Post Variables :: Male Ranks
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0			= $_POST['Update_Rank_Male_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1			= $_POST['Update_Rank_Male_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2			= $_POST['Update_Rank_Male_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3			= $_POST['Update_Rank_Male_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4			= $_POST['Update_Rank_Male_4'];
+
+/*
+ ============================================================================================================
+ + Update Member Ranks Form :: Variables :: Post Variables :: Male Ranks :: Sanitization
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4);
+
+/*
+ ============================================================================================================
+ + Update Member Ranks Form :: Variables :: Post Variables :: Female Ranks
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0			= $_POST['Update_Rank_Female_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1			= $_POST['Update_Rank_Female_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2			= $_POST['Update_Rank_Female_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3			= $_POST['Update_Rank_Female_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4			= $_POST['Update_Rank_Female_4'];
+
+/*
+ ============================================================================================================
+ + Update Member Ranks Form :: Variables :: Post Variables :: Female Ranks :: Sanitization
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3);
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4);
+
+/*
+ ============================================================================================================
+ +
+ + Update Member Ranks Form
+ +
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0) {
+
+echo ("
+													<CENTER><B>Ranks</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Ranks\" METHOD=\"post\">
+															<BR>Male Ranks<HR>
+															Male Rank #1:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_0\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_0\" MAXLENGTH=\"100\"><BR>
+															Male Rank #2:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_1\" MAXLENGTH=\"100\"><BR>
+															Male Rank #3:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_2\" MAXLENGTH=\"100\"><BR>
+															Male Rank #4:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_3\" MAXLENGTH=\"100\"><BR>
+															Male Rank #5:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Male_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_MALE_4\" MAXLENGTH=\"100\"><BR><BR>
+															
+															Female Ranks<HR>
+															Female Rank #1:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_0\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_0\" MAXLENGTH=\"100\"><BR>
+															Female Rank #2:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_1\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_1\" MAXLENGTH=\"100\"><BR>
+															Female Rank #3:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_2\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_2\" MAXLENGTH=\"100\"><BR>
+															Female Rank #4:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_3\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_3\" MAXLENGTH=\"100\"><BR>
+															Female Rank #5:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Rank_Female_4\" VALUE=\"$_Application_Module_Administration_Ranks_LIST_RANK_GENDER_FEMALE_4\" MAXLENGTH=\"100\"><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update Ranks\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + Update S.Q.L. Database :: Member Ranks
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks SET 
+rank_gender_male_0='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0',
+rank_gender_male_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1',
+rank_gender_male_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2',
+rank_gender_male_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3',
+rank_gender_male_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4',
+rank_gender_female_0='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0',
+rank_gender_female_1='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1',
+rank_gender_female_2='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2',
+rank_gender_female_3='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3',
+rank_gender_female_4='$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4'
+WHERE id='1'");
+
+if ($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS) {
+
+													echo ($_Application_Module_Administration_Message_Ranks_RANKS_UPDATED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Update Rank System
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Member Rank Names
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Ranks_DB_Query_UPDATE_RANKS);
+
+} // [ + ] IF: Update Member Rank Form Variables Have Executed
+
+} // [ + ] WHILE: Retrieving All Member Ranks
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select Member Ranks
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Ranks_DB_Query_SELECT_RANKS);
+?>

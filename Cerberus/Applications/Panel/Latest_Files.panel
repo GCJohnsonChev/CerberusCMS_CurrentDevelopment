@@ -1,0 +1,78 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Panel->Latest_Files.panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Panel :: Latest Files
+ +
+ +
+ ================================================================
+*/
+
+$_Application_Module_Block_Files_DB_Query_SELECT_FILES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files ORDER BY id DESC LIMIT 10");
+
+if ($DB->num_rows($_Application_Module_Block_Files_DB_Query_SELECT_FILES) <= 0) {
+
+											echo ("No File Entries Exist");
+											
+} else {
+
+while ($_Application_Module_Block_Files_DB_Query_SELECT_FILES_Fetch_Array = $DB->fetch_array($_Application_Module_Block_Files_DB_Query_SELECT_FILES)) {
+
+$_Application_Module_Block_Files_LIST_FILE_ID				= $_Application_Module_Block_Files_DB_Query_SELECT_FILES_Fetch_Array['id'];
+$_Application_Module_Block_Files_LIST_FILE_DOWNLOADS			= $_Application_Module_Block_Files_DB_Query_SELECT_FILES_Fetch_Array['file_number_of_downloads'];
+$_Application_Module_Block_Files_LIST_FILE_TITLE			= $_Application_Module_Block_Files_DB_Query_SELECT_FILES_Fetch_Array['file_title'];
+
+											echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Block_Files_LIST_FILE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\"View File :: $_Application_Module_Block_Files_LIST_FILE_TITLE\">$_Application_Module_Block_Files_LIST_FILE_TITLE</A><BR>");
+
+} // [ + ] WHILE_FILES
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select Latest Files
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Block_Files_DB_Query_SELECT_FILES);
+?>

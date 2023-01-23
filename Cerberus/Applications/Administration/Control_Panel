@@ -1,0 +1,157 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Control_Panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Administration Control Panel
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+echo ("
+										<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel\" TITLE=\":: Close Open Applications ::\">Administration Control Panel</A> ]</CENTER>
+
+										<HR>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Administrators\" TITLE=\":: Manage Administrators & Members ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Administrators.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Administrators & Members ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications\" TITLE=\":: Manage Applications ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Applications.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Applications ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Archive\" TITLE=\":: Archive & Restore Files ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Backup.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Archive and Restore Files ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Banish\" TITLE=\":: Banish Internet Protocol Addresses & Network Ranges ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Banish.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Banish IP Addresses & Network Ranges ::\"></A>
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels\" TITLE=\":: Manage Blocks ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Blocks.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Blocks ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;File_Categories\" TITLE=\":: Manage File Download Categories ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_File_Categories.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Download Categories ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Forum\" TITLE=\":: Manage Forum ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Forum.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Forum ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Publish\" TITLE=\":: Publish Texts Such As Articles, News and Newsletters ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Publish.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Publish Texts Such As Articles, News and Newsletters ::\"></A>
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Ranks\" TITLE=\":: Manage Ranks ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Ranks.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Ranks ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Referrers\" TITLE=\":: View Referrers ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Referrers.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: View Referrers ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Settings\" TITLE=\":: Manage System Settings ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Settings.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Core Settings ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Terminal\" TITLE=\":: Execute Terminal Commands ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Terminal.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Execute Terminal Commands ::\"></A>
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Submissions\" TITLE=\":: View Submissions From Members ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Submissions.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: View Submissions From Members ::\"></A>
+												&nbsp;
+											<A HREF=\"./Applications/Administration/PHP_Information.php\" TITLE=\":: View Detailed Post-Hyper-Text-Pre-Processor Engine Information ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_PHP.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: View Detailed Post-Hyper-Text-Pre-Processor Engine Information ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages\" TITLE=\":: Manage Links & Custom Pages ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Web_Pages.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Links & Custom Web Pages ::\"></A>
+												&nbsp;
+											<A HREF=\"?InternalApplication&#61;Logout\" TITLE=\":: Logout & Secure-Delete Credentials ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Logout.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Logout & Secure-Delete Credentials ::\"></A>
+										</CENTER>
+
+										<HR>
+
+										<CENTER><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_PROJECT_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_PROJECT_VERSION_EXTENDED</A> ]</B></CENTER>
+
+										<HR>
+");
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Internal Application :: Administration-Level Applications
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Read Administration Applications
+ +
+ ============================================================================================================
+*/
+
+$_SPECIFY_ADMINISTRATION_APPLICATIONS_DIRECTORY			= "./Applications/Administration/";
+$_SPECIFY_ADMINISTRATION_APPLICATIONS_DIRECTORY_2		= "./Applications/Administration";
+$_OPEN_ADMINISTRATION_APPLICATIONS_DIRECTORY			= opendir($_SPECIFY_ADMINISTRATION_APPLICATIONS_DIRECTORY);
+
+while (($_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY = readdir($_OPEN_ADMINISTRATION_APPLICATIONS_DIRECTORY))) {
+
+if ($_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY == "." || $_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY == ".." || $_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+/*
+ ============================================================================================================
+ + Include Administration Applications
+ ============================================================================================================
+*/
+
+if ($_GET["Action"] == "$_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY") {
+
+										include_once "$_SPECIFY_ADMINISTRATION_APPLICATIONS_DIRECTORY_2/$_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY";
+} // [ + ] IF: Internal Application: Action
+
+} // [ + ] IF: Administration Applications Directory IS Anything ELSE Except The Administration Application
+
+} // [ + ] WHILE: Reading The Administration Applications Directory
+
+/*
+ ============================================================================================================
+ + Close Directory
+ ============================================================================================================
+*/
+
+closedir($_OPEN_ADMINISTRATION_APPLICATIONS_DIRECTORY);
+?>

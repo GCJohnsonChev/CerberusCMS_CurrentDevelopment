@@ -1,0 +1,214 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Banish
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Banishment and Filtration of Internet Networks
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Network Banishment :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Network Banishment :: Variables :: Internet Protocol Address Strings
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING		= $_POST['Internet_Protocol_Address_String'];
+$_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING);
+
+/*
+ ============================================================================================================
+ +
+ + Display Networking Banishment and Network Blocking Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+													<CENTER><B>Network Banishment and Network Blocking</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Banish\" METHOD=\"post\">
+															Internet Protocol Address String<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"Internet_Protocol_Address_String\">Internet Protocol Version: 4, Address String - Example: 123.456.789.012 *OR* Internet Protocol Version: 6, Address String - Example: 1234:5678:aa0:9012:44fe:df64:cfde:2990</TEXTAREA><BR><BR>
+
+															Internet Protocol Address Block<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"Internet_Protocol_Address_Block\">Internet Protocol Version: 4, Address Block - Example: 123.456.789.012 *OR* Internet Protocol Version: 6, Address Block - Example: 1234:5678:aa0:9012:44fe:df64:cfde:2990</TEXTAREA><BR><BR>
+
+															Domain Name Server Address String<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"Domain_Name_Server_Address_String\">Domain Name Server Address String - Example: 123.456.789.012</TEXTAREA><BR><BR>
+
+
+															Domain Name Server Address String<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"Domain_Name_Server_Address_Block\">Domain Name Server Address Block - Example: 123.456.789.012</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Network Block Selections\">
+														</FORM><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Network Banishment Variables Have Executed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING) {
+
+/*
+ ============================================================================================================
+ + Insert Internet Protocol Addresses Into Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Banish_DB_Query_Banish_Network				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks(ip_address_string)VALUES('$_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING')");
+
+if ($_Application_Module_Administration_Banish_DB_Query_Banish_Network) {
+
+													echo ($_Application_Module_Administration_Message_Banish_BANISHMENT_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query Has Executed
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Banish Internet Protocol Address
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Banish_DB_Query_Banish_Network);
+
+} // [ + ] IF: Network Banishment Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + Display Existing Network Banishments
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Retrieve Banned Networks From Database
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks ORDER BY id ASC");
+
+													echo ("<HR><CENTER><B>Existing Banished Networks</B></CENTER><HR>");
+
+if ($DB->num_rows($_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS) <= 0) {
+													echo ($_Application_Module_Administration_Message_Banish_BANISHMENT_ENTRIES_NULL);
+} else {
+
+while ($_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS)) {
+
+$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ID				= $_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS_Fetch_Array['id'];
+$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ADDRESS			= $_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS_Fetch_Array['ip_address_string'];
+
+echo ("
+													<CENTER>
+														<TABLE BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"0\" WIDTH=\"100%\">
+															<TR>
+																<TD WIDTH=\"70%\">Banished Network Address: <A HREF=\"http://www.WhoIs.sc/$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ADDRESS\" TITLE=\":: Who-Is Lookup Information On Network Address: $_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ADDRESS ::\" TARGET=\"_NEW\">$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ADDRESS</A></TD>
+																<TD WIDTH=\"30%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Banish&amp;Remove&#61;$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ID\" TITLE=\":: Remove Banishment From Network Address :: $_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ADDRESS ::\">Remove Banishment</A></TD>
+															</TR>
+														</TABLE>
+													</CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Remove Existing Network Address Banishments
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Remove"] == "$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ID") {
+
+$_Application_Module_Administration_Banish_DB_Query_REMOVE_NETWORK_ADDRESS			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks WHERE id='$_Application_Module_Administration_Banish_LIST_BANISHED_NETWORK_ID'");
+
+if ($_Application_Module_Administration_Banish_DB_Query_REMOVE_NETWORK_ADDRESS) {
+
+													echo ($_Application_Module_Administration_Message_Banish_BANISHMENT_REMOVAL_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Internal Application: Remove Network Address IS Activated
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete Banned Internet Protocol Address
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Banish_DB_Query_REMOVE_NETWORK_ADDRESS);
+
+} // [ + ] IF: S.Q.L. Query Delete From Network Banishments
+
+} // [ + ] WHILE: Retrieving List of Existing Banished Networks
+
+} // [ + ] IF: Number of Rows IS Less Than OR Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Retrieve Internet Protocol Addresses
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Banish_DB_Query_LIST_BANISHED_NETWORKS);
+?>

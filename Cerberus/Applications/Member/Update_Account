@@ -1,0 +1,889 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Update_Account
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Update Account
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+
+ 												echo ($_Application_Module_Member_Message_Update_Account_Header);
+
+/*
+ ================================================================
+ +
+ + Retrieive Member Account Details From Database
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array					= $DB->fetch_array($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS);
+
+/*
+ ================================================================
+ +
+ + Retrieve Member Database Column Entries
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+while ($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS)) {
+
+/*
+ ================================================================
+ + Member Account Details :: ID, Access Level
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ID							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCESS_LEVEL						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Settings :: Images
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_IMAGE_AVATAR						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_avatar'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_IMAGE_PICTURE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Settings :: Other
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_LANGUAGE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_language'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_NEWSLETTER					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_newsletter'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_THEME_DIRECTORY					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_theme_directory'];
+
+/*
+ ================================================================
+ + Member Account Details :: Personal Information
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_BIRTHDATE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_birthdate'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ADDRESS_HOME						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_home'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ADDRESS_MAIL						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_mail'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_FIRST						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_first'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_LAST						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_last'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_MIDDLE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_middle'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_NICKNAME						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_nickname'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_GENDER							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_gender'];
+
+/*
+ ================================================================
+ + Member Account Details :: Personal Digital Information
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account UserName and Password
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_USERNAME							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PASSWORD							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
+
+/*
+ ================================================================
+ + Member Account Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_BITCOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin_gold'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_DOGECOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_dogecoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_ETHEREUM				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_ethereum'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_LITECOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_litecoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_MAZACOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_mazacoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_NAMECOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_namecoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_PEERCOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_peercoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_PRIMECOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_primecoin'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_TRONCOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_tron'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_ZCASH				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_zcash'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Details :: Internet Protocol Addresses
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_IP_ADDRESS_AUTHORIZED					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorized'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_IP_ADDRESS_LAST_LOGIN					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_last_login'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_IP_ADDRESS_LOG						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_log'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Details :: Account Information
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_EXPERIENCE_AMOUNT					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_experience_amount'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_LAST_REFERRER						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_last_referrer'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_LOCATION_CURRENT						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_current'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_MOOD							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_mood'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_MUSIC							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_music'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_NUMBER_OF_POSTS						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_of_posts'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PASSWORD							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_about'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_SIGNATURE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_signature'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_RANK_LEVEL						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_rank_level'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_REGISTRATION_DATE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_REGISTRATION_DETAILS					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_details'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Status
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_KEY				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation_key'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_active'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_STATUS_ACCOUNT_BANNED					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_banned'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_URL_HOMEPAGE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_url_homepage'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Security
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE				= md5($_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Audio
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_soundcloud'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_spotify'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Business
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_business_linkedin'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Communications
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_discord'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_icq'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_skype'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_snapchat'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Gallery
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_gallery_instagram'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Posting
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_facebook'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_twitter'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Software Development
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_bitbucket'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_github'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_launchpad'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Security
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_security_keybase'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Video
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_video_youtube'];
+
+/*
+ ================================================================
+ + Member Account Details :: Social Media Accounts :: Video
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_NUMBER				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_credit_card_number'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_CVV					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_credit_card_cvv'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_EXPIRATION_DATE			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_credit_card_expiration_date'];
+
+/*
+ ================================================================
+ + Safe-HTML Code & Smiley Characters
+ ================================================================
+*/
+
+//$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT						= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT);
+//$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT						= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT);
+
+//$_Application_Module_Member_Update_Account_LIST_MEMBER_SIGNATURE						= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Member_Update_Account_LIST_MEMBER_SIGNATURE);
+//$_Application_Module_Member_Update_Account_LIST_MEMBER_SIGNATURE						= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Member_Update_Account_LIST_MEMBER_SIGNATURE);
+
+/*
+ ================================================================
+ +
+ + Post Variables :: Update Account Form
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Account Settings :: Personal Details
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST				= $_POST['member_account_name_first'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_MIDDLE				= $_POST['member_account_name_middle'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_LAST					= $_POST['member_account_name_last'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_NICKNAME				= $_POST['member_account_name_nickname'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_BIRTHDATE					= $_POST['member_account_birthdate'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_GENDER					= $_POST['member_account_gender'];
+
+/*
+ ================================================================
+ + Account Settings :: Physical Contact Information
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_HOME				= $_POST['member_account_address_home'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_MAILING				= $_POST['member_account_address_mailing'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_CURRENT				= $_POST['member_account_location_current'];
+
+/*
+ ================================================================
+ + Account Settings :: Digital Contact Information
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS			= $_POST['member_account_electronic_mail_address'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_URL_HOMEPAGE				= $_POST['member_account_url_homepage'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_ICQ 		= $_POST['member_account_socialmedia_communications_icq'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SKYPE 		= $_POST['member_account_socialmedia_communications_skype'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT 	= $_POST['member_account_socialmedia_communications_snapchat'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_DISCORD 	= $_POST['member_account_socialmedia_communications_discord'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_FACEBOOK 		= $_POST['member_account_socialmedia_posting_facebook'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_TWITTER 		= $_POST['member_account_socialmedia_posting_twitter'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_GALLERY_INSTAGRAM 		= $_POST['member_account_socialmedia_gallery_instagram'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_AUDIO_SPOTIFY 		= $_POST['member_account_socialmedia_audio_spotify'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_BUSINESS_LINKEDIN 		= $_POST['member_account_socialmedia_business_linkedin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_VIDEO_YOUTUBE 		= $_POST['member_account_socialmedia_video_youtube'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_SECURITY_KEYBASE 		= $_POST['member_account_socialmedia_security_keybase'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_BITBUCKET		= $_POST['member_account_socialmedia_programming_bitbucket'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_GITHUB		= $_POST['member_account_socialmedia_programming_github'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD		= $_POST['member_account_socialmedia_programming_launchpad'];
+
+/*
+ ================================================================
+ + Account Settings :: CryptoCurrency :: BlockChain
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN	 	= $_POST['member_account_cryptocurrency_address_bitcoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD 	= $_POST['member_account_cryptocurrency_address_bitcoin_gold'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_DOGECOIN	 	= $_POST['member_account_cryptocurrency_address_dogecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ETHEREUM	 	= $_POST['member_account_cryptocurrency_address_ethereum'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_LITECOIN	 	= $_POST['member_account_cryptocurrency_address_litecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_MAZACOIN	 	= $_POST['member_account_cryptocurrency_address_mazacoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_NAMECOIN	 	= $_POST['member_account_cryptocurrency_address_namecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PEERCOIN	 	= $_POST['member_account_cryptocurrency_address_peercoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PRIMECOIN	 	= $_POST['member_account_cryptocurrency_address_primecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_TRONCOIN	 	= $_POST['member_account_cryptocurrency_address_troncoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ZCASH		= $_POST['member_account_cryptocurrency_address_zcash'];
+
+/*
+ ================================================================
+ + Account Settings :: Miscellanious Settings
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MOOD					= $_POST['member_account_mood'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MUSIC					= $_POST['member_account_music'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO				= $_POST['member_account_settings_audio'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER			= $_POST['member_account_settings_newsletter'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME				= $_POST['member_account_settings_theme'];
+
+/*
+ ================================================================
+ + Account Settings :: Profile Images
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_AVATAR				= $_POST['member_account_profile_avatar'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_PICTURE				= $_POST['member_account_profile_picture'];
+
+/*
+ ================================================================
+ + Account Settings :: Profile About and Profile Signature
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT				= $_POST['member_account_profile_about'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_SIGNATURE				= $_POST['member_account_profile_signature'];
+
+/*
+ ================================================================
+ + Account Settings :: Account Encryption Keys ( Public )
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC			= $_POST['member_account_pgp_key_panel_public'];
+
+/*
+ ================================================================
+ + Account Settings :: Credit Card Information
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_BILLING				= $_POST['member_account_address_billing'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_NUMBER			= $_POST['member_account_credit_card_number'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_CVV				= $_POST['member_account_credit_card_cvv'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_EXPIRATION_DATE		= $_POST['member_account_credit_card_expiration_date'];
+
+/*
+ ================================================================
+ + Character Replace Variables
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Lowercase Replace
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS					= strtolower($_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS);
+
+/*
+ ================================================================
+ + Safe-HTML Code & Smiley Characters
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_ABOUT						= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_ABOUT);
+$_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_ABOUT						= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_ABOUT);
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE);
+$_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE);
+
+/*
+ ================================================================
+ +
+ + Internal Application :: Update Account :: Update Account Form
+ +
+ ================================================================
+*/
+
+if (!$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT) {
+
+echo ("
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Account\" METHOD=\"POST\">
+													<B>Personal Details</B><HR>
+													* First Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_name_first\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_FIRST\" MAXLENGTH=\"100\"><BR><BR>
+													* Middle Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_name_middle\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_MIDDLE\" MAXLENGTH=\"100\"><BR><BR>
+													* Last Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_name_last\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_LAST\" MAXLENGTH=\"100\"><BR><BR>
+													* Nick Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_name_nickname\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_NICKNAME\" MAXLENGTH=\"100\"><BR><BR>
+													* Birth-Date:<BR>
+														<INPUT TYPE=\"date\" NAME=\"member_account_birthdate\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_BIRTHDATE\" MAXLENGTH=\"100\"><BR><BR>
+													* Gender:<BR>
+														<SELECT NAME=\"member_account_gender\">
+															<OPTION VALUE=\"0\">Non-Specified</OPTION>
+															<OPTION VALUE=\"1\">Male</OPTION>
+															<OPTION VALUE=\"2\">Female</OPTION>
+														</SELECT><BR><BR>
+
+													<B>Physical Contact Information</B><HR>
+													Your Personal Information is completely voluntary and optional. This information is completely encrypted in the Database and this information will never be shared with anyone.<BR><BR>
+
+													* Home Address:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_address_home\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ADDRESS_HOME\" MAXLENGTH=\"100\"><BR><BR>
+													* Mailing Address:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_address_mailing\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ADDRESS_MAIL\" MAXLENGTH=\"100\"><BR><BR>
+													* Current Given Location:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_location_current\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_LOCATION_CURRENT\" MAXLENGTH=\"250\"><BR><BR>
+													* Current Exact Global Positioning System Location ( Based On Device and Browser )<BR>
+													Nothing here yet, cannot be modified<BR><BR>
+													* Current Exact Global Navigation Satellite System Location ( Based On Device and Browser )<BR>
+													Nothing here yet, cannot be modified<BR><BR>
+
+													<B>Billing Information</B><HR>
+													Your Personal Information is completely voluntary and optional. This information is completely encrypted in the Database and this information will never be shared with anyone.<BR><BR>
+													* Billing Address:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_address_billing\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ADDRESS_BILLING\" MAXLENGTH=\"100\"><BR><BR>
+													* Credit Card Number:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_credit_card_number\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CREDIT_CARD_NUMBER\" MAXLENGTH=\"100\"><BR><BR>
+													* Credit Card Verification Value ( CVV ):<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_credit_card_number_cvv\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CREDIT_CARD_NUMBER_CVV\" MAXLENGTH=\"100\"><BR><BR>
+													* Credit Card Expiration Date:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_credit_card_expiration_date\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CREDIT_CARD_EXPIRATION_DATE\" MAXLENGTH=\"100\"><BR><BR>
+
+													<B>Digital Contact Information</B><HR>
+													* Personal Electronic Mail Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_electronic_mail_address\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS\" MAXLENGTH=\"250\"><BR><BR>
+													* Personal Homepage:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_url_homepage\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_URL_HOMEPAGE\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Communications</I></B><BR>
+													* My ICQ:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_communications_icq\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ\" MAXLENGTH=\"250\"><BR><BR>
+													* My Skype:<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_communications_skype\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE\" MAXLENGTH=\"250\"><BR><BR>
+													* My Snapchat:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_communications_snapchat\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT\" MAXLENGTH=\"250\"><BR><BR>
+													* My Discord:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_communications_discord\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Scroll Posting</I></B><BR>
+													* My Facebook:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_posting_facebook\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" MAXLENGTH=\"250\"><BR><BR>
+													* My Twitter:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_posting_twitter\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Gallery</I></B><BR>
+													* My Instagram:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_gallery_instagram\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Audio Streaming</I></B><BR>
+													* My Spotify:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_audio_spotify\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Business</I></B><BR>
+													* My LinkedIn:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_business_linkedin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Video Streaming</I></B><BR>
+													* My YouTube:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_video_youtube\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Security</I></B><BR>
+													* My KeyBase:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_security_keybase\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B><I>Software Development</I></B><BR>
+													* My BITBucket:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_programming_bitbucket\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET\" MAXLENGTH=\"250\"><BR><BR>
+													* My GITHub:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_programming_github\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB\" MAXLENGTH=\"250\"><BR><BR>
+													* My Launchpad:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_socialmedia_programming_launchpad\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B>CryptoCurrency Platforms</B><HR><BR>
+
+													<B><I>BlockChain Technology</I></B><BR>
+													* My BitCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_bitcoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_BITCOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													* My BitCoin Gold Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_bitcoin_gold\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD\" MAXLENGTH=\"250\"><BR><BR>
+
+
+													* My DogeCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_dogecoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_DOGECOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+
+													* My Ethereum Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_ethereum\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_ETHEREUM\" MAXLENGTH=\"250\"><BR><BR>
+
+
+													* My LiteCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_litecoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_LITECOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+
+													* My MazaCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_mazacoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_MAZACOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													* My NameCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_namecoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_NAMECOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													* My PeerCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_peercoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_PEERCOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													* My PrimeCoin Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_primecoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_PRIMECOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													* My TronCoin:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_troncoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_TRONCOIN\" MAXLENGTH=\"250\"><BR><BR>
+
+													* My ZCash Address:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_zcash\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_ZCASH\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B>My Feelings</B><HR><BR>
+													* Current Mood:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_mood\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_MOOD\" MAXLENGTH=\"250\"><BR><BR>
+													* Current Music:<BR>
+														<INPUT TYPE=\"text\" NAME=\"member_account_music\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_MUSIC\" MAXLENGTH=\"250\"><BR><BR>
+
+													<B>Account Settings</B><HR><BR>
+													* Receive Newsletters ?<BR>
+														<SELECT NAME=\"member_account_settings_newsletter\">
+															<OPTION VALUE=\"1\">Yes</OPTION>
+															<OPTION VALUE=\"0\">No</OPTION>
+														</SELECT><BR><BR>
+													* Play Control Panel Audio ?<BR>
+														<SELECT NAME=\"member_account_settings_audio\">
+															<OPTION VALUE=\"0\">No</OPTION>
+															<OPTION VALUE=\"1\">Yes</OPTION>
+														</SELECT><BR><BR>
+
+													<B>Profile Specific Information</B><HR><BR>
+													* Profile About:<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_profile_about\">$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT</TEXTAREA><BR><BR>
+													* Profile & Comment Signature:<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_profile_signature\">$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_SIGNATURE</TEXTAREA><BR><BR>
+
+													<B>Account Security Information</B><HR><BR>
+													* Public PGP Encryption Key Block:<BR>
+													[ <A HREF=\"https://PGPKeyGen.com/\" TITLE=\":: Click Here To Generate Public and Private Pretty-Good-Privacy Encryption Key Pairs ::\" TARGET=\"_NEW\">Generate P.G.P. Encryption Key Pairs</A> ]<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_pgp_key_panel_public\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC</TEXTAREA><BR><BR>
+
+													<B>Account Images</B><HR><BR>
+													* Member Account Profile Image:<BR>
+													[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TITLE=\":: Upload New Profile Image ::\" TARGET=\"_NEW\">Upload New Profile Image</A> ]<BR>
+														<SELECT NAME=\"member_account_profile_picture\">
+");
+
+/*
+ ================================================================
+ +
+ + Read Member Directory :: For Updating Profile Image
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Read Member Directory Variables
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_Image_SPECIFY_MEMBER_DIRECTORY					= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/";
+$_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY						= opendir($_Application_Module_Member_Update_Account_Image_SPECIFY_MEMBER_DIRECTORY);
+
+/*
+ ================================================================
+ + Read Member Directory :: For Updating Profile Image
+ ================================================================
+*/
+
+while (($_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY = readdir($_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY))) {
+
+if ($_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY == "." || $_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY == ".." || $_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY\">$_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Prevent All L.F.I., R.F.I. Exploitation
+
+} // [ + ] WHILE: Read Member Directory: Profile Image
+
+/*
+ ================================================================
+ + Close Member Directory :: For Updating Profile Image
+ ================================================================
+*/
+
+closedir($_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY);
+
+/*
+ ================================================================
+ +
+ + Read Theme Directory :: Update Member Account Theme
+ +
+ ================================================================
+*/
+
+echo ("
+													</SELECT><BR><BR>
+													* Member Account Theme Selection:<BR>
+														<SELECT NAME=\"member_account_settings_theme\">
+");
+
+/*
+ ================================================================
+ + Read Theme Directory :: For Updating Member Account Theme
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_SPECIFY_THEME_DIRECTORY						= "./Theme/";
+$_Application_Module_Member_Update_Account_OPEN_THEME_DIRECTORY							= opendir($_Application_Module_Member_Update_Account_SPECIFY_THEME_DIRECTORY);
+
+while (($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY = readdir($_Application_Module_Member_Update_Account_OPEN_THEME_DIRECTORY))) {
+
+if ($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "." || $_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == ".." || $_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "index.php" || $_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "Global") {
+/**
+ * Do Nothing
+**/
+} else {
+
+															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY\">$_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Read System Theme Directory For: Theme Selection
+
+} // [ + ] WHILE: Reading System Theme Directory For: Theme Selection
+
+/*
+ ================================================================
+ + Close Theme Directory :: For Updating Member Account Theme
+ ================================================================
+*/
+
+closedir($_Application_Module_Member_Update_Account_OPEN_THEME_DIRECTORY);
+
+/*
+ ================================================================
+ +
+ + Read Avatar Image Directory :: For Updating Profile Avatar Image
+ +
+ ================================================================
+*/
+
+echo ("
+														</SELECT><BR><BR>
+													* Member Account Profile Avatar Image:<BR>
+													[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Avatars\" TITLE=\":: Open & Display All Profile Avatar Images ::\" TARGET=\"_NEW\">View All</A> ]<BR>
+														<SELECT NAME=\"member_account_profile_avatar\">
+");
+
+/*
+ ================================================================
+ + Read Avatar Image Directory :: For Updating Profile Avatar Image
+ ================================================================
+*/
+
+$_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY					= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/";
+$_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY						= opendir($_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY);
+
+while (($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY = readdir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY))) {
+
+if ($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "." || $_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == ".." || $_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY\">$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Stop All L.F.I., R.F.I. Exploitation
+
+} // [ + ] WHILE: Reading: Theme Directory :: Avatar Images
+
+/*
+ ================================================================
+ + Close Avatar Image Directory :: For Updating Account Profile Avatar Image
+ ================================================================
+*/
+
+closedir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY);
+
+echo ("
+														</SELECT><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Update Account\">
+												</FORM>
+");
+
+} else {
+
+/*
+ ================================================================
+ +
+ + Update Member Account Data Within S.Q.L. Database
+ +
+ ================================================================
+*/
+
+//member_experience_amount='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_EXPERIENCE_AMOUNT',
+
+$_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT	= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET
+member_birthdate='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_BIRTHDATE',
+member_address_cryptocurrency_bitcoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN',
+member_address_cryptocurrency_bitcoin_gold='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD',
+member_address_cryptocurrency_dogecoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_DOGECOIN',
+member_address_cryptocurrency_ethereum='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ETHEREUM',
+member_address_cryptocurrency_litecoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_LITECOIN',
+member_address_cryptocurrency_mazacoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_MAZACOIN',
+member_address_cryptocurrency_namecoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_NAMECOIN',
+member_address_cryptocurrency_peercoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PEERCOIN',
+member_address_cryptocurrency_primecoin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PRIMECOIN',
+member_address_cryptocurrency_tron='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_TRONCOIN',
+member_address_cryptocurrency_zcash='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ZCASH',
+member_address_home='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_HOME',
+member_address_mail='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_MAILING',
+member_electronic_mail_address='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS',
+member_gender='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_GENDER',
+member_image_avatar='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_AVATAR',
+member_image_picture='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_PICTURE',
+member_location_current='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_CURRENT',
+member_mood='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MOOD',
+member_music='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MUSIC',
+member_name_first='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST',
+member_name_last='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_LAST',
+member_name_middle='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_MIDDLE',
+member_name_nickname='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_NICKNAME',
+member_profile_about='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT',
+member_profile_signature='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_SIGNATURE',
+member_security_pgp_key_panel_public='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC',
+member_settings_language='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_LANGUAGE',
+member_settings_control_panel_audio='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO',
+member_settings_newsletter='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER',
+member_settings_theme_directory='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME',
+member_socialmedia_audio_spotify='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_AUDIO_SPOTIFY',
+member_socialmedia_business_linkedin='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_BUSINESS_LINKEDIN',
+member_socialmedia_communications_discord='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_DISCORD',
+member_socialmedia_communications_icq='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_ICQ',
+member_socialmedia_communications_skype='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SKYPE',
+member_socialmedia_communications_snapchat='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT',
+member_socialmedia_gallery_instagram='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_GALLERY_INSTAGRAM',
+member_socialmedia_posting_facebook='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_FACEBOOK',
+member_socialmedia_posting_twitter='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_TWITTER',
+member_socialmedia_programming_bitbucket='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_BITBUCKET',
+member_socialmedia_programming_github='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_GITHUB',
+member_socialmedia_programming_launchpad='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD',
+member_socialmedia_security_keybase='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_SECURITY_KEYBASE',
+member_socialmedia_video_youtube='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_VIDEO_YOUTUBE',
+member_url_homepage='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_URL_HOMEPAGE' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT) {
+
+/*
+ ================================================================
+ +
+ + Send Electronic Mail Notification :: Profile Update Details
+ +
+ ================================================================
+*/
+
+mail($_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS,"Profile updated :: $_GLOBAL_SYSTEM_SITE_TITLE","
+Dear [ $_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS ],
+============================================================
+Your Account Details have been updated at: $_GLOBAL_SYSTEM_SITE_TITLE - On: $_GLOBAL_LOCAL_SERVER_DATE
+
+If you did not make this change please notify a Moderator or Administrator of this System immediately. The Internet Protocol Address associated with this change is: [ $_GLOBAL_REMOTE_SERVER_ADDRESS ]
+============================================================
+Have a nice day,
+		~ $_GLOBAL_SYSTEM_SITE_TITLE
+
+[ $_GLOBAL_LOCAL_SERVER_ADDRESS ]
+");
+
+											echo ($_Application_Module_Member_Message_Update_Account_UPDATE);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Update_Account_UPDATE_ERROR);
+
+} // [ + ] IF: Database Query: Update Member Account Details
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Update Member Profile
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT);
+
+} // [ + ] IF_NULL
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select All From Members
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS);
+
+} // [ + ] WHILE: Retrieving Member Account Database Entries
+?>

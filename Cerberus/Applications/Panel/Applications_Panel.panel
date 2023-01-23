@@ -1,0 +1,69 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Panel->Applications_Panel.panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Panel :: Applications Panel
+ +
+ +
+ ================================================================
+*/
+
+$_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links ORDER BY application_link_row ASC");
+
+while ($_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS_Fetch_Array = $DB->fetch_array($_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS)) {
+
+$_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_NAME			= $_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS_Fetch_Array['application_link_name'];
+$_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_URL			= $_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS_Fetch_Array['application_link_url'];
+
+											echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"$_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_URL&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: Open & Display The Application Module :: $_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_NAME ::\">$_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_NAME</A><BR>");
+
+} // [ + ] WHILE_SQL_QUERY_SELECT_APPLICATION_LINKS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select All Application Links
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS);
+?>

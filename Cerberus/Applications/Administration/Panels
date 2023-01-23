@@ -1,0 +1,435 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Panels
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Application Panel Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Panel :: Form Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME				= $_POST['Install_Application_Panel_File_Name'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_ALIGNMENT				= $_POST['Install_Application_Panel_Alignment'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_STATUS				= $_POST['Install_Application_Panel_File_Status'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE					= $_POST['Install_Application_Panel_Title'];
+
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME);
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE);
+
+/*
+ ============================================================================================================
+ +
+ + Install Application Panel Form
+ +
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME) {
+
+echo ("
+													<CENTER><B>Install Application Panel</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels\" METHOD=\"post\">
+															Application Panel File Name:<BR>
+															Example: <I>Pictures</I> - Do not write .cerberus after the filename<BR>
+																<INPUT TYPE=\"text\" NAME=\"Install_Application_Panel_File_Name\" MAXLENGTH=\"250\"><BR>
+															Application Panel Alignment:<BR>
+																<SELECT NAME=\"Install_Application_Panel_Alignment\">
+																	<OPTION VALUE=\"0\">LEFT</OPTION>
+																	<OPTION VALUE=\"1\">RIGHT</OPTION>
+																</SELECT><BR>
+															Application Panel Active Status:<BR>
+																<SELECT NAME=\"Install_Application_Panel_File_Status\">
+																	<OPTION VALUE=\"0\">OFF</OPTION>
+																	<OPTION VALUE=\"1\">ON</OPTION>
+																</SELECT><BR>
+															Application Panel Title:<BR>
+															Example: <I>My Pictures</I><BR>
+																<INPUT TYPE=\"text\" NAME=\"Install_Application_Panel_Title\" MAXLENGTH=\"250\"><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Install Panel\">
+														</FORM><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + SQL Database Server Query: Install Application Panel
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_DB_Query_Install_Application_Panel					= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME','$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_ALIGNMENT','0','$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_STATUS','$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE')");
+
+if ($_Application_Module_Administration_Panels_DB_Query_Install_Application_Panel) {
+
+													echo ($_Application_Module_Administration_Message_Panels_INSTALL_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Install Application Panel
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Install Application Panel
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Panels_DB_Query_Install_Application_Panel);
+
+} // [ + ] IF: Install Application Panel Form Variables Have NOT Executed
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve All Existing Application Panel Entries
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels ORDER BY panel_file_name ASC");
+
+													echo ("<HR><CENTER><B>Existing Application Panels</B></CENTER><HR>");
+
+while ($_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS)) {
+
+$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID						= $_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array['id'];
+$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME					= $_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array['panel_file_name'];
+$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ALIGNMENT					= $_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array['panel_alignment'];
+$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ROW						= $_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array['panel_row'];
+$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME_STATUS				= $_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array['panel_file_status'];
+$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_TITLE						= $_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS_Fetch_Array['panel_title'];
+
+echo ("
+													<CENTER>
+														<TABLE BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+															<TR>
+																<TD WIDTH=\"70%\">Application Panel File Name: <B>$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME</B></TD>
+																<TD WIDTH=\"10%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels&amp;DeleteID&#61;$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID\" TITLE=\":: Delete The Application Panel :: $_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME ::\">Delete</A></TD>
+																<TD WIDTH=\"10%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels&amp;UpdateID&#61;$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID\" TITLE=\":: Update The Application Panel :: $_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME ::\">Update</A></TD>
+																<TD WIDTH=\"5%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels&amp;MoveUp&#61;$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID\" TITLE=\":: Move Application Panel Up :: $_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME ::\">[ + ]</A></TD>
+																<TD WIDTH=\"5%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels&amp;MoveDown&#61;$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID\" TITLE=\":: Move Application Panel Down :: $_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME ::\">[ - ]</A></TD>
+															</TR>
+														</TABLE>
+													</CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Delete Selected Application Panel
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteID"] == "$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID") {
+
+
+$_Application_Module_Administration_Panels_DB_Query_Delete_PANEL_ID				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE id='$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID'");
+
+if ($_Application_Module_Administration_Panels_DB_Query_Delete_PANEL_ID) {
+
+													echo ($_Application_Module_Administration_Message_Panels_DELETE_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Delete Application Panel
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete Application Panel
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Panels_DB_Query_Delete_PANEL_ID);
+
+} // [ + ] IF: S.Q.L. Query: Delete Selected Application Panel
+
+/*
+ ============================================================================================================
+ +
+ + Update Selected Application Panel
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateID"] == "$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID") {
+
+/*
+ ============================================================================================================
+ +
+ + Update Selected Application Panel :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Update Selected Application Panel :: Post Variables :: Panel Specifications
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME				= $_POST['Update_Application_Panel_File_Name'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_ALIGNMENT				= $_POST['Update_Application_Panel_File_Alignment'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_STATUS			= $_POST['Update_Application_Panel_File_Status'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE				= $_POST['Update_Application_Panel_File_Title'];
+
+/*
+ ============================================================================================================
+ + Post Variables->Sanitize Input Characters
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME);
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE);
+
+/*
+ ============================================================================================================
+ + If Update Application Panel Form Has Not Executed, Display Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE) {
+
+/*
+ ============================================================================================================
+ +
+ + Application Panel Update Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+													<BR><HR><CENTER><B>Currently Updating Application Panel: <I>$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME</I></B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels&UpdateID=$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID\" METHOD=\"post\">
+															Currently Updating Application Panel Name: <I>$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME</I> ID Number: <I>$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID</I><BR><BR>
+															Application Panel File Name:<BR>
+															Example: <I>Pictures</I> - Do not write .blk after the filename.<BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Application_Panel_File_Name\" VALUE=\"$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_FILE_NAME\" MAXLENGTH=\"250\"><BR>
+															Application Panel Alignment:<BR>
+																<SELECT NAME=\"Update_Application_Panel_File_Alignment\">
+																	<OPTION VALUE=\"0\">LEFT</OPTION>
+																	<OPTION VALUE=\"1\">RIGHT</OPTION>
+																</SELECT><BR>
+															Application Panel Active Status:<BR>
+																<SELECT NAME=\"Update_Application_Panel_File_Status\">
+																	<OPTION VALUE=\"0\">OFF</OPTION>
+																	<OPTION VALUE=\"1\">ON</OPTION>
+																</SELECT><BR>
+															Application Panel Title:<BR>
+															Example: <I>My Pictures</I><BR>
+																<INPUT TYPE=\"text\" NAME=\"Update_Application_Panel_File_Title\" VALUE=\"$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_TITLE\" MAXLENGTH=\"250\"><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Update\">
+														</FORM><HR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + IF: Application Panel Update Form Has Executed, Update Application Panel S.Q.L. Entry
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels SET panel_file_name='$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME',panel_alignment='$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_ALIGNMENT',panel_file_status='$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_STATUS',panel_title='$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE' WHERE id='$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID'");
+
+if ($_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL) {
+
+													echo ($_Application_Module_Administration_Message_Panels_UPDATE_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Update Application Panel
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Application Panel
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL);
+
+} // [ + ] IF: Update Application Panel Form Variables Have NOT Executed
+
+} // [ + ] IF: Internal Application: Update Application Panel By ID
+
+/*
+ ============================================================================================================
+ +
+ + Move Selected Application Panel Up
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["MoveUp"] == "$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID") {
+
+$_Application_Module_Administration_Panels_INCREMENT_APPLICATION_PANEL_ROW 			= $_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ROW + 1;
+
+$_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL_INCREMENT_ROW 	= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels SET panel_row='$_Application_Module_Administration_Panels_INCREMENT_APPLICATION_PANEL_ROW' WHERE id='$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID'");
+
+if ($_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL_INCREMENT_ROW) {
+
+													echo ($_Application_Module_Administration_Message_Panels_MOVEUP_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Move Application Panel Row Up
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Selected Application Panel
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL_INCREMENT_ROW);
+
+} // [ + ] IF: Internal Application: Move Application Panel Up
+
+/*
+ ============================================================================================================
+ +
+ + Move Selected Application Panel Down
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["MoveDown"] == "$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID") {
+
+$_Application_Module_Administration_Panels_DECREMENT_APPLICATION_PANEL_ROW			= $_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ROW - 1;
+
+$_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL_DECREMENT_ROW	= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels SET panel_row='$_Application_Module_Administration_Panels_DECREMENT_APPLICATION_PANEL_ROW' WHERE id='$_Application_Module_Administration_Panels_LIST_APPLICATION_PANEL_ID'");
+
+if ($_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL_DECREMENT_ROW) {
+
+													echo ($_Application_Module_Administration_Message_Panels_MOVEDOWN_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Move Application Panel Row Down
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Selected Application Panel
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Panels_DB_Query_UPDATE_APPLICATION_PANEL_DECREMENT_ROW);
+
+} // [ + ] IF: Internal Application: Move Application Panel Row Down
+
+} // [ + ] IF: Application Panel Array
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All Application Panel Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION_PANELS);
+
+/*
+ ============================================================================================================
+ +
+ + Upload Application Panel File
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_SPECIFY_APPLICATION_PANEL_UPLOAD_DIRECTORY 		= "./Applications/Panel/";
+$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE			= $_Application_Module_Administration_Panels_SPECIFY_APPLICATION_PANEL_UPLOAD_DIRECTORY . basename($_FILES['Upload_Application_Panel_File_Name']['name']);
+$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TEMPORARY		= $_POST['Upload_Application_Panel_Temporary'];
+
+/*
+ ============================================================================================================
+ + IF: Application Panel Upload Form Has Not Executed, Display Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TEMPORARY) {
+
+echo ("
+													<BR><HR><CENTER><B>Upload Application Panel</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels\" METHOD=\"post\" ENCTYPE=\"multipart/form-data\">
+																<INPUT TYPE=\"hidden\" NAME=\"Upload_Application_Panel_Temporary\" VALUE=\"1\">
+															This Application Panel File must have a File Extension of: <I>.panel</I> which is case-sensitive.<BR>
+																<INPUT TYPE=\"file\" NAME=\"Upload_Application_Panel_File_Name\"><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Upload Application Panel\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+if (move_uploaded_file($_FILES['Upload_Application_Panel_File_Name']['tmp_name'], $_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE)) {
+
+													echo ($_Application_Module_Administration_Message_Panels_UPLOAD_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Upload Application Panel File
+
+} // [ + ] IF: Upload Application Panel Form Variables Have NOT Executed
+?>

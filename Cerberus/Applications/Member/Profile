@@ -1,0 +1,693 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Profile
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Member Profile
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Retrieve Member Database Column Entries
+ +
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members");
+
+while ($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS)) {
+
+/*
+ ================================================================
+ + Member Account Details :: ID, Access Level
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_ID						= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Settings :: Images
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_avatar'];
+$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account Settings :: Other
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_LANGUAGE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_language'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_newsletter'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_theme_directory'];
+
+/*
+ ================================================================
+ + Member Account Details :: Personal Information
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_BIRTHDATE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_birthdate'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_HOME					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_home'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_MAIL					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_mail'];
+$_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_first'];
+$_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_last'];
+$_Application_Module_Members_Profile_LIST_MEMBER_NAME_MIDDLE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_middle'];
+$_Application_Module_Members_Profile_LIST_MEMBER_NAME_NICKNAME					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_nickname'];
+$_Application_Module_Members_Profile_LIST_MEMBER_GENDER						= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_gender'];
+
+/*
+ ================================================================
+ + Member Account Details :: Personal Digital Information
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+
+/*
+ ================================================================
+ + Member Account Details :: Account UserName and Password
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PASSWORD					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
+
+/*
+ ================================================================
+ + Member Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_BITCOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_BITCOIN_GOLD				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin_gold'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_DOGECOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_dogecoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_ETHEREUM				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_ethereum'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_LITECOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_litecoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_MAZACOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_mazacoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_NAMECOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_namecoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_PEERCOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_peercoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_PRIMECOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_primecoin'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_TRONCOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_tron'];
+$_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_ZCASH					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_zcash'];
+
+/*
+ ================================================================
+ + Member Details :: Account Details :: Internet Protocol Addresses
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_IP_ADDRESS_AUTHORIZED				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorized'];
+$_Application_Module_Members_Profile_LIST_MEMBER_IP_ADDRESS_LAST_LOGIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_last_login'];
+$_Application_Module_Members_Profile_LIST_MEMBER_IP_ADDRESS_LOG					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_log'];
+
+/*
+ ================================================================
+ + Member Details :: Account Details :: Account Information
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_experience_amount'];
+$_Application_Module_Members_Profile_LIST_MEMBER_LAST_REFERRER					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_last_referrer'];
+$_Application_Module_Members_Profile_LIST_MEMBER_LOCATION_CURRENT				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_current'];
+$_Application_Module_Members_Profile_LIST_MEMBER_MOOD						= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_mood'];
+$_Application_Module_Members_Profile_LIST_MEMBER_MUSIC						= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_music'];
+$_Application_Module_Members_Profile_LIST_MEMBER_NUMBER_OF_POSTS				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_of_posts'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PASSWORD					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_ABOUT					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_about'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_SIGNATURE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_signature'];
+$_Application_Module_Members_Profile_LIST_MEMBER_RANK_LEVEL					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_rank_level'];
+$_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
+$_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DETAILS				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_details'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
+
+/*
+ ================================================================
+ + Member Details :: Account Status
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_KEY			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation_key'];
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_active'];
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_banned'];
+$_Application_Module_Members_Profile_LIST_MEMBER_URL_HOMEPAGE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_url_homepage'];
+
+/*
+ ================================================================
+ + Member Details :: Account Security
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE			= md5($_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Audio
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_soundcloud'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_spotify'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Business
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_business_linkedin'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Communications
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_discord'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_icq'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_skype'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_snapchat'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Gallery
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_gallery_instagram'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Posting
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_facebook'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_twitter'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Software Development
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_bitbucket'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_github'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_launchpad'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Security
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_security_keybase'];
+
+/*
+ ================================================================
+ + Member Details :: Social Media Accounts :: Video
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_video_youtube'];
+
+/*
+ ================================================================
+ +
+ + Member Account Profile :: Loops
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + IF: Null Member Account Picture, Replace With Default Picture
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY				= "./Member/$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE";
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE == "") {
+
+	$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY	 		= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} // [ + ] IF: Null Member Account Picture
+
+/*
+ ================================================================
+ + IF: Account Picture Does Not Exist, Set No Image Picture
+ ================================================================
+*/
+
+if (!file_exists($_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY)) {
+
+	$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} // [ + ] IF: Null Member Account Picture
+
+/*
+ ================================================================
+ + IF: Member Account Is Activated, Set Yes or No
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION = "1") {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "Yes";
+
+} else {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "No";
+
+} // [ + ] IF: Member Account Is Activated
+
+/*
+ ================================================================
+ + IF: Member Account Settings :: Newsletter Is On or Off, Set Display Variable
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER = "1") {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "Yes";
+
+} else {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "No";
+
+} // [ + ] IF: Member Account Newsletter Setting Is On or Off
+
+/*
+ ================================================================
+ + IF: Member Account Is Banned, Set Yes or No
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED <= "0") {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "No";
+
+} else {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "Yes";
+
+} // [ + ] IF: Member Accounts Is Banned
+
+/*
+ ================================================================
+ + IF: Member Account Is Active, Set Yes or No
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE = "1") {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "Yes";
+
+} else {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "No";
+
+} // [ + ] IF: Member Account Is Active
+
+/*
+ ================================================================
+ + IF: Member Account Access Level Is: Registered Member
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "1" ) {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Registered Member";
+
+} // [ + ] IF: Member Account Access Level Is Registered Member
+
+/*
+ ================================================================
+ + IF: Member Account Access Level Is: Administrator
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "2" ) {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Administrator";
+
+} // [ + ] IF: Member Account Access Level Is Registered Member
+
+/*
+ ================================================================
+ + IF: Member Account Access Level Is: Services Root Administrator
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "3" ) {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Services Root Administrator";
+
+} // [ + ] IF: Member Account Access Level Is Registered Member
+
+/*
+ ================================================================
+ +
+ + Internal Application :: Display :: Account Information
+ +
+ ================================================================
+*/
+
+if ($_GET["Name"] == "$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME") {
+
+echo ("
+											<CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;AccountDetails\" TITLE=\":: Display Detailed Information For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST\">:: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::</A>&nbsp;]</CENTER>
+												<HR>
+													<A HREF=\"$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: Open & Display This Image ::\"><IMG SRC=\"$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME :: $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" ALT=\":: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME :: $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" WIDTH=\"120\" HEIGHT=\"120\"></A><BR><BR>
+													$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_ABOUT
+												<HR>
+													Comment Signature:<BR>
+													$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_SIGNATURE
+												<HR>
+");
+
+/*
+ ================================================================
+ +
+ + Internal Application :: Display :: Detailed Account Information
+ +
+ ================================================================
+*/
+
+if ($_GET["Display"] == "AccountDetails") {
+
+echo ("
+											<BR><CENTER><B>:: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST :: More Information ::</B></CENTER>
+											<HR><BR>
+												<B>Detailed Account Information</B><HR><BR>
+
+												<I>Member Personal Information</I><BR>
+												&nbsp;*&nbsp;Name, First: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST<BR>
+												&nbsp;*&nbsp;Name, Last: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST<BR>
+												&nbsp;*&nbsp;Name, Middle: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_MIDDLE<BR>
+												&nbsp;*&nbsp;Name, Nickname: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_NICKNAME<BR>
+												&nbsp;*&nbsp;Birthdate: $_Application_Module_Members_Profile_LIST_MEMBER_BIRTHDATE<BR>
+												&nbsp;*&nbsp;Gender: $_GLOBAL_MEMBER_GENDER_DISPLAY<BR>
+												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Account Profile Image :: $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE</A><BR><BR>
+
+												<I>Account Registration and Details</I><BR>
+												&nbsp;*&nbsp;Account Registered On: $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE<BR>
+												&nbsp;*&nbsp;Current Location: $_Application_Module_Members_Profile_LIST_MEMBER_LOCATION_CURRENT<BR>
+												&nbsp;*&nbsp;Current Avatar: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR>
+												&nbsp;*&nbsp;Is This Account Activated ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account Banned ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account Active ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account a Newsletter Recipient ?: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY<BR>
+												&nbsp;*&nbsp;Account Access Level: $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY<BR>
+												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: Last Web-Page View ::\">Last Web-Page View</A><BR><BR>
+
+												<I>Activity Information</I><BR>
+												&nbsp;*&nbsp;Currently Feeling: $_Application_Module_Members_Profile_LIST_MEMBER_MOOD<BR>
+												&nbsp;*&nbsp;Currently Listening To: $_Application_Module_Members_Profile_LIST_MEMBER_MUSIC<BR><BR>
+
+												<I>Contact Information</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR><BR>
+
+												<I>Personal Servers</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Personal Web-Page</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"./Member/$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME/\" TITLE=\":: Open & View Home Web-Space ::\">Home Web-Space</A><BR><BR>
+
+												<I>Member' Account Statistics</I><BR>
+												&nbsp;*&nbsp;Experience Amount: $_Application_Module_Members_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT<BR>
+												&nbsp;*&nbsp;Rank Level: $_Application_Module_Members_Profile_LIST_MEMBER_RANK_LEVEL<BR>
+												&nbsp;*&nbsp;Total Number of Posts System-Wide: $_Application_Module_Members_Profile_LIST_MEMBER_NUMBER_OF_POSTS<BR>
+												&nbsp;*&nbsp;Favorite Theme: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY<BR><BR>
+
+												<B>Digital Social Media Networks, Digital Communications Networks</B><HR><BR>
+
+												<I>Audio Streaming Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.SoundCloud.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD\" TITLE=\"SoundCloud :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD\" TARGET=\"_NEW\">SoundCloud</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Spotify.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY\" TITLE=\"Spotify :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY\" TARGET=\"_NEW\">Spotify</A><BR><BR>
+
+												<I>Business Related Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Linkedin.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" TITLE=\"Linkedin :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" TARGET=\"_NEW\">LinkedIn</A><BR><BR>
+
+												<I>Gallery Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Instagram.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" TITLE=\"Instagram :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" TARGET=\"_NEW\">Instagram</A><BR><BR>
+
+												<I>Scroll Posting Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.FaceBook.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" TITLE=\"Facebook :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" TARGET=\"_NEW\">Facebook</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Twitter.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" TITLE=\"Twitter :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" TARGET=\"_NEW\">Twitter</A><BR><BR>
+
+
+												<I>Video Streaming Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.YouTube.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TITLE=\"YouTube :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TARGET=\"_NEW\">YouTube</A><BR><BR>
+
+
+												<I><B>Digital Communications Networks</B></I><BR>
+												&nbsp;*&nbsp;<A TITLE=\"Discord :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD\">Discord</A><BR>
+												&nbsp;*&nbsp;<A TITLE=\"ICQ :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ\">ICQ</A><BR>
+												&nbsp;*&nbsp;<A TITLE=\"Skype :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE\">Skype</A><BR>
+												&nbsp;*&nbsp;<A TITLE=\"Snapchat :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT\">Snapchat</A><BR><BR>
+
+												<B>Software Development Platforms</B><HR><BR>
+
+												<I>GIT</I><BR>
+												&nbsp;*&nbsp;BITBucket: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET<BR>
+												&nbsp;*&nbsp;GITHub: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB<BR>
+												&nbsp;*&nbsp;LaunchPad: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD<BR><BR>
+
+												<I>Mercurial</I><BR>
+												&nbsp;*&nbsp;CodeBase:<BR><BR>
+
+												<B>CryptoCurrency Platforms</B><HR><BR>
+
+												<I>CryptoCurrency BlockChains</I><BR>
+												* BitCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_BITCOIN<BR>
+												* BitCoin Gold: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_BITCOIN_GOLD<BR>
+												* DogeCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_DOGECOIN<BR>
+												* Ethereum: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_ETHEREUM<BR>
+												* LiteCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_LITECOIN<BR>
+												* MazaCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_MAZACOIN<BR>
+												* NameCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_NAMECOIN<BR>
+												* PeerCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_PEERCOIN<BR>
+												* PrimeCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_PRIMECOIN<BR>
+												* TronCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_TRONCOIN<BR>
+												* ZCash: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_ZCASH<BR><BR>
+
+												<B>Security Information</B><HR><BR>
+
+												<I>Security Accounts</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.KeyBase.io/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TITLE=\"KeyBase :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TARGET=\"_NEW\">KeyBase</A><BR><BR>
+
+												<I>Digital Fingerprints</I><BR>
+												&nbsp;*&nbsp;Public P.G.P. Key Block => Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE</A><BR><BR>
+
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;Add&#61;Yes\" METHOD=\"post\">
+													<INPUT TYPE=\"hidden\" NAME=\"post_save_friend\" VALUE=\"$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\"><INPUT TYPE=\"submit\" VALUE=\"Add To Friends List\">
+												</FORM>
+											<HR>
+											[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\" TITLE=\":: Close :: More Information ::\">Close</A> ]<BR><BR>
+");
+
+} // [ + ] IF_Display_Statistics
+
+/*
+ ================================================================
+ +
+ + Display Profile Comments
+ +
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments WHERE comment_application_id='$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME' AND comment_application_name='PROFILE' ORDER BY id DESC LIMIT 25");
+
+echo ("
+												<CENTER>&nbsp;</CENTER>
+												<CENTER><B>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;CommentField\" TITLE=\"Comment :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Post Comment</A> ]</B></CENTER>
+											<HR>
+												<CENTER>&nbsp;</CENTER>
+");
+
+if ($DB->num_rows($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS) <= 0) {
+
+											echo ($_Application_Module_Member_Message_Profile_NO_COMMENTS);
+
+} // [ + ] IF: Comment Entry Number of Rows Is Less Than or Equal To 0
+
+/*
+ ================================================================
+ + List Comment Entries
+ ================================================================
+*/
+
+while ($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array = $DB->fetch_array($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS)) {
+
+$_Application_Module_Members_Profile_LIST_COMMENT_ID						= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['id'];
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR					= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['comment_author'];
+$_Application_Module_Members_Profile_LIST_COMMENT_DATA						= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['comment_data'];
+$_Application_Module_Members_Profile_LIST_COMMENT_APPLICATION_ID				= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['comment_application_id'];
+$_Application_Module_Members_Profile_LIST_COMMENT_APPLICATION_NAME				= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['comment_application_name'];
+$_Application_Module_Members_Profile_LIST_COMMENT_TIME						= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['comment_time'];
+
+/*
+ ================================================================
+ + Display Comment Authorship
+ ================================================================
+*/
+
+$_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT 	= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR'");
+
+while ($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array = $DB->fetch_array($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT)) {
+
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_AVATAR					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_avatar'];
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_city'];
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_EXPERIENCE_AMOUNT			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_experience_amount'];
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_JOIN_DATE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_join_date'];
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_signature'];
+
+/*
+ ================================================================
+ + IF: Comment Author Signature Is Null
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE == "") {
+
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE 				= "None";
+
+}// [ + ] IF: Comment Author Signature Is Null
+
+/*
+ ================================================================
+ + IF: Comment Author Signature Is Null
+ ================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY == "") {
+
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY 					= "Unknown";
+
+} // [ + ] IF_NULL_CITY
+
+/*
+ ================================================================
+ + Display Comments
+ ================================================================
+*/
+
+echo ("
+											<CENTER>
+												<TABLE BORDER=\"1\" WIDTH=\"100%\">
+													<TR>
+														<TD VALIGN=\"top\">
+															<IMG SRC=\"Theme/$_GLOBAL_MEMBER_THEME/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_AVATAR\" TITLE=\"Avatar\" ALT=\"Avatar\"><HR>
+															<B>Member</B>: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR\" TITLE=\"Profile: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR\">$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR</A><BR><B>Location</B>: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY<BR><B>Experience</B>: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_EXPERIENCE_AMOUNT<HR>
+															[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;ModifyCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Modify This Comment Entry ::\">Modify</A>&nbsp;-&nbsp;
+															<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;DeleteCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Delete This Comment Entry ::\">Delete</A>&nbsp;]
+														</TD>
+
+														<TD VALIGN=\"top\" WIDTH=\"100%\"><B>Comment</B>: <I><B>$_Application_Module_Members_Profile_LIST_COMMENT_DATA</B></I><HR><B>Signature</B>:<BR>$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE<HR><B>Posted</B>: $_Application_Module_Members_Profile_LIST_COMMENT_TIME</TD>
+													</TR>
+												</TABLE>
+											</CENTER><BR>
+");
+
+} // [ + ] WHILE_AUTHOR
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Members For Comment
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT);
+
+} // [ + ] WHILE_COMMENTS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Comments
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select From Members
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS);
+
+/*
+ ================================================================
+ +
+ + Internal Application :: Display :: Comment Form
+ +
+ ================================================================
+*/
+
+if ($_GET["Display"] == "CommentField") {
+
+echo ("
+											$_GLOBAL_TEXTEDITOR_BUTTONS
+											<BR><BR><B>Comment:</B><BR>
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment\" METHOD=\"post\">
+												<INPUT TYPE=\"hidden\" NAME=\"post_application_name\" VALUE=\"PROFILE\">
+												<INPUT TYPE=\"hidden\" NAME=\"post_application_id\" VALUE=\"$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"post_comment_data\" ID=\"WYSIWYG\"></TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Post Comment\">
+											</FORM>
+");
+
+} // [ + ] IF: Internal Application: Display Comment Form
+
+} // [ + ] IF: Internal Application: Display Member Account Information
+
+} // [ + ] WHILE: Retrieving Member Account Directory
+?>

@@ -1,0 +1,105 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Terminal
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Terminal
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Terminal Command :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Terminal Command :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND			= $_POST['Terminal_Command'];
+
+/*
+ ============================================================================================================
+ +
+ + SQL Query Form
+ +
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND) {
+
+echo ("
+													<CENTER><B>Terminal Command</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Terminal\" METHOD=\"post\">
+															<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"Terminal_Command\">Example: SELECT * FROM _some_table_ ~ Note: This text-area field is using double quotes and the variable this command will execute through is using an apostrophe character</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Execute Command\">
+														</FORM>
+");
+
+} else {
+	
+										echo ("Executing Terminal Command: '$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND'<HR>");
+	
+$_Application_Module_Administration_Terminal_EXECUTE_TERMINAL_COMMAND			= shell_exec($_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND);
+
+if ($_Application_Module_Administration_Terminal_EXECUTE_TERMINAL_COMMAND) {
+
+										echo ("Terminal Command Executed Successfully<HR>");
+
+} else {
+
+										echo ("I was not able to Execute that command<HR>");	
+
+} // [ + ] IF: Terminal Command Has Executed Through Shell
+
+
+} // [ + ] IF: Terminal Command Form Variables Have NOT Executed
+?>

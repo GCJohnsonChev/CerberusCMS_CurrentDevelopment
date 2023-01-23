@@ -1,0 +1,370 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->Applications
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Application Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Install Application Form :: Post Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 		= $_POST['Install_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION 	= $_POST['Install_Application_File_Permissions'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 		= $_POST['Install_Application_File_Status'];
+
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME);
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Install Application
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Display Install Application Form
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + IF: Installation Application Form Variables Have Not Executed, Display Form
+ +
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME) {
+
+echo ("
+											<CENTER><B>Install Application</B></CENTER><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications\" METHOD=\"post\">
+													Application File Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"Install_Application_File_Name\" MAXLENGTH=\"100\"><BR>
+													Application File Permissions:<BR>
+														<SELECT NAME=\"Install_Application_File_Permissions\">
+															<OPTION VALUE=\"0\">Public</OPTION>
+															<OPTION VALUE=\"1\">Member</OPTION>
+															<OPTION VALUE=\"2\">Administrator</OPTION>
+														</SELECT><BR>
+													Application File Status:<BR>
+														<SELECT NAME=\"Install_Application_File_Status\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Install Application\">
+												</FORM><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Insert Application Installation Data Into Database
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_DB_Query_Insert_Application			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME','$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION','$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS')");
+
+if ($_Application_Module_Administration_Applications_DB_Query_Insert_Application) {
+
+											echo ($_Application_Module_Administration_Message_Applications_APPLICATION_INSTALL_SUCCESSFUL);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query Insert Application Data
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query:: Insert Application
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Applications_DB_Query_Insert_Application);
+
+} // [ + ] IF: Install Application Form Has Not Executed
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Upload Application Module
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Upload Application Module Form :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY			= "./Applications/Member/";
+$_Application_Module_Administration_Applications_UPLOAD_FILE 					= $_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['Upload_Application_File_Name']['name']);
+$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 				= $_POST['post_temp'];
+
+/*
+ ============================================================================================================
+ +
+ + Display Upload Application Form
+ +
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP ) {
+
+echo ("
+													<HR><CENTER><B>Upload Application File</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications\" METHOD=\"post\" ENCTYPE=\"multipart/form-data\">
+															<INPUT TYPE=\"hidden\" NAME=\"post_temp\" VALUE=\"1\">
+															<INPUT TYPE=\"file\" NAME=\"Upload_Application_File_Name\"><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Upload Application\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+if (move_uploaded_file($_FILES['Upload_Application_File_Name']['tmp_name'], $_Application_Module_Administration_Applications_UPLOAD_FILE)) {
+
+													echo ($_Application_Module_Administration_Message_Applications_APPLICATION_UPLOAD_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Move Uploaded File: Application Module Directory
+
+} // [ + ] IF: Upload Application Variables Have Executed
+
+/*
+ ============================================================================================================
+ + Retrieve All Application Module File Database Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_DB_Query_Select_Application_File		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY application_file_name ASC");
+
+											echo ("<HR><CENTER><B>Existing Application Entries</B></CENTER><HR>");
+
+while ($_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Applications_DB_Query_Select_Application_File)) {
+
+$_Application_Module_Administration_Applications_LIST_APPLICATION_ID 				= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['id'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_name'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION 		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_STATUS 			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_status'];
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query:: Insert Application
+ ============================================================================================================
+*/
+
+echo ("
+
+													Application File Name: <B>$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME<HR>
+													=> <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications&amp;Delete&#61;$_Application_Module_Administration_Applications_LIST_APPLICATION_ID\" TITLE=\":: Delete The Application :: $_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME\">Delete</A><BR>
+													=> <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications&amp;Update&#61;$_Application_Module_Administration_Applications_LIST_APPLICATION_ID\" TITLE=\":: Update The Application :: $_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME\">Update</A><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Interal Application :: Delete Application Module
+ +
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Delete"] == "$_Application_Module_Administration_Applications_LIST_APPLICATION_ID") {
+
+/*
+ ============================================================================================================
+ + Delete Application Module Database Entry From S.Q.L. Database
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
+
+if ($_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID) {
+
+											echo ($_Application_Module_Administration_Message_Applications_APPLICATION_DELETE_SUCCESSFUL);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query Delete Application Entry
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query :: Delete Application By ID
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID);
+
+} // [ + ] IF: Internal Application: Delete Application
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Internal Application :: Update Application Module
+ +
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Update"] == "$_Application_Module_Administration_Applications_LIST_APPLICATION_ID") {
+
+/*
+ ============================================================================================================
+ +
+ + Update Application :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 		= $_POST['Update_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION 	= $_POST['Update_Application_File_Permission'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 		= $_POST['Update_Application_File_Status'];
+
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME);
+
+if (!$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME) {
+/*
+ ============================================================================================================
+ +
+ + Display Update Application Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<BR><BR><HR><CENTER><B>Currently Updating Application: <I>$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME</I></B></CENTER><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications&amp;Update&#61;$_Application_Module_Administration_Applications_LIST_APPLICATION_ID\" METHOD=\"post\">
+													Application File Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"Update_Application_File_Name\" VALUE=\"$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME\" MAXLENGTH=\"100\"><BR>
+													Application File Permissions:<BR>
+														<SELECT NAME=\"Update_Application_File_Permission\">
+															<OPTION VALUE=\"0\">Public</OPTION>
+															<OPTION VALUE=\"1\">Member</OPTION>
+															<OPTION VALUE=\"2\">Administrator</OPTION>
+														</SELECT><BR>
+													Application File Status:<BR>
+														<SELECT NAME=\"Update_Application_File_Status\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Update\">
+												</FORM><HR><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + Update Application Module Database Query
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_DB_Query_Update_Application_ID			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications SET application_file_name='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME',application_file_permission='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION',application_file_status='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS' WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
+
+if ($_Application_Module_Administration_Applications_DB_Query_Update_Application_ID) {
+
+													echo ($_Application_Module_Administration_Message_Applications_APPLICATION_UPDATE_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query Update Application Module Database Entry
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query:: Update Application By ID
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Applications_DB_Query_Update_Application_ID);
+
+} // [ + ] IF: Internal Application: Update Application Module
+
+} // [ + ] IF: Update Application Database Entry
+
+} // [ + ] WHILE: Retrieving S.Q.L. Application Data From Database
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query:: Select Application File
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Applications_DB_Query_Select_Application_File);
+?>

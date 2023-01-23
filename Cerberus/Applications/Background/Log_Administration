@@ -1,0 +1,179 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Background->Log_Administration
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Background :: Log :: Administration-Level Activity
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Administration-Level Variables
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Visitor Variables
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Administration_GET_IP					= $_SERVER['REMOTE_ADDR'];
+$_Application_Module_Background_Log_Administration_GET_HOST					= $_SERVER['REMOTE_HOST'];
+$_Application_Module_Background_Log_Administration_GET_REFERRER					= $_SERVER['HTTP_REFERER'];
+$_Application_Module_Background_Log_Administration_GET_USER_AGENT				= $_SERVER['HTTP_USER_AGENT'];
+$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER				= $_GLOBAL_COOKIE_MEMBER_USERNAME;
+
+/*
+ ================================================================
+ + Specify Administration-Level Activity Log File
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Administration_OPEN_FILE_NAME				= fopen("./Applications/Administration/Logging/Activity_Logging/Log.html", "a");
+
+/*
+ ================================================================
+ + Replace Harmful Characters
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[0]			= "<";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[1]			= ">";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[2]			= "'";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[3]			= "\"";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[0]			= "Z";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[1] 			= "Z";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[2] 			= "Z";
+$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[3] 			= "Z";
+
+$_Application_Module_Background_Log_Administration_GET_REFERRER					= str_replace($_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administration_GET_REFERRER);
+$_Application_Module_Background_Log_Administration_GET_USER_AGENT				= str_replace($_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administration_GET_USER_AGENT);
+$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER				= str_replace($_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administration_GET_LOG_MEMBER);
+
+/*
+ ================================================================
+ + IF: Internet Protocol Address String Length Is Greater Than
+ ================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Administration_GET_IP) > "250") {
+
+	$_Application_Module_Background_Log_Administration_GET_IP 				= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+if (strlen($_Application_Module_Background_Log_Administration_GET_REFERRER) > "250") {
+
+	$_Application_Module_Background_Log_Administration_GET_REFERRER 			= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+if (strlen($_Application_Module_Background_Log_Administration_GET_USER_AGENT) > "250") {
+
+	$_Application_Module_Background_Log_Administration_GET_USER_AGENT			= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+if (strlen($_Application_Module_Background_Log_Administration_GET_LOG_MEMBER) > "20") {
+
+	$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER 			= "Non-Registered";
+
+} // [ + ] IF_STRING_LENGTH
+
+/*
+ ================================================================
+ + IF: Member Credentials Are Null, Print Non-Registered
+ ================================================================
+*/
+
+if ($_Application_Module_Background_Log_Administration_GET_LOG_MEMBER == "") {
+
+	$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER			= "Non-Registered";
+
+} // [ + ] IF_NULL_USER
+
+/*
+ ================================================================
+ + Write Data To File
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Log Interaction Details Data To Be Written To File
+ ================================================================
+*/
+
+fwrite($_Application_Module_Background_Log_Administration_OPEN_FILE_NAME, "
+<B>Detailed Visitor Information</B>
+<HR>
+Visitor UserName: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER\" TITLE=\"$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER's Profile\">$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER</A><BR>
+Visitor Document View Timestamp: $_GLOBAL_DATE<BR>
+Visitor Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Administration_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Administration_GET_REFERRER</A><BR>
+Visitor User-Agent ( Browser ): $_Application_Module_Background_Log_Administration_GET_USER_AGENT<BR>
+Visitor Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS<BR>
+Visitor Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
+Visitor Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR><BR>
+
+<B>Visitor Connection Information</B><BR>
+Visitor Server Request Method: $_GLOBAL_SERVER_REQUEST_METHOD<BR>
+Visitor Server Request Time: $_GLOBAL_SERVER_REQUEST_TIME<BR>
+Visitor Server Connection Type: $_GLOBAL_SERVER_HTTP_CONNECTION_TYPE<BR>
+Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_SERVER_HTTP_HOST<BR>
+Local Server Gateway Interface: $_GLOBAL_SERVER_GATEWAY_INTERFACE<BR>
+<A HREF=\"./Applications/Background/Log_Administration\" TITLE=\":: Open & Display The Source Code For This Activity Log ::\">Source Code For This Activity Log</A><BR><BR>
+");
+
+/*
+ ================================================================
+ + Close File
+ ================================================================
+*/
+
+fclose($_Application_Module_Background_Log_Administration_OPEN_FILE_NAME);
+?>

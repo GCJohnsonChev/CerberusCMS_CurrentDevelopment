@@ -1,0 +1,227 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Member->Links
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Member :: Links
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Application Module Header
+ ================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Links_Header);
+
+/*
+ ================================================================
+ +
+ + DB->Retrieve All Links
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Links_DB_Query_SELECT_LINKS						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links");
+
+if ($DB->num_rows($_Application_Module_Member_Links_DB_Query_SELECT_LINKS) <= 0) {
+											echo ($_Application_Module_Member_Message_Links_NO_LINKS);
+} // [ IF_NUMBER_OF_ROWS ]
+
+while ($_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Links_DB_Query_SELECT_LINKS)) {
+
+$_Application_Module_Member_Links_LIST_LINK_ID							= $_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array['id'];
+$_Application_Module_Member_Links_LIST_LINK_AUTHOR						= $_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array['link_author'];
+$_Application_Module_Member_Links_LIST_LINK_DESCRIPTION						= $_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array['link_description'];
+$_Application_Module_Member_Links_LIST_LINK_TIME						= $_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array['link_time'];
+$_Application_Module_Member_Links_LIST_LINK_TITLE						= $_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array['link_title'];
+$_Application_Module_Member_Links_LIST_LINK_URL							= $_Application_Module_Member_Links_DB_Query_SELECT_LINKS_Fetch_Array['link_url'];
+
+/*
+ ================================================================
+ +
+ + List All Links
+ +
+ ================================================================
+*/
+
+if ($_GET["DisplayID"] == "All") {
+
+											echo ("<CENTER><TABLE WIDTH=\"100%\" BORDER=\"1\" CELLPADDING=\"0\" CELLSPACING=\"0\"><TD WIDTH=\"90%\"><B>Link Name</B>: $_Application_Module_Member_Links_LIST_LINK_TITLE</TD><TD WIDTH=\"10%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Links&amp;DisplayID&#61;$_Application_Module_Member_Links_LIST_LINK_ID\" TITLE=\"Open Link :: $_Application_Module_Member_Links_LIST_LINK_TITLE\">Open Link</A></TD></TR></TABLE></CENTER>");
+
+} // [ + ] IF_DisplayID_All
+
+/*
+ ================================================================
+ +
+ + List Selected Link ID
+ +
+ ================================================================
+*/
+
+if ($_GET["DisplayID"] == "$_Application_Module_Member_Links_LIST_LINK_ID") {
+
+echo ("
+											[ <A HREF=\"http://$_Application_Module_Member_Links_LIST_LINK_URL\" TARGET=\"_NEW\" TITLE=\"Open Link :: $_Application_Module_Member_Links_LIST_LINK_TITLE\">$_Application_Module_Member_Links_LIST_LINK_TITLE</A> ]<BR><BR>
+											<B>Link Description</B>: <I>$_Application_Module_Member_Links_LIST_LINK_DESCRIPTION</I><HR>
+											<B>Link Submitted On</B>: $_Application_Module_Member_Links_LIST_LINK_TIME - <B>By</B>: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Links_LIST_LINK_AUTHOR\" TITLE=\"Profile :: $_Application_Module_Member_Links_LIST_LINK_AUTHOR\">$_Application_Module_Member_Links_LIST_LINK_AUTHOR</A>
+											<BR><BR>
+											[ <A HREF=\"?$_INTERNAL_ADMINISTRATOR_MODULE&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Links&amp;UpdateLinkID&#61;$_Application_Module_Member_Links_LIST_LINK_ID\" TITLE=\":: Update This Link ::\">Update</A> - <A HREF=\"?$_INTERNAL_ADMINISTRATOR_MODULE&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Links&amp;DeleteLinkID&#61;$_Application_Module_Member_Links_LIST_LINK_ID\" TITLE=\":: Delete This Link ::\">Delete</A> ]
+");
+
+} // [ + ] IF_DisplayID_Selected
+
+} // [ + ] WHILE_LINKS
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select All From Links
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Links_DB_Query_SELECT_LINKS);
+
+/*
+ ================================================================
+ +
+ + Submit Link
+ +
+ ================================================================
+*/
+
+if ($_GET["SubmitLink"] == "Yes") {
+
+/*
+ ================================================================
+ + Submit Link Post Variables
+ ================================================================
+*/
+
+$_Application_Module_Member_Links_POST_LINK_TITLE						= $_POST['link_title'];
+$_Application_Module_Member_Links_POST_LINK_URL							= $_POST['link_url'];
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= $_POST['link_description'];
+
+/*
+ ================================================================
+ + Post Variables Character Replace
+ ================================================================
+*/
+
+$_Application_Module_Member_Links_POST_LINK_TITLE						= str_replace("<", "&lt;", $_Application_Module_Member_Links_POST_LINK_TITLE);
+$_Application_Module_Member_Links_POST_LINK_TITLE						= str_replace("'", "&#39;", $_Application_Module_Member_Links_POST_LINK_TITLE);
+$_Application_Module_Member_Links_POST_LINK_URL							= str_replace("<", "&lt;", $_Application_Module_Member_Links_POST_LINK_URL);
+$_Application_Module_Member_Links_POST_LINK_URL							= str_replace("'", "&#39;", $_Application_Module_Member_Links_POST_LINK_URL);
+
+/*
+ ================================================================
+ + SafeHTML Code && Smileys
+ ================================================================
+*/
+
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Links_POST_LINK_DESCRIPTION);
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Links_POST_LINK_DESCRIPTION);
+
+if ((!$_Application_Module_Member_Links_POST_LINK_TITLE) || (!$_Application_Module_Member_Links_POST_LINK_URL) || (!$_Application_Module_Member_Links_POST_LINK_DESCRIPTION)) {
+
+echo ("
+											$_GLOBAL_TEXTEDITOR_BUTTONS
+											<BR><BR><FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Links&amp;SubmitLink&#61;Yes\" METHOD=\"post\">
+												* Link Name:<BR>
+													<INPUT TYPE=\"text\" NAME=\"link_title\" MAXLENGTH=\"50\"><BR>
+												* Link Uniform Resource Location:<BR>
+													<INPUT TYPE=\"text\" NAME=\"link_url\" MAXLENGTH=\"250\"><BR>
+												* Link Description:<BR>
+													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"link_description\" ID=\"WYSIWYG\">Please describe this link.</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Link\"><BR>
+											</FORM>
+");
+
+} else {
+
+/*
+ ================================================================
+ +
+ + Insert Link
+ +
+ ================================================================
+*/
+
+$_Application_Module_Member_Links_DB_Query_INSERT_LINK						= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links(link_author,link_description,link_time,link_title,link_url)VALUES('$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Member_Links_POST_LINK_DESCRIPTION','$_GLOBAL_DATE','$_Application_Module_Member_Links_POST_LINK_TITLE','$_Application_Module_Member_Links_POST_LINK_URL')");
+
+/*
+ ================================================================
+ + Update Member Entry
+ ================================================================
+*/
+
+$_Application_Module_Member_Links_UPDATE_MEMBER_EXPERIENCE_AMOUNT				= $_GLOBAL_MEMBER_EXPERIENCE_AMOUNT + 15;
+$_Application_Module_Member_Links_UPDATE_MEMBER_NUMBER_OF_POSTS					= $_GLOBAL_MEMBER_NUMBER_OF_POSTS + 1;
+
+$_Application_Module_Member_Links_DB_Query_UPDATE_MEMBERS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_experience_amount='$_Application_Module_Member_Links_UPDATE_MEMBER_EXPERIENCE_AMOUNT',member_number_of_posts='$_Application_Module_Member_Links_UPDATE_MEMBER_NUMBER_OF_POSTS' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_Application_Module_Member_Links_DB_Query_UPDATE_MEMBERS) {
+											//echo ($_Application_Module_Member_Message_Links_POST_EXPERIENCE_AMOUNT);
+} else {
+											echo ($_Application_Module_Member_Message_Links_POST_EXPERIENCE_AMOUNT_ERROR);
+} // [ + ] IF_DB_Query_INSERT_LINK
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Update Member Experience Amount
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Member_Links_DB_Query_UPDATE_MEMBERS);
+
+if ($_Application_Module_Member_Links_DB_Query_INSERT_LINK) {
+											echo ($_Application_Module_Member_Message_Links_POST_SUCCESSFUL);
+} else {
+											echo ($_Application_Module_Member_Message_Links_POST_ERROR);
+} // [ + ] IF_POST
+
+} // [ + ] NULL_POST
+
+} // [ + ] IF_SubmitLink
+?>

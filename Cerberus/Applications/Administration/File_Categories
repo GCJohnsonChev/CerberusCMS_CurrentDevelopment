@@ -1,0 +1,306 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Administration->File_Categories
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Files and File Category Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Files and File Category Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Files and File Category Variables :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: File Category Name and Description
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME			= $_POST['Module_File_Categories_Install_File_Category_Name'];
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION		= $_POST['Module_File_Categories_Install_File_Category_Description'];
+
+/*
+ ============================================================================================================
+ + Post Variables :: File Category Name and Description :: Sanitization
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME);
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION		= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION);
+
+/*
+ ============================================================================================================
+ + IF: Input Form Variables Have Not Executed, Display File Category Form
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME) || (!$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION)) {
+
+/*
+ ============================================================================================================
+ +
+ + Display Install File Category Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+													<CENTER><B>Install File Category</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;File_Categories\" METHOD=\"post\">
+															File Category Name:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_File_Categories_Install_File_Category_Name\" MAXLENGTH=\"50\"><BR>
+															File Category Description:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_File_Categories_Install_File_Category_Description\" MAXLENGTH=\"250\"><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Install File Category\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + S.Q.L. Database Server Query: Install File Category
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_DB_Query_INSTALL_CATEGORY				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories(file_category_description,file_category_time,file_category_title)VALUES('$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME')");
+
+if ($_Application_Module_Administration_File_Categories_DB_Query_INSTALL_CATEGORY) {
+
+													echo ($_Application_Module_Administration_Message_File_Categories_FILE_CATEGORY_INSTALLATION_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query Install File Category Entry
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Install File Category
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_File_Categories_DB_Query_INSTALL_CATEGORY);
+
+} // [ + ] IF: Install File Category Entry Variables Have Not Executed
+
+/*
+ ============================================================================================================
+ +
+ + Display Existing File Category Entries
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories ORDER BY file_category_title ASC");
+
+													echo ("<HR><CENTER><B>Existing File Category Entries</B></CENTER><HR>");
+
+if ($DB->num_rows($_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES) <= 0) {
+
+													echo ($_Application_Module_Administration_Message_File_Categories_FILE_CATEGORY_ENTRIES_EMPTY);
+
+} else {
+
+while ($_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES)) {
+
+$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID					= $_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES_Fetch_Array['id'];
+$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_DESCRIPTION				= $_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES_Fetch_Array['file_category_description'];
+$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_TITLE					= $_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES_Fetch_Array['file_category_title'];
+
+echo ("
+													<CENTER>
+														<TABLE BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+															<TR>
+																<TD WIDTH=\"90%\">Category Name: <B>$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_TITLE</B></TD>
+																<TD WIDTH=\"5%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;File_Categories&amp;DeleteID&#61;$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID\" TITLE=\":: Delete The File Category Entry :: $_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_TITLE\">Delete</A></TD>
+																<TD WIDTH=\"5%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;File_Categories&amp;UpdateID&#61;$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID\" TITLE=\":: Update The File Category Entry :: $_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_TITLE\">Update</A></TD>
+															</TR>
+														</TABLE>
+													</CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Delete File Category By ID
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteID"] == "$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID") {
+
+$_Application_Module_Administration_File_Categories_DB_Query_DELETE_FILE_CATEGORY				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories WHERE id='$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID'");
+
+if ($_Application_Module_Administration_File_Categories_DB_Query_DELETE_FILE_CATEGORY) {
+
+													echo ($_Application_Module_Administration_Message_File_Categories_FILE_CATEGORY_DELETION_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Delete File Category Entry By ID
+
+$DB->free($_Application_Module_Administration_File_Categories_DB_Query_DELETE_FILE_CATEGORY);
+
+} // [ + ] IF: Internal Application: DeleteID Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Update File Category By ID
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateID"] == "$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID") {
+
+/*
+ ============================================================================================================
+ +
+ + Input Form Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Input Form Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME				= $_POST['Module_File_Categories_Update_File_Category_Name'];
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION 			= $_POST['Module_File_Categories_Update_File_Category_Description'];
+
+/*
+ ============================================================================================================
+ + Post Variables Character Sanitization
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME);
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION);
+
+/*
+ ============================================================================================================
+ + IF: Update Form Has Not Posted, Display Update Form
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME) || (!$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION)) {
+
+echo ("
+													<BR><BR><HR><CENTER><B>Currently Modifying File Category: <I>$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_TITLE</I></B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;File_Categories&amp;UpdateID&#61;$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID\" METHOD=\"post\">
+															File Category Name:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_File_Categories_Update_File_Category_Name\" VALUE=\"$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_TITLE\" MAXLENGTH=\"50\"><BR>
+															File Category Description:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_File_Categories_Update_File_Category_Description\" VALUE=\"$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_DESCRIPTION\" MAXLENGTH=\"250\"><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Update\">
+														</FORM><HR><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Update Form Has Posted, Update SQL Database Server Table Row Entry
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_DB_Query_UPDATE_CATEGORY					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories SET file_category_description='$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION',file_category_title='$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME' WHERE id='$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID'");
+
+if ($_Application_Module_Administration_File_Categories_DB_Query_UPDATE_CATEGORY) {
+
+													echo ($_Application_Module_Administration_Message_File_Categories_FILE_CATEGORY_UPDATE_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: S.Q.L. Query: Update File Category Entry
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update File Category
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_File_Categories_DB_Query_UPDATE_CATEGORY);
+
+} // [ + ] IF: Update File Category Entry Form Variables Have NOT Executed
+
+} // [ + ] IF: S.Q.L. Query: Update File Category Entry
+
+} // [ + ] WHILE: Retrieving List of File Category Entries
+
+} // [ + ] IF: File Category Entry Number of Rows IS Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All File Category Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_File_Categories_DB_Query_SELECT_ALL_FILE_CATEGORIES);
+?>

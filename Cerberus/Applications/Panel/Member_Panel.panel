@@ -1,0 +1,171 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Panel->Member_Panel.panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Application Module :: Panel :: Member Panel
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Retrieve Private Messsages
+ ================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+
+$_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_private_messages WHERE private_message_recipient='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES_Number_Rows		= $DB->num_rows($_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES);
+
+if ($_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES_Number_Rows == "") {
+
+$_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES_Number_Rows 	= "0";
+
+} // [ + ] IF_NUMBER_OF_ROWS
+
+/*
+ ================================================================
+ + Retrieve System Messages
+ ================================================================
+*/
+
+$_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_system_message WHERE message_member='$_GLOBAL_COOKIE_MEMBER_USERNAME' ORDER BY id DESC LIMIT 1");
+$_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Number_Rows		= $DB->num_rows($_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE);
+$_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Fetch_Array		= $DB->fetch_array($_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE);
+
+$_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_AUTHOR				= $_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Fetch_Array['message_author'];
+$_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA				= $_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Fetch_Array['message_data'];
+
+if ($_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Number_Rows <= 0) {
+
+$_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Number_Rows		= "0";
+
+} // [ + ] IF: System Message Number of Rows
+
+if ($_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA == "") {
+
+$_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA 				= "This is the default message: This Panel receives System Messages from the Administration for you - Right now you do not have any messages from any Administrator.";
+
+} // [ + ] IF_Message_Data_Empty
+
+/*
+ ================================================================
+ +
+ + Member Details & Links
+ +
+ ================================================================
+*/
+
+echo ("
+											<CENTER><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_GLOBAL_MEMBER_IMAGE_AVATAR\" TITLE=\":: Avatar Image For :: $_GLOBAL_COOKIE_MEMBER_USERNAME :: $_GLOBAL_MEMBER_IMAGE_AVATAR ::\"></IMG></CENTER>
+											<HR><BR>
+
+											<B><A TITLE=\":: Member-Level Tools ::\">Member Tools</B><HR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel\" TITLE=\":: Open & Display The Control Panel For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Control Panel</A><BR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=List&amp;Display&#61;MyFiles\" TITLE=\":: Open & Display :: My Files ::\">My Webspace</A>
+											<BR><BR>
+
+											<B><A TITLE=\":: Member Information ::\">Member Information</B><HR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TITLE=\":: Open & Display The Profile Application Module For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Experience Amount: $_GLOBAL_MEMBER_EXPERIENCE_AMOUNT</A><BR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TITLE=\":: Open & Display The Profile Application Module For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Number of Posts: $_GLOBAL_MEMBER_NUMBER_OF_POSTS</A><BR>
+												<B>&middot;</B>&nbsp;<B>Member' Rank: $_GLOBAL_MEMBER_LEVEL_RANK_DISPLAY</B>
+											<BR><BR>
+
+											<B><A TITLE=\":: Messaging :: Application Modules ::\">Messaging</B><HR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger\" TITLE=\":: Open & Display Messenger Application Module ::\">Messenger</A><BR>
+												<B>&middot;</B>&nbsp;[ $_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES_Number_Rows ] <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;PrivateMessageID&#61;All\" TITLE=\":: Open & Display Private Messages Application Module For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Private Messages</A><BR>
+												<B>&middot;</B>&nbsp;[ $_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE_Number_Rows ] <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;System_Message&amp;Message&#61;AdministratorNotification&amp;MessageContents&#61;$_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA ::\" TITLE=\":: Open & Display The System Notifications Application Module :: $_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA ::\">System Messages</A>
+											<BR><BR>
+
+											<B><A TITLE=\":: Messaging Tools ::\">Messaging Tools</B><HR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=List&amp;Display&#61;Avatars\" TITLE=\":: Open & Display :: Avatar List ::\">Avatars</A><BR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=List&amp;Display&#61;SafeHTML\" TITLE=\":: Open & Display :: Cerberus' Safe-HTML [ BB ] Code For Use With Posts ::\">Bulletin Board Codes</A><BR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=List&amp;Display&#61;Emojis\" TITLE=\":: Open & Display :: Emojis List ::\">Emojis</A><BR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=List&amp;Display&#61;Ranks\" TITLE=\":: Open & Display :: Ranking List ::\">Ranks</A><BR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=List&amp;Display&#61;Smileys\" TITLE=\":: Open & Display :: Smiley List ::\">Smileys</A>
+											<BR><BR>
+
+											<B><A TITLE=\":: Logging ::\">My Activity</B><HR>
+												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Activity_Log\" TITLE=\":: Open & Display The Activity Log For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Activity Log</A><BR>
+		
+											<BR><BR>
+											<I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&amp;Message&#61;Default\" TITLE=\":: Open & Display The System Message Application ::\">Latest System Messages</A></I><HR>
+												<TEXTAREA ROWS=\"7\" COLS=\"25\">$_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_AUTHOR Wrote This System Message: $_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA</TEXTAREA>
+");
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select Latest System Message
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE);
+
+/*
+ ================================================================
+ + Kill SQL Database Server Query: Select Latest Private Message
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES);
+
+} else {
+
+echo ("
+											<FORM ACTION=\"?InternalApplication&#61;Login\" METHOD=\"post\">
+												<I>Member' Electronic Mail Address</I>:<BR>
+													<INPUT TYPE=\"text\" NAME=\"post_login_electronic_mail_address\" MAXLENGTH=\"50\"><BR>
+												<I>Member' Username</I>:<BR>
+													<INPUT TYPE=\"text\" NAME=\"post_login_username\" MAXLENGTH=\"50\"><BR>
+												<I>Member' Password</I>:<BR>
+													<INPUT TYPE=\"password\" NAME=\"post_login_password\" MAXLENGTH=\"32\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Login\">
+											</FORM>
+											<HR>
+											<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Login Options\">Login Options</A> ]</CENTER>
+");
+
+} // [ + ] IF_NULL
+?>
