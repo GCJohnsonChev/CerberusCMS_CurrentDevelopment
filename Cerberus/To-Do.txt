@@ -1,0 +1,123 @@
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->To_Do.txt
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + To-Do List
+ +
+ ================================================================
+*/
+
+* Update Cerberus CMS For Latest PHP Compatibility, PHP 8.
+* Improve Code, Implement Prepared Statements With Database Objects. $DB->Prepare("SELECT *");, etc.
+* Implement Drag-and-Drop Interfaces.
+* Scan For and Secure Any Vulnerabilties.
+* Improve Security.
+* Add SHA-1, SHA-16, SHA-128, SHA-256 and MD5 File Hash Comparison System. Store Original Unmodified Hashes In Master Database For User Running Comparison.
+* Write Alert System For Modified Files, Detected By HASH Security System.
+* Update Administration Modules For Language File Use. Approximately 50 Output Messages Remain.
+* Once Language System Is Perfected, Created a Few Common Languages Translation Files.
+* Update MD-5 HASHING of Passwords To Be SHA-256 + SALT + Blowfish Strings In Install.php, Diagnose.php Backdoor and Login / Register System.
+* Rewrite Custom Applications System To Have Organized Dedicated Folder and Database Tables.
+* Go Through Every File and Determine Which Files Should Be Marked For Read-Only Access On a Live Server, So No Files Can Be Modified. Write List of Files With a Read-Only/CHMOD # Note.
+* Rewrite The Code In Each Administration Module, User Module and In Every File. Clean Up The Code and Add Super Specific Code Notes / Code Location System With Search Options.
+* Look For Ways To Monitor Thread Connections and Optimize Database Connection / Loading Times.
+* Implement Editor Features In TextArea Forms.
+* Write New Documentation File.
+* Create Tutorial Videos For Installation, Administration, User Experience, Creating Themes, Creating Modules, etc.
+* Create Syncing Function To Sync Topics In Forum System That Are Unassigned To a Forum.
+* Update News, Article Publishing System To Generate Random String and Store It In Database Table Then Assign String To Created HTML File Name For Printing.
+* Add Delete Post Function To Forum Module.
+* Update All Link Titles To Print Statements In Context, Such As: 'Open Application/Module: Module Name Here'.
+* Update All Applications To Print Path Links, Such As: root->Application Name and root->cPanel->Application Name.
+* Update Profile / Edit_Profile Modules To Support Skype, XMPP, etc Protocols and Links.
+* Update Referrers Module To Have Option Form With Options.
+* Update All Blocks With Lists To Have Options Forms.
+* Update All Files With Tinke Software ASCII Logo of Shield and Sword.
+* Write Application_List Module.
+* Write Password_Hash(); Generation Time, Module Loading / Generation Time Module.
+* Write Detailed Time Module, With Seconds, Microseconds, Planck Seconds, etc.
+* Write Encrypted Chat Module.
+* Write Notes and Notepad Module.
+* Write Photo Gallery Module.
+* Write Multiplayer Mini Games Module.
+* When Creating MD-5 and SHA-256 Hashes of Files With Default Release Do a Number of Lines of Code Report To Add Up and Put In Statistics Module.
+* Create Beautiful and Professional Theme For New Release.
+* When Rewriting Log Modules, Put Data In Option Forms.
+* In Each Release, Take Screenshots of The Loaded Page / Module. Place The Screenshots In a Directory Bundled With Release.
+* When Rewriting Each Module, Rewrite Variables, Post Data Strings, etc. To Be Extremely Detailed; Document All Code.
+* Go Back Into Each File and Replace 'Kill SQL Query' with 'Kill DB Query'.
+* Go Through Each File and Replace All Output Statements With Clean Variable Names Matching The Language File, Even In The Forms.
+* Go Through Each File and Correct the } Ending-Curly-Brace Documentation.
+* Write a 'Share' Module to Share Anything Via E-Mail, Social Media, Etc.. Deprecate the E-Mail Module.
+* Add Theme Changer Block With Cookie Or Session
+* Secure Administration Form Modules From Uploading / Injecting / Uploading Disallowed Files / Code.
+* Generate An Administration Level Account Named Cerberus With A Backdoor Password In The Installation Process. Send Login Details To Administrator / Installer.
+* Implement Language Strings Into Each Administrator Module. Correct the $_MSG to $_Message In Each Administrator Module.
+* Correct All $_MSG to $_Message Strings In Each File.
+* Add Module Not Found For Non-Existing Modules In Administration Area and User Area.
+* Fix Installation.php File To Create Default Article and News HTML Files For Printing.
+* Add Page Numbers LIMIT 10 Posts Per Page In Forum Module.
+* Add No Posts Found, No Topics Found, No Forums Found In Forum Module.
+* Add String Lower Case Functions To Variables In Register, Login System.
+* Change Login System To Use Electronic Mail Address For Login.
+* Add Ability For Administrators To Delete Any Comments / Shout Messages / Forum Posts.
+* Add Ability For Forum Post Authors To Modify and Delete Forum Posts.
+* Add Ability For Profile Owners To Delete Comments From Others.
+* Add PGP Encryption Options To E-Mails.
+* Correct Indentation In The Language File and SafeHTML File.
+* Implement SHA-256 HASH Checking On Files. Write Loop To Check Internal Instance Files To Master Server SHA-256 SUMS. Warning Message If Any Files Were Modified.
+* Brainstorm To See How To Preserve Data Integrity So The Posted Information Cannot Change Unless From The Author or Moderator / Administrator Even If Forced By Root. That Way Shared Hosting Providers With Root Access Cannot Ever Change The Data Against The Will of The CMS Administrator.
+* Create Options For Enabling and Enforcing Either or Both Cookies and Sessions. With Sessions Enforce Extreme Security Options. Device Identity, GPS Location, User-Agent, Login-Time, Login-Location, Encryption Token, Encryption Key, Encryption Blocks.
+* Brainstorm On Session Security.
+* Implement User Logging Systems Options Where Each User Being Logged Will Have The Logs Placed Within Their Own Directory. The Log Properties Will Log All IP Addresses, Login Times / GPS Locations, Logout Times / GPS Locations, User-Agent, Browser Fingerprint, Digital Fingerprints, every possible digital property will be logged if enabled. This secures the safety of the user.
+* Add 4 - 8 Digit Pin Code Options To User and Administrator Accounts. Just In Case a Computer or Cell Phone Device Connected To Cerberus Is Instantly Taken Away While The Device Is Unlocked. The Account Will Require A Pin Code To Reallow Posting / etc. and Broadcast The Location To Friends / Chat Network.
+* Add Emergency GPS Location Broadcasting System
+* Clean Up and Expand Upon The Documenation Comment Fields In Each File.
+* Secure The Language Cookie System From All Vulnerabilities.
+* Secure The Username and Password Cookie System From All Vulnerabilities.
+* Make A Documentation Video Showing How Sessions Are More Insecure Than Just Cookies For User-Authentication. Show How All Sessions Can Be Physically Hijacked In Person By Cloning Device Details.
+* Fix The 'Application Could Not Be Located' } Else { In Cerberus.php.
+* Update Variables Throughout The System. Make Each Variable More Unique and Add ISSET(); and Other Variable Controls.
+* Add Security Log Features, Exact Login Locations, Login Details History, Extensive Activity Information and More.
+* Update Activity Status Systems.
+* Update The System Electronic Mail Message System-Wide. Make All Electronic Mail Messages Extremely Detailed, Include I.P. Address, Timestamps and all other specific information about the server and the remote user.
+* Remake the entire Block System and Rename it to 'Panels' and 'Application Panels'.
+* Download last earlier backup from my GCJohnsonChev account and merge with new stuff I'm doing today, on monday 11-14-2022 but do it all from the browser just in case these files got malicious.

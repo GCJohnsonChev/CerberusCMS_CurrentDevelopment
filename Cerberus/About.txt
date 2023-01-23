@@ -1,0 +1,73 @@
+                             .-.							   
+                            {{@}}							   
+            <>               8@8							   
+          .::::.             888							   
+      @\\/W\/\/W\//@         8@8							   
+       \\/^\/\/^\//      _   )8(    _							   
+        \_O_<>_O_/     (@)__/8@8\__(@)							   
+   ____________________ `~"-=):(=-"~`							   
+  |<><><>  |  |  <><><>|     |.|							   
+  |<>      |  |      <>|     |T|							   
+  |<>      |  |      <>|     |'|							   
+  |<>   .--------.   <>|     |.|							   
+  |     |   ()   |     |     |I|							   
+  |_____| (O\/O) |_____|     |'|							   
+  |     \   /\   /     |     |.|							   
+  |------\  \/  /------|     |N|							   
+  |       '.__.'       |     |'|							   
+  |        |  |        |     |.|							   
+  :        |  |        :     |K|							   
+   \<>     |  |     <>/      |'|							   
+    \<>    |  |    <>/       |.|							   
+     \<>   |  |   <>/        |E|							   
+      `\<> |  | <>/'         |'|							   
+        `-.|  |.-`           \ /							   
+           '--'               ^					    TINKE SOFTWARE
+					       - 100% Free, Original, Clean and Quality Software Projects -
+              
+/*
+ ================================================================
+ +
+ + About
+ +
+ ================================================================
+*/
+
+Cerberus Content Management System is a Monolithic and Modular Content Management System as well as a Web Application Framework
+that is written in 100% Pure Post-HyperText-PreProcessor Programming Code with 100% Pure Hyper-Text-Markup-Language output and it supports multiple Database Management Systems.
+
+Cerberus Content Management System Versions are always thoroughly tested for errors before official release and upon release will be free of error and will always pass validation checks for:
+* Hypertext Markup Language ( H.T.M.L. )
+* Robots Protocol ( R.P. )
+* Real Simple Syndication ( R.S.S. )
+* Cascading Style Sheet ( C.S.S. )
+* Post-Hypertext Pre-Processor Engines ( P.H.P. )
+* Each of the Structured Query Lanaguage ( S.Q.L. ) Database Management Systems as well as the other Non-S.Q.L. Database Management Systems
+
+Cerberus Content Management System' source code is completely handwritten by the author(s) whose names are credited in each release.
+
+Approximately 35,000 lines of easy-to-read and well documented Lines-of-Code powers the Cerberus Content Management System Core Releases where these packages are released without additional Web Applications called Modules. There are several hundred quality Web Application Modules that can be curl, git or manually installed from the Administration Section. Additional Hand Written Web Application Modules by the Cerberus Content Management System Project authors are everything from Advanced Scientific Calculators to Retro Video Game Console Emulators such as for playing Nintendo Entertainment System video games in the web browser and more.
+
+The Cerberus Content Management System ( Unix Name: CerberusCMS and CerberusC.M.S. ) project is focused on data security and ease of use
+therefore we have decided to make very little use of JavaScript in the PurePHP Releases of this project.
+Since JavaScript is incredibly vulnerable we have decided to keep JavaScript use at a very basic minimum.
+
+Advanced Data Security techniques are gradually being implemented into this project.
+Future releases will feature 100% encrypted messages and 100% encrypted data where not even the root account of the server could read any of the data within the database.
+All of the data will be decrypted from the database by using advanced key decryption unique to the session and page load.
+
+Currently you will only find a few lines of JavaScript code in the PurePHP Releases:
+* One line at the bottom of the Cerberus.php file to autoclose the Webpage for inactive sessions
+* One line for the insertion of Bulletin Board ( B.B. ) codes into forms
+* One line to print the News and Article entries.
+
+The still-secure and easier-to-use releases make extensive use of JavaScript, JQuery Library and Asynchronous Javascript and XML ( A.J.A.X. ) for the best drag-and-drop user experience.
+
+Cerberus Content Management System Releases follow authentic Frisian / Frysk words for elements.
+
+Cerberus Content Management System, Version: 4, Build: 0.8, Edit Number: 00 - Code Name: Wynn ( ᚹ ) - PurePHP has been debugged and tested to be 100% functional and digitally information secure on the latest
+Apache, H.T.M.L., P.H.P. and MyS.Q.L. versions which at the time of this Cerberus Content Management System release is:
+* 2022		Apache Version:		2.4.46
+* 2022		H.T.M.L. Version:	5.4
+* 2022		P.H.P. Version:		8.0.23
+* 2022		MyS.Q.L. Version:	8.0.28
