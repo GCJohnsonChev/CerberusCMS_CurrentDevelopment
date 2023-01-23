@@ -1145,7 +1145,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Files','1','3','1','<CENTER><B>Latest Files</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Shouts','1','5','1','<CENTER><B>Latest Shout Messages</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Member_Panel','0','2','1','<CENTER><B>Member Panel</B></CENTER><HR>')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Newest_Members','1','4','1','<CENTER><B>Newest Members</B></CENTER><HR>')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Members','1','4','1','<CENTER><B>Newest Members</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('RSS_Panel','1','4','1','<CENTER><B>Real-Simple-Syndication</B></CENTER><HR>')");
 
 	echo ("[ Done ]<BR>");
