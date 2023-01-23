@@ -79,8 +79,10 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
  * Do Nothing
 **/
 } else {
+
 											echo ($_Message_Log_Background_ERROR_SQL_STATISTICS);
-} // [ + ] IF_QUERY
+
+} // [ + ] IF: Database Server Query: Update Statistics Variable Has Executed
 
 /*
  ============================================================================================================
@@ -99,8 +101,10 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
  * Do Nothing
 **/
 } else {
+
 											echo ($_Message_Log_Background_ERROR_SQL_MEMBERS);
-} // [ + ] IF_QUERY
+
+} // [ + ] IF: Member Account Cookie IS Null
 
 /*
  ============================================================================================================
@@ -110,7 +114,7 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
 
 $DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS);
 
-} // [ + ] IF_DB_Query_UPDATE_MEMBERS
+} // [ + ] IF: Database Query: Update Member Variable Has Executed
 
 /*
  ============================================================================================================

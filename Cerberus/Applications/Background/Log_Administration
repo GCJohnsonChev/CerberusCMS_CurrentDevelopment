@@ -105,25 +105,25 @@ if (strlen($_Application_Module_Background_Log_Administration_GET_IP) > "250") {
 
 	$_Application_Module_Background_Log_Administration_GET_IP 				= "Non-Registered";
 
-} // [ + ] IF_STRING_LENGTH
+} // [ + ] IF: String Length Is Less Than 250
 
 if (strlen($_Application_Module_Background_Log_Administration_GET_REFERRER) > "250") {
 
 	$_Application_Module_Background_Log_Administration_GET_REFERRER 			= "Non-Registered";
 
-} // [ + ] IF_STRING_LENGTH
+} // [ + ] IF: String Length Is Less Than 250
 
 if (strlen($_Application_Module_Background_Log_Administration_GET_USER_AGENT) > "250") {
 
 	$_Application_Module_Background_Log_Administration_GET_USER_AGENT			= "Non-Registered";
 
-} // [ + ] IF_STRING_LENGTH
+} // [ + ] IF: String Length Is Less Than 250
 
 if (strlen($_Application_Module_Background_Log_Administration_GET_LOG_MEMBER) > "20") {
 
 	$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER 			= "Non-Registered";
 
-} // [ + ] IF_STRING_LENGTH
+} // [ + ] IF: String Length Is Less Than 250
 
 /*
  ============================================================================================================
@@ -135,7 +135,7 @@ if ($_Application_Module_Background_Log_Administration_GET_LOG_MEMBER == "") {
 
 	$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER			= "Non-Registered";
 
-} // [ + ] IF_NULL_USER
+} // [ + ] IF: Member Account IS Empty
 
 /*
  ============================================================================================================
