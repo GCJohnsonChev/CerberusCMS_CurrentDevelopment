@@ -300,7 +300,7 @@ if ($_Application_Module_Administration_Update_DB_Query_DELETE_LINK) {
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_LINK);
 
-} // [ + ] IF: Database Query: Delete Link By ID Variable Is Activated
+} // [ + ] IF: Database Query: Delete Link By ID Variable Is Executed
 
 /*
  ============================================================================================================
@@ -539,7 +539,7 @@ if (($_Application_Module_Administration_Update_DB_Query_DELETE_NEWS) && ($_Appl
 
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
 
-} // [ + ] IF_DELETE_QUERY
+} // [ + ] IF: Database Query: Delete News Article By ID AND Unlink News Article Entry File Is Activated
 
 /*
  =============================================================================================================
@@ -549,9 +549,9 @@ if (($_Application_Module_Administration_Update_DB_Query_DELETE_NEWS) && ($_Appl
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_NEWS);
 
-} // [ + ] IF_DELETE
+} // [ + ] IF: Internal Application: Delete News Article Entry By ID Is Activated
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving News Article Entries From Database
 
 /*
  =============================================================================================================
@@ -561,7 +561,7 @@ $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_NEWS);
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_NEWS);
 
-} // [ + ] IF_Update_NEWS
+} // [ + ] IF: Internal Application: Data IS News Is Activated
 
 /*
  ============================================================================================================
@@ -617,7 +617,7 @@ if (($_Application_Module_Administration_Update_DB_Query_DELETE_FILE) && ($_Appl
 
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
 
-} // [ + ] IF_DELETE_QUERY
+} // [ + ] IF: Database Query: Delete File Entry By ID AND Unlink: File Entry Files Variables Have Executed
 
 /*
  =============================================================================================================
@@ -627,7 +627,7 @@ if (($_Application_Module_Administration_Update_DB_Query_DELETE_FILE) && ($_Appl
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_FILE);
 
-} // [ + ] IF_DELETE
+} // [ + ] IF: Internal Application: Delete File By ID Is Activated
 
 /*
  ============================================================================================================
@@ -672,25 +672,25 @@ $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER			= preg_re
 if ((!$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR)) {
 
 echo ("
-													<CENTER><B>Currently Updating File: <I>$_Application_Module_Administration_Update_LIST_FILE_TITLE</I></B></CENTER><HR>
+													<CENTER><B>Currently Updating File Entry: <I>$_Application_Module_Administration_Update_LIST_FILE_TITLE</I></B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Files&amp;UpdateFileID&#61;$_Application_Module_Administration_Update_LIST_FILE_ID\" METHOD=\"post\">
-															File Author:<BR>
+															File Entry Author:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_author\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_AUTHOR\" MAXLENGTH=\"50\"><BR>
-															File Category:<BR>
+															File Entry Category:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_category\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_CATEGORY\" MAXLENGTH=\"250\"><BR>
-															File Description:<BR>
+															File Entry Description:<BR>
 																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"update_file_description\">$_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION</TEXTAREA><BR>
-															File Image:<BR>
+															File Entry Image:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_image\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_IMAGE\" MAXLENGTH=\"50\"><BR>
-															File Location:<BR>
+															File Entry Location:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_location\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_LOCATION\" MAXLENGTH=\"50\"><BR>
-															Number of Downloads:<BR>
+															File Entry Number of Downloads:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_downloads\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_NUMBER_OF_DOWNLOADS\" MAXLENGTH=\"15\"><BR>
-															Time Submitted:<BR>
+															File Entry Submission Timestamp:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_time\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_TIME\" MAXLENGTH=\"50\"><BR>
-															File Title:<BR>
+															File Entry Title:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_title\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_TITLE\" MAXLENGTH=\"50\"><BR>
-															File Uploader:<BR>
+															File Entry Uploader:<BR>
 																<INPUT TYPE=\"text\" NAME=\"update_file_uploader\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_UPLOADER\" MAXLENGTH=\"50\"><BR>
 															<INPUT TYPE=\"submit\" VALUE=\"Update File Entry\">
 														</FORM>
@@ -701,10 +701,14 @@ echo ("
 $_Application_Module_Administration_Update_DB_Query_UPDATE_FILE				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files SET file_author='$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR',file_category='$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY',file_description='$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION',file_image='$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE',file_location='$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION',file_number_of_downloads='$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS',file_title='$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE',file_time='$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME',file_uploader='$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER' WHERE id='$_Application_Module_Administration_Update_LIST_FILE_ID'");
 
 if ($_Application_Module_Administration_Update_DB_Query_UPDATE_FILE) {
+
 													echo ($_Application_Module_Administration_Message_Update_FILE_UPDATED_SUCCESSFULLY);
+
 } else {
+
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_UPDATE_QUERY
+
+} // [ + ] IF: Database Query: Update File Entry Variable Is Executed
 
 /*
  =============================================================================================================
@@ -714,11 +718,11 @@ if ($_Application_Module_Administration_Update_DB_Query_UPDATE_FILE) {
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_FILE);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Update File Entry Form Variables Have Executed
 
-} // [ + ] IF_UPDATE
+} // [ + ] IF: Internal Application: Update File Entry By ID Is Activated
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving File Entries From Database
 
 /*
  =============================================================================================================
@@ -728,5 +732,5 @@ $DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_FILE);
 
 $DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_FILES);
 
-} // [ + ] IF_UPDATE
+} // [ + ] IF: Internal Application: Data IS File Is Activated
 ?>
