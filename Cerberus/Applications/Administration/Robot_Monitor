@@ -213,7 +213,7 @@ if ($_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2 =
 **/
 } else {
 
-if (unlink("Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/$_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2")) {
+if (unlink("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/$_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2")) {
 
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_9);
 
@@ -221,17 +221,21 @@ if (unlink("Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER
 
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_10);
 
-} // [ + ] IF: 
+} // [ + ] IF: Unlink: Member Account Directory
 
-if (rmdir("Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/Friend")) {
+if (rmdir("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/Friend")) {
+
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_11);
 } else {
+
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_12);
-} // [ + ] IF_REMOVE_SUB_DIRECTORY
 
-} // [ + ] IF_NOT_DIR/FILE
 
-} // [ + ] WHILE_DIR
+} // [ + ] IF: Remove Directory: Member Account Directory: Friend
+
+} // [ + ] IF: Specified Member Account Directory Files ARE NOT Specified Member Account Directory AND Files
+
+} // [ + ] WHILE: Reading Member Account Directory Contents
 
 closedir($_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY_2);
 
@@ -245,25 +249,42 @@ closedir($_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTOR
  ============================================================================================================
 */
 
-if (rmdir("Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME")) {
+if (rmdir("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME")) {
+
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_13);
-} else {
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_14);
-} // [ + ] IF_REMOVE_DIRECTORY
 
 } else {
+
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_14);
+} // [ + ] IF: Remove Non-Activated Member Account Directory
+
+} else {
+
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_15);
-} // [ + ] IF_DELETEALL_QUERY
+
+} // [ + ] IF: Delete All Non-Activated Member Account Directories
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete All Non-Activated Member Accounts
+ ============================================================================================================
+*/
 
 $DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL);
 
-} // [ + ] IF_PAGE_DELETE_ALL
+} // [ + ] IF: Internal Application: Delete All Non-Activated Member Accounts Is Activated
 
-} // [ + ] WHILE_CLEANERSQL
+} // [ + ] WHILE: Reading All Non-Activated Member Account Directories
 
-} // [ + ] IF_NUM_ROWS
+} // [ + ] IF: Non-Activated Member Account Directory Number of Rows IS Less Than Or Equal To Zero
 
 													echo ("<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Bot_Monitor&amp;DeleteID&#61;All\" TITLE=\"Delete All Potential Spam-Bot Accounts\">Delete All</A> ]<BR>");
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All Non-Activated Member Accounts
+ ============================================================================================================
+*/
 
 $DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS);
 ?>
