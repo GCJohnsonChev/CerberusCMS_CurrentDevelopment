@@ -552,4 +552,14 @@ if ($_GET("Page") == "1") {} else }}
 
 [ 01 - 23 - 2023 ]
 
-* Updated 
+* Updated All Administration-Level, Background-Level, Custom-Level, Member-Level, Panel-Level and Public-Level Application Modules:
+  Updated To [ ^ ] File Name, Location and Description
+  Updated To Equal Commentation ( = ) Characters
+  Updated All Curly Brace } // [ + ] Commentation
+
+* Updated All Root Files:
+  Updated To [ ^ ] File Name, Location and Description
+  Updated To Equal Commentation ( = ) Characters
+  Updated All Curly Brace } // [ + ] Commentation
+
+* Renamed Newest_Members.panel To Latest_Members.panel
