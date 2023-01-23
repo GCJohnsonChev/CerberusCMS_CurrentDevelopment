@@ -121,3 +121,7 @@
 * Update The System Electronic Mail Message System-Wide. Make All Electronic Mail Messages Extremely Detailed, Include I.P. Address, Timestamps and all other specific information about the server and the remote user.
 * Remake the entire Block System and Rename it to 'Panels' and 'Application Panels'.
 * Download last earlier backup from my GCJohnsonChev account and merge with new stuff I'm doing today, on monday 11-14-2022 but do it all from the browser just in case these files got malicious.
+* Continue development of CerberusCMS to complete Version: 4, Build Number: 0.8 and once released begin the transition to the official new project name once a new
+  unique software name can be officially registered. It looks like I'm on some weird network blocks wherever I go so I will need to consult with some people overseas to
+  help me see what software project names / company names are already officially registered or not. RunicCMS was taken I think. Look for a unique software project name for
+  this programming code. I still need to prove I am not my doppelgangers who were using my software project names and putting their faces and identities on it.
