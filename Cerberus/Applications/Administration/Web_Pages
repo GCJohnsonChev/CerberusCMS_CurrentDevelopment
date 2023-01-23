@@ -190,9 +190,10 @@ if ($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK) {
 
 } // [ + ] IF: Database Query: Delete Link Entry Variable Has Executed
 
+
 /*
  ============================================================================================================
- + Kill DB Query
+ + Kill SQL Database Server Query: Delete Link Entry By ID
  ============================================================================================================
 */
 
@@ -263,9 +264,10 @@ if ($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK) {
 
 } // [ + ] IF: Database Query: Update Link Entry Varible Has Executed
 
+
 /*
  ============================================================================================================
- + Kill DB Query
+ + Kill SQL Database Server Query: Update Link Entry By ID
  ============================================================================================================
 */
 
@@ -279,9 +281,10 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK);
 
 } // [ + ] IF: Number of Rows In Database IS Less Than Or Equal To Zero
 
+
 /*
  ============================================================================================================
- + Kill DB Query
+ + Kill SQL Database Server Query: Select Link Entries
  ============================================================================================================
 */
 
@@ -346,9 +349,10 @@ if ($_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_PAGE) {
 
 } // [ + ] IF: Database Query: Install Custom Web Page Variable Has Executed
 
+
 /*
  ============================================================================================================
- + Kill DB Query
+ + Kill SQL Database Server Query: Install Custom Web Page Entry
  ============================================================================================================
 */
 
@@ -483,9 +487,10 @@ if ($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_PAGE) {
 
 } // [ + ] IF: Database Query: Update Custom Web Page Entry Variable Has Executed
 
+
 /*
  ============================================================================================================
- + Kill DB Query
+ + Kill SQL Database Server Query: Update Custom Web Page Entry
  ============================================================================================================
 */
 
@@ -497,9 +502,10 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_PAGE);
 
 } // [ + ] WHILE: Retrieving Custom Web Page Entries From Database
 
+
 /*
  ============================================================================================================
- + Kill DB Query
+ + Kill SQL Database Server Query: Select Custom Web Pages
  ============================================================================================================
 */
 

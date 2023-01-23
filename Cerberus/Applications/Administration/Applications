@@ -138,7 +138,7 @@ if ($_Application_Module_Administration_Applications_DB_Query_Insert_Application
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query:: Insert Application
+ + Kill SQL Database Server Query: Insert Application
  ============================================================================================================
 */
 
@@ -218,7 +218,7 @@ $_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_STATUS 		
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query:: Insert Application
+ + Kill SQL Database Server Query: Insert Application
  ============================================================================================================
 */
 
@@ -261,7 +261,7 @@ if ($_Application_Module_Administration_Applications_DB_Query_Delete_Application
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query :: Delete Application By ID
+ + Kill SQL Database Server Query: Delete Application By ID
  ============================================================================================================
 */
 
@@ -348,7 +348,7 @@ if ($_Application_Module_Administration_Applications_DB_Query_Update_Application
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query:: Update Application By ID
+ + Kill SQL Database Server Query: Update Application By ID
  ============================================================================================================
 */
 
@@ -362,7 +362,7 @@ $DB->free($_Application_Module_Administration_Applications_DB_Query_Update_Appli
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query:: Select Application File
+ + Kill SQL Database Server Query: Select Application File
  ============================================================================================================
 */
 

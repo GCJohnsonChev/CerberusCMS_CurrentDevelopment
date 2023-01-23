@@ -125,7 +125,7 @@ echo ("
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Settings\" METHOD=\"post\">
 															Default Safe-HTML Plugin Directory:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_SafeHTML_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
-															Safe-HTML Plugin Status:<BR>
+															Safe Hyper-Text-Markup-Language Plugin Status:<BR>
 															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_STATUS ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_SafeHTML_Status\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
@@ -134,7 +134,7 @@ echo ("
 															Cookie / Session Time Expiration:<BR>
 															[ In Seconds ]<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Session_Time\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_COOKIE_TIME\" MAXLENGTH=\"10\"><BR><BR>
-															GZIP Compression Status:<BR>
+															G.N.U. ZIP Compression Status:<BR>
 															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_GZIP_STATUS ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_GZIP_Compression\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
@@ -152,11 +152,11 @@ echo ("
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																</SELECT><BR><BR>
-															Website Title:<BR>
+															Website Browser Title:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Site_Title\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SITE_TITLE\" MAXLENGTH=\"250\"><BR><BR>
 															Default Smiley-Face(s) / Emoji Plugin Directory:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Smileys_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SMILEYS_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
-															Theme Sound Extension:<BR>
+															Theme Audio File Extension:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\"><BR><BR>
 															Default Theme Directory:<BR>
 																<SELECT NAME=\"Module_Administration_Settings_Theme_Directory\">
@@ -181,9 +181,9 @@ if ($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "." || 
 
 																	echo ("<OPTION VALUE=\"$_Application_Module_Administration_Settings_READ_THEME_DIRECTORY\">$_Application_Module_Administration_Settings_READ_THEME_DIRECTORY</OPTION>");
 
-} // [ + ] IF_NOT_DIRECTORY || FILE
+} // [ + ] IF: Theme Directory IS NOT Specified Files AND Directory
 
-} // [ + ] WHILE_DIRECTORY
+} // [ + ] WHILE: Reading Specified Theme Directory And Files
 
 /*
  ============================================================================================================
@@ -195,13 +195,13 @@ closedir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY);
 
 echo ("
 																</SELECT><BR><BR>
-															Upload Size Limit:<BR>
-															[ Private Uploader [ Members ] In Bytes ]<BR>
+															Private Upload Size Limit:<BR>
+															[ Private Uploader [ Registered Members ] In Bytes ]<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Private\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PRIVATE\" MAXLENGTH=\"15\"><BR><BR>
 															Upload Size Limit:<BR>
-															[ Public Uploader [ Members ] In Bytes ]<BR>
+															[ Public Uploader [ Registered Members ] In Bytes ]<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Public\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PUBLIC\" MAXLENGTH=\"15\"><BR>
-															<INPUT TYPE=\"submit\" VALUE=\"Update Settings\">
+															<INPUT TYPE=\"submit\" VALUE=\"Update System Settings\">
 														</FORM>
 ");
 
@@ -233,28 +233,32 @@ settings_text_editor_directory='$_Application_Module_Administration_Settings_POS
 WHERE id='1'");
 
 if ($_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS) {
+
 													echo ($_Application_Module_Administration_Message_Settings_SETTINGS_UPDATED_SUCCESSFULLY);
+
 } else {
+
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
-} // [ + ] IF_DB_Query
+
+} // [ + ] IF: Database Query: Updaate System Settings Variable Has Executed
 
 /*
  ============================================================================================================
- + Kill SQL Query
+ + Kill SQL Database Server Query: Update System Settings
  ============================================================================================================
 */
 
 $DB->free($_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS);
 
-} // [ + ] IF_POST_UPDATE
+} // [ + ] IF: Update System Settings Form Variables Have Executed
+
+} // [ + ] WHILE: Retrieving System Settings From Database
 
 /*
  ============================================================================================================
- + Kill SQL Query
+ + Kill SQL Database Server Query: Select System Settings
  ============================================================================================================
 */
-
-} // [ + ] WHILE_READ_SQL_Settings
 
 $DB->free($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS);
 ?>
