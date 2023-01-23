@@ -39,52 +39,52 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
  +
- + [ @ ] Cerberus Content Management System :: Architect Application
+ + [ ^ ] Cerberus Content Management System :: Architect Application
  +
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
  + [ @ ] Error Handling Systems
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 error_reporting("E_WARNING ^ E_NOTICE");
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
  + [ @ ] Global Variables
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Local Server Variables
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Local Server Date, Time and Referrer
- ================================================================
+ ============================================================================================================
 */
 
 $_GLOBAL_LOCAL_SERVER_DATE								= date("l, F j, Y g:i:s A");
@@ -96,17 +96,17 @@ $_GLOBAL_LOCAL_SERVER_DATE_SECONDS							= date("s");
 $_GLOBAL_LOCAL_SERVER_HTTP_REFERRER							= $_SERVER['HTTP_REFERER'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Remote Server Variables
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Remote Server Connection
- ================================================================
+ ============================================================================================================
 */
 
 $_GLOBAL_REMOTE_SERVER_ADDRESS								= $_SERVER['REMOTE_ADDR'];
@@ -115,17 +115,17 @@ $_GLOBAL_REMOTE_SERVER_PORT								= $_SERVER['REMOTE_PORT'];
 $_GLOBAL_REMOTE_USER									= $_SERVER['REMOTE_USER'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Local Server Protocol Variables
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Local Server Connection Information Protocol Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE							= $_SERVER['GATEWAY_INTERFACE'];
@@ -135,9 +135,9 @@ $_GLOBAL_LOCAL_SERVER_SOFTWARE								= $_SERVER['SERVER_SOFTWARE'];
 $_GLOBAL_LOCAL_SERVER_PROTOCOL								= $_SERVER['SERVER_PROTOCOL'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Local Server Connection Request Protocol Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD							= $_SERVER['REQUEST_METHOD'];
@@ -147,9 +147,9 @@ $_GLOBAL_LOCAL_SERVER_QUERY_STRING							= $_SERVER['QUERY_STRING'];
 $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT							= $_SERVER['DOCUMENT_ROOT'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Local Server Hyper-Text-Transfer-Protocol Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT							= $_SERVER['HTTP_ACCEPT'];
@@ -163,33 +163,33 @@ $_GLOBAL_LOCAL_SERVER_HTTP_REFERRER							= $_SERVER['HTTP_REFERER'];
 $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT							= $_SERVER['HTTP_USER_AGENT'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
  + [ @ ] System Configuration Settings
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + System Configuration Files Inclusion
  +
- ================================================================
+ ============================================================================================================
 */
 
 include_once("./System/Configuration/Global_Configuration.php");
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
  + [ @ ] Hyper-Text-Markup-Language Document-Data Generation: Start
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 echo ("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
@@ -206,17 +206,17 @@ echo ("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http:/
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Installation Form
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Installation Form Post Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME						= $_POST['post_sql_database_server_hostname'];
@@ -234,9 +234,9 @@ $_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_CONFIGURATION_FILE				= file_get_content
 $_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE			= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class.php");
 
 /*
- ================================================================
+ ============================================================================================================
  + Database Create Form Post Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_HOSTNAME				= $_POST['post_create_sql_database_server_database_hostname'];
@@ -246,9 +246,9 @@ $_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME				= $_POST['post_creat
 $_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX		= $_POST['post_create_sql_database_server_database_name_table_prefix'];
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Installation Form Has Not Posted, Show Installation Form
- ================================================================
+ ============================================================================================================
 */
 
 if (!$_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME) {
@@ -374,9 +374,9 @@ echo ("
 } else {
 
 /*
- ================================================================
+ ============================================================================================================
  + Delete Original System Database Server Connection Configuration File
- ================================================================
+ ============================================================================================================
 */
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Secure-Deleting Original System Configuration File...<BR>");
@@ -386,15 +386,15 @@ echo ("
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Creating New System Configuration File With Installer Specifications...<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Create New System Database Server Connection Configuration File
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Define New System Database Server Connection Configuration File Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_ACCESS_FILE_FILENAME					= "./System/Configuration/Global_SQL_Server_Configuration.php";
@@ -414,9 +414,9 @@ $_ACCESS_FILE_DATA					= "<?PHP
 ";
 
 /*
- ================================================================
+ ============================================================================================================
  + Write Data To New System Configuration File
- ================================================================
+ ============================================================================================================
 */
 
 $_OPEN_ACCESS_FILE_FILENAME 								= fopen($_ACCESS_FILE_FILENAME, "w");
@@ -434,11 +434,11 @@ echo ("
 } // [ + ] IF: Installation Variables Have Executed
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application: Create Database
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "Create_Database") {
@@ -466,9 +466,9 @@ echo ("
 } else {
 
 /*
- ================================================================
+ ============================================================================================================
  + Connect To Specified Database Server
- ================================================================
+ ============================================================================================================
 */
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Attempting Connection To Specified Database Server Host Name... Please Wait.<BR>");
@@ -478,9 +478,9 @@ mysql_connect($_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_HOSTNAME, $_IN
 	echo ("[ Connected ]<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Create Specified Database Name
- ================================================================
+ ============================================================================================================
 */
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Creating Specified Database Name... Please Wait.<BR>");
@@ -488,9 +488,9 @@ mysql_connect($_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_HOSTNAME, $_IN
 mysql_query("CREATE DATABASE $_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME") or die(mysql_error());
 
 /*
- ================================================================
+ ============================================================================================================
  + Connect To Created Database Server
- ================================================================
+ ============================================================================================================
 */
 
 	echo ("[ Done ]<BR>");
@@ -499,18 +499,18 @@ mysql_query("CREATE DATABASE $_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE
 mysql_select_db($_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME);
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default S.Q.L. Structure
- ================================================================
+ ============================================================================================================
 */
 
 	echo ("[ Done ]<BR>");
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing S.Q.L. Database Server Database Structure... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default S.Q.L. Server Database Tables
- ================================================================
+ ============================================================================================================
 */
 
 /* Applications */
@@ -943,19 +943,19 @@ PRIMARY KEY (id)
 } // [ + ] IF: Internal Application: Create Database, Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application: Install Default Data
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ( $_GET["InternalApplication"] == "Install_Defaults" ) {
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Data Form Post Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS						= $_POST['post_administrator_electronic_mail_address'];
@@ -966,17 +966,17 @@ $_POST_ADMINISTRATOR_PASSWORD_2								= $_POST['post_administrator_password_2']
 $_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS						= strtolower($_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS);
 
 /*
- ================================================================
+ ============================================================================================================
  + Administration Accounts Password Hashing System
- ================================================================
+ ============================================================================================================
 */
 
 $_POST_ADMINISTRATOR_PASSWORD_3								= password_hash($_POST_ADMINISTRATOR_PASSWORD_1, PASSWORD_BCRYPT);
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Administrator Form Has Not Posted: Display Create New Administrator Form
- ================================================================
+ ============================================================================================================
 */
 
 if ((!$_POST_ADMINISTRATOR_USERNAME) || (!$_POST_ADMINISTRATOR_PASSWORD_1) || (!$_POST_ADMINISTRATOR_PASSWORD_2)) {
@@ -1004,9 +1004,9 @@ echo ("
 } else {
 
 /*
- ================================================================
+ ============================================================================================================
  + Check Passwords For Differences: IF: Passwords Match Exactly, Execute Installation
- ================================================================
+ ============================================================================================================
 */
 
 if ($_POST_ADMINISTRATOR_PASSWORD_1 == "$_POST_ADMINISTRATOR_PASSWORD_2") {
@@ -1016,18 +1016,18 @@ if ($_POST_ADMINISTRATOR_PASSWORD_1 == "$_POST_ADMINISTRATOR_PASSWORD_2") {
 include_once "./System/Configuration/Global_Configuration.php";
 
 /*
- ================================================================
+ ============================================================================================================
  + Database Server Connection Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_MAIN_INSTALLATION_DATA_CONNECT_DATABASE						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
 $_MAIN_INSTALLATION_DATA_SELECT_DATABASE						= mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME);
 
 /*
- ================================================================
+ ============================================================================================================
  + Connect To Database Server
- ================================================================
+ ============================================================================================================
 */
 
 if ($_MAIN_INSTALLATION_DATA_CONNECT_DATABASE) {
@@ -1035,9 +1035,9 @@ if ($_MAIN_INSTALLATION_DATA_CONNECT_DATABASE) {
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Connected To Database Server Host Name: </I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> Successfully.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Connect To Database Server Database Name
- ================================================================
+ ============================================================================================================
 */
 
 if ($_MAIN_INSTALLATION_DATA_SELECT_DATABASE) {
@@ -1047,9 +1047,9 @@ if ($_MAIN_INSTALLATION_DATA_SELECT_DATABASE) {
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Packaged Application Module Links... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Application Links
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Active Members','001','?Application_Member&#61;Active_Members')");
@@ -1083,9 +1083,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Packaged Applications and Application Settings... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Applications
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Active_Members','1','1')");
@@ -1132,9 +1132,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Packaged Panels... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Panels
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Applications_Panel','0','1','1','<CENTER><B>Applications Panel</B></CENTER><HR>')");
@@ -1153,9 +1153,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Details and Services Root Administrator Account ( Cerberus )... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Specified Administrator Account Details
- ================================================================
+ ============================================================================================================
 */
 
 $_GLOBAL_LOCAL_SERVER_DATE								= date("l, F j, Y g:i:s A");
@@ -1296,10 +1296,10 @@ member_username)VALUES(
 '$_POST_ADMINISTRATOR_USERNAME')");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Cerberus Services Root Administrator Account Details
  + ( Cerberus ) With Specified Administration Account Password
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members(
@@ -1441,9 +1441,9 @@ member_username)VALUES(
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Directory Structure... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Make and Create Administrator Directory and Files
- ================================================================
+ ============================================================================================================
 */
 
 /*
@@ -1530,9 +1530,9 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Services Root Administrator Account ( Cerberus ) Directory Structure Clone... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Make and Create Backup Administrator Directory ( Cerberus ) and Files
- ================================================================
+ ============================================================================================================
 */
 
 /*
@@ -1604,9 +1604,9 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Custom Web Applications... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Custom Applications
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom(custom_application_data,custom_application_name,custom_application_time)VALUES('Hello and welcome to Cerberus! If you\'re reading this then Cerberus was successfully installed!','Welcome To Cerberus','$_GLOBAL_LOCAL_SERVER_DATE')");
@@ -1616,9 +1616,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Default Ranking System... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Ranks
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks(rank_gender_male_0,rank_gender_male_1,rank_gender_male_2,rank_gender_male_3,rank_gender_male_4,rank_gender_female_0,rank_gender_female_1,rank_gender_female_2,rank_gender_female_3,rank_gender_female_4)VALUES('Hermes','Apollo','Poseidon','Hades','Zeus','Aphrodite','Demeter','Artemis','Hera','Athena')");
@@ -1628,9 +1628,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks(
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Pre-Configured System Settings... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Settings
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_safeHTML_directory,settings_safeHTML_status,settings_cookie_time,settings_gzip_status,settings_image_extension,settings_language_directory,settings_offline_status,settings_site_title,settings_smileys_directory,settings_sound_extension,settings_theme_directory,settings_upload_size_private,settings_upload_size_public,settings_text_editor_directory)VALUES('Default','1','86400','1','png','English','0','Cerberus Content Management System','Default','mp3','2022_TinkeSoftware_Grey','256000','10240000','Default')");
@@ -1640,9 +1640,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settin
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Statistics... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Statistics
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics(statistics_total_number_of_page_views,statistics_installation_date)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE')");
@@ -1652,9 +1652,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statis
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Forum Entry... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Forum
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum(forum_access_level,forum_date,forum_description,forum_title)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE','This is an Example Forum Entry','Example Forum #1')");
@@ -1664,9 +1664,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Forum Topic Entry... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Forum Topic
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_date,topic_description,topic_forum_id,topic_last_post,topic_last_poster,topic_title)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE','This is an Example Topic.','1','$_GLOBAL_LOCAL_SERVER_DATE','Cerberus','This Is The Example Topic #1 Entry Within The Example Forum #1 Entry')");
@@ -1676,9 +1676,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Forum Topic Post... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Topic Post
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post(post_access_level,post_author,post_data,post_date,post_last_edit,post_topic_id)VALUES('1','Cerberus','This is an Example Post -- you can Administer the Forum via the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','$_GLOBAL_LOCAL_SERVER_DATE','1')");
@@ -1688,9 +1688,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example File Category Entry ( For File Upload / Download Application Module )... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default File Category
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories(file_category_description,file_category_time,file_category_title)VALUES('This is an Example File Category Entry -- You can Delete this File Category Entry from the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','Example File Category Entry')");
@@ -1700,9 +1700,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_c
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example File Entry ( For File Upload / Download Application Module )... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default File
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(file_author,file_category,file_description,file_image,file_location,file_number_of_downloads,file_time,file_title,file_uploader)VALUES('None','1','This is an Example File Entry -- You can Delete this Example File Entry from the Administration Control Panel.','./Upload/Default/0987654321-0987654321.png','./Upload/Default/0987654321-0987654321.png','1','$_GLOBAL_LOCAL_SERVER_DATE','Example File','Cerberus')");
@@ -1712,9 +1712,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Article Entry... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default Article
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles(article_author,article_data,article_time,article_title)VALUES('Cerberus','This is an Example Article Entry -- You can Delete this Article Entry from the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','Example Article')");
@@ -1724,9 +1724,9 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articl
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Article Entry... Please Wait.<BR>");
 
 /*
- ================================================================
+ ============================================================================================================
  + Install Default News
- ================================================================
+ ============================================================================================================
 */
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news(news_author,news_avatar,news_data,news_mood,news_music,news_rss_rfc,news_time,news_title)VALUES('Cerberus','Default.png','This is an Example News Article Entry -- You can Delete this News Article Entry from the Administration Control Panel.','None','None','Wed, 05 Aug 2009 15:04:18 -0700','$_GLOBAL_LOCAL_SERVER_DATE','Example News')");
@@ -1758,11 +1758,11 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news(n
 } // [ + ] IF: Install Default S.Q.L. Data
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application: Unlink and Secure-Delete Installation System
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "Unlink_Installation") {
@@ -1847,17 +1847,17 @@ Remote Server Internet Protocol Address ( Who Installed This ): $_GLOBAL_REMOTE_
 } // [ + ] IF: Delete All Architect Installation Files
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Applications: Information Applications
  +
- ================================================================
+ ============================================================================================================
 */
 
  /*
- ================================================================
+ ============================================================================================================
  + Internal Application: Cerberus System Information
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "Cerberus_Information") {
@@ -1896,9 +1896,9 @@ echo ("
 } // [ + ] IF: Internal Application: Cerberus_Information Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  + Internal Application: PHP Server Engine Information
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "PHP_Information") {
@@ -1910,9 +1910,9 @@ if ($_GET["InternalApplication"] == "PHP_Information") {
 } // [ + ] IF: Internal Application: PHP_Information Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  + Internal Application: PHP Extensions
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "PHP_Extensions") {
@@ -1924,9 +1924,9 @@ if ($_GET["InternalApplication"] == "PHP_Extensions") {
 } // [ + ] IF: Internal Application: PHP_Extensions Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  + Internal Application: File Permissions
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "File_Permissions") {
@@ -1941,9 +1941,9 @@ echo ("
 } // [ + ] IF: Internal Application: File_Permissions Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  + Internal Application: Cerberus System Information
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "ServerSoftware_Information") {
@@ -1977,11 +1977,11 @@ echo ("
 } // [ + ] IF: Internal Application: ServerSoftware_Information Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Hyper-Text-Markup-Language Document: End
  +
- ================================================================
+ ============================================================================================================
 */
 
 	echo ("<HR><CENTER>Copyright <BIG><B>&copy;</B></BIG> <A HREF=\"https://www.GitHub.com/TinkeSoftware\" TARGET=\"_NEW\" TITLE=\"Tinke Software On :: GitHub\">Tinke Software</A>, <A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TITLE=\":: Cerberus Content Management System Project On :: SourceForge ::\">Cerberus Content Management System</A>, <A HREF=\"mailto:GCJohnsonChevalier@Protonmail.com\" TITLE=\":: Send Electronic Mail Message To :: GCJohnsonChevalier@Protonmail.com ::\">Gary Christopher Johnson</A>, 2005 - 2023.</CENTER><HR></TD></TR></TABLE>
