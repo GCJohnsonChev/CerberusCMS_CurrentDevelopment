@@ -39,40 +39,40 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Member :: Update Account
+ + [ ^ ] Application Module :: Member :: Update Account
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Application Module Header
- ================================================================
+ ============================================================================================================
 */
 
  												echo ($_Application_Module_Member_Message_Update_Account_Header);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Retrieive Member Account Details From Database
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array					= $DB->fetch_array($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Retrieve Member Database Column Entries
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
@@ -80,27 +80,27 @@ $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS 						= $DB->
 while ($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS)) {
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: ID, Access Level
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_ID							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_ACCESS_LEVEL						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Settings :: Images
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_IMAGE_AVATAR						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_avatar'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_IMAGE_PICTURE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Settings :: Other
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_LANGUAGE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_language'];
@@ -108,9 +108,9 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_NEWSLETTER					=
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SETTINGS_THEME_DIRECTORY					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_theme_directory'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Personal Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_BIRTHDATE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_birthdate'];
@@ -123,26 +123,26 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_NICKNAME						= $_Ap
 $_Application_Module_Member_Update_Account_LIST_MEMBER_GENDER							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_gender'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Personal Digital Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account UserName and Password
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_USERNAME							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_PASSWORD							= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_BITCOIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin'];
@@ -158,9 +158,9 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_TR
 $_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_ZCASH				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_zcash'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Details :: Internet Protocol Addresses
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_IP_ADDRESS_AUTHORIZED					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorized'];
@@ -168,9 +168,9 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_IP_ADDRESS_LAST_LOGIN				
 $_Application_Module_Member_Update_Account_LIST_MEMBER_IP_ADDRESS_LOG						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_log'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Details :: Account Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_EXPERIENCE_AMOUNT					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_experience_amount'];
@@ -188,9 +188,9 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_REGISTRATION_DETAILS					
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Status
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
@@ -200,34 +200,34 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_STATUS_ACCOUNT_BANNED				
 $_Application_Module_Member_Update_Account_LIST_MEMBER_URL_HOMEPAGE						= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_url_homepage'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Security
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE				= md5($_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Audio
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_soundcloud'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_spotify'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Business
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_business_linkedin'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Communications
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_discord'];
@@ -236,26 +236,26 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATION
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_snapchat'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Gallery
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_gallery_instagram'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Posting
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_facebook'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_twitter'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Software Development
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_bitbucket'];
@@ -263,25 +263,25 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_G
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_launchpad'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Security
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_security_keybase'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Video
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_video_youtube'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Social Media Accounts :: Video
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_NUMBER				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_credit_card_number'];
@@ -289,9 +289,9 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_CVV		
 $_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_EXPIRATION_DATE			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_credit_card_expiration_date'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Safe-HTML Code & Smiley Characters
- ================================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT						= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_ABOUT);
@@ -301,17 +301,17 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_CREDIT_CARD_EXPIR
 //$_Application_Module_Member_Update_Account_LIST_MEMBER_SIGNATURE						= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Member_Update_Account_LIST_MEMBER_SIGNATURE);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Post Variables :: Update Account Form
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Personal Details
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST				= $_POST['member_account_name_first'];
@@ -322,9 +322,9 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_BIRTHDATE	
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_GENDER					= $_POST['member_account_gender'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Physical Contact Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_HOME				= $_POST['member_account_address_home'];
@@ -332,9 +332,9 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_MA
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_CURRENT				= $_POST['member_account_location_current'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Digital Contact Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS			= $_POST['member_account_electronic_mail_address'];
@@ -361,9 +361,9 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDI
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD		= $_POST['member_account_socialmedia_programming_launchpad'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: CryptoCurrency :: BlockChain
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN	 	= $_POST['member_account_cryptocurrency_address_bitcoin'];
@@ -379,9 +379,9 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURR
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ZCASH		= $_POST['member_account_cryptocurrency_address_zcash'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Miscellanious Settings
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MOOD					= $_POST['member_account_mood'];
@@ -391,35 +391,35 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_N
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME				= $_POST['member_account_settings_theme'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Profile Images
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_AVATAR				= $_POST['member_account_profile_avatar'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_PICTURE				= $_POST['member_account_profile_picture'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Profile About and Profile Signature
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT				= $_POST['member_account_profile_about'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_SIGNATURE				= $_POST['member_account_profile_signature'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Account Encryption Keys ( Public )
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC			= $_POST['member_account_pgp_key_panel_public'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Account Settings :: Credit Card Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_BILLING				= $_POST['member_account_address_billing'];
@@ -428,23 +428,23 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CAR
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_EXPIRATION_DATE		= $_POST['member_account_credit_card_expiration_date'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Character Replace Variables
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Lowercase Replace
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS					= strtolower($_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS);
 
 /*
- ================================================================
+ ============================================================================================================
  + Safe-HTML Code & Smiley Characters
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_ABOUT						= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_ABOUT);
@@ -454,11 +454,11 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE					= s
 $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Update_Account_POST_UPDATE_ACCOUNT_SIGNATURE);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application :: Update Account :: Update Account Form
  +
- ================================================================
+ ============================================================================================================
 */
 
 if (!$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT) {
@@ -634,26 +634,26 @@ echo ("
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Read Member Directory :: For Updating Profile Image
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Read Member Directory Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_Image_SPECIFY_MEMBER_DIRECTORY					= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/";
 $_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY						= opendir($_Application_Module_Member_Update_Account_Image_SPECIFY_MEMBER_DIRECTORY);
 
 /*
- ================================================================
+ ============================================================================================================
  + Read Member Directory :: For Updating Profile Image
- ================================================================
+ ============================================================================================================
 */
 
 while (($_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY = readdir($_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY))) {
@@ -671,19 +671,19 @@ if ($_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY == ".
 } // [ + ] WHILE: Read Member Directory: Profile Image
 
 /*
- ================================================================
+ ============================================================================================================
  + Close Member Directory :: For Updating Profile Image
- ================================================================
+ ============================================================================================================
 */
 
 closedir($_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Read Theme Directory :: Update Member Account Theme
  +
- ================================================================
+ ============================================================================================================
 */
 
 echo ("
@@ -693,9 +693,9 @@ echo ("
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  + Read Theme Directory :: For Updating Member Account Theme
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_SPECIFY_THEME_DIRECTORY						= "./Theme/";
@@ -716,19 +716,19 @@ if ($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "." || $_
 } // [ + ] WHILE: Reading System Theme Directory For: Theme Selection
 
 /*
- ================================================================
+ ============================================================================================================
  + Close Theme Directory :: For Updating Member Account Theme
- ================================================================
+ ============================================================================================================
 */
 
 closedir($_Application_Module_Member_Update_Account_OPEN_THEME_DIRECTORY);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Read Avatar Image Directory :: For Updating Profile Avatar Image
  +
- ================================================================
+ ============================================================================================================
 */
 
 echo ("
@@ -739,9 +739,9 @@ echo ("
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  + Read Avatar Image Directory :: For Updating Profile Avatar Image
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY					= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/";
@@ -762,9 +762,9 @@ if ($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "
 } // [ + ] WHILE: Reading: Theme Directory :: Avatar Images
 
 /*
- ================================================================
+ ============================================================================================================
  + Close Avatar Image Directory :: For Updating Account Profile Avatar Image
- ================================================================
+ ============================================================================================================
 */
 
 closedir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY);
@@ -778,11 +778,11 @@ echo ("
 } else {
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Update Member Account Data Within S.Q.L. Database
  +
- ================================================================
+ ============================================================================================================
 */
 
 //member_experience_amount='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_EXPERIENCE_AMOUNT',
@@ -839,11 +839,11 @@ member_url_homepage='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMB
 if ($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT) {
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Send Electronic Mail Notification :: Profile Update Details
  +
- ================================================================
+ ============================================================================================================
 */
 
 mail($_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS,"Profile updated :: $_GLOBAL_SYSTEM_SITE_TITLE","
@@ -868,9 +868,9 @@ Have a nice day,
 } // [ + ] IF: Database Query: Update Member Account Details
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Update Member Profile
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT);
@@ -878,9 +878,9 @@ $DB->free($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCO
 } // [ + ] IF_NULL
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select All From Members
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS);

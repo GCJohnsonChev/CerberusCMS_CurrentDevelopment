@@ -39,198 +39,198 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Member :: Messenger
+ + [ ^ ] Application Module :: Member :: Messenger
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ======================================================
+ ============================================================================================================
  + Application Module Header
- ======================================================
+ ============================================================================================================
 */
 
 											echo ($_Application_Module_Member_Message_Messenger_Header);
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application Variables :: Generate :: Plain-Text-File Messenger
  +
- ======================================================
+ ============================================================================================================
 */
 
 /*
- ======================================================
+ ============================================================================================================
  + Random Number Generator
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_RANDOM_NUMBER_GENERATOR									= rand(0, 999999999);
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Select :: Plain-Text-File Messenger Room Name
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Plain_Text_File_Messenger_Select_Room_Name'];
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Generate :: Plain-Text-File Messenger Room :: Messenger Room Message
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE							= $_POST['Plain_Text_File_Messenger_Room_Message'];
 $_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN					= $_POST['Plain_Text_File_Messenger_Room_Name_Hidden'];
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Generate :: Plain-Text-File Messenger Room Name :: Plain-Text Passwords
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY					= $_POST['Plain_Text_File_Messenger_Room_Password_Entry'];
 $_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION				= $_POST['Plain_Text_File_Messenger_Room_Password_Deletion'];
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Generate :: Plain-Text-File Messenger Room Name :: Hashed Passwords
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY_HASH_BCRYPT			= password_hash($_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY, PASSWORD_BCRYPT);
 $_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION_HASH_BCRYPT			= password_hash($_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION, PASSWORD_BCRYPT);
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Generate :: Plain-Text-File Messenger Room Name :: Create Room Name
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Plain_Text_File_Messenger_Room_Name_Create'];
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Plain-Text-File Messenger Room :: Delete Room
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Hidden'];
 $_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_DELETE				= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Password_Delete'];
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application Variables :: Hidden Messenger Room
  +
- ======================================================
+ ============================================================================================================
 */
 
 /*
- ======================================================
+ ============================================================================================================
  + Post Variables :: Find Hidden Messenger Room Name
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_POST['Find_Messenger_Room_Name_Invisible'];
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application Variables :: Encrypted-Text-File Messenger
  +
- ======================================================
+ ============================================================================================================
 */
 
 /*
- ======================================================
+ ============================================================================================================
  + Specify G.N.U.-Privacy Guard Operating Environment
- ======================================================
+ ============================================================================================================
 */
 
 //putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg");
 //putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg");
 
 /*
- ======================================================
+ ============================================================================================================
  + Specify Pretty-Good-Privacy Public Keys
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_1              							= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg') . 'public.key');
 //$_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_2              							= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg') . 'public.key');
 
 /*
- ======================================================
+ ============================================================================================================
  + Initialize G.N.U.-Privacy Guard
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_INITIALIZE_GNUPG                               					= new gnupg();
 //$_Application_Module_Messenger_INITIALIZE_GNUPG->
 
 /*
- ======================================================
+ ============================================================================================================
  + Set G.N.U.-Privacy Guard Error Mode
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_INITIALIZE_GNUPG->seterrormode(gnupg::ERROR_EXCEPTION);
 
 /*
- ======================================================
+ ============================================================================================================
  + Import G.N.U.-Pretty-Good-Privacy Public Keys
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1								= $_Application_Module_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_1);
 //$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2								= $_Application_Module_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_2);
 
 /*
- ======================================================
+ ============================================================================================================
  + Add Pretty-Good-Privacy Key Fingerprints
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_1							= $_Application_Module_Messenger_GNUPG->addencryptkey($_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1['fingerprint']);
 //$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_2							= $_Application_Module_Messenger_GNUPG->addencryptkey($_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2['fingerprint']);
 
 /*
- ======================================================
+ ============================================================================================================
  + Get File Contents of The Encrypted-Text-File Messenger Room Messenger File
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE						= file_get_contents('./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME.html');
 
 /*
- ======================================================
+ ============================================================================================================
  + Encrypt Message Using PGP
- ======================================================
+ ============================================================================================================
 */
 
 //$_Application_Module_Messenger_GNUPG_ENCRYPT_MESSAGE									= $_Application_Module_Messenger_GNUPG->encrypt($_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application :: Display :: Messenger Options
  +
- ======================================================
+ ============================================================================================================
 */
 
 if ($_GET["Display"] == "MessengerOptions") {
 
 /*
- ======================================================
+ ============================================================================================================
  + Messenger Options Form
- ======================================================
+ ============================================================================================================
 */
 
 echo ("
@@ -290,19 +290,19 @@ echo ("
 } // [ + ] IF: Display Messenger Options
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application :: Generate :: Plain-Text-File Messenger Room
  +
- ======================================================
+ ============================================================================================================
 */
 
 if ($_GET["Generate"] == "PlainTextFileMessengerRoom") {
 
 /*
- ======================================================
+ ============================================================================================================
  + IF: Create Room Variables Have Not Executed, Display Form
- ======================================================
+ ============================================================================================================
 */
 
 if (!$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME) {
@@ -325,9 +325,9 @@ echo ("
 } else {
 
 /*
- ======================================================
+ ============================================================================================================
  + Variables Have Executed, Generate Specified Plain-Text-File Messenger Room Directory Structure
- ======================================================
+ ============================================================================================================
 */
 
 						echo ("*&nbsp;Creating Plain-Text-File Messenger Room Directory: <I>$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME</I>...<BR>");
@@ -343,9 +343,9 @@ copy("Temporary/Messenger/Setup/index.php","Temporary/Messenger/Physical/Plain-T
                                                 echo ("*&nbsp;Done<BR>");
 
 /*
- ======================================================
+ ============================================================================================================
  + Create Plain-Text-File Messenger Room File
- ======================================================
+ ============================================================================================================
 */
 
 						echo ("*&nbsp;Creating Plain-Text-File Messenger Room File: <I>$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME.html</I>...<BR>");
@@ -355,17 +355,17 @@ $_Application_Module_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME								= fope
 						echo ("*&nbsp;Done<BR>");
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Write Default Plain-Text-File Message Data
  +
- ======================================================
+ ============================================================================================================
 */
 
 /*
- ======================================================
+ ============================================================================================================
  + Define Default Plain-Text-File Data To Be Written To File
- ======================================================
+ ============================================================================================================
 */
 
 						echo ("*&nbsp;Writing Default Data To Plain-Text-File Messenger Room...<BR>");
@@ -375,9 +375,9 @@ $_Application_Module_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA								= "<ME
 															<BODY ONLOAD=\"window.scrollTo(0,document.body.scrollHeight);\">";
 
 /*
- ======================================================
+ ============================================================================================================
  + Write Default Plain-Text-File Data To Messenger File
- ======================================================
+ ============================================================================================================
 */
 
 fwrite($_Application_Module_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME, "$_Application_Module_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA");
@@ -391,9 +391,9 @@ fclose($_Application_Module_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME);
 						echo ("*&nbsp;Done<BR>");
 
 /*
- ======================================================
+ ============================================================================================================
  + Create Default Plain-Text Messenger Room File Directories
- ======================================================
+ ============================================================================================================
 */
 
 						echo ("*&nbsp;Creating Plain-Text-File Messenger Room File Directories<BR>");
@@ -417,9 +417,9 @@ copy("Temporary/Messenger/Setup/Video/index.php","Temporary/Messenger/Physical/P
 						echo ("*&nbsp;Done<BR>");
 
 /*
- ======================================================
+ ============================================================================================================
  + Insert Plain-Text Messenger Room Name Details To Database Server
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_plain_text_file_room(
@@ -442,9 +442,9 @@ messenger_room_password_deletion
 
 						echo ("*&nbsp;Inserting Plain-Text-File Messenger Room Name Details Into The S.Q.L. Database...<BR>");
 /*
- ======================================================
+ ============================================================================================================
  + IF: Database Query Has Executed
- ======================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME) {
@@ -458,9 +458,9 @@ if ($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROO
 } // [ + ] IF: Database Query -> Insert Plain-Text-File Messenger Room Name
 
 /*
- ================================================================
+ ==================================================================================================================================================================
  + Kill SQL Database Server Query: Insert Plain-Text-File Messenger Room Name
- ================================================================
+ ==================================================================================================================================================================
 */
 
 $DB->free($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME);
@@ -470,27 +470,27 @@ $DB->free($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENG
 } // [ + ] IF: Generate Plain-Text-File Messenger Room
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application :: Display All Plain-Text-File Messenger Rooms
  +
- ======================================================
+ ============================================================================================================
 */
 
 if ($_GET["Display"] == "PlainTextFileMessengerRooms") {
 
 /*
- ======================================================
+ ============================================================================================================
  + Retrieve Complete List of Plain-Text-File Messenger Rooms
- ======================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_plain_text_file_room ORDER BY id ASC");
 
 /*
- ======================================================
+ ============================================================================================================
  + IF: The Number of S.Q.L. Rows Is Less Than 0
- ======================================================
+ ============================================================================================================
 */
 
 if ($DB->num_rows($_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES) <= 0) {
@@ -500,9 +500,9 @@ if ($DB->num_rows($_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_
 } // [ + ] IF: Number of S.Q.L. Rows Is Less Than 0
 
 /*
- ======================================================
+ ============================================================================================================
  + Fetch Array of Plain-Text-File Room Name Details
- ======================================================
+ ============================================================================================================
 */
 
 while ($_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY = $DB->fetch_array($_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES)) {
@@ -523,19 +523,19 @@ $_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM
 } // [ + ] IF: Internal Application: Display List of Plain-Text-File Messenger Rooms
 
 /*
- ================================================================
+ ==================================================================================================================================================================
  + Kill SQL Database Server Query: Select All From Plain-Text-File Messenger Room Names
- ================================================================
+ ==================================================================================================================================================================
 */
 
 $DB->free($_Application_Module_Messenger_DB_Query_SELECT_PLAIN_TEXT_MESSENGER_ROOM_NAMES);
 
 /*
- =======================================================
+ =============================================================================================================
  +
  + Retrieve Plain-Text-File Messenger Room Names
  +
- =======================================================
+ =============================================================================================================
 */
 
 $_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_plain_text_file_room ORDER BY id ASC");
@@ -548,9 +548,9 @@ if ($DB->num_rows($_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLA
 } // [ + ] IF: Plain-Text-File Room Name Number of Rows Is Less Than or Equal To 0
 
 /*
- ======================================================
+ ============================================================================================================
  + Fetch Array of Plain-Text-File Room Name Details
- ======================================================
+ ============================================================================================================
 */
 
 while ($_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY = $DB->fetch_array($_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES)) {
@@ -565,27 +565,27 @@ $_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM
 $_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_entry'];
 
 /*
- =======================================================
+ =============================================================================================================
  +
  + Internal Application->SelectedPlainTextChatRoom
  +
- =======================================================
+ =============================================================================================================
 */
 
 if ($_GET["SelectedPlainTextFileMessengerRoom"] == "$_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME") {
 
 /*
- =======================================================
+ =============================================================================================================
  + IF: Plain-Text-File Messenger Room Files Exist, Include Them
- =======================================================
+ =============================================================================================================
 */
 
 if(file_exists("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME.html")) {
 
 /*
- =======================================================
+ =============================================================================================================
  + Display The Plain-Text-File Messenger Room
- =======================================================
+ =============================================================================================================
 */
 
 echo ("
@@ -632,19 +632,19 @@ echo ("
 } // [ + ] WHILE: Retrieving List of Plain-Text-File Messenger Room Names
 
 /*
- ================================================================
+ ==================================================================================================================================================================
  + Kill SQL Database Server Query: Select All From Plain-Text-File Messenger Room Names
- ================================================================
+ ==================================================================================================================================================================
 */
 
 $DB->free($_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES);
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application :: Display :: Hidden Messenger Room
  +
- ======================================================
+ ============================================================================================================
 */
 
 if ($_GET["Display"] == "HiddenMessengerRoom") {
@@ -656,19 +656,19 @@ if ($_GET["Name"] == "$_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_
 } // [ + ] IF: Internal Application: Display: Hidden Messenger Room
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application :: Post Message :: Plain-Text-File Message Data
  +
- ======================================================
+ ============================================================================================================
 */
 
 if ($_GET["PostMessage"] == "PlainTextFileMessage") {
 
 /*
- ======================================================
+ ============================================================================================================
  + Open Plain-Text-File Messenger Room Name Messenger File
- ======================================================
+ ============================================================================================================
 */
 
 echo ("Writing Plain-Text Message: <I>$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I><BR>");
@@ -678,9 +678,9 @@ echo ("To Plain-Text File Name: ./Temporary/Messenger/Physical/Plain-Text/$_Appl
 $_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE				= fopen("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN.html", "a");
 
 /*
- ======================================================
+ ============================================================================================================
  + IF: Write Message To Plain-Text-File Messenger Room Name Messenger File
- ======================================================
+ ============================================================================================================
 */
 
 if (fwrite($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE, "<IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"150\" HEIGHT=\"120\"></A><BR><B><A HREF=\"../../../../../$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote:</B><BR>&ldquo;<I>$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I>&rdquo;<BR><B>On:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR><BR>")) {
@@ -694,9 +694,9 @@ echo ("Done...redirecting to variable: $_Application_Module_Messenger_POST_PLAIN
 echo ("Error: Unable to write data to file.");
 
 /*
- ======================================================
+ ============================================================================================================
  + Close Plain-Text-File Messenger Room Name Messages File
- ======================================================
+ ============================================================================================================
 */
 
 fclose($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE);
@@ -706,11 +706,11 @@ fclose($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE);
 } // [ + ] IF: Plain-Text-File Messenger Room Message Variables Have Executed
 
 /*
- ======================================================
+ ============================================================================================================
  +
  + Internal Application :: Delete :: Specified Messenger Room Name
  +
- ======================================================
+ ============================================================================================================
 */
 
 if ($_GET["DeleteMessengerRoom"] == "$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME") {

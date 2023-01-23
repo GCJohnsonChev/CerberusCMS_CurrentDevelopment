@@ -39,21 +39,21 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Member :: Member Profile
+ + [ ^ ] Application Module :: Member :: Member Profile
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Retrieve Member Database Column Entries
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members");
@@ -61,27 +61,27 @@ $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS 					= $DB->query("
 while ($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS)) {
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: ID, Access Level
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_ID						= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
 $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Settings :: Images
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_avatar'];
 $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account Settings :: Other
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_LANGUAGE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_language'];
@@ -89,9 +89,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER				= $_Appl
 $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_theme_directory'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Personal Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_BIRTHDATE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_birthdate'];
@@ -104,26 +104,26 @@ $_Application_Module_Members_Profile_LIST_MEMBER_NAME_NICKNAME					= $_Applicati
 $_Application_Module_Members_Profile_LIST_MEMBER_GENDER						= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_gender'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Personal Digital Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Account Details :: Account UserName and Password
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
 $_Application_Module_Members_Profile_LIST_MEMBER_PASSWORD					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_BITCOIN				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin'];
@@ -139,9 +139,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_TRONCOIN				= $_Applica
 $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_ZCASH					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_zcash'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Account Details :: Internet Protocol Addresses
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_IP_ADDRESS_AUTHORIZED				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorized'];
@@ -149,9 +149,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_IP_ADDRESS_LAST_LOGIN				= $_Ap
 $_Application_Module_Members_Profile_LIST_MEMBER_IP_ADDRESS_LOG					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_log'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Account Details :: Account Information
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_experience_amount'];
@@ -169,9 +169,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DETAILS				= $_App
 $_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Account Status
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
@@ -181,34 +181,34 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED				= $_Ap
 $_Application_Module_Members_Profile_LIST_MEMBER_URL_HOMEPAGE					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_url_homepage'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Account Security
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE			= md5($_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Audio
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_soundcloud'];
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_spotify'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Business
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_business_linkedin'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Communications
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_discord'];
@@ -217,26 +217,26 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYP
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_snapchat'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Gallery
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_gallery_instagram'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Posting
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_facebook'];
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_twitter'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Software Development
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_bitbucket'];
@@ -244,33 +244,33 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB	
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_launchpad'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Security
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_security_keybase'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Member Details :: Social Media Accounts :: Video
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_video_youtube'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Member Account Profile :: Loops
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Null Member Account Picture, Replace With Default Picture
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY				= "./Member/$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE";
@@ -282,9 +282,9 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE == "") {
 } // [ + ] IF: Null Member Account Picture
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Account Picture Does Not Exist, Set No Image Picture
- ================================================================
+ ============================================================================================================
 */
 
 if (!file_exists($_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY)) {
@@ -294,9 +294,9 @@ if (!file_exists($_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISP
 } // [ + ] IF: Null Member Account Picture
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Is Activated, Set Yes or No
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION = "1") {
@@ -310,9 +310,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPL
 } // [ + ] IF: Member Account Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Settings :: Newsletter Is On or Off, Set Display Variable
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER = "1") {
@@ -326,9 +326,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "
 } // [ + ] IF: Member Account Newsletter Setting Is On or Off
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Is Banned, Set Yes or No
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED <= "0") {
@@ -342,9 +342,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	=
 } // [ + ] IF: Member Accounts Is Banned
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Is Active, Set Yes or No
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE = "1") {
@@ -358,9 +358,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	
 } // [ + ] IF: Member Account Is Active
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Access Level Is: Registered Member
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "1" ) {
@@ -370,9 +370,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Registe
 } // [ + ] IF: Member Account Access Level Is Registered Member
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Access Level Is: Administrator
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "2" ) {
@@ -382,9 +382,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Adminis
 } // [ + ] IF: Member Account Access Level Is Registered Member
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Member Account Access Level Is: Services Root Administrator
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "3" ) {
@@ -394,11 +394,11 @@ $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Service
 } // [ + ] IF: Member Account Access Level Is Registered Member
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application :: Display :: Account Information
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["Name"] == "$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME") {
@@ -415,11 +415,11 @@ echo ("
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application :: Display :: Detailed Account Information
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["Display"] == "AccountDetails") {
@@ -536,11 +536,11 @@ echo ("
 } // [ + ] IF_Display_Statistics
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Display Profile Comments
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments WHERE comment_application_id='$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME' AND comment_application_name='PROFILE' ORDER BY id DESC LIMIT 25");
@@ -559,9 +559,9 @@ if ($DB->num_rows($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS)
 } // [ + ] IF: Comment Entry Number of Rows Is Less Than or Equal To 0
 
 /*
- ================================================================
+ ============================================================================================================
  + List Comment Entries
- ================================================================
+ ============================================================================================================
 */
 
 while ($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array = $DB->fetch_array($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS)) {
@@ -574,9 +574,9 @@ $_Application_Module_Members_Profile_LIST_COMMENT_APPLICATION_NAME				= $_Applic
 $_Application_Module_Members_Profile_LIST_COMMENT_TIME						= $_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS_Fetch_Array['comment_time'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Display Comment Authorship
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT 	= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR'");
@@ -590,9 +590,9 @@ $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_JOIN_DATE				= $_Applic
 $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_signature'];
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Comment Author Signature Is Null
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE == "") {
@@ -602,9 +602,9 @@ $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE 				= "None";
 }// [ + ] IF: Comment Author Signature Is Null
 
 /*
- ================================================================
+ ============================================================================================================
  + IF: Comment Author Signature Is Null
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY == "") {
@@ -614,9 +614,9 @@ $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY 					= "Unknown";
 } // [ + ] IF_NULL_CITY
 
 /*
- ================================================================
+ ============================================================================================================
  + Display Comments
- ================================================================
+ ============================================================================================================
 */
 
 echo ("
@@ -639,9 +639,9 @@ echo ("
 } // [ + ] WHILE_AUTHOR
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select From Members For Comment
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT);
@@ -649,27 +649,27 @@ $DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMME
 } // [ + ] WHILE_COMMENTS
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select From Comments
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS);
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select From Members
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Internal Application :: Display :: Comment Form
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["Display"] == "CommentField") {

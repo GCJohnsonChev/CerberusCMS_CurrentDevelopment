@@ -39,28 +39,28 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Background :: Log ::  Background-Level Activity
+ + [ ^ ] Application Module :: Background :: Log ::  Background-Level Activity
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Fetch Statistics Data
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics");
 $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array 			= $DB->fetch_array($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
 
 /*
- ================================================================
+ ============================================================================================================
  + Increment Total Number of Page Views By 1
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS 		= $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array['statistics_total_number_of_page_views'];
@@ -69,9 +69,9 @@ $_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_P
 $_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics SET statistics_total_number_of_page_views='$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS_INCREMENT' WHERE id='1'");
 
 /*
- ================================================================
+ ============================================================================================================
  + Update Statistics Data
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
@@ -83,9 +83,9 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
 } // [ + ] IF_QUERY
 
 /*
- ================================================================
+ ============================================================================================================
  + Update Member, Last Active
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME != null) {
@@ -103,9 +103,9 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
 } // [ + ] IF_QUERY
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Update Member Data
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS);
@@ -113,17 +113,17 @@ $DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS
 } // [ + ] IF_DB_Query_UPDATE_MEMBERS
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select Statistics Table
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Update Statistics Data: Number of Page Views
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS);

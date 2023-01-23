@@ -39,28 +39,28 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Member :: Private Messages
+ + [ ^ ] Application Module :: Member :: Private Messages
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Application Module Header
- ================================================================
+ ============================================================================================================
 */
 											echo ($_Application_Module_Member_Message_Private_Messages_Header);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + DB->Retrieve Private Messages
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_private_messages WHERE private_message_recipient='$_GLOBAL_COOKIE_MEMBER_USERNAME' ORDER BY private_message_sent_time ASC LIMIT 20");
@@ -84,11 +84,11 @@ $_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_DATA				= $_Applicatio
 $_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_SENT_TIME				= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_Fetch_Array['private_message_sent_time'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + List All Private Messages
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["PrivateMessageID"] == "All") {
@@ -107,11 +107,11 @@ echo ("
 } // [ + ] IF_PrivateMessageID_ALL
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + List Selected Private Message ID
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["PrivateMessageID"] == "$_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_ID") {
@@ -125,11 +125,11 @@ echo ("
 } // [ + ] IF_PrivateMessageID
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Delete Selected Private Message
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["DeleteMessageID"] == "$_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_ID") {
@@ -145,9 +145,9 @@ if ($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE) {
 } // [ + ] IF_DB_Query_DELETE_PRIVATE_MESSAGE
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Delete Private Message ID
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE);
@@ -157,19 +157,19 @@ $DB->free($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE);
 } // [ + ] WHILE_PRIVATE_MESSAGES
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select Private Message
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Send Private Message
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["PrivateMessageID"] == "Send") {
@@ -177,9 +177,9 @@ if ($_GET["PrivateMessageID"] == "Send") {
 $_Application_Module_Private_Message_DB_Query_SELECT_MEMBERS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY member_username ASC");
 
 /*
- ================================================================
+ ============================================================================================================
  + Form Post Variables
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Private_Message_POST_MESSAGE_SUBJECT					= $_POST['private_message_subject'];
@@ -187,9 +187,9 @@ $_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= $_POST['privat
 $_Application_Module_Private_Message_POST_MESSAGE_DATA 					= $_POST['private_message_data'];
 
 /*
- ================================================================
+ ============================================================================================================
  + Character Replace
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Private_Message_POST_MESSAGE_SUBJECT					= str_replace("<", "&lt;", $_Application_Module_Private_Message_POST_MESSAGE_SUBJECT);
@@ -199,18 +199,18 @@ $_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= str_replace("<
 $_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= str_replace("'", "&#39;", $_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT);
 
 /*
- ================================================================
+ ============================================================================================================
  + SafeHTML Code && Smileys
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Private_Message_POST_MESSAGE_DATA					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Private_Message_POST_MESSAGE_DATA);
 $_Application_Module_Private_Message_POST_MESSAGE_DATA					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Private_Message_POST_MESSAGE_DATA);
 
 /*
- ================================================================
+ ============================================================================================================
  + Send Private Message Form
- ================================================================
+ ============================================================================================================
 */
 
 if ((!$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT) || (!$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT) || (!$_Application_Module_Private_Message_POST_MESSAGE_DATA)) {
@@ -233,9 +233,9 @@ $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGE_RECIPIENT		
 } // [ + ] WHILE_ARRAY
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select From Members
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Private_Message_DB_Query_SELECT_MEMBERS);
@@ -261,9 +261,9 @@ if ($_Application_Module_Private_Message_DB_Query_UPDATE_PRIVATE_MESSAGES) {
 } // [ + ] IF_DB_Query_UPDATE_PRIVATE_MESSAGES
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Update Private Message
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Private_Message_DB_Query_UPDATE_PRIVATE_MESSAGES);
@@ -287,11 +287,11 @@ $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_DATA			= $_Appl
 $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_SENT_TIME			= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_sent_time'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Private Messages Outbox
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["PrivateMessageID"] == "Outbox") {
@@ -310,11 +310,11 @@ echo ("
 } // [ + ] IF_PrivateMessageID_Outbox
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Delete Private Message
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["DeleteMessageID"] == "$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_ID") {
@@ -328,9 +328,9 @@ if ($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE) {
 } // [ + ] IF_DB_Query_DeleteMessageID
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Delete Private Message ID
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE);
@@ -338,11 +338,11 @@ $DB->free($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE);
 } // [ + ] IF_DeleteMessageID
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + List Selected Outbox Message
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["PrivateMessageID"] == "$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_ID") {
@@ -358,9 +358,9 @@ echo ("
 } // [ + ] WHILE_ARRAY
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select Private Messages In OutBox
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX);

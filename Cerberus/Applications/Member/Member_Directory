@@ -39,29 +39,29 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Member :: Member Directory
+ + [ ^ ] Application Module :: Member :: Member Directory
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Application Module Header
- ================================================================
+ ============================================================================================================
 */
 
 											echo ($_Application_Module_Member_Message_Member_Directory_Header);
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + DB->Retrieve All Members
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY member_username ASC");
@@ -81,11 +81,11 @@ echo ("
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + List Member Entries
  +
- ================================================================
+ ============================================================================================================
 */
 
 while ($_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS)) {
@@ -98,31 +98,39 @@ $_Application_Module_Member_Member_Directory_LIST_MEMBER_EXPERIENCE_AMOUNT					=
 $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME						= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
 
 /*
- ================================================================
+ ============================================================================================================
  + If Member Banned / Active
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_BANNED_STATUS == "0") {
+
 	$_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS		= "Active";
+
 } // [ + ] IF_BANNED_STATUS_ACTIVE
 
 if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_BANNED_STATUS == "1") {
+
 	$_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS		= "Banished";
+
 } // [ + ] IF_BANNED_STATUS_BANISHED
 
 /*
- ================================================================
+ ============================================================================================================
  + If Member User / Administrator
- ================================================================
+ ============================================================================================================
 */
 
 if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL == "1") {
+
 	$_Application_Module_Member_Member_Directory_LIST_MEMBER_PERMISSION	= "Member";
+
 } // [ + ] IF_ACCESS_LEVEL_MEMBER
 
 if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL >= "2") {
+
 	$_Application_Module_Member_Member_Directory_LIST_MEMBER_PERMISSION	= "Administrator";
+
 } // [ + ] IF_ACCESS_LEVEL_ADMINISTRATOR
 
 echo ("
@@ -142,9 +150,9 @@ echo ("
 } // [ + ] WHILE_MEMBERS
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select All Member Entries
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS);
