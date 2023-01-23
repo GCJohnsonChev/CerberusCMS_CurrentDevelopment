@@ -39,19 +39,21 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Panel :: Member Panel
+ +
+ + [ ^ ] Application Module :: Panel :: Member Panel
  +
  +
- ================================================================
+ +
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Retrieve Private Messsages
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
@@ -63,12 +65,12 @@ if ($_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES_Number_R
 
 $_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES_Number_Rows 	= "0";
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: Registered Member Private Message Database Server Entries IS Less Than OR Equal To Zero
 
 /*
- ================================================================
+ ============================================================================================================
  + Retrieve System Messages
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_system_message WHERE message_member='$_GLOBAL_COOKIE_MEMBER_USERNAME' ORDER BY id DESC LIMIT 1");
@@ -88,14 +90,14 @@ if ($_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA == "") {
 
 $_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA 				= "This is the default message: This Panel receives System Messages from the Administration for you - Right now you do not have any messages from any Administrator.";
 
-} // [ + ] IF_Message_Data_Empty
+} // [ + ] IF: Message Data IS Empty
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Member Details & Links
  +
- ================================================================
+ ============================================================================================================
 */
 
 echo ("
@@ -136,17 +138,17 @@ echo ("
 ");
 
 /*
- ================================================================
- + Kill SQL Database Server Query: Select Latest System Message
- ================================================================
+ ============================================================================================================
+ + Kill Database Server Query: Select Latest System Message
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Block_Members_DB_Query_SELECT_SYSTEM_MESSAGE);
 
 /*
- ================================================================
- + Kill SQL Database Server Query: Select Latest Private Message
- ================================================================
+ ============================================================================================================
+ + Kill Database Server Query: Select Latest Private Message
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES);
@@ -167,5 +169,5 @@ echo ("
 											<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Login Options\">Login Options</A> ]</CENTER>
 ");
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Registered Member Account Cookies Are Null
 ?>

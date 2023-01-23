@@ -39,13 +39,15 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Panel :: Applications Panel
+ +
+ + [ ^ ] Application Module :: Panel :: Applications Panel
  +
  +
- ================================================================
+ +
+ ============================================================================================================
 */
 
 $_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links ORDER BY application_link_row ASC");
@@ -57,12 +59,12 @@ $_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_URL			= $_App
 
 											echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"$_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_URL&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: Open & Display The Application Module :: $_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_NAME ::\">$_Application_Module_Panel_Application_Links_LIST_APPLICATION_LINK_NAME</A><BR>");
 
-} // [ + ] WHILE_SQL_QUERY_SELECT_APPLICATION_LINKS
+} // [ + ] WHILE: Retrieving Link Entries From Database Server
 
 /*
- ================================================================
- + Kill SQL Database Server Query: Select All Application Links
- ================================================================
+ ============================================================================================================
+ + Kill Database Server Query: Select All Application Links
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Panel_Application_Links_DB_Query_SELECT_APPLICATION_LINKS);

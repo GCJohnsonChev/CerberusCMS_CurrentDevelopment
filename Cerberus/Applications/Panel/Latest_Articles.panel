@@ -39,19 +39,23 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Panel :: Latest Articles
+ +
+ + [ ^ ] Application Module :: Panel :: Latest Article Entries
  +
  +
- ================================================================
+ +
+ ============================================================================================================
 */
 
 $_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles ORDER BY id DESC LIMIT 10");
 
 if ($DB->num_rows($_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES) <= 0) {
+
 										echo ("No Article Entries Exist");
+
 } else {
 
 while ($_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array = $DB->fetch_array($_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES)) {
@@ -63,14 +67,14 @@ $_Application_Module_Block_Articles_LIST_ARTICLE_TITLE				= $_Application_Module
 
 										echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Block_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\"View Article :: $_Application_Module_Block_Articles_LIST_ARTICLE_TITLE\">$_Application_Module_Block_Articles_LIST_ARTICLE_TITLE</A><BR>");
 
-} // [ + ] WHILE_ARTICLES
+} // [ + ] WHILE: Retrieving Article Entries From Database Server
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: Article Entry Database Number of Rows IS Less Than Or Equal To Zero
 
 /*
- ================================================================
- + Kill SQL Database Server Query: Select Latest Articles
- ================================================================
+ ============================================================================================================
+ + Kill Database Server Query: Select Latest Articles
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES);

@@ -39,13 +39,15 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Panel :: Latest Files
+ +
+ + [ ^ ] Application Module :: Panel :: Latest File Entries
  +
  +
- ================================================================
+ +
+ ============================================================================================================
 */
 
 $_Application_Module_Block_Files_DB_Query_SELECT_FILES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files ORDER BY id DESC LIMIT 10");
@@ -64,14 +66,14 @@ $_Application_Module_Block_Files_LIST_FILE_TITLE			= $_Application_Module_Block_
 
 											echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Block_Files_LIST_FILE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\"View File :: $_Application_Module_Block_Files_LIST_FILE_TITLE\">$_Application_Module_Block_Files_LIST_FILE_TITLE</A><BR>");
 
-} // [ + ] WHILE_FILES
+} // [ + ] WHILE: Retieving Latest File Entries From Database Server
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: File Entry Database Server Number of Rows IS Less Than OR Equal To Zero
 
 /*
- ================================================================
- + Kill SQL Database Server Query: Select Latest Files
- ================================================================
+ ============================================================================================================
+ + Kill Database Server Query: Select Latest Files
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Block_Files_DB_Query_SELECT_FILES);

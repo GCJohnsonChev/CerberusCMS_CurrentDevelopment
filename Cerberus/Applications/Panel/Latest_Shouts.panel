@@ -39,27 +39,29 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Panel :: Latest Shout Messages
+ +
+ + [ ^ ] Application Module :: Panel :: Latest Shout Message Entries
  +
  +
- ================================================================
+ +
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Retrieve Latest Shout Message Entries
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_shout_messages ORDER BY id DESC LIMIT 10");
 
 /*
- ================================================================
- + If No Shout Message Entries Exist
- ================================================================
+ ============================================================================================================
+ + IF: No Shout Message Entries Exist
+ ============================================================================================================
 */
 
 if ($DB->num_rows($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS) <= 0) {
@@ -69,9 +71,9 @@ if ($DB->num_rows($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUT
 } else {
 
 /*
- ================================================================
+ ============================================================================================================
  + List Latest Shout Entries
- ================================================================
+ ============================================================================================================
 */
 
 while ($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS_Fetch_Array = $DB->fetch_array($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS)) {
@@ -87,14 +89,14 @@ echo ("
 											On: $_Application_Module_Block_Latest_Shouts_LIST_SHOUT_TIME<BR><BR>
 ");
 
-} // [ + ] WHILE_SHOUTS
+} // [ + ] WHILE: Retrieving Latest Shout Entries From Database Server
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: Latest Shout Database Server Number of Rows IS Less Than OR Equal To Zero
 
 /*
- ================================================================
- + Kill SQL Database Server Query: Select Latest Shout Messages
- ================================================================
+ ============================================================================================================
+ + Kill Database Server Query: Select Latest Shout Messages
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Block_Latest_Shouts_DB_Query_SELECT_SHOUTS);

@@ -39,29 +39,31 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
- + Application Module :: Panel :: Language Selection
+ +
+ + [ ^ ] Application Module :: Panel :: Language Selection
  +
  +
- ================================================================
+ +
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Display All System Languages
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  + Specify and Open System Language Directories
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Block_Language_SPECIFY_LANGUAGE_DIRECTORY			= "./System/Language/";
@@ -78,15 +80,15 @@ if ($_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == "." || $_Appl
 } else {
 											echo ("<OPTION VALUE=\"$_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY\">$_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY</OPTION>");
 
-} // [ + ] IF_LANGUAGE_DIRECTORY
+} // [ + ] IF: Language Directory ARE NOT Specified Files And Directory
 
-} // [ + ] WHILE_READ_DIRECTORY
+} // [ + ] WHILE: Reading Language Directory
 											echo ("</SELECT><BR><INPUT TYPE=\"submit\" VALUE=\"Set Language\"></FORM><HR><CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Language\" TITLE=\":: Open & Display The Application Module :: Languages ::\">All Languages</A>&nbsp;]");
 
 /*
- ================================================================
+ ============================================================================================================
  + Close System Languages Directory
- ================================================================
+ ============================================================================================================
 */
 
 closedir($_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY);
