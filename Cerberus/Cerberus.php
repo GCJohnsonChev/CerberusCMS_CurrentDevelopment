@@ -43,7 +43,7 @@
  +
  +
  +
- + Cerberus Content Management System :: Kernel and Index
+ + [ ^ ] Cerberus Content Management System :: Kernel and Index
  +
  +
  +
@@ -63,14 +63,26 @@
  *
  *
  * - Searchable Programming Architecture Keys -
+ *
+ * Search These Keys With The Text-Editor Application Search Function
+ *
+ * *** Logical ***
+ * [ ^ ], Document Name and Location
  * [ @ ], Header of Programming Code Systems and Programming Code Blocks
  * [ + ], Programming Code Statement Ending With Description
- * =>, Ever-Changing Information Within Never-Changing Variables, Logical
- * ->, Ever-Changing Information Within Never-Changing Variables, Mathematical
- * ::, Index Section of Header, Logical
- * :::, Index Section of Header, Mathematical
- * [ Σ ], Mathematical Summation, Incrementation
- * [ Ξ ], Mathematical, Decrement
+ *
+ * *** Logical Object-Oriented ***
+ * =>, Ever-Changing Information Within Never-Changing Variables
+ * ::, Index Section of Header
+ *
+ * *** One-Step Mathematical ***
+ * [ Σ ], Mathematical Summation and Incrementation
+ * [ Ξ ], Mathematical Difference and Decrement
+ * :::, Index Section of Header
+ * ->, Ever-Changing Information Within Never-Changing Variables
+ *
+ * *** Pre-Ordered Algebraic Mathematical ***
+ * [ > ], Algebraic Statement Ending With Numeral
  ============================================================================================================
 */
 
