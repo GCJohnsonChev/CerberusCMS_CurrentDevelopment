@@ -42,7 +42,7 @@
  ============================================================================================================
  +
  +
- + Application Module :: Administration :: Modification of Application Module Database Data
+ + [ ^ ] Application Module :: Administration :: Modification of Application Module Database Data
  +
  +
  ============================================================================================================
@@ -51,7 +51,7 @@
 /*
  ============================================================================================================
  +
- + Update / Delete Articles
+ + Internal Application: Data IS Articles
  +
  ============================================================================================================
 */
@@ -116,7 +116,7 @@ $DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE);
 
 /*
  ============================================================================================================
- + Update Selected Article ID
+ + Update Selected Article Entry By ID
  ============================================================================================================
 */
 
@@ -124,7 +124,7 @@ if ($_GET["UpdateArticleID"] == "$_Application_Module_Administration_Update_LIST
 
 /*
  ============================================================================================================
- + Update Article Post Variables
+ + Update Article Entry Form Post Variables
  ============================================================================================================
 */
 

@@ -42,7 +42,7 @@
  ============================================================================================================
  +
  +
- + Application Module :: Administration :: System Settings Management
+ + [ ^ ] Application Module :: Administration :: System Settings Management
  +
  +
  ============================================================================================================
@@ -51,7 +51,7 @@
 /*
  ============================================================================================================
  +
- + DB Query Select Settings Entries
+ + Databse Query: Select System Settings Entries
  +
  ============================================================================================================
 */
@@ -62,7 +62,7 @@ while ($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fet
 
 /*
  ============================================================================================================
- + List Settings Entries
+ + List Systyem Settings Entries
  ============================================================================================================
 */
 
@@ -84,7 +84,7 @@ $_Application_Module_Administration_Settings_LIST_SETTING_TEXT_EDITOR_DIRECTORY	
 /*
  ============================================================================================================
  +
- + Settings Update Form Post Variables
+ + System Settings Update Form Post Variables
  +
  ============================================================================================================
 */
@@ -107,21 +107,21 @@ $_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY		
 /*
  ============================================================================================================
  +
- + Settings Update Form
+ + System Settings Update Form
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + If !Post, Show Form
+ + IF: Update System Settings From Variables Have NOT Executed, Display System Settings Update Form
  ============================================================================================================
 */
 
 if (!$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE) {
 
 echo ("
-													<CENTER><B>System Settings</B></CENTER><HR>
+													<CENTER><B>Update System Settings</B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Settings\" METHOD=\"post\">
 															Default Safe-HTML Plugin Directory:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_SafeHTML_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
@@ -164,7 +164,7 @@ echo ("
 
 /*
  ============================================================================================================
- + Update Theme Directory
+ + Update Default System Theme Directory
  ============================================================================================================
 */
 
@@ -187,7 +187,7 @@ if ($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "." || 
 
 /*
  ============================================================================================================
- + Close Directory
+ + Close Directory: System Theme Directory
  ============================================================================================================
 */
 
