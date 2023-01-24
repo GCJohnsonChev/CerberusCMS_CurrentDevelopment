@@ -301,11 +301,11 @@ if (!file_exists($_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISP
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION = "1") {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY	= "Yes";
 
 } else {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY	= "No";
 
 } // [ + ] IF: Member Account Is Activated
 
@@ -317,11 +317,11 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION =
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER = "1") {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY		= "Yes";
 
 } else {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY		= "No";
 
 } // [ + ] IF: Member Account Newsletter Setting Is On or Off
 
@@ -333,11 +333,11 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER = "1") 
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED <= "0") {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY		= "No";
 
 } else {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY		= "Yes";
 
 } // [ + ] IF: Member Accounts Is Banned
 
@@ -349,11 +349,11 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED <= "0
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE = "1") {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY		= "Yes";
 
 } else {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY		= "No";
 
 } // [ + ] IF: Member Account Is Active
 
@@ -365,7 +365,7 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE = "1"
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "1" ) {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Registered Member";
+	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY			= "Registered Member";
 
 } // [ + ] IF: Member Account Access-Level Is Registered Member
 
@@ -377,7 +377,7 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "1" ) {
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "2" ) {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Administrator";
+	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY			= "Administrator";
 
 } // [ + ] IF: Member Account Access-Level Is Registered Member
 
@@ -389,7 +389,7 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "2" ) {
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "3" ) {
 
-	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Services Root Administrator";
+	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY			= "Services Root Administrator";
 
 } // [ + ] IF: Member Account Access-Level Is Registered Member
 
@@ -597,7 +597,7 @@ $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE				= $_Applic
 
 if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE == "") {
 
-	$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE 				= "None";
+	$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE 			= "None";
 
 }// [ + ] IF: Comment Author Signature Is Empty
 
@@ -609,7 +609,7 @@ if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE == "") {
 
 if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_LOCATION == "") {
 
-	$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_LOCATION				= "Unknown";
+	$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_LOCATION			= "Unknown";
 
 } // [ + ] IF: Comment Author Location Is Empty
 
@@ -675,7 +675,7 @@ $DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS);
 if ($_GET["Display"] == "CommentField") {
 
 echo ("
-											$_GLOBAL_TEXTEDITOR_BUTTONS
+											$_GLOBAL_PLUGIN_TEXTEDITOR_BUTTONS
 											<BR><BR><B>Comment:</B><BR>
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment\" METHOD=\"post\">
 												<INPUT TYPE=\"hidden\" NAME=\"post_application_name\" VALUE=\"PROFILE\">
