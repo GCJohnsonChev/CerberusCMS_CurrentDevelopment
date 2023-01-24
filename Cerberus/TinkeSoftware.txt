@@ -28,6 +28,7 @@
 
 Tinke Software is a Free and Open Source Software Organization that is named after a Frisian word, meaning: To Think.
 This Free and Open Source Software Organization stores, maintains, develops and dispenses Free and Open Source Software Projects owned by this organization.
+This Free and Open Source Software Organization was digitally registered in California, U.S.A. in 2017 by Gary Christopher Johnson.
 
 Tinke Software is associated with Sowilo Software which is a Commercial Software Organization.
 
@@ -74,6 +75,15 @@ TinkeSoftware @ PhotoBucket
 - Free and Open Source
 * Gentoo-Linux XBOX - Named From The Gentoo Penguin
 // Gentoo-Linux Operating System For The Original Microsoft XBOX Game Consoles Forked The Last Official Release of GentooX.
+
+  _____                 __  ________       _____    ___       __               ____  _ __   __     __   
+ / ___/______ ____  ___/ / /_  __/ /  ___ / _/ /_  / _ |__ __/ /____    ____  / __ \(_) /__/ /__ _/ /__ 
+/ (_ / __/ _ `/ _ \/ _  /   / / / _ \/ -_) _/ __/ / __ / // / __/ _ \  /___/ / /_/ / / / _  / _ `/ / -_)
+\___/_/  \_,_/_//_/\_,_/   /_/ /_//_/\__/_/ \__/ /_/ |_\_,_/\__/\___/        \____/_/_/\_,_/\_,_/_/\__/ 
+
+- Free and Open Source
+* Grand Theft Auto - Oildale - Named From The Official Grand Theft Auto Video Game Series
+// Grand Theft Auto - San Andreas Expansion Pack and Stand-Alone Installation Made With The Irrlicht Video Game Engine Featuring Oildale, California.
 
   _____         __  __        ____                   
  / ___/_____ __/ /_/ /____   / __/__  ___________ ___
