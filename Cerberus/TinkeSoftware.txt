@@ -29,7 +29,7 @@
 Tinke Software is a Free and Open Source Software Organization that is named after a Frisian word, meaning: To Think.
 This Free and Open Source Software Organization stores, maintains, develops and dispenses Free and Open Source Software Projects owned by this organization.
 
-Tinke Software is associated with Sowilo Software a Commercial Software Organization.
+Tinke Software is associated with Sowilo Software which is a Commercial Software Organization.
 
 Official Web Servers
 https://www.TinkeSoftware.com
@@ -73,7 +73,7 @@ TinkeSoftware @ PhotoBucket
 
 - Free and Open Source
 * Gentoo-Linux XBOX - Named From The Gentoo Penguin
-// Gentoo-Linux Operating System For The Original Microsoft XBOX Game Consoles, Forked From GentooX.
+// Gentoo-Linux Operating System For The Original Microsoft XBOX Game Consoles Forked The Last Official Release of GentooX.
 
   _____         __  __        ____                   
  / ___/_____ __/ /_/ /____   / __/__  ___________ ___
@@ -92,7 +92,7 @@ TinkeSoftware @ PhotoBucket
 
 - Free and Open Source
 * Lineage OS Security Hardened
-// Lineage OS Security Hardened and Preconfigured For Multiple Officially Supported Devices. Built and Preconfigured by Tinke Software
+// Lineage OS Security Hardened and Pre-Configured For Multiple Officially Supported Devices. Built and Preconfigured by Tinke Software
 
    ___            _       ___   __     __        __       __
   / _ \__ _____  (_)___  / _ | / /__  / /  ___ _/ /  ___ / /____
@@ -127,7 +127,7 @@ TinkeSoftware @ PhotoBucket
                                 /___/                                    /___/
 - Free and Open Source
 * Runic Keyboard Layouts
-// Authentic and Correct Variations of the Runic Languages. For Use With The Tinke Software Runic Keyboard Operating System Language Packs
+// Authentic and Correct Variations of The Runic Languages. For Use With The Tinke Software Runic Keyboard Operating System Language Packs
 
    ___            _       __ __         __                    __  ______  _     __
   / _ \__ _____  (_)___  / //_/__ __ __/ /  ___  ___ ________/ / / __/ /_(_)___/ /_____ _______
@@ -155,7 +155,7 @@ TinkeSoftware @ PhotoBucket
                                                     ᚱᚢᚾᛁᚲ ᛗᛖᛊᛊᛖᛜᛖᚱ
 - Free and Open Source & Paid Open Source
 * Runic Messenger - Named From The Written Runic Languages.
-// Runic Messenger, an Open Source compilable C++ Application and Post-HyperText-PreProcessor Web Application For Sending and Receiving Signed and Encrypted Messages Using Non-Backdoored Open Source Cryptographic Algorithms
+// Runic Messenger, an Open Source Compilable C++ Application and Post-HyperText-PreProcessor Web Application For Sending and Receiving Signed and Encrypted Messages Using Non-Backdoored Open Source Cryptographic Algorithms
 
    ____           _ __       ___           __   __                    __
   / __/__ _    __(_) /__    / _ \___ ____ / /  / /  ___  ___ ________/ /
