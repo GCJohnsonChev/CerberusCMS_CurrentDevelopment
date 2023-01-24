@@ -1110,7 +1110,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Links','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('List','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Login','0','1')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Members','0','1')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Member_Directory','0','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Messenger','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('News','0','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Private_Files','1','1')");
@@ -1609,7 +1609,7 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom(custom_application_data,custom_application_name,custom_application_time)VALUES('Hello and welcome to Cerberus! If you\'re reading this then Cerberus was successfully installed!','Welcome To Cerberus','$_GLOBAL_LOCAL_SERVER_DATE')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom(custom_application_data,custom_application_name,custom_application_time)VALUES('Hello and welcome to Cerberus Content Management System ! If you\'re reading this sentence then Cerberus was successfully installed to this Web Server !','Welcome To Cerberus','$_GLOBAL_LOCAL_SERVER_DATE')");
 
 	echo ("[ Done ]<BR>");
 
