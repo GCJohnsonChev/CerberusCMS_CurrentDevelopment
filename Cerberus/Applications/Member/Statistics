@@ -112,11 +112,11 @@ if ($_GLOBAL_SYSTEM_GZIP_STATUS <= 0) {
 
 	$_Application_Module_Member_Statistics_GZIP_STATUS		= "Off";
 
-} else {
+} else { // [ + ] IF: G.N.U. ZIP Compression System Setting Is: Off
 
 	$_Application_Module_Member_Statistics_GZIP_STATUS		= "On";
 
-} // [ + ] IF_GZIP ON || OFF
+} // [ + ] IF: G.N.U. ZIP Compression System Setting Is: On
 
 /*
  ============================================================================================================
@@ -128,16 +128,16 @@ if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS <= 0) {
 
 	$_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS	= "Off";
 
-} else {
+} else { // [ + ] IF: Safe-HTML Plugin System Setting Is: Off
 
 	$_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS	= "On";
 
-} // [ + ] $_GLOBAL_SYSTEM_SAFEHTML_STATUS  ON || OFF
+} // [ + ] IF: Safe-HTML Plugin System Setting Is: On
 
 /*
  ============================================================================================================
  +
- + List Statistics
+ + Display :: System Settings and System Statistical Information
  +
  ============================================================================================================
 */
