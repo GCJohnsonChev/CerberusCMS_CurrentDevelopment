@@ -73,7 +73,7 @@ if ($DB->num_rows($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_M
 
 											echo ($_Application_Module_Member_Message_Private_Messages_NO_MESSAGES);
 
-} // [ + ] IF_NUMBER_OF_ROWS_LESS_THAN_0
+} // [ + ] IF: Member Account Private Messages In Database Server Is Less Than Or Equal To Zero
 
 while ($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_Fetch_Array = $DB->fetch_array($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES)) {
 
@@ -86,7 +86,7 @@ $_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_SENT_TIME				= $_Appli
 /*
  ============================================================================================================
  +
- + List All Private Messages
+ + Display All Private Messages
  +
  ============================================================================================================
 */
@@ -104,12 +104,12 @@ echo ("
 											</CENTER>
 ");
 
-} // [ + ] IF_PrivateMessageID_ALL
+} // [ + ] IF: Internal Application: Display All Private Message Entries From Database Server Is Activated
 
 /*
  ============================================================================================================
  +
- + List Selected Private Message ID
+ + Display :: Selected Private Message By ID
  +
  ============================================================================================================
 */
@@ -122,7 +122,7 @@ echo ("
 											<B>Sent</B>: $_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_SENT_TIME - <B>From</B>: [ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_FROM\" TITLE=\"Profile :: $_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_FROM\">$_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_FROM</A> - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;DeleteMessageID&#61;$_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_ID\" TITLE=\"Delete :: $_Application_Module_Private_Message_LIST_PRIVATE_MESSAGE_SUBJECT\">Delete</A> ]
 ");
 
-} // [ + ] IF_PrivateMessageID
+} // [ + ] IF: Internal Application: Display Private Message By ID Is Activated
 
 /*
  ============================================================================================================
@@ -141,8 +141,10 @@ if ($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE) {
 											echo ($_Application_Module_Member_Message_Private_Messages_DELETE_SUCCESSFUL);
 
 } else {
+
 											echo ($_Application_Module_Member_Message_Private_Messages_DELETE_ERROR);
-} // [ + ] IF_DB_Query_DELETE_PRIVATE_MESSAGE
+
+} // [ + ] IF: Delete Member Account Private Message By ID Variable Has Executed
 
 /*
  ============================================================================================================
@@ -152,9 +154,9 @@ if ($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE) {
 
 $DB->free($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE);
 
-} // [ + ] IF_DeleteMessageID
+} // [ + ] IF: Internal Application Delete Member Account Private Message By ID Is Activated
 
-} // [ + ] WHILE_PRIVATE_MESSAGES
+} // [ + ] WHILE: Retrieving Private Message Entries From Database Server
 
 /*
  ============================================================================================================
@@ -230,7 +232,7 @@ $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGE_RECIPIENT		
 
 														echo ("<OPTION VALUE=\"$_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGE_RECIPIENT\">$_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGE_RECIPIENT</OPTION>");
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving List Of Member Account Private Messages From Database Server
 
 /*
  ============================================================================================================
@@ -244,7 +246,7 @@ echo ("
 													</SELECT><BR>
 												Message:<BR>
 													<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"private_message_data\" ID=\"WYSIWYG\"></TEXTAREA><BR>
-												<INPUT TYPE=\"submit\" VALUE=\"Send Message\">
+												<INPUT TYPE=\"submit\" VALUE=\"Send Private Message\">
 											</FORM>
 ");
 
@@ -257,8 +259,10 @@ if ($_Application_Module_Private_Message_DB_Query_UPDATE_PRIVATE_MESSAGES) {
 											echo ($_Application_Module_Member_Message_Private_Messages_SEND_SUCCESSFUL);
 
 } else {
+
 											echo ($_Application_Module_Member_Message_Private_Messages_SEND_ERROR);
-} // [ + ] IF_DB_Query_UPDATE_PRIVATE_MESSAGES
+
+} // [ + ] IF: Insert Private Message Entry Into Database Server Variable Has Executed
 
 /*
  ============================================================================================================
@@ -268,22 +272,24 @@ if ($_Application_Module_Private_Message_DB_Query_UPDATE_PRIVATE_MESSAGES) {
 
 $DB->free($_Application_Module_Private_Message_DB_Query_UPDATE_PRIVATE_MESSAGES);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Send Private Message Form Variables Have Executed
 
-} // [ + ] IF_PrivateMessageID_Send
+} // [ + ] IF: Internal Application: Display Member Account Private Message By ID Is Activated
 
 $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_private_messages WHERE private_message_from='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 if ($DB->num_rows($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX) <= 0) {
+
 											//echo ($_Application_Module_Member_Message_Private_Messages_NO_MESSAGES);
-} // [ + ] IF_NUMBER_OF_ROWS
+
+} // [ + ] IF: Member Account Private Messages In Outbox Is Less Than Or Equal To Zero
 
 while ($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array = $DB->fetch_array($_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX)) {
 
 $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_ID				= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['id'];
-$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_FROM			= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_from'];
+$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_FROM				= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_from'];
 $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_SUBJECT			= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_subject'];
-$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_DATA			= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_data'];
+$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_DATA				= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_data'];
 $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_SENT_TIME			= $_Application_Module_Private_Message_DB_Query_SELECT_PRIVATE_MESSAGES_OUTBOX_Fetch_Array['private_message_sent_time'];
 
 /*
@@ -307,7 +313,7 @@ echo ("
 											</CENTER>
 ");
 
-} // [ + ] IF_PrivateMessageID_Outbox
+} // [ + ] IF: Internal Application: Display Private Messages In OutBox Is Activated
 
 /*
  ============================================================================================================
@@ -322,10 +328,14 @@ if ($_GET["DeleteMessageID"] == "$_Application_Module_Private_Message_LIST_OUTBO
 $_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_private_messages WHERE id='$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_ID'");
 
 if ($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE) {
+
 											echo ($_Application_Module_Member_Message_Private_Messages_DELETE_SUCCESSFUL);
+
 } else {
+
 											echo ($_Application_Module_Member_Message_Private_Messages_DELETE_ERROR);
-} // [ + ] IF_DB_Query_DeleteMessageID
+
+} // [ + ] IF: Delete Private Message Entry Database Query Variable Has Executed
 
 /*
  ============================================================================================================
@@ -335,7 +345,7 @@ if ($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE) {
 
 $DB->free($_Application_Module_Private_Message_DB_Query_DELETE_PRIVATE_MESSAGE);
 
-} // [ + ] IF_DeleteMessageID
+} // [ + ] IF: Internal Applicatin Delete Private Message Entry By ID In OutBox Is Activated
 
 /*
  ============================================================================================================
@@ -353,9 +363,9 @@ echo ("
 											<B>Sent</B>: $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_SENT_TIME - <B>From</B>: [ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_FROM\" TITLE=\"Profile :: $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_FROM\">$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_FROM</A> - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;DeleteMessageID&#61;$_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_ID\" TITLE=\"Delete :: $_Application_Module_Private_Message_LIST_OUTBOX_PRIVATE_MESSAGE_SUBJECT\">Delete</A> ]
 ");
 
-} // [ + ] IF_DisplayMessageID
+} // [ + ] IF: Internal Application: Display Private Message By ID In OutBox Is Activated
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving List Of Private Message Entries In OutBox From Database Server
 
 /*
  ============================================================================================================
