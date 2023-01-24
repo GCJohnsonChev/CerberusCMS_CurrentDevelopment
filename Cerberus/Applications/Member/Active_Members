@@ -78,6 +78,7 @@ $_Application_Module_Member_Active_Members_LIST_MEMBER_ID				= $_Application_Mod
 $_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL			= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
 $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME				= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
 $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE	= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE		= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_active'];
 $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_BANNED		= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_banned'];
 $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER			= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_last_referrer'];
 
@@ -87,7 +88,7 @@ $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER			= $_Appli
  ============================================================================================================
 */
 
-if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE >= $_GLOBAL_LOCAL_SERVER_DATE) {
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
 
 $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP	= "~2 Minutes Ago";
 
@@ -117,12 +118,16 @@ if ($_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL == "3") 
 
 } // [ + ] IF: Registered Member Access Level Is: 3
 
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
+
 echo ("
 											Registered Member: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\" TITLE=\":: Open & The Display The Profile Application Module For :: $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME</A></I><HR>
-											&nbsp;*&nbsp;Account Last Activity Timestamp: <A TITLE=\":: This Registered Account Was Last Active: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP<BR>
+											&nbsp;*&nbsp;Account Last Activity Timestamp: <A TITLE=\":: This Registered Account Was Last Active: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP</A><BR>
 											&nbsp;*&nbsp;Account Last Known Referrer: <A HREF=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: The Last Referrer For This Registered Account Was: $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER ::\">Hover Over</A><BR>
 											&nbsp;*&nbsp;Account Permissions Level: $_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION<BR><BR>
 ");
+
+} // [ + ] IF: Registered Member Account Is Currently Active
 
 } // [ + ] WHILE: Retrieving Registered Member List and Data
 
