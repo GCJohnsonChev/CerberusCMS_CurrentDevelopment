@@ -29,7 +29,7 @@
 Tinke Software is a Free and Open Source Software Organization that is named after a Frisian word, meaning: To Think.
 This Free and Open Source Software Organization stores, maintains, develops and dispenses Free and Open Source Software Projects owned by this organization.
 
-Tinke Software is associated with Sowilo Software, a Commercial Software Organization.
+Tinke Software is associated with Sowilo Software a Commercial Software Organization.
 
 Official Web Servers
 https://www.TinkeSoftware.com
@@ -53,18 +53,18 @@ TinkeSoftware @ PhotoBucket
 
 - Tinke Software's Official Free and Open Source Software Projects -
 
-  _____        __                      _______  _______
- / ___/__ ____/ /  ___ ______ _____   / ___/  |/  / __/
-/ /__/ -_) __/ _ \/ -_) __/ // (_-<  / /__/ /|_/ /\ \  
-\___/\__/_/ /_.__/\__/_/  \_,_/___/  \___/_/  /_/___/  
-                                                       
+  _____        __                      _____          __           __    __  ___                                       __    ____         __          
+ / ___/__ ____/ /  ___ ______ _____   / ___/__  ___  / /____ ___  / /_  /  |/  /__ ____  ___ ____ ____ __ _  ___ ___  / /_  / __/_ _____ / /____ __ _ 
+/ /__/ -_) __/ _ \/ -_) __/ // (_-<  / /__/ _ \/ _ \/ __/ -_) _ \/ __/ / /|_/ / _ `/ _ \/ _ `/ _ `/ -_)  ' \/ -_) _ \/ __/ _\ \/ // (_-</ __/ -_)  ' \
+\___/\__/_/ /_.__/\__/_/  \_,_/___/  \___/\___/_//_/\__/\__/_//_/\__/ /_/  /_/\_,_/_//_/\_,_/\_, /\__/_/_/_/\__/_//_/\__/ /___/\_, /___/\__/\__/_/_/_/
+                                                                                            /___/                             /___/                                                     
 - Free and Open Source & Paid Open Source
 * Cerberus Content Management System - Named From The Hound of Hades
-// Advanced Content Management System, Written In Pure PHP Programming Code, With AJAX and JavaScript Editions
+// Advanced Content Management System Written In Pure Post-Hyper-Text-PreProcessor Programming Code With AJAX and JavaScript Editions
 * Magysk Theme Writer - Named From The Frisian Word For Magic
-// GUI Application For Building Themes For Use With Cerberus Content Management System, Written In C++ Programming Code
+// Graphical User Interface Application For Building Themes For Use With Cerberus Content Management System, Written In The C++ Programming Language
 * Stokje Application Writer - Named From The Frisian Word For Wand
-// GUI Application For Building Web Application Module Includes For Use With Cerberus Content Management System, Written In C++ Programming Code
+// Graphical User Interface Application For Building Web Application Module Includes For Use With Cerberus Content Management System, Written In The C++ Programming Language
 
   _____         __              _  _____  ____  _  __
  / ___/__ ___  / /____  ___    | |/_/ _ )/ __ \| |/_/
@@ -100,15 +100,25 @@ TinkeSoftware @ PhotoBucket
 /_/|_|\_,_/_//_/_/\__/ /_/ |_/_/ .__/_//_/\_,_/_.__/\__/\__/___/
                               /_/
 * Runic Alphabets
-// Authentic and Correct Variations of the Runic Alphabets. Translated into English. For use with the Tinke Software Runic Keyboard and Runic Languages Operating System Language Packs
+// Authentic and Correct Variations of the Runic Alphabets. Translated into English. For Use With The Tinke Software Runic Keyboard and Runic Languages Operating System Language Packs
 
-  ___            _       _____     __            __
+   ___            _       _____     __            __
   / _ \__ _____  (_)___  / ___/__ _/ /__ ___  ___/ /__ ________
  / , _/ // / _ \/ / __/ / /__/ _ `/ / -_) _ \/ _  / _ `/ __(_-<
 /_/|_|\_,_/_//_/_/\__/  \___/\_,_/_/\__/_//_/\_,_/\_,_/_/ /___/
 
 * Runic Calendars
 // Authentic and Correct Variations of the Runic Calendar Systems. Translated into English. C++ Application and Post-HyperText-PreProcessor Web Application for use with Cerberus Content Management System
+
+   ___            _       _____          __           __    __  ___                                       __    ____         __          
+  / _ \__ _____  (_)___  / ___/__  ___  / /____ ___  / /_  /  |/  /__ ____  ___ ____ ____ __ _  ___ ___  / /_  / __/_ _____ / /____ __ _ 
+ / , _/ // / _ \/ / __/ / /__/ _ \/ _ \/ __/ -_) _ \/ __/ / /|_/ / _ `/ _ \/ _ `/ _ `/ -_)  ' \/ -_) _ \/ __/ _\ \/ // (_-</ __/ -_)  ' \
+/_/|_|\_,_/_//_/_/\__/  \___/\___/_//_/\__/\__/_//_/\__/ /_/  /_/\_,_/_//_/\_,_/\_, /\__/_/_/_/\__/_//_/\__/ /___/\_, /___/\__/\__/_/_/_/
+                                                                               /___/                             /___/
+- Free and Open Source & Paid Open Source
+* Runic Content Management System - Named From The Runic Language System Used In Scandinavian Areas
+// Advanced Content Management System Written In Pure Post-Hyper-Text-PreProcessor Programming Code With AJAX and JavaScript Editions - Directly Forked From My Original Project CerberusCMS
+   But With All Germanic Gods and Goddesses Theming Instead of Greek Gods and Goddesses
 
    ___            _       __ __         __                    __  __                       __
   / _ \__ _____  (_)___  / //_/__ __ __/ /  ___  ___ ________/ / / /  ___ ___ _____  __ __/ /____
@@ -117,7 +127,7 @@ TinkeSoftware @ PhotoBucket
                                 /___/                                    /___/
 - Free and Open Source
 * Runic Keyboard Layouts
-// Authentic and Correct Variations of the Runic Languages. For use with the Tinke Software Runic Keyboard Operating System Language Packs
+// Authentic and Correct Variations of the Runic Languages. For Use With The Tinke Software Runic Keyboard Operating System Language Packs
 
    ___            _       __ __         __                    __  ______  _     __
   / _ \__ _____  (_)___  / //_/__ __ __/ /  ___  ___ ________/ / / __/ /_(_)___/ /_____ _______
@@ -126,7 +136,7 @@ TinkeSoftware @ PhotoBucket
                                 /___/
 - Free and Open Source
 * Runic Keyboard Stickers
-// Authentic and Correct Variations of the Runic Languages. Printable Keyboard Stickers for placement on individual computer keyboard keys. For use with the Tinke Software Runic Language Operating System Language Packs
+// Authentic and Correct Variations of the Runic Languages. Printable Keyboard Stickers For Placement On Individual Computer Keyboard Keys. For Use With The Tinke Software Runic Language Operating System Language Packs
 
    ___            _       __                                       ___           __
   / _ \__ _____  (_)___  / /  ___ ____  ___ ___ _____ ____ ____   / _ \___ _____/ /__ ___
