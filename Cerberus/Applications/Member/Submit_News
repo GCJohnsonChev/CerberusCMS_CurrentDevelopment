@@ -122,7 +122,7 @@ if ($_Application_Module_Member_Submit_News_DB_Query_INSERT_SUBMISSION) {
 
 											echo ($_Application_Module_Member_Message_Submit_News_SUBMISSION_ERROR);
 
-} // [ + ] IF: S.Q.L. Query: Insert News Submission Details
+} // [ + ] IF: Insert News Submission Entry Details Database Server Query Variable Has Executed
 
 /*
  ============================================================================================================
@@ -132,5 +132,5 @@ if ($_Application_Module_Member_Submit_News_DB_Query_INSERT_SUBMISSION) {
 
 $DB->free($_Application_Module_Member_Submit_News_DB_Query_INSERT_SUBMISSION);
 
-} // [ + ] IF: News Submission Form Variables Have Not Executed
+} // [ + ] IF: News Submission Entry Form Variables Have Executed
 ?>
