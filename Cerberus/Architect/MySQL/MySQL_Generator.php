@@ -481,6 +481,7 @@ member_status_account_activation_key VARCHAR(100),
 member_status_account_active CHAR(1),
 member_status_account_banned CHAR(1),
 member_status_account_last_active VARCHAR(250),
+member_status_account_last_active_minutes VARCHAR(10),
 member_url_homepage VARCHAR(250),
 member_username VARCHAR(50),
 PRIMARY KEY (id)
@@ -864,6 +865,7 @@ member_status_account_activation_key,
 member_status_account_active,
 member_status_account_banned,
 member_status_account_last_active,
+member_status_account_last_active_minutes,
 member_url_homepage,
 member_username
 )VALUES(
@@ -931,6 +933,7 @@ member_username
 '1',
 '0',
 '$_GLOBAL_LOCAL_SERVER_DATE_WITH_SEPARATION',
+'$_GLOBAL_LOCAL_SERVER_DATE_MINUTES',
 'Empty Entry :: URL Home-Page',
 '$_MySQL_Generator_POST_ADMINISTRATION_USERNAME');
 
@@ -1001,6 +1004,7 @@ member_status_account_activation_key,
 member_status_account_active,
 member_status_account_banned,
 member_status_account_last_active,
+member_status_account_last_active_minutes,
 member_url_homepage,
 member_username
 )VALUES(
@@ -1068,6 +1072,7 @@ member_username
 '1',
 '0',
 '$_GLOBAL_LOCAL_SERVER_DATE_WITH_SEPARATION',
+'$_GLOBAL_LOCAL_SERVER_DATE_MINUTES',
 'Empty Entry :: URL Home-Page',
 'Cerberus');
 ";
