@@ -83,7 +83,7 @@ if (!$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME) {
 } else {
 
 
-if (copy("./System/Default/Friend/Friend.cerb","./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME")) {
+if (copy("./System/Default/Friend/Friend.cerberus","./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME")) {
 
 											echo ($_Application_Module_Member_Message_Friend_ADD);
 
@@ -91,11 +91,11 @@ if (copy("./System/Default/Friend/Friend.cerb","./Member/$_GLOBAL_COOKIE_MEMBER_
 
 											echo ($_Application_Module_Member_Message_Friend_ADD_ERROR);
 
-} // [ + ] IF_COPY
+} // [ + ] IF: Copy: Friend.cerberus File To: Member Friend Directory
 
-} // [ + ] IF_POST_FRIEND
+} // [ + ] IF: Add To Friend List Variable Is Executed
 
-} // [ + ] IF_ADD
+} // [ + ] IF: Internal Application: Add To Friend List Is Activated
 
 /*
  ============================================================================================================
@@ -128,17 +128,21 @@ if ($_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY == "." || $_Applica
 
 if ($_GET["RemoveFriend"] == "$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY") {
 
-if(unlink("Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY")) {
+if(unlink("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY")) {
+
 											echo ($_Application_Module_Member_Message_Friend_REMOVE);
+
 } else {
+
 											echo ($_Application_Module_Member_Message_Friend_REMOVE_ERROR);
-} // [ + ] IF_UNLINK_FILE
 
-} // [ + ] IF_RemoveFriend
+} // [ + ] IF: Unlink: Friend File From Friend List
 
-} // [ + ] IF_DIRECTORY
+} // [ + ] IF: Internal Application: Remove Friend Is Activated
 
-} // [ + ] WHILE_FRIEND
+} // [ + ] IF: Specified Friend List Directory AND Files ARE NOT Specified Friend List Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Friend List Directory AND Files
 
 /*
  ============================================================================================================
@@ -148,5 +152,5 @@ if(unlink("Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Me
 
 closedir($_Application_Module_Member_Friend_OPEN_FRIEND_DIRECTORY);
 
-} // [ + ]  IF_SHOW
+} // [ + ] IF: Internal Application: Display Friend List Is Activated
 ?>
