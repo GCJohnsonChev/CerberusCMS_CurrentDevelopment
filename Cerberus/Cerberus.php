@@ -507,6 +507,15 @@ $_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE						= $_DB_Query_Member_Credentials_Fetch
 
 /*
  ============================================================================================================
+ + Global Member Settings Variables :: Status :: Last Active Timestamp
+ ============================================================================================================
+*/
+
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE					= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_last_active'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES				= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_last_active_minutes'];
+
+/*
+ ============================================================================================================
  + Global Member Settings Variables :: Avatar Image
  ============================================================================================================
 */
@@ -611,7 +620,7 @@ $_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED						= $_DB_Query_Member_Credentials_Fetch
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: I.P. Address Log
+ + Global Member Settings Variables :: Member Account Internet Protocol Address Log
  ============================================================================================================
 */
 
@@ -2768,7 +2777,7 @@ if ($DB->close($_CERBERUS_DATABASE_SERVER_CONNECT)) {
 } // [ + ] IF: File Exists: System Configuration File
 
 echo ("
-			This Web Page Will Close After One Hour Of Inactivity.
+			This Web Page Will Close After One Hour Of Inactivity
 		</CENTER>
 	</BODY>
 
