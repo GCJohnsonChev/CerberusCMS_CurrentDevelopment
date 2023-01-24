@@ -57,8 +57,10 @@ $_Application_Module_News_DB_Query_SELECT_NEWS			= $DB->query("SELECT * FROM {$_
 */
 
 if ($DB->num_rows($_Application_Module_News_DB_Query_SELECT_NEWS) <= 0) {
+
 											echo ($_Application_Module_Member_Message_News_NO_NEWS);
-} // [ + ] IF_NUMBER_OF_ROWS
+
+} // [ + ] IF: News Article Entries In Database Server Are Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -97,11 +99,11 @@ echo ("
 												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;News&amp;DeleteNewsID&#61;$_Application_Module_News_LIST_NEWS_ID\" TITLE=\":: Delete This News Article Entry ::\">Delete</A>&nbsp;&#8212;<BR>
 ");
 
-} // [ + ] WHILE_NEWS
+} // [ + ] WHILE: Retrieving Latest News Article Entry From Database Server
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Select All News Entries
+ + Kill SQL Database Server Query: Select All News Entries From Database Server
  ============================================================================================================
 */
 
