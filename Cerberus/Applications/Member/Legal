@@ -54,11 +54,21 @@
  ============================================================================================================
 */
 
-$_LEGAL_DOCUMENT	= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Text/Legal.txt";
+/*
+ ============================================================================================================
+ + Include Software Project Legal Document File
+ ============================================================================================================
+*/
+
+$_LEGAL_DOCUMENT							= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Text/Legal.txt";
 
 if (file_exists($_LEGAL_DOCUMENT)) {
+
 											include_once "$_LEGAL_DOCUMENT";
+
 } else {
+
 											echo ("Missing: $_LEGAL_DOCUMENT");
-} // [ + ] FILE_EXISTS
+
+} // [ + ] IF: File Exists: Specified Legal Document File
 ?>
