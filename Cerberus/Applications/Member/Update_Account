@@ -666,9 +666,9 @@ if ($_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY == ".
 
 															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY\">$_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY</OPTION>");
 
-} // [ + ] IF: Prevent All L.F.I., R.F.I. Exploitation
+} // [ + ] IF: Specified Member Account Image Directory AND Files ARE NOT Specified Member Account Image Directory AND Files
 
-} // [ + ] WHILE: Read Member Directory: Profile Image
+} // [ + ] WHILE: Reading Specified Member Account Directory: Profile Images
 
 /*
  ============================================================================================================
@@ -711,9 +711,9 @@ if ($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "." || $_
 
 															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY\">$_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY</OPTION>");
 
-} // [ + ] IF: Read System Theme Directory For: Theme Selection
+} // [ + ] IF: Specified System Theme Directory AND Files ARE NOT Specified Member Account Theme Directory AND Files
 
-} // [ + ] WHILE: Reading System Theme Directory For: Theme Selection
+} // [ + ] WHILE: Reading Specified System Theme Directory AND Files
 
 /*
  ============================================================================================================
@@ -757,9 +757,9 @@ if ($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "
 
 															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY\">$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY</OPTION>");
 
-} // [ + ] IF: Stop All L.F.I., R.F.I. Exploitation
+} // [ + ] IF: Specified Member Account Avatar Image Directory AND Files ARE NOT Specified Member Account Avatar Image Directory AND Files
 
-} // [ + ] WHILE: Reading: Theme Directory :: Avatar Images
+} // [ + ] WHILE: Reading Specified Member Account Avatar Image Directory AND Files
 
 /*
  ============================================================================================================
@@ -841,7 +841,7 @@ if ($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT) {
 /*
  ============================================================================================================
  +
- + Send Electronic Mail Notification :: Profile Update Details
+ + Send Electronic Mail Notification :: Member Account Profile Update Details
  +
  ============================================================================================================
 */
@@ -849,9 +849,11 @@ if ($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT) {
 mail($_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS,"Profile updated :: $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear [ $_Application_Module_Member_Update_Account_POST_UPDATE_ELECTRONIC_MAIL_ADDRESS ],
 ============================================================
-Your Account Details have been updated at: $_GLOBAL_SYSTEM_SITE_TITLE - On: $_GLOBAL_LOCAL_SERVER_DATE
+Your Member Account Details have been updated at: $_GLOBAL_SYSTEM_SITE_TITLE - On: $_GLOBAL_LOCAL_SERVER_DATE
 
-If you did not make this change please notify a Moderator or Administrator of this System immediately. The Internet Protocol Address associated with this change is: [ $_GLOBAL_REMOTE_SERVER_ADDRESS ]
+If you did not make this update please notify a Moderator, Administrator or Services Root Administrator of this system immediately.
+
+The Internet Protocol Address associated with this update was: $_GLOBAL_REMOTE_SERVER_ADDRESS 
 ============================================================
 Have a nice day,
 		~ $_GLOBAL_SYSTEM_SITE_TITLE
@@ -865,7 +867,7 @@ Have a nice day,
 
 											echo ($_Application_Module_Member_Message_Update_Account_UPDATE_ERROR);
 
-} // [ + ] IF: Database Query: Update Member Account Details
+} // [ + ] IF: Update Member Account Database Server Query Variable Has Executed Successfully
 
 /*
  ============================================================================================================
@@ -875,7 +877,7 @@ Have a nice day,
 
 $DB->free($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCOUNT);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Update Member Account Form Variables Have Executed
 
 /*
  ============================================================================================================
@@ -885,5 +887,5 @@ $DB->free($_Application_Module_Member_Update_Account_DB_Query_UPDATE_MEMBER_ACCO
 
 $DB->free($_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS);
 
-} // [ + ] WHILE: Retrieving Member Account Database Entries
+} // [ + ] WHILE: Retrieving Member Account Data From Database Server
 ?>
