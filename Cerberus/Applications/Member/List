@@ -34,6 +34,7 @@
  + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
  + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
  + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
  ============================================================================================================
 */
 
@@ -58,20 +59,22 @@
 /*
  ============================================================================================================
  +
- + Display->List All
+ + Display :: All List Options
  +
  ============================================================================================================
 */
 
 if ($_GET["Display"] == "List") {
 
+
 											echo ("<CENTER><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Avatars\" TITLE=\"Display Avatars\">Avatars</A> :: <CENTER><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Emojis\" TITLE=\"Display Emojis\">Emojis</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Smileys\" TITLE=\"Display Smiley Codes\">Smiley Codes</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;MyFiles\" TITLE=\"Display My Personal Files\">My Files</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Ranks\" TITLE=\"Display Ranks\">Ranks</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;SafeHTML\" TITLE=\"Display Safe-HTML Codes\">Safe-HTML Codes</A></CENTER>");
-} // [ + ] IF_DISPLAY_LIST
+
+} // [ + ] IF: Internal Application: Display All List Options Is Activated
 
 /*
  ============================================================================================================
  +
- + Display->Avatars
+ + Display :: Avatars
  +
  ============================================================================================================
 */
@@ -88,11 +91,11 @@ if ($_GET["Display"] == "Avatars") {
 
 /*
  ============================================================================================================
- + Retrieve and List Avatars
+ + Retrieve and List :: All Avatar Images
  ============================================================================================================
 */
 
-$_Application_Module_Member_List_SPECIFY_AVATAR_DIRECTORY			= "./Theme/$_GLOBAL_MEMBER_THEME/Image/Icon_Avatar/";
+$_Application_Module_Member_List_SPECIFY_AVATAR_DIRECTORY			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/";
 $_Application_Module_Member_List_OPEN_AVATAR_DIRECTORY				= opendir($_Application_Module_Member_List_SPECIFY_AVATAR_DIRECTORY);
 
 while (($_Application_Module_Member_List_READ_AVATAR_DIRECTORY = readdir($_Application_Module_Member_List_OPEN_AVATAR_DIRECTORY))) {
@@ -103,26 +106,26 @@ if ($_Application_Module_Member_List_READ_AVATAR_DIRECTORY == "." || $_Applicati
 **/
 } else {
 
-											echo ("<A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Icon_Avatar/$_Application_Module_Member_List_READ_AVATAR_DIRECTORY\" TITLE=\"Open File :: $_Application_Module_Member_List_READ_AVATAR_DIRECTORY\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Icon_Avatar/$_Application_Module_Member_List_READ_AVATAR_DIRECTORY\" ALT=\"$_Application_Module_Member_List_READ_AVATAR_DIRECTORY\"></A>&nbsp;");
+											echo ("<A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Member_List_READ_AVATAR_DIRECTORY\" TITLE=\"Open File :: $_Application_Module_Member_List_READ_AVATAR_DIRECTORY\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Member_List_READ_AVATAR_DIRECTORY\" ALT=\"$_Application_Module_Member_List_READ_AVATAR_DIRECTORY\"></A>&nbsp;");
 
-} // [ + ] IF_NOT_DIRECTORY || FILE
+} // [ + ] IF: Specified Avatar Directory AND Files ARE NOT Specified Avatar Directory AND Files
 
-} // [ + ] WHILE_DIRECTORY
+} // [ + ] WHILE: Reading Specified Avatar Directory AND Files
 
 /*
  ============================================================================================================
- + Close Directory
+ + Close Directory :: Avatar Directory
  ============================================================================================================
 */
 
 closedir($_Application_Module_Member_List_OPEN_AVATAR_DIRECTORY);
 
-} // [ + ] IF_Display_Avatars
+} // [ + ] IF: Internal Application: Display Avatar Images Is Activated
 
 /*
  ============================================================================================================
  +
- + Display->Emojis
+ + Display :: Emojis
  +
  ============================================================================================================
 */
@@ -142,15 +145,15 @@ if ($_GET["Display"] == "Emojis") {
  ============================================================================================================
 */
 
-											include_once "./Theme/$_GLOBAL_MEMBER_THEME/Text/OS_Emojis.txt";
+											include_once "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Text/OS_Emojis.txt";
 
 
-} // [ + ] IF_DISPLAY_EMOJIS
+} // [ + ] IF: Internal Application: Display All Emojis Is Activated
 
 /*
  ============================================================================================================
  +
- + Display->Smileys
+ + Display :: Smiley Images
  +
  ============================================================================================================
 */
@@ -159,7 +162,7 @@ if ($_GET["Display"] == "Smileys") {
 
 											echo ($_Application_Module_Member_Message_List_Header_SMILEYS);
 
-$_Application_Module_Member_List_SPECIFY_SMILEYS_DIRECTORY				= "./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/";
+$_Application_Module_Member_List_SPECIFY_SMILEYS_DIRECTORY				= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/";
 $_Application_Module_Member_List_OPEN_SMILEYS_DIRECTORY					= opendir($_Application_Module_Member_List_SPECIFY_SMILEYS_DIRECTORY);
 
 while (($_Application_Module_Member_List_READ_SMILEYS_DIRECTORY = readdir($_Application_Module_Member_List_OPEN_SMILEYS_DIRECTORY))) {
@@ -170,26 +173,26 @@ if ($_Application_Module_Member_List_READ_SMILEYS_DIRECTORY == "." || $_Applicat
 **/
 } else {
 
-											echo ("<A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/$_Application_Module_Member_List_READ_SMILEYS_DIRECTORY\" TITLE=\"Open File :: $_Application_Module_Member_List_READ_SMILEYS_DIRECTORY\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/$_Application_Module_Member_List_READ_SMILEYS_DIRECTORY\" ALT=\":: $_Application_Module_Member_List_READ_SMILEYS_DIRECTORY ::\"></A>&nbsp;");
+											echo ("<A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/$_Application_Module_Member_List_READ_SMILEYS_DIRECTORY\" TITLE=\"Open File :: $_Application_Module_Member_List_READ_SMILEYS_DIRECTORY\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/$_Application_Module_Member_List_READ_SMILEYS_DIRECTORY\" ALT=\":: $_Application_Module_Member_List_READ_SMILEYS_DIRECTORY ::\"></A>&nbsp;");
 
-} // [ + ] IF_NOT_DIRECTORY || FILE
+} // [ + ] IF: Specified Smiley Image Directory AND Files ARE NOT Specified Smiley Image Directory AND Files
 
-} // [ + ] WHILE_DIRECTORY
+} // [ + ] WHILE: Reading Specified Smiley Image Directory AND Files
 
 /*
  ============================================================================================================
- + Close Directory
+ + Close Directory :: Smiley Images Directory
  ============================================================================================================
 */
 
 closedir($_Application_Module_Member_List_OPEN_SMILEYS_DIRECTORY);
 
-} // [ + ] IF_DISPLAY_SMILEYS
+} // [ + ] IF: Internal Application: Display All Smiley Images Is Activated
 
 /*
  ============================================================================================================
  +
- + Display->MyFiles
+ + Display :: MyFiles
  +
  ============================================================================================================
 */
@@ -200,7 +203,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 											echo ($_Application_Module_Member_Message_List_Header_MYFILES);
 
-$_Application_Module_Member_List_SPECIFY_MYFILES_DIRECTORY				= "Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/";
+$_Application_Module_Member_List_SPECIFY_MYFILES_DIRECTORY				= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/";
 $_Application_Module_Member_List_OPEN_MYFILES_DIRECTORY					= opendir($_Application_Module_Member_List_SPECIFY_MYFILES_DIRECTORY);
 
 while (($_Application_Module_Member_List_READ_MYFILES_DIRECTORY = readdir($_Application_Module_Member_List_OPEN_MYFILES_DIRECTORY))) {
@@ -211,30 +214,32 @@ if ($_Application_Module_Member_List_READ_MYFILES_DIRECTORY == "." || $_Applicat
 **/
 } else {
 
-											echo ("<A HREF=\"./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/$_Application_Module_Member_List_READ_MYFILES_DIRECTORY\" TITLE=\"Open File :: $_Application_Module_Member_List_READ_MYFILES_DIRECTORY\">$_Application_Module_Member_List_READ_MYFILES_DIRECTORY</A><BR>");
+											echo ("<A HREF=\"./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/$_Application_Module_Member_List_READ_MYFILES_DIRECTORY\" TITLE=\"Open File :: $_Application_Module_Member_List_READ_MYFILES_DIRECTORY\">$_Application_Module_Member_List_READ_MYFILES_DIRECTORY</A><BR>");
 
-} // [ + ] IF_NOT_DIRECTORY || FILE
+} // [ + ] IF: Specified Member Account Files Directory IS NOT Specified Member Account Files Directory
 
-} // [ + ] WHILE_DIRECTORY
+} // [ + ] WHILE: Reading Specified Member Account Files Directory
 
 /*
  ============================================================================================================
- + Close Directory
+ + Close Directory :: Member Account Files
  ============================================================================================================
 */
 
 closedir($_Application_Module_Member_List_OPEN_MYFILES_DIRECTORY);
 
 } else {
-											echo ($_Application_Module_Member_Message_List_ACCESS_ERROR);
-} // [ + ] IF_MEMBER_CREDENTIALS
 
-} // [ + ] IF_Display_MyFiles
+											echo ($_Application_Module_Member_Message_List_ACCESS_ERROR);
+
+} // [ + ] IF: Member Account Credentials Are Null
+
+} // [ + ] IF: Internal Application: Display Member Account Files Is Activated
 
 /*
  ============================================================================================================
  +
- + Display->Ranks
+ + Display :: Ranks
  +
  ============================================================================================================
 */
@@ -245,17 +250,39 @@ $_Application_Module_Member_List_DB_Query_SELECT_RANKS				= $DB->query("SELECT *
 
 while ($_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_List_DB_Query_SELECT_RANKS)) {
 
-$_Application_Module_Ranks_LIST_RANK_1						= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_1'];
-$_Application_Module_Ranks_LIST_RANK_2						= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_2'];
-$_Application_Module_Ranks_LIST_RANK_3						= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_3'];
-$_Application_Module_Ranks_LIST_RANK_4						= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_4'];
-$_Application_Module_Ranks_LIST_RANK_5						= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_5'];
+$_Application_Module_Ranks_LIST_RANK_MALE_0					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_0'];
+$_Application_Module_Ranks_LIST_RANK_MALE_1					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_1'];
+$_Application_Module_Ranks_LIST_RANK_MALE_2					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_2'];
+$_Application_Module_Ranks_LIST_RANK_MALE_3					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_3'];
+$_Application_Module_Ranks_LIST_RANK_MALE_4					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_male_4'];
+
+$_Application_Module_Ranks_LIST_RANK_FEMALE_0					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_0'];
+$_Application_Module_Ranks_LIST_RANK_FEMALE_1					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_1'];
+$_Application_Module_Ranks_LIST_RANK_FEMALE_2					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_2'];
+$_Application_Module_Ranks_LIST_RANK_FEMALE_3					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_3'];
+$_Application_Module_Ranks_LIST_RANK_FEMALE_4					= $_Application_Module_Member_List_DB_Query_SELECT_RANKS_Fetch_Array['rank_gender_female_4'];
 
 											echo ($_Application_Module_Member_Message_List_Header_RANKS);
 
-											echo ("Rank #1: $_Application_Module_Ranks_LIST_RANK_1<BR>Rank #2: $_Application_Module_Ranks_LIST_RANK_2<BR>Rank #3: $_Application_Module_Ranks_LIST_RANK_3<BR>Rank #4: $_Application_Module_Ranks_LIST_RANK_4<BR>Rank #5: $_Application_Module_Ranks_LIST_RANK_5");
+echo ("
+Your Current Rank-Level Is: $_GLOBAL_MEMBER_LEVEL_RANK<BR><BR>
 
-} // [ + ] WHILE_ARRAY
+Male Ranks<HR>
+System Rank #1, Male: $_Application_Module_Ranks_LIST_RANK_MALE_0<BR>
+System Rank #2, Male: $_Application_Module_Ranks_LIST_RANK_MALE_1<BR>
+System Rank #3, Male: $_Application_Module_Ranks_LIST_RANK_MALE_2<BR>
+System Rank #4, Male: $_Application_Module_Ranks_LIST_RANK_MALE_3<BR>
+System Rank #5, Male: $_Application_Module_Ranks_LIST_RANK_MALE_4<BR><BR>
+
+Female Ranks<HR>
+System Rank #1, Female: $_Application_Module_Ranks_LIST_RANK_FEMALE_0<BR>
+System Rank #2, Female: $_Application_Module_Ranks_LIST_RANK_FEMALE_1<BR>
+System Rank #3, Female: $_Application_Module_Ranks_LIST_RANK_FEMALE_2<BR>
+System Rank #4, Female: $_Application_Module_Ranks_LIST_RANK_FEMALE_3<BR>
+System Rank #5, Female: $_Application_Module_Ranks_LIST_RANK_FEMALE_4
+");
+
+} // [ + ] WHILE: Retrieving System Ranks From Database Server
 
 /*
  ============================================================================================================
@@ -265,12 +292,12 @@ $_Application_Module_Ranks_LIST_RANK_5						= $_Application_Module_Member_List_D
 
 $DB->free($_Application_Module_Member_List_DB_Query_SELECT_RANKS);
 
-} // [ + ] IF_Display_Ranks
+} // [ + ] IF: Internal Application: Display All System Ranks Is Activated
 
 /*
  ============================================================================================================
  +
- + Display->SafeHTML Code
+ + Display :: Safe HyperText-Markup-Language Code
  +
  ============================================================================================================
 */
@@ -280,5 +307,5 @@ if ($_GET["Display"] == "SafeHTML") {
 
 											echo ("$_GLOBAL_PLUGIN_SAFEHTML_LIST_COMMANDS");
 												
-} // [ + ] IF_Display_SafeHTML
+} // [ + ] IF: Internal Application: Display All Safe-HyperText-Markup-Language Code Is Activated
 ?>
