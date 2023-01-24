@@ -85,9 +85,9 @@ if ($_Application_Module_Language_READ_LANGUAGE_DIRECTORY == "." || $_Applicatio
 } else {
 											echo ("<OPTION VALUE=\"$_Application_Module_Language_READ_LANGUAGE_DIRECTORY\">$_Application_Module_Language_READ_LANGUAGE_DIRECTORY</OPTION>");
 
-} // [ + ] IF_LANGUAGE_DIRECTORY
+} // [ + ] IF: Specified Language Directory AND Files ARE NOT Specified Language Directory AND Files
 
-} // [ + ] WHILE_READ_DIRECTORY
+} // [ + ] WHILE: Reading Specified Language Directory AND Files
 
 /*
  ============================================================================================================
