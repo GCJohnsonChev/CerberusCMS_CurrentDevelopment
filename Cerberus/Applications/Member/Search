@@ -59,7 +59,7 @@
 /*
  ============================================================================================================
  +
- + Search Form Post Variables
+ + Search Form :: Variables :: Post Variables
  +
  ============================================================================================================
 */
@@ -89,6 +89,7 @@ echo ("
 											<INPUT TYPE=\"SUBMIT\" VALUE=\"Search\">
 										</FORM>
 ");
+
 } else {
 
 										echo ("<B>Search Result(s) For</B>: <I>$_Application_Module_Member_Search_POST_KEYWORD</I><BR>");
@@ -128,9 +129,9 @@ echo ("
 										</CENTER><BR>
 ");
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving Article Entries From Database Server With Specified Search Characters
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: Article Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -140,7 +141,7 @@ echo ("
 
 $DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES);
 
-} // [ + ] IF_SECTION_1
+} // [ + ] IF: Search Type Is: Article Entries
 
 /*
  ============================================================================================================
@@ -177,9 +178,9 @@ echo ("
 										</CENTER><BR>
 ");
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving File Entries From Database Server With Specified Search Characters
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: File Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -189,7 +190,7 @@ echo ("
 
 $DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_FILES);
 
-} // [ + ] IF_SECTION_2
+} // [ + ] IF: Search Type Is: File Entries
 
 /*
  ============================================================================================================
@@ -226,9 +227,9 @@ echo ("
 										</CENTER><BR>
 ");
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving Forum Entries From Database Server With Specified Search Characters
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: Forum Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -238,7 +239,7 @@ echo ("
 
 $DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM);
 
-} // [ + ] IF_SECTION_3
+} // [ + ] IF: Search Type Is: Forum Entries
 
 /*
  ============================================================================================================
@@ -272,9 +273,9 @@ echo ("
 										</CENTER>
 ");
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving Member Account Entries From Database Server With Specified Search Characters
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: Member Account Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -284,7 +285,7 @@ echo ("
 
 $DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS);
 
-} // [ + ] IF_SECTION_4
+} // [ + ] IF: Search Type Is: Member Account Entries
 
 /*
  ============================================================================================================
@@ -321,13 +322,13 @@ echo ("
 										</CENTER><BR>
 ");
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving News Article Entries From Database Server With Specified Search Characters
 
-} // [ + ] IF_NUMBER_OF_ROWS
+} // [ + ] IF: News Article Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
 
 $DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS);
 
-} // [ + ] IF_SECTION_5
+} // [ + ] IF: Search Type Is: News Article Entries
 
-} // [ + ] IF_POST
+} // [ + ] IF: Database Server Search Form Variables Have Executed
 ?>
