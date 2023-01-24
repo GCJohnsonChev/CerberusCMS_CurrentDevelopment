@@ -567,18 +567,14 @@ echo ("
 													* My BitCoin Gold Address:<BR>
 														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_bitcoin_gold\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD\" MAXLENGTH=\"250\"><BR><BR>
 
-
 													* My DogeCoin Address:<BR>
 														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_dogecoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_DOGECOIN\" MAXLENGTH=\"250\"><BR><BR>
-
 
 													* My Ethereum Address:<BR>
 														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_ethereum\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_ETHEREUM\" MAXLENGTH=\"250\"><BR><BR>
 
-
 													* My LiteCoin Address:<BR>
 														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_litecoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_LITECOIN\" MAXLENGTH=\"250\"><BR><BR>
-
 
 													* My MazaCoin Address:<BR>
 														<INPUT TYPE=\"text\" NAME=\"member_account_cryptocurrency_address_mazacoin\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_CRYPTOCURRENCY_ADDRESS_MAZACOIN\" MAXLENGTH=\"250\"><BR><BR>
