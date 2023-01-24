@@ -79,7 +79,7 @@ $_Application_Module_Video_Player_POST_VIDEO_URL							= $_POST['module_video_pl
  ============================================================================================================
 */
 
-$_Application_Module_Video_Player_POST_VIDEO_FILE_NAME						= $_POST['module_video_player_video_file_name'];
+$_Application_Module_Video_Player_POST_VIDEO_FILE_NAME							= $_POST['module_video_player_video_file_name'];
 
 
 /*
@@ -108,9 +108,9 @@ echo ("
 											<CENTER><IFRAME SRC=\"$_Application_Module_Video_Player_POST_VIDEO_URL\" WIDTH=\"500\" HEIGHT=\"350\"></IFRAME></CENTER>
 ");
 
-} // [ + ] IF_!POST_VIDEO_URL
+} // [ + ] IF: Play Video By Uniform-Resource-Location Embedded Form Variables Have Executed
 
-} // [ + ] IF_DisplayVideo
+} // [ + ] IF: Internal Application: Display Video By Uniform-Resource-Location Embedded Is Activated
 
 /*
  ============================================================================================================
@@ -142,7 +142,7 @@ echo ("
 											</CENTER>
 ");
 
-} // [ + ] IF_!POST_VIDEO_URL
+} // [ + ] IF: Play Video By Local Or Remote File Form Variables Have Executed
 
-} // [ + ] IF_DisplayVideo
+} // [ + ] IF: Internal Application: Display Video By Local Or Remote File Is Activated
 ?>
