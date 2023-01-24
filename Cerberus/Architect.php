@@ -1227,7 +1227,7 @@ member_status_account_activation_key,
 member_status_account_active,
 member_status_account_banned,
 member_status_account_last_active,
-member_status_account_last_active_minutes VARCHAR(10),
+member_status_account_last_active_minutes,
 member_url_homepage,
 member_username)VALUES(
 '3',
