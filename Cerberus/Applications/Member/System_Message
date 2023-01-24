@@ -78,7 +78,7 @@ if ($_GET["Message"] == "Language") {
 
 											echo ("<CENTER>Cerberus: I Have Changed The Language To: <I>$_GLOBAL_COOKIE_MEMBER_LANGUAGE</I></CENTER>");
 
-} // [ + ] IF_Message_Language
+} // [ + ] IF: Internal Application: Message IS Language Is Activated
 
 /*
  ============================================================================================================
@@ -92,7 +92,7 @@ if ($_GET["Message"] == "AdministratorNotification") {
 
 											echo ("<CENTER>$_Application_Module_Member_System_Message_ADMINISTRATOR_NOTIFICATION</CENTER>");
 
-} // [ +] IF_Message_AdministratorNotification
+} // [ + ] IF: Internal Application: Message IS Administrator Notifications Is Activated
 
 /*
  ============================================================================================================
@@ -106,5 +106,5 @@ if ($_GET["Message"] == "Default") {
 
 											echo ("<CENTER>$_Application_Module_Member_Message_System_Message_DEFAULT_MESSAGE</CENTER>");
 
-} // [ + ] IF_Message_Default
+} // [ + ] IF: Internal Application: Message IS Default Notifications Is Activated
 ?>
