@@ -121,10 +121,10 @@ if ($_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL == "3") 
 if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
 
 echo ("
-											Registered Member: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\" TITLE=\":: Open & The Display The Profile Application Module For :: $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME</A></I><HR>
-											&nbsp;*&nbsp;Account Last Activity Timestamp: <A TITLE=\":: This Registered Account Was Last Active: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP</A><BR>
-											&nbsp;*&nbsp;Account Last Known Referrer: <A HREF=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: The Last Referrer For This Registered Account Was: $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER ::\">Hover Over</A><BR>
-											&nbsp;*&nbsp;Account Permissions Level: $_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION<BR><BR>
+											Registered Member: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\" TITLE=\":: Open & The Display The Member Account Profile Application Module For :: $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME</A></I><HR>
+											&nbsp;*&nbsp;Member Account Last Activity Timestamp: <A TITLE=\":: This Registered Member Account Was Last Active On: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP</A><BR>
+											&nbsp;*&nbsp;Member Account Last Known Referrer: <A HREF=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: The Last Referrer For This Registered Member Account Was: $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER ::\">Hover Over</A><BR>
+											&nbsp;*&nbsp;Member Account Permissions Level: $_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION<BR><BR>
 ");
 
 } // [ + ] IF: Registered Member Account Is Currently Active
