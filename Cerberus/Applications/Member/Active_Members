@@ -59,16 +59,16 @@
 /*
  ============================================================================================================
  +
- + Retrieve Registered Member Details From The Database Server
+ + Retrieve Registered Member Account Details From Database Server
  +
  ============================================================================================================
 */
 
-$_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY member_username AND member_access_level WHERE member_status_account_active='1'");
+$_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY member_username");
 
 /*
  ============================================================================================================
- + Retrieve List of Registered Member Entries From The Database
+ + Retrieve List of Registered Member Account Entries From Database Server
  ============================================================================================================
 */
 
@@ -83,11 +83,11 @@ $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER			= $_Appli
 
 /*
  ============================================================================================================
- + IF: Account Is Currently Active
+ + IF: Member Account Is Currently Active
  ============================================================================================================
 */
 
-if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE >=~ $_GLOBAL_LOCAL_SERVER_DATE) {
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE >= $_GLOBAL_LOCAL_SERVER_DATE) {
 
 $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP	= "~2 Minutes Ago";
 
