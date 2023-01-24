@@ -115,7 +115,7 @@ The Remote Internet Protocol Address Associated With This Electronic Mail Messag
 
 											echo ($_Application_Module_Member_Message_Forward_Friend_SEND_ERROR);
 
-} // [ + ] IF_MAIL
+} // [ + ] IF: Send Electronic Mail Message
 
-} // [ + ] IF_POST
+} // [ + ] IF: Forward Electronic Mail Message Form Variables Have Executed
 ?>

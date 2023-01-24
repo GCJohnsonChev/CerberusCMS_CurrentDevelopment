@@ -99,10 +99,14 @@ if ((!$_Application_Module_Member_Comment_POST_APPLICATION_NAME) || (!$_Applicat
 $_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments(comment_author,comment_data,comment_application_id,comment_application_name,comment_time)VALUES('$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Member_Comment_POST_COMMENT_DATA','$_Application_Module_Member_Comment_POST_APPLICATION_ID','$_Application_Module_Member_Comment_POST_APPLICATION_NAME','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD')");
 
 if ($_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT) {
+
 											echo ($_Application_Module_Member_Message_Comment_ADD);
+
 } else {
+
 											echo ($_Application_Module_Member_Message_Comment_ADD_ERROR);
-} // [ + ]  IF_DB_Query_INSERT_COMMENT
+
+} // [ + ] IF: Database Server Query: Insert Comment Variable Has Executed 
 
 /*
  ============================================================================================================
@@ -112,7 +116,7 @@ if ($_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT) {
 
 $DB->free($_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT);
 
-} // [ + ] IF_FAKE_POSTS
+} // [ + ] IF: Comment Variables Have Executed
 
 /*
  ============================================================================================================
@@ -180,10 +184,14 @@ echo ("
 $_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments SET comment_data='$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA' WHERE id='$_Application_Module_Member_Comment_LIST_COMMENT_ID'");
 
 if ($_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT) {
+
 											echo ($_Application_Module_Member_Message_Comment_UPDATE);
+
 } else {
+
 											echo ($_Application_Module_Member_Message_Comment_UPDATE_ERROR);
-} // [ + ] IF_QUERY
+
+} // [ + ] IF: Database Server Query: Update Comment Variable Has Executed
 
 /*
  ============================================================================================================
@@ -193,9 +201,9 @@ if ($_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT) {
 
 $DB->free($_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT);
 
-} // [ + ] NULL_POST
+} // [ + ] IF: Update Comment Form Variables Have Executed
 
-} // [ + ] IF_ModifyCommentID
+} // [ + ] IF: Internal Application: Update Comment Entry By ID Is Activated
 
 /*
  ============================================================================================================
@@ -212,8 +220,10 @@ $_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT				= $DB->query("DEL
 if ($_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT) {
 											echo ($_Application_Module_Member_Message_Comment_DELETE);
 } else {
+
 											echo ($_Application_Module_Member_Message_Comment_DELETE_ERROR);
-} // [ + ] IF_DB_Query_DELETE
+
+} // [ + ] IF: Database Server Query: Delete Comment Variable Has Executed
 
 /*
  ============================================================================================================
@@ -223,9 +233,9 @@ if ($_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT) {
 
 $DB->free($_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT);
 
-} // [ + ] DELETE_ID
+} // [ + ] IF: Internal Application: Delete Comment By ID Is Activated
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] WHILE: Retrieving Comment Entries From Database Server
 
 /*
  ============================================================================================================

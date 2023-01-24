@@ -66,7 +66,7 @@
  ============================================================================================================
 */
 
-$_Application_Module_Member_Application_List_DB_Query_List_Applications		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications");
+$_Application_Module_Member_Application_List_DB_Query_List_Applications			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications");
 
 /*
  ============================================================================================================
@@ -87,7 +87,7 @@ $_Application_Module_Member_Application_List_DB_Query_List_Panels			= $DB->query
 while ($_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Application_List_DB_Query_List_Applications)) {
 
 $_Application_Module_Member_Application_List_LIST_APPLICATION_ID			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['id'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_name'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_name'];
 $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission'];
 $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_STATUS		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_status'];
 
@@ -100,7 +100,7 @@ echo ("
 														<A HREF=\"./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\"Open & Display The Source Code :: For The Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\">Source Code</A><BR><BR>
 ");
 
-} // [ + ] WHILE_FETCH_ARRAY
+} // [ + ] WHILE: Retrieving Application Module Entries From Database Server
 
 														echo ("<B>Application Panels</B><HR>");
 
@@ -127,7 +127,7 @@ echo ("
 														<A HREF=\"./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel\" TITLE=\"Open & Display The Source Code :: For The Application Panel :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME\">Source Code</A><BR><BR>
 ");
 
-} // [ + ] WHILE_FETCH_ARRAY
+} // [ + ] WHILE: Retrieving Application Panel Entries From Database Server
 
 /*
  ============================================================================================================

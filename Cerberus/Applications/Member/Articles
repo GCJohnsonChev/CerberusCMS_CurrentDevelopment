@@ -122,7 +122,7 @@ echo ("
 															<B>This Article Was Posted On</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_TIME</I><BR><BR>
 ");
 
-} // [ + ] IF: Display All Articles
+} // [ + ] IF: Display All Article Entries
 
 /*
  ============================================================================================================
@@ -148,7 +148,7 @@ echo ("
 														<A HREF=\"?$_INTERNAL_ADMINISTRATOR_MODULE&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;DeleteArticleID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID\" TITLE=\":: Delete The Article Entry :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\">Delete</A>&nbsp;&#8212;
 ");
 
-} // [ + ] IF: Display Article By ID
+} // [ + ] IF: Display Article Entry By ID
 
 } // [ + ] WHILE: Retrieving All Article Entries
 

@@ -116,7 +116,7 @@ echo ("
  ============================================================================================================
 */
 
-if(mail($_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME - $_GLOBAL_SITE_TITLE","
+if(mail($_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME - $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
 =============================================================
 [ $_GLOBAL_COOKIE_MEMBER_USERNAME ] has sent you this Private Electronic Message from the Electronic Mail Application Module:
@@ -124,19 +124,23 @@ Dear $_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADD
 $_Application_Module_Member_Electronic_Mail_POST_MESSAGE
 =============================================================
 Have a nice day,
-		    ~ $_GLOBAL_SITE_TITLE.
+		    ~ $_GLOBAL_SYSTEM_SITE_TITLE.
 
 [ $_GLOBAL_REMOTE_ADDRESS ]")) {
+
 											echo ($_Application_Module_Member_Message_Electronic_Mail_SEND);
+
 } else {
+
 											echo ($_Application_Module_Member_Message_Electronic_Mail_SEND_ERROR);
-} // [ + ] IF_MAIL
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Send Electronic Mail Notification
 
-} // [ + ] IF_Electronic MailID
+} // [ + ] IF: Send Electronic Mail Form Variables Have Executed
 
-} // [ + ] WHILE_ARRAY
+} // [ + ] IF: Internal Application: Electronic Mail By ID Is Activated
+
+} // [ + ] WHILE: Retrieving Electronic Mail Addresses From Database Server
 
 /*
  ============================================================================================================

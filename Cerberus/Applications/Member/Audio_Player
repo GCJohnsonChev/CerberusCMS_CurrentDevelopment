@@ -111,9 +111,9 @@ echo ("
 											</CENTER>
 ");
 
-} // [ + ] IF_!POST_AUDIO_URL
+} // [ + ] IF: Audio Player Form Variables Have Executed
 
-} // [ + ] IF_PlayAudioStream_URL
+} // [ + ] IF: Internal Application: Play Audio Stream IS Activated
 
 /*
  ============================================================================================================
@@ -144,7 +144,7 @@ echo ("
 											</CENTER>
 ");
 
-} // [ + ] IF_!POST_AUDIO_URL
+} // [ + ] IF: Audio Player Form Variables Have Executed
 
-} // [ + ] IF_PlayAudioStream_FileName
+} // [ + ] IF: Internal Application Play Audio Stream By File Name Is Activated
 ?>
