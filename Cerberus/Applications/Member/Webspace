@@ -131,7 +131,7 @@ if (fwrite($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE, $_Appli
 
 											echo ($_Application_Module_Member_Message_Webspace_UPDATE_ERROR);
 
-} // [ + ] IF_WRITE_DATA
+} // [ + ] IF: Write Web Page Data To Member Account Web Page
 
 /*
  ============================================================================================================
@@ -141,5 +141,5 @@ if (fwrite($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE, $_Appli
 
 fclose($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE);
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Member Account Web Page Data From Variables Have Executed
 ?>
