@@ -455,7 +455,7 @@ if ($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROO
 
 						echo ("*&nbsp;Error: Cannot Insert S.Q.L. Data.<HR>");
 
-} // [ + ] IF: Database Query -> Insert Plain-Text-File Messenger Room Name
+} // [ + ] IF: Insert Plain-Text-File Messenger Room Name Database Query Variable Has Executed
 
 /*
  ==================================================================================================================================================================
@@ -465,9 +465,9 @@ if ($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROO
 
 $DB->free($_Application_Module_Messenger_DB_Query_INSERT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME);
 
-} // [ + ] IF: Variables Have Executed: Generate Plain-Text-File Messenger Room
+} // [ + ] IF: Generate Plain-Text-File Messenger Room Variables Have Executed
 
-} // [ + ] IF: Generate Plain-Text-File Messenger Room
+} // [ + ] IF: Internal Application: Generate Plain-Text-File Messenger Room Is Activated
 
 /*
  ============================================================================================================
@@ -497,7 +497,7 @@ if ($DB->num_rows($_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_
 
 											echo ($_Application_Module_Member_Message_Messenger_PLAIN_TEXT_FILE_MESSENGER_ROOMS_LIST_EMPTY);
 
-} // [ + ] IF: Number of S.Q.L. Rows Is Less Than 0
+} // [ + ] IF: Plain-Text-File Messenger Room Database Server Entries Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -517,10 +517,10 @@ $_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM
 $_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_Application_Module_Messenger_DB_Query_SELECT_ALL_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_entry'];
 
 											echo ("<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;SelectedPlainTextFileMessengerRoom&#61;$_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME\">$_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME</A><BR>");
-} // [ + ] WHILE: Retrieving List of Plain-Text-File Messenger Rooms
 
+} // [ + ] WHILE: Retrieving List of Plain-Text-File Messenger Room Entries From Database Server
 
-} // [ + ] IF: Internal Application: Display List of Plain-Text-File Messenger Rooms
+} // [ + ] IF: Internal Application: Display List of Plain-Text-File Messenger Rooms Is Activated
 
 /*
  ==================================================================================================================================================================
@@ -545,7 +545,7 @@ if ($DB->num_rows($_Application_Module_Messenger_DB_Query_SELECT_ALL_INCLUDE_PLA
 
 											echo ($_Application_Module_Member_Message_Messenger_PLAIN_TEXT_FILE_MESSENGER_ROOMS_LIST_EMPTY);
 
-} // [ + ] IF: Plain-Text-File Room Name Number of Rows Is Less Than or Equal To 0
+} // [ + ] IF: Plain-Text-File Room Name Database Server Entries Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
@@ -627,7 +627,7 @@ echo ("
 
 } // [ + ] IF: File Exists: Plain-Text-File Messenger Room
 
-} // [ + ] IF: Internal Application: Display Sepcified Plain-Text-File Messenger Room Name
+} // [ + ] IF: Internal Application: Display Specified Plain-Text-File Messenger Room Name
 
 } // [ + ] WHILE: Retrieving List of Plain-Text-File Messenger Room Names
 
@@ -651,9 +651,10 @@ if ($_GET["Display"] == "HiddenMessengerRoom") {
 
 if ($_GET["Name"] == "$_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND") {
 
+
 } // [ + ] IF: Messenger Room: Specified Hidden Messenger Room
 
-} // [ + ] IF: Internal Application: Display: Hidden Messenger Room
+} // [ + ] IF: Internal Application: Display Hidden Messenger Room Is Activated
 
 /*
  ============================================================================================================
