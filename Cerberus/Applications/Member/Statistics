@@ -145,7 +145,8 @@ if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS <= 0) {
 echo ("
 												<B>System Statistical Information</B><HR>
 												*&nbsp;CerberusCMS Installation Date: $_Application_Module_Member_Statistics_LIST_START_DATE<BR>
-												*&nbsp;Total Number of Page Loads: $_Application_Module_Member_Statistics_LIST_NUMBER_OF_HITS<BR><BR>
+												*&nbsp;Total Number of Non-Unique Page Loads: $_Application_Module_Member_Statistics_LIST_NUMBER_OF_HITS<BR>
+												*&nbsp;Total Number of Unique Page Loads: Nothing Here Yet...<BR><BR>
 
 												<B>Current System Settings</B><HR>
 
@@ -154,7 +155,7 @@ echo ("
 
 												<B>Theme Settings</B><BR>
 												*&nbsp;System Theme Image Format: $_GLOBAL_SYSTEM_IMAGE_EXTENSION<BR>
-												*&nbsp;System Theme Sound Format: $_GLOBAL_SYSTEM_SOUND_EXTENSION<BR>
+												*&nbsp;System Theme Audio Format: $_GLOBAL_SYSTEM_SOUND_EXTENSION<BR>
 												*&nbsp;System Theme Directory: $_GLOBAL_SYSTEM_THEME_DIRECTORY<BR><BR>
 
 												<B>Language Settings</B><BR>
