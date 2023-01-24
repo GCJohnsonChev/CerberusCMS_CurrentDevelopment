@@ -125,3 +125,4 @@
   unique software name can be officially registered. It looks like I'm on some weird network blocks wherever I go so I will need to consult with some people overseas to
   help me see what software project names / company names are already officially registered or not. RunicCMS was taken I think. Look for a unique software project name for
   this programming code. I still need to prove I am not my doppelgangers who were using my software project names and putting their faces and identities on it.
+* Update the rest of the Member-Level Application Module } // [ + ] Curly Brace Commentation
