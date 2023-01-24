@@ -93,7 +93,7 @@ https://www.GitHub.com/TinkeSoftware
 ============================================================================================================================================================
 LET ("Tinke Software, Inc.") REGISTERED DIGITALLY IN THE YEAR 2016 IN Rosedale, California, United States -- FORMERLY KNOWN AS RuneSoft, Inc. and Rune Software, Inc. REGISTERED IN THE YEAR ~2002 IN Rosedale, California, United States BY Gary Christopher Johnson -- BE KNOWN AS ONE OF THE LICENSE AND RIGHTS HOLDER OF CerberusCMS, Cerberus C.M.S.,
 Cerberus Content Management System AND THE REPRESENTOR, LICENSE AND RIGHTS HOLDER OF Gary Christopher Johnson ALSO KNOWN AS G.C. Johnson's SOFTWARE WORKS.
-RuneSoft, Inc. and Rune Software, Inc. CANNOT BE CONFUSED WITH Rune Software, GmbH IN Tübingen, Germany WHICH WAS REGISTERED AFTER 2002.
+RuneSoft, Inc. and Rune Software, Inc. CANNOT BE CONFUSED WITH Rune Software, GmbH IN Germany WHICH WAS OFFICIALLY REGISTERED AFTER 2002.
 
 ----------------
 Rules
@@ -102,7 +102,8 @@ Rules
 1a.) Tinke Software permits you to operate Cerberus Content Management System on your own web server strictly by the following rules:
 1b.) You may make copies of Cerberus Content Management System and transfer, distribute them freely.
 1c.) You may not usurp, reproduce, copy or plagiarize any of the fundamentals, content or programming code released with Cerberus Content Management System in any other Software Project.
-1d.) You may modify the copy of the Cerberus Content Management System Project you downloaded as well as add to it as you wish.
+1d.) You may modify the copy of the Cerberus Content Management System Project you downloaded as well as add to it as you wish but your modifications cannot be included in any of the official Cerberus Content Management System
+     Software Project Releases.
 1e.) You may not modify the master copies of Cerberus Content Management System from the Project Development Team.
 
 ----------------
@@ -151,7 +152,8 @@ Rules
 1a.) Tinke Software permits you to operate Cerberus Content Management System on your own web server strictly by the following rules:
 1b.) You may make copies of Cerberus Content Management System and transfer, distribute them freely.
 1c.) You may not usurp, reproduce, copy or plagiarize any of the fundamentals, content or programming code released with Cerberus Content Management System in any other Software Project.
-1d.) You may modify the copy of the Cerberus Content Management System Project you downloaded as well as add to it as you wish.
+1d.) You may modify the copy of the Cerberus Content Management System Project you downloaded as well as add to it as you wish but your modifications cannot be included in any of the official Cerberus Content Management System
+     Software Project Releases.
 1e.) You may not modify the master copies of Cerberus Content Management System from the Project Development Team.
 
 ----------------
