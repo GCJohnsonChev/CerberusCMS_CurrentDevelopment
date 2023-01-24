@@ -279,7 +279,7 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE == "") {
 
 	$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY	 		= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
 
-} // [ + ] IF: Null Member Account Picture
+} // [ + ] IF: Member Account Profile Image Is Empty
 
 /*
  ============================================================================================================
@@ -291,7 +291,7 @@ if (!file_exists($_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISP
 
 	$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
 
-} // [ + ] IF: Null Member Account Picture
+} // [ + ] IF: Member Account Profile Image Is Empty
 
 /*
  ============================================================================================================
@@ -301,11 +301,11 @@ if (!file_exists($_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISP
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION = "1") {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "Yes";
 
 } else {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY = "No";
 
 } // [ + ] IF: Member Account Is Activated
 
@@ -317,11 +317,11 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPL
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER = "1") {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "Yes";
 
 } else {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "No";
 
 } // [ + ] IF: Member Account Newsletter Setting Is On or Off
 
@@ -333,11 +333,11 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY	= "
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED <= "0") {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "No";
 
 } else {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	= "Yes";
 
 } // [ + ] IF: Member Accounts Is Banned
 
@@ -349,11 +349,11 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY	=
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE = "1") {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "Yes";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "Yes";
 
 } else {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "No";
+	$_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	= "No";
 
 } // [ + ] IF: Member Account Is Active
 
@@ -365,9 +365,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY 	
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "1" ) {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Registered Member";
+	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Registered Member";
 
-} // [ + ] IF: Member Account Access Level Is Registered Member
+} // [ + ] IF: Member Account Access-Level Is Registered Member
 
 /*
  ============================================================================================================
@@ -377,9 +377,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Registe
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "2" ) {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Administrator";
+	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Administrator";
 
-} // [ + ] IF: Member Account Access Level Is Registered Member
+} // [ + ] IF: Member Account Access-Level Is Registered Member
 
 /*
  ============================================================================================================
@@ -389,9 +389,9 @@ $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Adminis
 
 if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "3" ) {
 
-$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Services Root Administrator";
+	$_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY = "Services Root Administrator";
 
-} // [ + ] IF: Member Account Access Level Is Registered Member
+} // [ + ] IF: Member Account Access-Level Is Registered Member
 
 /*
  ============================================================================================================
@@ -533,12 +533,12 @@ echo ("
 											[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\" TITLE=\":: Close :: More Information ::\">Close</A> ]<BR><BR>
 ");
 
-} // [ + ] IF_Display_Statistics
+} // [ + ] IF: Internal Application: Display Extensive Member Account Information Is Activated
 
 /*
  ============================================================================================================
  +
- + Display Profile Comments
+ + Display :: Member Account Profile Comment Entries
  +
  ============================================================================================================
 */
@@ -556,7 +556,7 @@ if ($DB->num_rows($_Application_Module_Members_Profile_DB_Query_SELECT_COMMENTS)
 
 											echo ($_Application_Module_Member_Message_Profile_NO_COMMENTS);
 
-} // [ + ] IF: Comment Entry Number of Rows Is Less Than or Equal To 0
+} // [ + ] IF: Member Account Profile Comment Entry Database Server Number of Rows Is Less Than or Equal To 0
 
 /*
  ============================================================================================================
@@ -575,7 +575,7 @@ $_Application_Module_Members_Profile_LIST_COMMENT_TIME						= $_Application_Modu
 
 /*
  ============================================================================================================
- + Display Comment Authorship
+ + Display :: Member Account Comment Entry Authorship
  ============================================================================================================
 */
 
@@ -584,38 +584,38 @@ $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT 	= $DB-
 while ($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array = $DB->fetch_array($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT)) {
 
 $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_AVATAR					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_avatar'];
-$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_city'];
+$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_LOCATION				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_location'];
 $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_EXPERIENCE_AMOUNT			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_experience_amount'];
 $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_JOIN_DATE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_join_date'];
 $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_signature'];
 
 /*
  ============================================================================================================
- + IF: Comment Author Signature Is Null
+ + IF: Comment Author Signature Is Empty
  ============================================================================================================
 */
 
 if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE == "") {
 
-$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE 				= "None";
+	$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_SIGNATURE 				= "None";
 
-}// [ + ] IF: Comment Author Signature Is Null
+}// [ + ] IF: Comment Author Signature Is Empty
 
 /*
  ============================================================================================================
- + IF: Comment Author Signature Is Null
+ + IF: Comment Author Signature Is Empty
  ============================================================================================================
 */
 
-if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY == "") {
+if ($_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_LOCATION == "") {
 
-$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY 					= "Unknown";
+	$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_LOCATION				= "Unknown";
 
-} // [ + ] IF_NULL_CITY
+} // [ + ] IF: Comment Author Location Is Empty
 
 /*
  ============================================================================================================
- + Display Comments
+ + Display :: Member Account Profile Comment Entries
  ============================================================================================================
 */
 
@@ -624,7 +624,7 @@ echo ("
 												<TABLE BORDER=\"1\" WIDTH=\"100%\">
 													<TR>
 														<TD VALIGN=\"top\">
-															<IMG SRC=\"Theme/$_GLOBAL_MEMBER_THEME/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_AVATAR\" TITLE=\"Avatar\" ALT=\"Avatar\"><HR>
+															<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_AVATAR\" TITLE=\"Avatar\" ALT=\"Avatar\"><HR>
 															<B>Member</B>: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR\" TITLE=\"Profile: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR\">$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR</A><BR><B>Location</B>: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY<BR><B>Experience</B>: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_EXPERIENCE_AMOUNT<HR>
 															[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;ModifyCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Modify This Comment Entry ::\">Modify</A>&nbsp;-&nbsp;
 															<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;DeleteCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Delete This Comment Entry ::\">Delete</A>&nbsp;]
@@ -636,7 +636,7 @@ echo ("
 											</CENTER><BR>
 ");
 
-} // [ + ] WHILE_AUTHOR
+} // [ + ] WHILE: Retrieving List Of Member Account Profile Comment Entries For Member Account Profile From Database Server
 
 /*
  ============================================================================================================
@@ -646,7 +646,7 @@ echo ("
 
 $DB->free($_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_FOR_COMMENT);
 
-} // [ + ] WHILE_COMMENTS
+} // [ + ] WHILE: Retrieving List Of Member Account Profile Comment Entries From Database Server
 
 /*
  ============================================================================================================
@@ -685,9 +685,9 @@ echo ("
 											</FORM>
 ");
 
-} // [ + ] IF: Internal Application: Display Comment Form
+} // [ + ] IF: Internal Application: Display Comment Form Is Activated
 
-} // [ + ] IF: Internal Application: Display Member Account Information
+} // [ + ] IF: Internal Application: Display Extensive Member Account Information Is Activated
 
-} // [ + ] WHILE: Retrieving Member Account Directory
+} // [ + ] WHILE: Retrieving Member Account Information From Database Server
 ?>
