@@ -59,7 +59,7 @@
 /*
  ============================================================================================================
  +
- + If Credentials Already Set
+ + IF: Member Account Credentials Are Already Set
  +
  ============================================================================================================
 */
@@ -73,7 +73,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 /*
  ============================================================================================================
  +
- + Login Form
+ + Member Account Login Form
  +
  ============================================================================================================
 */
@@ -96,14 +96,16 @@ echo ("
 /*
  ============================================================================================================
  +
- + If Credentials Do Not Exist
+ + IF: Member Account Credentials Do Not Exist In The Database Server
  +
  ============================================================================================================
 */
 
 if ($_GET["Message"] == "No_Member") {
-											echo ($_Application_Module_Member_Message_Login_ERROR);
-} // [ + ] IF_Message_No_Member
 
-} // [ + ] IF_Credentials_Already_Set
+											echo ($_Application_Module_Member_Message_Login_ERROR);
+
+} // [ + ] IF: Internal Application: Display Message: No Existing Member Account Is Activated
+
+} // [ + ] IF: Member Account Credentials Are Already Set
 ?>
