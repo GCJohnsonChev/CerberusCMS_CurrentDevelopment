@@ -58,7 +58,7 @@
 
 /*
  ============================================================================================================
- + If Valid Credentials Exist, Print Deny Registration Message
+ + IF: Valid Member Account Credentials Exist :: Display Deny Registration Message
  ============================================================================================================
 */
 
@@ -66,12 +66,12 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_DENIED);
 
-} else { // [ + ] [ 1 ] IF USERNAME && PASSWORD DO NOT EXIST IN COOKIES, DISPLAY REGISTRATION FORM
+} else { // [ + ] [ 1 ] IF: Member Account UserName AND Password Are Not Null, Display Member Account Registration Form
 
 /*
  ============================================================================================================
  +
- + Register Form Variables
+ + Register Member Account Form :: Variables
  +
  ============================================================================================================
 */
@@ -87,7 +87,7 @@ $_Application_Module_Member_Register_RANDOM_KEY_MD5 					= md5($_Application_Mod
 
 /*
  ============================================================================================================
- + Form Post Variables
+ + Member Account Registration Form :: Variables :: Post Variables
  ============================================================================================================
 */
 
@@ -102,7 +102,7 @@ $_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST[
 
 /*
  ============================================================================================================
- + Replace Characters
+ + Member Account Registration Form :: Variables :: Replace Characters
  ============================================================================================================
 */
 
@@ -129,7 +129,7 @@ $_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME		= str
 
 /*
  ============================================================================================================
- + Random Password Generation
+ + Member Account Registration Form :: Variables :: Random Password Generation
  ============================================================================================================
 */
 
@@ -188,7 +188,7 @@ echo ("
 											<CENTER>By clicking `Register` you agree to this Web Site :: <A HREF=\"TOS-PP.txt\" TITLE=\"View :: Terms of Service &amp; Privacy Policy\">Terms of Service and Privacy Policy.</A></CENTER>
 ");
 
-} else { // [ + ] [ 2 ] FORM DATA HAS POSTED, CHECK RANDOM KEY
+} else { // [ + ] IF: Member Account Registration Form Variables Have Executed, Check Random Key
 
 /*
  ============================================================================================================
@@ -200,7 +200,7 @@ if ($_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY != $_Applicat
 
 											echo ("$_Application_Module_Member_Message_Register_REGISTRATION_KEY_ERROR --- $_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY $_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK");
 
-} else { // [ + ] [ 3 ] RANDOM KEY IS THE SAME, STRIP CHARACTERS FROM POST DATA
+} else { // [ + ] IF: Member Account Registration Form Random Key Variables Are The Same, Strip Harmful Characters From POST Data
 
 /*
  ============================================================================================================
@@ -245,7 +245,7 @@ if (substr_count($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_INVALID_ELECTRONIC_MAIL_ADDRESS);
 
-} else { // [ + ] [ 4 ] ELECTRONIC MAIL ADDRESS IS VALID, CHECK FOR DISALLOWED CHARACTERS
+} else { // [ + ] IF: Member Account Electronic Mail Address Is Valid: Check For Disallowed Characters
 
 /*
  ============================================================================================================
@@ -257,7 +257,7 @@ if (substr_count($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME, $
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_ERROR);
 
-} else { // [ + ] [ 5 ] CHARACTERS ARE VALID, CHECK FOR USERNAME LENGTH
+} else { // [ + ] IF: Member Account Registration Characters Are Valid: Check For UserName Character Length
 
 /*
  ============================================================================================================
@@ -269,7 +269,7 @@ if ($_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME < 
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_LENGTH_ERROR);
 
-} else { // [ + ] [ 6 ] USERNAME IS GREATER THAN 4 CHARACTERS, CHECK FOR EXISTING USER
+} else { // [ + ] IF: Member Account Registration UserName Is Greater Than 4 Characters: Check For Existing Member Account In Database Server
 
 /*
  ============================================================================================================
@@ -281,13 +281,13 @@ if (file_exists("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_US
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_EXISTS);
 
-} else { // [ + ] [ 7 ] USERNAME EXISTS IN MEMBER FILE SYSTEM
+} else { // [ + ] IF: Member Account Registration UserName Already Exists In Member Account Directory
 
 if (file_exists("./Member/Master_List/Electronic_Mail_Addresses/$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS")) {
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_EXISTS);
 
-} else { // [ + ] [ 8 ] USERNAME EXISTS IN Electronic Mail Addresses Master List
+} else { // [ + ] IF: Member Account Registration Electronic Mail Address Already Exists In Member Account Master: Deny Member Account Registration
 
 /*
  ============================================================================================================
@@ -300,28 +300,30 @@ if (file_exists("./Member/Master_List/Electronic_Mail_Addresses/$_Application_Mo
 if (mail($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS,"Thanks for Registering With :: $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME :: [ $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS ],
 ============================================================================
-Thank you for Registering with ~ $_GLOBAL_SYSTEM_SITE_TITLE.
+Thank you for Registering with ~ $_GLOBAL_SYSTEM_SITE_TITLE
 
-This is your account information:
+This is your member account information:
 
-Account UserName: $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME
-Account Password: $_Application_Module_Member_Register_RANDOM_DIGITS
-Account Activation Key: $_Application_Module_Member_Register_RANDOM_KEY_MD5
+Member Account UserName: $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME
+Member Account Password: $_Application_Module_Member_Register_RANDOM_DIGITS
+Member Account Activation Key: $_Application_Module_Member_Register_RANDOM_KEY_MD5
 
-The steps for Logging into this account are as follows:
+The steps for logging into this member account are as follows:
 
 *1. Visit the Web Page Document with the Login form.
 
-*2. Input the Login information;
-Member Electronic Mail Address, Member Login, Member Password ( $_Application_Module_Member_Register_RANDOM_DIGITS ).
+*2. Input the Member Account Login information;
+Member Account Electronic Mail Address, Member Account UserName, Member Account Password ( $_Application_Module_Member_Register_RANDOM_DIGITS ).
 
-*3. Input the Account Activation Key ( $_Application_Module_Member_Register_RANDOM_KEY_MD5 ).
+*3. Input the Member Account Activation Key ( $_Application_Module_Member_Register_RANDOM_KEY_MD5 ).
 
-*4. Click on the 'Change Password' link after successfully logging in and then change the temporary password to a new password that only you will know and remember.
+*4. Click on the 'Update Password' link after successfully logging in and then update the temporary password to a new password that only you will know and remember.
+
+Your Member Account details are encrypted and completely unreadable by anyone else unless they know your clear-text password.
 
 If you fail to activate this account within 24 hours this account will automatically be deleted because the system will think that it was registered by a robot or a malicious user.
 
-Any problems should be reported to the Administration.
+Any problems should be reported to the Administration or Services Root Administration.
 
 The Internet Protocol Address associated with this Registration was: $_GLOBAL_REMOTE_SERVER_ADDRESS
 ============================================================================
@@ -551,11 +553,11 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/$_Application_Module_Me
 
 copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_Mail_Addresses/$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS");
 
-} else { // [ + ] [ 8 ] IF DB QUERY WAS NOT EXECUTED
+} else { // [ + ] IF: Insert Member Account Registration Variable Has Executed In Error: Display Error Message
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_ERROR);
 
-} // [ + ] IF: DATABASE QUERY WAS EXECUTED
+} // [ + ] [ + ] IF: Insert Member Account Registration Variable Has Executed
 
 /*
  ============================================================================================================
@@ -565,7 +567,7 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_
 
 $DB->free($_Application_Module_Member_Register_DB_Query_INSERT_REGISTRAR);
 
-} // [ + ] IF: ELECTRONIC MAIL ADDRESS EXISTS IN E-Mail_Addresses DIRECTORY [ 8 ]
+} // [ + ] IF: ELECTRONIC MAIL ADDRESS EXISTS IN Electronic_Mail_Addresses DIRECTORY [ 8 ]
 
 } // [ + ] IF: FILE EXISTS ( MEMBER INDEX FILE ) || ( MEMBER E-MAIL FILE ) [ 7 ]
 
