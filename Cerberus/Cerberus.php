@@ -866,6 +866,20 @@ if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Check_Login_Member_Pa
 
 /*
  ============================================================================================================
+ + Password Has Been Verified Exactly, Set Member Account Active Status
+ ============================================================================================================
+*/
+
+$_DB_Query_Set_Member_Status_Account_Active					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_DB_Query_Set_Member_Status_Account_Active) {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Internal Application: Login Is Activated: Set Member Account Active To Active
+
+/*
+ ============================================================================================================
  + Header Redirect :: Control Panel
  ============================================================================================================
 */
@@ -935,7 +949,7 @@ if ($_DB_Query_Set_Member_Status_Account_Inactive) {
 /**
  * Do Nothing
 **/
-}
+} // [ + ] IF: Internal Application: Logout Is Activated: Set Member Account Active To Inactive
 
 /*
  ============================================================================================================
