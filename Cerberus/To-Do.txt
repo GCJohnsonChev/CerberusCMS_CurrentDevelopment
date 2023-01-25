@@ -126,3 +126,4 @@
   help me see what software project names / company names are already officially registered or not. RunicCMS was taken I think. Look for a unique software project name for
   this programming code. I still need to prove I am not my doppelgangers who were using my software project names and putting their faces and identities on it.
 * Update the rest of the Member-Level Application Module } // [ + ] Curly Brace Commentation
+* Finish updating / debugging the rest of the Administration-Level Application Modules... the Web_Pages application modules does not work all of the way. Needs to be debugged.
