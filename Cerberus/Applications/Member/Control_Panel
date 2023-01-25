@@ -70,7 +70,7 @@
  ============================================================================================================
 */
 
-$_Application_Module_Member_Control_Panel_LOGGING_ACTIVITY_LOG		= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Activity_Log.php";
+$_Application_Module_Member_Control_Panel_LOGGING_ACTIVITY_LOG			= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Activity_Log.php";
 
 /*
  ============================================================================================================
@@ -267,7 +267,7 @@ if ($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS) {
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Update Member Activation Key
+ + Kill Database Server Query: Update Member Activation Key
  ============================================================================================================
 */
 
@@ -279,7 +279,7 @@ $DB->free($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS);
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Select All Member Entries
+ + Kill Database Server Query: Select All Member Entries
  ============================================================================================================
 */
 
