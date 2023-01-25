@@ -187,7 +187,7 @@ $_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY						= opendir
 
 while (($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY = readdir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY))) {
 
-if ($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == ".." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "index.php") {
+if ($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == ".." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "index.php" || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "Global") {
 /**
  * Do Nothing
 **/
