@@ -131,7 +131,7 @@ if ($DB->num_rows($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_
 
 } else {
 
-											echo ("<HR><CENTER><B>Existing Link(s)</B></CENTER><HR>");
+											echo ("<HR><CENTER><B>Existing Link Entries</B></CENTER><HR>");
 
 while ($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS)) {
 
@@ -157,10 +157,11 @@ $_Application_Module_Administration_Web_Pages_LIST_LINK_URL				= $_Application_M
 */
 
 echo ("
-											<CENTER><TABLE BORDER=\"1\" CELLPADDING=\"0\" CELLSPACING=\"0\" WIDTH=\"100%\"><TR>
-											<TD WIDTH=\"100%\">Link Name: <B>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</B></TD>
+											<CENTER><TABLE BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" WIDTH=\"100%\"><TR>
+											<TD WIDTH=\"90%\">Link Entry Name: <B>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</B></TD>
 												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;DeleteLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Delete The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Delete</A></TD>
-												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;ModifyLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Update The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Update</A></TD>
+												
+												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdateLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Update The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Update</A></TD>
 											</TR></TABLE></CENTER>
 ");
 
@@ -209,7 +210,7 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK);
  ============================================================================================================
 */
 
-if ($_GET["ModifyLinkID"] == "$_Application_Module_Administration_Web_Pages_LIST_LINK_ID") {
+if ($_GET["UpdateLinkID"] == "$_Application_Module_Administration_Web_Pages_LIST_LINK_ID") {
 
 /*
  ============================================================================================================
@@ -235,7 +236,7 @@ if ((!$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME) || (!
 
 echo ("
 											<BR><BR><HR><CENTER><B>Currently Updating Link Entry: <I>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</I></B></CENTER><HR>
-												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;ModifyLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" METHOD=\"post\">
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdateLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" METHOD=\"post\">
 													Link Entry Name:<BR>
 														<INPUT TYPE=\"text\" NAME=\"post_update_link_name\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\" MAXLENGTH=\"250\"><BR>
 													Link Entry Row:<BR>
