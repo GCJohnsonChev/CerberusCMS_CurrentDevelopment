@@ -123,7 +123,9 @@ if (!$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE) {
 echo ("
 													<CENTER><B>Update System Settings</B></CENTER><HR>
 														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Settings\" METHOD=\"post\">
-															Default Safe-HTML Plugin Directory:<BR>
+
+														System Plug-Ins<HR>
+															Default Safe-HyperText-Markup-Language Plugin Directory:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_SafeHTML_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
 															Safe Hyper-Text-Markup-Language Plugin Status:<BR>
 															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_STATUS ]<BR>
@@ -131,34 +133,46 @@ echo ("
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																</SELECT><BR><BR>
+															Default Text-Editor Plugin Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Text_Editor_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_TEXT_EDITOR_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+															Default Smiley-Face(s) / Emoji Plugin Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Smileys_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SMILEYS_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+
+														System Generated Cookies<HR>
 															Cookie / Session Time Expiration:<BR>
 															[ In Seconds ]<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Session_Time\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_COOKIE_TIME\" MAXLENGTH=\"10\"><BR><BR>
+
+														Website File Compression<HR>
 															G.N.U. ZIP Compression Status:<BR>
 															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_GZIP_STATUS ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_GZIP_Compression\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																</SELECT><BR><BR>
+
+														File Extensions<HR>
 															System-Wide Image Extension:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Image_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_IMAGE_EXTENSION\" MAXLENGTH=\"3\"><BR><BR>
+															Theme Audio File Extension:<BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\"><BR><BR>
+
+														Languages<HR>
 															Default Language Directory:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Language_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_LANGUAGE_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
-															Default Text-Editor Plugin Directory:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Text_Editor_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_TEXT_EDITOR_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+
+														Website Settings<HR>
 															OFFLINE Mode Status:<BR>
 															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_OFFLINE_STATUS ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_Offline_Status\">
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																</SELECT><BR><BR>
+
 															Website Browser Title:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Site_Title\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SITE_TITLE\" MAXLENGTH=\"250\"><BR><BR>
-															Default Smiley-Face(s) / Emoji Plugin Directory:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Smileys_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SMILEYS_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
-															Theme Audio File Extension:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\"><BR><BR>
-															Default Theme Directory:<BR>
+
+															Default System Theme Directory:<BR>
 																<SELECT NAME=\"Module_Administration_Settings_Theme_Directory\">
 ");
 
