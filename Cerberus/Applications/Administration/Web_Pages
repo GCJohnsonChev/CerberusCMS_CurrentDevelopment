@@ -51,16 +51,16 @@
 /*
  ============================================================================================================
  +
- + Install Link Post Variables
+ + Install Link Form :: Variables :: Post Variables
  +
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Web_Pages_POST_LINK_NAME				= $_POST['post_link_name'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_NAME				= $_POST['Install_Link_Name'];
 $_Application_Module_Administration_Web_Pages_POST_LINK_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_NAME);
-$_Application_Module_Administration_Web_Pages_POST_LINK_URL				= $_POST['post_link_url'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_URL				= $_POST['Install_Link_URL'];
 $_Application_Module_Administration_Web_Pages_POST_LINK_URL				= preg_replace("/'/", "&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_URL);
-$_Application_Module_Administration_Web_Pages_POST_LINK_TYPE				= $_POST['post_link_type'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_TYPE				= $_POST['Install_Link_Type'];
 
 /*
  ============================================================================================================
@@ -76,16 +76,16 @@ echo ("
 											<CENTER><B>Install Link Entry</B></CENTER><HR>
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages\" METHOD=\"post\">
 													Link Entry Name:<BR>
-														<INPUT TYPE=\"text\" NAME=\"post_link_name\" MAXLENGTH=\"250\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Install_Link_Name\" MAXLENGTH=\"250\"><BR>
 													Link Entry Uniform-Resource-Location:<BR>
 													Where Does This Link Lead To ? Example: <I>My_Pictures.html</I> or <I>My_Pictures.php</I><BR>
-														<INPUT TYPE=\"text\" NAME=\"post_link_url\" MAXLENGTH=\"250\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Install_Link_URL\" MAXLENGTH=\"250\"><BR>
 													Link Entry Type:<BR>
-														<SELECT NAME=\"post_link_type\">
+														<SELECT NAME=\"Install_Link_Type\">
 															<OPTION VALUE=\"1\">Custom Text / HTML Document</OPTION>
 															<OPTION VALUE=\"2\">Uploaded Application</OPTION>
 														</SELECT><BR>
-													<INPUT TYPE=\"submit\" VALUE=\"Install LinkEntry \">
+													<INPUT TYPE=\"submit\" VALUE=\"Install Link Entry\">
 												</FORM><BR>
 ");
 
@@ -93,13 +93,13 @@ echo ("
 
 if ($_Application_Module_Administration_Web_Pages_POST_LINK_TYPE == 1) {
 
-$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ahref(application_link_name,application_link_row,application_link_url)VALUES('$_Application_Module_Administration_Web_Pages_POST_LINK_NAME','1','?$_INTERNAL_CUSTOM_MODULE=$_Application_Module_Administration_Web_Pages_POST_LINK_URL')");
+$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('$_Application_Module_Administration_Web_Pages_POST_LINK_NAME','1','?$_INTERNAL_CUSTOM_MODULE=$_Application_Module_Administration_Web_Pages_POST_LINK_URL')");
 
 } // [ + ] IF: Link Type IS Option: 1
 
 if ($_Application_Module_Administration_Web_Pages_POST_LINK_TYPE == 2) {
 
-$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ahref(application_link_name,application_link_row,application_link_url)VALUES('$_Application_Module_Administration_Web_Pages_POST_LINK_NAME','1','?$_INTERNAL_USER_MODULE=$_Application_Module_Administration_Web_Pages_POST_LINK_URL')");
+$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('$_Application_Module_Administration_Web_Pages_POST_LINK_NAME','1','?$_INTERNAL_USER_MODULE=$_Application_Module_Administration_Web_Pages_POST_LINK_URL')");
 
 } // [ + ] IF: Link Type IS Option: 2
 
@@ -118,14 +118,12 @@ if ($_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK) {
 /*
  ============================================================================================================
  +
- +
- + List Links
- +
+ + Retrieve Existing Links From Database Server
  +
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ahref ORDER BY application_link_row ASC");
+$_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links ORDER BY application_link_row ASC");
 
 if ($DB->num_rows($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS) <= 0) {
 
@@ -140,7 +138,7 @@ while ($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch
 /*
  ============================================================================================================
  +
- + List Link Entries
+ + Retrieve Link Entries From Database Server
  +
  ============================================================================================================
 */
@@ -153,7 +151,7 @@ $_Application_Module_Administration_Web_Pages_LIST_LINK_URL				= $_Application_M
 /*
  ============================================================================================================
  +
- + List Links For Selection
+ + Display Existing Links From Database Server For Selection
  +
  ============================================================================================================
 */
@@ -170,7 +168,7 @@ echo ("
  ============================================================================================================
  +
  +
- + Delete Selected Link ID
+ + Internal Application :: Delete Link
  +
  +
  ============================================================================================================
@@ -178,7 +176,7 @@ echo ("
 
 if ($_GET["DeleteLinkID"] == "$_Application_Module_Administration_Web_Pages_LIST_LINK_ID") {
 
-$_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ahref WHERE id='$_Application_Module_Administration_Web_Pages_LIST_LINK_ID'");
+$_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links WHERE id='$_Application_Module_Administration_Web_Pages_LIST_LINK_ID'");
 
 if ($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK) {
 
@@ -252,7 +250,7 @@ echo ("
 
 } else {
 
-$_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ahref SET application_link_name='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME',application_link_row='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW',application_link_url='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL' WHERE id='$_Application_Module_Administration_Web_Pages_LIST_LINK_ID'");
+$_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links SET application_link_name='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME',application_link_row='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW',application_link_url='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL' WHERE id='$_Application_Module_Administration_Web_Pages_LIST_LINK_ID'");
 
 if ($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK) {
 
