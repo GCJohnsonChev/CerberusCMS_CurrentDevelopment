@@ -1444,7 +1444,7 @@ if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES > $_GLOBAL_LOCAL_SERVER_T
  ============================================================================================================
 */
 
-$_DB_Query_Set_Member_Status_Account_Active 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Set_Member_Status_Account_Active 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_status_account_last_active_minutes='$_GLOBAL_LOCAL_SERVER_TIME_MINUTES' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 if ($_DB_Query_Set_Member_Status_Account_Active) {
 /**
