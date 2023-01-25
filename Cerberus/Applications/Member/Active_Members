@@ -90,7 +90,21 @@ $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER			= $_Appli
 
 if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
 
-$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP	= "~2 Minutes Ago";
+if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES > $_GLOBAL_LOCAL_SERVER_TIME_MINUTES) {
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP		= $_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES - $_GLOBAL_LOCAL_SERVER_TIME_MINUTES;
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP_MESSAGE	= "~ $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP Minutes Ago";
+
+}
+
+if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES < $_GLOBAL_LOCAL_SERVER_TIME_MINUTES) {
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP		= $_GLOBAL_LOCAL_SERVER_TIME_MINUTES - $_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES;
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP_MESSAGE	= "~ $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP Minutes Ago";
+
+}
 
 } // [ + ] IF: Registered Member Account Last Active Timestamp Is Greater Than or Equal To or Approximate To Current Local Server Timestamp
 
@@ -122,7 +136,7 @@ if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE
 
 echo ("
 											Registered Member: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\" TITLE=\":: Open & The Display The Member Account Profile Application Module For :: $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME</A></I><HR>
-											&nbsp;*&nbsp;Member Account Last Activity Timestamp: <A TITLE=\":: This Registered Member Account Was Last Active On: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP</A><BR>
+											&nbsp;*&nbsp;Member Account Last Activity Timestamp: <A TITLE=\":: This Registered Member Account Was Last Active On: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP_MESSAGE</A><BR>
 											&nbsp;*&nbsp;Member Account Last Known Referrer: <A HREF=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: The Last Referrer For This Registered Member Account Was: $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER ::\">Hover Over</A><BR>
 											&nbsp;*&nbsp;Member Account Permissions Level: $_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION<BR><BR>
 ");
