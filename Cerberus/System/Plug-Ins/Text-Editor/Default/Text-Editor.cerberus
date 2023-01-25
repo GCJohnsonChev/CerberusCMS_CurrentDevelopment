@@ -1,0 +1,78 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->System->Plug-Ins->Text-Editor->Default->Text-Editor.cerberus
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Cerberus :: Plug-In :: WYSWIG Text Editor
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Text Editor: Global Button Variables
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Text Editor: JavaScript Button Variables
+ ================================================================
+*/
+
+$_GLOBAL_TEXTEDITOR_BUTTONS					= "
+									<script type=\"text/javascript\" src=\"./System/Plug-Ins/Text-Editor/Default/Text-Editor.js\"></script>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[b]', '[/b]');\" TITLE=\"Insert :: Bold :: BB Code\">[B]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[u]', '[/u]');\" TITLE=\"Insert :: Underlined :: BB Code\">[U]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[i]', '[/i]');\" TITLE=\"Insert :: Italic :: BB Code\">[I]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[big]', '[/big]');\" TITLE=\"Insert :: Big :: BB Code\">[BIG]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[center]', '[/center]');\" TITLE=\"Insert :: Centered :: BB Code\">[CNTR]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[br]', '');\" TITLE=\"Insert :: Break Repeat :: BB Code\">[BR]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[image]', '[/image]');\" TITLE=\"Insert :: Image :: BB Code\">[IMG]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[link]', '[/link]');\" TITLE=\"Insert :: Link :: BB Code\">[LNK]</BUTTON>
+									<BUTTON TYPE=\"button\" CLASS=\"button\" onclick=\"insert('WYSIWYG', '[smile]', '');\" TITLE=\"Insert :: Smile :: BB Code\">[Smile]</BUTTON>
+								";
+
+?>
