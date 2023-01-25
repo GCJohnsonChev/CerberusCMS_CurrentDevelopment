@@ -925,6 +925,20 @@ if ($_GET["InternalApplication"] == "Logout") {
 
 /*
  ============================================================================================================
+ + Set Member Account Status To Inactive
+ ============================================================================================================
+*/
+
+$_DB_Query_Set_Member_Status_Account_Inactive					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_DB_Query_Set_Member_Status_Account_Inactive) {
+/**
+ * Do Nothing
+**/
+}
+
+/*
+ ============================================================================================================
  + Secure-Destroy All Stored Browser Cookies
  ============================================================================================================
 */
@@ -1408,13 +1422,27 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
+if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES > $_GLOBAL_LOCAL_SERVER_TIME_MINUTES) {
+
 /*
  ============================================================================================================
  + IF: Member Is Logged-In: Update Member Active Status
  ============================================================================================================
 */
 
-$_DB_Query_Set_Member_Active_Status 						= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_active='1' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Set_Member_Status_Account_Active 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_DB_Query_Set_Member_Status_Account_Active) {
+/**
+ * Do Nothing
+**/
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Update Member Account Active Status Database Query Variable Is Executed
+
+} // [ + ] IF: Member Account Last Active In Minutes Is Greater Than Current Server Time In Minutes
 
 } // [ + ] IF: Member Is Logged-In
 
