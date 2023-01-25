@@ -159,8 +159,8 @@ $_Application_Module_Administration_Web_Pages_LIST_LINK_URL				= $_Application_M
 echo ("
 											<CENTER><TABLE BORDER=\"1\" CELLPADDING=\"0\" CELLSPACING=\"0\" WIDTH=\"100%\"><TR>
 											<TD WIDTH=\"100%\">Link Name: <B>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</B></TD>
-												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;DeleteLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Delete :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Delete</A></TD>
-												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;ModifyLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Modify :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Modify</A></TD>
+												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;DeleteLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Delete The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Delete</A></TD>
+												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;ModifyLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Update The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Update</A></TD>
 											</TR></TABLE></CENTER>
 ");
 
@@ -278,7 +278,6 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK);
 } // [ + ] WHILE: Retrieving Link Entries From Database
 
 } // [ + ] IF: Number of Rows In Database IS Less Than Or Equal To Zero
-
 
 /*
  ============================================================================================================
