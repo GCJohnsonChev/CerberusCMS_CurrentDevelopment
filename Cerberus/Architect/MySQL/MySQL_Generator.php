@@ -690,7 +690,7 @@ INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(ap
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Messenger','014','?Application_Member&#61;Messenger&amp;Display&#61;MessengerOptions');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('News','015','?Application_Member&#61;News');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Referrers','016','?Application_Member&#61;Referrers&amp;Display&#61;Box');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('RSS Feed','017','RSS.php');
+INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('RSS Feed','017','RSS.php?');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Register','018','?Application_Member&#61;Register');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Search','019','?Application_Member&#61;Search');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Statistics','020','?Application_Member&#61;Statistics');
