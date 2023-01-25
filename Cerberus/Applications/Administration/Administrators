@@ -63,7 +63,7 @@
 /*
  ============================================================================================================
  +
- + Retrieve All Member Accounts
+ + Retrieve All Member Accounts From Database Server
  +
  ============================================================================================================
 */
@@ -73,7 +73,7 @@ $_Application_Module_Administration_DB_Query_Fetch_Member_UserName			= $DB->quer
 /*
  ============================================================================================================
  +
- + Member Account Management Form Post Data Variables
+ + Variables :: Member Account Management Form :: Post Data Variables
  +
  ============================================================================================================
 */
@@ -111,7 +111,7 @@ while ($_Application_Module_Administration_DB_Query_Fetch_Member_UserName_Array 
 
 /*
  ============================================================================================================
- + SQL Database Table Row Data Array Variables
+ + SQL Database Server Table Row Data Array Variables
  ============================================================================================================
 */
 
@@ -244,7 +244,7 @@ echo ("
 												Member Account Rank:<BR>
 													<INPUT TYPE=\"TEXT\" NAME=\"Module_Administrators_Form_Member_Rank\" VALUE=\"$_Application_Module_Administration_LIST_MEMBER_RANK\"><BR>
 													<INPUT TYPE=\"HIDDEN\" NAME=\"Module_Administrators_Form_Member_ID_2\" VALUE=\"$_Application_Module_Administration_LIST_MEMBER_ID\">
-												<INPUT TYPE=\"SUBMIT\" VALUE=\"Update Member Data\">
+												<INPUT TYPE=\"SUBMIT\" VALUE=\"Update Member Account\">
 										</FORM><BR>
 													
 ");
@@ -253,7 +253,7 @@ echo ("
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Fetch Member ID
+ + Kill SQL Database Server Query: Fetch Member Account Data By ID
  ============================================================================================================
 */
 
@@ -262,7 +262,7 @@ $DB->free($_Application_Module_Administration_DB_Query_Fetch_Member_ID);
 /*
  ============================================================================================================
  +
- + IF: Member Update Form Posted
+ + IF: Member Account Update Form Posted
  +
  ============================================================================================================
 */
@@ -271,7 +271,7 @@ $DB->free($_Application_Module_Administration_DB_Query_Fetch_Member_ID);
 
 /*
  ============================================================================================================
- + IF: Form Posted Data Without Password
+ + IF: Member Account Update Form Posted Data Without Password
  ============================================================================================================
 */
 
@@ -285,7 +285,7 @@ if (!$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD) {
 
 $_Application_Module_Administration_DB_Query_Update_Members				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET 
 member_access_level='$_Application_Module_Administration_POST_MEMBER_OPTION_ACCESS_LEVEL',
-member_account_status_banned='$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS',
+member_status_account_banned='$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS',
 member_electronic_mail_address='$_Application_Module_Administration_POST_MEMBER_OPTION_ELECTRONIC_MAIL_ADDRESS',
 member_experience_amount='$_Application_Module_Administration_POST_MEMBER_OPTION_EXPERIENCE_AMOUNT',
 member_name_first='$_Application_Module_Administration_POST_MEMBER_OPTION_FIRST_NAME',
@@ -306,9 +306,9 @@ if ($_Application_Module_Administration_DB_Query_Update_Members) {
 
 } else {
 
-										echo ($_Application_Module_Administration_Message_Administrators_UPDATE_WITHOUT_PASSWORD_SUCCESSFUL_ERROR);
+										echo ($_Application_Module_Administration_Message_Administrators_UPDATE_WITHOUT_PASSWORD_ERROR);
 
-} // [ + ] IF: SQL Database Server Query Executed
+} // [ + ] IF: Database Server Query Variable Has Executed
 
 /*
  ============================================================================================================
@@ -334,7 +334,7 @@ $DB->free($_Application_Module_Administration_DB_Query_Update_Members);
 
 $_Application_Module_Administration_DB_Query_Update_Members_2				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET 
 member_access_level='$_Application_Module_Administration_POST_MEMBER_OPTION_ACCESS_LEVEL',
-member_status_banned='$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS',
+member_status_account_banned='$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS',
 member_electronic_mail_address='$_Application_Module_Administration_POST_MEMBER_OPTION_ELECTRONIC_MAIL_ADDRESS',
 member_experience_amount='$_Application_Module_Administration_POST_MEMBER_OPTION_EXPERIENCE_AMOUNT',
 member_name_first='$_Application_Module_Administration_POST_MEMBER_OPTION_FIRST_NAME',
