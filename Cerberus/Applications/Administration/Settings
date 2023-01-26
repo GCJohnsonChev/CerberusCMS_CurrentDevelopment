@@ -151,13 +151,13 @@ echo ("
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																</SELECT><BR><BR>
 
-														File Extensions<HR>
+														System File Extensions<HR>
 															System-Wide Image Extension:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Image_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_IMAGE_EXTENSION\" MAXLENGTH=\"3\"><BR><BR>
 															Theme Audio File Extension:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\"><BR><BR>
 
-														Languages<HR>
+														System Languages<HR>
 															Default Language Directory:<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Language_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_LANGUAGE_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
 
@@ -210,7 +210,7 @@ closedir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY);
 echo ("
 																</SELECT><BR><BR>
 
-															File Upload and Download System Settings<HR>
+														File Upload and Download System Settings<HR>
 															Private Upload Size Limit:<BR>
 															[ Private Uploader [ Registered Members ] In Bytes ]<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Private\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PRIVATE\" MAXLENGTH=\"15\"><BR><BR>
