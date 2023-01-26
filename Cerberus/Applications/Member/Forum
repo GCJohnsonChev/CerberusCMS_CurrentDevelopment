@@ -69,7 +69,7 @@ $_Application_Module_Member_Forum_DB_Query_SELECT_FORUMS				= $DB->query("SELECT
 
 if ($DB->num_rows($_Application_Module_Member_Forum_DB_Query_SELECT_FORUMS) <= 0) {
 
-											echo ($_Application_Module_Member_Message_Member_Forum_NO_FORUMS);
+											echo ($_Application_Module_Member_Message_Forum_NO_FORUMS);
 
 } // [ + ] IF: Forum Entry Database Server Number Of Rows IS Less Than OR Equal To Zero
 
@@ -310,7 +310,7 @@ echo ("
 ");
 
 } else {
-											echo ($_Application_Module_Member_Message_Member_Forum_ACCESS_LEVEL_ADMINISTRATOR);
+											echo ($_Application_Module_Member_Message_Forum_ACCESS_LEVEL_ADMINISTRATOR);
 } // [ + ] IF: Forum Topic Post Access Level Is: Administration-Level
 
 } // [ + ] IF: Forum Topic Post Access Level Is: 3
@@ -357,7 +357,7 @@ if ($_GET["UpdatePostID"] == "$_Application_Module_Member_Forum_Update_Post_LIST
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME != "$_Application_Module_Member_Forum_Update_Post_LIST_POST_AUTHOR") {
 
-											echo ($_Application_Module_Member_Message_Member_Forum_DENY_EDIT);
+											echo ($_Application_Module_Member_Message_Forum_DENY_EDIT);
 
 } else {
 
@@ -381,10 +381,10 @@ echo ("
 $_Application_Module_Member_Forum_DB_Query_UPDATE_FORUM_POST				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post SET post_data='$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA',post_last_edit='$_GLOBAL_DATE' WHERE ID='$_Application_Module_Member_Forum_Update_Post_LIST_POST_ID'");
 
 if ($_Application_Module_Member_Forum_DB_Query_UPDATE_FORUM_POST) {
-											echo ("$_Application_Module_Member_Message_Member_Forum_POST_UPDATE<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Forum_Update_Post_LIST_POST_TOPIC_ID\">Please Click Here To View Your Message</A> ]</CENTER>");
+											echo ("$_Application_Module_Member_Message_Forum_POST_UPDATE<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Forum_Update_Post_LIST_POST_TOPIC_ID\">Please Click Here To View Your Message</A> ]</CENTER>");
 } else {
 
-											echo ($_Application_Module_Member_Message_Member_Forum_POST_UPDATE_ERROR);
+											echo ($_Application_Module_Member_Message_Forum_POST_UPDATE_ERROR);
 
 } // [ + ] IF: Update Forum Topic Post Database Entry By ID Variable Has Executed
 
@@ -475,7 +475,7 @@ $_Application_Module_Member_Forum_POST_CREATE_TOPIC_FORUM_ID				= $_POST['post_c
 
 if ($DB->num_rows($_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_FORUM) <= 0) {
 
-											echo ($_Application_Module_Member_Message_Member_Forum_CREATE_TOPIC_NO_FORUM);
+											echo ($_Application_Module_Member_Message_Forum_CREATE_TOPIC_NO_FORUM);
 
 } else {
 
@@ -520,13 +520,13 @@ echo ("
 
 if (strlen($_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE) > "100") {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_CREATE_TOPIC_TITLE_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_CREATE_TOPIC_TITLE_ERROR);
 
 } else {
 
 if (strlen($_Application_Module_Member_Forum_POST_UPDATE_POST_DATA) > "100") {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_CREATE_TOPIC_DESCRIPTION_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_CREATE_TOPIC_DESCRIPTION_ERROR);
 
 } else {
 
@@ -534,11 +534,11 @@ $_Application_Module_Member_Forum_DB_Query_INSERT_FORUM_TOPIC				= $DB->query("I
 
 if ($_Application_Module_Member_Forum_DB_Query_INSERT_FORUM_TOPIC) {
 
-												echo ("$_Application_Module_Member_Message_Member_Forum_CREATE_TOPIC<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Create_Post\" TITLE=\"Create Post\">Please click here to Create the first Post</A> ]</CENTER>");
+												echo ("$_Application_Module_Member_Message_Forum_CREATE_TOPIC<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Create_Post\" TITLE=\"Create Post\">Please click here to Create the first Post</A> ]</CENTER>");
 
 } else {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_CREATE_TOPIC_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_CREATE_TOPIC_ERROR);
 
 } // [ + ] IF: Database Server Query: Insert Forum Topic Variable Has Executed
 
@@ -587,7 +587,7 @@ $_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_TOPIC_ACCESS_LEVEL		= $D
 
 if ($DB->num_rows($_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_TOPIC_ACCESS_LEVEL) <= 0) {
 
-											echo ($_Application_Module_Member_Message_Member_Forum_CREATE_POST_NO_TOPIC);
+											echo ($_Application_Module_Member_Message_Forum_CREATE_POST_NO_TOPIC);
 
 } else {
 
@@ -628,10 +628,10 @@ $_Application_Module_Member_Forum_DB_Query_INSERT_FORUM_POST				= $DB->query("IN
 
 if ($_Application_Module_Member_Forum_DB_Query_INSERT_FORUM_POST) {
 
-												echo ("$_Application_Module_Member_Message_Member_Forum_CREATE_POST<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID\" TITLE=\"View Message\" TITLE=\"View Message\">Please Click Here To View Your Message</A> ]</CENTER>");
+												echo ("$_Application_Module_Member_Message_Forum_CREATE_POST<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID\" TITLE=\"View Message\" TITLE=\"View Message\">Please Click Here To View Your Message</A> ]</CENTER>");
 } else {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_CREATE_POST_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_CREATE_POST_ERROR);
 } // [ + ] IF: Database Query: Insert Forum Post Variable Has Executed
 
 /*
@@ -690,7 +690,7 @@ echo ("
 
 if ($_Application_Module_Member_Forum_POST_REPLY_POST_ID_2 == "") {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_CREATE_POST_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_CREATE_POST_ERROR);
 
 } else {
 
@@ -698,11 +698,11 @@ $_Application_Module_Member_Forum_DB_Query_INSERT_FORUM_POST_2				= $DB->query("
 
 if ($_Application_Module_Member_Forum_DB_Query_INSERT_FORUM_POST_2) {
 
-												echo ("$_Application_Module_Member_Message_Member_Forum_CREATE_POST<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Forum_POST_REPLY_POST_ID_2\" TITLE=\"View Message\">Please click here to View your Message</A> ]</CENTER>");
+												echo ("$_Application_Module_Member_Message_Forum_CREATE_POST<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Forum_POST_REPLY_POST_ID_2\" TITLE=\"View Message\">Please click here to View your Message</A> ]</CENTER>");
 
 } else {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_CREATE_POST_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_CREATE_POST_ERROR);
 
 } // [ + ] IF_DB_Query_INSERT_FORUM_POST
 
@@ -728,11 +728,11 @@ $_Application_Module_Member_Forum_UPDATE_MEMBER_NUMBER_OF_POSTS				= $_GLOBAL_ME
 $_Application_Module_Member_Forum_UPDATE_MEMBER						= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_experience_amount='$_Application_Module_Member_Forum_UPDATE_MEMBER_EXPERIENCE',member_number_of_posts='$_Application_Module_Member_Forum_UPDATE_MEMBER_NUMBER_OF_POSTS' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 if ($_Application_Module_Member_Forum_UPDATE_MEMBER) {
-												//echo ($_Application_Module_Member_Message_Member_Forum_EXPERIENCE);
+												//echo ($_Application_Module_Member_Message_Forum_EXPERIENCE);
 
 } else {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_EXPERIENCE_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_EXPERIENCE_ERROR);
 
 } // [ + ] IF_DB_Query_UPDATE_MEMBER
 
@@ -787,7 +787,7 @@ if ($_GET["DeleteMessageID"] == "$_Application_Module_Member_Forum_LIST_FORUM_ME
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME != $_Application_Module_Member_Forum_LIST_FORUM_MESSAGE_AUTHOR_FOR_DELETE) {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_DELETE_POST_ERROR);
+												echo ($_Application_Module_Member_Message_Forum_DELETE_POST_ERROR);
 
 } else {
 
@@ -795,7 +795,7 @@ $_Application_Module_Member_Forum_DB_Query_DELETE_FORUM_MESSAGE_ID			= $DB->quer
 
 if ($_Application_Module_Member_Forum_DB_Query_DELETE_FORUM_MESSAGE_ID) {
 
-												echo ($_Application_Module_Member_Message_Member_Forum_DELETE_POST);
+												echo ($_Application_Module_Member_Message_Forum_DELETE_POST);
 
 } // [ + ] IF_DB_Query
 
