@@ -112,7 +112,7 @@ $_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account			= $D
 */
 
 if ($_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account) {
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_1);
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_SPECIFIED_ACCOUNT_0);
 
 } // [ + ] IF: Database Server Query: Delete Specified Member Account From Database Server
 
@@ -142,7 +142,7 @@ $_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL				= $DB->
 */
 
 if ($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL) {
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_8);
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ALL_ACCOUNTS_0);
 
 } // [ + ] IF: Delete All Non-Activated Member Accounts Database Server Query Is Executed
 
