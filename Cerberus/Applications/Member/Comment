@@ -155,7 +155,7 @@ if ($_GET["UpdateCommentID"] == "$_Application_Module_Member_Comment_LIST_COMMEN
  ============================================================================================================
 */
 
-$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= $_POST['post_update_comment_data'];
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= $_POST['Update_Comment_Data'];
 $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
 $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
 
@@ -170,11 +170,11 @@ $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_
 if (!$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA) {
 
 echo ("
-											<CENTER><B>Update Comment</B></CENTER><HR>
-												$_GLOBAL_TEXTEDITOR_BUTTONS
+											<CENTER><B>Update Comment Entry</B></CENTER><HR>
+												$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
 												<BR><BR>Comment:<BR>
-													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;ModifyCommentID&#61;$_Application_Module_Member_Comment_LIST_COMMENT_ID\" METHOD=\"post\">
-														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"post_update_comment_data\" ID=\"WYSIWYG\">$_Application_Module_Member_Comment_LIST_COMMENT_DATA</TEXTAREA><BR>
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;UpdateCommentID&#61;$_Application_Module_Member_Comment_LIST_COMMENT_ID\" METHOD=\"post\">
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"Update_Comment_Data\" ID=\"WYSIWYG\">$_Application_Module_Member_Comment_LIST_COMMENT_DATA</TEXTAREA><BR>
 														<INPUT TYPE=\"submit\" VALUE=\"Update Comment\">
 													</FORM>
 ");
