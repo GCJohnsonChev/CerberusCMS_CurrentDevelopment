@@ -231,9 +231,9 @@ if ($_GET["UpdateLinkID"] == "$_Application_Module_Administration_Web_Pages_LIST
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME			= $_POST['post_update_link_name'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW			= $_POST['post_update_link_row'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL			= $_POST['post_update_link_url'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME			= $_POST['Update_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW			= $_POST['Update_Link_Row'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL			= $_POST['Update_Link_URL'];
 
 /*
  ============================================================================================================
@@ -249,13 +249,13 @@ echo ("
 											<BR><BR><HR><CENTER><B>Currently Updating Link Entry: <I>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</I></B></CENTER><HR>
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdateLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" METHOD=\"post\">
 													Link Entry Name:<BR>
-														<INPUT TYPE=\"text\" NAME=\"post_update_link_name\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\" MAXLENGTH=\"250\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Update_Link_Name\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\" MAXLENGTH=\"250\"><BR>
 													Link Entry Row:<BR>
 													Which Row ? 1-X Example: 1 would place this Link to the top of the Links list<BR>
-														<INPUT TYPE=\"text\" NAME=\"post_update_link_row\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_ROW\" MAXLENGTH=\"3\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Update_Link_Row\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_ROW\" MAXLENGTH=\"3\"><BR>
 													Link Entry Uniform-Resource-Location:<BR>
 													Where Does This Link Lead To ? Example: <I>My_Pictures.html</I> or <I>My_Pictures.php</I><BR>
-														<INPUT TYPE=\"text\" NAME=\"post_update_link_url\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_URL\" MAXLENGTH=\"250\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Update_Link_URL\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_URL\" MAXLENGTH=\"250\"><BR>
 													<INPUT TYPE=\"submit\" VALUE=\"Update Link Entry\">
 												</FORM><HR><BR><BR>
 ");
