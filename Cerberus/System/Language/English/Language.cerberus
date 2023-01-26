@@ -595,7 +595,7 @@ $_Application_Module_Administration_Message_Web_Pages_LINK_INSTALLED_SUCCESSFULL
 $_Application_Module_Administration_Message_Web_Pages_NO_LINKS_EXIST							= "<CENTER>Cerberus: I was not able to find any Link(s).</CENTER>";
 $_Application_Module_Administration_Message_Web_Pages_LINK_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the Link Successfully.</CENTER>";
 $_Application_Module_Administration_Message_Web_Pages_LINK_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Link Successfully.</CENTER>";
-$_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_INSTALLED_SUCCESSFULLY					= "<BR><HR><CENTER>Cerberus: I have Installed the Web Page: <I>$_Module_Web_Pages_POST_INSTALL_PAGE_NAME</I> Successfully.</CENTER><HR>";
+$_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_INSTALLED_SUCCESSFULLY					= "<BR><HR><CENTER>Cerberus: I have Installed the Web Page Successfully.</CENTER><HR>";
 $_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_DELETED_SUCCESSFULLY					= "<CENTER>Cerberus: I have Deleted the Web Page Successfully.</CENTER>";
 $_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_UPDATED_SUCCESSFULLY					= "<CENTER>Cerberus: I have Updated the Web Page Successfully.</CENTER>";
 
