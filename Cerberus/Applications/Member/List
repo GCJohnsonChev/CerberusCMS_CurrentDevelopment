@@ -67,7 +67,7 @@
 if ($_GET["Display"] == "List") {
 
 
-											echo ("<CENTER><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Avatars\" TITLE=\"Display Avatars\">Avatars</A> :: <CENTER><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Emojis\" TITLE=\"Display Emojis\">Emojis</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Smileys\" TITLE=\"Display Smiley Codes\">Smiley Codes</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;MyFiles\" TITLE=\"Display My Personal Files\">My Files</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Ranks\" TITLE=\"Display Ranks\">Ranks</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;SafeHTML\" TITLE=\"Display Safe-HTML Codes\">Safe-HTML Codes</A></CENTER>");
+											echo ("<CENTER><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Avatars\" TITLE=\"Display Avatars\">Avatars</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Emojis\" TITLE=\"Display Emojis\">Emojis</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Smileys\" TITLE=\"Display Smiley Codes\">Smiley Codes</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;MyFiles\" TITLE=\"Display My Personal Files\">My Files</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Ranks\" TITLE=\"Display Ranks\">Ranks</A> :: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;SafeHTML\" TITLE=\"Display Safe-HTML Codes\">Safe-HTML Codes</A></CENTER>");
 
 } // [ + ] IF: Internal Application: Display All List Options Is Activated
 
