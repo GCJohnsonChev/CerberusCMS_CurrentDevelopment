@@ -120,9 +120,9 @@ if ($_MAIN_DATABASE_SERVER_DATABASE_NAME_SELECT) {
 
 header("Content-Type: text/xml;charset=iso-8859-1");
 
-echo ("<?xml version=\"1.1\" encoding=\"ISO-8859-1\" ?>
+echo ("<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>
 
-<rss version=\"2.0.11\">
+<rss version=\"2.0\">
 	<channel>
 		<title>Real Simple Syndication => News Article Generator</title>
 		<link>$_ACCESS_URL_CLEARTEXT</link>
