@@ -464,22 +464,9 @@ $_Application_Module_Administration_Message_Referrers_REFERRER_LOG_RENEWED_SUCCE
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Robot_Monitor_NO_BOTS_FOUND							= "Cerberus: No potential Spam Robot(s) found.";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_1						= "Cerberus: I have Deleted the Account ID: $_Module_BotMonitor_LIST_MEMBER_ID<BR>and I am attempting to Delete this account directory...<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_2						= "Cerberus: Deleting Files...<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_3						= "Cerberus: Error, I was not able to Delete the Files.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_4						= "Cerberus: Removing sub-Directory...<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_5						= "Cerberus: Error, I was not able to Remove the sub-Directory.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_6						= "Cerberus: I have successfully Deleted the Directory for: $_Module_BotMonitor_LIST_MEMBER_USERNAME.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_7						= "Cerberus: There was an error: I was not able to Delete the Directory for: $_Module_BotMonitor_LIST_MEMBER_USERNAME. Please manually remove this Directory.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_8						= "Cerberus: Deleted (all) account(s) successfully.<BR>Attempting to Delete member Directory(ies)...<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_9						= "Cerberus: Deleting Files...<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_10						= "Cerberus: There was an error: I was not able to Delete the Files.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_11						= "Cerberus: Removing sub-Directory...<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_12						= "Cerberus: There was an error: I was not able to Remove the sub-Directory.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_13						= "Cerberus: I have Deleted the directory(ies) successfully.<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_14						= "Cerberus: There was an error: I was not able to Delete the Directory(ies) for: $_Module_BotMonitor_LIST_MEMBER_USERNAME. Please manually remove this (these) Directory(ies).<BR>";
-$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_15						= "Cerberus: There was an error: I was not able to Delete the member(s). Please try once more.<BR>";
+$_Application_Module_Administration_Message_Robot_Monitor_NO_ROBOTS_FOUND						= "Cerberus: No potential Spam Robot(s) found.";
+$_Application_Module_Administration_Message_Robot_Monitor_DELETE_SPECIFIED_ACCOUNT_0					= "Cerberus: I have Deleted the Member Account ID from the Database Server. This specific Member Account Directory will remain in the Master List For Review.<BR>";
+$_Application_Module_Administration_Message_Robot_Monitor_DELETE_ALL_ACCOUNTS_0						= "Cerberus: I have Deleted all of the Non-Activated Member Accounts from the Database Server. This specific Member Account Directory will remain in the Master List For Review.";
 
 /*
  ================================================================
