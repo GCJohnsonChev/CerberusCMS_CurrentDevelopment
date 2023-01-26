@@ -209,6 +209,8 @@ closedir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY);
 
 echo ("
 																</SELECT><BR><BR>
+
+															File Upload and Download System Settings<HR>
 															Private Upload Size Limit:<BR>
 															[ Private Uploader [ Registered Members ] In Bytes ]<BR>
 																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Private\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PRIVATE\" MAXLENGTH=\"15\"><BR><BR>
