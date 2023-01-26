@@ -166,7 +166,7 @@ Visitor Server Request Time: $_GLOBAL_SERVER_REQUEST_TIME<BR>
 Visitor Server Connection Type: $_GLOBAL_SERVER_HTTP_CONNECTION_TYPE<BR>
 Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_SERVER_HTTP_HOST<BR>
 Local Server Gateway Interface: $_GLOBAL_SERVER_GATEWAY_INTERFACE<BR>
-<A HREF=\"./Applications/Background/Log_Administration\" TITLE=\":: Open & Display The Source Code For This Activity Log ::\">Source Code For This Activity Log</A><BR><BR>
+<A HREF=\"../../../../Applications/Background/Log_Administration\" TITLE=\":: Open & Display The Source Code For This Activity Log ::\">Source Code For This Activity Log</A><BR><BR>
 ");
 
 /*
