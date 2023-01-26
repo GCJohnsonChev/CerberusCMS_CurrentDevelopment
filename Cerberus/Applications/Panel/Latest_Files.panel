@@ -64,7 +64,7 @@ $_Application_Module_Block_Files_LIST_FILE_ID				= $_Application_Module_Block_Fi
 $_Application_Module_Block_Files_LIST_FILE_DOWNLOADS			= $_Application_Module_Block_Files_DB_Query_SELECT_FILES_Fetch_Array['file_number_of_downloads'];
 $_Application_Module_Block_Files_LIST_FILE_TITLE			= $_Application_Module_Block_Files_DB_Query_SELECT_FILES_Fetch_Array['file_title'];
 
-											echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Block_Files_LIST_FILE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\"View File :: $_Application_Module_Block_Files_LIST_FILE_TITLE\">$_Application_Module_Block_Files_LIST_FILE_TITLE</A><BR>");
+											echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Block_Files_LIST_FILE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: Open & Display The File :: $_Application_Module_Block_Files_LIST_FILE_TITLE ::\">$_Application_Module_Block_Files_LIST_FILE_TITLE</A><BR>");
 
 } // [ + ] WHILE: Retieving Latest File Entries From Database Server
 
