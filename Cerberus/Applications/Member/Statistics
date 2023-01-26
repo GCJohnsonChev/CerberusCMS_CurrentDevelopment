@@ -187,25 +187,25 @@ echo ("
 												<B>Connection and Server Information</B><HR>
 
 												<B>Visitor Connection Information</B><BR>
-												*&nbsp;Visitor Server Request Method: $_GLOBAL_SERVER_REQUEST_METHOD<BR>
-												*&nbsp;Visitor Server Request Time: $_GLOBAL_SERVER_REQUEST_TIME<BR>
-												*&nbsp;Visitor Server Connection Type: $_GLOBAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+												*&nbsp;Visitor Server Request Method: $_GLOBAL_REMOTE_SERVER_REQUEST_METHOD<BR>
+												*&nbsp;Visitor Server Request Time: $_GLOBAL_REMOTE_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Visitor Server Connection Type: $_GLOBAL_REMOTE_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
 
 												<B>Local Server Information</B><BR>
-												*&nbsp;Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_SERVER_HTTP_HOST<BR>
-												*&nbsp;Local Server Gateway Interface: $_GLOBAL_SERVER_GATEWAY_INTERFACE<BR>
-												*&nbsp;Local Server Address: $_GLOBAL_SERVER_ADDRESS<BR>
-												*&nbsp;Local Server Software: $_GLOBAL_SERVER_SOFTWARE<BR>
-												*&nbsp;Local Server Request Time: $_GLOBAL_SERVER_REQUEST_TIME<BR>
-												*&nbsp;Local Server Request Time ( Float ): $_GLOBAL_SERVER_REQUEST_TIME_FLOAT<BR>
-												*&nbsp;Local Server Document Root: $_GLOBAL_SERVER_DOCUMENT_ROOT<BR>
-												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Accept Type: $_GLOBAL_SERVER_HTTP_ACCEPT<BR>
-												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
-												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
-												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_SERVER_HTTP_ACCEPT_LOADING<BR>
-												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+												*&nbsp;Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
+												*&nbsp;Local Server Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
+												*&nbsp;Local Server Address: $_GLOBAL_LOCAL_SERVER_ADDRESS<BR>
+												*&nbsp;Local Server Software: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
+												*&nbsp;Local Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Local Server Request Time ( Float ): $_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT<BR>
+												*&nbsp;Local Server Document Root: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Accept Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
 											<HR>
-											<CENTER><B>[ <A HREF=\"$_TINKESOFTWARE_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_CERBERUS_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_CERBERUS_VERSION_EXTENDED</A> ]</B></CENTER><HR>
+											<CENTER><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_CERBERUS_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_PROJECT_VERSION_EXTENDED</A> ]</B></CENTER><HR>
 ");
 
 /*
