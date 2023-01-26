@@ -409,8 +409,8 @@ if ($_GET["Display"] == "Comment_Field") {
 
 echo ("
 											<CENTER>&nbsp;</CENTER>
-											$_GLOBAL_TEXTEDITOR_BUTTONS
 											<BR><BR><B>Comment:</B><BR>
+										$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment\" METHOD=\"post\">
 													<INPUT TYPE=\"hidden\" NAME=\"post_application_name\" VALUE=\"FILES\">
 													<INPUT TYPE=\"hidden\" NAME=\"post_application_id\" VALUE=\"$_Application_Module_Member_Files_LIST_FILE_ID\">
