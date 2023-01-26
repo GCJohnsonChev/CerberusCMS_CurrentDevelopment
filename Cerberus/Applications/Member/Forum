@@ -484,7 +484,7 @@ if (!$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE) {
 echo ("
 											$_GLOBAL_PLUGIN_TEXTEDITOR_BUTTONS
 											<BR><BR><FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Create_Topic\" METHOD=\"POST\">
-												Topic Title: (Maximum Length: 100 Characters)<BR>
+												Topic Title: ( Maximum Length: 100 Characters )<BR>
 													<INPUT TYPE=\"TEXT\" MAXLENGTH=\"100\" NAME=\"post_create_topic_title\"><BR>
 												Place Topic Within Forum:<BR>
 													<SELECT NAME=\"post_create_topic_forum_id\">
