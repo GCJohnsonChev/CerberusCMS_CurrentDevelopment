@@ -316,7 +316,7 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS);
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 			= $_POST['Install_Web_Page_Name'];
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME);
 
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATE 			= $_POST['Install_Web_Page_Data'];
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 			= $_POST['Install_Web_Page_Data'];
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
 
