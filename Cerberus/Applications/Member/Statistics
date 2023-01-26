@@ -210,7 +210,6 @@ echo ("
 												*&nbsp;Local Server Time In Hours: $_GLOBAL_LOCAL_SERVER_TIME_HOURS<BR>
 												*&nbsp;Local Server Time In Minutes: $_GLOBAL_LOCAL_SERVER_TIME_MINUTES<BR>
 												*&nbsp;Local Server Time In Seconds: $_GLOBAL_LOCAL_SERVER_TIME_SECONDS<BR>
-    echo 'date.timezone: ' . ini_get('date.timezone');
 											
 											<HR>
 											<CENTER><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_CERBERUS_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_PROJECT_VERSION_EXTENDED</A> ]</B></CENTER><HR>
