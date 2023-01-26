@@ -143,53 +143,53 @@ if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS <= 0) {
 */
 
 echo ("
-												<B>System Statistical Information</B><HR>
+											<B>System Statistical Information</B><HR>
 												*&nbsp;CerberusCMS Installation Date: $_Application_Module_Member_Statistics_LIST_START_DATE<BR>
 												*&nbsp;Total Number of Non-Unique Page Loads: $_Application_Module_Member_Statistics_LIST_NUMBER_OF_HITS<BR>
 												*&nbsp;Total Number of Unique Page Loads: Nothing Here Yet...<BR><BR>
 
-												<B>Current System Settings</B><HR>
+											<B>Current System Settings</B><HR>
 
-												<B>Data Compression Settings</B><BR>
+											<B>Data Compression Settings</B><BR>
 												*&nbsp;G.N.U. ZIP ( GZIP ) Compression: $_Application_Module_Member_Statistics_GZIP_STATUS<BR><BR>
 
-												<B>Theme Settings</B><BR>
+											<B>Theme Settings</B><BR>
 												*&nbsp;System Theme Image Format: $_GLOBAL_SYSTEM_IMAGE_EXTENSION<BR>
 												*&nbsp;System Theme Audio Format: $_GLOBAL_SYSTEM_SOUND_EXTENSION<BR>
 												*&nbsp;System Theme Directory: $_GLOBAL_SYSTEM_THEME_DIRECTORY<BR><BR>
 
-												<B>Language Settings</B><BR>
+											<B>Language Settings</B><BR>
 												*&nbsp;System Language: $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY<BR><BR>
 
-												<B>Plug-In Settings</B><BR>
+											<B>Plug-In Settings</B><BR>
 												*&nbsp;Safe Hyper-Text-Markup-Language Plugin Directory: $_GLOBAL_SYSTEM_SAFEHTML_DIRECTORY<BR>
 												*&nbsp;Safe Hyper-Text-Markup-Language Plugin Status: $_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS<BR>
 												*&nbsp;Text-Editor ( BB ) Code Directory: $_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY<BR><BR>
 
-												<B>System Social Interaction Information & Statistics</B><HR>
+											<B>System Social Interaction Information & Statistics</B><HR>
 
-												<B>Forum Information</B><BR>
+											<B>Forum Information</B><BR>
 												*&nbsp;Total Number of Forums: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM<BR>
 												*&nbsp;Total Number of Forum' Topics: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS<BR>
 												*&nbsp;Total Number of Forum' Topic' Posts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS<BR><BR>
 
-												<B>Commentation Information</B><BR>
+											<B>Commentation Information</B><BR>
 												*&nbsp;Total Number of Comments: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS<BR><BR>
 
-												<B>Registered Accounts Information</B><BR>
+											<B>Registered Accounts Information</B><BR>
 												*&nbsp;Total Number of Registered Accounts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_MEMBERS<BR><BR>
 
-												<B>File System Information</B><BR>
+											<B>File System Information</B><BR>
 												*&nbsp;Total Number of Files Within The File System: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FILES<BR>
 												*&nbsp;File Size Upload Limitations ( Public ): $_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC KiloBits<BR>
 												*&nbsp;File Size Upload Limitations ( Private ): $_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE KiloBits<BR><BR>
 
-												<B>Connection and Server Information</B><HR>
+											<B>Connection and Server Information</B><HR>
 
-												<B>Visitor Connection Information</B><BR>
-												*&nbsp;Visitor Server Request Method: $_GLOBAL_REMOTE_SERVER_REQUEST_METHOD<BR>
-												*&nbsp;Visitor Server Request Time: $_GLOBAL_REMOTE_SERVER_REQUEST_TIME<BR>
-												*&nbsp;Visitor Server Connection Type: $_GLOBAL_REMOTE_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+											<B>Visitor Connection Information</B><BR>
+												*&nbsp;Visitor Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+												*&nbsp;Visitor Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Visitor Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
 
 												<B>Local Server Information</B><BR>
 												*&nbsp;Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
@@ -203,7 +203,15 @@ echo ("
 												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
 												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
 												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
-												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR><BR>
+
+											<B>Current System Time Settings</B><HR>
+												*&nbsp;Local Server Time Standard: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+												*&nbsp;Local Server Time In Hours: $_GLOBAL_LOCAL_SERVER_TIME_HOURS<BR>
+												*&nbsp;Local Server Time In Minutes: $_GLOBAL_LOCAL_SERVER_TIME_MINUTES<BR>
+												*&nbsp;Local Server Time In Seconds: $_GLOBAL_LOCAL_SERVER_TIME_SECONDS<BR>
+    echo 'date.timezone: ' . ini_get('date.timezone');
+											
 											<HR>
 											<CENTER><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_CERBERUS_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_PROJECT_VERSION_EXTENDED</A> ]</B></CENTER><HR>
 ");
