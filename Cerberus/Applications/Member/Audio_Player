@@ -129,7 +129,7 @@ if (!$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME) {
 
 echo ("
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Audio_Player&amp;PlayAudioStream&#61;FileName\" METHOD=\"POST\">
-												* Video File Name Uniform Resource Location:<BR>
+												* Audio File Name Uniform Resource Location:<BR>
 												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"module_audio_player_audio_file_name\">Paste Audio Stream File Name Uniform Resource Location String Here...</TEXTAREA><BR>
 												<INPUT TYPE=\"submit\" VALUE=\"Submit Audio File Stream\"><BR>
 											</FORM>
