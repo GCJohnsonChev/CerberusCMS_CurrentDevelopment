@@ -114,6 +114,8 @@ $_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account			= $D
 if ($_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account) {
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_1);
 
+} // [ + ] IF: Database Server Query: Delete Specified Member Account From Database Server
+
 } // [ + ] IF: Internal Application: Delete Specified Non-Activated Member Account From Database Server Is Activated
 
 } // [ + ] WHILE: Retrieving List of Non-Activated Member Account Entries From Database Server
@@ -154,7 +156,7 @@ $DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL)
 
 } // [ + ] IF: Internal Application: Delete All Non-Activated Member Accounts Is Activated
 
-													echo ("<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Robot_Monitor&amp;DeleteID&#61;All\" TITLE=\"Delete All Potential Spam-Bot Accounts\">Delete All</A> ]<BR>");
+													echo ("<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Robot_Monitor&amp;DeleteID&#61;All\" TITLE=\":: Delete All Potential Automated and Malicious Non-Activated Member Accounts ::\">Delete All</A> ]<BR>");
 
 /*
  ============================================================================================================
