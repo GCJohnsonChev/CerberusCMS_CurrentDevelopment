@@ -626,7 +626,7 @@ echo ("
 														<TD VALIGN=\"top\">
 															<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_AVATAR\" TITLE=\"Avatar\" ALT=\":: Avatar ::\"><HR>
 															<B>Member</B>: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR ::\">$_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR</A><BR><B>Location</B>: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_CITY<BR><B>Experience</B>: $_Application_Module_Members_Profile_LIST_COMMENT_AUTHOR_EXPERIENCE_AMOUNT<HR>
-															[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;UpdateCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Update This Comment Entry ::\">Modify</A>&nbsp;-&nbsp;
+															[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;UpdateCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Update This Comment Entry ::\">Update</A>&nbsp;-&nbsp;
 															<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;DeleteCommentID&#61;$_Application_Module_Members_Profile_LIST_COMMENT_ID\" TITLE=\":: Delete This Comment Entry ::\">Delete</A>&nbsp;]
 														</TD>
 
