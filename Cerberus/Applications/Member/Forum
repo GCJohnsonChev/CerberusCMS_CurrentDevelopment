@@ -370,7 +370,7 @@ if (!$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA) {
 echo ("
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Update_Post&amp;UpdatePostID&#61;$_Application_Module_Member_Forum_Update_Post_LIST_POST_ID\" METHOD=\"POST\">
 												Message:<BR>
-											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
+											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
 													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"post_update_post\" ID=\"WYSIWYG\">$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Update\">
 											</FORM>
@@ -616,7 +616,7 @@ echo ("
 													</SELECT>
 													<BR>
 												Message:<BR>
-											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
+											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
 													<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"post_create_post_data\" ID=\"WYSIWYG\">Message...</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Submit\">
 											</FORM>
@@ -680,7 +680,7 @@ echo ("
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Reply_Form\" METHOD=\"POST\">
 													<INPUT TYPE=\"HIDDEN\" VALUE=\"$_Application_Module_Member_Forum_POST_REPLY_POST_ID\" NAME=\"post_reply_post_id_2\">
 												Message:<BR>
-											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
+											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
 													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"post_reply_message\" ID=\"WYSIWYG\">Write The Reply Message Here...</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Submit\">
 											</FORM>
