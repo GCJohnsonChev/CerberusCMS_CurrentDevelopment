@@ -59,9 +59,7 @@
 /*
  ============================================================================================================
  +
- +
- + DB->Retrieve Forum(s) / Topic(s) / Post(s)
- +
+ + Retrieve All Forum(s) / Topic(s) / Post(s) Entries From Database Server
  +
  ============================================================================================================
 */
@@ -86,7 +84,7 @@ $_Application_Module_Member_Forum_LIST_FORUM_TITLE					= $_Application_Module_Me
 /*
  =============================================================================================================
  +
- + Display Forum(s)
+ + Internal Application: Display All Forum Entries
  +
  =============================================================================================================
 */
@@ -157,7 +155,7 @@ $_Application_Module_Member_Forum_LIST_TOPIC_TITLE					= $_Application_Module_Me
 /*
  =============================================================================================================
  +
- + Display ForumID -> Topic(s)
+ + Internal Application: Display Forum Entry By ID
  +
  =============================================================================================================
 */
@@ -235,7 +233,7 @@ $_Application_Module_Member_Forum_LIST_MEMBER_LOCATION 					= "No Location Has B
 /*
  =============================================================================================================
  +
- + Display TopicID -> Post(s)
+ + Internal Application: Display Forum Topic By ID
  +
  =============================================================================================================
 */
@@ -336,7 +334,7 @@ $DB->free($_Application_Module_Member_Forum_DB_Query_SELECT_MEMBERS);
 /*
  =============================================================================================================
  +
- + Display Modify Post Form
+ + Internal Application: Display Update Forum Topic Post Form
  +
  =============================================================================================================
 */
@@ -352,8 +350,8 @@ $_Application_Module_Member_Forum_Update_Post_LIST_POST_AUTHOR				= $_Applicatio
 $_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA				= $_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_POSTS_FOR_UPDATE_Fetch_Array['post_data'];
 $_Application_Module_Member_Forum_Update_Post_LIST_POST_TOPIC_ID			= $_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_POSTS_FOR_UPDATE_Fetch_Array['post_topic_id'];
 
-$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA				= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA);
-$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA				= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA);
+$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK, $_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA);
+$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA);
 
 if ($_GET["UpdatePostID"] == "$_Application_Module_Member_Forum_Update_Post_LIST_POST_ID") {
 
@@ -364,15 +362,16 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME != "$_Application_Module_Member_Forum_Update
 } else {
 
 $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= $_POST['post_update_post'];
-$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
-$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
 
 if (!$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA) {
 
 echo ("
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Update_Post&amp;UpdatePostID&#61;$_Application_Module_Member_Forum_Update_Post_LIST_POST_ID\" METHOD=\"POST\">
 												Message:<BR>
-													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"post_update_post\">$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA</TEXTAREA><BR>
+											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
+													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"post_update_post\" ID=\"WYSIWYG\">$_Application_Module_Member_Forum_Update_Post_LIST_POST_DATA</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Update\">
 											</FORM>
 ");
@@ -456,7 +455,7 @@ $DB->free($_Application_Module_Member_Forum_DB_Query_SELECT_FORUMS);
 /*
  =============================================================================================================
  +
- + Display Create Topic Form
+ + Internal Application: Display Create Forum Topic Form
  +
  =============================================================================================================
 */
@@ -469,8 +468,8 @@ $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= $_POST['post_crea
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("'","&#39;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("<","&lt;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= $_POST['post_create_topic_description'];
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
 
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_FORUM_ID				= $_POST['post_create_topic_forum_id'];
 
@@ -581,8 +580,8 @@ if ($_GET["Display"] == "Create_Post") {
 
 $_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID				= $_POST['post_topic_id_option'];
 $_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= $_POST['post_create_post_data'];
-$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
-$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
 
 $_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_TOPIC_ACCESS_LEVEL		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic WHERE topic_access_level='1' ORDER BY id ASC");
 
@@ -595,7 +594,6 @@ if ($DB->num_rows($_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_TOPIC_
 if (!$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID) {
 
 echo ("
-											$_GLOBAL_PLUGIN_TEXTEDITOR_BUTTONS
 											<BR><BR><FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Create_Post\" METHOD=\"POST\">
 												Topic:<BR>
 													<SELECT NAME=\"post_topic_id_option\">
@@ -618,6 +616,7 @@ echo ("
 													</SELECT>
 													<BR>
 												Message:<BR>
+											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
 													<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"post_create_post_data\" ID=\"WYSIWYG\">Message...</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Submit\">
 											</FORM>
@@ -660,7 +659,7 @@ $DB->free($_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_TOPIC_ACCESS_L
 /*
  =============================================================================================================
  +
- + Display Reply Form
+ + Internal Application: Display Reply Form
  +
  =============================================================================================================
 */
@@ -668,8 +667,8 @@ $DB->free($_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_TOPIC_ACCESS_L
 if ($_GET["Display"] == "Reply_Form") {
 
 $_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= $_POST['post_reply_message'];
-$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
-$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
 
 $_Application_Module_Member_Forum_POST_REPLY_POST_ID					= $_POST['post_reply_post_id'];
 $_Application_Module_Member_Forum_POST_REPLY_POST_ID_2					= $_POST['post_reply_post_id_2'];
@@ -681,7 +680,8 @@ echo ("
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;Display&#61;Reply_Form\" METHOD=\"POST\">
 													<INPUT TYPE=\"HIDDEN\" VALUE=\"$_Application_Module_Member_Forum_POST_REPLY_POST_ID\" NAME=\"post_reply_post_id_2\">
 												Message:<BR>
-													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"post_reply_message\">Write The Reply Message Here...</TEXTAREA><BR>
+											$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
+													<TEXTAREA COLS=\"75\" ROWS=\"15\" MAXLENGTH=\"2000\" NAME=\"post_reply_message\" ID=\"WYSIWYG\">Write The Reply Message Here...</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Submit\">
 											</FORM>
 ");
