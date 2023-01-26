@@ -42,7 +42,7 @@
  ============================================================================================================
  +
  +
- + [ ^ ] Application Module :: Administration :: Automation and Robots Management
+ + [ ^ ] Application Module :: Administration :: Automation and Robot Account Management
  +
  +
  ============================================================================================================
@@ -68,7 +68,7 @@ echo ("
 
 if ($DB->num_rows($_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS) <= "0") {
 
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_NO_BOTS_FOUND);
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_NO_ROBOTS_FOUND);
 
 } else {
 
@@ -96,9 +96,7 @@ echo ("
 /*
  ============================================================================================================
  +
- +
- + Internal Application: Delete Non-Activated Member Account
- +
+ + Internal Application: Delete Specified Non-Activated Member Account
  +
  ============================================================================================================
 */
@@ -109,102 +107,23 @@ $_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account			= $D
 
 /*
  ============================================================================================================
- +
- + IF: Member Account Is Deleted From Database Server, Delete Member Account Directory Structure and Files
- +
+ + IF: Database Query: Delete Specified Non-Activated Member Account From Database Server
  ============================================================================================================
 */
 
 if ($_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account) {
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_1);
 
-$_Application_Module_Administration_Robot_Monitor_SPECIFY_ACCOUNT_DIRECTORY			= "Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME";
-$_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY			= opendir($_Application_Module_Administration_Robot_Monitor_SPECIFY_ACCOUNT_DIRECTORY);
+} // [ + ] IF: Internal Application: Delete Specified Non-Activated Member Account From Database Server Is Activated
 
-/*
- ============================================================================================================
- + Retrieve List of Files For Deletion
- ============================================================================================================
-*/
+} // [ + ] WHILE: Retrieving List of Non-Activated Member Account Entries From Database Server
 
-while (($_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY = readdir($_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY))) {
-
-if ($_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY == "." || $_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY == "..") {
-/**
- * Do Nothing
-**/
-} else {
-
-/*
- ============================================================================================================
- + Delete Audio Directory
- ============================================================================================================
-*/
-
-if (unlink("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/$_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY")) {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_2);
-
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_3);
-
-} // [ + ] IF: Unlink: Member Account Directory Structure
-
-if (rmdir("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/Friend")) {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_4);
-
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_5);
-
-} // [ + ] IF: Remove Directory: Member Account Directory Structure
-
-} // [ + ] IF: Not Specified Directory
-
-} // [ + ] WHILE: Reading Member Account Directory and Files
-
-/*
- ============================================================================================================
- + Close Directory: Member Account Directory
- ============================================================================================================
-*/
-
-closedir($_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY);
+} // [ + ] IF: Non-Activated Member Account Entries In Database Server Is Less Than Or Equal To Zero
 
 /*
  ============================================================================================================
  +
- +
- + Delete Non-Activated Account Directory
- +
- +
- ============================================================================================================
-*/
-
-if (rmdir("Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME")) {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_6);
-
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_7);
-
-} // [ + ] IF: Remove Directory: Member Account Directory
-
-} // [ + ] IF: Internal Application: Delete Member Account By ID
-
-$DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account);
-
-} // [ + ] IF: Number of Rows Is Less Than Or Equal To Zero
-
-/*
- ============================================================================================================
- +
- +
- + Delete Account SQL Entry
- +
+ + Internal Application: Delete All Non-Activated Member Accounts From Database Server
  +
  ============================================================================================================
 */
@@ -214,81 +133,16 @@ if ($_GET["DeleteID"] == "All") {
 
 $_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_status_account_activation='0'");
 
+/*
+ ============================================================================================================
+ + IF: Database Query: Delete All Non-Activated Member Accounts From Database Server
+ ============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL) {
 													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_8);
 
-/*
- ============================================================================================================
- +
- +
- + Delete Account Files
- +
- +
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Robot_Monitor_SPECIFY_ACCOUNT_DIRECTORY_2			= "Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME";
-$_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY_2			= opendir($_Application_Module_Administration_Robot_Monitor_SPECIFY_ACCOUNT_DIRECTORY_2);
-
-while (($_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2 = readdir($_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY_2))) {
-
-if ($_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2 == "." || $_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2 == "..") {
-/**
- * Do Nothing
-**/
-} else {
-
-if (unlink("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/$_Application_Module_Administration_Robot_Monitor_READ_ACCOUNT_DIRECTORY_2")) {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_9);
-
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_10);
-
-} // [ + ] IF: Unlink: Member Account Directory
-
-if (rmdir("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME/Friend")) {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_11);
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_12);
-
-
-} // [ + ] IF: Remove Directory: Member Account Directory: Friend
-
-} // [ + ] IF: Specified Member Account Directory Files ARE NOT Specified Member Account Directory AND Files
-
-} // [ + ] WHILE: Reading Member Account Directory Contents
-
-closedir($_Application_Module_Administration_Robot_Monitor_OPEN_ACCOUNT_DIRECTORY_2);
-
-/*
- ============================================================================================================
- +
- +
- + Delete All Account Directories
- +
- +
- ============================================================================================================
-*/
-
-if (rmdir("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME")) {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_13);
-
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_14);
-} // [ + ] IF: Remove Non-Activated Member Account Directory
-
-} else {
-
-													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ACCOUNT_15);
-
-} // [ + ] IF: Delete All Non-Activated Member Account Directories
+} // [ + ] IF: Delete All Non-Activated Member Accounts Database Server Query Is Executed
 
 /*
  ============================================================================================================
@@ -299,10 +153,6 @@ if (rmdir("./Member/$_Application_Module_Administration_Robot_Monitor_LIST_MEMBE
 $DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL);
 
 } // [ + ] IF: Internal Application: Delete All Non-Activated Member Accounts Is Activated
-
-} // [ + ] WHILE: Reading All Non-Activated Member Account Directories
-
-} // [ + ] IF: Non-Activated Member Account Directory Number of Rows IS Less Than Or Equal To Zero
 
 													echo ("<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Robot_Monitor&amp;DeleteID&#61;All\" TITLE=\"Delete All Potential Spam-Bot Accounts\">Delete All</A> ]<BR>");
 
