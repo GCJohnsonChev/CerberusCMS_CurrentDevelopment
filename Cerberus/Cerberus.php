@@ -300,8 +300,8 @@ $_DB_Query_Main_Settings_Fetch_Array						= $DB->fetch_array($_DB_Query_Select_M
  =========================================================
 */
 
-$_GLOBAL_SYSTEM_SAFEHTML_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_safeHTML_directory'];
-$_GLOBAL_SYSTEM_SAFEHTML_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_safeHTML_status'];
+$_GLOBAL_SYSTEM_SAFEHTML_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_directory_safeHTML'];
+$_GLOBAL_SYSTEM_SAFEHTML_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_status_safeHTML'];
 
 /*
  =========================================================
@@ -309,7 +309,7 @@ $_GLOBAL_SYSTEM_SAFEHTML_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['se
  =========================================================
 */
 
-$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_text_editor_directory'];
+$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_status_text_editor'];
 
 /*
  ============================================================================================================
@@ -317,7 +317,7 @@ $_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Arra
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Main_Settings_Fetch_Array['settings_cookie_time'];
+$_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_time_cookies'];
 
 /*
  ============================================================================================================
@@ -325,7 +325,7 @@ $_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Main_Settings_Fetch_Array['settin
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_gzip_status'];
+$_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_status_embedded_compression_gzip'];
 
 /*
  ============================================================================================================
@@ -333,7 +333,7 @@ $_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settin
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['settings_image_extension'];
+$_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_file_extension_image'];
 
 /*
  ============================================================================================================
@@ -341,7 +341,7 @@ $_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['se
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_language_directory'];
+$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_directory_language'];
 
 /*
  ============================================================================================================
@@ -349,7 +349,7 @@ $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_smileys_directory'];
+$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_directory_smileys'];
 
 /*
  ============================================================================================================
@@ -357,7 +357,7 @@ $_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['s
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_offline_status'];
+$_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_status_offline_mode'];
 
 /*
  ============================================================================================================
@@ -365,9 +365,9 @@ $_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['set
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SITE_TITLE							= $_DB_Query_Main_Settings_Fetch_Array['settings_site_title'];
-$_GLOBAL_SYSTEM_SOUND_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['settings_sound_extension'];
-$_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Main_Settings_Fetch_Array['settings_theme_directory'];
+$_GLOBAL_SYSTEM_SITE_TITLE							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_website_title'];
+$_GLOBAL_SYSTEM_SOUND_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_file_extension_audio'];
+$_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_directory_theme'];
 
 /*
  ============================================================================================================
@@ -375,8 +375,16 @@ $_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Main_Settings_Fetch_Array['se
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE						= $_DB_Query_Main_Settings_Fetch_Array['settings_upload_size_private'];
-$_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC						= $_DB_Query_Main_Settings_Fetch_Array['settings_upload_size_public'];
+$_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_upload_size_private'];
+$_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_upload_size_public'];
+
+/*
+ ============================================================================================================
+ + Global System S.Q.L. Settings: Security Module :: Master Sanitization
+ ============================================================================================================
+*/
+
+$_GLOBAL_SYSTEM_PLUGIN_STATUS_MASTER_SANITIZATION				= $_DB_Query_Main_Settings_Fetch_Array['settings_system_security_module_status_master_sanitization'];
 
 /*
  ============================================================================================================
