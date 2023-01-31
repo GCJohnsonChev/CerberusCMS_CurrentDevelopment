@@ -887,6 +887,7 @@ id MEDIUMINT NOT NULL AUTO_INCREMENT,
 settings_system_time_cookies VARCHAR(10),
 settings_system_status_embedded_compression_gzip CHAR(1),
 settings_system_status_offline_mode CHAR(1),
+settings_system_status_security_module_master_sanitization CHAR(1),
 settings_system_file_extension_audio VARCHAR(4),
 settings_system_file_extension_image CHAR(3),
 settings_system_directory_language VARCHAR(50),
@@ -894,7 +895,6 @@ settings_system_directory_theme VARCHAR(50),
 settings_system_website_title VARCHAR(250),
 settings_system_upload_size_private CHAR(15),
 settings_system_upload_size_public CHAR(15),
-settings_system_security_module_status_master_sanitization CHAR(1),
 settings_system_plugin_directory_smileys VARCHAR(50),
 settings_system_plugin_directory_safeHTML VARCHAR(50),
 settings_system_plugin_directory_text_editor VARCHAR(250),
@@ -1640,7 +1640,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks(
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_security_module_status_master_sanitization,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','Cerberus Content Management System','256000','10240000','1','Default','Default','Default','1','1')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','Cerberus Content Management System','256000','10240000','Default','Default','Default','1','1')");
 
 	echo ("[ Done ]<BR>");
 
