@@ -128,9 +128,9 @@ if (unlink("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_Appli
 
 } else {
 											echo ($_Application_Module_Member_Message_Private_Files_DELETE_ERROR);
-} // [ + ] IF_DELETE_SELECTED_FILE
+} // [ + ] IF: Unlink: Member Account Image
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Specified Member Account Image Directory IS NOT Specified Member Account Image Directory
 
 /*
  ============================================================================================================
@@ -146,7 +146,7 @@ if (unlink("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_Appli
  ============================================================================================================
 */
 
-$_Application_Module_Members_Private_Files_SPECIFY_UPLOAD_DIRECTORY_TEMPORARY		= "./Temporary/";
+$_Application_Module_Members_Private_Files_SPECIFY_UPLOAD_DIRECTORY_TEMPORARY				= "./Temporary/";
 $_Application_Module_Members_Private_Files_UPLOAD_FILE_IMAGE 						= $_Application_Module_Members_Private_Files_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['post_upload_file_image']['name']);
 
 /*
@@ -155,8 +155,8 @@ $_Application_Module_Members_Private_Files_UPLOAD_FILE_IMAGE 						= $_Applicati
  ============================================================================================================
 */
 
-$_Application_Module_Members_Private_Files_UPLOAD_ALLOWED_FILE_IMAGE_EXTENSIONS		= "jpg gif png bmp";
-$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY			= $_POST['post_upload_directory_temporary'];
+$_Application_Module_Members_Private_Files_UPLOAD_ALLOWED_FILE_IMAGE_EXTENSIONS				= "jpg gif png bmp";
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY				= $_POST['post_upload_directory_temporary'];
 
 /*
  ============================================================================================================
@@ -164,10 +164,10 @@ $_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY			= $
  ============================================================================================================
 */
 
-$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO 			= pathinfo($_FILES['post_upload_file_image']['name']);
-$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXTENSION 		= $_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO['extension'];
-$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_BASENAME			= $_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO['basename'];
-$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXPLODE			= explode(" ", $_Application_Module_Members_Private_Files_UPLOAD_ALLOWED_FILE_IMAGE_EXTENSIONS);
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO 				= pathinfo($_FILES['post_upload_file_image']['name']);
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXTENSION 				= $_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO['extension'];
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_BASENAME				= $_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO['basename'];
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXPLODE				= explode(" ", $_Application_Module_Members_Private_Files_UPLOAD_ALLOWED_FILE_IMAGE_EXTENSIONS);
 
 /*
  ============================================================================================================
@@ -192,7 +192,7 @@ echo ("
 
 /*
  ============================================================================================================
- + If File Data Exploded, Increment
+ + IF: File Data Exploded, Increment
  ============================================================================================================
 */
 
@@ -200,17 +200,17 @@ for ($i = 0; $i < count($_Application_Module_Members_Private_Files_POST_UPLOAD_F
 
 /*
  ============================================================================================================
- + If File Is Allowed, Prepare Variable
+ + IF: Uploaded File Extension Is Allowed, Prepare Variable
  ============================================================================================================
 */
 
 if ($_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXPLODE[$i] == "$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXTENSION") {
 
-$_Application_Module_Members_Private_Files_OK_FOR_UPLOAD 				= "1";
+	$_Application_Module_Members_Private_Files_OK_FOR_UPLOAD 					= "1";
 
-} // [ + ] IF_FILE_IS_ALLOWED
+} // [ + ] IF: Uploaded File Extension Is Allowed
 
-} // [ + ] FOR_ALLOWED_INCREMENT
+} // [ + ] FOR: Uploaded File Image Explosion To Be Greater Than Variable i, Increment i
 
 /*
  ============================================================================================================
@@ -233,7 +233,7 @@ if ($_Application_Module_Members_Private_Files_OK_FOR_UPLOAD == "1") {
 	unlink($_Application_Module_Members_Private_Files_UPLOAD_FILE_IMAGE);
 
 											echo ($_Application_Module_Member_Message_Private_Files_UPLOAD_ERROR_EXTENSION);
-} // [ + ] EXTENSION_OK
+} // [ + ] IF: Uploaded File Image Extension Is Allowed
 
 /*
  ============================================================================================================
@@ -250,7 +250,7 @@ if (filesize($_Application_Module_Members_Private_Files_UPLOAD_FILE_IMAGE) > $_G
 
 /*
  ============================================================================================================
- + File Is Allowed, Place File
+ + File Is Allowed, Place File Into Organized Directory Structure
  ============================================================================================================
 */
 
@@ -259,7 +259,7 @@ if (filesize($_Application_Module_Members_Private_Files_UPLOAD_FILE_IMAGE) > $_G
 
 											echo ($_Application_Module_Member_Message_Private_Files_UPLOAD_SUCCESSFUL);
 
-} // [ + ] IF_FILE_SIZE_TOO_LARGE
+} // [ + ] IF: Uploaded File Is Larger Than Allowed File Size
 
-} // [ + ] IF_NULL
+} // [ + ] IF: Uploaded File Is Null
 ?>
