@@ -732,4 +732,88 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA					= str_re
 $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
 
 
+$_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE			= $_POST['post_shout_message'];
+
+
+$_Application_Module_Member_Audio_Player_POST_AUDIO_URL							= $_POST['Play_Audio_URL'];
+
+$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME						= $_POST['Play_Audio_File_Name'];
+
+
+$_Application_Module_Member_Comment_POST_APPLICATION_ID					= $_POST['post_application_id'];
+$_Application_Module_Member_Comment_POST_APPLICATION_NAME				= $_POST['post_application_name'];
+
+$_Application_Module_Member_Comment_POST_COMMENT_DATA					= $_POST['post_comment_data'];
+
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= $_POST['Update_Comment_Data'];
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+
+$_Application_Module_Member_Contact_Administrator_POST_NAME 				= $_POST['contact_systems_administrator_my_name'];
+$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS		= $_POST['contact_systems_administrator_electronic_mail_address'];
+$_Application_Module_Member_Contact_Administrator_POST_MESSAGE				= $_POST['contact_systems_administrator_message'];
+
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= $_POST['account_activation_key'];
+
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE					= $_POST['module_electronic_mail_post_message'];
+
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= $_POST['post_update_post'];
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+
+
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= $_POST['post_create_topic_title'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("'","&#39;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("<","&lt;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= $_POST['post_create_topic_description'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
+
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_FORUM_ID				= $_POST['post_create_topic_forum_id'];
+
+$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID				= $_POST['post_topic_id_option'];
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= $_POST['post_create_post_data'];
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
+
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= $_POST['post_reply_message'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
+
+$_Application_Module_Member_Forum_POST_REPLY_POST_ID					= $_POST['post_reply_post_id'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_ID_2					= $_POST['post_reply_post_id_2'];
+
+$_Application_Module_Member_Forum_POST_JUMP_TO						= $_POST['post_jump_to'];
+
+
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_MESSAGE					= $_POST['forward_message'];
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_ELECTRONIC_MAIL_ADDRESS			= $_POST['forward_electronic_mail_address'];
+
+$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME					= $_POST['post_save_friend'];
+
+$_Application_Module_Member_Links_POST_LINK_TITLE						= $_POST['link_title'];
+$_Application_Module_Member_Links_POST_LINK_URL							= $_POST['link_url'];
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= $_POST['link_description'];
+
+$_Application_Module_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Plain_Text_File_Messenger_Select_Room_Name'];
+
+$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE							= $_POST['Plain_Text_File_Messenger_Room_Message'];
+$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN					= $_POST['Plain_Text_File_Messenger_Room_Name_Hidden'];
+
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY					= $_POST['Plain_Text_File_Messenger_Room_Password_Entry'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION				= $_POST['Plain_Text_File_Messenger_Room_Password_Deletion'];
+
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Plain_Text_File_Messenger_Room_Name_Create'];
+
+$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_DELETE				= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Password_Delete'];
+
+$_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_POST['Find_Messenger_Room_Name_Invisible'];
+
+
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY				= $_POST['post_upload_directory_temporary'];
+$_Application_Module_Members_Private_Files_POST_DELETE_IMAGE_FILE					= $_POST['post_delete_image_file'];
+
+
+
 ?>
