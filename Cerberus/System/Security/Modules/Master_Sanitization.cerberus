@@ -815,5 +815,106 @@ $_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY				= 
 $_Application_Module_Members_Private_Files_POST_DELETE_IMAGE_FILE					= $_POST['post_delete_image_file'];
 
 
+$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT					= $_POST['private_message_subject'];
+$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= $_POST['private_message_recipient'];
+$_Application_Module_Private_Message_POST_MESSAGE_DATA 						= $_POST['private_message_data'];
+
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= $_POST['module_register_post_registrar_first_name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= $_POST['module_register_post_registrar_last_name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= $_POST['module_register_post_registrar_electronic_mail_address'];
+$_Application_Module_Member_Register_POST_REGISTRAR_BIRTHDATE				= $_POST['module_register_post_registrar_birthdate'];
+$_Application_Module_Member_Register_POST_REGISTRAR_GENDER				= $_POST['module_register_post_registrar_gender'];
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= $_POST['module_register_post_registrar_username'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY				= $_POST['module_register_post_registrar_random_key'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST['module_register_post_registrar_random_key_check'];
+
+$_Application_Module_Reset_Password_POST_ELECTRONIC_MAIL_ADDRESS	= $_POST['post_electronic_mail_address'];
+$_Application_Module_Reset_Password_POST_USERNAME			= $_POST['post_login_username'];
+
+$_Application_Module_Member_Search_POST_KEYWORD						= $_POST['post_search_keyword'];
+$_Application_Module_Member_Search_POST_SECTION						= $_POST['post_search_section'];
+
+$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE				= $_POST['Post_News_Message'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST				= $_POST['member_account_name_first'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_MIDDLE				= $_POST['member_account_name_middle'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_LAST					= $_POST['member_account_name_last'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_NICKNAME				= $_POST['member_account_name_nickname'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_BIRTHDATE					= $_POST['member_account_birthdate'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_GENDER					= $_POST['member_account_gender'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_HOME				= $_POST['member_account_address_home'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_MAILING				= $_POST['member_account_address_mailing'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_CURRENT				= $_POST['member_account_location_current'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS			= $_POST['member_account_electronic_mail_address'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_URL_HOMEPAGE				= $_POST['member_account_url_homepage'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_ICQ 		= $_POST['member_account_socialmedia_communications_icq'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SKYPE 		= $_POST['member_account_socialmedia_communications_skype'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT 	= $_POST['member_account_socialmedia_communications_snapchat'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_DISCORD 	= $_POST['member_account_socialmedia_communications_discord'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_FACEBOOK 		= $_POST['member_account_socialmedia_posting_facebook'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_TWITTER 		= $_POST['member_account_socialmedia_posting_twitter'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_GALLERY_INSTAGRAM 		= $_POST['member_account_socialmedia_gallery_instagram'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_AUDIO_SPOTIFY 		= $_POST['member_account_socialmedia_audio_spotify'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_BUSINESS_LINKEDIN 		= $_POST['member_account_socialmedia_business_linkedin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_VIDEO_YOUTUBE 		= $_POST['member_account_socialmedia_video_youtube'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_SECURITY_KEYBASE 		= $_POST['member_account_socialmedia_security_keybase'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_BITBUCKET		= $_POST['member_account_socialmedia_programming_bitbucket'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_GITHUB		= $_POST['member_account_socialmedia_programming_github'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD		= $_POST['member_account_socialmedia_programming_launchpad'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN	 	= $_POST['member_account_cryptocurrency_address_bitcoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD 	= $_POST['member_account_cryptocurrency_address_bitcoin_gold'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_DOGECOIN	 	= $_POST['member_account_cryptocurrency_address_dogecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ETHEREUM	 	= $_POST['member_account_cryptocurrency_address_ethereum'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_LITECOIN	 	= $_POST['member_account_cryptocurrency_address_litecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_MAZACOIN	 	= $_POST['member_account_cryptocurrency_address_mazacoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_NAMECOIN	 	= $_POST['member_account_cryptocurrency_address_namecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PEERCOIN	 	= $_POST['member_account_cryptocurrency_address_peercoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PRIMECOIN	 	= $_POST['member_account_cryptocurrency_address_primecoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_TRONCOIN	 	= $_POST['member_account_cryptocurrency_address_troncoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ZCASH		= $_POST['member_account_cryptocurrency_address_zcash'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MOOD					= $_POST['member_account_mood'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MUSIC					= $_POST['member_account_music'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO				= $_POST['member_account_settings_audio'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER			= $_POST['member_account_settings_newsletter'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME				= $_POST['member_account_settings_theme'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_AVATAR				= $_POST['member_account_profile_avatar'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_PICTURE				= $_POST['member_account_profile_picture'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT				= $_POST['member_account_profile_about'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_SIGNATURE				= $_POST['member_account_profile_signature'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC			= $_POST['member_account_pgp_key_panel_public'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_BILLING				= $_POST['member_account_address_billing'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_NUMBER			= $_POST['member_account_credit_card_number'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_CVV				= $_POST['member_account_credit_card_cvv'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_EXPIRATION_DATE		= $_POST['member_account_credit_card_expiration_date'];
+
+$_Application_Module_Member_Update_Password_POST_CURRENT_PASSWORD		= $_POST['application_module_members_update_password_current_password'];
+$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_1		= $_POST['application_module_members_update_password_new_password_1'];
+$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_2		= $_POST['application_module_members_update_password_new_password_2'];
+
+$_Application_Module_Member_Upload_POST_AUTHOR					= $_POST['post_upload_file_author'];
+$_Application_Module_Member_Upload_POST_TITLE					= $_POST['post_upload_file_title'];
+$_Application_Module_Member_Upload_POST_CATEGORY				= $_POST['post_upload_file_category'];
+$_Application_Module_Member_Upload_POST_FILE_DATA				= $_POST['post_upload_file_data'];
+$_Application_Module_Member_Upload_POST_FILE					= $_POST['post_upload_file'];
+$_Application_Module_Member_Upload_POST_IMAGE					= $_POST['post_upload_image'];
+
+$_Application_Module_Video_Player_POST_VIDEO_URL							= $_POST['module_video_player_video_url'];
+$_Application_Module_Video_Player_POST_VIDEO_FILE_NAME							= $_POST['module_video_player_video_file_name'];
+
+$_Application_Module_Webspace_POST_WEBSPACE_DATA				= $_POST['post_webspace_data'];
 
 ?>
