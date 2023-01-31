@@ -163,7 +163,7 @@ $_Application_Module_Members_Profile_LIST_MEMBER_NUMBER_OF_POSTS				= $_Applicat
 $_Application_Module_Members_Profile_LIST_MEMBER_PASSWORD					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
 $_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_ABOUT					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_about'];
 $_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_SIGNATURE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_signature'];
-$_Application_Module_Members_Profile_LIST_MEMBER_RANK_LEVEL					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_rank_level'];
+$_Application_Module_Members_Profile_LIST_MEMBER_RANK_LEVEL					= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_level_rank'];
 $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
 $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DETAILS				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_details'];
 $_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
@@ -395,6 +395,42 @@ if ($_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL = "3" ) {
 
 /*
  ============================================================================================================
+ + IF: Member Account Gender Is: Non-Specified
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_GENDER <= 0 || $_Application_Module_Members_Profile_LIST_MEMBER_GENDER == "-") {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_GENDER_DISPLAY					= "Non-Specified";
+
+} // [ + ] IF: Member Account Gender Is Less Than Or Equal To: 0 OR Is Equal To: -
+
+/*
+ ============================================================================================================
+ + IF: Member Account Gender Is: Male
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_GENDER == 1) {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_GENDER_DISPLAY					= "Male";
+
+} // [ + ] IF: Member Account Gender Is Equal To: 1
+
+/*
+ ============================================================================================================
+ + IF: Member Account Gender Is: Female
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Profile_LIST_MEMBER_GENDER == 2) {
+
+$_Application_Module_Members_Profile_LIST_MEMBER_GENDER_DISPLAY					= "Female";
+
+} // [ + ] IF: Member Account Gender Is Equal To: 2
+
+/*
+ ============================================================================================================
  +
  + Internal Application :: Display :: Account Information
  +
@@ -435,7 +471,7 @@ echo ("
 												&nbsp;*&nbsp;Name, Middle: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_MIDDLE<BR>
 												&nbsp;*&nbsp;Name, Nickname: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_NICKNAME<BR>
 												&nbsp;*&nbsp;Birthdate: $_Application_Module_Members_Profile_LIST_MEMBER_BIRTHDATE<BR>
-												&nbsp;*&nbsp;Gender: $_GLOBAL_MEMBER_GENDER_DISPLAY<BR>
+												&nbsp;*&nbsp;Gender: $_Application_Module_Members_Profile_LIST_MEMBER_GENDER_DISPLAY<BR>
 												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Account Profile Image :: $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE</A><BR><BR>
 
 												<I>Account Registration and Details</I><BR>
