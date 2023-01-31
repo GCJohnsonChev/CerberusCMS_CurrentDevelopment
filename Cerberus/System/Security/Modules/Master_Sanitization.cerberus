@@ -62,38 +62,38 @@
  ============================================================================================================
 */
 
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[0]				= "!";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[1]				= "@";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[2]				= "#";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[3]				= "$";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[4]				= "%";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[5]				= "^";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[6]				= "&";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[7]				= "*";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[8]				= "(";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[9]				= ")";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[10]				= "-";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[11]				= "_";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[12]				= "=";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[13]				= "+";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[14]				= "[";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[15]				= "{";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[16]				= "]";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[17]				= "}";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[18]				= "\";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[19]				= "|";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[20]				= ";"";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[21]				= ":";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[22]				= "'";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[23]				= """;
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[24]				= ",";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[25]				= "<";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[26]				= ".";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[27]				= ">";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[28]				= "?";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[29]				= "/";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[30]				= "`";
-$_Application_Module_System_Security_POST_STRIP_CHARACTERS[31]				= "~";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[0]							= "!";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[1]							= "@";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[2]							= "#";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[3]							= "$";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[4]							= "%";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[5]							= "^";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[6]							= "&";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[7]							= "*";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[8]							= "(";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[9]							= ")";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[10]							= "-";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[11]							= "_";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[12]							= "=";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[13]							= "+";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[14]							= "[";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[15]							= "{";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[16]							= "]";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[17]							= "}";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[18]							= "\";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[19]							= "|";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[20]							= ";"";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[21]							= ":";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[22]							= "'";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[23]							= """;
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[24]							= ",";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[25]							= "<";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[26]							= ".";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[27]							= ">";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[28]							= "?";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[29]							= "/";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[30]							= "`";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[31]							= "~";
 
 /*
  ============================================================================================================
@@ -189,25 +189,25 @@ substr_count(something, $_Application_Module_System_Security_POST_STRIP_CHARACTE
  ============================================================================================================
 */
 
-//$_Application_Module_Administration_POST_MEMBER_ID							= $_POST['Module_Administrators_Form_Member_ID'];
+//$_Application_Module_Administration_POST_MEMBER_ID								= $_POST['Module_Administrators_Form_Member_ID'];
 
-$_Application_Module_Administration_POST_MEMBER_ID							= $_Application_Module_System_Security_POST_STRIP_CHARACTERS;
+$_Application_Module_Administration_POST_MEMBER_ID								= $_Application_Module_System_Security_POST_STRIP_CHARACTERS;
 
-$_Application_Module_Administration_POST_MEMBER_ID_2							= $_POST['Module_Administrators_Form_Member_ID_2'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_ACCESS_LEVEL					= $_POST['Module_Administrators_Form_Member_Access_Level'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS					= $_POST['Module_Administrators_Form_Member_Banned_Status'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_ELECTRONIC_MAIL_ADDRESS				= $_POST['Module_Administrators_Form_Member_Electronic_Mail_Address'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_EXPERIENCE_AMOUNT				= $_POST['Module_Administrators_Form_Member_Experience_Amount'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_FIRST_NAME					= $_POST['Module_Administrators_Form_Member_First_Name'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_LAST_NAME					= $_POST['Module_Administrators_Form_Member_Last_Name'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_NUMBER_OF_POSTS					= $_POST['Module_Administrators_Form_Member_Number_Of_Posts'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD						= $_POST['Module_Administrators_Form_Member_Password'];
-$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD_HASHED					= password_hash($_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD, PASSWORD_BCRYPT);
-$_Application_Module_Administration_POST_MEMBER_OPTION_RANK						= $_POST['Module_Administrators_Form_Member_Rank'];
+$_Application_Module_Administration_POST_MEMBER_ID_2								= $_POST['Module_Administrators_Form_Member_ID_2'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_ACCESS_LEVEL						= $_POST['Module_Administrators_Form_Member_Access_Level'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS						= $_POST['Module_Administrators_Form_Member_Banned_Status'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_ELECTRONIC_MAIL_ADDRESS					= $_POST['Module_Administrators_Form_Member_Electronic_Mail_Address'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_EXPERIENCE_AMOUNT					= $_POST['Module_Administrators_Form_Member_Experience_Amount'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_FIRST_NAME						= $_POST['Module_Administrators_Form_Member_First_Name'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_LAST_NAME						= $_POST['Module_Administrators_Form_Member_Last_Name'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_NUMBER_OF_POSTS						= $_POST['Module_Administrators_Form_Member_Number_Of_Posts'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD							= $_POST['Module_Administrators_Form_Member_Password'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD_HASHED						= password_hash($_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD, PASSWORD_BCRYPT);
+$_Application_Module_Administration_POST_MEMBER_OPTION_RANK							= $_POST['Module_Administrators_Form_Member_Rank'];
 
 
-$_Application_Module_Administration_POST_MESSAGE_MEMBER_USERNAME					= $_POST['Module_Administrators_Form_Member_UserName_2'];
-$_Application_Module_Administration_POST_MESSAGE_MEMBER_MESSAGE						= $_POST['Module_Administrators_Form_Member_Message'];
+$_Application_Module_Administration_POST_MESSAGE_MEMBER_USERNAME						= $_POST['Module_Administrators_Form_Member_UserName_2'];
+$_Application_Module_Administration_POST_MESSAGE_MEMBER_MESSAGE							= $_POST['Module_Administrators_Form_Member_Message'];
 
 /*
  ============================================================================================================
@@ -247,15 +247,15 @@ $_Application_Module_Administration_POST_MESSAGE_MEMBER_MESSAGE						= $_POST['M
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 			= $_POST['Install_Application_File_Name'];
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION 		= $_POST['Install_Application_File_Permissions'];
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 			= $_POST['Install_Application_File_Status'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 				= $_POST['Install_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION 			= $_POST['Install_Application_File_Permissions'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 				= $_POST['Install_Application_File_Status'];
 
-$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 					= $_POST['post_temp'];
+$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 						= $_POST['post_temp'];
 
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 			= $_POST['Update_Application_File_Name'];
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION 		= $_POST['Update_Application_File_Permission'];
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 			= $_POST['Update_Application_File_Status'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 				= $_POST['Update_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION 			= $_POST['Update_Application_File_Permission'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 				= $_POST['Update_Application_File_Status'];
 
 /*
  ============================================================================================================
@@ -295,7 +295,7 @@ $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_ST
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Archive_POST_ARCHIVE_FILES						= $_POST['File_Selection'];
+$_Application_Module_Administration_Archive_POST_ARCHIVE_FILES							= $_POST['File_Selection'];
 
 /*
  ============================================================================================================
@@ -335,7 +335,7 @@ $_Application_Module_Administration_Archive_POST_ARCHIVE_FILES						= $_POST['Fi
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING			= $_POST['Internet_Protocol_Address_String'];
+$_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING				= $_POST['Internet_Protocol_Address_String'];
 
 /*
  ============================================================================================================
@@ -375,11 +375,11 @@ $_Application_Module_Administration_Banish_POST_INTERNET_PROTOCOL_ADDRESS_STRING
  ============================================================================================================
 */
 
-$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME			= $_POST['Module_File_Categories_Install_File_Category_Name'];
-$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION		= $_POST['Module_File_Categories_Install_File_Category_Description'];
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME				= $_POST['Module_File_Categories_Install_File_Category_Name'];
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION			= $_POST['Module_File_Categories_Install_File_Category_Description'];
 
-$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME			= $_POST['Module_File_Categories_Update_File_Category_Name'];
-$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION 		= $_POST['Module_File_Categories_Update_File_Category_Description'];
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME				= $_POST['Module_File_Categories_Update_File_Category_Name'];
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION 			= $_POST['Module_File_Categories_Update_File_Category_Description'];
 
 /*
  ============================================================================================================
@@ -419,42 +419,42 @@ $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DE
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE					= $_POST['Install_Forum_Title'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE					= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE);
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE						= $_POST['Install_Forum_Title'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE						= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE);
 
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION				= $_POST['Install_Forum_Description'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION					= $_POST['Install_Forum_Description'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
 
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL				= $_POST['Install_Forum_Access_Level'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL					= $_POST['Install_Forum_Access_Level'];
 
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE					= $_POST['Update_Forum_Title'];
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE					= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= $_POST['Update_Forum_Title'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE);
 
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE					= $_POST['Update_Forum_Date'];
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL				= $_POST['Update_Forum_Access_Level'];
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION					= $_POST['Update_Forum_Description'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= $_POST['Update_Forum_Date'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL					= $_POST['Update_Forum_Access_Level'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION						= $_POST['Update_Forum_Description'];
 	
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE				= $_POST['Install_Forum_Topic_Title'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE				= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE);
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE					= $_POST['Install_Forum_Topic_Title'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE					= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE);
 
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID				= $_POST['Install_Forum_Topic_ID'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL				= $_POST['Install_Forum_Topic_Access_Level'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION				= $_POST['Install_Forum_Topic_Description'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID					= $_POST['Install_Forum_Topic_ID'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL					= $_POST['Install_Forum_Topic_Access_Level'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION					= $_POST['Install_Forum_Topic_Description'];
 
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE					= $_POST['Update_Forum_Topic_Title'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE					= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE						= $_POST['Update_Forum_Topic_Title'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE						= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE);
 
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE					= $_POST['Update_Forum_Topic_Date'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL				= $_POST['Update_Forum_Topic_Access_Level'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID				= $_POST['Update_Forum_Topic_Forum_ID'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST				= $_POST['Update_Forum_Topic_Last_Post'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER				= $_POST['Update_Forum_Topic_Last_Poster'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION				= $_POST['Update_Forum_Topic_Description'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= $_POST['Update_Forum_Topic_Date'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL					= $_POST['Update_Forum_Topic_Access_Level'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID					= $_POST['Update_Forum_Topic_Forum_ID'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST					= $_POST['Update_Forum_Topic_Last_Post'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER					= $_POST['Update_Forum_Topic_Last_Poster'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION					= $_POST['Update_Forum_Topic_Description'];
 
-$_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID					= $_POST['Install_Forum_Topic_ID_Option'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE				= $_POST['Install_Forum_Topic_Message'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCESS_LEVEL			= $_POST['Install_Forum_Topic_Message_Access_Level'];
+$_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID						= $_POST['Install_Forum_Topic_ID_Option'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE					= $_POST['Install_Forum_Topic_Message'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCESS_LEVEL				= $_POST['Install_Forum_Topic_Message_Access_Level'];
 
 /*
  ============================================================================================================
@@ -495,17 +495,17 @@ $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCES
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME			= $_POST['Install_Application_Panel_File_Name'];
-$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_ALIGNMENT			= $_POST['Install_Application_Panel_Alignment'];
-$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_STATUS			= $_POST['Install_Application_Panel_File_Status'];
-$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE				= $_POST['Install_Application_Panel_Title'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME				= $_POST['Install_Application_Panel_File_Name'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_ALIGNMENT				= $_POST['Install_Application_Panel_Alignment'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_STATUS				= $_POST['Install_Application_Panel_File_Status'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE					= $_POST['Install_Application_Panel_Title'];
 
-$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME					= $_POST['Update_Application_Panel_File_Name'];
-$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_ALIGNMENT					= $_POST['Update_Application_Panel_File_Alignment'];
-$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_STATUS				= $_POST['Update_Application_Panel_File_Status'];
-$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE					= $_POST['Update_Application_Panel_File_Title'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME						= $_POST['Update_Application_Panel_File_Name'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_ALIGNMENT						= $_POST['Update_Application_Panel_File_Alignment'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_STATUS					= $_POST['Update_Application_Panel_File_Status'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE						= $_POST['Update_Application_Panel_File_Title'];
 
-$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TEMPORARY			= $_POST['Upload_Application_Panel_Temporary'];
+$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TEMPORARY				= $_POST['Upload_Application_Panel_Temporary'];
 
 /*
  ============================================================================================================
@@ -545,18 +545,18 @@ $_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TE
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME			= $_POST['Publish_News_Article_Author_Name'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_DATA				= $_POST['Publish_News_Article_Data'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD			= $_POST['Publish_News_Article_Author_Mood'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC			= $_POST['Publish_News_Article_Author_Music'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE				= $_POST['Publish_News_Article_Title'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME				= $_POST['Publish_News_Article_Author_Name'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_DATA					= $_POST['Publish_News_Article_Data'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD				= $_POST['Publish_News_Article_Author_Mood'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC				= $_POST['Publish_News_Article_Author_Music'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE					= $_POST['Publish_News_Article_Title'];
 
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME				= $_POST['Publish_Article_Author_Name'];
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE					= $_POST['Publish_Article_Title'];
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT					= $_POST['Publish_Article_Text'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME					= $_POST['Publish_Article_Author_Name'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE						= $_POST['Publish_Article_Title'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT						= $_POST['Publish_Article_Text'];
 	
-$_Application_Module_Administration_Publish_POST_NEWSLETTER_SUBJECT					= $_POST['Newsletter_Subject'];
-$_Application_Module_Administration_Publish_POST_NEWSLETTER_MESSAGE					= $_POST['Newsletter_Message'];
+$_Application_Module_Administration_Publish_POST_NEWSLETTER_SUBJECT						= $_POST['Newsletter_Subject'];
+$_Application_Module_Administration_Publish_POST_NEWSLETTER_MESSAGE						= $_POST['Newsletter_Message'];
 
 /*
  ============================================================================================================
@@ -596,17 +596,17 @@ $_Application_Module_Administration_Publish_POST_NEWSLETTER_MESSAGE					= $_POST
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0					= $_POST['Update_Rank_Male_0'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1					= $_POST['Update_Rank_Male_1'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2					= $_POST['Update_Rank_Male_2'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3					= $_POST['Update_Rank_Male_3'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4					= $_POST['Update_Rank_Male_4'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0						= $_POST['Update_Rank_Male_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1						= $_POST['Update_Rank_Male_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2						= $_POST['Update_Rank_Male_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3						= $_POST['Update_Rank_Male_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4						= $_POST['Update_Rank_Male_4'];
 
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0					= $_POST['Update_Rank_Female_0'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1					= $_POST['Update_Rank_Female_1'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2					= $_POST['Update_Rank_Female_2'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3					= $_POST['Update_Rank_Female_3'];
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4					= $_POST['Update_Rank_Female_4'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0						= $_POST['Update_Rank_Female_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1						= $_POST['Update_Rank_Female_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2						= $_POST['Update_Rank_Female_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3						= $_POST['Update_Rank_Female_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4						= $_POST['Update_Rank_Female_4'];
 
 /*
  ============================================================================================================
@@ -646,20 +646,20 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4					= $_POST
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY				= $_POST['Module_Administration_Settings_SafeHTML_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS				= $_POST['Module_Administration_Settings_SafeHTML_Status'];
-$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME					= $_POST['Module_Administration_Settings_Session_Time'];
-$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS					= $_POST['Module_Administration_Settings_GZIP_Compression'];
-$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION				= $_POST['Module_Administration_Settings_Image_Extension'];
-$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY				= $_POST['Module_Administration_Settings_Language_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS					= $_POST['Module_Administration_Settings_Offline_Status'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE					= $_POST['Module_Administration_Settings_Site_Title'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY				= $_POST['Module_Administration_Settings_Smileys_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION				= $_POST['Module_Administration_Settings_Sound_Extension'];
-$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY				= $_POST['Module_Administration_Settings_Theme_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE					= $_POST['Module_Administration_Settings_Upload_Size_Private'];
-$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC					= $_POST['Module_Administration_Settings_Upload_Size_Public'];
-$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY				= $_POST['Module_Administration_Settings_Text_Editor_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY					= $_POST['Module_Administration_Settings_SafeHTML_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS					= $_POST['Module_Administration_Settings_SafeHTML_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME						= $_POST['Module_Administration_Settings_Session_Time'];
+$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS						= $_POST['Module_Administration_Settings_GZIP_Compression'];
+$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION					= $_POST['Module_Administration_Settings_Image_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY					= $_POST['Module_Administration_Settings_Language_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS						= $_POST['Module_Administration_Settings_Offline_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE						= $_POST['Module_Administration_Settings_Site_Title'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY					= $_POST['Module_Administration_Settings_Smileys_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION					= $_POST['Module_Administration_Settings_Sound_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY					= $_POST['Module_Administration_Settings_Theme_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE						= $_POST['Module_Administration_Settings_Upload_Size_Private'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC						= $_POST['Module_Administration_Settings_Upload_Size_Public'];
+$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY					= $_POST['Module_Administration_Settings_Text_Editor_Directory'];
 
 /*
  ============================================================================================================
@@ -699,7 +699,7 @@ $_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY		
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND					= $_POST['Terminal_Command'];
+$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND						= $_POST['Terminal_Command'];
 
 /*
  ============================================================================================================
@@ -739,67 +739,67 @@ $_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND					= $_POST[
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR					= $_POST['Update_Article_Author'];
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME					= $_POST['Update_Article_Time'];
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE					= $_POST['Update_Article_Title'];
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA					= $_POST['Update_Article_Data'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR						= $_POST['Update_Article_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME						= $_POST['Update_Article_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE						= $_POST['Update_Article_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA						= $_POST['Update_Article_Data'];
 
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR					= $_POST['Update_Link_Author'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR						= $_POST['Update_Link_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR);
 
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION					= $_POST['Update_Link_Description'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION						= $_POST['Update_Link_Description'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION						= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION						= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
 
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME					= $_POST['Update_Link_Time'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME						= $_POST['Update_Link_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME);
 
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE					= $_POST['Update_Link_Title'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE						= $_POST['Update_Link_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE);
 
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL						= $_POST['Update_Link_URL'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_URL);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL							= $_POST['Update_Link_URL'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL							= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_URL);
 
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR					= $_POST['Update_News_Author'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR);
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR					= $_POST['Update_News_Avatar'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR						= $_POST['Update_News_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR						= $_POST['Update_News_Avatar'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR);
 
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA					= $_POST['Update_News_Data'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA						= $_POST['Update_News_Data'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA						= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA						= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
 
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD					= $_POST['Update_News_Mood'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD						= $_POST['Update_News_Mood'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD);
 
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC					= $_POST['Update_News_Music'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC						= $_POST['Update_News_Music'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC);
 
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME					= $_POST['Update_News_Time'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME						= $_POST['Update_News_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME);
 
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE					= $_POST['Update_News_Title'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE						= $_POST['Update_News_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE);
 
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR					= $_POST['Update_File_Author'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY					= $_POST['Update_File_Category'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION					= $_POST['Update_File_Description'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE					= $_POST['Update_File_Image'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION					= $_POST['Update_File_Location'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS				= $_POST['Update_File_Downloads'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME					= $_POST['Update_File_Time'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE					= $_POST['Update_File_Title'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER					= $_POST['Update_File_Uploader'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION					= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION					= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR						= $_POST['Update_File_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY						= $_POST['Update_File_Category'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION						= $_POST['Update_File_Description'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE						= $_POST['Update_File_Image'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION						= $_POST['Update_File_Location'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS					= $_POST['Update_File_Downloads'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME						= $_POST['Update_File_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE						= $_POST['Update_File_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER						= $_POST['Update_File_Uploader'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION						= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION						= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER);
 
 /*
  ============================================================================================================
@@ -839,31 +839,31 @@ $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER					= preg_
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Web_Pages_POST_LINK_NAME						= $_POST['Install_Link_Name'];
-$_Application_Module_Administration_Web_Pages_POST_LINK_NAME						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_NAME);
-$_Application_Module_Administration_Web_Pages_POST_LINK_URL						= $_POST['Install_Link_URL'];
-$_Application_Module_Administration_Web_Pages_POST_LINK_URL						= preg_replace("/'/", "&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_URL);
-$_Application_Module_Administration_Web_Pages_POST_LINK_TYPE						= $_POST['Install_Link_Type'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_NAME							= $_POST['Install_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_NAME							= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_NAME);
+$_Application_Module_Administration_Web_Pages_POST_LINK_URL							= $_POST['Install_Link_URL'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_URL							= preg_replace("/'/", "&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_URL);
+$_Application_Module_Administration_Web_Pages_POST_LINK_TYPE							= $_POST['Install_Link_Type'];
 
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME					= $_POST['Update_Link_Name'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW					= $_POST['Update_Link_Row'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL					= $_POST['Update_Link_URL'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME						= $_POST['Update_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW						= $_POST['Update_Link_Row'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL						= $_POST['Update_Link_URL'];
 
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 				= $_POST['Install_Web_Page_Name'];
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME);
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 					= $_POST['Install_Web_Page_Name'];
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME);
 
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 				= $_POST['Install_Web_Page_Data'];
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 					= $_POST['Install_Web_Page_Data'];
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
 
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME					= $_POST['Update_Custom_Application_Name'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME);
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME						= $_POST['Update_Custom_Application_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME						= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME);
 
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA					= $_POST['Update_Custom_Application_Data'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_TIME					= $_POST['Update_Custom_Application_Timestamp'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA						= $_POST['Update_Custom_Application_Data'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_TIME						= $_POST['Update_Custom_Application_Timestamp'];
 
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA						= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA						= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
 
 /*
  ============================================================================================================
@@ -903,7 +903,7 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA					= str_re
  ============================================================================================================
 */
 
-$_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE			= $_POST['post_shout_message'];
+$_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE							= $_POST['post_shout_message'];
 
 /*
  ============================================================================================================
@@ -943,8 +943,8 @@ $_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE			= $_POST['post_shout
  ============================================================================================================
 */
 
-$_Application_Module_Member_Audio_Player_POST_AUDIO_URL							= $_POST['Play_Audio_URL'];
-$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME						= $_POST['Play_Audio_File_Name'];
+$_Application_Module_Member_Audio_Player_POST_AUDIO_URL								= $_POST['Play_Audio_URL'];
+$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME							= $_POST['Play_Audio_File_Name'];
 
 /*
  ============================================================================================================
@@ -984,12 +984,12 @@ $_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME						= $_POST['Pla
  ============================================================================================================
 */
 
-$_Application_Module_Member_Comment_POST_APPLICATION_ID					= $_POST['post_application_id'];
-$_Application_Module_Member_Comment_POST_APPLICATION_NAME				= $_POST['post_application_name'];
-$_Application_Module_Member_Comment_POST_COMMENT_DATA					= $_POST['post_comment_data'];
-$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= $_POST['Update_Comment_Data'];
-$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
-$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+$_Application_Module_Member_Comment_POST_APPLICATION_ID								= $_POST['post_application_id'];
+$_Application_Module_Member_Comment_POST_APPLICATION_NAME							= $_POST['post_application_name'];
+$_Application_Module_Member_Comment_POST_COMMENT_DATA								= $_POST['post_comment_data'];
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA							= $_POST['Update_Comment_Data'];
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA							= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA							= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
 
 /*
  ============================================================================================================
@@ -1029,9 +1029,9 @@ $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_
  ============================================================================================================
 */
 
-$_Application_Module_Member_Contact_Administrator_POST_NAME 				= $_POST['contact_systems_administrator_my_name'];
-$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS		= $_POST['contact_systems_administrator_electronic_mail_address'];
-$_Application_Module_Member_Contact_Administrator_POST_MESSAGE				= $_POST['contact_systems_administrator_message'];
+$_Application_Module_Member_Contact_Administrator_POST_NAME 							= $_POST['contact_systems_administrator_my_name'];
+$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS					= $_POST['contact_systems_administrator_electronic_mail_address'];
+$_Application_Module_Member_Contact_Administrator_POST_MESSAGE							= $_POST['contact_systems_administrator_message'];
 
 /*
  ============================================================================================================
@@ -1071,7 +1071,7 @@ $_Application_Module_Member_Contact_Administrator_POST_MESSAGE				= $_POST['cont
  ============================================================================================================
 */
 
-$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= $_POST['account_activation_key'];
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY						= $_POST['account_activation_key'];
 
 /*
  ============================================================================================================
@@ -1111,7 +1111,7 @@ $_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= $_PO
  ============================================================================================================
 */
 
-$_Application_Module_Member_Electronic_Mail_POST_MESSAGE					= $_POST['module_electronic_mail_post_message'];
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE							= $_POST['module_electronic_mail_post_message'];
 
 /*
  ============================================================================================================
@@ -1151,32 +1151,32 @@ $_Application_Module_Member_Electronic_Mail_POST_MESSAGE					= $_POST['module_el
  ============================================================================================================
 */
 
-$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= $_POST['post_update_post'];
-$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
-$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA								= $_POST['post_update_post'];
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
 
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= $_POST['post_create_topic_title'];
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("'","&#39;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("<","&lt;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= $_POST['post_create_topic_description'];
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE							= $_POST['post_create_topic_title'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE							= str_replace("'","&#39;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE							= str_replace("<","&lt;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION							= $_POST['post_create_topic_description'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION							= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION							= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
 
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_FORUM_ID				= $_POST['post_create_topic_forum_id'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_FORUM_ID							= $_POST['post_create_topic_forum_id'];
 
-$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID				= $_POST['post_topic_id_option'];
-$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= $_POST['post_create_post_data'];
-$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
-$_Application_Module_Member_Forum_POST_CREATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID							= $_POST['post_topic_id_option'];
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA								= $_POST['post_create_post_data'];
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_POST_DATA);
 
-$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= $_POST['post_reply_message'];
-$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
-$_Application_Module_Member_Forum_POST_REPLY_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA								= $_POST['post_reply_message'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_REPLY_POST_DATA);
 
-$_Application_Module_Member_Forum_POST_REPLY_POST_ID					= $_POST['post_reply_post_id'];
-$_Application_Module_Member_Forum_POST_REPLY_POST_ID_2					= $_POST['post_reply_post_id_2'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_ID								= $_POST['post_reply_post_id'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_ID_2								= $_POST['post_reply_post_id_2'];
 
-$_Application_Module_Member_Forum_POST_JUMP_TO						= $_POST['post_jump_to'];
+$_Application_Module_Member_Forum_POST_JUMP_TO									= $_POST['post_jump_to'];
 
 /*
  ============================================================================================================
@@ -1216,10 +1216,10 @@ $_Application_Module_Member_Forum_POST_JUMP_TO						= $_POST['post_jump_to'];
  ============================================================================================================
 */
 
-$_Application_Module_Member_Forward_Friend_POST_FORWARD_MESSAGE					= $_POST['forward_message'];
-$_Application_Module_Member_Forward_Friend_POST_FORWARD_ELECTRONIC_MAIL_ADDRESS			= $_POST['forward_electronic_mail_address'];
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_MESSAGE							= $_POST['forward_message'];
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_ELECTRONIC_MAIL_ADDRESS					= $_POST['forward_electronic_mail_address'];
 
-$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME						= $_POST['post_save_friend'];
+$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME								= $_POST['post_save_friend'];
 
 /*
  ============================================================================================================
@@ -1259,9 +1259,9 @@ $_Application_Module_Member_Friend_POST_GET_FRIEND_NAME						= $_POST['post_save
  ============================================================================================================
 */
 
-$_Application_Module_Member_Links_POST_LINK_TITLE						= $_POST['link_title'];
-$_Application_Module_Member_Links_POST_LINK_URL							= $_POST['link_url'];
-$_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= $_POST['link_description'];
+$_Application_Module_Member_Links_POST_LINK_TITLE								= $_POST['link_title'];
+$_Application_Module_Member_Links_POST_LINK_URL									= $_POST['link_url'];
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION								= $_POST['link_description'];
 
 /*
  ============================================================================================================
@@ -1301,20 +1301,20 @@ $_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= $_POST['link_desc
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Plain_Text_File_Messenger_Select_Room_Name'];
+$_Application_Module_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $_POST['Plain_Text_File_Messenger_Select_Room_Name'];
 
-$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE							= $_POST['Plain_Text_File_Messenger_Room_Message'];
-$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN					= $_POST['Plain_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['Plain_Text_File_Messenger_Room_Message'];
+$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN				= $_POST['Plain_Text_File_Messenger_Room_Name_Hidden'];
 
-$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY					= $_POST['Plain_Text_File_Messenger_Room_Password_Entry'];
-$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION				= $_POST['Plain_Text_File_Messenger_Room_Password_Deletion'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_POST['Plain_Text_File_Messenger_Room_Password_Entry'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION			= $_POST['Plain_Text_File_Messenger_Room_Password_Deletion'];
 
-$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Plain_Text_File_Messenger_Room_Name_Create'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $_POST['Plain_Text_File_Messenger_Room_Name_Create'];
 
-$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Hidden'];
-$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_DELETE				= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Password_Delete'];
+$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_DELETE			= $_POST['Unlink_Plain_Text_File_Messenger_Room_Name_Password_Delete'];
 
-$_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_POST['Find_Messenger_Room_Name_Invisible'];
+$_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND						= $_POST['Find_Messenger_Room_Name_Invisible'];
 
 /*
  ============================================================================================================
@@ -1354,8 +1354,8 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY				= $_POST['post_upload_directory_temporary'];
-$_Application_Module_Members_Private_Files_POST_DELETE_IMAGE_FILE					= $_POST['post_delete_image_file'];
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY					= $_POST['post_upload_directory_temporary'];
+$_Application_Module_Members_Private_Files_POST_DELETE_IMAGE_FILE						= $_POST['post_delete_image_file'];
 
 /*
  ============================================================================================================
@@ -1395,9 +1395,9 @@ $_Application_Module_Members_Private_Files_POST_DELETE_IMAGE_FILE					= $_POST['
  ============================================================================================================
 */
 
-$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT					= $_POST['private_message_subject'];
-$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= $_POST['private_message_recipient'];
-$_Application_Module_Private_Message_POST_MESSAGE_DATA 						= $_POST['private_message_data'];
+$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT							= $_POST['private_message_subject'];
+$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT							= $_POST['private_message_recipient'];
+$_Application_Module_Private_Message_POST_MESSAGE_DATA 								= $_POST['private_message_data'];
 
 /*
  ============================================================================================================
@@ -1437,14 +1437,14 @@ $_Application_Module_Private_Message_POST_MESSAGE_DATA 						= $_POST['private_m
  ============================================================================================================
 */
 
-$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= $_POST['module_register_post_registrar_first_name'];
-$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= $_POST['module_register_post_registrar_last_name'];
-$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= $_POST['module_register_post_registrar_electronic_mail_address'];
-$_Application_Module_Member_Register_POST_REGISTRAR_BIRTHDATE				= $_POST['module_register_post_registrar_birthdate'];
-$_Application_Module_Member_Register_POST_REGISTRAR_GENDER				= $_POST['module_register_post_registrar_gender'];
-$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= $_POST['module_register_post_registrar_username'];
-$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY				= $_POST['module_register_post_registrar_random_key'];
-$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST['module_register_post_registrar_random_key_check'];
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME							= $_POST['module_register_post_registrar_first_name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME							= $_POST['module_register_post_registrar_last_name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS					= $_POST['module_register_post_registrar_electronic_mail_address'];
+$_Application_Module_Member_Register_POST_REGISTRAR_BIRTHDATE							= $_POST['module_register_post_registrar_birthdate'];
+$_Application_Module_Member_Register_POST_REGISTRAR_GENDER							= $_POST['module_register_post_registrar_gender'];
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME							= $_POST['module_register_post_registrar_username'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY							= $_POST['module_register_post_registrar_random_key'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK						= $_POST['module_register_post_registrar_random_key_check'];
 
 /*
  ============================================================================================================
@@ -1484,8 +1484,8 @@ $_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST[
  ============================================================================================================
 */
 
-$_Application_Module_Reset_Password_POST_ELECTRONIC_MAIL_ADDRESS	= $_POST['post_electronic_mail_address'];
-$_Application_Module_Reset_Password_POST_USERNAME			= $_POST['post_login_username'];
+$_Application_Module_Reset_Password_POST_ELECTRONIC_MAIL_ADDRESS						= $_POST['post_electronic_mail_address'];
+$_Application_Module_Reset_Password_POST_USERNAME								= $_POST['post_login_username'];
 
 /*
  ============================================================================================================
@@ -1525,8 +1525,8 @@ $_Application_Module_Reset_Password_POST_USERNAME			= $_POST['post_login_usernam
  ============================================================================================================
 */
 
-$_Application_Module_Member_Search_POST_KEYWORD						= $_POST['post_search_keyword'];
-$_Application_Module_Member_Search_POST_SECTION						= $_POST['post_search_section'];
+$_Application_Module_Member_Search_POST_KEYWORD									= $_POST['post_search_keyword'];
+$_Application_Module_Member_Search_POST_SECTION									= $_POST['post_search_section'];
 
 /*
  ============================================================================================================
@@ -1566,7 +1566,7 @@ $_Application_Module_Member_Search_POST_SECTION						= $_POST['post_search_secti
  ============================================================================================================
 */
 
-$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE				= $_POST['Post_News_Message'];
+$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE							= $_POST['Post_News_Message'];
 
 /*
  ============================================================================================================
@@ -1709,9 +1709,9 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CAR
  ============================================================================================================
 */
 
-$_Application_Module_Member_Update_Password_POST_CURRENT_PASSWORD		= $_POST['application_module_members_update_password_current_password'];
-$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_1		= $_POST['application_module_members_update_password_new_password_1'];
-$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_2		= $_POST['application_module_members_update_password_new_password_2'];
+$_Application_Module_Member_Update_Password_POST_CURRENT_PASSWORD						= $_POST['application_module_members_update_password_current_password'];
+$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_1						= $_POST['application_module_members_update_password_new_password_1'];
+$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_2						= $_POST['application_module_members_update_password_new_password_2'];
 
 /*
  ============================================================================================================
@@ -1751,12 +1751,12 @@ $_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_2		= $_POST['ap
  ============================================================================================================
 */
 
-$_Application_Module_Member_Upload_POST_AUTHOR					= $_POST['post_upload_file_author'];
-$_Application_Module_Member_Upload_POST_TITLE					= $_POST['post_upload_file_title'];
-$_Application_Module_Member_Upload_POST_CATEGORY				= $_POST['post_upload_file_category'];
-$_Application_Module_Member_Upload_POST_FILE_DATA				= $_POST['post_upload_file_data'];
-$_Application_Module_Member_Upload_POST_FILE					= $_POST['post_upload_file'];
-$_Application_Module_Member_Upload_POST_IMAGE					= $_POST['post_upload_image'];
+$_Application_Module_Member_Upload_POST_AUTHOR									= $_POST['post_upload_file_author'];
+$_Application_Module_Member_Upload_POST_TITLE									= $_POST['post_upload_file_title'];
+$_Application_Module_Member_Upload_POST_CATEGORY								= $_POST['post_upload_file_category'];
+$_Application_Module_Member_Upload_POST_FILE_DATA								= $_POST['post_upload_file_data'];
+$_Application_Module_Member_Upload_POST_FILE									= $_POST['post_upload_file'];
+$_Application_Module_Member_Upload_POST_IMAGE									= $_POST['post_upload_image'];
 
 /*
  ============================================================================================================
@@ -1796,8 +1796,8 @@ $_Application_Module_Member_Upload_POST_IMAGE					= $_POST['post_upload_image'];
  ============================================================================================================
 */
 
-$_Application_Module_Video_Player_POST_VIDEO_URL							= $_POST['module_video_player_video_url'];
-$_Application_Module_Video_Player_POST_VIDEO_FILE_NAME							= $_POST['module_video_player_video_file_name'];
+$_Application_Module_Video_Player_POST_VIDEO_URL								= $_POST['module_video_player_video_url'];
+$_Application_Module_Video_Player_POST_VIDEO_FILE_NAME								= $_POST['module_video_player_video_file_name'];
 
 /*
  ============================================================================================================
@@ -1837,6 +1837,6 @@ $_Application_Module_Video_Player_POST_VIDEO_FILE_NAME							= $_POST['module_vi
  ============================================================================================================
 */
 
-$_Application_Module_Webspace_POST_WEBSPACE_DATA				= $_POST['post_webspace_data'];
+$_Application_Module_Webspace_POST_WEBSPACE_DATA								= $_POST['post_webspace_data'];
 
 ?>
