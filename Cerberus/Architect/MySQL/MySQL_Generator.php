@@ -611,7 +611,7 @@ PRIMARY KEY (id)
 
 /* Settings */
 
-CREATE TABLE {$_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX}_settings (
+CREATE TABLE {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_settings (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 settings_system_time_cookies VARCHAR(10),
 settings_system_status_embedded_compression_gzip CHAR(1),
