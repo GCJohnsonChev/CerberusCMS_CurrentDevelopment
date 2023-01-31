@@ -56,7 +56,7 @@
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings ORDER BY id ASC LIMIT 1");
+$_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings ORDER BY id ASC LIMIT 1");
 
 while ($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS)) {
 
@@ -66,45 +66,47 @@ while ($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fet
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_DIRECTORY				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_safeHTML'];
-$_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_STATUS				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_safeHTML'];
-$_Application_Module_Administration_Settings_LIST_SETTING_COOKIE_TIME					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_time_cookies'];
-$_Application_Module_Administration_Settings_LIST_SETTING_GZIP_STATUS					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_embedded_compression_gzip'];
-$_Application_Module_Administration_Settings_LIST_SETTING_MASTER_SANITIZATION				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_security_module_master_sanitization'];
-$_Application_Module_Administration_Settings_LIST_SETTING_IMAGE_EXTENSION				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_image'];
-$_Application_Module_Administration_Settings_LIST_SETTING_LANGUAGE_DIRECTORY				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_language'];
-$_Application_Module_Administration_Settings_LIST_SETTING_OFFLINE_STATUS				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_offline_mode'];
-$_Application_Module_Administration_Settings_LIST_SETTING_SITE_TITLE					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_website_title'];
-$_Application_Module_Administration_Settings_LIST_SETTING_SMILEYS_DIRECTORY				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_smileys'];
-$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_audio'];
-$_Application_Module_Administration_Settings_LIST_SETTING_THEME_DIRECTORY				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_theme'];
-$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PRIVATE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private'];
-$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PUBLIC				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_public'];
-$_Application_Module_Administration_Settings_LIST_SETTING_TEXT_EDITOR_DIRECTORY				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_text_editor'];
-$_Application_Module_Administration_Settings_LIST_SETTING_TEXT_EDITOR_STATUS				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_text_editor'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_safeHTML'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_SAFEHTML				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_safeHTML'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_TIME_COOKIES					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_time_cookies'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_EMBEDDED_COMPRESSION_GZIP			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_embedded_compression_gzip'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_SECURITY_MODULE_MASTER_SANITIZATION	= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_security_module_master_sanitization'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_IMAGE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_image'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_LANGUAGE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_language'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_OFFLINE_MODE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_offline_mode'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_WEBSITE_TITLE					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_website_title'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SMILEYS			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_smileys'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_audio'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_THEME				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_theme'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PUBLIC				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_public'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_text_editor'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_TEXT_EDITOR			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_text_editor'];
 
 /*
  ============================================================================================================
  +
- + System Settings Update Form Post Variables
+ + System Settings Update Form :: Variables :: Post Variables
  +
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY				= $_POST['Module_Administration_Settings_SafeHTML_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS				= $_POST['Module_Administration_Settings_SafeHTML_Status'];
-$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME					= $_POST['Module_Administration_Settings_Session_Time'];
-$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS					= $_POST['Module_Administration_Settings_GZIP_Compression'];
-$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION				= $_POST['Module_Administration_Settings_Image_Extension'];
-$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY				= $_POST['Module_Administration_Settings_Language_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS					= $_POST['Module_Administration_Settings_Offline_Status'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE					= $_POST['Module_Administration_Settings_Site_Title'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY				= $_POST['Module_Administration_Settings_Smileys_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION				= $_POST['Module_Administration_Settings_Sound_Extension'];
-$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY				= $_POST['Module_Administration_Settings_Theme_Directory'];
-$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE					= $_POST['Module_Administration_Settings_Upload_Size_Private'];
-$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC					= $_POST['Module_Administration_Settings_Upload_Size_Public'];
-$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY				= $_POST['Module_Administration_Settings_Text_Editor_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY					= $_POST['Module_Administration_Settings_SafeHTML_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS					= $_POST['Module_Administration_Settings_SafeHTML_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SYSTEM_STATUS_SECURITY_MODULE_MASTER_SANITIZATION	= $_POST['Module_Administration_Settings_Master_Sanitization'];
+$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME						= $_POST['Module_Administration_Settings_Session_Time'];
+$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS						= $_POST['Module_Administration_Settings_GZIP_Compression'];
+$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION					= $_POST['Module_Administration_Settings_Image_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY					= $_POST['Module_Administration_Settings_Language_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS						= $_POST['Module_Administration_Settings_Offline_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE						= $_POST['Module_Administration_Settings_Site_Title'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY					= $_POST['Module_Administration_Settings_Smileys_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION					= $_POST['Module_Administration_Settings_Sound_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY					= $_POST['Module_Administration_Settings_Theme_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE						= $_POST['Module_Administration_Settings_Upload_Size_Private'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC						= $_POST['Module_Administration_Settings_Upload_Size_Public'];
+$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY					= $_POST['Module_Administration_Settings_Text_Editor_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_STATUS					= $_POST['Module_Administration_Settings_Text_Editor_Status'];
 
 /*
  ============================================================================================================
@@ -128,22 +130,28 @@ echo ("
 
 														System Plug-Ins<HR>
 															Default Safe-HyperText-Markup-Language Plugin Directory:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_SafeHTML_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_SafeHTML_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML\" MAXLENGTH=\"50\"><BR><BR>
 															Safe Hyper-Text-Markup-Language Plugin Status:<BR>
-															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SAFEHTML_STATUS ]<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_SAFEHTML ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_SafeHTML_Status\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																</SELECT><BR><BR>
 															Default Text-Editor Plugin Directory:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Text_Editor_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_TEXT_EDITOR_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Text_Editor_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+															Text-Editor Plugin Status:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_TEXT_EDITOR ]<BR>
+																<SELECT NAME=\"Module_Administration_Settings_Status_Text_Editor\">
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																</SELECT><BR><BR>
 															Default Smiley-Face(s) / Emoji Plugin Directory:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Smileys_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SMILEYS_DIRECTORY\" MAXLENGTH=\"50\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Smileys_Directory\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SMILEYS\" MAXLENGTH=\"50\"><BR><BR>
 
 														System Security Modules<HR>
 															Master Sanitization:<BR>
-															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_MASTER_SANITIZATION ]<BR>
-																<SELECT NAME=\"Module_Administration_Settings_SafeHTML_Status\">
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_SECURITY_MODULE_MASTER_SANITIZATION ]<BR>
+																<SELECT NAME=\"Module_Administration_Settings_Master_Sanitization\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																</SELECT><BR><BR>
@@ -151,11 +159,11 @@ echo ("
 														System Generated Cookies<HR>
 															Cookie / Session Time Expiration:<BR>
 															[ In Seconds ]<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Session_Time\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_COOKIE_TIME\" MAXLENGTH=\"10\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Session_Time\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_TIME_COOKIES\" MAXLENGTH=\"10\"><BR><BR>
 
 														Website File Compression<HR>
 															G.N.U. ZIP Compression Status:<BR>
-															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_GZIP_STATUS ]<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_EMBEDDED_COMPRESSION_GZIP ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_GZIP_Compression\">
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
@@ -163,9 +171,9 @@ echo ("
 
 														System File Extensions<HR>
 															System-Wide Image Extension:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Image_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_IMAGE_EXTENSION\" MAXLENGTH=\"3\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Image_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_IMAGE\" MAXLENGTH=\"3\"><BR><BR>
 															Theme Audio File Extension:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SOUND_EXTENSION\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO\"><BR><BR>
 
 														System Languages<HR>
 															Default Language Directory:<BR>
@@ -173,14 +181,14 @@ echo ("
 
 														Website Settings<HR>
 															OFFLINE Mode Status:<BR>
-															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_OFFLINE_STATUS ]<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_OFFLINE_MODE ]<BR>
 																<SELECT NAME=\"Module_Administration_Settings_Offline_Status\">
 																	<OPTION VALUE=\"0\">0: Off</OPTION>
 																	<OPTION VALUE=\"1\">1: On</OPTION>
 																</SELECT><BR><BR>
 
 															Website Browser Title:<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Site_Title\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SITE_TITLE\" MAXLENGTH=\"250\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Site_Title\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_WEBSITE_TITLE\" MAXLENGTH=\"250\"><BR><BR>
 
 															Default System Theme Directory:<BR>
 																<SELECT NAME=\"Module_Administration_Settings_Theme_Directory\">
@@ -223,10 +231,10 @@ echo ("
 														File Upload and Download System Settings<HR>
 															Private Upload Size Limit:<BR>
 															[ Private Uploader [ Registered Members ] In Bytes ]<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Private\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PRIVATE\" MAXLENGTH=\"15\"><BR><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Private\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE\" MAXLENGTH=\"15\"><BR><BR>
 															Upload Size Limit:<BR>
 															[ Public Uploader [ Registered Members ] In Bytes ]<BR>
-																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Public\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_UPLOAD_SIZE_PUBLIC\" MAXLENGTH=\"15\"><BR>
+																<INPUT TYPE=\"text\" NAME=\"Module_Administration_Settings_Upload_Size_Public\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PUBLIC\" MAXLENGTH=\"15\"><BR>
 															<INPUT TYPE=\"submit\" VALUE=\"Update System Settings\">
 														</FORM>
 ");
@@ -242,20 +250,23 @@ echo ("
 } else {
 
 $_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings SET 
-settings_safeHTML_directory='$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY',
-settings_safeHTML_status='$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS',
-settings_cookie_time='$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME',
-settings_gzip_status='$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS',
-settings_image_extension='$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION',
-settings_language_directory='$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY',
-settings_offline_status='$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS',
-settings_site_title='$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE',
-settings_smileys_directory='$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY',
-settings_sound_extension='$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION',
-settings_theme_directory='$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY',
-settings_upload_size_private='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE',
-settings_upload_size_public='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC',
-settings_text_editor_directory='$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY'
+settings_system_time_cookies='$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME',
+settings_system_status_embedded_compression_gzip='$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS',
+settings_system_status_offline_mode='$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS',
+settings_system_status_security_module_master_sanitization='$_Application_Module_Administration_Settings_POST_UPDATE_SYSTEM_STATUS_SECURITY_MODULE_MASTER_SANITIZATION',
+settings_system_file_extension_audio='$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION',
+settings_system_file_extension_image='$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION',
+settings_system_directory_language='$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY',
+settings_system_directory_theme='$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY',
+settings_system_website_title='$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE',
+settings_system_upload_size_private='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE',
+settings_system_upload_size_public='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC',
+settings_system_plugin_directory_smileys='$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY',
+settings_system_plugin_directory_safeHTML='$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY',
+settings_system_plugin_directory_text_editor='$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY',
+settings_system_plugin_status_safeHTML='$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS',
+settings_system_plugin_status_text_editor='$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_STATUS'
+PRIMARY KEY (id)
 WHERE id='1'");
 
 if ($_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS) {
