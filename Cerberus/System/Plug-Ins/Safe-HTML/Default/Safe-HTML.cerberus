@@ -1,0 +1,276 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->System->Plug-Ins->Safe-HTML->Default->Safe-HTML.cerberus
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + [ @ ] Cerberus :: Plug-In :: Safe Hyper-Text-Markup-Language ( Bulletin Board Codes )
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ +
+ + Bulletin Board To Safe Hyper-Text-Markup-Language Characters
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Bulletin Board ( BB ) Hyper-Text-Markup-Language Codes
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[0] 					= "'";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[1] 					= "<";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[2] 					= "[b]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[3] 					= "[/b]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[4] 					= "[u]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[5] 					= "[/u]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[6] 					= "[i]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[7] 					= "[/i]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[8] 					= "[center]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[9] 					= "[/center]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[10] 					= "[br]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[11] 					= "[link]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[12] 					= "[/link]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[13] 					= "[big]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE[14] 					= "[/big]";
+
+/*
+ ================================================================
+ + Bulletin Board ( BB ) Smiley Faces Codes
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[0]	 				= "[angry]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[1]	 				= "[birdy]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[2]	 				= "[confused]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[3]	 				= "[cry]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[4]	 				= "[kiss]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[5]	 				= "[drool]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[6]	 				= "[nervous]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[7]	 				= "[peace]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[8]	 				= "[sleeping]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[9]	 				= "[smile]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[10]	 				= "[turd]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[11]	 				= "[weird]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[12]	 				= "[devil]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS[13]	 				= "[scream]";
+
+/*
+ ================================================================
+ + Safe Hyper-Text-Markup-Language Tag Splitting
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[0]	 			= "&#39;";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[1]	 			= "&lt;";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[2]	 			= "<B>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[3]	 			= "</B>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[4]	 			= "<U>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[5]	 			= "</U>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[6]	 			= "<I>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[7]	 			= "</I>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[8]	 			= "<CENTER>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[9]	 			= "</CENTER>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[10]	 			= "<BR>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[11]	 			= "<A HREF=\"";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[12]	 			= "\" TITLE=\"Click here to open this Web Link in a new window -- Look to the bottom left of your browser to see where it goes\" Target=\"_NEW\">Web Link</A>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[13]	 			= "<BIG>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE[14]	 			= "</BIG>";
+
+/*
+ ================================================================
+ + Bulletin Board ( BB ) Smiley Faces Codes To H.T.M.L. Replacement
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[0]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/angry.gif\" TITLE=\":: Angry ::\" ALT=\":: Angry ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[1]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/birdy.gif\" TITLE=\":: Birdy ::\" ALT=\":: Birdy ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[2]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/confused.gif\" TITLE=\":: Confused ::\" ALT=\":: Confused ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[3]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/cry.gif\" TITLE=\":: Crying ::\" ALT=\":: Crying ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[4]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/kiss.gif\" TITLE=\":: Kiss ::\" ALT=\":: Kiss ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[5]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/drool.gif\" TITLE=\":: Drool ::\" ALT=\":: Drool ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[6]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/nervous.gif\" TITLE=\":: Nervous ::\" ALT=\":: Nervous ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[7]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/peace.gif\" TITLE=\":: Peace ::\" ALT=\":: Peace ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[8]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/sleeping.gif\" TITLE=\":: Sleeping ::\" ALT=\":: Sleeping ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[9]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/smile.gif\" TITLE=\":: Smiling ::\" ALT=\":: Smiling ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[10]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/turd.gif\" TITLE=\":: Turd ::\" ALT=\":: Turd ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[11]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/weird.gif\" TITLE=\":: Weird ::\" ALT=\":: Weird ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[12]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/devil.jpg\" TITLE=\":: Devil ::\" ALT=\":: Devil ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE[13]	 			= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/scream.jpg\" TITLE=\":: Screaming ::\" ALT=\":: Screaming ::\">";
+
+/*
+ ================================================================
+ +
+ + Hyper-Text-Markup-Language Characters To Bulletin Board ( BB ) Codes
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Hyper-Text-Markup-Language Tags Converted Back
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[0]					= "&#39;";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[1]					= "&lt;";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[2]					= "<B>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[3]					= "</B>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[4]					= "<U>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[5]					= "</U>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[6]					= "<I>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[7]					= "</I>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[8]					= "<CENTER>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[9]					= "</CENTER>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[10]					= "<BR>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[11]					= "<A HREF=\"";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[12]					= "\" TITLE=\"Click here to open this web link in a new window\" Target=\"_NEW\">Web Link</A>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[13]					= "<BIG>";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK[14]					= "</BIG>";
+
+/*
+ ================================================================
+ + Hyper-Text-Markup-Language Tags Converted Back, Replacements
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[0]				= "'";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[1]				= "<";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[2]				= "[b]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[3]				= "[/b]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[4]				= "[u]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[5]				= "[/u]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[6]				= "[i]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[7]				= "[/i]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[8]				= "[center]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[9]				= "[/center]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[10]				= "[br]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[11]				= "[link]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[12]				= "[/link]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[13]				= "[big]";
+$_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE[14]				= "[/big]";
+
+/*
+ ================================================================
+ + Hyper-Text-Markup-Language Tags: Smiley Codes Converted
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[0]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/angry.gif\" TITLE=\":: Angry ::\" ALT=\":: Angry ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[1]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/birdy.gif\" TITLE=\":: Birdy ::\" ALT=\":: Birdy ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[2]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/confused.gif\" TITLE=\":: Confused ::\" ALT=\":: Confused ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[3]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/cry.gif\" TITLE=\":: Crying ::\" ALT=\":: Crying ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[4]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/kiss.gif\" TITLE=\":: Kiss ::\" ALT=\":: Kiss ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[5]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/drool.gif\" TITLE=\":: Drool ::\" ALT=\":: Drool ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[6]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/nervous.gif\" TITLE=\":: Nervous ::\" ALT=\":: Nervous ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[7]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/peace.gif\" TITLE=\":: Peace ::\" ALT=\":: Peace ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[8]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/sleeping.gif\" TITLE=\":: Sleeping ::\" ALT=\":: Sleeping ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[9]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/smile.gif\" TITLE=\":: Smiling ::\" ALT=\":: Smiling ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[10]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/turd.gif\" TITLE=\":: Turd ::\" ALT=\":: Turd ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[11]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/weird.gif\" TITLE=\":: Weird ::\" ALT=\":: Weird ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[12]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/devil.jpg\" TITLE=\":: Devil ::\" ALT=\":: Devil ::\">";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK[13]				= "<IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/scream.jpg\" TITLE=\":: Screaming ::\" ALT=\":: Screaming ::\">";
+
+/*
+ ================================================================
+ + Hyper-Text-Markup-Language Tags: Smiley Codes Converted Back, Replacements
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[0]			= "[angry]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[1]			= "[birdy]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[2]			= "[confused]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[3]			= "[cry]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[4]			= "[kiss]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[5]			= "[drool]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[6]			= "[nervous]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[7]			= "[peace]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[8]			= "[sleeping]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[9]			= "[smile]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[10]			= "[turd]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[11]			= "[weird]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[12]			= "[devil]";
+$_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE[13]			= "[scream]";
+
+/*
+ ================================================================
+ +
+ + Safe Hyper-Text-Markup-Language Commands
+ +
+ ================================================================
+*/
+
+$_GLOBAL_PLUGIN_SAFEHTML_LIST_COMMANDS					= "<B>Bold Text</B>:<BR>[b], [/b]<BR><BR><B><U>Underlined Text</U></B>:<BR>[u], [/u]<BR><BR><B><I>Italic Text</I></B>:<BR>[i], [/i]<BR><BR><B><BIG>Big Text</BIG></B>:<BR>[big], [/big]<BR><BR><B>Centered Text</B>:<BR>[center], [/center]<BR><BR><B>Break Repeat</B>:<BR>[br]<BR><BR><B>Image</B>:<BR>[image], [/image]
+ 							 	   <BR><BR><B><A>Link</A></B>:<BR>[link], [/link]
+ 							 	   <BR><BR><B>Smiley Faces</B>:<BR>[angry], [birdy], [confused], [cry], [kiss], [drool], [nervous], [peace], [sleeping], [smile], [turd], [weird], [devil], [scream]
+ 							 	   <BR><BR>Usage of the previous tags in your post will insert H.T.M.L. code into the S.Q.L. database along with your post.<BR><BR><B>Example</B>:<BR>
+ 							 	   This [u]file[/u] is [b]awesome[/b]! [smile] [link]click here![/link]<BR><BR><B>Would output</B>:<BR>
+ 							 	   This <U>file</U> is <B>awesome</B>! <IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Smiley/$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY/smile.gif\" TITLE=\":: Smiling ::\" ALT=\":: Smiling ::\"> <A>click here!</A><BR><BR>
+ 							           You can use any of the previous tags in your post.";
+
+/*
+
+This is an example of how to use Safe-HTML Code and Smiley Code when writing Modules
+
+//Safe-HTML Code Replace Frontwards
+
+$_VAR		 						= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_VAR);
+
+//Smiley Code Replace Frontwards
+
+$_VAR								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_VAR);
+
+//Safe-HTML Code Replace Backwards
+
+$_VAR 							 	= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK, $_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE, $_VAR);
+
+//Smiley Code Replace Backwards
+
+$_VAR								= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_CODE_BACK, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_CODE_BACK_REPLACE, $_VAR);
+
+*/
+?>
