@@ -887,9 +887,13 @@ if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Kernel_Check_Member_A
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Set_Member_Status_Account_Active					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_ip_address_last_login='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Set_Member_Status_Account_Last_Login					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_last_login='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
-if ($_DB_Query_Kernel_Set_Member_Status_Account_Active) {
+if ($_DB_Query_Kernel_Set_Member_Status_Account_Last_Login) {
+/**
+ * Do Nothing
+**/
+} else {
 /**
  * Do Nothing
 **/
@@ -945,6 +949,24 @@ if ($_GET["InternalApplication"] == "Logout") {
 
 /*
  ============================================================================================================
+ + Check For Member Account Credential Data In Browser Cookies
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+
+/*
+ ============================================================================================================
+ + Set Member Account Status To Inactive
+ ============================================================================================================
+*/
+
+$_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
+
+/*
+ ============================================================================================================
  + Reduce Time On All Stored Browser Cookies
  ============================================================================================================
 */
@@ -954,19 +976,19 @@ if ($_GET["InternalApplication"] == "Logout") {
 	setcookie("cerberus_member_password","", time()-42000);
 	setcookie("cerberus_member_language","", time()-42000);
 
-/*
- ============================================================================================================
- + Set Member Account Status To Inactive
- ============================================================================================================
-*/
-
-$_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
-
-if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
+} else {
 /**
  * Do Nothing
 **/
-} // [ + ] IF: Internal Application: Logout Is Activated: Set Member Account Active To Inactive
+} // [ + ] IF: Internal Application: Logout Is Activated: Set Member Account Active Status To Inactive
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Set Member Account Status To: Inactive
+ ============================================================================================================
+*/
+
+$DB->free($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive);
 
 /*
  ============================================================================================================
@@ -986,6 +1008,8 @@ if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
 	
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=News");
 
+} // [ + ] IF: Member Account Credentials Exist And Are Valid
+
 } // [ + ] IF: Internal Application: Logout Is Activated
 
 /*
@@ -998,7 +1022,7 @@ if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
 
 if ($_GET["InternalApplication"] == "Language") {
 
-$_KERNEL_POST_LANGUAGE	 								= $_POST['post_language'];
+$_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 	
 	setcookie("cerberus_member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&Message=Language");
@@ -1453,8 +1477,6 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES > $_GLOBAL_LOCAL_SERVER_TIME_MINUTES) {
-
 /*
  ============================================================================================================
  + IF: Member Is Logged-In: Update Member Active Status
@@ -1472,8 +1494,6 @@ if ($_DB_Query_Kernel_Set_Member_Status_Account_Active) {
  * Do Nothing
 **/
 } // [ + ] IF: Update Member Account Active Status Database Query Variable Is Executed
-
-} // [ + ] IF: Member Account Last Active In Minutes Is Greater Than Current Server Time In Minutes
 
 } // [ + ] IF: Member Is Logged-In
 
@@ -1816,7 +1836,7 @@ while ($_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array = $DB->fetch_a
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0					= "Chaos";
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0				= "Chaos";
 
 /*
  ============================================================================================================
@@ -1824,11 +1844,11 @@ $_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0					= "Chaos";
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_0						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_0'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_1						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_1'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_2						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_2'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_3						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_3'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_4'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_0					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_0'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_1					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_1'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_2					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_2'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_3					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_3'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_4'];
 
 /*
  ============================================================================================================
@@ -1836,11 +1856,11 @@ $_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4						= $_DB_Query_Kernel_Member_Rank_Se
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_5						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_0'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_6						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_1'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_7						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_2'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_8						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_3'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_9						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_4'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_5					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_0'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_6					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_1'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_7					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_2'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_8					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_3'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_9					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_4'];
 
 /*
  ============================================================================================================
@@ -2206,7 +2226,7 @@ if ($_GLOBAL_SYSTEM_GZIP_STATUS >= 1) {
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= microtime();
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START				= microtime();
 
 /*
  ============================================================================================================
@@ -2214,7 +2234,7 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= microtime();
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY				= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY			= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START);
 
 /*
  ============================================================================================================
@@ -2222,7 +2242,7 @@ $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY				= explode(" ", $_K
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[0];
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START				= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[0];
 
 /*
  ============================================================================================================
