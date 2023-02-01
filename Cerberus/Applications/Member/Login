@@ -90,7 +90,13 @@ echo ("
 												<HR>
 											</FORM>
 
-											<CENTER>[ <A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Insecure Over Clear Text Insecure Connection\">Insecure Clear-Text Login</A>&nbsp;-&nbsp;<A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection\">SSL Secure Login</A>&nbsp;-&nbsp;<A HREF=\"$_ACCESS_URL_SECURE/Cerberus.php?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection\">TLS Secure Login</A>&nbsp;-&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Register\" TITLE=\"Register With $_GLOBAL_SYSTEM_SITE_TITLE\">Register</A>&nbsp;-&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\"Reset Your Password\">Reset Password</A> ]</CENTER>
+											<CENTER>[ 
+<A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Insecure Over Clear Text Insecure Connection\">Insecure Clear-Text Login</A>&nbsp;-&nbsp;
+<A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection\">SSL Secure Login</A>&nbsp;-&nbsp;
+<A HREF=\"$_ACCESS_URL_SECURE/Cerberus.php?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection\">TLS Secure Login</A>&nbsp;-&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Register\" TITLE=\"Register With $_GLOBAL_SYSTEM_SITE_TITLE\">Register</A>&nbsp;-&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\"Reset Your Password Or Other Credentials\">Reset Password</A>&nbsp;-&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Account_Recovery\" TITLE=\"Initiate The Member Account Recovery Options\">Account Recovery</A> ]</CENTER>
 ");
 
 /*
