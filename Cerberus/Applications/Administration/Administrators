@@ -206,6 +206,7 @@ $_Application_Module_Administration_LIST_MEMBER_LAST_NAME				= $_Application_Mod
 $_Application_Module_Administration_LIST_MEMBER_USERNAME				= $_Application_Module_Administration_DB_Query_Fetch_Member_ID_Array['member_username'];
 $_Application_Module_Administration_LIST_MEMBER_NUMBER_OF_POSTS				= $_Application_Module_Administration_DB_Query_Fetch_Member_ID_Array['member_number_of_posts'];
 $_Application_Module_Administration_LIST_MEMBER_RANK					= $_Application_Module_Administration_DB_Query_Fetch_Member_ID_Array['member_level_rank'];
+$_Application_Module_Administration_LIST_MEMBER_REGISTRATION_DETAILS			= $_Application_Module_Administration_DB_Query_Fetch_Member_ID_Array['member_registration_details'];
 
 /*
  ============================================================================================================
@@ -244,6 +245,8 @@ echo ("
 												Member Account Rank:<BR>
 													<INPUT TYPE=\"TEXT\" NAME=\"Module_Administrators_Form_Member_Rank\" VALUE=\"$_Application_Module_Administration_LIST_MEMBER_RANK\"><BR>
 													<INPUT TYPE=\"HIDDEN\" NAME=\"Module_Administrators_Form_Member_ID_2\" VALUE=\"$_Application_Module_Administration_LIST_MEMBER_ID\">
+												Member Account Registration Details:<BR>
+													<TEXTAREA ROWS=\"15\" COLS=\"75\">$_Application_Module_Administration_LIST_MEMBER_REGISTRATION_DETAILS</TEXTAREA><BR>
 												<INPUT TYPE=\"SUBMIT\" VALUE=\"Update Member Account\">
 										</FORM><BR>
 													
