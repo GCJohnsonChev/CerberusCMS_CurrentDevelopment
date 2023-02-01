@@ -97,7 +97,7 @@ echo ("
 														* Application File ID: $_Application_Module_Member_Application_List_LIST_APPLICATION_ID<BR>
 														* Application File Permission: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION<BR>
 														* Application File Status: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_STATUS<BR>
-														* Application File Name: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open The Registered Member-Level Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\">$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME</A><BR>
+														* Application File Name: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open & Display The Registered Member-Level Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\">$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME</A><BR>
 														* Application File HASH, SHA-256: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256<BR>
 														<A HREF=\"./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open & Display The Source Code :: For The Registered Member-Level Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\">Source Code</A><BR><BR>
 ");
@@ -128,7 +128,7 @@ echo ("
 														* Application Panel File Permission: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION<BR>
 														* Application Panel File Status: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_STATUS<BR>
 														* Application Panel File HASH, SHA-256: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_HASH_SHA256
-														<A HREF=\"./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel\" TITLE=\"Open & Display The Source Code :: For The Application Panel :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME\">Source Code</A><BR><BR>
+														<A HREF=\"./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel\" TITLE=\":: Open & Display The Source Code :: For The Application Panel :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME\">Source Code</A><BR><BR>
 ");
 
 } // [ + ] WHILE: Retrieving Application Panel Entries From Database Server
