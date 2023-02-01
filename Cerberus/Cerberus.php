@@ -2464,13 +2464,13 @@ closedir($_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY);
  ============================================================================================================
 */
 
-$_DB_Query_Main_Select_Applications 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY id ASC");
+$_DB_Query_Kernel_Select_Applications 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY id ASC");
 
-while ($_DB_Query_Main_Select_Applications_Fetch_Array = $DB->fetch_array($_DB_Query_Main_Select_Applications)) {
+while ($_DB_Query_Kernel_Select_Applications_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Select_Applications)) {
 
-$_MAIN_APPLICATION_FILE_NAME							= $_DB_Query_Main_Select_Applications_Fetch_Array['application_file_name'];
-$_MAIN_APPLICATION_FILE_PERMISSION						= $_DB_Query_Main_Select_Applications_Fetch_Array['application_file_permission'];
-$_MAIN_APPLICATION_FILE_STATUS							= $_DB_Query_Main_Select_Applications_Fetch_Array['application_file_status'];
+$_KERNEL_APPLICATION_FILE_NAME							= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_name'];
+$_KERNEL_APPLICATION_FILE_PERMISSION						= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_permission'];
+$_KERNEL_APPLICATION_FILE_STATUS						= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_status'];
 
 /*
  ============================================================================================================
@@ -2478,15 +2478,15 @@ $_MAIN_APPLICATION_FILE_STATUS							= $_DB_Query_Main_Select_Applications_Fetch
  ============================================================================================================
 */
 
-if ($_GET[$_INTERNAL_APPLICATION_MODULE_MEMBER] == "$_MAIN_APPLICATION_FILE_NAME") {
+if ($_GET[$_INTERNAL_APPLICATION_MODULE_MEMBER] == "$_KERNEL_APPLICATION_FILE_NAME") {
 
-if (file_exists("./Applications/Member/$_MAIN_APPLICATION_FILE_NAME")) {
+if (file_exists("./Applications/Member/$_KERNEL_APPLICATION_FILE_NAME")) {
 
-if ($_MAIN_APPLICATION_FILE_STATUS >= "1") {
+if ($_KERNEL_APPLICATION_FILE_STATUS >= "1") {
 
-if ($_MAIN_APPLICATION_FILE_PERMISSION <= "0") {
+if ($_KERNEL_APPLICATION_FILE_PERMISSION <= "0") {
 
-	include_once "./Applications/Member/$_MAIN_APPLICATION_FILE_NAME";
+	include_once "./Applications/Member/$_KERNEL_APPLICATION_FILE_NAME";
 
 } // [ + ] IF: Application Module Permission Is Open
 
@@ -2496,11 +2496,11 @@ if ($_MAIN_APPLICATION_FILE_PERMISSION <= "0") {
  ============================================================================================================
 */
 
-if ($_MAIN_APPLICATION_FILE_PERMISSION == "1") {
+if ($_KERNEL_APPLICATION_FILE_PERMISSION == "1") {
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-	include_once "./Applications/Member/$_MAIN_APPLICATION_FILE_NAME";
+	include_once "./Applications/Member/$_KERNEL_APPLICATION_FILE_NAME";
 
 } else {
 
@@ -2516,11 +2516,11 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-if ($_MAIN_APPLICATION_FILE_PERMISSION == "2") {
+if ($_KERNEL_APPLICATION_FILE_PERMISSION == "2") {
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null && $_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
 
-	include_once "./Applications/Member/$_MAIN_APPLICATION_FILE_NAME";
+	include_once "./Applications/Member/$_KERNEL_APPLICATION_FILE_NAME";
 
 } else {
 
@@ -2552,7 +2552,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Select_Applications);
+$DB->free($_DB_Query_Kernel_Select_Applications);
 
 /*
  ============================================================================================================
@@ -2572,14 +2572,14 @@ $DB->free($_DB_Query_Main_Select_Applications);
  ============================================================================================================
 */
 
-$_DB_Query_Main_Select_Custom_Applications 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom ORDER BY id ASC");
+$_DB_Query_Kernel_Select_Custom_Applications 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom ORDER BY id ASC");
 
-while ($_DB_Query_Main_Select_Custom_Applications_Fetch_Array = $DB->fetch_array($_DB_Query_Main_Select_Custom_Applications)) {
+while ($_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Select_Custom_Applications)) {
 
-$_CUSTOM_APPLICATION_ID								= $_DB_Query_Main_Select_Custom_Applications_Fetch_Array['id'];
-$_CUSTOM_APPLICATION_DATA							= $_DB_Query_Main_Select_Custom_Applications_Fetch_Array['custom_application_data'];
-$_CUSTOM_APPLICATION_NAME							= $_DB_Query_Main_Select_Custom_Applications_Fetch_Array['custom_application_name'];
-$_CUSTOM_APPLICATION_TIME							= $_DB_Query_Main_Select_Custom_Applications_Fetch_Array['custom_application_time'];
+$_KERNEL_APPLICATION_CUSTOM_ID							= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['id'];
+$_KERNEL_APPLICATION_CUSTOM_DATA						= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_data'];
+$_KERNEL_APPLICATION_CUSTOM_NAME						= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_name'];
+$_KERNEL_APPLICATION_CUSTOM_TIME						= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_time'];
 
 /*
  ============================================================================================================
@@ -2589,9 +2589,9 @@ $_CUSTOM_APPLICATION_TIME							= $_DB_Query_Main_Select_Custom_Applications_Fet
  ============================================================================================================
 */
 
-if ($_GET[$_INTERNAL_APPLICATION_MODULE_CUSTOM] == "$_CUSTOM_APPLICATION_ID") {
+if ($_GET[$_INTERNAL_APPLICATION_MODULE_CUSTOM] == "$_KERNEL_APPLICATION_CUSTOM_ID") {
 
-		echo ("<CENTER><BIG><B>$_CUSTOM_APPLICATION_NAME</B></BIG></CENTER><HR>$_CUSTOM_APPLICATION_DATA<HR>Created: $_CUSTOM_APPLICATION_TIME");
+		echo ("<CENTER><BIG><B>$_KERNEL_APPLICATION_CUSTOM_NAME</B></BIG></CENTER><HR>$_KERNEL_APPLICATION_CUSTOM_DATA<HR>Created: $_KERNEL_APPLICATION_CUSTOM_TIME");
 
 } // [ + ] IF: Dipslay Custom Application
 
@@ -2603,7 +2603,7 @@ if ($_GET[$_INTERNAL_APPLICATION_MODULE_CUSTOM] == "$_CUSTOM_APPLICATION_ID") {
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Select_Custom_Applications);
+$DB->free($_DB_Query_Kernel_Select_Custom_Applications);
 
 /*
  ============================================================================================================
@@ -2635,12 +2635,12 @@ echo ($_GLOBAL_THEME_LAYOUT_3);
  ============================================================================================================
 */
 
-$_DB_Query_Main_Panels_Aligned_Right 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='1' AND panel_file_status='1' ORDER BY panel_row ASC");
+$_DB_Query_Kernel_Application_Panels_Aligned_Right 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='1' AND panel_file_status='1' ORDER BY panel_row ASC");
 
-while ($_DB_Query_Main_Panels_Aligned_Right_Fetch_Array = $DB->fetch_array($_DB_Query_Main_Panels_Aligned_Right)) {
+while ($_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Application_Panels_Aligned_Right)) {
 
-$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME						= $_DB_Query_Main_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
-$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE						= $_DB_Query_Main_Panels_Aligned_Right_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME				= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE					= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_title'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 
@@ -2658,7 +2658,7 @@ echo ($_THIS_THEME_APPLICATION_PANEL_2);
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Panels_Aligned_Right);
+$DB->free($_DB_Query_Kernel_Application_Panels_Aligned_Right);
 
 /*
  ============================================================================================================
@@ -2712,7 +2712,7 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= microtime();
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY				= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY			= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
 
 /*
  ============================================================================================================
@@ -2720,7 +2720,7 @@ $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY				= explode(" ", $_KER
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY				= implode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY			= implode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
 
 /*
  ============================================================================================================
@@ -2736,8 +2736,8 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= $_KERNEL_WEBPAGE_GENERATION
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME						= $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END - $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START; 
-$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME						= round($_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME,5);
+$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME					= $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END - $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START; 
+$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME					= round($_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME,5);
 
 /*
  ============================================================================================================
