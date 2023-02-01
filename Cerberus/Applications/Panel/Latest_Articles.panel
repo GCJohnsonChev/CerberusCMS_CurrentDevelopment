@@ -65,7 +65,7 @@ $_Application_Module_Block_Articles_LIST_ARTICLE_AUTHOR				= $_Application_Modul
 $_Application_Module_Block_Articles_LIST_ARTICLE_TIME				= $_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_time'];
 $_Application_Module_Block_Articles_LIST_ARTICLE_TITLE				= $_Application_Module_Block_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_title'];
 
-										echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Block_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\"View Article :: $_Application_Module_Block_Articles_LIST_ARTICLE_TITLE\">$_Application_Module_Block_Articles_LIST_ARTICLE_TITLE</A><BR>");
+										echo ("<BIG><B>&middot;</B></BIG>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Block_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: Open & Display The Article Entry :: $_Application_Module_Block_Articles_LIST_ARTICLE_TITLE ::\">$_Application_Module_Block_Articles_LIST_ARTICLE_TITLE</A><BR>");
 
 } // [ + ] WHILE: Retrieving Article Entries From Database Server
 
