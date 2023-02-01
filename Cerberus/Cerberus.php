@@ -242,8 +242,8 @@ $DB										= new DB();
  ============================================================================================================
 */
 
-$_CERBERUS_DATABASE_SERVER_CONNECT 						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
-$_CERBERUS_DATABASE_SERVER_DATABASE_NAME_SELECT 				= mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME);
+$_KERNEL_DATABASE_SERVER_CONNECT 						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
+$_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 					= mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME);
 
 /*
  ============================================================================================================
@@ -251,7 +251,7 @@ $_CERBERUS_DATABASE_SERVER_DATABASE_NAME_SELECT 				= mysql_select_db($_ACCESS_D
  ============================================================================================================
 */
 
-if ($_CERBERUS_DATABASE_SERVER_CONNECT) {
+if ($_KERNEL_DATABASE_SERVER_CONNECT) {
 
 /*
  ============================================================================================================
@@ -259,7 +259,7 @@ if ($_CERBERUS_DATABASE_SERVER_CONNECT) {
  ============================================================================================================
 */
 
-if ($_CERBERUS_DATABASE_SERVER_DATABASE_NAME_SELECT) {
+if ($_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT) {
 
 /*
  ============================================================================================================
@@ -274,7 +274,7 @@ if ($_CERBERUS_DATABASE_SERVER_DATABASE_NAME_SELECT) {
 /*
  ============================================================================================================
  +
- + Global System Variables :: Global S.Q.L. Settings :: System-Wide
+ + Global System :: Variables :: Global System Settings :: System-Wide
  +
  ============================================================================================================
 */
@@ -285,32 +285,32 @@ if ($_CERBERUS_DATABASE_SERVER_DATABASE_NAME_SELECT) {
  ============================================================================================================
 */
 
-$_DB_Query_Select_Main_Settings							= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings WHERE id='1'");
-$_DB_Query_Main_Settings_Fetch_Array						= $DB->fetch_array($_DB_Query_Select_Main_Settings);
+$_DB_Query_Kernel_Select_Main_Settings						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings WHERE id='1'");
+$_DB_Query_Kernel_Settings_Fetch_Array						= $DB->fetch_array($_DB_Query_Kernel_Select_Main_Settings);
 
 /*
  ============================================================================================================
- + Global System S.Q.L. Settings: Plug-Ins
+ + Global System Settings: Plug-Ins
  ============================================================================================================
 */
 
 /*
- =========================================================
+ ============================================================================================================
  + Global System S.Q.L. Settings: Plug-Ins :: Safe-HTML
- =========================================================
+ ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SAFEHTML_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_directory_safeHTML'];
-$_GLOBAL_SYSTEM_SAFEHTML_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_status_safeHTML'];
+$_GLOBAL_SYSTEM_SAFEHTML_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_safeHTML'];
+$_GLOBAL_SYSTEM_SAFEHTML_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_safeHTML'];
 
 /*
- =========================================================
+ ============================================================================================================
  + Global System S.Q.L. Settings: Plug-Ins :: Text-Editor
- =========================================================
+ ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_directory_text_editor'];
-$_GLOBAL_SYSTEM_TEXT_EDITOR_STATUS						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_status_text_editor'];
+$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_text_editor'];
+$_GLOBAL_SYSTEM_TEXT_EDITOR_STATUS						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_text_editor'];
 
 /*
  ============================================================================================================
@@ -318,7 +318,7 @@ $_GLOBAL_SYSTEM_TEXT_EDITOR_STATUS						= $_DB_Query_Main_Settings_Fetch_Array['
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_time_cookies'];
+$_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_time_cookies'];
 
 /*
  ============================================================================================================
@@ -326,7 +326,7 @@ $_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Main_Settings_Fetch_Array['settin
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_status_embedded_compression_gzip'];
+$_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_embedded_compression_gzip'];
 
 /*
  ============================================================================================================
@@ -334,7 +334,7 @@ $_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settin
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_file_extension_image'];
+$_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_file_extension_image'];
 
 /*
  ============================================================================================================
@@ -342,7 +342,7 @@ $_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['se
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_directory_language'];
+$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_directory_language'];
 
 /*
  ============================================================================================================
@@ -350,7 +350,7 @@ $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_plugin_directory_smileys'];
+$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_smileys'];
 
 /*
  ============================================================================================================
@@ -358,7 +358,7 @@ $_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Main_Settings_Fetch_Array['s
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_status_offline_mode'];
+$_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_offline_mode'];
 
 /*
  ============================================================================================================
@@ -366,9 +366,9 @@ $_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Main_Settings_Fetch_Array['set
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SITE_TITLE							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_website_title'];
-$_GLOBAL_SYSTEM_SOUND_EXTENSION							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_file_extension_audio'];
-$_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Main_Settings_Fetch_Array['settings_system_directory_theme'];
+$_GLOBAL_SYSTEM_SITE_TITLE							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_website_title'];
+$_GLOBAL_SYSTEM_SOUND_EXTENSION							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_file_extension_audio'];
+$_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_directory_theme'];
 
 /*
  ============================================================================================================
@@ -376,20 +376,28 @@ $_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Main_Settings_Fetch_Array['se
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_upload_size_private'];
-$_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC						= $_DB_Query_Main_Settings_Fetch_Array['settings_system_upload_size_public'];
+$_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_upload_size_private'];
+$_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_upload_size_public'];
 
 /*
  ============================================================================================================
- + Global System S.Q.L. Settings: Security Module :: Master Sanitization
+ +
+ + Global System :: Variables :: Global System Security :: System-Wide
+ +
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_PLUGIN_STATUS_MASTER_SANITIZATION				= $_DB_Query_Main_Settings_Fetch_Array['settings_system_security_module_status_master_sanitization'];
+/*
+ ============================================================================================================
+ + Global System Settings: Security Module :: Master Sanitization
+ ============================================================================================================
+*/
+
+$_GLOBAL_SYSTEM_PLUGIN_STATUS_MASTER_SANITIZATION				= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_security_module_status_master_sanitization'];
 
 /*
  ============================================================================================================
- + Global Security Variables: Random Number Generators :: Pure
+ + Global Security :: Variables :: Random Number Generators :: Pure
  ============================================================================================================
 */
 
@@ -397,7 +405,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS				= rand(0,9999999999);
 
 /*
  ============================================================================================================
- + Global Security Variables: Random Number Generators :: Hashed
+ + Global Security :: Variables :: Random Number Generators :: Hashed
  ============================================================================================================
 */
 
@@ -409,7 +417,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_OF_SHA1_OF_SHA256	= ha
 
 /*
  ============================================================================================================
- + Global Security Variables: Random Number Generators :: Mersenne Twister
+ + Global Security :: Variables :: Random Number Generators :: Mersenne Twister
  ============================================================================================================
 */
 
@@ -428,7 +436,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_MERSENNE_TWISTER		= mt_rand
 /*
  ============================================================================================================
  +
- + Global Cookie Variables :: Global Member Cookie Variables
+ + Global Cookie :: Variables :: Global Member Cookie Variables
  +
  ============================================================================================================
 */
@@ -468,7 +476,7 @@ $_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_COOKIE['cerberus_member_language'];
 /*
  ============================================================================================================
  +
- + Global Registered Member Settings Variables
+ + Global Registered Member Settings :: Variables
  +
  ============================================================================================================
 */
@@ -487,153 +495,153 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Select_Member_Credentials 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
-$_DB_Query_Member_Credentials_Fetch_Array 					= $DB->fetch_array($_DB_Query_Select_Member_Credentials);
+$_DB_Query_Kernel_Select_Member_Credentials 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array 			= $DB->fetch_array($_DB_Query_Kernel_Select_Member_Credentials);
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Priviledge Level
+ + Global Member Settings :: Variables :: Priviledge Level
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_ACCESS_LEVEL							= $_DB_Query_Member_Credentials_Fetch_Array['member_access_level'];
+$_GLOBAL_MEMBER_ACCESS_LEVEL							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_access_level'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Status :: Account Activation
+ + Global Member Settings :: Variables :: Status :: Account Activation
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVATION					= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_activation'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVATION					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_activation'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Status :: Active
+ + Global Member Settings :: Variables :: Status :: Active
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE						= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_active'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_active'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Status :: Last Active Timestamp
+ + Global Member Settings :: Variables :: Status :: Last Active Timestamp
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE					= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_last_active'];
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES				= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_last_active_minutes'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES				= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_minutes'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Avatar Image
+ + Global Member Settings :: Variables :: Avatar Image
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IMAGE_AVATAR							= $_DB_Query_Member_Credentials_Fetch_Array['member_image_avatar'];
+$_GLOBAL_MEMBER_IMAGE_AVATAR							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_image_avatar'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Banned Status
+ + Global Member Settings :: Variables :: Banned Status
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_BANNED						= $_DB_Query_Member_Credentials_Fetch_Array['member_status_account_banned'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_BANNED						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_banned'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Electronic Mail Address
+ + Global Member Settings :: Variables :: Electronic Mail Address
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_ELECTRONIC_MAIL_ADDRESS						= $_DB_Query_Member_Credentials_Fetch_Array['member_electronic_mail_address'];
+$_GLOBAL_MEMBER_ELECTRONIC_MAIL_ADDRESS						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_electronic_mail_address'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Experience Amount
+ + Global Member Settings :: Variables :: Experience Amount
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_EXPERIENCE_AMOUNT						= $_DB_Query_Member_Credentials_Fetch_Array['member_experience_amount'];
+$_GLOBAL_MEMBER_EXPERIENCE_AMOUNT						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_experience_amount'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Account Gender
+ + Global Member Settings :: Variables :: Account Gender
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_GENDER								= $_DB_Query_Member_Credentials_Fetch_Array['member_gender'];
+$_GLOBAL_MEMBER_GENDER								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_gender'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Language
+ + Global Member Settings :: Variables :: Language
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LANGUAGE							= $_DB_Query_Member_Credentials_Fetch_Array['member_language'];
+$_GLOBAL_MEMBER_LANGUAGE							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_language'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Last Login :: Location
+ + Global Member Settings :: Variables :: Last Login :: Location
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LAST_REFERRER							= $_DB_Query_Member_Credentials_Fetch_Array['member_last_referrer'];
+$_GLOBAL_MEMBER_LAST_REFERRER							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_last_referrer'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Last Login :: Number of Posts
+ + Global Member Settings :: Variables :: Last Login :: Number of Posts
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_NUMBER_OF_POSTS							= $_DB_Query_Member_Credentials_Fetch_Array['member_number_of_posts'];
+$_GLOBAL_MEMBER_NUMBER_OF_POSTS							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_number_of_posts'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Member Account Personal Profile Image
+ + Global Member Settings :: Variables :: Member Account Personal Profile Image
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IMAGE_PROFILE							= $_DB_Query_Member_Credentials_Fetch_Array['member_image_picture'];
+$_GLOBAL_MEMBER_IMAGE_PROFILE							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_image_picture'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Member Account Rank Level
+ + Global Member Settings :: Variables :: Member Account Rank Level
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK							= $_DB_Query_Member_Credentials_Fetch_Array['member_level_rank'];
+$_GLOBAL_MEMBER_LEVEL_RANK							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_level_rank'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Member Account Theme Directory
+ + Global Member Settings :: Variables :: Member Account Theme Directory
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_THEME_DIRECTORY							= $_DB_Query_Member_Credentials_Fetch_Array['member_settings_theme_directory'];
+$_GLOBAL_MEMBER_THEME_DIRECTORY							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_settings_theme_directory'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Last Known I.P. Address
+ + Global Member Settings :: Variables :: Last Known I.P. Address
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_LAST_KNOWN						= $_DB_Query_Member_Credentials_Fetch_Array['member_ip_address_last_known'];
+$_GLOBAL_MEMBER_IP_ADDRESS_LAST_KNOWN						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_last_known'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Authorized I.P. Address
+ + Global Member Settings :: Variables :: Authorized I.P. Address
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED						= $_DB_Query_Member_Credentials_Fetch_Array['member_ip_address_authorized'];
+$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_authorized'];
 
 /*
  ============================================================================================================
- + Global Member Settings Variables :: Member Account Internet Protocol Address Log
+ + Global Member Settings :: Variables :: Member Account Internet Protocol Address Log
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_LOG							= $_DB_Query_Member_Credentials_Fetch_Array['member_ip_address_log'];
+$_GLOBAL_MEMBER_IP_ADDRESS_LOG							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_log'];
 
 /*
  ============================================================================================================
@@ -841,8 +849,8 @@ $_POST_LOGIN_USERNAME_CLEAR							= stripslashes($_POST_LOGIN_USERNAME_CLEAR);
  ============================================================================================================
 */
 
-//$DB_Query_Check_Login 							= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR' AND member_electronic_mail_address='$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR'");
-$DB_Query_Check_Login 								= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR'");
+//$DB_Query_Kernel_Check_Member_Account_Credentials 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR' AND member_electronic_mail_address='$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR'");
+$DB_Query_Kernel_Check_Member_Account_Credentials 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR'");
 
 /*
  ============================================================================================================
@@ -850,10 +858,10 @@ $DB_Query_Check_Login 								= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SER
  ============================================================================================================
 */
 
-$DB_Query_Check_Login_Fetch_Array						= $DB->fetch_array($DB_Query_Check_Login);
-$DB_Query_Check_Login_Member_Username						= $DB_Query_Check_Login_Fetch_Array['member_username'];
-$DB_Query_Check_Login_Member_Electronic_Mail_Address				= $DB_Query_Check_Login_Fetch_Array['member_electronic_mail_address'];
-$DB_Query_Check_Login_Member_Password						= $DB_Query_Check_Login_Fetch_Array['member_password'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array				= $DB->fetch_array($DB_Query_Kernel_Check_Member_Account_Credentials);
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Username			= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_username'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Electronic_Mail_Address	= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_electronic_mail_address'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password			= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_password'];
 
 /*
  ============================================================================================================
@@ -861,7 +869,7 @@ $DB_Query_Check_Login_Member_Password						= $DB_Query_Check_Login_Fetch_Array['
  ============================================================================================================
 */
 
-if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Check_Login_Member_Password)) {
+if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password)) {
 
 /*
  ============================================================================================================
@@ -871,7 +879,7 @@ if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Check_Login_Member_Pa
 
 	setcookie("cerberus_member_electronic_mail_address","$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 	setcookie("cerberus_member_username","$_POST_LOGIN_USERNAME_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
-	setcookie("cerberus_member_password","$DB_Query_Check_Login_Member_Password", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("cerberus_member_password","$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 
 /*
  ============================================================================================================
@@ -879,9 +887,9 @@ if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Check_Login_Member_Pa
  ============================================================================================================
 */
 
-$_DB_Query_Set_Member_Status_Account_Active					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Set_Member_Status_Account_Active					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_ip_address_last_login='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
-if ($_DB_Query_Set_Member_Status_Account_Active) {
+if ($_DB_Query_Kernel_Set_Member_Status_Account_Active) {
 /**
  * Do Nothing
 **/
@@ -909,19 +917,19 @@ if ($_DB_Query_Set_Member_Status_Account_Active) {
 
 /*
  ============================================================================================================
- + Kill Database Server Query: Check Login Data
+ + Kill Database Server Query: Check Member Account Credentials Data
  ============================================================================================================
 */
 
-$DB->free($DB_Query_Check_Login);
+$DB->free($DB_Query_Kernel_Check_Member_Account_Credentials);
 
 /*
  ============================================================================================================
- + Kill Database Server Query: Check Login Data Array
+ + Kill Database Server Query: Check Member Account Credentials Data :: Array
  ============================================================================================================
 */
 
-$DB->free($DB_Query_Check_Login_Array);
+$DB->free($DB_Query_Kernel_Check_Member_Account_Credentials_Array);
 
 } // [ + ] IF: Internal Application: Login Is Activated
 
@@ -952,9 +960,9 @@ if ($_GET["InternalApplication"] == "Logout") {
  ============================================================================================================
 */
 
-$_DB_Query_Set_Member_Status_Account_Inactive					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
-if ($_DB_Query_Set_Member_Status_Account_Inactive) {
+if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
 /**
  * Do Nothing
 **/
@@ -990,9 +998,9 @@ if ($_DB_Query_Set_Member_Status_Account_Inactive) {
 
 if ($_GET["InternalApplication"] == "Language") {
 
-$_POST_LANGUAGE	 								= $_POST['post_language'];
+$_KERNEL_POST_LANGUAGE	 								= $_POST['post_language'];
 	
-	setcookie("cerberus_member_language","$_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("cerberus_member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&Message=Language");
 
 } // [ + ] IF: Internal Application: Language Is Activated
@@ -1101,7 +1109,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Main_Cookie_Security_Check 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_password='$_GLOBAL_COOKIE_MEMBER_PASSWORD'");
+$_DB_Query_Kernel_Cookie_Security_Check 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_password='$_GLOBAL_COOKIE_MEMBER_PASSWORD'");
 
 /*
  ============================================================================================================
@@ -1109,7 +1117,7 @@ $_DB_Query_Main_Cookie_Security_Check 						= $DB->query("SELECT * FROM {$_ACCES
  ============================================================================================================
 */
 
-if ($DB->num_rows($_DB_Query_Main_Cookie_Security_Check)) {
+if ($DB->num_rows($_DB_Query_Kernel_Cookie_Security_Check)) {
 /**
  * Do Nothing
 **/
@@ -1125,7 +1133,7 @@ if ($DB->num_rows($_DB_Query_Main_Cookie_Security_Check)) {
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Cookie_Security_Check);
+$DB->free($_DB_Query_Kernel_Cookie_Security_Check);
 
 } // [ + ] IF: Member Credentials Check
 
@@ -1185,17 +1193,17 @@ if (!file_exists($_MEMBER_DIRECTORY_INDEX_FILE)) {
  ============================================================================================================
 */
 
-$_DB_Query_Main_Banned_Status_Security_Check 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks WHERE ip_address_string='$_GLOBAL_REMOTE_SERVER_ADDRESS'");
+$_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check 			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks WHERE ip_address_string='$_GLOBAL_REMOTE_SERVER_ADDRESS'");
 
 /*
  ============================================================================================================
- + IF: Current I.P. Address Matches Banned I.P. Addresses In List
+ + IF: Current Internet Protocol Address Matches Banned Internet Protocol Addresses In List In Database Server
  ============================================================================================================
 */
 
-if ($DB->num_rows($_DB_Query_Main_Banned_Status_Security_Check)) {
+if ($DB->num_rows($_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check)) {
 
-	header("location: ./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/HTML/Banned.html"); // Banished Internet Protocol Address Found - Redirect To IP Banishment Notification
+	header("location: ./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/HTML/Banned.html"); // Banished Internet Protocol Address Found - Redirect To Internet Protocol Banishment Notification
 
 } // [ + ] Banned Internal Protocol Address Check
 
@@ -1229,11 +1237,11 @@ $_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
 
 /*
  ============================================================================================================
- + Check Cookies Against Real Directories: Kill L.F.I. and R.F.I. Exploits
+ + Check Cookies Against Real Directories: Prevent L.F.I., R.F.I. and S.Q.L. Injection Exploits
  ============================================================================================================
 */
 
-if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE == ".." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "@") {
+if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE == ".." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "@" || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "`") {
 
 	header("location: ?InternalApplication=Logout");
 
@@ -1308,9 +1316,9 @@ if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS >= 1) {
 
 } else {
 
-	$_GLOBAL_PLUGIN_SAFEHTML_LIST_COMMANDS					= "<CENTER>The Safe-HTML Application Module Is: Deactivated</CENTER>";
+	$_GLOBAL_PLUGIN_SAFEHTML_LIST_COMMANDS					= "<CENTER>The Safe-HTML Plug-In Application Module Is: Deactivated</CENTER>";
 
-} // [ + ] IF: Safe-HTML Code Setting Is: On or Off
+} // [ + ] IF: Safe-HTML Code Status Is: On or Off
 
 /*
  ============================================================================================================
@@ -1344,9 +1352,9 @@ if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS >= 1) {
  ============================================================================================================
 */
 
-$_CERBERUS_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME				= "Upload";
-$_CERBERUS_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE			= "0600";
-$_CERBERUS_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY					= opendir($_CERBERUS_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME);
+$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME				= "Upload";
+$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE			= "0600";
+$_KERNEL_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY					= opendir($_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME);
 
 /*
  ============================================================================================================
@@ -1354,7 +1362,7 @@ $_CERBERUS_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY					= opendir($_CERBERUS_INTERNAL
  ============================================================================================================
 */
 
-while (($_CERBERUS_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES = readdir($_CERBERUS_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY))) {
+while (($_KERNEL_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES = readdir($_KERNEL_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY))) {
 
 /*
  ============================================================================================================
@@ -1362,14 +1370,14 @@ while (($_CERBERUS_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES = readdir($_CERBERUS_INT
  ============================================================================================================
 */
 
-if ($_CERBERUS_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES == ".." || $_CERBERUS_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES == "." || $_CERBERUS_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES == "index.php") {
+if ($_KERNEL_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES == ".." || $_KERNEL_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES == "." || $_KERNEL_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES == "index.php") {
 /**
  * Skip These Files
 **/
 } else {
 
-	chmod("$_CERBERUS_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE", octdec($_CERBERUS_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE));
-	chmod("$_CERBERUS_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES", octdec($_CERBERUS_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE));
+	chmod("$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE", octdec($_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE));
+	chmod("$_KERNEL_INTERNAL_LOOP_UPLOAD_DIRECTORY_FILES", octdec($_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE));
 
 } // [ + ] IF: Files Are Not Inside of This Directory or Excluded Files: Skip Them
 
@@ -1432,7 +1440,7 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 /*
  ============================================================================================================
  +
- + Member Loop :: Update Member Active Status
+ + Member Account Loop :: Update Member Active Status
  +
  ============================================================================================================
 */
@@ -1453,9 +1461,9 @@ if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES > $_GLOBAL_LOCAL_SERVER_T
  ============================================================================================================
 */
 
-$_DB_Query_Set_Member_Status_Account_Active 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_status_account_last_active_minutes='$_GLOBAL_LOCAL_SERVER_TIME_MINUTES' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Set_Member_Status_Account_Active 				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_status_account_last_active_minutes='$_GLOBAL_LOCAL_SERVER_TIME_MINUTES' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
-if ($_DB_Query_Set_Member_Status_Account_Active) {
+if ($_DB_Query_Kernel_Set_Member_Status_Account_Active) {
 /**
  * Do Nothing
 **/
@@ -1472,7 +1480,7 @@ if ($_DB_Query_Set_Member_Status_Account_Active) {
 /*
  ============================================================================================================
  +
- + Member Loop :: Update Last Post
+ + Member Account Loop :: Update Last Referrer
  +
  ============================================================================================================
 */
@@ -1491,7 +1499,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Set_Member_Last_Post 						= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_last_post='$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Member_Account_Last_Referrer 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_last_referrer='$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 /*
  ============================================================================================================
@@ -1499,7 +1507,7 @@ $_DB_Query_Set_Member_Last_Post 						= $DB->query("UPDATE {$_ACCESS_DATABASE_SE
  ============================================================================================================
 */
 
-if ($_DB_Query_Set_Member_Last_Post) {
+if ($_DB_Query_Kernel_Member_Account_Last_Referrer) {
 /**
  * Do Nothing
 **/
@@ -1507,7 +1515,7 @@ if ($_DB_Query_Set_Member_Last_Post) {
 
 	echo ($_Message_Cerberus_ERROR_SQL_MEMBER_LAST_POST);
 
-} // [ + ] IF: Member Is Logged-In: Update Last Post
+} // [ + ] IF: Member Is Logged-In: Update Last Referrer
 
 /*
  ============================================================================================================
@@ -1515,14 +1523,14 @@ if ($_DB_Query_Set_Member_Last_Post) {
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Set_Member_Last_Post);
+$DB->free($_DB_Query_Kernel_Member_Account_Last_Referrer);
 
 } // [ + ] IF: Member Is Logged-In
 
 /*
  ============================================================================================================
  +
- + Member Loop :: Member Gender Loop
+ + Member Account Loop :: Member Gender Loop
  +
  ============================================================================================================
 */
@@ -1566,7 +1574,7 @@ if ($_GLOBAL_MEMBER_GENDER == "2") {
 /*
  ============================================================================================================
  +
- + Member Loop :: Member Rank Logging Loop
+ + Member Account Loop :: Member Rank Logging Loop
  +
  ============================================================================================================
 */
@@ -1683,7 +1691,7 @@ if ($_GLOBAL_MEMBER_GENDER == "2") {
 
 /*
  ============================================================================================================
- + IF: Number of Posts Are Less Than 50
+ + IF: Number of Posts Are Less Than Or Equal To: 50
  ============================================================================================================
 */
 
@@ -1695,7 +1703,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS <= 50) {
 
 /*
  ============================================================================================================
- + IF: Number of Posts Are Greater Than 100
+ + IF: Number of Posts Are Less Than Or Equal To: 100
  ============================================================================================================
 */
 
@@ -1707,7 +1715,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 100) {
 
 /*
  ============================================================================================================
- + IF: Number of Posts Are Greater Than 500
+ + IF: Number of Posts Are Less Than Or Equal To: 500
  ============================================================================================================
 */
 
@@ -1719,7 +1727,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 500) {
 
 /*
  ============================================================================================================
- + IF: Number of Posts Are Greater Than 1000
+ + IF: Number of Posts Are Less Than Or Equal To: 1000
  ============================================================================================================
 */
 
@@ -1731,7 +1739,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1000) {
 
 /*
  ============================================================================================================
- + IF: Number of Posts Are Greater Than 1500
+ + IF: Number of Posts Are Less Than Or Equal To: 1500
  ============================================================================================================
 */
 
@@ -1746,7 +1754,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1500) {
 /*
  ============================================================================================================
  +
- + Member Loop :: Update Member Account Rank
+ + Member Account Loop :: Update Member Account Rank
  +
  ============================================================================================================
 */
@@ -1797,10 +1805,10 @@ $DB->free($_DB_Query_Main_Member_Update_Rank);
  ============================================================================================================
 */
 
-$_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks ORDER BY id ASC");
+$_DB_Query_Kernel_Member_Rank_Select_All_Ranks					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks ORDER BY id ASC");
 
 
-while ($_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY = $DB->fetch_array($_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS)) {
+while ($_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Member_Rank_Select_All_Ranks)) {
 
 /*
  ============================================================================================================
@@ -1816,11 +1824,11 @@ $_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0					= "Chaos";
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_0						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_male_0'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_1						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_male_1'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_2						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_male_2'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_3						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_male_3'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_male_4'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_0						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_0'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_1						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_1'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_2						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_2'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_3						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_3'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_4'];
 
 /*
  ============================================================================================================
@@ -1828,11 +1836,11 @@ $_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4						= $_DB_Query_Main_Member_Rank_SELE
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_5						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_female_0'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_6						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_female_1'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_7						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_female_2'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_8						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_female_3'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_9						= $_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS_FETCH_ARRAY['rank_gender_female_4'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_5						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_0'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_6						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_1'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_7						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_2'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_8						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_3'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_9						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_4'];
 
 /*
  ============================================================================================================
@@ -1924,7 +1932,7 @@ if ($_GLOBAL_MEMBER_LEVEL_RANK == "9") {
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS);
+$DB->free($_DB_Query_Kernel_Member_Rank_Select_All_Ranks);
 
 } // [ + ] WHILE: Retrieving Member Account Rank Level Names
 
@@ -1933,7 +1941,7 @@ $DB->free($_DB_Query_Main_Member_Rank_SELECT_FROM_RANKS);
 /*
  ============================================================================================================
  +
- + Member Loop :: Specified Language Cookie Loop
+ + Member Account Loop :: Specified Language Cookie Loop
  +
  ============================================================================================================
 */
@@ -2102,7 +2110,7 @@ include_once "./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTOR
 
 /*
  ============================================================================================================
- + IF: Offline-Mode Is On, ( 1 ) Redirect To Offline-Mode Status Message
+ + IF: Offline-Mode Is On, ( 1 ) and Member Account Access Level Is NOT Administrator, Redirect To Offline-Mode Status Message
  ============================================================================================================
 */
 
@@ -2198,7 +2206,7 @@ if ($_GLOBAL_SYSTEM_GZIP_STATUS >= 1) {
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_TIME_MICROTIME_START					= microtime();
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= microtime();
 
 /*
  ============================================================================================================
@@ -2206,7 +2214,7 @@ $_MAIN_PAGE_GENERATION_TIME_MICROTIME_START					= microtime();
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY				= explode(" ", $_MAIN_PAGE_GENERATION_TIME_MICROTIME_START);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY				= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START);
 
 /*
  ============================================================================================================
@@ -2214,7 +2222,7 @@ $_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY				= explode(" ", $_MAIN_P
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_TIME_MICROTIME_START					= $_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[1] + $_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[0];
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[0];
 
 /*
  ============================================================================================================
@@ -2324,17 +2332,17 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
  ============================================================================================================
 */
 
-$_DB_Query_Main_Panels_Aligned_Left 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='0' AND panel_file_status='1' ORDER BY panel_row ASC");
+$_DB_Query_Kernel_Application_Panels_Aligned_Left 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='0' AND panel_file_status='1' ORDER BY panel_row ASC");
 
-while ($_DB_Query_Main_Panels_Aligned_Left_Fetch_Array = $DB->fetch_array($_DB_Query_Main_Panels_Aligned_Left)) {
+while ($_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Application_Panels_Aligned_Left)) {
 
-$_MAIN_PANEL_ALIGNED_LEFT_FILE_NAME						= $_DB_Query_Main_Panels_Aligned_Left_Fetch_Array['panel_file_name'];
-$_MAIN_PANEL_ALIGNED_LEFT_TITLE							= $_DB_Query_Main_Panels_Aligned_Left_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_FILE_NAME				= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_name'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE					= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_title'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
-echo ($_MAIN_PANEL_ALIGNED_LEFT_TITLE);
+echo ($_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE);
 
-include_once "./Applications/Panel/$_MAIN_PANEL_ALIGNED_LEFT_FILE_NAME.panel";
+include_once "./Applications/Panel/$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_FILE_NAME.panel";
 
 echo ($_THIS_THEME_APPLICATION_PANEL_2);
 
@@ -2346,7 +2354,7 @@ echo ($_THIS_THEME_APPLICATION_PANEL_2);
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Panels_Aligned_Left);
+$DB->free($_DB_Query_Kernel_Application_Panels_Aligned_Left);
 
 /*
  ============================================================================================================
@@ -2631,14 +2639,14 @@ $_DB_Query_Main_Panels_Aligned_Right 						= $DB->query("SELECT * FROM {$_ACCESS
 
 while ($_DB_Query_Main_Panels_Aligned_Right_Fetch_Array = $DB->fetch_array($_DB_Query_Main_Panels_Aligned_Right)) {
 
-$_MAIN_PANEL_ALIGNED_RIGHT_FILE_NAME						= $_DB_Query_Main_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
-$_MAIN_PANEL_ALIGNED_RIGHT_TITLE						= $_DB_Query_Main_Panels_Aligned_Right_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME						= $_DB_Query_Main_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE						= $_DB_Query_Main_Panels_Aligned_Right_Fetch_Array['panel_title'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 
-echo ($_MAIN_PANEL_ALIGNED_RIGHT_TITLE);
+echo ($_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE);
 
-include_once "./Applications/Panel/$_MAIN_PANEL_ALIGNED_RIGHT_FILE_NAME.panel";
+include_once "./Applications/Panel/$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME.panel";
 
 echo ($_THIS_THEME_APPLICATION_PANEL_2);
 
@@ -2696,7 +2704,7 @@ echo ($_GLOBAL_THEME_LAYOUT_4);
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_TIME_MICROTIME_END					= microtime();
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= microtime();
 
 /*
  ============================================================================================================
@@ -2704,7 +2712,7 @@ $_MAIN_PAGE_GENERATION_TIME_MICROTIME_END					= microtime();
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY				= explode(" ", $_MAIN_PAGE_GENERATION_TIME_MICROTIME_END);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY				= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
 
 /*
  ============================================================================================================
@@ -2712,7 +2720,7 @@ $_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY				= explode(" ", $_MAIN_PAG
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY				= implode(" ", $_MAIN_PAGE_GENERATION_TIME_MICROTIME_END);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY				= implode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
 
 /*
  ============================================================================================================
@@ -2720,7 +2728,7 @@ $_MAIN_PAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY				= implode(" ", $_MAIN_PAG
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_TIME_MICROTIME_END					= $_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[1] + $_MAIN_PAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[0];
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[0];
 
 /*
  ============================================================================================================
@@ -2728,8 +2736,8 @@ $_MAIN_PAGE_GENERATION_TIME_MICROTIME_END					= $_MAIN_PAGE_GENERATION_DATATIME_
  ============================================================================================================
 */
 
-$_MAIN_PAGE_GENERATION_TIME_TOTAL_TIME						= $_MAIN_PAGE_GENERATION_TIME_MICROTIME_END - $_MAIN_PAGE_GENERATION_TIME_MICROTIME_START; 
-$_MAIN_PAGE_GENERATION_TIME_TOTAL_TIME						= round($_MAIN_PAGE_GENERATION_TIME_TOTAL_TIME,5);
+$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME						= $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END - $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START; 
+$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME						= round($_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME,5);
 
 /*
  ============================================================================================================
@@ -2743,7 +2751,7 @@ $_MAIN_PAGE_GENERATION_TIME_TOTAL_TIME						= round($_MAIN_PAGE_GENERATION_TIME_
 
 echo ("
 		<CENTER>
-			This Web Site Is Powered By:&nbsp;<A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TARGET=\"_NEW\" TITLE=\"Cerberus Content Management System :: SourceForge Project Page\">Cerberus Content Management System</A>&nbsp;|&nbsp;Web-Page Data Generation Time: " . $_MAIN_PAGE_GENERATION_TIME_TOTAL_TIME . " Seconds&nbsp;|&nbsp;");
+			This Web Site Is Powered By:&nbsp;<A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TARGET=\"_NEW\" TITLE=\"Cerberus Content Management System :: SourceForge Project Page\">Cerberus Content Management System</A>&nbsp;|&nbsp;Web-Page Data Generation Time: " . $_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME . " Seconds&nbsp;|&nbsp;");
 
 /*
  ============================================================================================================
@@ -2761,7 +2769,7 @@ echo ("
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Select_Main_Settings);
+$DB->free($_DB_Query_Kernel_Select_Main_Settings);
 
 /*
  ============================================================================================================
@@ -2771,7 +2779,7 @@ $DB->free($_DB_Query_Select_Main_Settings);
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-$DB->free($_DB_Query_Select_Member_Credentials);
+$DB->free($_DB_Query_Kernel_Select_Member_Credentials);
 
 } // [ + ] Check Member Credentials
 
@@ -2781,7 +2789,7 @@ $DB->free($_DB_Query_Select_Member_Credentials);
  ============================================================================================================
 */
 
-$DB->free($_DB_Query_Main_Banned_Status_Security_Check);
+$DB->free($_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check);
 
 /*
  ============================================================================================================
@@ -2811,7 +2819,7 @@ $DB->free($_DB_Query_Main_Banned_Status_Security_Check);
  ============================================================================================================
 */
 
-if ($DB->close($_CERBERUS_DATABASE_SERVER_CONNECT)) {
+if ($DB->close($_KERNEL_DATABASE_SERVER_CONNECT)) {
 
 			echo ("Database Server Connection Closed For Internet Protocol Address: <A HREF=\"http://WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: View Detailed Who-Is Information For Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A>&nbsp;|&nbsp;");
 
