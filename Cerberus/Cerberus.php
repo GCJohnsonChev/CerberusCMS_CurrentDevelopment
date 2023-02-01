@@ -1042,6 +1042,30 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 /*
  ============================================================================================================
  +
+ + Internal Security :: Account Session :: Restrict To Current Internet Protocol Address
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Check For Member Account Credential Data In Browser Cookies
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+
+if ($_GLOBAL_MEMBER_IP_ADDRESS_LAST_KNOWN != $_GLOBAL_REMOTE_SERVER_ADDRESS) {
+
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Logout");
+
+} else {
+
+} // [ + ] IF: Member Account Last Known Internet Protocol Address IS NOT Current Internet Protocol Address, Immediately Logout
+
+/*
+ ============================================================================================================
+ +
  + Internal Security :: Server Cache :: Cache Web-Page Circumvention
  +
  ============================================================================================================
