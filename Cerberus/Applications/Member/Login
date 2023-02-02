@@ -201,7 +201,7 @@ If you would like to authorize this Internet Protocol Address please copy and pa
 * <A HREF=\"\"></A>
 
 The Internet Protocol Address associated with this Login attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
-The last login Internet Protocol Address on this Member Account was: $_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN
+The last Internet Protocol Address on this Member Account that successfully authenticated was: $_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN
 ============================================================================
 Have a nice day,
 		~ $_GLOBAL_SYSTEM_SITE_TITLE
