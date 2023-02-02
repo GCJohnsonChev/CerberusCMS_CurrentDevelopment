@@ -1207,7 +1207,8 @@ $_Application_Module_Member_Message_Login_Header									= "<CENTER>[ <B><A HREF
 
 $_Application_Module_Member_Message_Login_ERROR										= "<BR><CENTER><B>Cerberus: That information is not in the Database. Try Again ?</B></CENTER>";
 $_Application_Module_Member_Message_Login_CREDENTIALS_SET								= "<CENTER>Cerberus: You are already Logged-In as: <I>$_GLOBAL_COOKIE_MEMBER_USERNAME</I>.</CENTER>";
-$_Application_Module_Member_Message_Login_AUTHORIZATION_ELECTRONIC_MAIL_MESSAGE_ERROR					= "<CENTER>Cerberys: I was not able to send the electronic mail message notification request.</CENTER>";
+$_Application_Module_Member_Message_Login_AUTHORIZATION_ELECTRONIC_MAIL_MESSAGE_ERROR					= "<CENTER>Cerberus: I was not able to send the electronic mail message notification request.</CENTER>";
+$_Application_Module_Member_Message_Login_AUTHORIZATION_ELECTRONIC_MAIL_MESSAGE_SUCCESS					= "<CENTER>Cerberus: I have sent the electronic mail message notification request.</CENTER>";
 
 /*
  ================================================================
