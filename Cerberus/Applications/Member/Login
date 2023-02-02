@@ -182,9 +182,10 @@ while ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fet
 
 $_Application_Module_Login_LIST_MEMBER_ID						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
 $_Application_Module_Login_LIST_MEMBER_USERNAME						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS				= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
 
-if (mail($_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
-Dear $_Application_Module_Login_LIST_MEMBER_USERNAME,
+if (mail($_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
+Dear $_Application_Module_Login_LIST_MEMBER_USERNAME :: $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
 ============================================================================
 Either you or someone else has attempted to Login to your Member Account at: $_GLOBAL_SYSTEM_SITE_TITLE
 
@@ -193,7 +194,7 @@ There are three pieces of information required by default to successfully Login 
 * Password
 * Electronic Mail Address
 
-This Application does not disclose any Electronic Mail Address belonging to any Registered Member Account.
+This Application does not display or disclose any Electronic Mail Address belonging to any Registered Member Account anywhere.
 
 If you would like to authorize this Internet Protocol Address please copy and paste the Uniform-Resource-Location Link below this message
 * <A HREF=\"\"></A>
