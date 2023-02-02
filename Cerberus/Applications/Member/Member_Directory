@@ -68,7 +68,7 @@ $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS 						= $DB
 
 echo ("
 												<CENTER>
-													<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+													<TABLE BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
 														<TR>
 															<TD WIDTH=\"30%\"><A TITLE=\":: Member Account :: Profile ::\"><B>Member Username</B></A></TD>
 															<TD WIDTH=\"20%\"><A TITLE=\":: Send Electronic Mail Message ::\"><B>Electronic Mail</B></A></TD>
@@ -141,11 +141,11 @@ if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL >= "3"
 
 echo ("
 											<CENTER>
-												<TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+												<TABLE BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\">
 													<TR>
-														<TD WIDTH=\"30%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME\" TITLE=\"Open Profile :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME</A></TD>
-														<TD WIDTH=\"20%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Member_Member_Directory_LIST_MEMBER_ID\" TITLE=\"Send Electronic Mail Message To :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME\">Electronic Mail</A></TD>
-														<TD WIDTH=\"20%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message\" TITLE=\"Send Private Message To :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME\">Private Message</A></TD>
+														<TD WIDTH=\"30%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME ::\">$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME</A></TD>
+														<TD WIDTH=\"20%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Member_Member_Directory_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME ::\">Electronic Mail</A></TD>
+														<TD WIDTH=\"20%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message\" TITLE=\":: Send Private Message To :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME ::\">Private Message</A></TD>
 														<TD WIDTH=\"15%\">$_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS</TD>
 														<TD WIDTH=\"15%\">$_Application_Module_Member_Member_Directory_LIST_MEMBER_PERMISSION</TD>
 													</TR>
