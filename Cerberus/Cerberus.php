@@ -801,7 +801,7 @@ $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT						= $_SERVER['HTTP_USER_AGENT'];
  ============================================================================================================
 */
 
-if ($_GET["InternalApplication"] == "Login") {
+if ($_GET["$_INTERNAL_APPLICATION_MODULE_INTERNAL"] == "Login") {
 
 /*
  ============================================================================================================
@@ -950,7 +950,7 @@ $DB->free($DB_Query_Kernel_Check_Member_Account_Credentials_Array);
  ============================================================================================================
 */
 
-if ($_GET["InternalApplication"] == "Logout") {
+if ($_GET["$_INTERNAL_APPLICATION_MODULE_INTERNAL"] == "Logout") {
 
 /*
  ============================================================================================================
@@ -1025,7 +1025,7 @@ $DB->free($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive);
  ============================================================================================================
 */
 
-if ($_GET["InternalApplication"] == "Language") {
+if ($_GET["$_INTERNAL_APPLICATION_MODULE_INTERNAL"] == "Language") {
 
 $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 	
@@ -1197,7 +1197,7 @@ if ($DB->num_rows($_DB_Query_Kernel_Cookie_Security_Check)) {
 **/
 } else {
 
-	header("location: ?InternalApplication=Logout"); // Fake Data Found - Redirect To Logout Section, Destroy All Cookies
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Fake Data Found - Redirect To Logout Section, Destroy All Cookies
 
 } // [ + ] Fake Cookie Check
 
@@ -1243,7 +1243,7 @@ $_MEMBER_DIRECTORY_INDEX_FILE							= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/
 
 if (!file_exists($_MEMBER_DIRECTORY_INDEX_FILE)) {
 
-	header("location: ?InternalApplication=Logout"); // Fake Data Found - Redirect To Logout Section
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Fake Data Found - Redirect To Logout Section
 
 } else {
 /**
@@ -1317,7 +1317,7 @@ $_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
 
 if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE == ".." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "@" || $_GLOBAL_COOKIE_MEMBER_LANGUAGE == "`") {
 
-	header("location: ?InternalApplication=Logout");
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout");
 
 } // [ + ] IF: Language Cookie Was Modified: Instantly Destroy Cookies, Sessions and Logout
 
@@ -1337,7 +1337,7 @@ if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE == ".." || $_GLOBAL_COOKIE_MEMBER_LANGUAGE =
 
 if (strlen($_GLOBAL_COOKIE_MEMBER_LANGUAGE) > "15") {
 
-	header("location: ?InternalApplication=Logout");
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout");
 
 } // [ + ] IF: Language Cookie Data Is Greater Than 15 Characters: Instantly Destroy Cookies, Sessions and Logout
 
