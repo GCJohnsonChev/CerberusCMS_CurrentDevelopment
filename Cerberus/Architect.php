@@ -196,7 +196,7 @@ echo ("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http:/
 
 <HTML>
 	<HEAD>
-		<TITLE>Cerberus Content Management System - Architect => Installation Process</TITLE>
+		<TITLE>$_PROJECT_STRING_NAME - Architect => Installation Process</TITLE>
 		<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=utf-8\">
 		<LINK REL=\"stylesheet\" HREF=\"./Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
 	</HEAD>
@@ -254,7 +254,7 @@ $_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX		
 if (!$_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME) {
 
 echo ("
-		<HR><CENTER><BIG><B>[ <A HREF=\"https://www.SourceForge.net/projects/cerberuscms/files/Documentation/\" TARGET=\"_NEW\" TITLE=\":: Read The Cerberus Content Management System Architect Installation Documentation ::\">Architect Installation Documentation</A> ]</B></BIG></CENTER><HR>
+		<HR><CENTER><BIG><B>[ <A HREF=\"https://www.SourceForge.net/projects/cerberuscms/files/Documentation/\" TARGET=\"_NEW\" TITLE=\":: Read The $_PROJECT_STRING_NAME Architect Installation Documentation ::\">Architect Installation Documentation</A> ]</B></BIG></CENTER><HR>
 		<BR>
 		<FORM ACTION=\"?\" METHOD=\"post\">
 		Database Server Connection Settings<HR>
@@ -277,7 +277,7 @@ echo ("
 			<INPUT TYPE=\"text\" NAME=\"post_system_electronic_mail_address\"><BR><BR>
 
 		System Hyper-Text-Transfer-Protocol Settings<HR>
-		* <I>Secure Uniform Resource Locator With Path-To-Cerberus Directory</I>:<BR>
+		* <I>Secure Uniform Resource Locator With Path-To-Kernel Directory</I>:<BR>
 		[ General Secure Uniform Resource Location, Example: https://TinkeSoftware.com/Cerberus ]<BR>
 			<INPUT TYPE=\"TEXT\" NAME=\"post_url_secure\"><BR>
 		[ Secure Sockets Layer ( S.S.L. ) Uniform Resource Location, Example: https://SSL.TinkeSoftware.com/Cerberus ]<BR>
@@ -313,12 +313,12 @@ echo ("
 		[&nbsp;*&nbsp;]&nbsp;Theme<BR>
 		[&nbsp;*&nbsp;]&nbsp;Upload<BR><BR>
 
-		[&nbsp;!&nbsp;]&nbsp;*Nix Server Users ( Linux, Unix, B.S.D., G.N.U., etc. ): Please refer to the CerberusCMS Architect Installation Manual for a complete list of permissions that should be applied to each individual file.<BR><BR>
+		[&nbsp;!&nbsp;]&nbsp;*Nix Server Users ( Linux, Unix, B.S.D., G.N.U., etc. ): Please refer to the $_PROJECT_STRING_NAME Architect Installation Manual for a complete list of permissions that should be applied to each individual file.<BR><BR>
 		[&nbsp;!&nbsp;]&nbsp;This Architect Installation Application is capable of setting the correct file permissions to each directory and file within this system. Click [ <A HREF=\"?InternalApplication&#61;File_Permissions\" TITLE=\":: Execute The File Permissions Settings Loop ::\">here</A> ] to run the File Permissions Loop.<BR>
-		[&nbsp;!&nbsp;]&nbsp;Microsoft Windows Server Users: All of Cerberus' Files are set to the 'Read Only' flag by default. In order to install Cerberus correctly you must remove the 'Read Only' flag on each file listed in the Architect Installation Walkthrough.<BR>
+		[&nbsp;!&nbsp;]&nbsp;Microsoft Windows Server Users: All of $_PROJECT_STRING_NAME' Files are set to the 'Read Only' flag by default. In order to install $_PROJECT_STRING_NAME correctly you must remove the 'Read Only' flag on each file listed in the Architect Installation Walkthrough.<BR>
 		[&nbsp;!&nbsp;]&nbsp;If you would like additional security for the Administration Control Panel please configure an <I>.htaccess</I> file and then install that configured <I>.htaccess</I> file into the <I>./Module/Administration/</I> directory before proceeding with this installation.<BR><BR>
 
-		[&nbsp;!&nbsp;]&nbsp;Cerberus Content Management Systems' programming code has been tested manually as well as by vulnerability and exploit scanning software<BR>
+		[&nbsp;!&nbsp;]&nbsp;$_PROJECT_STRING_NAME' programming code has been tested manually as well as by vulnerability and exploit scanning software<BR>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and the entire system has passed checks against all rudimentary vulnerabilities and exploit techniques, such as:<BR>
 		[&nbsp;*&nbsp;]&nbsp;S.Q.L. Injection Attacks<BR>
 		[&nbsp;*&nbsp;]&nbsp;Cookie Injection Attacks<BR>
@@ -329,10 +329,10 @@ echo ("
 		[&nbsp;*&nbsp;]&nbsp;Local and Remote Code Execution Attacks<BR><BR>
 
 		[&nbsp;!&nbsp;]&nbsp;Please keep this server software, this server operating system kernels and its applications up-to-date as well as set server security policies that comply with security standards to prevent any exploitation of the data on this server.<BR>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is up to the Administrator of this Web Server that is running Cerberus Content Management System to install Cerberus correctly by following each of the important steps stated above,<BR>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is up to the Administrator of this Web Server that is running $_PROJECT_STRING_NAME to install $_PROJECT_STRING_NAME correctly by following each of the important steps stated above,<BR>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as well as all of the steps outlined in the documentation file for this project - not doing so may leave the Internal System open to attacks. Double check the steps before proceeding.<BR><BR>
 
-		[&nbsp;!&nbsp;]&nbsp;This Installation Application has not been secured from vulnerabilities. Do not leave this Installation Web Application on a live server for longer than is needed to install Cerberus Content Management System.<BR><BR>
+		[&nbsp;!&nbsp;]&nbsp;This Installation Application has not been secured from vulnerabilities. Do not leave this Installation Web Application on a live server for longer than is needed to install $_PROJECT_STRING_NAME.<BR><BR>
 
 		[&nbsp;!&nbsp;]&nbsp;If you are unable to install the S.Q.L. Tables automatically by this application, please click [ <A HREF=\"./Architect/MySQL/MySQL_Generator.php\" TITLE=\":: Open & Display The S.Q.L. Data Generator Application ::\" TARGET=\"_NEW\">here</A> ] to manually generate the S.Q.L. Structure and S.Q.L. Data.<BR>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the S.Q.L. Structure and its data is generated correctly, copy the S.Q.L. Tables with generated Prefix Name and then manually paste the generated S.Q.L. Data Structure into your server S.Q.L. Manager / Editor.<BR><BR>
@@ -348,8 +348,8 @@ echo ("
 		<B>Detailed Server Software and User-Interface Information:</B><BR>
 		=>&nbsp;<A HREF=\"?InternalApplication&#61;ServerSoftware_Information\" TITLE=\":: View Detailed Information About What Server Software Versions Are Currently Running On This Web Server ::\">Information About What Server Software Versions Are Currently Running On This Web Server</A><BR><BR>
 
-		<B>Cerberus Content Management System Information:</B><BR>
-		=>&nbsp;<A HREF=\"?InternalApplication&#61;Cerberus_Information\" TITLE=\":: View Detailed Information About What Cerberus Content Management System Version Is Currently Running On This Web Server ::\">Information About What CerberusCMS Version Is Currently Running On This Web Server</A><BR><BR>
+		<B>$_PROJECT_STRING_NAME Information:</B><BR>
+		=>&nbsp;<A HREF=\"?InternalApplication&#61;SoftwareProject_Information\" TITLE=\":: View Detailed Information About What $_PROJECT_STRING_NAME Version Is Currently Running On This Web Server ::\">Information About What $_PROJECT_STRING_NAME Version Is Currently Running On This Web Server</A><BR><BR>
 		
 		<B>Post Hypertext Preprocessor ( PHP ) Interpreter & Zend Engine Information:</B><BR>
 		=>&nbsp;<A HREF=\"?InternalApplication&#61;PHP_Information\" TITLE=\":: View Detailed Information About What P.H.P. Version Is Currently Running On This Web Server ::\">Information About What P.H.P. Server Engine Is Currently Running On This Web Server</A></B><BR>
@@ -359,7 +359,7 @@ echo ("
 		=>&nbsp;<A HREF=\"About.txt\" TITLE=\":: Open & Display The About File ::\">About</A><BR>
 		=>&nbsp;<A HREF=\"Bug_Tracker.txt\" TITLE=\":: Open & Display The Bug Tracker File ::\">Bug Tracker</A><BR>
 		=>&nbsp;<A HREF=\"Change-Log.txt\" TITLE=\":: Open & Display The Change Log File ::\">Change Log</A><BR>
-		=>&nbsp;<A HREF=\"File-List.txt\" TITLE=\":: Open & Display The File List Document - This Document Was Generated By The Programmers of Cerberus, It Shows Detailed File and Directory Listings, Progress Reports On Files Within The Default Cerberus Releases ::\">File List</A><BR>
+		=>&nbsp;<A HREF=\"File-List.txt\" TITLE=\":: Open & Display The File List Document - This Document Was Generated By The Programmers of $_PROJECT_STRING_NAME, It Shows Detailed File and Directory Listings, Progress Reports On Files Within The Default $_PROJECT_STRING_NAME Releases ::\">File List</A><BR>
 		=>&nbsp;<A HREF=\"License.txt\" TITLE=\":: Open & Display The License File ::\">License</A><BR>
 		=>&nbsp;<A HREF=\"Read_Me.txt\" TITLE=\":: Open & Display The Read Me File ::\">Read Me</A><BR>
 		=>&nbsp;<A HREF=\"Security.txt\" TITLE=\":: Open & Display The Security Notes File ::\">Security Notes</A><BR>
@@ -1142,7 +1142,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Applications_Panel','0','1','1','<CENTER><B>Applications Panel</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Banned_Networks','0','4','1','<CENTER><B>Banned Networks</B></CENTER><HR>')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Cerberus_Badges','1','1','1','<CENTER><B>Cerberus Badges</B></CENTER><HR>')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Project_Badges','1','1','1','<CENTER><B>Project Badges</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Language','1','6','1','<CENTER><B>Set Language</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Articles','0','3','1','<CENTER><B>Latest Articles</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Files','1','3','1','<CENTER><B>Latest Files</B></CENTER><HR>')");
@@ -1302,7 +1302,7 @@ member_username)VALUES(
 
 /*
  ============================================================================================================
- + Install Cerberus Services Root Administrator Account Details
+ + Install Backup Services Root Administrator Account Details
  + ( Cerberus ) With Specified Administration Account Password
  ============================================================================================================
 */
@@ -1616,7 +1616,7 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom(custom_application_data,custom_application_name,custom_application_time)VALUES('Hello and welcome to Cerberus Content Management System ! If you\'re reading this sentence then Cerberus was successfully installed to this Web Server !','Welcome To Cerberus','$_GLOBAL_LOCAL_SERVER_DATE')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom(custom_application_data,custom_application_name,custom_application_time)VALUES('Hello and welcome to $_PROJECT_STRING_NAME ! If you\'re reading this sentence then $_PROJECT_STRING_NAME was successfully installed to this Web Server !','Welcome !','$_GLOBAL_LOCAL_SERVER_DATE')");
 
 	echo ("[ Done ]<BR>");
 
@@ -1640,7 +1640,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks(
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','Cerberus Content Management System','256000','10240000','Default','Default','Default','1','1')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','$_PROJECT_STRING_NAME','256000','10240000','Default','Default','Default','1','1')");
 
 	echo ("[ Done ]<BR>");
 
@@ -1744,19 +1744,19 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news(n
 
 } else {
 
-	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error: I am not able to connect to the Database.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: I am not able to connect to the Database Management Server.<BR>");
 
 } // [ + ] IF: S.Q.L. Query Install Default S.Q.L. Data
 
 } else {
 
-	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error: I am not able to connect to the Database.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: I am not able to connect to the Database Management Server.<BR>");
 
 } // [ + ] IF: S.Q.L. Server Connect
 
 } else {
 
-	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error: the Password(s) that you have provided me do not match each-other. Try Again ?<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: the Password(s) that you have provided me do not match each-other. Try Again ?<BR>");
 
 } // [ + ] IF: Administrator Passwords Are Equal
 
@@ -1784,7 +1784,7 @@ if (unlink("./Architect/MySQL/MySQL_Generator.php") && unlink("./Architect/MySQL
 
 } else {
 
-	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error, I was not able to Secure-Delete the Files: <I>'./Architect/MySQL/MySQL_Generator.php', './Architect/MySQL/index.php', './Architect/ToolKit/index.php', './Architect/ToolKit/Installation_ToolKit.php'</I> Please manually Secure-Delete this File before proceeding.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Architect: Error, I was not able to Secure-Delete the Files: <I>'./Architect/MySQL/MySQL_Generator.php', './Architect/MySQL/index.php', './Architect/ToolKit/index.php', './Architect/ToolKit/Installation_ToolKit.php'</I> Please manually Secure-Delete this File before proceeding.<BR>");
 
 } // [ + ] IF: Internal Application: Unlink_Installation Is Activated
 
@@ -1797,7 +1797,7 @@ if (rmdir("./Architect/MySQL/") && rmdir("./Architect/ToolKit/")) {
 
 } else {
 
-	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error, I was not able to Remove the Directory: './Architect/MySQL/' or './Architect/ToolKit/' Please manually Remove this Directory before proceeding.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: I was not able to Remove the Directory: './Architect/MySQL/' or './Architect/ToolKit/' Please manually Remove this Directory before proceeding.<BR>");
 
 } // [ + ] IF: Remove Directory: Architect=>Installation Directories and Installation Tools
 
@@ -1809,7 +1809,7 @@ if (rmdir("./Architect/")) {
 
 } else {
 
-	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error: I was not able to Remove the Directory: './Architect/' Please manually Remove this Directory before proceeding.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: I was not able to Remove the Directory: './Architect/' Please manually Remove this Directory before proceeding.<BR>");
 
 } // [ + ] IF: Remove Directory: Installation Directory
 
@@ -1819,35 +1819,35 @@ if (unlink("./Architect.php")) {
 
 	echo ("[ Done ]<BR>");
 
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Redirecting To This <B>Cerberus Installation</B> Login Page... Please Wait 15 Seconds.<BR><BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Redirecting To This <B>$_PROJECT_STRING_NAME Installation</B> Login Application Module... Please Wait 15 Seconds.<BR><BR>");
 
 	echo ("<META HTTP-EQUIV=Refresh CONTENT=\"15; URL=Cerberus.php?Application_Member=Login\">");
 
 } else {
 
-	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error: I was not able to Secure-Delete the File: 'Architect.php' Please manually Secure-Delete this File before proceeding.</BIG><BR>");
+	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: I was not able to Secure-Delete the File: 'Architect.php' Please manually Secure-Delete this File before proceeding.</BIG><BR>");
 
 } // [ + ] IF: Delete Architect Installation Files
 
-	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Cerberus: I am Testing the PHP mail() Function. Please wait...</BIG><BR>");
+	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Architect: I am Testing the PHP mail() Function. Please wait...</BIG><BR>");
 
-if (mail($_ACCESS_SYSTEM_ELECTRONIC_MAIL_ADDRESS,"Cerberus - Testing mail() Function.","
--------This is a test to see if the Web Server PHP mail() Function is working-------
+if (mail($_ACCESS_SYSTEM_ELECTRONIC_MAIL_ADDRESS,"$_PROJECT_STRING_NAME - Testing the P.H.P. Server mail() Function.","
+-------This is a test to see if the Web Server P.H.P. mail() Function is working-------
 
 -------------------------------------------------------
-If you have receieved this Electronic Mail Message Cerberus Content Management System was installed successfully to your web server.
-The only thing left to do now is to manually configure this installation of Cerberus Content Management System.
+If you have receieved this Electronic Mail Message $_PROJECT_STRING_NAME was installed successfully to your web server.
+The only thing left to do now is to manually configure this installation of $_PROJECT_STRING_NAME.
 -------------------------------------------------------
 Local Server Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
 Local Server Software Information: $_GLOBAL_LOCAL_SERVER_SOFTWARE
 Remote Server Internet Protocol Address ( Who Installed This ): $_GLOBAL_REMOTE_SERVER_ADDRESS
 ")) {
 
-	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Cerberus: I have Tested the PHP mail() Function and it seems to be working.</BIG><BR>");
+	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Architect: I have Tested the PHP Server mail() Function and it seems to be working.</BIG><BR>");
 
 } else {
 
-	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Cerberus: Error: the PHP mail() Function is not working. Correct this before using Cerberus Content Management System.</BIG>");
+	echo ("<BIG><FONT COLOR=\"#CD0000\">***</FONT> Architect: Error: the PHP Server mail() Function is not working. Correct this before using $_PROJECT_STRING_NAME.</BIG>");
 
 } // [ + ] IF: Send Electronic Mail Address: System Test
 
@@ -1863,19 +1863,19 @@ Remote Server Internet Protocol Address ( Who Installed This ): $_GLOBAL_REMOTE_
 
  /*
  ============================================================================================================
- + Internal Application: Cerberus System Information
+ + Internal Application: Software Project System Information
  ============================================================================================================
 */
 
-if ($_GET["InternalApplication"] == "Cerberus_Information") {
+if ($_GET["InternalApplication"] == "SoftwareProject_Information") {
 
 echo ("
-		<HR><CENTER>Cerberus Content Management System Information</CENTER><HR>
-		<B>Cerberus Software Project Version Information</B><BR>
+		<HR><CENTER>$_PROJECT_STRING_NAME Information</CENTER><HR>
+		<B>$_PROJECT_STRING_NAME Software Project Version Information</B><BR>
 		*&nbsp;Extended Version: <I>$_PROJECT_VERSION_EXTENDED</I><BR>
 		*&nbsp;Short Version: <I>$_PROJECT_VERSION_SHORT</I><BR><BR>
 
-		<B>Official Cerberus Software Project Web Servers</B><BR><BR>
+		<B>Official $_PROJECT_STRING_NAME Software Project Web Servers</B><BR><BR>
 
 		Software Project GIT Hosting<BR>
 		*&nbsp;BITBucket Secure Server <I>$_PROJECT_SERVER_URL_BITBUCKET_SECURE</I><BR>
@@ -1900,7 +1900,7 @@ echo ("
 		*&nbsp;Data Validation Clear-Text Server: <I>$_PROJECT_SERVER_URL_CLEARTEXT</I>
 ");
 
-} // [ + ] IF: Internal Application: Cerberus_Information Is Activated
+} // [ + ] IF: Internal Application: SoftwareProject_Information Is Activated
 
 /*
  ============================================================================================================
@@ -1949,7 +1949,7 @@ echo ("
 
 /*
  ============================================================================================================
- + Internal Application: Cerberus System Information
+ + Internal Application: Server Software System Information
  ============================================================================================================
 */
 
@@ -1991,7 +1991,7 @@ echo ("
  ============================================================================================================
 */
 
-	echo ("<HR><CENTER>Copyright <BIG><B>&copy;</B></BIG> <A HREF=\"https://www.GitHub.com/TinkeSoftware\" TARGET=\"_NEW\" TITLE=\"Tinke Software On :: GitHub\">Tinke Software</A>, <A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TITLE=\":: Cerberus Content Management System Project On :: SourceForge ::\">Cerberus Content Management System</A>, <A HREF=\"mailto:GCJohnsonChevalier@Protonmail.com\" TITLE=\":: Send Electronic Mail Message To :: GCJohnsonChevalier@Protonmail.com ::\">Gary Christopher Johnson</A>, 2005 - 2023.</CENTER><HR></TD></TR></TABLE>
+	echo ("<HR><CENTER>Copyright <BIG><B>&copy;</B></BIG> <A HREF=\"https://www.GitHub.com/TinkeSoftware\" TARGET=\"_NEW\" TITLE=\"Tinke Software On :: GitHub\">Tinke Software</A>, <A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TITLE=\":: $_PROJECT_STRING_NAME Software Project On :: SourceForge ::\">$_PROJECT_STRING_NAME</A>, <A HREF=\"mailto:GCJohnsonChevalier@Protonmail.com\" TITLE=\":: Send Electronic Mail Message To :: GCJohnsonChevalier@Protonmail.com ::\">Gary Christopher Johnson</A>, 2005 - 2023.</CENTER><HR></TD></TR></TABLE>
 	</BODY>
 </HTML>
 ");
