@@ -625,7 +625,7 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_DB_Query_Kernel_Select_Member_Credenti
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_LAST_KNOWN						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_last_known'];
+$_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_last_login'];
 
 /*
  ============================================================================================================
@@ -1055,13 +1055,21 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-if ($_GLOBAL_MEMBER_IP_ADDRESS_LAST_KNOWN != $_GLOBAL_REMOTE_SERVER_ADDRESS) {
+/*
+ ============================================================================================================
+ + IF: Member Account Last Login Internet Protocol Address IS NOT Current Connected Internet Protocol Address
+ ============================================================================================================
+*/
 
-	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Logout");
+//if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != $_GLOBAL_REMOTE_SERVER_ADDRESS) {
 
-} else {
+	//header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Logout");
 
-} // [ + ] IF: Member Account Last Known Internet Protocol Address IS NOT Current Internet Protocol Address, Immediately Logout
+//} else {
+
+//} // [ + ] IF: Member Account Last Known Internet Protocol Address IS NOT Current Internet Protocol Address, Immediately Logout
+
+//} // [ + ] IF: Member Account Is Logged-In And Valid Credentials Are Set
 
 /*
  ============================================================================================================
@@ -2081,9 +2089,9 @@ include_once "./Applications/Background/Log_Visitor";
 */
 
 /*
- ===============================================
+ ============================================================================================================
  + Check For Member Account Credentials
- ===============================================
+ ============================================================================================================
 */
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
