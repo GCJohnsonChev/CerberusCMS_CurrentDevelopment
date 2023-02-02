@@ -966,7 +966,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
 
 if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
 
@@ -1047,7 +1047,7 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 /*
  ============================================================================================================
  +
- + Internal Security :: Account Session :: Restrict To Current Internet Protocol Address
+ + Internal Security :: Account Session :: Restrict To Authorized Internet Protocol Address
  +
  ============================================================================================================
 */
@@ -1058,7 +1058,7 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
  ============================================================================================================
 */
 
-//if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
 /*
  ============================================================================================================
@@ -1066,15 +1066,17 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
  ============================================================================================================
 */
 
-//if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != $_GLOBAL_REMOTE_SERVER_ADDRESS) {
+if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != $_GLOBAL_REMOTE_SERVER_ADDRESS) {
 
-	//header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Logout");
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Control_Panel&Authorization=IP_Address");
 
-//} else {
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Member Account Last Known Internet Protocol Address IS NOT Current Internet Protocol Address, Immediately Logout
 
-//} // [ + ] IF: Member Account Last Known Internet Protocol Address IS NOT Current Internet Protocol Address, Immediately Logout
-
-//} // [ + ] IF: Member Account Is Logged-In And Valid Credentials Are Set
+} // [ + ] IF: Member Account Is Logged-In And Valid Credentials Are Set
 
 /*
  ============================================================================================================
