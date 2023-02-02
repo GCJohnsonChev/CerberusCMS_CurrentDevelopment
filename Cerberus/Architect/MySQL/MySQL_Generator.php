@@ -66,6 +66,42 @@ error_reporting("E_WARNING ^ E_NOTICE");
  ============================================================================================================
  +
  +
+ + [ @ ] Inclusion of All Internal Configuration Files
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Internal Configuration :: Global System Configuration Modules
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Global System Configuration File Exists, Include It
+ ============================================================================================================
+*/
+
+$_GLOBAL_SYSTEM_CONFIGURATION_FILE						= "./System/Configuration/Global_Configuration.php";
+
+if (file_exists($_GLOBAL_SYSTEM_CONFIGURATION_FILE)) {
+
+	include_once "$_GLOBAL_SYSTEM_CONFIGURATION_FILE";
+
+} else {
+
+			echo ("Kernel Message: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: $_PROJECT_STRING_NAME :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>.");
+
+} // [ + ] IF: File Exists: Global System Configuration File
+
+/*
+ ============================================================================================================
+ +
+ +
  + [ @ ] Global Variables
  +
  +
@@ -183,13 +219,13 @@ $_GLOBAL_LOCAL_SERVER_DATE_MD5_2							= md5($_GLOBAL_LOCAL_SERVER_DATE);
 echo ("
 <HTML>
 	<HEAD>
-		<TITLE>Cerberus S.Q.L. Tables Generator</TITLE>
+		<TITLE>$_PROJECT_STRING_NAME Structured Query Language Database Tables Generator</TITLE>
 		<LINK REL=\"stylesheet\" HREF=\"../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
 		<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=utf-8\">
 	</HEAD>
 
 	<BODY>
-		<HR><CENTER>[ <A HREF=\"?\" TITLE=\":: Reload The MyS.Q.L. Database Structure Generation Form ::\">Cerberus Content Management System MyS.Q.L. Database Structure Generator</A> ]</CENTER><HR><BR>
+		<HR><CENTER>[ <A HREF=\"?\" TITLE=\":: Reload The MyS.Q.L. Database Structure Generation Form ::\">$_PROJECT_STRING_NAME MyS.Q.L. Database Structure Generator</A> ]</CENTER><HR><BR>
 ");
 
 /*
@@ -747,7 +783,7 @@ INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(applica
 
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Applications_Panel','0','1','1','<CENTER><B>Applications Panel</B></CENTER><HR>');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Banned_Networks','0','4','1','<CENTER><B>Banned Networks</B></CENTER><HR>');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Cerberus_Badges','1','1','1','<CENTER><B>Cerberus Badges</B></CENTER><HR>');
+INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Project_Badges','1','1','1','<CENTER><B>Project Badges</B></CENTER><HR>');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Language','1','6','1','<CENTER><B>Set Language</B></CENTER><HR>');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Articles','0','3','1','<CENTER><B>Latest Articles</B></CENTER><HR>');
 INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Files','1','3','1','<CENTER><B>Latest Files</B></CENTER><HR>');
@@ -761,7 +797,7 @@ INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_ranks(rank_gender_ma
 
 /* System Settings */
 
-INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','Cerberus Content Management System','256000','10240000','Default','Default','Default','1','1');
+INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','$_PROJECT_STRING_NAME','256000','10240000','Default','Default','Default','1','1');
 
 /* System Statistics */
 
@@ -1083,17 +1119,17 @@ $_MySQL_Generator_PRINT_MySQL_TABLES					= str_replace('\"', '', $_MySQL_Generat
 $_MySQL_Generator_PRINT_MySQL_TABLE_STRINGS				= str_replace('\"', '', $_MySQL_Generator_PRINT_MySQL_TABLE_STRINGS);
 $_MySQL_Generator_PRINT_MySQL_ADMINISTRATION_ACCOUNT			= str_replace('\"', '', $_MySQL_Generator_PRINT_MySQL_ADMINISTRATION_ACCOUNT);
 
-		echo ("Cerberus Administration UserName / Password HASHED<BR>");
+		echo ("$_PROJECT_STRING_NAME Administration UserName / Password HASHED<BR>");
 		echo (" [ Message Digest Version: 5, HASH Algorithm=>Blowfish, Salted ) / Password Pure MD5 / Password Clear ]<BR>");
 		echo ("<TEXTAREA ROWS=\"3\" COLS=\"75\" MAXLENGTH=\"10000\">Administration Username: $_MySQL_Generator_POST_ADMINISTRATION_USERNAME / Administration Password With BlowFish & Salted: $_MySQL_Generator_POST_ADMINISTRATION_PASSWORD_HASH / Administration Password Pure MD5: $_MySQL_Generator_ADMINISTRATION_PASSWORD_HASH_MD5 / Administration Password Clear: $_MySQL_Generator_POST_ADMINISTRATION_PASSWORD</TEXTAREA><BR><BR>");
 
-		echo ("Cerberus MyS.Q.L. Tables Generated:<BR>");
+		echo ("$_PROJECT_STRING_NAME MyS.Q.L. Tables Generated:<BR>");
 		echo ("<TEXTAREA ROWS=\"15\" COLS=\"115\" MAXLENGTH=\"10000\">$_MySQL_Generator_PRINT_MySQL_TABLES</TEXTAREA><BR><BR>");
 
-		echo ("Cerberus MyS.Q.L. Table Strings Generated:<BR>");
+		echo ("$_PROJECT_STRING_NAME MyS.Q.L. Table Strings Generated:<BR>");
 		echo ("<TEXTAREA ROWS=\"15\" COLS=\"115\" MAXLENGTH=\"10000\">$_MySQL_Generator_PRINT_MySQL_TABLE_STRINGS</TEXTAREA><BR><BR>");
 
-		echo ("Cerberus Administration Account S.Q.L. Insertion Strings Generated:<BR>");
+		echo ("$_PROJECT_STRING_NAME Administration Account S.Q.L. Insertion Strings Generated:<BR>");
 		echo ("<TEXTAREA ROWS=\"15\" COLS=\"115\" MAXLENGTH=\"10000\">$_MySQL_Generator_PRINT_MySQL_ADMINISTRATION_ACCOUNT</TEXTAREA>");
 
 } // [ + ] IF_POST
