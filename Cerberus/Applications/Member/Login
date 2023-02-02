@@ -70,6 +70,7 @@
 */
 
 $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS		= $_POST['Application_Member_Login_Authorization_IP_Address_Current'];
+$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= $_POST['Application_Member_Login_Authorization_IP_Address_Current'];
 
 /*
  ============================================================================================================
@@ -106,7 +107,7 @@ echo ("
 											</FORM>
 
 											<CENTER>[ 
-<A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Insecure Over Clear Text Insecure Connection\">Insecure Clear-Text Login</A>&nbsp;—&nbsp;<A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection\">SSL Secure Login</A>&nbsp;—&nbsp;<A HREF=\"$_ACCESS_URL_SECURE/Cerberus.php?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection\">TLS Secure Login</A>&nbsp;—&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Register\" TITLE=\"Register With $_GLOBAL_SYSTEM_SITE_TITLE\">Register</A>&nbsp;—&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\"Reset Your Password Or Other Credentials\">Reset Password</A>&nbsp;—&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Account_Recovery\" TITLE=\"Initiate The Member Account Recovery Options\">Account Recovery</A> ]</CENTER>
+<A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Insecure Over Clear Text Insecure Connection\">Insecure Clear-Text Login</A>&nbsp;—&nbsp;<A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection\">SSL Secure Login</A>&nbsp;—&nbsp;<A HREF=\"$_ACCESS_URL_SECURE/Cerberus.php?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\"Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection\">TLS Secure Login</A>&nbsp;—&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Register\" TITLE=\"Register With $_GLOBAL_SYSTEM_SITE_TITLE\">Register</A>&nbsp;—&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\"Reset Your Password Or Other Credentials\">Reset Password</A>&nbsp;—&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Account_Recovery\" TITLE=\"Initiate The Member Account Recovery Options\">Account Recovery</A> ]</CENTER><BR><BR>
 ");
 
 /*
@@ -138,11 +139,14 @@ if ($_GET["Authorization"] == "IP_Address") {
 if (!$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS) {
 
 echo ("
+											Internet Protocol Authorization<HR>
 											The Internet Protocol Address You Have Successfully Logged-In From Is Not Authorized<BR>
 											Would you like to authorize this Internet Protocol Address ?
 											<FORM ACTION=\"?InternalApplication&#61;Login&amp;Authorization&#61;IP_Address\" METHOD=\"post\">
 													Current Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
 														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_IP_Address_Current\" MAXLENGTH=\"150\" VALUE=\"$_GLOBAL_REMOTE_SERVER_ADDRESS\"><BR>
+													Your Electronic Mail Address For Authorization: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_Electronic_Mail_Address\" MAXLENGTH=\"150\" VALUE=\"$_GLOBAL_REMOTE_SERVER_ADDRESS\"><BR>
 													<INPUT TYPE=\"submit\" VALUE=\"Authorize\">
 												<HR>
 											</FORM>
@@ -150,8 +154,31 @@ echo ("
 
 } else {
 
-if (mail($_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
-Dear $_GLOBAL_COOKIE_MEMBER_USERNAME,
+/*
+ ============================================================================================================
+ +
+ + Retrieve Registered Member Account Details From Database Server
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Login_DB_Query_SELECT_MEMBERS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_electronic_mail_address='$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS'");
+
+/*
+ ============================================================================================================
+ + Retrieve List of Registered Member Account Entries From Database Server
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Login_DB_Query_SELECT_MEMBERS)) {
+
+$_Application_Module_Login_LIST_MEMBER_ID						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Login_LIST_MEMBER_USERNAME						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+
+if ($DB->num_rows($_Application_Module_Login_DB_Query_SELECT_MEMBERS)) {
+
+if (mail($_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
+Dear $_Application_Module_Login_LIST_MEMBER_USERNAME,
 ============================================================================
 Either you or someone else has attempted to Login to your Member Account at: $_GLOBAL_SYSTEM_SITE_TITLE
 
@@ -178,6 +205,10 @@ Have a nice day,
 											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_ELECTRONIC_MAIL_MESSAGE_ERROR);
 
 } // [ + ] IF: Electronic Mail Message Has Sent
+
+} // [ + ] WHILE: Retrieving Member Account Data From Database Server
+
+} // [ + ] IF: Submitted Electronic Mail Address Exists In Database Server
 
 } // [ + ] IF: Authorization Form Variables Have Executed
 
