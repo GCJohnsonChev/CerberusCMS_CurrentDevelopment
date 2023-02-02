@@ -135,8 +135,6 @@ if ($_GET["Message"] == "No_Member") {
 
 if ($_GET["Authorization"] == "IP_Address") {
 
-if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
-
 if (!$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS) {
 
 echo ("
@@ -186,8 +184,6 @@ Have a nice day,
 } else {
 
 											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
-
-} // [ + ] IF: Member Account Credentials Are Already Set
 
 } // [ + ] IF: Internal Application: Authorization IS IP_Address
 ?>
