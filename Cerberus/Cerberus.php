@@ -1047,7 +1047,7 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 /*
  ============================================================================================================
  +
- + Internal Security :: Account Session :: Restrict To Authorized Internet Protocol Address
+ + Internal Security :: Account Session :: Restrict Logged-In Members To Authorized Internet Protocol Address
  +
  ============================================================================================================
 */
@@ -1066,7 +1066,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != $_GLOBAL_REMOTE_SERVER_ADDRESS) {
+if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != "$_GLOBAL_REMOTE_SERVER_ADDRESS") {
 
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Control_Panel&Authorization=IP_Address");
 
@@ -2933,4 +2933,12 @@ ob_end_flush();
 */
 
 ob_end_clean();
+
+/*
+ ============================================================================================================
+ + Kill Everything Initialized and Running
+ ============================================================================================================
+*/
+
+die();
 ?>
