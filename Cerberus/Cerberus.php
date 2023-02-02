@@ -1079,7 +1079,7 @@ if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != "$_GLOBAL_REMOTE_SERVER_ADDRESS") {
 	setcookie("kernel_member_password","", time()-42000);
 	setcookie("kernel_member_language","", time()-42000);
 
-	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Control_Panel&Authorization=IP_Address");
+	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=Login&Authorization=IP_Address");
 
 } else {
 /**
