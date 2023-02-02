@@ -95,7 +95,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 */
 
 echo ("
-											<FORM ACTION=\"?InternalApplication&#61;Login\" METHOD=\"post\">
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Login\" METHOD=\"post\">
 													Member Electronic Mail Address:<BR>
 														<INPUT TYPE=\"text\" NAME=\"post_login_electronic_mail_address\" MAXLENGTH=\"50\"><BR>
 													Member Username:<BR>
@@ -142,7 +142,7 @@ echo ("
 											Member Account Authentication :: Internet Protocol Authorization<HR>
 											The Internet Protocol Address That You Have Successfully Authenticated From Is Not Authorized<BR>
 											Would you like to authorize this Internet Protocol Address ?
-											<FORM ACTION=\"?InternalApplication&#61;Login&amp;Authorization&#61;IP_Address\" METHOD=\"post\">
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Address\" METHOD=\"post\">
 													Current Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
 														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_IP_Address_Current\" MAXLENGTH=\"150\" VALUE=\"$_GLOBAL_REMOTE_SERVER_ADDRESS\"><BR>
 													Your Electronic Mail Address For Authorization: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
