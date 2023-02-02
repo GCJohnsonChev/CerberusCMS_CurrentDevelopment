@@ -166,6 +166,14 @@ $_Application_Module_Login_DB_Query_SELECT_MEMBERS					= $DB->query("SELECT * FR
 
 /*
  ============================================================================================================
+ + IF: Submitted Electronic Mail Address Exists In Database Server
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Login_DB_Query_SELECT_MEMBERS)) {
+
+/*
+ ============================================================================================================
  + Retrieve List of Registered Member Account Entries From Database Server
  ============================================================================================================
 */
@@ -174,8 +182,6 @@ while ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fet
 
 $_Application_Module_Login_LIST_MEMBER_ID						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
 $_Application_Module_Login_LIST_MEMBER_USERNAME						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
-
-if ($DB->num_rows($_Application_Module_Login_DB_Query_SELECT_MEMBERS)) {
 
 if (mail($_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Login_LIST_MEMBER_USERNAME,
@@ -206,9 +212,9 @@ Have a nice day,
 
 } // [ + ] IF: Electronic Mail Message Has Sent
 
-} // [ + ] WHILE: Retrieving Member Account Data From Database Server
-
 } // [ + ] IF: Submitted Electronic Mail Address Exists In Database Server
+
+} // [ + ] WHILE: Retrieving Member Account Data From Database Server
 
 } // [ + ] IF: Authorization Form Variables Have Executed
 
