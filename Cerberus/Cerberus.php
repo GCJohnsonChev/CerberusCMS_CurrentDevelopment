@@ -140,7 +140,7 @@ if (file_exists($_GLOBAL_SYSTEM_INSTALLATION_FILE)) {
  ============================================================================================================
  +
  +
- + [ @ ] Inclusion of All Internal Configurations
+ + [ @ ] Inclusion of All Internal Configuration Files
  +
  +
  ============================================================================================================
@@ -168,7 +168,7 @@ if (file_exists($_GLOBAL_SYSTEM_CONFIGURATION_FILE)) {
 
 } else {
 
-			echo ("Kernel Message: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: $_PROJECT_STRING_NAME :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>.");
+			echo ("Kernel Message: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: $_PROJECT_STRING_NAME :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>");
 
 } // [ + ] IF: File Exists: Global System Configuration File
 
@@ -1059,7 +1059,7 @@ $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
  ============================================================================================================
 */
 
-if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+//if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
 /*
  ============================================================================================================
@@ -2837,9 +2837,9 @@ $DB->free($_DB_Query_Kernel_Select_Main_Settings);
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-$DB->free($_DB_Query_Kernel_Select_Member_Credentials);
+	$DB->free($_DB_Query_Kernel_Select_Member_Credentials);
 
-} // [ + ] Check Member Credentials
+} // [ + ] Check For Member Account Credentials
 
 /*
  ============================================================================================================
@@ -2863,13 +2863,13 @@ $DB->free($_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check);
 
 		echo ("Kernel Message: Error, I Cannot Connect To The Structured Query Language Database Server Name: $_ACCESS_DATABASE_SERVER_DATABASE_NAME. Please Check The Database Server Access Credentials File.");
 
-} // [ + ] IF: Connection To Database Server Name
+} // [ + ] IF: Connection To Database Server Name Variables Have Executed
 
 } else {
 
-		echo ("Kernel Message: Error, I Cannot Connect To The Structured Query Language Database Server Host-Name: $_ACCESS_DATABASE_SERVER_HOSTNAME. Please Check The Database Server Access Credentials File.");
+		//echo ("Kernel Message: Error, I Cannot Connect To The Structured Query Language Database Server Host-Name: $_ACCESS_DATABASE_SERVER_HOSTNAME. Please Check The Database Server Access Credentials File.");
 
-} // [ + ] IF: Connection To Database Server Hostname
+} // [ + ] IF: Connection To Database Server Hostname Variables Have Executed
 
 /*
  ============================================================================================================
@@ -2932,6 +2932,4 @@ ob_end_flush();
 */
 
 ob_end_clean();
-
-}
 ?>
