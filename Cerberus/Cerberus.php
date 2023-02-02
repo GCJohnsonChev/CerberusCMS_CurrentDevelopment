@@ -166,6 +166,12 @@ if (file_exists($_GLOBAL_SYSTEM_CONFIGURATION_FILE)) {
 
 	include_once "$_GLOBAL_SYSTEM_CONFIGURATION_FILE";
 
+} else {
+
+			echo ("Kernel Message: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: $_PROJECT_STRING_NAME :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>.");
+
+} // [ + ] IF: File Exists: Global System Configuration File
+
 /*
  ============================================================================================================
  +
@@ -877,9 +883,9 @@ if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Kernel_Check_Member_A
  ============================================================================================================
 */
 
-	setcookie("member_electronic_mail_address","$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
-	setcookie("member_username","$_POST_LOGIN_USERNAME_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
-	setcookie("member_password","$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("kernel_member_electronic_mail_address","$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("kernel_member_username","$_POST_LOGIN_USERNAME_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("kernel_member_password","$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 
 /*
  ============================================================================================================
@@ -971,10 +977,10 @@ if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
  ============================================================================================================
 */
 
-	setcookie("member_electronic_mail_address","", time()-42000);
-	setcookie("member_username","", time()-42000);
-	setcookie("member_password","", time()-42000);
-	setcookie("member_language","", time()-42000);
+	setcookie("kernel_member_electronic_mail_address","", time()-42000);
+	setcookie("kernel_member_username","", time()-42000);
+	setcookie("kernel_member_password","", time()-42000);
+	setcookie("kernel_member_language","", time()-42000);
 
 } else {
 /**
@@ -1024,7 +1030,7 @@ if ($_GET["InternalApplication"] == "Language") {
 
 $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 	
-	setcookie("member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("kernel_member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&Message=Language");
 
 } // [ + ] IF: Internal Application: Language Is Activated
@@ -1293,7 +1299,7 @@ $_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
 
 /*
  ============================================================================================================
- + Check Cookies Against Real Directories: Prevent L.F.I., R.F.I. and S.Q.L. Injection Exploits
+ + Check Cookies Against Real Directories: Prevent Local File Inclusion, Remote File Inclusion and S.Q.L. Injection Exploits
  ============================================================================================================
 */
 
@@ -2060,7 +2066,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
 
-include_once "./Applications/Background/Log_Administration";
+	//include_once "./Applications/Background/Log_Administration";
 
 } // [ + ] IF: Member Account Access Level Is: Administrator, Include Activity Logging Application
 
@@ -2072,7 +2078,7 @@ include_once "./Applications/Background/Log_Administration";
  ============================================================================================================
 */
 
-include_once "./Applications/Background/Log_Background";
+	//include_once "./Applications/Background/Log_Background";
 
 /*
  ============================================================================================================
@@ -2080,7 +2086,7 @@ include_once "./Applications/Background/Log_Background";
  ============================================================================================================
 */
 
-include_once "./Applications/Background/Log_Visitor";
+	//include_once "./Applications/Background/Log_Visitor";
 
 /*
  ============================================================================================================
@@ -2096,7 +2102,7 @@ include_once "./Applications/Background/Log_Visitor";
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-	include_once "./Applications/Background/Log_Member";
+	//include_once "./Applications/Background/Log_Member";
 
 } // [ + ] IF: Member Is Logged-In: Include Background Application: Member Activity Log
 
@@ -2296,7 +2302,7 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START				= $_KERNEL_WEBPAGE_GENERATIO
 
 echo ("
 <!--================================================================================================-->
-<!--				    Cerberus Content Management System				    -->
+<!--				    $_PROJECT_STRING_NAME				    -->
 <!--================================================================================================-->
 
 <!--================================================================================================-->
@@ -2803,7 +2809,7 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME					= round($_KERNEL_WEBPAGE_GENERAT
 
 echo ("
 		<CENTER>
-			This Web Site Is Powered By:&nbsp;<A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TARGET=\"_NEW\" TITLE=\"Cerberus Content Management System :: SourceForge Project Page\">Cerberus Content Management System</A>&nbsp;|&nbsp;Web-Page Data Generation Time: " . $_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME . " Seconds&nbsp;|&nbsp;");
+			This Web Site Is Powered By:&nbsp;<A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TARGET=\"_NEW\" TITLE=\"$_PROJECT_STRING_NAME :: SourceForge Software Project Page\">$_PROJECT_STRING_NAME</A>&nbsp;|&nbsp;Web-Page Data Generation Time: " . $_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME . " Seconds&nbsp;|&nbsp;");
 
 /*
  ============================================================================================================
@@ -2867,7 +2873,7 @@ $DB->free($_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check);
 
 /*
  ============================================================================================================
- + Kill Database Server Connection: S.Q.L. Configured Database Server Strings
+ + Kill Database Server Connection: S.Q.L. Database Server Configured Strings
  ============================================================================================================
 */
 
@@ -2879,13 +2885,7 @@ if ($DB->close($_KERNEL_DATABASE_SERVER_CONNECT)) {
 
 			echo ("Kernel Message: Error: I Cannot Close The Database Server Connection For Internet Protocol Address: <A HREF=\"http://WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: View Detailed Who-Is Information For Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A>&nbsp;|&nbsp;");
 
-} // [ + ] IF: Close Database Connection
-
-} else {
-
-			echo ("Kernel Message: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: Cerberus Content Management System :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>.");
-
-} // [ + ] IF: File Exists: System Configuration File
+} // [ + ] IF: Close Database Server Connection
 
 echo ("
 			This Web Page Will Close After One Hour Of Inactivity
@@ -2932,4 +2932,6 @@ ob_end_flush();
 */
 
 ob_end_clean();
+
+}
 ?>
