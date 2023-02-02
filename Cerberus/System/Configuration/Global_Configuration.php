@@ -145,6 +145,7 @@ $_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR				= "Application_Administrator";
 $_INTERNAL_APPLICATION_MODULE_CUSTOM					= "Application_Custom";
 $_INTERNAL_APPLICATION_MODULE_MEMBER					= "Application_Member";
 $_INTERNAL_APPLICATION_MODULE_PUBLIC					= "Application_Public";
+$_INTERNAL_APPLICATION_MODULE_INTERNAL					= "Application_Internal";
 
 /*
  ============================================================================================================
