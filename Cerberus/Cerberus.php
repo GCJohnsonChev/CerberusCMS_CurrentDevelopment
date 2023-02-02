@@ -198,7 +198,7 @@ if (file_exists($_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE)) {
 
 } else {
 
-	echo ("Cerberus: Missing :: Master Security Module :: Master Sanitization");
+	echo ("Kernel Message: Missing :: Master Security Module :: Master Sanitization");
 
 } // [ + ] IF: Include: Global Security Module File: Master Sanitization
 
@@ -447,7 +447,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_MERSENNE_TWISTER		= mt_rand
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['cerberus_member_electronic_mail_address'];
+$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['member_electronic_mail_address'];
 
 /*
  ============================================================================================================
@@ -455,7 +455,7 @@ $_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['cerberus_member_e
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['cerberus_member_password'];
+$_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['member_password'];
 
 /*
  ============================================================================================================
@@ -463,7 +463,7 @@ $_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['cerberus_member_password'];
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['cerberus_member_username'];
+$_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['member_username'];
 
 /*
  ============================================================================================================
@@ -471,7 +471,7 @@ $_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['cerberus_member_username'];
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_COOKIE['cerberus_member_language'];
+$_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_COOKIE['member_language'];
 
 /*
  ============================================================================================================
@@ -877,9 +877,9 @@ if (password_verify($_POST_LOGIN_PASSWORD_CLEAR, $DB_Query_Kernel_Check_Member_A
  ============================================================================================================
 */
 
-	setcookie("cerberus_member_electronic_mail_address","$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
-	setcookie("cerberus_member_username","$_POST_LOGIN_USERNAME_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
-	setcookie("cerberus_member_password","$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("member_electronic_mail_address","$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("member_username","$_POST_LOGIN_USERNAME_CLEAR", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("member_password","$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 
 /*
  ============================================================================================================
@@ -971,10 +971,10 @@ if ($_DB_Query_Kernel_Set_Member_Account_Status_Account_Inactive) {
  ============================================================================================================
 */
 
-	setcookie("cerberus_member_electronic_mail_address","", time()-42000);
-	setcookie("cerberus_member_username","", time()-42000);
-	setcookie("cerberus_member_password","", time()-42000);
-	setcookie("cerberus_member_language","", time()-42000);
+	setcookie("member_electronic_mail_address","", time()-42000);
+	setcookie("member_username","", time()-42000);
+	setcookie("member_password","", time()-42000);
+	setcookie("member_language","", time()-42000);
 
 } else {
 /**
@@ -1024,7 +1024,7 @@ if ($_GET["InternalApplication"] == "Language") {
 
 $_KERNEL_POST_LANGUAGE	 							= $_POST['post_language'];
 	
-	setcookie("cerberus_member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
+	setcookie("member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&Message=Language");
 
 } // [ + ] IF: Internal Application: Language Is Activated
@@ -1565,7 +1565,7 @@ if ($_DB_Query_Kernel_Member_Account_Last_Referrer) {
 **/
 } else {
 
-	echo ($_Message_Cerberus_ERROR_SQL_MEMBER_LAST_POST);
+	echo ($_Message_Kernel_ERROR_SQL_MEMBER_LAST_POST);
 
 } // [ + ] IF: Member Is Logged-In: Update Last Referrer
 
@@ -1831,7 +1831,7 @@ if ($_DB_Query_Main_Member_Update_Rank) {
 **/
 } else {
 
-										echo ($_Message_Cerberus_ERROR_SQL_RANK);
+										echo ($_Message_Kernel_ERROR_SQL_RANK);
 
 } // [ + ] IF: Update Member Account Rank Level
 
@@ -2170,7 +2170,7 @@ if ($_GLOBAL_SYSTEM_OFFLINE_STATUS >= 1) {
 
 if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
 
-	echo ($_Message_Cerberus_OFFLINE_MODE_ENABLED);
+	echo ($_Message_Kernel_OFFLINE_MODE_ENABLED);
 
 } else {
 
@@ -2480,7 +2480,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
 
 } else {
 
-	echo ($_Message_Cerberus_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR);
+	echo ($_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR);
 
 } // [ + ] IF: Access Level Is >= 2
 
@@ -2556,7 +2556,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 } else {
 
-	echo ($_Message_Cerberus_APPLICATION_ACCESS_RESTRICTED_MEMBER);
+	echo ($_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_MEMBER);
 
 } // [ + ] IF: Member Credentials Exist and Are Valid
 
@@ -2576,7 +2576,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
 
 } else {
 
-	echo ($_Message_Cerberus_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR);
+	echo ($_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR);
 
 } // [ + ] Include Administration Application Module
 
@@ -2584,13 +2584,13 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
 
 } else {
 
-	echo ($_Message_Cerberus_APPLICATION_DEACTIVATED);
+	echo ($_Message_Kernel_APPLICATION_DEACTIVATED);
 
 } // [ + ] IF: Application Module Status Is: Deactivated
 
 } else {
 
-	echo ($_Message_Cerberus_APPLICATION_NOT_FOUND);
+	echo ($_Message_Kernel_APPLICATION_NOT_FOUND);
 
 } // [ + ] IF: Application Module File Permission Is Administration-Level ( 2 )
 
@@ -2855,13 +2855,13 @@ $DB->free($_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check);
 
 } else {
 
-		echo ("Cerberus: Error, I Cannot Connect To The S.Q.L. Database Server Name: $_ACCESS_DATABASE_SERVER_DATABASE_NAME. Please Check The Database Server Access Credentials File.");
+		echo ("Kernel Message: Error, I Cannot Connect To The Structured Query Language Database Server Name: $_ACCESS_DATABASE_SERVER_DATABASE_NAME. Please Check The Database Server Access Credentials File.");
 
 } // [ + ] IF: Connection To Database Server Name
 
 } else {
 
-		echo ("Cerberus: Error, I Cannot Connect To The S.Q.L. Database Server Host-Name: $_ACCESS_DATABASE_SERVER_HOSTNAME. Please Check The Database Server Access Credentials File.");
+		echo ("Kernel Message: Error, I Cannot Connect To The Structured Query Language Database Server Host-Name: $_ACCESS_DATABASE_SERVER_HOSTNAME. Please Check The Database Server Access Credentials File.");
 
 } // [ + ] IF: Connection To Database Server Hostname
 
@@ -2877,13 +2877,13 @@ if ($DB->close($_KERNEL_DATABASE_SERVER_CONNECT)) {
 
 } else {
 
-			echo ("Cerberus: Error: I Cannot Close The Database Server Connection For Internet Protocol Address: <A HREF=\"http://WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: View Detailed Who-Is Information For Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A>&nbsp;|&nbsp;");
+			echo ("Kernel Message: Error: I Cannot Close The Database Server Connection For Internet Protocol Address: <A HREF=\"http://WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: View Detailed Who-Is Information For Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A>&nbsp;|&nbsp;");
 
 } // [ + ] IF: Close Database Connection
 
 } else {
 
-			echo ("Cerberus: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: Cerberus Content Management System :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>.");
+			echo ("Kernel Message: Error: System Configuration File Missing: $_GLOBAL_SYSTEM_CONFIGURATION_FILE | <A HREF=\"./Maintenance/Diagnostics/Diagnose.php\" TITLE=\":: Cerberus Content Management System :: Diagnostics Application ::\" TARGET=\"_NEW\">Please Click Here For Extensive Diagnostics</A>.");
 
 } // [ + ] IF: File Exists: System Configuration File
 
