@@ -51,14 +51,16 @@
 /*
  ============================================================================================================
  +
- + @ Global Configuration, Files
+ +
+ + [ @ ] Global Configuration, Files
+ +
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Configuration Files and Their Variables
+ + Configuration Files :: Globally Invokable Variables
  ============================================================================================================
 */
 
@@ -77,14 +79,16 @@ if (file_exists($_GLOBAL_SQL_SERVER_CONFIGURATION_FILE)) {
 
 } else {
 
-	echo ("Cerberus: Error, Missing File: $_GLOBAL_SQL_SERVER_CONFIGURATION_FILE");
+	echo ("Kernel Message: Error, Missing File: $_GLOBAL_SQL_SERVER_CONFIGURATION_FILE");
 
 } // [ + ] IF: File Exists: Global S.Q.L. Server Configuration File
 
 /*
  ============================================================================================================
  +
+ +
  + @ Configuration, Database Class Files
+ +
  +
  ============================================================================================================
 */
@@ -108,14 +112,16 @@ if (file_exists($_GLOBAL_SQL_SERVER_DATABASE_CLASS_FILE)) {
 /*
  ============================================================================================================
  +
- + @ Kernel File Parameters
+ +
+ + [ @ ] Kernel File Parameters
+ +
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Kernel File Variables: Kernal File Name
+ + Kernel File :: Variables :: Kernal File Name
  ============================================================================================================
 */
 
@@ -124,7 +130,7 @@ $_INTERNAL_FILE_KERNAL							= "Cerberus.php";
 /*
  ============================================================================================================
  +
- + @ Application Module Parameters
+ + [ @ ] Invokable Application Module Parameters
  +
  ============================================================================================================
 */
@@ -143,14 +149,16 @@ $_INTERNAL_APPLICATION_MODULE_PUBLIC					= "Application_Public";
 /*
  ============================================================================================================
  +
- + @ Internal Cerberus Software Project Versioning Variables
+ +
+ + [ @ ] Internal Software Project Versioning Variables
+ +
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Cerberus Versioning: Globally Invokable Variables
+ + Software Project :: Globally Invokable Variables :: Software Versioning
  ============================================================================================================
 */
 
@@ -159,15 +167,25 @@ $_PROJECT_VERSION_EXTENDED						= "Cerberus Content Management System - Version:
 
 /*
  ============================================================================================================
+ + Software Project :: Globally Invokable Variables :: Software Project Strings
+ ============================================================================================================
+*/
+
+$_PROJECT_STRING_NAME							= "Cerberus Content Management System";
+
+/*
+ ============================================================================================================
  +
- + @ Internal Cerberus Software Project Server Variables
+ +
+ + [ @ ] Internal Software Project :: Web Server :: Variables
+ +
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Cerberus Parent Organization Official Servers: Globally Invokable Variables
+ + Software Project Parent Organization Official Servers :: Globally Invokable Variables
  ============================================================================================================
 */
 
@@ -176,7 +194,7 @@ $_PROJECT_SERVER_URL_SECURE						= "https://www.TinkeSoftware.com";
 
 /*
  ============================================================================================================
- + Cerberus Parent Organization Official GIT: Globally Invokable Variables
+ + Software Project Parent Organization Official GIT :: Globally Invokable Variables
  ============================================================================================================
 */
 
@@ -209,7 +227,7 @@ $_PROJECT_SERVER_URL_GITLAB_SECURE					= "https://www.GITLab.com/TinkeSoftware/C
 
 /*
  ============================================================================================================
- + Cerberus Parent Organization Official Software Project Hosting: Globally Invokable Variables
+ + Software Project Parent Organization Official Software Project Hosting :: Globally Invokable Variables
  ============================================================================================================
 */
 
