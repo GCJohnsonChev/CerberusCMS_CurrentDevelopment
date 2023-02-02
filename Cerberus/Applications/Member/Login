@@ -146,7 +146,7 @@ echo ("
 													Current Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
 														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_IP_Address_Current\" MAXLENGTH=\"150\" VALUE=\"$_GLOBAL_REMOTE_SERVER_ADDRESS\"><BR>
 													Your Electronic Mail Address For Authorization: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
-														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_Electronic_Mail_Address\" MAXLENGTH=\"150\" VALUE=\"$_GLOBAL_REMOTE_SERVER_ADDRESS\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_Electronic_Mail_Address\" MAXLENGTH=\"150\" VALUE=\"Electronic Mail Address...\"><BR>
 													<INPUT TYPE=\"submit\" VALUE=\"Authorize\">
 												<HR>
 											</FORM>
