@@ -139,7 +139,7 @@ if ($_GET["Authorization"] == "IP_Address") {
 if (!$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS) {
 
 echo ("
-											Internet Protocol Authorization<HR>
+											Member Account Authentication :: Internet Protocol Authorization<HR>
 											The Internet Protocol Address You Have Successfully Logged-In From Is Not Authorized<BR>
 											Would you like to authorize this Internet Protocol Address ?
 											<FORM ACTION=\"?InternalApplication&#61;Login&amp;Authorization&#61;IP_Address\" METHOD=\"post\">
