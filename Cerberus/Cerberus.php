@@ -453,7 +453,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_MERSENNE_TWISTER		= mt_rand
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['member_electronic_mail_address'];
+$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['kernel_member_electronic_mail_address'];
 
 /*
  ============================================================================================================
@@ -461,7 +461,7 @@ $_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['member_electronic
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['member_password'];
+$_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['kernel_member_password'];
 
 /*
  ============================================================================================================
@@ -469,7 +469,7 @@ $_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['member_password'];
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['member_username'];
+$_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['kernel_member_username'];
 
 /*
  ============================================================================================================
@@ -477,7 +477,7 @@ $_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['member_username'];
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_COOKIE['member_language'];
+$_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_COOKIE['kernel_member_language'];
 
 /*
  ============================================================================================================
