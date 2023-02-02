@@ -797,7 +797,7 @@ $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT						= $_SERVER['HTTP_USER_AGENT'];
 
 /*
  ============================================================================================================
- + IF: Internal Application :: Login Is Activated
+ + IF: Internal Application :: Login :: Is Activated
  ============================================================================================================
 */
 
@@ -806,7 +806,7 @@ if ($_GET["InternalApplication"] == "Login") {
 /*
  ============================================================================================================
  +
- + Internal Application :: Login Form Post Variables
+ + Internal Application :: Login Form :: Post Variables
  +
  ============================================================================================================
 */
@@ -844,7 +844,7 @@ $_POST_LOGIN_USERNAME_CLEAR							= stripslashes($_POST_LOGIN_USERNAME_CLEAR);
 /*
  ============================================================================================================
  +
- + Internal Security :: Check Post Data Versus Stored Server Data
+ + Internal Security :: Login :: Check Post Data Versus Stored Server Data
  +
  ============================================================================================================
 */
@@ -855,8 +855,7 @@ $_POST_LOGIN_USERNAME_CLEAR							= stripslashes($_POST_LOGIN_USERNAME_CLEAR);
  ============================================================================================================
 */
 
-//$DB_Query_Kernel_Check_Member_Account_Credentials 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR' AND member_electronic_mail_address='$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR'");
-$DB_Query_Kernel_Check_Member_Account_Credentials 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR'");
+$DB_Query_Kernel_Check_Member_Account_Credentials 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_POST_LOGIN_USERNAME_CLEAR' AND member_electronic_mail_address='$_POST_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR'");
 
 /*
  ============================================================================================================
