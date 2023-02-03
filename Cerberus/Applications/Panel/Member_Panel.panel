@@ -156,7 +156,7 @@ $DB->free($_Application_Module_Block_Members_DB_Query_SELECT_PRIVATE_MESSAGES);
 } else {
 
 echo ("
-											<FORM ACTION=\"?InternalApplication&#61;Login\" METHOD=\"post\">
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Login\" METHOD=\"post\">
 												<I>Member' Electronic Mail Address</I>:<BR>
 													<INPUT TYPE=\"text\" NAME=\"post_login_electronic_mail_address\" MAXLENGTH=\"50\"><BR>
 												<I>Member' Username</I>:<BR>
