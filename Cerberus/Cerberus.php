@@ -627,7 +627,7 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_DB_Query_Kernel_Select_Member_Credenti
 
 /*
  ============================================================================================================
- + Global Member Settings :: Variables :: Last Known I.P. Address
+ + Global Member Settings :: Variables :: Internet Protocol Address :: Last Login
  ============================================================================================================
 */
 
@@ -635,7 +635,7 @@ $_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN						= $_DB_Query_Kernel_Select_Member_Cre
 
 /*
  ============================================================================================================
- + Global Member Settings :: Variables :: Authorized I.P. Address
+ + Global Member Settings :: Variables :: Internet Protocol Address :: Authorized
  ============================================================================================================
 */
 
@@ -643,7 +643,7 @@ $_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED						= $_DB_Query_Kernel_Select_Member_Cre
 
 /*
  ============================================================================================================
- + Global Member Settings :: Variables :: Member Account Internet Protocol Address Log
+ + Global Member Settings :: Variables :: Internet Protocol Address :: Log
  ============================================================================================================
 */
 
