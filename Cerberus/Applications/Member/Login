@@ -210,7 +210,7 @@ then paste it into your web browser Uniform-Resource-Location bar:
 * The Internet Protocol Address associated with this Login attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
 * The last Internet Protocol Address on this Member Account that successfully authenticated was: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN
 * The current authorized Internet Protocol Address on this Member Account is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED
-* The current authorization token is: $_Application_Module_Member_Login_AUTHORIZATION_HASH
+* The current authorization token is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN
 ============================================================================
 Have a nice day,
 		~ $_GLOBAL_SYSTEM_SITE_TITLE
