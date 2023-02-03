@@ -197,10 +197,11 @@ There are three pieces of information required by default to successfully authen
 * Electronic Mail Address
 
 This Application does not display or disclose any Electronic Mail Address belonging to any Registered Member Account anywhere.
-Your password is encrypted in the database using several different kinds of encryption algorithms combined with multi-layered HASH algorithms and ciphers.
+Your password is encrypted in the database by using several different kinds of encryption algorithms combined with multi-layered HASH algorithms and ciphers.
 
-If you would like to authorize this specific Internet Protocol Address please copy and paste the Uniform-Resource-Location Link below this message
-* <A HREF=\"$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Login&Authorize=$_Application_Module_Member_Login_AUTHORIZATION_TOKEN\"></A>
+If you would like to authorize this specific Internet Protocol Address please copy and paste the Uniform-Resource-Location Link below this message and
+then paste it into your web browser Uniform-Resource-Location bar:
+* $_GLOBAL_LOCAL_SERVER_HTTP_HOST/WRITE_DIRECTORY_NAME_HERE/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Login&Authorize=$_Application_Module_Member_Login_AUTHORIZATION_TOKEN
 
 * The Internet Protocol Address associated with this Login attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
 * The last Internet Protocol Address on this Member Account that successfully authenticated was: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN
