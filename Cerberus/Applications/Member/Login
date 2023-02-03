@@ -187,7 +187,7 @@ Dear $_Application_Module_Login_LIST_MEMBER_USERNAME :: $_Application_Module_Log
 ============================================================================
 Either you or someone else has attempted to Login to your Member Account at: $_GLOBAL_SYSTEM_SITE_TITLE
 
-There are three pieces of information required by default to successfully Login to any Member Account:
+There are three pieces of information required by default to successfully authenticate to any Member Account:
 * UserName
 * Password
 * Electronic Mail Address
@@ -195,7 +195,7 @@ There are three pieces of information required by default to successfully Login 
 This Application does not display or disclose any Electronic Mail Address belonging to any Registered Member Account anywhere.
 Your password is encrypted in the database using BlowFish Encryption Algorithm combined with multi-layer HASH algorithms.
 
-If you would like to authorize this Internet Protocol Address please copy and paste the Uniform-Resource-Location Link below this message
+If you would like to authorize this specific Internet Protocol Address please copy and paste the Uniform-Resource-Location Link below this message
 * <A HREF=\"\"></A>
 
 The Internet Protocol Address associated with this Login attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
