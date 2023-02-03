@@ -1,0 +1,128 @@
+<?php
+/*
+ =============================================================================================
+ + Cerberus Content Management System.
+ + ---
+ + - Author : Gary Christopher Johnson
+ + - E-Mail : TinkeSoftware@Protonmail.com
+ + - Company: Tinke Software
+ + - Notes  : View this file in a non-formatting text editor for correct indentation display
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Background->Log_Background
+ + - File Version:  0.6 - Wednesday, March 1st of 2023.
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ===========================================================================================
+*/
+
+/*
+ ================================================================
+ +
+ +
+ + Log Background
+ +
+ +
+ ================================================================
+*/
+
+/*
+ ================================================================
+ + Fetch Statistics Data
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS 			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics");
+$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array 		= $DB->fetch_array($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
+
+/*
+ ================================================================
+ + Increment Page Hits
+ ================================================================
+*/
+
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_NUMBER_OF_HITS 			= $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array['statistics_number_of_hits'];
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_NUMBER_OF_HITS_INCREMENT 	= $_Application_Module_Background_Log_Background_LIST_STATISTICS_NUMBER_OF_HITS + 1;
+
+$_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics SET statistics_number_of_hits='$_Application_Module_Background_Log_Background_LIST_STATISTICS_NUMBER_OF_HITS_INCREMENT' WHERE id='1'");
+
+/*
+ ================================================================
+ + Update Statistics Data
+ ================================================================
+*/
+
+if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ($_Message_Log_Background_ERROR_SQL_STATISTICS);
+} // [ + ] IF_QUERY
+
+/*
+ ================================================================
+ + Update Member, Last Active
+ ================================================================
+*/
+
+if ($_GLOBAL_USERNAME != null) {
+
+$_Application_Module_Background_Log_Background_DATE 						= date("HdmY");
+
+$_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_online_status='$_Application_Module_Background_Log_Background_DATE' WHERE member_username='$_GLOBAL_USERNAME'");
+
+if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ($_Message_Log_Background_ERROR_SQL_MEMBERS);
+} // [ + ] IF_QUERY
+
+/*
+ ================================================================
+ + Kill DB Query
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS);
+
+} // [ + ] IF_DB_Query_UPDATE_MEMBERS
+
+/*
+ ================================================================
+ + Kill DB Query
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
+
+/*
+ ================================================================
+ + Kill DB Query
+ ================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS);
+?>
