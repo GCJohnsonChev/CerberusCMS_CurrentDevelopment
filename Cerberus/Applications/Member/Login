@@ -181,6 +181,7 @@ while ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fet
 $_Application_Module_Login_LIST_MEMBER_ID						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
 $_Application_Module_Login_LIST_MEMBER_USERNAME						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
 $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS				= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+$_Application_Module_Login_LIST_MEMBER_LAST_LOGIN					= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_last_login'];
 
 if (mail($_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Login_LIST_MEMBER_USERNAME :: $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
@@ -199,7 +200,7 @@ If you would like to authorize this specific Internet Protocol Address please co
 * <A HREF=\"\"></A>
 
 The Internet Protocol Address associated with this Login attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
-The last Internet Protocol Address on this Member Account that successfully authenticated was: $_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN
+The last Internet Protocol Address on this Member Account that successfully authenticated was: $_Application_Module_Login_LIST_MEMBER_LAST_LOGIN
 ============================================================================
 Have a nice day,
 		~ $_GLOBAL_SYSTEM_SITE_TITLE
