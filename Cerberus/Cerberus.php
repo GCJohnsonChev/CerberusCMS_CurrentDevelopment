@@ -2046,7 +2046,7 @@ $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_GLOBAL_COOKIE_MEMBER_LANGUAGE;
  ============================================================================================================
 */
 
-include_once "./System/Language/$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY/Language.cerberus";
+	include_once "./System/Language/$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY/Language.cerberus";
 
 /*
  ============================================================================================================
@@ -2078,7 +2078,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
 
-	//include_once "./Applications/Background/Log_Administration";
+	include_once "./Applications/Background/Log_Administration";
 
 } // [ + ] IF: Member Account Access Level Is: Administrator, Include Activity Logging Application
 
@@ -2090,7 +2090,7 @@ if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
  ============================================================================================================
 */
 
-	//include_once "./Applications/Background/Log_Background";
+	include_once "./Applications/Background/Log_Background";
 
 /*
  ============================================================================================================
@@ -2098,7 +2098,7 @@ if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
  ============================================================================================================
 */
 
-	//include_once "./Applications/Background/Log_Visitor";
+	include_once "./Applications/Background/Log_Visitor";
 
 /*
  ============================================================================================================
@@ -2114,7 +2114,7 @@ if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-	//include_once "./Applications/Background/Log_Member";
+	include_once "./Applications/Background/Log_Member";
 
 } // [ + ] IF: Member Is Logged-In: Include Background Application: Member Activity Log
 
@@ -2132,7 +2132,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-include_once "./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Theme.php";
+	include_once "./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Theme.php";
 
 /*
  ============================================================================================================
@@ -2158,7 +2158,7 @@ include_once "./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Theme.php";
  ============================================================================================================
 */
 
-include_once "./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY/Text-Editor.cerberus";
+	include_once "./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_TEXT_EDITOR_DIRECTORY/Text-Editor.cerberus";
 
 /*
  ============================================================================================================
@@ -2412,7 +2412,7 @@ $_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE					= $_DB_Query_Kernel_Applicatio
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 echo ($_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE);
 
-include_once "./Applications/Panel/$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_FILE_NAME.panel";
+	include_once "./Applications/Panel/$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_FILE_NAME.panel";
 
 echo ($_THIS_THEME_APPLICATION_PANEL_2);
 
@@ -2716,7 +2716,7 @@ echo ($_THIS_THEME_APPLICATION_PANEL_1);
 
 echo ($_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE);
 
-include_once "./Applications/Panel/$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME.panel";
+	include_once "./Applications/Panel/$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME.panel";
 
 echo ($_THIS_THEME_APPLICATION_PANEL_2);
 
