@@ -214,13 +214,13 @@ Have a nice day,
 
 } // [ + ] IF: Electronic Mail Message Has Sent
 
+} // [ + ] WHILE: Retrieving Member Account Data From Database Server
+
 } else {
 
 											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
 
 } // [ + ] IF: Submitted Electronic Mail Address Exists In Database Server
-
-} // [ + ] WHILE: Retrieving Member Account Data From Database Server
 
 /*
  ============================================================================================================
