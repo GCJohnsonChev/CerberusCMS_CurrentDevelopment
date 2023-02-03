@@ -195,7 +195,7 @@ There are three pieces of information required by default to successfully authen
 * Electronic Mail Address
 
 This Application does not display or disclose any Electronic Mail Address belonging to any Registered Member Account anywhere.
-Your password is encrypted in the database using BlowFish Encryption Algorithm combined with multi-layer HASH algorithms.
+Your password is encrypted in the database using several different kinds of encryption algorithms combined with multi-layered HASH algorithms and ciphers.
 
 If you would like to authorize this specific Internet Protocol Address please copy and paste the Uniform-Resource-Location Link below this message
 * <A HREF=\"\"></A>
