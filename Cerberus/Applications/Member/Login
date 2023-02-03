@@ -156,9 +156,7 @@ echo ("
 
 /*
  ============================================================================================================
- +
  + Retrieve Registered Member Account Details From Database Server
- +
  ============================================================================================================
 */
 
@@ -216,11 +214,13 @@ Have a nice day,
 
 } // [ + ] IF: Electronic Mail Message Has Sent
 
+} else {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
+
 } // [ + ] IF: Submitted Electronic Mail Address Exists In Database Server
 
 } // [ + ] WHILE: Retrieving Member Account Data From Database Server
-
-} // [ + ] IF: Authorization Form Variables Have Executed
 
 /*
  ============================================================================================================
@@ -230,9 +230,7 @@ Have a nice day,
 
 $DB->free($_Application_Module_Login_DB_Query_SELECT_MEMBERS);
 
-} else {
-
-											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
+} // [ + ] IF: Authorization Form Variables Have Executed
 
 } // [ + ] IF: Internal Application: Authorization IS IP_Address
 ?>
