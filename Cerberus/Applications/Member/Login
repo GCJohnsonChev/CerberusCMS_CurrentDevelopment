@@ -72,6 +72,8 @@
 $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS		= $_POST['Application_Member_Login_Authorization_IP_Address_Current'];
 $_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= $_POST['Application_Member_Login_Authorization_Electronic_Mail_Address'];
 
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN		= $_POST['Application_Member_Login_Authorization_IP_Token'];
+
 $_Application_Module_Member_Login_AUTHORIZATION_TOKEN					= rand(100000000, 999999999);
 
 /*
@@ -184,7 +186,8 @@ $_Application_Module_Login_LIST_MEMBER_ID						= $_Application_Module_Login_DB_Q
 $_Application_Module_Login_LIST_MEMBER_USERNAME						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
 $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS				= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
 $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_last_login'];
-$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorization_token'];
+$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorized'];
+$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN	= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorization_token'];
 
 if (mail($_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Login_LIST_MEMBER_USERNAME :: $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
@@ -206,7 +209,7 @@ then paste it into your web browser Uniform-Resource-Location bar:
 * The Internet Protocol Address associated with this Login attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
 * The last Internet Protocol Address on this Member Account that successfully authenticated was: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN
 * The current authorized Internet Protocol Address on this Member Account is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED
-* The current authorization token is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION
+* The current authorization token is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN
 ============================================================================
 Have a nice day,
 		~ $_GLOBAL_SYSTEM_SITE_TITLE
@@ -240,4 +243,33 @@ $DB->free($_Application_Module_Login_DB_Query_SELECT_MEMBERS);
 } // [ + ] IF: Authorization Form Variables Have Executed
 
 } // [ + ] IF: Internal Application: Authorization IS IP_Address
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application :: Authorization From Internet Protocol Address Token
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Authorization"] == "IP_Token") {
+
+if (!$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN) {
+
+echo ("
+											Member Account Authentication :: Internet Protocol Authorization Token<HR>
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Token\" METHOD=\"post\">
+											Do you have a valid Internet Protocol Address Authorization Token ?<BR>
+											Your current Internet Protocol Address is: $_GLOBAL_REMOTE_SERVER_ADDRESS<BR>
+														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_IP_Token\" MAXLENGTH=\"15\" VALUE=\"Authorization Token...\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Authorize\">
+												<HR>
+											</FORM>
+");
+
+} else {
+
+$_Application_Module_Login_DB_Query_UPDATE_MEMBER_ACCOUNT_TOKEN			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_ip_address_authorization_token='$___'");
+
+} // [ + ] IF: Internal Application: Authorization IS IP_Token
 ?>
