@@ -270,7 +270,7 @@ echo ("
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Token\" METHOD=\"post\">
 											Do you have a valid Internet Protocol Address Authorization Token ?<BR>
 											Your current Internet Protocol Address is: $_GLOBAL_REMOTE_SERVER_ADDRESS<BR>
-														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_IP_Token\" MAXLENGTH=\"15\" VALUE=\"Authorization Token...\"><BR>
+														<INPUT TYPE=\"text\" NAME=\"Application_Member_Login_Authorization_IP_Token\" MAXLENGTH=\"32\" VALUE=\"Authorization Token...\"><BR>
 													<INPUT TYPE=\"submit\" VALUE=\"Authorize\">
 												<HR>
 											</FORM>
