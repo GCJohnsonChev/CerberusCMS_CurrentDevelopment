@@ -283,7 +283,7 @@ $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_T
 if (mail($_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Login_LIST_MEMBER_USERNAME :: $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
 ============================================================================
-Either you or someone else has attempted to Login to your Member Account at: $_GLOBAL_SYSTEM_SITE_TITLE
+Either you or someone else has attempted to authenticate to your Member Account at: $_GLOBAL_SYSTEM_SITE_TITLE
 
 There are three pieces of information required by default to successfully authenticate to any Member Account:
 * UserName
@@ -301,6 +301,7 @@ then paste it into your web browser Uniform-Resource-Location bar:
 * The last Internet Protocol Address on this Member Account that successfully authenticated was: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN
 * The current authorized Internet Protocol Address on this Member Account is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED
 * The current authorization token is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN
+* The authorization token available now is: $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH
 ============================================================================
 Have a nice day,
 		~ $_GLOBAL_SYSTEM_SITE_TITLE
@@ -374,7 +375,8 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Login_DB_Query_SELECT_MEMBERS_AUTHORIZATION_TOKEN				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
+$_Application_Module_Login_DB_Query_UPDATE_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
+$_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
 
 /*
  ============================================================================================================
@@ -382,13 +384,23 @@ $_Application_Module_Login_DB_Query_SELECT_MEMBERS_AUTHORIZATION_TOKEN				= $DB-
  ============================================================================================================
 */
 
-if ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_AUTHORIZATION_TOKEN) {
+if ($DB->num_rows($_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN)) {
 
 											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_TOKEN_VALID);
 
 } else {
 
-											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_TOKEN_VALID);
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_TOKEN_INVALID);
+
+}
+
+if ($_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN) {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_UPDATED_SUCCESSFULLY);
+
+} else {
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_UPDATE_ERROR);
+
 
 } // [ + ] IF: Database Sever Query: Check For Valid Authorization Token Variable Has Executed
 
