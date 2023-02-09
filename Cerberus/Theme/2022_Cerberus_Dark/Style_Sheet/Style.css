@@ -209,12 +209,12 @@ td.MI6 { background-image: url('../Image/Application/6.png'); opacity: 0.9; filt
 td.MI8 { background-image: url('../Image/Application/8.png'); opacity: 0.9; filter: alpha(opacity=30); }
 td.MI9 { background-image: url('../Image/Application/9.png'); opacity: 0.9; filter: alpha(opacity=30); }
 
-td.BI2 { background-image: url('../Image/Block/2.png'); opacity: 0.9; filter: alpha(opacity=30); }
-td.BI4 { background-image: url('../Image/Block/4.png'); opacity: 0.9; filter: alpha(opacity=30); }
-td.BI5 { background-image: url('../Image/Block/5.png'); opacity: 0.9; filter: alpha(opacity=30); }
-td.BI6 { background-image: url('../Image/Block/6.png'); opacity: 0.9; filter: alpha(opacity=30); }
-td.BI8 { background-image: url('../Image/Block/8.png'); opacity: 0.9; filter: alpha(opacity=30); }
-td.BI9 { background-image: url('../Image/Block/9.png'); opacity: 0.9; filter: alpha(opacity=30); }
+td.BI2 { background-image: url('../Image/Panel/2.png'); opacity: 0.9; filter: alpha(opacity=30); }
+td.BI4 { background-image: url('../Image/Panel/4.png'); opacity: 0.9; filter: alpha(opacity=30); }
+td.BI5 { background-image: url('../Image/Panel/5.png'); opacity: 0.9; filter: alpha(opacity=30); }
+td.BI6 { background-image: url('../Image/Panel/6.png'); opacity: 0.9; filter: alpha(opacity=30); }
+td.BI8 { background-image: url('../Image/Panel/8.png'); opacity: 0.9; filter: alpha(opacity=30); }
+td.BI9 { background-image: url('../Image/Panel/9.png'); opacity: 0.9; filter: alpha(opacity=30); }
 
 /*
  ================================================================
