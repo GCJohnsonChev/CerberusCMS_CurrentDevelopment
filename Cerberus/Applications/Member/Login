@@ -188,7 +188,7 @@ echo ("
 
 											Additional Options<HR>
 											Member Account Login Options<BR>
-											* <A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Insecure Over Clear Text Insecure Connection ::\">Insecure Clear-Text Login</A><BR>
+											* <A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Insecure Over Clear-Text Insecure Connection ::\">Insecure Clear-Text Login</A><BR>
 											* <A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection ::\">SSL Secure Login</A><BR>
 											* <A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection ::\">TLS Secure Login</A><BR><BR>
 
