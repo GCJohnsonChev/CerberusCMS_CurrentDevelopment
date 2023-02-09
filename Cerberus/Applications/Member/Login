@@ -209,7 +209,7 @@ echo ("
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\":: Reset Your Member Account Password Or Other Member Account Credentials ::\">Reset Password</A><BR>
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Account_Recovery\" TITLE=\":: Initiate The Member Account Recovery Options ::\">Account Recovery</A></CENTER><BR><BR>
 
-											Member Account Authorization Options $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH<BR>
+											Member Account Authorization Options<BR>
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Address\" TITLE=\":: Initiate The Internet Protocol Address Authorization Process ::\">Internet Protocol Address Authorization Request</A><BR>
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Token\" TITLE=\":: Authenticate With Internet Protocol Address Authorization Token ::\">Internet Protocol Address Authorization Token</A><BR><BR>
 ");
@@ -418,8 +418,6 @@ if ($_Application_Module_Login_DB_Query_UPDATE_MEMBER_AUTHORIZATION_TOKEN) {
 											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_TOKEN_INVALID);
 
 } // [ + ] IF: Check Database Server For Valid Internet Protocol Authorization Token Variable Has Executed
-
-echo ($_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
 
 /*
  ============================================================================================================
