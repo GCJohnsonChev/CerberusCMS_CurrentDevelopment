@@ -96,11 +96,13 @@ $_Message_ERROR_ACTION_UNIVERSAL                                   							= "<CE
  ================================================================
 */
 
-$_Message_Kernel_APPLICATION_DEACTIVATED										= "<CENTER>Cerberus: This Application Is Deactivated.</CENTER>";
-$_Message_Kernel_APPLICATION_NOT_FOUND											= "<CENTER>Cerberus: This Specified Application could not be located.</CENTER>";
-$_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR								= "<CENTER>Cerberus: This Application is restricted to Registered Members with Administration Privileges.</CENTER>";
-$_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_MEMBER									= "<CENTER>Cerberus: This Application is restricted to Registered Members.</CENTER>";
-$_Message_Kernel_APPLICATION_NOT_FOUND_LFI_RFI										= "<CENTER>Cerberus: The Specified Application could not be located ( Local or Remote File Inclusion Detected ).</CENTER>";
+$_Message_Kernel_APPLICATION_DEACTIVATED										= "<CENTER>Cerberus: This Application Module Is Deactivated.</CENTER>";
+$_Message_Kernel_APPLICATION_NOT_FOUND											= "<CENTER>Cerberus: The Specified Application Module could not be located.</CENTER>";
+$_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR_SERVICES_ROOT						= "<CENTER>Cerberus: This Application Module is restricted to Registered Members with Services Root Administration Privileges.</CENTER>";
+$_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR								= "<CENTER>Cerberus: This Application Module is restricted to Registered Members with Administration Privileges.</CENTER>";
+$_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_MODERATOR								= "<CENTER>Cerberus: This Application Module is restricted to Registered Members with Moderator Privileges.</CENTER>";
+$_Message_Kernel_APPLICATION_ACCESS_RESTRICTED_MEMBER									= "<CENTER>Cerberus: This Application Module is restricted to Registered Members.</CENTER>";
+$_Message_Kernel_APPLICATION_NOT_FOUND_LFI_RFI										= "<CENTER>Cerberus: The Specified Application Module could not be located ( Local or Remote File Inclusion Detected ).</CENTER>";
 
 /*
  ================================================================
@@ -168,7 +170,7 @@ $_Application_Module_Administration_Message_Administrators_UPDATE_WITHOUT_PASSWO
 $_Application_Module_Administration_Message_Administrators_UPDATE_WITH_PASSWORD_SUCCESSFUL				= "<BR><HR><CENTER>Cerberus: I have updated the Member Table ( With Password ) Successfully.</CENTER><HR><BR>";
 $_Application_Module_Administration_Message_Administrators_UPDATE_WITH_PASSWORD_ERROR					= "<BR><HR><CENTER>Cerberus: I was *NOT* able to Update the Member Table ( With Password )</CENTER><HR><BR>";
 $_Application_Module_Administration_Message_Administrators_SEND_MESSAGE_LENGTH_ERROR					= "<HR><CENTER>Cerberus: Your Message is greater than 100 Characters. Please go back and reduce the Message Length.</CENTER><HR>";
-$_Application_Module_Administration_Message_Administrators_SEND_MESSAGE_SUCCESSFUL					= "<HR><CENTER>Cerberus: I have sent this electronic message successfully.</CENTER><HR>";
+$_Application_Module_Administration_Message_Administrators_SEND_MESSAGE_SUCCESSFUL					= "<HR><CENTER>Cerberus: I have sent this Electronic Message successfully.</CENTER><HR>";
 $_Application_Module_Administration_Message_Administrators_SEND_MESSAGE_ERROR						= "<HR><CENTER>Cerberus: There was an error: Try Again ?</CENTER><HR>";
 
 /*
@@ -187,10 +189,10 @@ $_Application_Module_Administration_Message_Administrators_SEND_MESSAGE_ERROR			
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Applications_APPLICATION_INSTALL_SUCCESSFUL					= "<BR><BR><CENTER>Cerberus: I have Installed the Application Successfully.</CENTER><BR><BR>";
-$_Application_Module_Administration_Message_Applications_APPLICATION_DELETE_SUCCESSFUL					= "<BR><HR><CENTER>Cerberus: I have Deleted the Application Successfully.</CENTER><HR><BR>";
-$_Application_Module_Administration_Message_Applications_APPLICATION_UPDATE_SUCCESSFUL					= "<HR><CENTER>Cerberus: I have Updated the Application Successfully.</CENTER><HR><BR>";
-$_Application_Module_Administration_Message_Applications_APPLICATION_UPLOAD_SUCCESSFUL					= "<BR><HR><CENTER>Cerberus: I have Uploaded the Application Successfully.</CENTER><HR><BR>";
+$_Application_Module_Administration_Message_Applications_APPLICATION_INSTALL_SUCCESSFUL					= "<BR><BR><CENTER>Cerberus: I have Installed the Application Module Successfully.</CENTER><BR><BR>";
+$_Application_Module_Administration_Message_Applications_APPLICATION_DELETE_SUCCESSFUL					= "<BR><HR><CENTER>Cerberus: I have Deleted the Application Module Successfully.</CENTER><HR><BR>";
+$_Application_Module_Administration_Message_Applications_APPLICATION_UPDATE_SUCCESSFUL					= "<HR><CENTER>Cerberus: I have Updated the Application Module Successfully.</CENTER><HR><BR>";
+$_Application_Module_Administration_Message_Applications_APPLICATION_UPLOAD_SUCCESSFUL					= "<BR><HR><CENTER>Cerberus: I have Uploaded the Application Module Successfully.</CENTER><HR><BR>";
 
 
 /*
@@ -209,8 +211,8 @@ $_Application_Module_Administration_Message_Applications_APPLICATION_UPLOAD_SUCC
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Archive_PACKAGE_COMPRESSION_SUCCESSFUL					= "<CENTER>Cerberus: I have Archived the Package Successfully</CENTER>";
-$_Application_Module_Administration_Message_Archive_PACKAGE_DELETE_SUCCESSFUL						= "<CENTER>Cerberus: I have Deleted the Archive Package Successfully</CENTER>";
+$_Application_Module_Administration_Message_Archive_PACKAGE_COMPRESSION_SUCCESSFUL					= "<CENTER>Cerberus: I have Archived the Package Successfully.</CENTER>";
+$_Application_Module_Administration_Message_Archive_PACKAGE_DELETE_SUCCESSFUL						= "<CENTER>Cerberus: I have Deleted the Archive Package Successfully.</CENTER>";
 
 /*
  ================================================================
@@ -228,9 +230,9 @@ $_Application_Module_Administration_Message_Archive_PACKAGE_DELETE_SUCCESSFUL			
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Banish_BANISHMENT_SUCCESSFUL						= "<CENTER>Cerberus: I have Banished the Network Address Successfully</CENTER>";
+$_Application_Module_Administration_Message_Banish_BANISHMENT_SUCCESSFUL						= "<CENTER>Cerberus: I have Banished the Network Address Successfully.</CENTER>";
 $_Application_Module_Administration_Message_Banish_BANISHMENT_ENTRIES_NULL						= "<CENTER>Cerberus: There are no Banished Network Addresses</CENTER>";
-$_Application_Module_Administration_Message_Banish_BANISHMENT_REMOVAL_SUCCESSFUL					= "<CENTER>Cerberus: I have Removed the Banishment from the selected Network Address Successfully</CENTER>";
+$_Application_Module_Administration_Message_Banish_BANISHMENT_REMOVAL_SUCCESSFUL					= "<CENTER>Cerberus: I have Removed the Banishment from the selected Network Address Successfully.</CENTER>";
 
 /*
  ================================================================
@@ -383,14 +385,14 @@ $_Application_Module_Administration_Message_Forum_FORUM_TOPIC_MESSAGE_POST_ERROR
  ================================================================
 */
 
-$_Application_Module_Administration_Message_UpdateARTICLE_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the Article Successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateARTICLE_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Article: <I>$_Module_Modify_POST_UPDATE_ARTICLE_TITLE</I> Successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateLINK_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the Link successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateLINK_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Link: <I>$_Module_Modify_POST_UPDATE_LINK_TITLE</I> Successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateNEWS_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the News ID: <I>$_Module_Modify_POST_UPDATE_NEWS_TITLE</I> Successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateNEWS_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the News ID Successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateFILE_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the File Successfully.</CENTER>";
-$_Application_Module_Administration_Message_UpdateFILE_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the File: <I>$_Module_Modify_POST_UPDATE_FILE_TITLE</I> Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateARTICLE_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the Article Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateARTICLE_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Article Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateLINK_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the Link Entry successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateLINK_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Link Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateNEWS_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the News Article Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateNEWS_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the News Article Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateFILE_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the File Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_UpdateFILE_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the File Entry Successfully.</CENTER>";
 
 /*
  ================================================================
@@ -428,7 +430,7 @@ $_Application_Module_Administration_Message_Publish_MASS_NEWSLETTER_SENT_SUCCESS
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Ranks_RANKS_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Ranks Successfully.</CENTER>";
+$_Application_Module_Administration_Message_Ranks_RANKS_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Member Account Ranking System Successfully.</CENTER>";
 
 /*
  ================================================================
@@ -521,7 +523,7 @@ $_Application_Module_Administration_Message_Submissions_SUBMISSION_DELETED_SUCCE
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Terminal_COMMAND_EXECUTED_SUCCESSFULLY					= "<CENTER>Cerberus: I have Executed the S.Q.L. Query Successfully.</CENTER><HR>$_Module_SQL_Query_POST_SQL_QUERY";
+$_Application_Module_Administration_Message_Terminal_COMMAND_EXECUTED_SUCCESSFULLY					= "<CENTER>Cerberus: I have Executed the S.Q.L. Query Successfully.</CENTER><HR>$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND";
 
 /*
  ================================================================
@@ -591,8 +593,8 @@ $_Application_Module_Administration_Message_Update_ARTICLE_DELETED_SUCCESSFULLY	
  ================================================================
 */
 
-$_Application_Module_Administration_Message_Web_Pages_LINK_INSTALLED_SUCCESSFULLY					= "<CENTER>Cerberus: I have Installed the Link: <I>$_Module_Web_Pages_POST_LINK_NAME</I> successfully.</CENTER>";
-$_Application_Module_Administration_Message_Web_Pages_NO_LINKS_EXIST							= "<CENTER>Cerberus: I was not able to find any Link(s).</CENTER>";
+$_Application_Module_Administration_Message_Web_Pages_LINK_INSTALLED_SUCCESSFULLY					= "<CENTER>Cerberus: I have Installed the Link Entry Successfully.</CENTER>";
+$_Application_Module_Administration_Message_Web_Pages_NO_LINKS_EXIST							= "<CENTER>Cerberus: I was not able to find any Link Entries.</CENTER>";
 $_Application_Module_Administration_Message_Web_Pages_LINK_DELETED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Deleted the Link Successfully.</CENTER>";
 $_Application_Module_Administration_Message_Web_Pages_LINK_UPDATED_SUCCESSFULLY						= "<CENTER>Cerberus: I have Updated the Link Successfully.</CENTER>";
 $_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_INSTALLED_SUCCESSFULLY					= "<BR><HR><CENTER>Cerberus: I have Installed the Web Page Successfully.</CENTER><HR>";
