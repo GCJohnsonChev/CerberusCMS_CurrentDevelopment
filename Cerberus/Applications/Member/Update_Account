@@ -124,6 +124,18 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_GENDER							= $_Applicat
 
 /*
  ============================================================================================================
+ + Member Account Details :: Telephony Information
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_AREA_CODE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_phone_area_code'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_CELL				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_phone_cell'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_COUNTRY_CODE			= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_phone_country_code'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_HOME				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_phone_home'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_WORK				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_phone_work'];
+
+/*
+ ============================================================================================================
  + Member Account Details :: Personal Digital Information
  ============================================================================================================
 */
@@ -333,6 +345,18 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_C
 
 /*
  ============================================================================================================
+ + Account Settings :: Telephony Information
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_AREA_CODE			= $_POST['member_account_number_phone_area_code'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_CELL				= $_POST['member_account_number_phone_cell'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_COUNTRY_CODE			= $_POST['member_account_number_phone_country_code'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_HOME				= $_POST['member_account_number_phone_home'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_WORK				= $_POST['member_account_number_phone_work'];
+
+/*
+ ============================================================================================================
  + Account Settings :: Digital Contact Information
  ============================================================================================================
 */
@@ -498,6 +522,19 @@ echo ("
 													* Current Exact Global Navigation Satellite System Location ( Based On Device and Browser )<BR>
 													Nothing here yet, cannot be modified<BR><BR>
 
+													<B>Telephony Information</B><HR>
+
+													* Phone Number ( Country Code ):<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_number_phone_country_code\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_COUNTRY_CODE\" MAXLENGTH=\"5\"><BR>
+													* Phone Number ( Area Code ):<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_number_phone_area_code\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_AREA_CODE\" MAXLENGTH=\"5\"><BR>	
+													* Phone Number ( Mobile ):<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_number_phone_cell\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_CELL\" MAXLENGTH=\"20\"><BR>
+													* Phone Number ( Residence / Home ):<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_number_phone_home\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_HOME\" MAXLENGTH=\"20\"><BR>
+													* Phone Number ( Work ):<BR>
+													<INPUT TYPE=\"text\" NAME=\"member_account_number_phone_work\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_ACCOUNT_NUMBER_PHONE_WORK\" MAXLENGTH=\"20\"><BR><BR>									
+
 													<B>Billing Information</B><HR>
 													Your Personal Information is completely voluntary and optional. This information is completely encrypted in the Database and this information will never be shared with anyone.<BR><BR>
 													* Billing Address:<BR>
@@ -624,7 +661,7 @@ echo ("
 													[ <A HREF=\"https://PGPKeyGen.com/\" TITLE=\":: Click Here To Generate Public and Private Pretty-Good-Privacy Encryption Key Pairs ::\" TARGET=\"_NEW\">Generate P.G.P. Encryption Key Pairs</A> ]<BR>
 														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_pgp_key_panel_public\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC</TEXTAREA><BR><BR>
 
-													<B>Account Images</B><HR><BR>
+													<B>Account Images</B><HR>
 													* Member Account Profile Image:<BR>
 													[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TITLE=\":: Upload New Profile Image ::\" TARGET=\"_NEW\">Upload New Profile Image</A> ]<BR>
 														<SELECT NAME=\"member_account_profile_picture\">
@@ -675,9 +712,55 @@ if ($_Application_Module_Member_Update_Account_Image_READ_MEMBER_DIRECTORY == ".
 
 closedir($_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY);
 
+/*
+ ============================================================================================================
+ +
+ + Read Avatar Image Directory :: For Updating Profile Avatar Image
+ +
+ ============================================================================================================
+*/
+
+echo ("
+														</SELECT><BR><BR>
+													* Member Account Profile Avatar Image:<BR>
+													[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Avatars\" TITLE=\":: Open & Display All Profile Avatar Images ::\" TARGET=\"_NEW\">View All</A> ]<BR>
+														<SELECT NAME=\"member_account_profile_avatar\">
+");
+
+/*
+ ============================================================================================================
+ + Read Avatar Image Directory :: For Updating Profile Avatar Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY					= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/";
+$_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY						= opendir($_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY);
+
+while (($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY = readdir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY))) {
+
+if ($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "." || $_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == ".." || $_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY\">$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Specified Member Account Avatar Image Directory AND Files ARE NOT Specified Member Account Avatar Image Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Member Account Avatar Image Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Avatar Image Directory :: For Updating Account Profile Avatar Image
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY);
+
 echo ("
 													</SELECT><BR><BR>
-													<B>Account Languages</B><HR><BR>
+													<B>Account Language Settings</B><HR>
 													* Member Account Perferred Language:<BR>
 														<SELECT NAME=\"member_account_settings_language\">
 ");
@@ -737,7 +820,8 @@ closedir($_Application_Module_Member_Update_Account_Image_OPEN_MEMBER_DIRECTORY)
 
 echo ("
 													</SELECT><BR><BR>
-													* Member Account Theme Selection:<BR>
+													<B>Account Theme Settings</B><HR>
+													* Member Account Theme:<BR>
 														<SELECT NAME=\"member_account_settings_theme\">
 ");
 
@@ -771,52 +855,6 @@ if ($_Application_Module_Member_Update_Account_READ_THEME_DIRECTORY == "." || $_
 */
 
 closedir($_Application_Module_Member_Update_Account_OPEN_THEME_DIRECTORY);
-
-/*
- ============================================================================================================
- +
- + Read Avatar Image Directory :: For Updating Profile Avatar Image
- +
- ============================================================================================================
-*/
-
-echo ("
-														</SELECT><BR><BR>
-													* Member Account Profile Avatar Image:<BR>
-													[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;List&amp;Display&#61;Avatars\" TITLE=\":: Open & Display All Profile Avatar Images ::\" TARGET=\"_NEW\">View All</A> ]<BR>
-														<SELECT NAME=\"member_account_profile_avatar\">
-");
-
-/*
- ============================================================================================================
- + Read Avatar Image Directory :: For Updating Profile Avatar Image
- ============================================================================================================
-*/
-
-$_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY					= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/";
-$_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY						= opendir($_Application_Module_Member_Update_Account_SPECIFY_MEMBER_AVATAR_DIRECTORY);
-
-while (($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY = readdir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY))) {
-
-if ($_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "." || $_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == ".." || $_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY == "index.php") {
-/**
- * Do Nothing
-**/
-} else {
-
-															echo ("<OPTION VALUE=\"$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY\">$_Application_Module_Member_Update_Account_READ_MEMBER_AVATAR_DIRECTORY</OPTION>");
-
-} // [ + ] IF: Specified Member Account Avatar Image Directory AND Files ARE NOT Specified Member Account Avatar Image Directory AND Files
-
-} // [ + ] WHILE: Reading Specified Member Account Avatar Image Directory AND Files
-
-/*
- ============================================================================================================
- + Close Avatar Image Directory :: For Updating Account Profile Avatar Image
- ============================================================================================================
-*/
-
-closedir($_Application_Module_Member_Update_Account_OPEN_MEMBER_AVATAR_DIRECTORY);
 
 echo ("
 														</SELECT><BR>
