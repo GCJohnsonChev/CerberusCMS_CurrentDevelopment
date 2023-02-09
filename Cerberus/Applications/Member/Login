@@ -86,6 +86,7 @@ $_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= pre
 $_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= stripslashes($_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
 
 $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= preg_replace("/'/","`", $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= preg_replace("/0/","NOTAUTHORIZED", $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
 $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= stripslashes($_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
 
 /*
@@ -102,7 +103,7 @@ $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN	
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER					= 128;
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER		= 128;
 
 /*
  ============================================================================================================
@@ -110,7 +111,7 @@ $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER					= 128;
  ============================================================================================================
 */
 
-function getRandomStringLogin($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER) {
+function getRandomStringLogin($_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER) {
 
 /*
  ============================================================================================================
@@ -146,7 +147,7 @@ return $_Application_Module_Member_Login_SECURITY_RANDOM_STRING;
 
 /*
  ============================================================================================================
- + Cache Web-Page Circumvention :: HASH Algorithm of Randomized Strings
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: HASHES
  ============================================================================================================
 */
 
@@ -199,7 +200,7 @@ echo ("
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\":: Reset Your Member Account Password Or Other Member Account Credentials ::\">Reset Password</A><BR>
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Account_Recovery\" TITLE=\":: Initiate The Member Account Recovery Options ::\">Account Recovery</A></CENTER><BR><BR>
 
-											Member Account Authorization Options<BR>
+											Member Account Authorization Options $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH<BR>
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Address\" TITLE=\":: Initiate The Internet Protocol Address Authorization Process ::\">Internet Protocol Address Authorization Request</A><BR>
 											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Token\" TITLE=\":: Authenticate With Internet Protocol Address Authorization Token ::\">Internet Protocol Address Authorization Token</A><BR><BR>
 ");
