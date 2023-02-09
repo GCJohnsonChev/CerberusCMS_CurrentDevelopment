@@ -158,18 +158,24 @@ if ($_GLOBAL_MEMBER_LEVEL_RANK = 5) {
 */
 
 echo ("
+Member Account Options<HR>
 
-											<CENTER>
-												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Password\" TITLE=\":: Update Password ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Password.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
-												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Account\" TITLE=\":: Update Account Profile Data ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Profile.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
-												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;DisplayID&#61;All\" TITLE=\":: Open Friends List ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Friends.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
-											</CENTER>
+Member Account Credentials and Authentication<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Password\" TITLE=\":: Update Password ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Password.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
 
-											<CENTER>
-												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TITLE=\":: Upload & Manage Private Files ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Files.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
-												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;PrivateMessageID&#61;All\" TITLE=\":: Send & Receive Private Messages ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Messages.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
-												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Webspace\" TITLE=\":: Manage Personal Hyper-Text-Markup-Language Web-Page ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Web_Page.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
-											</CENTER>
+Member Account Data<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Account\" TITLE=\":: Update Account Profile Data ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Profile.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TITLE=\":: Upload & Manage Private Files ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Files.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Webspace\" TITLE=\":: Manage Personal Hyper-Text-Markup-Language Web-Page ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Web_Page.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Archive\" TITLE=\":: Mange Personal Member Account Data Archives ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Archive.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+Member Account Social Interaction<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;DisplayID&#61;All\" TITLE=\":: Open Friends List ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Friends.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+Messaging<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;PrivateMessageID&#61;All\" TITLE=\":: Send & Receive Private Messages ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Messages.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+Member Account Activity and Logging<BR>
 
 											<HR>
 											<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Logout\" TITLE=\":: Logout :: Secure-Delete Sessions, Credentials & Cookies ::\">Logout</A> ]</CENTER>
@@ -178,7 +184,7 @@ echo ("
 /*
  ============================================================================================================
  +
- + List Member Entries
+ + Retrieve Member Account Settings From Database Server
  +
  ============================================================================================================
 */
@@ -226,7 +232,7 @@ echo ("
 /*
  ============================================================================================================
  +
- + Member Account Activation By Stored Key
+ + Member Account Activation By Stored Activation Key
  +
  ============================================================================================================
 */
@@ -246,7 +252,7 @@ echo ("
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel\" METHOD=\"POST\">
 													Account Activation Key:<BR>
 														<INPUT TYPE=\"TEXT\" NAME=\"account_activation_key\" MAXLENGTH=\"32\"><BR>
-													<INPUT TYPE=\"SUBMIT\" VALUE=\"Submit\">
+													<INPUT TYPE=\"SUBMIT\" VALUE=\"Activate\">
 												</FORM>
 ");
 
