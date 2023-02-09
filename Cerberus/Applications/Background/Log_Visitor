@@ -180,7 +180,10 @@ fwrite($_Application_Module_Background_Log_Visitor_Box_OPEN_FILE_NAME, "
 * Local Server Hyper-Text-Transfer-Protocol Character Set: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
 * Local Server Hyper-Text-Transfer-Protocol Encoding: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
 * Local Server Hyper-Text-Transfer-Protocol Loading Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
-* Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
+* Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR><BR>
+
+<B>Digital Fingerprint Information</B><HR>
+* Unique Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR><BR>
 
 <A HREF=\"../../../../Applications/Background/Log_Visitor\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
 ");
@@ -195,7 +198,7 @@ fwrite($_Application_Module_Background_Log_Visitor_Raw_OPEN_FILE_NAME, "
 <B>Detailed Visitor Information</B>
 <HR>
 <B>Visitor Machine and Connection Information</B><BR>
-* Visitor' UserName: <A HREF=\"../../../../$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Visitor_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Background_Log_Visitor_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Visitor_GET_LOG_MEMBER_USERNAME</A><BR>
+* Visitor' UserName: <A HREF=\"../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Visitor_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Background_Log_Visitor_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Visitor_GET_LOG_MEMBER_USERNAME</A><BR>
 * Visitor Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
 * Visitor Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Visitor_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Visitor_GET_REFERRER</A><BR>
 * Visitor' User-Agent ( Browser ): $_Application_Module_Background_Log_Visitor_GET_USER_AGENT<BR>
@@ -224,7 +227,7 @@ fwrite($_Application_Module_Background_Log_Visitor_Raw_OPEN_FILE_NAME, "
 * Local Server Hyper-Text-Transfer-Protocol Language: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR>
 
 <B>Digital Fingerprint Information</B><HR>
-* Unique Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR>
+* Unique Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR><BR>
 
 <A HREF=\"../../../../Applications/Background/Log_Visitor/\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
 ");
