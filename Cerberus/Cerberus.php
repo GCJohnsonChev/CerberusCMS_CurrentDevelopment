@@ -1012,7 +1012,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 $_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='000.000.000.000' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
 $_DB_Query_Kernel_Logout_Remove_Member_Account_Status_Active				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
-$_DB_Query_Kernel_Logout_Remove_Member_Account_IP_Authorization_Token			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='00000000000000000000000000000000' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
+$_DB_Query_Kernel_Logout_Remove_Member_Account_IP_Authorization_Token			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
 
 /*
  ============================================================================================================
