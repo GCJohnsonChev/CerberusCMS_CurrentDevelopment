@@ -1282,7 +1282,8 @@ member_username)VALUES(
 'Emtpy Entry :: Nick Name',
 '10000',
 '111',
-'+1',
+'000-0000'
+'1',
 '000-0000',
 '000-0000',
 '$_POST_ADMINISTRATOR_PASSWORD_3',
@@ -1436,7 +1437,8 @@ member_username)VALUES(
 'None Provided :: Nick Name',
 '10000',
 '111',
-'+1',
+'000-0000'
+'1',
 '000-0000',
 '000-0000',
 '$_POST_ADMINISTRATOR_PASSWORD_3',
