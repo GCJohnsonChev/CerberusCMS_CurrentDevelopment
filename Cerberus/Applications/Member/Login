@@ -378,18 +378,6 @@ $_Application_Module_Login_DB_Query_SELECT_MEMBERS_AUTHORIZATION_TOKEN				= $DB-
 
 /*
  ============================================================================================================
- + IF: Internal Security Loop :: Check Authorization Token Data
- ============================================================================================================
-*/
-
-if ($_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN == "" || $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN == "00000000000000000000000000000000") {
-
-$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN		= "1";
-
-} // [ + ] IF: Member Account Authorization Token Executed Variable Is Empty OR 32 Zeros Set Member Account Authorization Token To 1, Do Not Accept
-
-/*
- ============================================================================================================
  + IF: Database Query: Update Member Account Internet Protocol Address Authorization BY Authorization Token
  ============================================================================================================
 */
