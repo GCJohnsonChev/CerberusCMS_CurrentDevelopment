@@ -943,7 +943,8 @@ member_username
 'None Provided :: Nick Name',
 '10000',
 '111',
-'+1',
+'000-0000'
+'1',
 '000-0000',
 '000-0000',
 '$_MySQL_Generator_POST_ADMINISTRATION_PASSWORD_HASH',
@@ -1093,7 +1094,8 @@ member_username
 'CerberusCMS',
 '10000',
 '111',
-'+1',
+'000-0000'
+'1',
 '000-0000',
 '000-0000',
 '$_MySQL_Generator_POST_ADMINISTRATION_PASSWORD_HASH',
