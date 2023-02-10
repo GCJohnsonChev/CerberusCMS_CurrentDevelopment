@@ -66,13 +66,23 @@
 
 /*
  ============================================================================================================
- + Application List :: Variables :: File Contents
+ + Application List :: Kernel File :: Variables
  ============================================================================================================
 */
 
 $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE				= file_get_contents("./$_INTERNAL_FILE_KERNEL");
 $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_SIZE				= filesize("./$_INTERNAL_FILE_KERNEL");
 $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256			= hash_file('sha256', "./$_INTERNAL_FILE_KERNEL");
+
+/*
+ ============================================================================================================
+ + Application List :: Configuration File :: Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE			= file_get_contents("./System/Configuration/Global_Configuration.php");
+$_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE_SIZE			= filesize($_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE);
+$_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE_HASH_SHA256		= hash_file('sha256', $_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE);
 
 /*
  ============================================================================================================
@@ -219,8 +229,17 @@ echo ("
 
 echo ("
 		<B>Kernel File Name: $_INTERNAL_FILE_KERNEL</B><HR>
-		Kernel File HASH, SHA-256: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256<BR>
-		Kernel File Size: Bytes :: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_SIZE<BR>
+		* Kernel File HASH, SHA-256: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256<BR>
+		* Kernel File Size: Bytes :: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_SIZE<BR>
+		<FORM>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE</TEXTAREA>
+		</FORM><BR><BR>
+");
+
+echo ("
+		<B>System Configuration File: Global_Configuration.php</B><HR>
+		* System Configuration File HASH, SHA-256: $_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE_HASH_SHA256<BR>
+		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_CONTENTS_CONFIGURATION_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE</TEXTAREA>
 		</FORM><BR><BR>
