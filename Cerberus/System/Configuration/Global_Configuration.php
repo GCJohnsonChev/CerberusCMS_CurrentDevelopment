@@ -173,6 +173,8 @@ $_PROJECT_VERSION_EXTENDED						= "Cerberus Content Management System - Version:
 */
 
 $_PROJECT_STRING_NAME							= "Cerberus Content Management System";
+$_PROJECT_STRING_SHORT							= "Cerberus";
+$_PROJECT_UNIX_NAME							= "CerberusCMS";
 
 /*
  ============================================================================================================
