@@ -594,9 +594,11 @@ echo ("
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;PostMessage&#61;PlainTextFileMessage\" METHOD=\"POST\">
 														* <I>Short or Extensive Message</I>:<BR>
 														[ Maximum Length: 5,000 Alpha-Numeric Characters ]<BR>
-															<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"5000\" NAME=\"Plain_Text_File_Messenger_Room_Message\">Write Messages Here...</TEXTAREA><BR>
+															<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"5000\" NAME=\"Plain_Text_File_Messenger_Room_Message\" ID=\"WYSIWYG\">Write Messages Here...</TEXTAREA><BR>
 															<INPUT TYPE=\"hidden\" NAME=\"Plain_Text_File_Messenger_Room_Name_Hidden\" VALUE=\"$_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME\">
 													<INPUT TYPE=\"submit\" VALUE=\"Send Message\"><BR><BR>
+
+													$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR><BR>
 
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;1\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
 														* <I>Upload Unique File To This Plain-Text-File Messenger Room</I>:<BR>
@@ -684,7 +686,7 @@ $_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE				= fopen("./Tempo
  ============================================================================================================
 */
 
-if (fwrite($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE, "<IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"150\" HEIGHT=\"120\"></A><BR><B><A HREF=\"../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote:</B><BR>&ldquo;<I>$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I>&rdquo;<BR><B>On:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR><BR>")) {
+if (fwrite($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE, "<A HREF=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" TARGET=\"_NEW\" TITLE=\":: Open & Display This Member Account Profile Image :: \"><IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"125\" HEIGHT=\"125\"></A><BR><B><A HREF=\"../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote:</B><BR>&ldquo;<I>$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I>&rdquo;<BR><B>On:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR><BR>")) {
 
 echo ("Done...redirecting to variable: $_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
 
