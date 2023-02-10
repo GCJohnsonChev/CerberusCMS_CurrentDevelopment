@@ -684,11 +684,11 @@ $_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE				= fopen("./Tempo
  ============================================================================================================
 */
 
-if (fwrite($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE, "<IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"150\" HEIGHT=\"120\"></A><BR><B><A HREF=\"../../../../../$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote:</B><BR>&ldquo;<I>$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I>&rdquo;<BR><B>On:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR><BR>")) {
+if (fwrite($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE, "<IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"150\" HEIGHT=\"120\"></A><BR><B><A HREF=\"../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote:</B><BR>&ldquo;<I>$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I>&rdquo;<BR><B>On:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR><BR>")) {
 
 echo ("Done...redirecting to variable: $_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
 
-	header("location: ./$_INTERNAL_FILE_KERNAL?Application_Member=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
 
 } else {
 
