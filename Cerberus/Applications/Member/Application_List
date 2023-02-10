@@ -233,7 +233,7 @@ echo ("
 		* Kernel File HASH, SHA-256: $_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256<BR>
 		* Kernel File Size: Bytes :: $_Application_Module_Member_Application_List_KERNEL_FILE_SIZE<BR>
 		<FORM>
-			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_KERNEL_FILE</TEXTAREA>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_KERNEL_FILE_CONTENTS</TEXTAREA>
 		</FORM><BR><BR>
 ");
 
