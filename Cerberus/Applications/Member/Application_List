@@ -70,8 +70,9 @@
  ============================================================================================================
 */
 
-$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE			= file_get_contents("./$_INTERNAL_FILE_KERNEL");
-$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256		= hash_file('sha256', "./$_INTERNAL_FILE_KERNEL");
+$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE				= file_get_contents("./$_INTERNAL_FILE_KERNEL");
+$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_SIZE				= filesize("./$_INTERNAL_FILE_KERNEL");
+$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256			= hash_file('sha256', "./$_INTERNAL_FILE_KERNEL");
 
 /*
  ============================================================================================================
@@ -81,6 +82,63 @@ $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256		=
 
 											echo ("<B>Application File Permissions</B><HR> Public: 0, Registered Member: 1, Administrator & Moderator: 2, Services Root Administrator: 3<BR><BR>");
 											echo ("<B>Application File Status</B><HR>* 0: Deactivated, 1: Activated<BR><BR>");
+
+/*
+ ============================================================================================================
+ +
+ + Administration-Level :: Application Modules
+ +
+ ============================================================================================================
+*/
+
+														echo ("<B>Administration-Level Application Modules</B><HR>");
+
+/*
+ ============================================================================================================
+ + Read Administration-Level Application Module Directory
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Application_List_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY		= "./Applications/Administration/";
+$_Application_Module_Member_Application_List_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY		= opendir($_Application_Module_Member_Application_List_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY);
+
+while (($_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY = readdir($_Application_Module_Member_Application_List_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY))) {
+
+$_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_HASH_SHA256	= hash_file('sha256', "./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY");
+$_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_SIZE		= filesize("./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Security :: Stop Remote-File-Inclusion and Local-File-Inclusion Exploits
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "." || $_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == ".." || $_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+echo ("
+														<B>Application: $_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY</B><BR>
+														* Application File HASH, SHA-256: $_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_HASH_SHA256<BR>
+														* Application File Size: Bytes :: $_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_SIZE<BR>
+														<A HREF=\"./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY\" TITLE=\":: Open & Display The Source Code :: For The Administration-Level Application Module :: $_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY ::\">Source Code</A><BR><BR>
+");
+
+} // [ + ] IF: NOT The Administration-Level Application Module Directory
+
+} // [ + ] WHILE: Reading The Administration-Level Application Module Directory
+
+/*
+ ============================================================================================================
+ + Close Administration Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Application_List_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY);
 
 /*
  ============================================================================================================
@@ -110,6 +168,7 @@ while ($_Application_Module_Member_Application_List_DB_Query_List_Applications_F
 
 $_Application_Module_Member_Application_List_LIST_APPLICATION_ID			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['id'];
 $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_name'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_SIZE			= filesize("./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME");
 $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission'];
 $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_STATUS		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_status'];
 $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256		= hash_file('sha256', "./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME");
@@ -121,6 +180,7 @@ echo ("
 														* Application File Status: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_STATUS<BR>
 														* Application File Name: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open & Display The Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME ::\">$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME</A><BR>
 														* Application File HASH, SHA-256: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256<BR>
+														* Application File Size: Bytes :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_SIZE<BR>
 														<A HREF=\"./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open & Display The Source Code :: For The Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME ::\">Source Code</A><BR><BR>
 ");
 
@@ -138,6 +198,7 @@ while ($_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_A
 
 $_Application_Module_Member_Application_List_LIST_PANEL_ID				= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['id'];
 $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME			= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_file_name'];
+$_Application_Module_Member_Application_List_LIST_PANEL_FILE_SIZE			= filesize("./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel");
 $_Application_Module_Member_Application_List_LIST_PANEL_ALIGNMENT			= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_alignment'];
 $_Application_Module_Member_Application_List_LIST_PANEL_ROW				= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_row'];
 $_Application_Module_Member_Application_List_LIST_PANEL_FILE_STATUS			= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_file_status'];
@@ -150,6 +211,7 @@ echo ("
 														* Application Panel File Permission: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION<BR>
 														* Application Panel File Status: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_STATUS<BR>
 														* Application Panel File HASH, SHA-256: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_HASH_SHA256<BR>
+														* Application Panel File Size: Bytes :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_SIZE<BR>
 														<A HREF=\"./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel\" TITLE=\":: Open & Display The Source Code :: For The Application Panel :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME ::\">Source Code</A><BR><BR>
 ");
 
@@ -157,7 +219,8 @@ echo ("
 
 echo ("
 		<B>Kernel File Name: $_INTERNAL_FILE_KERNEL</B><HR>
-		Kernel File HASH, SHA-256: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256
+		Kernel File HASH, SHA-256: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_HASH_SHA256<BR>
+		Kernel File Size: Bytes :: $_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_CONTENTS_KERNEL_FILE</TEXTAREA>
 		</FORM><BR><BR>
