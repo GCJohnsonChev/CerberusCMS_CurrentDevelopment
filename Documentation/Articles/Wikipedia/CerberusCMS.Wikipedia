@@ -212,9 +212,11 @@ Denial of Service
 * Denial of Service Through HTTP Code
 
 Automatic 2-Factor Authentication by SHA-512 Security Token String From Electronic Mail Message or Mobile Phone Text Message
+Automatic Internet Protocol Address Restricted Authentication
 
 ===Notable Features===
-
+CerberusCMS is capable of playing video game console games by Read-Only-Memory file through the Emulator Application Module.
+Through this Application Module one can play Nintendo, Super Nintendo and other types of video games from the web browser for free.
 
 ==Project Details==
 CerberusCMS as of Version Number: 4, Build Number: 0.8 has approximately 40,000 lines of Pure Post-Hyper-Text-Pre-Processor programming code. All of the programming code is extremely documented and manageable.
@@ -259,9 +261,18 @@ in the system itself.
 ===Graphical User-Interface===
 Unix-Like
 
-==Software Programming Features==
+==Programming Architecture==
 
-Simplicity of Object-Oriented-Like Variables and Functions
+===Programming Code Features===
+
+* Simplicity of Object-Oriented-Like Variables and Functions
+* Simplicity of Proceedural Style Programming Code
+
+===Programming Code Searchability===
+* Expert Searchable Programming Code Keys
+
+===Programming Code Documentation===
+* Expert Programming Code Documentation
 
 ===Security Features===
 
