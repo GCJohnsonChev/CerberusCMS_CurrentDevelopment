@@ -3,7 +3,6 @@ Cerberus Content Management System, Registered Unix-Name: CerberusCMS and Cerber
 ==Origins==
 
 ===Pagan-Like Theme===
-
 Cerberus Content Management System // Cerberus Web Application Framework With Officially Registered Unix Name: 'CerberusCMS' which is not to be confused with any other Applications or Web Applications with the name
 Cerberus. This Web Application project features all Pagan-Like visible theming as well as Pagan-Like programming because of the Scandinavian Northern-Frisian and Western-Frisian Heathen ancestry of its author who
 has absolutely no Greek ancestry at all but who followed the standard adoption of Greek culture in Western-American Academia where Greek cultural ideas and symbols are used.
@@ -12,7 +11,8 @@ The name Cerberus however comes from the Greek Hound of Hades who guarded the en
 also be likened to 1 is: alive or 0 is: dead.
 
 Each release of CerberusCMS after CerberusCMS - Version Number: 4, Build Number: 0.8 comes with an alternate edition for installation where the entire system is themed around Heathen / Germanic Pagan Gods and Goddesses where
-in this alternate edition there is no mention of Cerberus and it is replaced instead with the names of Heathen / Germanic Gods and Goddesses with those themed graphics. Wodan / Odin, Freyja, Heimdallr and others.
+in this alternate edition there is no mention of Cerberus and it is replaced instead with the names of Heathen / Germanic Gods and Goddesses with those themed graphics. Wodan / Odin, Freyja, Heimdallr and others. The alternate edition
+is named RuneCMS which should not be confused with any other project with that name.
 
 ===Loss of Development Progress===
 Around 2 years of development progress was lost before 2013. Several fake version of this project were put on display so as to distract certain groups.
@@ -34,7 +34,9 @@ Officially released versions come with an embedded build number where the build 
 * The file Hash Strings are checked against the Master Server and Master GIT Repository where then the Master File allows or disallows the installation based on authentic file integrity if
 the Application Module undergoing installation is an official Application Module.
 
-===Software Project Versioning System===
+===Versioning System===
+
+====Software Project Versioning System====
 The Cerberus Content Management System' Project versioning follows a logical pattern of versioning by ascending number and builds by ascending number with edit numbers.
 All builds are generated from a C++ application named Charon alternately named Freyja where this C++ application takes manually written Post-Hyper-Text-Pre-Processor programming code
 from the official CerberusCMS GIT repository and then it generates the organized directory structure to the hard disk drive where it can be further hand typed and manually hand updated.
@@ -43,6 +45,9 @@ Once an official build number reaches 100 where it has progressed to a level of 
 
 Releases follow:
 CerberusCMS - Version Number: **Number**, Build Number: **Number** and Edit Number: **Number**
+
+====Application Module Version System===
+Each Application Module has a version number where newer and improved Application Modules ascend in number.
 
 ===Project Programming Code Debugging===
 Once new features and programming code updates are added there is a debugging process where every part of the system is manually thouroughly debugged and perfected by the development team.
@@ -171,7 +176,7 @@ CerberusCMS packages can be downloaded in 5 different ways
 
 ====Installation====
 Once the official CerberusCMS package has been downloaded to the web server through any of the previous methods the package
-can then be unpackged and CerberusCMS can be installed through Architect which is an included Web Application for installing CerberusCMS.
+can then be unpacked and CerberusCMS can then be installed through Architect which is an included Web Application for installing CerberusCMS.
 
 ==Project Features==
 
@@ -182,11 +187,11 @@ can then be unpackged and CerberusCMS can be installed through Architect which i
 * Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts
 can comment and post Audio, Documents, Images and Videos.
 * Administration and Registered Members can communicate in different ways with encrypted messages through the Messenger Application Module.
-* Digital Rights Management Free
-
-====
+* Digital Rights Management Free.
 
 ===Control Features===
+
+====Internet and Intranet Networks====
 * Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering
 * Advertisement Server Blocking and Filtering, With Extensive Lists
 
@@ -352,6 +357,25 @@ written in Pure Post-Hyper-Text-Pre-Processor that allows for custom encryption,
 CerberusCMS free and open source edition comes with a custom FOSS license.
 
 ==Project Development Team==
+
+===Company Projects===
+TinkeSoftware was renamed from RuneSoftware and maintains and periodically develops 15 different software projects
+
+* Cerberus Content Management System / Runic Content Management System
+* Magysk Theme Writer
+* Stokje Application Writer
+* Charon / Helvegen
+* Grutte Forces
+* Runic Alphabets
+* Runic Calendars
+* Runic Keyboard Layouts
+* Runic Keyboard Stickers
+* Runic Language Packs
+* Runic Messenger
+* Runic / Sowilo Dashboard
+* Runic / Sowilo Operating System
+* Grand Theft Auto - Oildale
+* G.C.'s Calculator
 
 ==Project Copyrights==
 Every line of programming code in CerberusCMS up to CerberusCMS, Version Number: 4, Build Number: 0.8 is 100% original from and was written by the programmer G.C. Johnson.
