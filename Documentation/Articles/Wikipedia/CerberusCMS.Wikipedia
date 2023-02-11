@@ -40,14 +40,14 @@ Once an official build number reaches 100 where it has progressed to a level of 
 Releases follow:
 CerberusCMS - Version Number: **Number**, Build Number: **Number** and Edit Number: **Number**
 
-===Project Debugging===
+===Project Programming Code Debugging===
 Once new features and programming code updates are added there is a debugging process where every part of the system is manually thouroughly debugged and perfected by the development team.
 Once the system is completely perfected and functional an official release is announced and release into the public.
 
 ==Project Release Cycles==
-CerberusCMS comes with around 100 Application Modules that are capable of performing daily tasks and management of content and data.
+CerberusCMS comes with around 100 official Application Modules that are capable of performing daily tasks and management of content and data.
 
-===Application Modules===
+===Official Application Modules===
 Services Root-Level Application Modules
 
 Administration-Level Application Modules
@@ -158,7 +158,7 @@ Database Management Systems
 ===Project Installation===
 
 ====Package Download====
-CerberusCMS can be downloaded in 5 different ways
+CerberusCMS packages can be downloaded in 5 different ways
 * Through File-Transfer-Protocol
 * Through GIT Terminal Command From Included Installation ToolKit Web Application
 * Through Mercurial Terminal Command From Included Installation ToolKit Web Application
@@ -172,8 +172,8 @@ can then be unpackged and CerberusCMS can be installed through Architect which i
 ==Project Features==
 
 ===Interaction Features===
-Administration and Registered Members can download data from any torrent network. This includes movies and video games where the movies can then be played in the web browser.
-Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts
+* Administration and Registered Members can download data from any torrent network. This includes movies and video games where the movies can then be played in the web browser.
+* Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts
 can comment and post Audio, Documents, Images and Videos.
 
 ===Control Features===
@@ -302,16 +302,16 @@ Iris alternately named Hel does numerous things as well, such as:
 * Capable of sending and receiving encrypted messenger messages.
 * Capable of browsing the CerberusCMS installation.
 
-Charon is named after the ferryman of Hades in Greek Mythology. Iris was the Greek Goddess of Messages in Greek Mythology.
-Hel or Helvegen is a gatekeeper of the afterlife in Heathen / Germanic-Pagan mythology.
+[[Charon]] is named after the ferryman of Hades in Greek Mythology. [[Iris]] was the Greek Goddess of Messages in Greek Mythology.
+[[Hel]] or [[Helvegen]] is a gatekeeper of the afterlife in [[Heathen]] / Germanic-Pagan mythology.
 
 ==User-Interfaces==
 
 ===Programming Code Interface===
 
 ===Terminal Interface===
-CerberusCMS has a feature where an Administrator can use a terminal on a personal computer to connect to it to issue low-level priviledge operating system commands such as management of specific data
-in the system itself.
+CerberusCMS has a feature where an Administrator can use a terminal on a personal computer or mobile phone to connect to it to issue low-level priviledge operating system commands such as management of specific data
+in the system itself where it is connected to the Database Management System or other web server things.
 
 ===Graphical User-Interface===
 Unix-Like
@@ -328,13 +328,14 @@ Unix-Like
 * Expert Searchable Programming Code Keys
 
 ===Programming Code Documentation===
-* Expert Programming Code Documentation
+* Expert In-Line Programming Code Documentation
 
 ===Other Features===
 CerberusCMS comes with a feature where each Registered Member Account is allotted an amount of storage data space specified by the Administration. It also has a Messenger
 written in Pure Post-Hyper-Text-Pre-Processor that allows for custom encryption, Pretty-Good-Privacy, AES512 encrypted messaging as well as sending and receiving cell phone text messages world-wide.
 
 ===Software Licensing===
+CerberusCMS free and open source edition comes with a custom FOSS license.
 
 ==Project Development Team==
 
