@@ -276,11 +276,17 @@ Automatic 2-Factor Authentication by SHA-512 Security Token String From Electron
 Automatic Internet Protocol Address Restricted Authentication
 
 ===Notable Features===
-CerberusCMS is capable of playing video game console games by Read-Only-Memory file through the Emulator Application Module.
+CerberusCMS is capable of playing video game console games by Read-Only-Memory image file through the Emulator Application Module.
 Through this Application Module one can play Nintendo, Super Nintendo and other types of video games from the web browser for free.
 
 ==Project Details==
-CerberusCMS as of Version Number: 4, Build Number: 0.8 has approximately 40,000 lines of Pure Post-Hyper-Text-Pre-Processor programming code. All of the programming code is extremely documented and manageable.
+
+===Project Programming Code Size===
+Programming Code
+CerberusCMS as of Version Number: 4, Build Number: 0.8 has approximately 40,000 lines of Pure Post-Hyper-Text-Pre-Processor programming code.
+
+Programming Code Documentation
+All of the programming code is extremely documented and manageable with approximately 7,000 blocks of programming code documentation.
 Adding features to this web application as a novice programmer is very simple and straightforward.
 
 The idea behind CerberusCMS is for it to stay and remain 100% Pure Post-Hyper-Text-Pre-Processor programming code.
