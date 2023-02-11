@@ -173,6 +173,8 @@ can then be unpackged and CerberusCMS can be installed through Architect which i
 
 ===Interaction Features===
 Administration and Registered Members can download data from any torrent network. This includes movies and video games where the movies can then be played in the web browser.
+Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts
+can comment and post Audio, Documents, Images and Videos.
 
 ===Control Features===
 * Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering
@@ -283,23 +285,22 @@ Adding features to this web application as a novice programmer is very simple an
 The idea behind CerberusCMS is for it to stay and remain 100% Pure Post-Hyper-Text-Pre-Processor programming code.
 
 ===Bundled Software and Packages===
-CerberusCMS as of Version Number: 4, Build Number: 0.8 comes with Charon, a compilable C++ application that can be compiled with G.C.C. and other C++ compiling applications from a terminal.
+CerberusCMS as of Version Number: 4, Build Number: 0.8 comes with Charon alternately named Freyja, a compilable C++ application that can be compiled with G.C.C. and other C++ compiling applications from a terminal.
 
-Charon was combined from other C++ programming code that generated the theme files necessary to have a custom graphical theme on CerberusCMS.
+Charon alternately named Freyja was combined from other C++ programming code that generated the theme files necessary to have a custom graphical theme on CerberusCMS.
 
 CerberusCMS also comes with Iris alternately named Hel an Android Open Source Software Project application as well as a SWIFT application for Apple iOS.
 
-Charon does numerous things such as:
+Charon alternately named Freyja does numerous things such as:
 * Generates the clean, malware free organized directory structure of CerberusCMS to the local hard drive and then manually copies and pastes the CerberusCMS Project
 programming source code from the official GIT Repository to each file. This eliminates any possibility of malware carryover from system to system in case any files are injected
 with malicious code at any point in time in the development cycle.
-
 * Generates custom CerberusCMS themes.
 
-Iris does numerous things as well, such as:
-
-* Connects a mobile device that is flashed with AOSP to the specified CerberusCMS installation on the web server.
-* Capable of sending and receiving messenger messages
+Iris alternately named Hel does numerous things as well, such as:
+* Connects a mobile device that is flashed with Android Open Source Software Project to the specified CerberusCMS installation on the web server.
+* Capable of sending and receiving encrypted messenger messages.
+* Capable of browsing the CerberusCMS installation.
 
 Charon is named after the ferryman of Hades in Greek Mythology. Iris was the Greek Goddess of Messages in Greek Mythology
 
