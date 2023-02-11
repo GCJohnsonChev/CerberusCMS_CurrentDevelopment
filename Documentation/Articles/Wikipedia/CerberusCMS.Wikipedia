@@ -50,6 +50,27 @@ CerberusCMS comes with around 100 Application Modules that are capable of perfor
 Services Root-Level Application Modules
 
 Administration-Level Application Modules
+* Administrators
+* Applications
+* Archive
+* Banish
+* Control_Panel
+* Emulators
+* File_Categories
+* Forum
+* GIT
+* Messenger
+* PHP_Information
+* Panels
+* Publish
+* Ranks
+* Referrers
+* Robot_Monitor
+* Settings
+* Submissions
+* Terminal
+* Update
+* Web_Pages
 
 Registered Member-Level Application Modules
 * Active_Members
@@ -93,8 +114,27 @@ Registered Member-Level Application Modules
 
 Background-Level Application Modules
 
-Open :: Public Application Modules
+Activity Logging
+* Log_Administration
+* Log_Background
+* Log_Member
+* Log_Visitor
 
+Panel Application Modules
+* Administration.panel
+* Applications_Panel.panel
+* Banned_Networks.panel
+* Language.panel
+* Latest_Articles.panel
+* Latest_Files.panel
+* Latest_Members.panel
+* Latest_Shouts.panel
+* Member_Panel.panel
+* Project_Badges.panel
+* RSS_Panel.panel
+
+Open :: Public Application Modules
+Engine_Validation
 
 ===Secret Application Modules===
 With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module that teaches the user how to mentally calculate at lightning speed due to the author's
