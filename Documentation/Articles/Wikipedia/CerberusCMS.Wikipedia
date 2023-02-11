@@ -108,6 +108,7 @@ Registered Member-Level Application Modules
 * Statistics
 * Submit_News
 * System_Message
+* Torrent
 * Update_Account
 * Update_Password
 * Upload
@@ -144,6 +145,13 @@ With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Applic
 capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication. The Application Module teaches fundamentally how to Mentally Calculate all Mathematical Arithmetic up to 4 Digit * 4 Digit Numbers as well as Exponents.
 
 ==Project Features==
+
+===Interaction Features===
+Administration and Registered Members can download data from any torrent network. This includes movies and video games where the movies can then be played in the web browser.
+
+===Control Features===
+* Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering
+* 
 
 ===Digital Trust Features===
 CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application code loaded
