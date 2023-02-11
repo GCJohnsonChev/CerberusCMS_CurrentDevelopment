@@ -23,6 +23,7 @@ for places and things that can be improved. Adding new features to the system co
 System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
 Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
 
+===User Update Interaction===
 * The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
 * The update process uses different terminal commands from the Web Server itself to download to a temporary directory in the system and then replace each Application Module to the new version.
 * The entire system is modular where each Application Module is hashed in the Secure Hash Algorithm based on the exact file size of the Application Module in bytes.
@@ -288,9 +289,9 @@ Unix-Like
 ==Programming Architecture==
 
 ===Programming Code Features===
-
 * Simplicity of Object-Oriented-Like Variables and Functions
 * Simplicity of Proceedural Style Programming Code
+* Expert and Unique Variable Prefix Naming System
 
 ===Programming Code Searchability===
 * Expert Searchable Programming Code Keys
@@ -299,15 +300,13 @@ Unix-Like
 * Expert Programming Code Documentation
 
 ===Other Features===
-
 CerberusCMS comes with a feature where each Registered Member Account is allotted an amount of storage data space specified by the Administration. It also has a Messenger
-written in PurePHP that allows for custom encryption, Pretty-Good-Privacy, AES512 encrypted messaging as well as sending and receiving cell phone text messages world-wide.
+written in Pure Post-Hyper-Text-Pre-Processor that allows for custom encryption, Pretty-Good-Privacy, AES512 encrypted messaging as well as sending and receiving cell phone text messages world-wide.
 
 ===Software Licensing===
 
 ==Project Development Team==
 
 ==Project Copyrights==
-
-Every line of programming code in CerberusCMS up to CerberusCMS, Version: 4, Build: 0.8 is 100% original from and was written by the programmer G.C. Johnson.
+Every line of programming code in CerberusCMS up to CerberusCMS, Version Number: 4, Build Number: 0.8 is 100% original from and was written by the programmer G.C. Johnson.
 This web application was developed and written in Southern California. This project was started in 2001 when I was about 14 or maybe 15 years old... My girlfriend at the time... a nice laptop was given to me. I started learning computer programming back then. The updates for this specific project is slow because I don't have the time to work on it every day.
