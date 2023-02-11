@@ -14,6 +14,9 @@ also be likened to 1 is: alive or 0 is: dead.
 Each release of CerberusCMS after CerberusCMS - Version Number: 4, Build Number: 0.8 comes with an alternate edition for installation where the entire system is themed around Heathen / Germanic Pagan Gods and Goddesses where
 in this alternate edition there is no mention of Cerberus and it is replaced instead with the names of Heathen / Germanic Gods and Goddesses with those themed graphics. Wodan / Odin, Freyja, Heimdallr and others.
 
+===Loss of Development Progress===
+Around 2 years of development progress was lost before 2013. Several fake version of this project were put on display so as to distract certain groups.
+
 ==Project Cycles==
 
 ===Project Development Cycle===
@@ -24,7 +27,7 @@ for places and things that can be improved. Adding new features to the system co
 System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
 Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
 
-===User Update Interaction===
+===System Update Interaction===
 * The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
 * The update process uses different terminal commands from the Web Server itself to download to a temporary directory in the system and then replace each Application Module to the new version.
 * The entire system is modular where each Application Module is hashed in the Secure Hash Algorithm based on the exact file size of the Application Module in bytes.
@@ -173,9 +176,15 @@ can then be unpackged and CerberusCMS can be installed through Architect which i
 ==Project Features==
 
 ===Interaction Features===
-* Administration and Registered Members can download data from any torrent network. This includes movies and video games where the movies can then be played in the web browser.
+
+====Entertainment and Interaction====
+* Administration and Registered Members can download data from any torrent network from the CerberusCMS Web Application itself. This includes movies and video games where the movies can then be played in the web browser.
 * Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts
 can comment and post Audio, Documents, Images and Videos.
+* Administration and Registered Members can communicate in different ways with encrypted messages through the Messenger Application Module.
+* Digital Rights Management Free
+
+====
 
 ===Control Features===
 * Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering
@@ -208,12 +217,10 @@ The Master_Sanitization file features expert Post-Hyper-Text-Pre-Processor progr
 ===Digital Information Security Features===
 CerberusCMS aims to be a secure Content Management System and is hardcoded for security.
 
-Vulnerability and Exploitation Security
+====Vulnerability and Exploitation Security====
 * Automatic Directory Listing Denial
 * Automatic GET and POST Sanitization
 * Automatic Variable Sanitization
-
-Secure From and Invulnerable To
 
 Injections
 * S.Q.L. Injection
