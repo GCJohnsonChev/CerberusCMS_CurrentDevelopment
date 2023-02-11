@@ -89,6 +89,7 @@ Registered Member-Level Application Modules
 * Application_List
 * Articles
 * Audio_Player
+* Calendar
 * Comment
 * Contact_Administrator
 * Control_Panel
@@ -101,6 +102,7 @@ Registered Member-Level Application Modules
 * Friend
 * Language
 * Legal
+* Lightning_Calculate
 * Links
 * List
 * Login
