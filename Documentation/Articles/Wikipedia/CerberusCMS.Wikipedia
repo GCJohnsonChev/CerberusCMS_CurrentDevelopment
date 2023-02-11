@@ -52,11 +52,13 @@ With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Applic
 capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication. The Application Module teaches fundamentally how to Mentally Calculate all Mathematical Arithmetic up to 4 Digit * 4 Digit Numbers as well as Exponents.
 
 ==Project Details==
-CerberusCMS as of Version: 4, Build: 0.8 has approximately 35,000 lines of PureP.H.P. programming code. All of the programming code is extremely documented and manageable.
-Adding features to this web application as a programmer is very simple and straightforward. The idea behind CerberusCMS is for it to stay and remain 100% PureP.H.P. programming code.
+CerberusCMS as of Version Number: 4, Build Number: 0.8 has approximately 40,000 lines of Pure Post-Hyper-Text-Pre-Processor programming code. All of the programming code is extremely documented and manageable.
+Adding features to this web application as a novice programmer is very simple and straightforward.
+
+The idea behind CerberusCMS is for it to stay and remain 100% Pure Post-Hyper-Text-Pre-Processor programming code.
 
 ===Bundled Software and Packages===
-CerberusCMS as of Version: 4, Build: 0.8 comes with Charon, a compilable C++ application that can be compiled with G.C.C. and other C++ compiling applications.
+CerberusCMS as of Version Number: 4, Build Number: 0.8 comes with Charon / Hel, a compilable C++ application that can be compiled with G.C.C. and other C++ compiling applications.
 Charon was combined from other C++ programming code that generated the theme files necessary to have a custom graphical theme on CerberusCMS. CerberusCMS also comes
 with Iris an Android Open Source Software Project application.
 
