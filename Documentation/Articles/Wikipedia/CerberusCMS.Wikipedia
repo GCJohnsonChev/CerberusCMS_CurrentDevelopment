@@ -144,6 +144,21 @@ Engine_Validation
 With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module that teaches the user how to mentally calculate at lightning speed due to the author's
 capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication. The Application Module teaches fundamentally how to Mentally Calculate all Mathematical Arithmetic up to 4 Digit * 4 Digit Numbers as well as Exponents.
 
+==Project Compatibility==
+* Post-Hyper-Text-Pre-Processor, Version Number: 8
+* Hyper-Text-Markup-Language, Version Number: 5
+* Cascading-Style-Sheet, Version Number: 3
+
+Relational Database Management Systems
+* My-Structured-Query-Language, Version Number: 8
+
+Database Management Systems
+* Mini-Structured-Query-Language, Version Number: 4
+
+===Project Installation===
+CerberusCMS can be installed in 5 different ways
+* Through Architect, a pure Post-Hyper-Text-Pre-Processor Web Application
+
 ==Project Features==
 
 ===Interaction Features===
