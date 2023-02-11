@@ -279,14 +279,13 @@ The alternate edition comes with the same functionality but the applications are
 ===Programming Code Interface===
 
 ===Terminal Interface===
-
-CerberusCMS has a feature where an Administrator can use a terminal on a personal computer to connect to it to issue low-level priviledge commands such as management of specific data
+CerberusCMS has a feature where an Administrator can use a terminal on a personal computer to connect to it to issue low-level priviledge operating system commands such as management of specific data
 in the system itself.
 
 ===Graphical User-Interface===
 Unix-Like
 
-==Programming Architecture==
+==Programming Code Architecture==
 
 ===Programming Code Features===
 * Simplicity of Object-Oriented-Like Variables and Functions
