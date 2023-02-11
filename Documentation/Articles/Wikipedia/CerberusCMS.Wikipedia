@@ -46,7 +46,7 @@ Once an official build number reaches 100 where it has progressed to a level of 
 Releases follow:
 CerberusCMS - Version Number: **Number**, Build Number: **Number** and Edit Number: **Number**
 
-====Application Module Version System===
+====Application Module Version System====
 Each Application Module has a version number where newer and improved Application Modules ascend in number.
 
 ===Project Programming Code Debugging===
