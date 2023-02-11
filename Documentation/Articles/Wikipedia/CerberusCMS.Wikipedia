@@ -189,6 +189,7 @@ can then be unpacked and CerberusCMS can then be installed through Architect whi
 * Administration and Registered Members can download data from any torrent network from the CerberusCMS Web Application itself. This includes movies and video games where the movies can then be played in the web browser.
 * Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts
 can comment and post Audio, Documents, Images and Videos.
+* Administration and Registered Members can watch video streams and listen to audio streams from anywhere on the Internet advertisement free through the included Application Modules. This includes YouTube, SoundCloud and more.
 * Administration and Registered Members can communicate in different ways with encrypted messages through the Messenger Application Module.
 * Digital Rights Management Free.
 
@@ -197,6 +198,10 @@ can comment and post Audio, Documents, Images and Videos.
 ====Internet and Intranet Networks====
 * Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering
 * Advertisement Server Blocking and Filtering, With Extensive Lists
+
+====Languages====
+Internal language files allow for instant translation of the output messages to any langauge. Custom languages can also be made and installed such as Hackish, Binary, Elvish and
+more.
 
 ===Digital Trust Features===
 CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application code loaded
