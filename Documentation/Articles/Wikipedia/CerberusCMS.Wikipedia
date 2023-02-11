@@ -144,6 +144,30 @@ capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 D
 
 ==Project Features==
 
+===Digital Trust Features===
+CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application code loaded
+into the web browser from the web server running CerberusCMS itself and at the same time all of the data and information is secure
+from vulnerabilities and exploitation as well as being information secure because only certain details are actually displayed.
+
+All of the data that is stored in the Database Server is encrypted using the G.N.U.-Privacy Guard, Pretty-Good-Privacy, BCRYPT, AES256, AES512 and other
+algorithms, hashes and cipers deemed secure by the information security community.
+
+It also allows for custom encryption algorithms and custom mathematics to be used system-wide so as to secure the storage and transimission of the data.
+This is made for corporate-level security, medium to small business security and academic security so as to securely store the data and information of its users and their data.
+
+CerberusCMS features Master Security Modules where when each module is included by the Master File the programming code then eliminates all possibility of:
+* Malicious S.Q.L. Injection Attacks
+* Malicious Cross-Site-Scripting Attacks
+* Malicious H.T.M.L. Code Attacks
+* Malicious Cookie Injection Attacks
+* Large File Upload Attacks
+* Local File Inclusion Attacks
+* Remote File Inclusion Attacks
+* P.H.P. Buffer Overflows
+* P.H.P. Function Overflows and Underruns
+
+The Master_Sanitization file features expert Post-Hyper-Text-Pre-Processor programming code that sanitizes all GET and POST data used throughout the forms as well as anything used in the U.R.L. bar in the web browser.
+
 ===Digital Information Security Features===
 CerberusCMS aims to be a secure Content Management System and is hardcoded for security.
 
@@ -273,29 +297,6 @@ Unix-Like
 
 ===Programming Code Documentation===
 * Expert Programming Code Documentation
-
-===Security Features===
-
-CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File directly from the software loaded
-into the web browser from the server running CerberusCMS itself and at the same time all of the data and information is secure
-from vulnerabilities and exploitation as well as being information secure because only certain details are actually displayed.
-
-All of the data that is stored in the Database Server is encrypted using the G.N.U.-Privacy Guard, Pretty-Good-Privacy, BCRYPT, AES256, AES512 and other
-algorithms deemed uncrackable by the information security community.
-
-It also allows for custom encryption algorithms and custom mathematics to be used system-wide so as to secure the storage and transimission of data.
-This is made for corporate-level security, medium to small business security and academic security so as to securely store the data and information of its users and their data.
-
-CerberusCMS features Master Security Modules where when each module is included by the Master File the programming code eliminates all possibility of:
-* Malicious S.Q.L. Injection Attacks
-* Malicious Cross-Site-Scripting Attacks
-* Malicious H.T.M.L. Code Attacks
-* Malicious Cookie Injection Attacks
-* Large File Upload Attacks
-* Local File Inclusion Attacks
-* Remote File Inclusion Attacks
-* PHP Buffer Overflows
-* PHP Function Overflows and Underruns
 
 ===Other Features===
 
