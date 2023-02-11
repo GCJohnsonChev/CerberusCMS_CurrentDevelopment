@@ -156,8 +156,18 @@ Database Management Systems
 * Mini-Structured-Query-Language, Version Number: 4
 
 ===Project Installation===
-CerberusCMS can be installed in 5 different ways
-* Through Architect, a pure Post-Hyper-Text-Pre-Processor Web Application
+
+====Package Download====
+CerberusCMS can be downloaded in 5 different ways
+* Through File-Transfer-Protocol
+* Through GIT Terminal Command From Included Installation ToolKit Web Application
+* Through Mercurial Terminal Command From Included Installation ToolKit Web Application
+* Through CURL Terminal Command
+* Through Linux Package
+
+====Installation====
+Once the official CerberusCMS package has been downloaded to the web server through any of the previous methods the package
+can then be unpackged and CerberusCMS can be installed through Architect which is an included Web Application for installing CerberusCMS.
 
 ==Project Features==
 
@@ -166,7 +176,7 @@ Administration and Registered Members can download data from any torrent network
 
 ===Control Features===
 * Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering
-* 
+* Advertisement Server Blocking and Filtering, With Extensive Lists
 
 ===Digital Trust Features===
 CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application code loaded
@@ -314,6 +324,7 @@ Unix-Like
 * Simplicity of Object-Oriented-Like Variables and Functions
 * Simplicity of Proceedural Style Programming Code
 * Expert and Unique Variable Prefix Naming System
+* Expert Programming Code Statements
 
 ===Programming Code Searchability===
 * Expert Searchable Programming Code Keys
