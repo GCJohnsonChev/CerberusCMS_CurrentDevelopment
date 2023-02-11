@@ -82,6 +82,7 @@ Registered Member-Level Application Modules
 * Comment
 * Contact_Administrator
 * Control_Panel
+* Clock
 * Documentation
 * Electronic_Mail
 * Files
@@ -109,6 +110,7 @@ Registered Member-Level Application Modules
 * Update_Account
 * Update_Password
 * Upload
+* Video_Games
 * Video_Player
 * Webspace
 
@@ -139,6 +141,68 @@ Engine_Validation
 ===Secret Application Modules===
 With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module that teaches the user how to mentally calculate at lightning speed due to the author's
 capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication. The Application Module teaches fundamentally how to Mentally Calculate all Mathematical Arithmetic up to 4 Digit * 4 Digit Numbers as well as Exponents.
+
+==Project Features==
+
+===Digital Information Security Features===
+CerberusCMS aims to be a secure Content Management System and is hardcoded for security.
+
+Vulnerability and Exploitation Security
+* Automatic Directory Listing Denial
+* Automatic GET and POST Sanitization
+* Automatic Variable Sanitization
+
+Secure From and Invulnerable To
+
+Injections
+* S.Q.L. Injection
+* Cookie Injection
+* Cross Server Injection
+* Mixed Information Injection
+* HTML Character Injection
+* Lightweight Directory Access Protocol Injection
+* Code Injection
+* Malicious Code Injection
+* Operating System Command Injection
+
+* Cross Site Scripting
+* Local File Inclusion
+* Remote File Inclusion
+* Large File Upload
+
+* Buffer Overflow
+* Buffer Underrun
+* Integer Underrun
+* Integer Overflow
+
+* Cross Request Forgery
+* Directory Traversal
+* Security Misconfigurations
+* XML External Entity Processing
+* Password Decryption
+* Data Mining and Exfiltration
+* Cross Origin Resources
+* Encapsulation
+* Cross URL Poisoning
+* HTTP Response Splitting
+* Data Tampering
+* Cookie Tampering
+* Internet Protocol Address Tampering
+* HTTP Verb Tampering
+* Insecure Cryptographic Storage
+* Insecure Digest
+* Insecure Direct Object Referencing
+
+* Remote Code Execution
+* Sensitive Data Exposure
+* Unrestricted File Upload
+* XML External Entities
+* Arbitrary Code Injection
+* CSRF
+* Denial of Service Through RAW Connection
+* Denial of Service Through Ping
+* Denial of Service Through HTTP Code
+
 
 ==Project Details==
 CerberusCMS as of Version Number: 4, Build Number: 0.8 has approximately 40,000 lines of Pure Post-Hyper-Text-Pre-Processor programming code. All of the programming code is extremely documented and manageable.
