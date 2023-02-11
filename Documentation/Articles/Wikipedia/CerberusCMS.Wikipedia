@@ -13,17 +13,25 @@ also be likened to 1 is: alive or 0 is: dead.
 Each release of CerberusCMS after CerberusCMS - Version Number: 4, Build Number: 0.8 comes with an alternate edition for installation where the entire system is themed around Heathen / Germanic Pagan Gods and Goddesses where
 in this alternate edition there is no mention of Cerberus and it is replaced instead with the names of Heathen / Germanic Gods and Goddesses with those themed graphics. Wodan / Odin, Freyja, Heimdallr and others.
 
-==Project Development and Update Cycles==
+==Project Cycles==
 
 ===Project Development Cycle===
-
-The development team may spend several weeks or months brainstorming, custom writing programming code, implementing that new programming code and also evaluating the system
+The development team may spend several weeks or months brainstorming, custom writing programming code, implementing that new programming code into the official system and also evaluating the system
 for places and things that can be improved. Adding new features to the system consists of exactly this.
 
-===Software Project Versioning System===
+===Project Update Cycles===
+System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
+Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
 
+* The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
+* The update process uses different terminal commands from the Web Server itself to download to a temporary directory in the system and then replace each Application Module to the new version.
+* The entire system is modular where each Application Module is hashed in the Secure Hash Algorithm based on the exact file size of the Application Module in bytes.
+* The file Hash Strings are checked against the Master Server and Master GIT Repository where then the Master File allows or disallows the installation based on authentic file integrity if
+the Application Module undergoing installation is an official Application Module.
+
+===Software Project Versioning System===
 The Cerberus Content Management System' Project versioning follows a logical pattern of versioning by ascending number and builds by ascending number with edit numbers.
-All builds are generated from a C++ application named Charon or Freyja where this C++ application takes manually written Post-Hyper-Text-Pre-Processor programming code
+All builds are generated from a C++ application named Charon alternately named Freyja where this C++ application takes manually written Post-Hyper-Text-Pre-Processor programming code
 from the official CerberusCMS GIT repository and then it generates the organized directory structure to the hard disk drive where it can be further hand typed and manually hand updated.
 
 Once an official build number reaches 100 where it has progressed to a level of development features a new version of the project is announced.
@@ -31,21 +39,62 @@ Once an official build number reaches 100 where it has progressed to a level of 
 Releases follow:
 CerberusCMS - Version Number: **Number**, Build Number: **Number** and Edit Number: **Number**
 
-===Project System Updates===
-System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
-Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
-
-The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
-The update process uses different terminal commands from the Web Server itself to download to a temporary directory in the system and then replace each Application Module to the new version.
-The entire system is modular where each Application Module is hashed in the Secure Hash Algorithm based on the exact file size of the Application Module in bytes.
-The Hash Strings are checked against the Master Server and Master GIT Repository where then the Master File allows or disallows the installation based on authentic file integrity.
-
 ===Project Debugging===
 Once new features and programming code updates are added there is a debugging process where every part of the system is manually thouroughly debugged and perfected by the development team.
 Once the system is completely perfected and functional an official release is announced and release into the public.
 
 ==Project Release Cycles==
 CerberusCMS comes with around 100 Application Modules that are capable of performing daily tasks and management of content and data.
+
+===Application Modules===
+Services Root-Level Application Modules
+
+Administration-Level Application Modules
+
+Registered Member-Level Application Modules
+* Active_Members
+* All_News
+* All_Shouts
+* Application_List
+* Articles
+* Audio_Player
+* Comment
+* Contact_Administrator
+* Control_Panel
+* Documentation
+* Electronic_Mail
+* Files
+* Forum
+* Forward_Friend
+* Friend
+* Language
+* Legal
+* Links
+* List
+* Login
+* Member_Directory
+* Messenger
+* News
+* Private_Files
+* Private_Message
+* Profile
+* Referrers
+* Register
+* Reset_Password
+* Search
+* Statistics
+* Submit_News
+* System_Message
+* Update_Account
+* Update_Password
+* Upload
+* Video_Player
+* Webspace
+
+Background-Level Application Modules
+
+Open :: Public Application Modules
+
 
 ===Secret Application Modules===
 With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module that teaches the user how to mentally calculate at lightning speed due to the author's
