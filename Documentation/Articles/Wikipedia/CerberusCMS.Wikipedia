@@ -164,19 +164,25 @@ Injections
 * Code Injection
 * Malicious Code Injection
 * Operating System Command Injection
-
+* Arbitrary Code Injection
 * Cross Site Scripting
+
+File and Directory Handling
 * Local File Inclusion
 * Remote File Inclusion
 * Large File Upload
+* Directory Traversal
 
+Buffers
 * Buffer Overflow
 * Buffer Underrun
 * Integer Underrun
 * Integer Overflow
 
+Web Server
 * Cross Request Forgery
-* Directory Traversal
+
+Configurations
 * Security Misconfigurations
 * XML External Entity Processing
 * Password Decryption
@@ -192,16 +198,22 @@ Injections
 * Insecure Cryptographic Storage
 * Insecure Digest
 * Insecure Direct Object Referencing
-
 * Remote Code Execution
 * Sensitive Data Exposure
 * Unrestricted File Upload
 * XML External Entities
-* Arbitrary Code Injection
 * CSRF
+
+Cryptography and Encryption
+
+Denial of Service
 * Denial of Service Through RAW Connection
 * Denial of Service Through Ping
 * Denial of Service Through HTTP Code
+
+Automatic 2-Factor Authentication by SHA-512 Security Token String From Electronic Mail Message or Mobile Phone Text Message
+
+===Notable Features===
 
 
 ==Project Details==
