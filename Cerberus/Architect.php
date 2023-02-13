@@ -232,7 +232,8 @@ $_INSTALL_FORM_POST_URL_SECURE_OPENSSL							= $_POST['post_url_secure_openssl']
 $_INSTALL_FORM_POST_URL_SECURE_TLS							= $_POST['post_url_secure_tls'];
 $_INSTALL_FORM_POST_URL_CLEARTEXT							= $_POST['post_url_cleartext'];
 $_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_CONFIGURATION_FILE				= file_get_contents("./System/Configuration/Global_Configuration.php");
-$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE			= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class.php");
+$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE_MySQL_STANDARD	= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Standard.php");
+$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE_MySQL_IMPROVED	= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Improved.php");
 
 /*
  ============================================================================================================
@@ -273,8 +274,8 @@ echo ("
 			<INPUT TYPE=\"TEXT\" NAME=\"post_sql_database_server_database_name_table_prefix\"><BR><BR>
 
 		Pre-Hyper-Text-Post-Processor Engine Settings<HR>
-		* <I>Pre-Hyper-Text-Post-Processor Engine Version</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"post_php_engine_version\" VALUE=\"5\" MAXLENGTH=\"2\"><BR>
+		* <I>Pre-Hyper-Text-Post-Processor Engine Version Number</I>:<BR>
+			<INPUT TYPE=\"TEXT\" NAME=\"post_php_engine_version\" VALUE=\"5\" MAXLENGTH=\"2\"><BR><BR>
 
 		System Notification Settings<HR>
 		* <I>Server Notifications Electronic Mail Address</I>:<BR>
@@ -302,9 +303,14 @@ echo ("
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_CONFIGURATION_FILE</TEXTAREA>
 		</FORM><BR><BR>
 
-		* <I>Current Global System Database Server Class File</I>:<BR>
+		* <I>Current Global System Database Server Class File For My Structured-Query-Language :: Standard Driver</I>:<BR>
 		<FORM>
-			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE</TEXTAREA>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE_MySQL_STANDARD</TEXTAREA>
+		</FORM><BR><BR>
+
+		* <I>Current Global System Database Server Class File For My Structured-Query-Language :: Improved Driver</I>:<BR>
+		<FORM>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_DATABASE_SERVER_CLASS_FILE_MySQL_IMPROVED</TEXTAREA>
 		</FORM><BR><BR>
 
 		<B>Installation Notes</B><HR>
@@ -389,7 +395,7 @@ echo ("
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Secure-Deleting Original System Configuration File...<BR>");
 
-		unlink("./System/Configuration/Global_SQL_Server_Configuration.php");
+		unlink("./System/Configuration/Global_Server_Configuration.php");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Creating New System Configuration File With Installer Specifications...<BR>");
 
@@ -405,7 +411,7 @@ echo ("
  ============================================================================================================
 */
 
-$_ACCESS_FILE_FILENAME					= "./System/Configuration/Global_SQL_Server_Configuration.php";
+$_ACCESS_FILE_FILENAME					= "./System/Configuration/Global_Server_Configuration.php";
 $_ACCESS_FILE_DATA					= "<?PHP
 \$_ACCESS_SYSTEM_ELECTRONIC_MAIL_ADDRESS		= \"$_INSTALL_FORM_POST_SYSTEM_ELECTRONIC_MAIL_ADDRESS\";
 \$_ACCESS_DATABASE_SERVER_HOSTNAME 			= \"$_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME\";

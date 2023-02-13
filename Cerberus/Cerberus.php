@@ -233,6 +233,7 @@ if (file_exists($_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE)) {
 */
 
 $DB										= new DB();
+//$DB										= new mysqli($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
 
 /*
  ============================================================================================================
@@ -244,12 +245,21 @@ $DB										= new DB();
 
 /*
  ============================================================================================================
- + Database Management Server System Connection Variables
+ + Database Management Server System Connection Variables :: My Structured Query Language :: Standard
  ============================================================================================================
 */
 
 $_KERNEL_DATABASE_SERVER_CONNECT 						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
 $_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 					= mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME);
+
+/*
+ ============================================================================================================
+ + Database Management Server System Connection Variables :: My Structured Query Language :: Improved
+ ============================================================================================================
+*/
+
+//$_KERNEL_DATABASE_SERVER_CONNECT 						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
+//$_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 				= mysql_select_db($_KERNEL_DATABASE_SERVER_CONNECT, $_ACCESS_DATABASE_SERVER_DATABASE_NAME);
 
 /*
  ============================================================================================================
