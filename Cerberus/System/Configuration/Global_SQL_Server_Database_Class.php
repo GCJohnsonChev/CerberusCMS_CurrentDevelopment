@@ -42,7 +42,7 @@
  ============================================================================================================
  +
  +
- + Cerberus :: System Configuration :: Global S.Q.L. Server Database Class
+ + Cerberus :: System Configuration :: Global S.Q.L. Server Database Class :: MyS.Q.L. Improved Driver
  +
  +
  ============================================================================================================
@@ -51,7 +51,17 @@
 /*
  ============================================================================================================
  +
- + Database Class Functions
+ + Database Class :: Variables
+ +
+ ============================================================================================================
+*/
+
+$_GLOBAL_SQL_DATABASE_SERVER_CONNECTION			= mysqli_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
+
+/*
+ ============================================================================================================
+ +
+ + Database Class :: Functions
  +
  ============================================================================================================
 */
@@ -67,7 +77,7 @@ class DB {
 
 	function connect($_QUERY) {
 
-		$_QUERY = mysql_connect($_QUERY) or die(mysql_error());
+		$_QUERY = mysqli_connect($_QUERY) or die(mysql_error());
 			return $_QUERY;
 
 } // [ + ] Function: Database Server Connect
@@ -80,7 +90,7 @@ class DB {
 
 	function connect_db($_QUERY) {
 
-		$_QUERY = mysql_select_db($_QUERY) or die(mysql_error());
+		$_QUERY = mysqli_select_db($_QUERY) or die(mysql_error());
 			return $_QUERY;
 
 } // [ + ] Function: Database Server Connect To Database Name
@@ -93,7 +103,7 @@ class DB {
 
 	function query($_QUERY) {
 
-		$_QUERY = mysql_query($_QUERY);
+		$_QUERY = mysqli_query($_QUERY);
 			return $_QUERY;
 
 } // [ + ] Function: Database Server Query
@@ -106,7 +116,7 @@ class DB {
 
 	function fetch_array($_QUERY) {
 
-		 $_QUERY = mysql_fetch_array($_QUERY);
+		 $_QUERY = mysqli_fetch_array($_QUERY);
 			return $_QUERY;
 
 } // [ + ] Function: Database Server Query: Fetch Array
@@ -119,7 +129,7 @@ class DB {
 
 	function fetch_row($_QUERY) {
 
-		$_QUERY = mysql_fetch_row($_QUERY);
+		$_QUERY = mysqli_fetch_row($_QUERY);
 			return $_QUERY;
 
 } // [ + ] Function: Database Server Query: Fetch Row
@@ -132,7 +142,7 @@ class DB {
 
 	function num_rows($_QUERY) {
 
-		$_QUERY = mysql_num_rows($_QUERY);
+		$_QUERY = mysqli_num_rows($_QUERY);
 			return $_QUERY;
 
 } // [ + ] Function: Database Server Query: Number of Rows
@@ -145,7 +155,7 @@ class DB {
 
 	function close($_QUERY) {
 
-		$_QUERY = mysql_close($_QUERY);
+		$_QUERY = mysqli_close($_QUERY);
 			return $_QUERY;
 
 } // [ + ] Function: Database Server: Close Connection
@@ -158,7 +168,7 @@ class DB {
 
 	function free($_QUERY) {
 
-		$_QUERY = mysql_free_result($_QUERY);
+		$_QUERY = mysqli_free_result($_QUERY);
 			return $_QUERY;
 
 } // [ + ] Function: Database Server: Free Result
