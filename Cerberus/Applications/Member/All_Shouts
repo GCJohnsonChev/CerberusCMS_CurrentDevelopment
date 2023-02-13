@@ -224,7 +224,7 @@ if (strlen($_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE) > "250") {
 if ($_Application_Module_Member_All_Shouts_DB_Query_INSERT_SHOUT) {
 
 											echo ($_Application_Module_Member_Message_All_Shouts_POST_SHOUT);
-											header("location: ./$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER=All_Shouts");
+											header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=All_Shouts");
 
 } else {
 
