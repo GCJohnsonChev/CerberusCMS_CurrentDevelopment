@@ -16,7 +16,7 @@ CerberusCMS comes with several additional applications:
 * Charon, which is named after the Ferryman to the afterlife in Greek Mythology.
 * Iris, which is named after the Goddess of Messages in Greek Mythology.
 
-CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later it was used in the XBMC community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser. This Web Application was originally written and used as a communications platform.
+CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later it was used in the [[XBMC]] community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser. This Web Application was originally used as a communications platform for small groups before that.
 
 ===Loss of Development Progress===
 Around 2 years of development progress was lost before 2013. Several fake versions of this project were put on display so as to distract certain groups.
