@@ -302,7 +302,7 @@ can then be unpacked and CerberusCMS can then be installed through Architect whi
 ===Interaction Features===
 
 ====Entertainment and Interaction====
-* Administration and Registered Members can download data from any torrent network from the CerberusCMS Web Application itself. This includes movies and video games where the movies can then be played in the web browser for free.
+* Administration and Registered Members can download data from any torrent network from the CerberusCMS Web Application itself. This includes movies and video games where the movies can then be played in the web browser for free. The Video Player Application Module automatically searches for and downloads high definition thumbnail images of box art of the movies downloaded.
 * Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts can comment and post Audio, Documents, Images and Videos. Content could be anything from interaction videos and video communication streams.
 * Administration and Registered Members can watch video streams and listen to audio streams from anywhere on the Internet free of any advertisements through the included Application Modules. This includes YouTube, SoundCloud and more.
 * Administration and Registered Members can communicate in different ways with encrypted messages through the Messenger Application Module.
@@ -539,6 +539,12 @@ in the system itself where it is connected to the Database Management System or 
 
 ===Graphical User-Interface===
 Unix-Like with Modular appearance.
+CerberusCMS comes with a theme pack that contains 4 different quality levels of graphics.
+* 4K or 3840 × 2160  P / I
+* 2560 x 1440 or "1440" P / I
+* 1920 x 1080 or "1080" P / I
+* 1280 x 720 or "720P" P / I
+CerberusCMS automatically detects the connection speed of the connection and optimizes the graphics quality to meet the connection speed. For network connection speed at ~ 800 KiloBytes it will choose to load the 1920 x 1080 resolution theme graphics. Faster connection speeds will automatically choose to load the 4K resolution theme graphics. The entire theme system uses percentages in the programming code so that it can be perfectly fit and rendered to any device resolution. Mobile cell phones, Mobile devices, computer monitors, laptops and other devices of different resolutions.
 
 ===Internet of Things Interface===
 Custom Application Modules can be written to control IoT Devices connected to the system such as Smart House Electricity Usage Monitoring, Smart House Lightning Systems to turn lights on and off, programmable logic controllers, SCADA and more. All of these things can be controlled from an Application Module with buttons and more.
