@@ -292,6 +292,11 @@ CREATE TABLE {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 application_file_name VARCHAR(100),
 application_file_permission CHAR(1),
+application_file_permission_camera CHAR(1),
+application_file_permission_microphone CHAR(1),
+application_file_permission_location_gps CHAR(1),
+application_file_permission_location_geo CHAR(1),
+application_file_permission_location_internet_protocol_address CHAR(1),
 application_file_status CHAR(1),
 PRIMARY KEY (id)
 );
@@ -735,44 +740,44 @@ INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_application_links(ap
 
 /* Application Modules and Application Module Settings */
 
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Active_Members','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('All_News','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('All_Shouts','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Application_List','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Articles','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Audio_Player','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Update_Password','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Comment','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Contact_Administrator','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Control_Panel','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Documentation','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Update_Account','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Electronic_Mail','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Files','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Forum','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Friend','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Forward_Friend','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Language','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Legal','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Links','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('List','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Login','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Member_Directory','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Messenger','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('News','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Private_Files','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Private_Message','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Profile','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Referrers','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Register','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Reset_Password','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Search','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Statistics','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Submit_News','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('System_Message','0','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Upload','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Video_Player','1','1');
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Webspace','1','1');
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Active_Members','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('All_News','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('All_Shouts','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Application_List','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Articles','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Audio_Player','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Update_Password','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Comment','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Contact_Administrator','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Control_Panel','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Documentation','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Update_Account','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Electronic_Mail','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Files','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Forum','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Friend','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Forward_Friend','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Language','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Legal','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Links','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('List','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Login','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Member_Directory','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Messenger','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('News','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Private_Files','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Private_Message','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Profile','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Referrers','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Register','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Reset_Password','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Search','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Statistics','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Submit_News','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('System_Message','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Upload','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Video_Player','1','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('Webspace','1','1','1','1','1','1','1')");
 
 /* Application Panels and Application Panel Settings */
 
@@ -792,7 +797,7 @@ INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_ranks(rank_gender_ma
 
 /* System Settings */
 
-INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','$_PROJECT_STRING_NAME','256000','10240000','Default','Default','Default','1','1');
+INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_PREFIX}_settings(settings_system_time_cookies,settings_system_status_embedded_compression_gzip,settings_system_status_offline_mode,settings_system_status_security_module_master_sanitization,settings_system_file_extension_audio,settings_system_file_extension_image,settings_system_directory_language,settings_system_directory_theme,settings_system_website_title,settings_system_upload_size_private,settings_system_upload_size_public,settings_system_plugin_directory_smileys,settings_system_plugin_directory_safeHTML,settings_system_plugin_directory_text_editor,settings_system_plugin_status_safeHTML,settings_system_plugin_status_text_editor)VALUES('86400','1','0','1','mp3','png','English','2022_TinkeSoftware_Grey','$_PROJECT_STRING_NAME','256000','10240000','Default','Default','Default','1','1');
 
 /* System Statistics */
 
