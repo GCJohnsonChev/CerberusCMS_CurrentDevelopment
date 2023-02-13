@@ -87,11 +87,12 @@ echo ("
  ============================================================================================================
 */
 
-		echo ("
+echo ("
 <CENTER>[ <A HREF=\"?InternalApplication&#61;File_Testing\" TITLE=\":: Test The File Integrity Of Cerberus' Files ::\">File Integrity Testing</A>
 &nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;MySQL_Testing\" TITLE=\":: Test The MyS.Q.L. Database Server Connection Through The MyS.Q.L. Driver ::\">MyS.Q.L. Server Standard Driver Testing</A>
 &nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;MySQLi_Testing\" TITLE=\":: Test The MyS.Q.L. Database Server Connection Through The MyS.Q.L. Improved Driver ::\">MyS.Q.L. Server Improved Driver Testing</A>
-&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;Backup_Login\" TITLE=\":: Open & Display The Internal Backup Login Application ::\">Backup Login Application</A> ]</CENTER><HR><BR><BR>");
+&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;Backup_Login\" TITLE=\":: Open & Display The Internal Backup Login Application ::\">Backup Login Application</A> ]</CENTER><HR><BR><BR>
+");
 
 if ($_GET["InternalApplication"] == "File_Testing") {
 
