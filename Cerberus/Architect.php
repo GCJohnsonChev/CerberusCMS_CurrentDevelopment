@@ -224,6 +224,7 @@ $_INSTALL_FORM_POST_DATABASE_SERVER_USERNAME						= $_POST['post_sql_database_se
 $_INSTALL_FORM_POST_DATABASE_SERVER_PASSWORD						= $_POST['post_sql_database_server_password'];
 $_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME					= $_POST['post_sql_database_server_database_name'];
 $_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME_TABLE_PREFIX				= $_POST['post_sql_database_server_database_name_table_prefix'];
+$_INSTALL_FORM_POST_PHP_ENGINE_VERSION							= $_POST['post_php_engine_version'];
 $_INSTALL_FORM_POST_SYSTEM_ELECTRONIC_MAIL_ADDRESS					= $_POST['post_system_electronic_mail_address'];
 $_INSTALL_FORM_POST_URL_SECURE								= $_POST['post_url_secure'];
 $_INSTALL_FORM_POST_URL_SECURE_SSL							= $_POST['post_url_secure_ssl'];
@@ -270,6 +271,10 @@ echo ("
 		* <I>S.Q.L. Database Server Name Table' Prefix</I>:<BR>
 		[ Example: <I>'MySQLDatabaseTables'</I> ]<BR>
 			<INPUT TYPE=\"TEXT\" NAME=\"post_sql_database_server_database_name_table_prefix\"><BR><BR>
+
+		Pre-Hyper-Text-Post-Processor Engine Settings<HR>
+		* <I>Pre-Hyper-Text-Post-Processor Engine Version</I>:<BR>
+			<INPUT TYPE=\"TEXT\" NAME=\"post_php_engine_version\" VALUE=\"5\" MAXLENGTH=\"2\"><BR>
 
 		System Notification Settings<HR>
 		* <I>Server Notifications Electronic Mail Address</I>:<BR>
@@ -408,6 +413,7 @@ $_ACCESS_FILE_DATA					= "<?PHP
 \$_ACCESS_DATABASE_SERVER_PASSWORD 			= \"$_INSTALL_FORM_POST_DATABASE_SERVER_PASSWORD\";
 \$_ACCESS_DATABASE_SERVER_DATABASE_NAME 		= \"$_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME\";
 \$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX 	= \"$_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME_TABLE_PREFIX\";
+\$_ACCESS_PHP_ENGINE_VERSION				= \"$_INSTALL_FORM_POST_PHP_ENGINE_VERSION\";
 \$_ACCESS_URL_CLEARTEXT 				= \"$_INSTALL_FORM_POST_URL_CLEARTEXT\";
 \$_ACCESS_URL_SECURE					= \"$_INSTALL_FORM_POST_URL_SECURE\";
 \$_ACCESS_URL_SECURE_SSL				= \"$_INSTALL_FORM_POST_URL_SECURE_SSL\";
