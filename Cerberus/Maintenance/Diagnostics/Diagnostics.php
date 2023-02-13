@@ -475,14 +475,14 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_2)) {
 /*
  ============================================================================================================
  +
- + Internal Application :: Structured Query Language Database Server :: Connection Testing
+ + Internal Application :: My Structured Query Language Database Server :: Standard Driver Connection Testing
  +
  ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "MySQL_Testing") {
 
-	echo ("<B>My Structured Query Language :: Driver :: Connection Testing</B><BR>");
+	echo ("<B>My Structured Query Language :: Standard Driver :: Connection Testing</B><BR>");
 
 	echo ("[ * ] Including Global Configuration File...<BR>");
 
@@ -511,6 +511,62 @@ if (mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_US
 	echo ("[ * ] Connecting To MyS.Q.L. Database Server Database Name...<BR>");
 
 if (mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME)) {
+
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was Successful.<BR>");
+
+} else {
+
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was ***NOT*** Successful.<BR>");
+
+} // [ + ] IF: Connection To MyS.Q.L. Database Server Database Name
+
+} // [ + ] IF: Internal Application: S.Q.L. Testing Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: My Structured Query Language Database Server :: Improved Driver Connection Testing
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["InternalApplication"] == "MySQLi_Testing") {
+
+	echo ("<B>My Structured Query Language :: Improved Driver :: Connection Testing</B><BR>");
+
+	echo ("[ * ] Including Global Configuration File...<BR>");
+
+	include_once "../../System/Configuration/Global_Configuration.php";
+
+	echo ("[ * ] Global Configuration File Included Successfully.<BR>");
+
+	echo ("[ * ] Including Database Server Access Configuration File...<BR>");
+
+	include_once "../../System/Configuration/Global_SQL_Server_Configuration.php";
+
+	echo ("[ * ] Database Server Access Configuration File Included Successfully.<BR>");
+
+	echo ("[ * ] Including Database Server Class Functions File...<BR>");
+
+	include_once "../../System/Configuration/Global_SQL_Server_Database_Class.php";
+
+	echo ("[ * ] Database Server Class Functions File Included Successfully.<BR>");
+
+	echo ("[ * ] Connecting To MyS.Q.L. Database Server Host-Name...<BR>");
+
+if ($_GLOBAL_SQL_DATABASE_SERVER_CONNECTION) {
+
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Host-Name: <I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> With UserName: <I>$_ACCESS_DATABASE_SERVER_USERNAME</I> Was Successful.<BR>");
+
+} else {
+
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Host-Name: <I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> With UserName: <I>$_ACCESS_DATABASE_SERVER_USERNAME</I> Was ***NOT*** Successful.<BR>");
+
+} // [ + ] IF: Connection To MyS.Q.L. Database Server
+
+	echo ("[ * ] Connecting To MyS.Q.L. Database Server Database Name...<BR>");
+
+if (mysqli_select_db($_GLOBAL_SQL_DATABASE_SERVER_CONNECTION, $_ACCESS_DATABASE_SERVER_DATABASE_NAME)) {
 
 	echo ("[ * ] Connection To MyS.Q.L. Database Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was Successful.<BR>");
 
