@@ -115,9 +115,16 @@ if ($_GET["InternalApplication"] == "File_Testing") {
 
 $_ARRAY_SYSTEM_FILES_ROOT_0						= "../../Cerberus.php";
 $_ARRAY_SYSTEM_FILES_ROOT_2						= "../../index.php";
-$_ARRAY_SYSTEM_FILES_ROOT_3						= "../../Architect.php";
 $_ARRAY_SYSTEM_FILES_ROOT_4						= "../../RSS.php";
 $_ARRAY_SYSTEM_FILES_ROOT_5						= "../../robots.txt";
+
+/*
+ ============================================================================================================
+ + Directory: Root->Architect
+ ============================================================================================================
+*/
+
+$_ARRAY_SYSTEM_FILES_ARCHITECT_0					= "../../Architect.php";
 
 /*
  ============================================================================================================
@@ -136,7 +143,6 @@ $_ARRAY_SYSTEM_FILES_MAINTENANCE_DIAGNOSTICS_0				= "./Diagnostics.php";
 $_ARRAY_SYSTEM_FILES_CONFIGURATION_0					= "../../System/Configuration/Global_Configuration.php";
 $_ARRAY_SYSTEM_FILES_CONFIGURATION_1					= "../../System/Configuration/Global_SQL_Server_Configuration.php";
 $_ARRAY_SYSTEM_FILES_CONFIGURATION_2					= "../../System/Configuration/Global_SQL_Server_Database_Class.php";
-$_ARRAY_SYSTEM_FILES_CONFIGURATION_3					= "../../System/Configuration/index.php";
 
 /*
  ============================================================================================================
@@ -346,15 +352,15 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_0)) {
 
 	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_0</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_0_MD5</I><BR>");
 
-} // [ + ] IF: File Does Not Exist: System Files Array
+} // [ + ] IF: File Does Not Exist: System Root Application Files
 
 /*
  ============================================================================================================
- + If File(s) Missing->Root->Diagnose.php
+ + IF: File(s) Missing->Root->Maintenance->Diagnostics->Diagnose.php
  ============================================================================================================
 */
 
-if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_1)) {
+if (!file_exists($_ARRAY_SYSTEM_FILES_MAINTENANCE_DIAGNOSTICS_0)) {
 
 	echo ("Error, Missing File: $_ARRAY_SYSTEM_FILES_ROOT_1<BR>");
 
@@ -362,43 +368,27 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_1)) {
 
 	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_1</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_1_MD5</I><BR>");
 
-} // [ + ] IF: File Does Not Exist: Root Files Array
+} // [ + ] IF: File Does Not Exist: System Maintenance Application Files :: Diagnostics
 
 /*
  ============================================================================================================
- + If File(s) Missing->Root->index.php
+ + IF: File(s) Missing->Root->Architect.php
  ============================================================================================================
 */
 
-if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_2)) {
+if (!file_exists($_ARRAY_SYSTEM_FILES_ARCHITECT_0)) {
 
-	echo ("Error, Missing File: $_ARRAY_SYSTEM_FILES_ROOT_2<BR>");
-
-} else {
-
-	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_2</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_2_MD5</I><BR>");
-
-} // [ + ] IF: File Does Not Exist: S
-
-/*
- ============================================================================================================
- + If File(s) Missing->Root->Install.php
- ============================================================================================================
-*/
-
-if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_3)) {
-
-	echo ("Error, Missing File: $_ARRAY_SYSTEM_FILES_ROOT_3<BR>");
+	echo ("Error, Missing File: $_ARRAY_SYSTEM_FILES_ROOT_1<BR>");
 
 } else {
 
-	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_3</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_3_MD5</I><BR>");
+	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_1</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_1_MD5</I><BR>");
 
-} // [ + ] IF_FILE_DOES_NOT_EXIST
+} // [ + ] IF: File Does Not Exist: Architect Application Files
 
 /*
  ============================================================================================================
- + If File(s) Missing->Root->RSS.php
+ + IF: File(s) Missing->Root->RSS.php
  ============================================================================================================
 */
 
@@ -410,35 +400,19 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_4)) {
 
 	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_4</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_4_MD5</I><BR>");
 
-} // [ + ] IF_FILE_DOES_NOT_EXIST
-
-/*
- ============================================================================================================
- + If File(s) Missing->Root->Robots.txt
- ============================================================================================================
-*/
-
-if (!file_exists($_ARRAY_SYSTEM_FILES_ROOT_5)) {
-
-	echo ("Error, Missing File: $_ARRAY_SYSTEM_FILES_ROOT_5<BR>");
-
-} else {
-
-	echo ("File: <I>$_ARRAY_SYSTEM_FILES_ROOT_5</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_ROOT_5_MD5</I><BR>");
-
-} // [ + ] IF_FILE_DOES_NOT_EXIST
+} // [ + ] IF: File Does Not Exist: Real-Simple-Syndication Application File
 
 /*
  ============================================================================================================
  +
- + Check For System Files
+ + Check For System Files :: Class Database Files
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + If File(s) Missing->System->Configuration->Class_Database.php
+ + IF: File(s) Missing->System->Configuration->Global_Configuration.php
  ============================================================================================================
 */
 
@@ -450,11 +424,11 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_0)) {
 
 	echo ("File: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_0</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_0_MD5</I><BR>");
 
-} // [ + ] IF_FILE_DOES_NOT_EXIST
+} // [ + ] IF: File Does Not Exist: Class Configuration File
 
 /*
  ============================================================================================================
- + If File(s) Missing->System->Configuration->index.php
+ + IF: File(s) Missing->System->Configuration->Global_SQL_Server_Configuration.php
  ============================================================================================================
 */
 
@@ -466,11 +440,11 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_1)) {
 
 	echo ("File: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_1</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_1_MD5</I><BR>");
 
-} // [ + ] IF_FILE_DOES_NOT_EXIST
+} // [ + ] IF: File Does Not Exist: Global S.Q.L. Server Configuration File
 
 /*
  ============================================================================================================
- + If File(s) Missing->System->Configuration->Main_Access.php
+ + If File(s) Missing->System->Configuration->Global_SQL_Server_Database_Class.php
  ============================================================================================================
 */
 
@@ -482,39 +456,23 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_2)) {
 
 	echo ("File: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_2</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_2_MD5</I><BR>");
 
-} // [ + ] IF_FILE_DOES_NOT_EXIST
+} // [ + ] IF: File Does Not Exist: Global S.Q.L. Server Database Class File
 
 /*
  ============================================================================================================
- + If File(s) Missing->System->Configuration->Main_Configuration.php
- ============================================================================================================
-*/
-
-if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_3)) {
-
-	echo ("Error, Missing File: $_ARRAY_SYSTEM_FILES_CONFIGURATION_3");
-
-} else {
-
-	echo ("File: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_3</I> Exists. Message Digest 5 Algorithm Signature: <I>$_ARRAY_SYSTEM_FILES_CONFIGURATION_3_MD5</I><BR>");
-
-} // [ + ] IF_FILE_DOES_NOT_EXIST
-
-/*
- ============================================================================================================
- + Diagnostics Finished
+ + Maintenance :: Diagnostics Finished
  ============================================================================================================
 */
 
 	echo ($_Application_Module_Extras_Diagnostics_DIAGNOSTICS_FINISHED);
 
-} // [ + ] IF Application_File_Checks
+} // [ + ] IF: Internal Application: File Testing Is Activated
 
 /*
  ============================================================================================================
  +
  +
- + S.Q.L. Database Connection Test
+ + Structured Query Language Database Server :: Testing
  +
  +
  ============================================================================================================
@@ -523,56 +481,56 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_3)) {
 /*
  ============================================================================================================
  +
- + Internal Application->S.Q.L. Checks
+ + Internal Application :: Structured Query Language Database Server :: Connection Testing
  +
  ============================================================================================================
 */
 
 if ($_GET["InternalApplication"] == "SQL_Testing") {
 
-	echo ("[ * ] Including Configuration File...<BR>");
+	echo ("[ * ] Including Global Configuration File...<BR>");
 
-	include_once "../../../../System/Configuration/Global_Configuration.php";
+	include_once "../../System/Configuration/Global_Configuration.php";
 
-	echo ("[ * ] Configuration File Included Successfully.<BR>");
+	echo ("[ * ] Global Configuration File Included Successfully.<BR>");
 
-	echo ("[ * ] Including Database Server Access File...<BR>");
+	echo ("[ * ] Including Database Server Access Configuration File...<BR>");
 
-	include_once "../../../../System/Configuration/Global_SQL_Server_Configuration.php";
+	include_once "../../System/Configuration/Global_SQL_Server_Configuration.php";
 
-	echo ("[ * ] Database Server Access File Included Successfully.<BR>");
+	echo ("[ * ] Database Server Access Configuration File Included Successfully.<BR>");
 
 	echo ("[ * ] Connecting To MyS.Q.L. Database Server Host-Name...<BR>");
 
 if (mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD)) {
 
-	echo ("[ * ] Connection To MyS.Q.L. Server Host-Name: <I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> With UserName: <I>$_ACCESS_DATABASE_SERVER_USERNAME</I> Was Successful.<BR>");
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Host-Name: <I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> With UserName: <I>$_ACCESS_DATABASE_SERVER_USERNAME</I> Was Successful.<BR>");
 
 } else {
 
-	echo ("[ * ] Connection To MyS.Q.L. Server Host-Name: <I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> With UserName: <I>$_ACCESS_DATABASE_SERVER_USERNAME</I> Was *NOT* Successful.<BR>");
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Host-Name: <I>$_ACCESS_DATABASE_SERVER_HOSTNAME</I> With UserName: <I>$_ACCESS_DATABASE_SERVER_USERNAME</I> Was ***NOT*** Successful.<BR>");
 
-} // [ + ] IF_CONNECT_TO_MySQL_DATABASE_SERVER
+} // [ + ] IF: Connection To MyS.Q.L. Database Server
 
-	echo ("[ * ] Connecting To MyS.Q.L. Server Database Name...<BR>");
+	echo ("[ * ] Connecting To MyS.Q.L. Database Server Database Name...<BR>");
 
 if (mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME)) {
 
-	echo ("[ * ] Connection To MyS.Q.L. Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was Successful.<BR>");
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was Successful.<BR>");
 
 } else {
 
-	echo ("[ * ] Connection To MyS.Q.L. Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was *NOT* Successful.<BR>");
+	echo ("[ * ] Connection To MyS.Q.L. Database Server Database Name: <I>$_ACCESS_DATABASE_SERVER_DATABASE_NAME</I> Was ***NOT*** Successful.<BR>");
 
-} // [ + ] IF_CONNECT_TO_MySQL_SERVER_DATABASE
+} // [ + ] IF: Connection To MyS.Q.L. Database Server Database Name
 
-} // [ + ] IF_Application_MySQL_Test
+} // [ + ] IF: Internal Application: S.Q.L. Testing Is Activated
 
 /*
  ============================================================================================================
  +
  +
- + Backup Login
+ + Backup Member Account Authentication
  +
  +
  ============================================================================================================
@@ -581,7 +539,7 @@ if (mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME)) {
 /*
  ============================================================================================================
  +
- + Internal Application->Backup Login
+ + Internal Application :: Backup Login
  +
  ============================================================================================================
 */
@@ -603,7 +561,7 @@ echo ("
 		</FORM>
 ");
 
-} // [ + ] IF: Internal Application: Backup_Login Is Activated
+} // [ + ] IF: Internal Application: Backup Login Is Activated
 
 echo ("
 	</BODY>
