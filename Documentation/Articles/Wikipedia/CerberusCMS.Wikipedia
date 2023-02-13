@@ -1,0 +1,612 @@
+Cerberus Content Management System, Officially Registered Unix-Name: CerberusCMS and Cerberus-Content-Management-System In 2001 on F.M. which became SourceForge and then SlashDot Media.
+
+==Origins==
+
+===Project Pagan-Like Cultural Theme===
+Cerberus Content Management System // Cerberus Web Application Framework With Officially Registered Unix Name: 'CerberusCMS' in 2001 on F.M. which is not to be confused with any other Applications or Web Applications with the name Cerberus. This Web Application project features all Pagan-Like visible theming as well as Pagan-Like programming because of the Scandinavian Northern-Frisian and Western-Frisian Heathen ancestry of its author who has absolutely no Greek ancestry at all but who followed the standard adoption of Greek culture in Western-American Academia where Greek cultural ideas and symbols are used.
+
+The name Cerberus however comes from the Greek Three-Headed Hound of Hades who guarded the entrance to the after life in Greek Mythology. The idea was that in computer binary: 1 is: on and 0 is: off which can
+also be likened to 1 is: alive or 0 is: dead.
+
+Each release of CerberusCMS after CerberusCMS - Version Number: 4, Build Number: 0.8, Edit Number: 399 comes with an alternate edition for installation where the entire system is themed around Heathen / Germanic Pagan Gods and Goddesses where in this alternate edition there is no mention of Cerberus and it is replaced instead with the names of Heathen / Germanic Gods and Goddesses with those themed graphics. Wodan / Odin, Freyja, Heimdallr and others.
+
+The alternate edition is named RuneCMS which should not be confused with any other project with that name.
+
+CerberusCMS comes with several additional applications:
+* Charon, which is named after the Ferryman to the afterlife in Greek Mythology.
+* Iris, which is named after the Goddess of Messages in Greek Mythology.
+
+CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later it was used in the [[XBMC]] community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser. This Web Application was originally used as a communications platform for small groups before that.
+
+===Loss of Development Progress===
+Around 2 years of development progress was lost before 2013. Several fake versions of this project were put on display so as to distract certain groups.
+The official project is 100% Pure Pre-Hyper-Text-Post-Processor Programming Code.
+
+==Project Versioning Systems==
+
+====Software Project Versioning System====
+The Cerberus Content Management System Project versioning system follows a logical pattern of versioning by ascending number and builds by ascending number with edit numbers.
+
+All builds are generated from a C++ application named Charon alternately named Freyja where this C++ application takes manually written Pre-Hyper-Text-Post-Processor programming code from the official CerberusCMS GIT repositories and then it generates the organized directory structure to the hard disk drive where it can be further hand typed and manually hand updated. This eliminates the possibilities of malware carryover in case any files are injected with malicious code during the project development process.
+
+Once an official build number reaches 100 where it has progressed to an acceptable level of development and features an entirely new version of the project is announced and released into public circulation.
+
+Releases follow:
+CerberusCMS - Version Number: **Number**, Build Number: **Number** and Edit Number: **Number**
+
+Each official release in different packaged forms are accompanied with a Portable-Document-Format
+documentation file and a SHA-512 HASH for comparison.
+
+====Application Module Versioning System====
+Each Application Module has a version number where newer and improved Application Modules ascend in number.
+
+====Kernel File Versioning System====
+The Kernel File versioning system follows a logical pattern of version numbers by ascending number. Newer and improved Kernel Files ascend in number.
+
+==Project Cycles==
+
+===Project Development Cycles===
+The development team may spend several weeks or months brainstorming, custom writing programming code, implementing that new programming code into the official system and also evaluating the system
+for places and things that can be improved. Situations are sometimes rehearsed and evaluated so as to write and implement expert programming code into the system.
+
+Adding new features to the system consists of exactly this.
+
+====Project Brainstorming and Rehearsals====
+Brainstorming and Rehearsals are normally done such as when rehearsals were done before to evaluate possibilities of session hijacking so as to secure this project from that. Examples of this would be like if anyone else were watching someone type in their username and password from a public area then that person could login to the account of the person they watched type in their username and password and from that specific location because it is done from the same Internet Protocol Address as the actual account on the system. Even if the session programming code restricts authentication to that specific Internet Protocol Address or other combined factors it is still possible even today.
+
+Nearly every social media services provider in the world is still vulnerable to account hijacking like this where even the entire session string can be dumped from the network that the user account is currently authenticated to and then by copying those strings into an entirely different computer to get into the account and remain logged-in to the account being hacked.
+
+Security rehearsals of every possible situation turn to evaluation of programming code so as to write secure programming code to prevent these things from being possible.
+
+====Project Programming Code Debugging====
+Once new features and programming code updates are added there is a debugging process where every part of the system is manually and thoroughly debugged and perfected by the development team.
+Once the system is completely perfected and functional the development team then moves to document and hash the finished additions.
+
+====Quality Programming Code====
+All programming code is organized in Pre-Ordered Logical and Pre-Oredered Mathematical style. All of the programming code is documented with organized Documentation Panels within the source code that is readable by anyone with no programming knowledge. All of the programming maintains consistency in style and indentation. All of the project programming code is 100% Pure Pre-Hyper-Text-Post-Processor programming code.
+
+===Project Update Cycles===
+System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
+Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
+
+====End-User System Update Cycles====
+* The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
+* The update process uses different terminal commands from the Web Server itself to download the official updates to a temporary directory in the system and then replaces by logical transaction each Application Module to the new version.
+* Kernel updates consist of the same process mentioned before.
+* The entire system is modular where each Application Module as well as the Kernel File itself is hashed in the Secure Hash Algorithm, SHA-512 based on the exact file size of the component in bytes.
+* The official file Hash Strings are checked against the official Master Server and Master GIT Repository hash strings where then the Master File allows or disallows the installation based on authentic file integrity if the Application Module undergoing installation is an official Application Module.
+
+Since this CMS is so modular the entire system will continue working if any connected part ever breaks. If any connected Application Module that is official ever breaks or if any byte changes in the programming code it is instantly reinstalled from
+the official GIT repository. This makes it impossible to be hacked from null byte exploits or other kinds of programming code exploits.
+
+===Project Release Cycles===
+
+====Official Project Release Cycles====
+CerberusCMS comes with a Kernel File, Installation and Maintenance Applications, Organized Directory Structure, High Definition Graphics and around 89 to 100 official and unique Application Modules that are capable of performing daily tasks as well as management of content and data.
+
+===Official Application Modules===
+
+====Services Root-Level Application Modules====
+* Accounts
+* Loops
+* Services
+* Tasks
+
+* '''Accounts'''
+Options for managing accounts and account access levels.
+
+* '''Loops'''
+Reorganizes all of the data in the database server.
+
+* '''Services'''
+Options for managing background services and scheduling specific tasks similar to [[ChronJobs]] commands in Linux.
+
+* '''Tasks'''
+Options for managing current and future tasks as well as an advanced
+Task Manager that monitors connections in real-time.
+
+4 Services-Root Level Application Modules
+
+====Administration-Level Application Modules====
+* Accounts
+* Administrators
+* Applications
+* Archive
+* Network_Control
+* Control_Panel
+* Emulators
+* File_Categories
+* File_Manager
+* Forum
+* GIT
+* Messenger
+* Server_Information
+* Panels
+* Publish
+* Ranks
+* Referrers
+* Robot_Monitor
+* Settings
+* Submissions
+* Task_Manager
+* Terminal
+* Update
+* Web_Pages
+
+24 Administration-Level Application Modules
+
+====Registered Member-Level Application Modules====
+* Active_Members
+* All_News
+* All_Shouts
+* Application_List
+* Articles
+* Audio_Player
+* Calendar
+* Comment
+* Contact_Administrator
+* Control_Panel
+* Clock
+* Documentation
+* Electronic_Mail
+* Emulators
+* File_Manager
+* Files
+* Forum
+* Forward_Friend
+* Friend
+* Language
+* Legal
+* Lightning_Calculate
+* Links
+* List
+* Login
+* Member_Directory
+* Messenger
+* News
+* Private_Files
+* Private_Message
+* Profile
+* Referrers
+* Register
+* Reset_Password
+* Search
+* Statistics
+* Submit_News
+* System_Message
+* Torrent
+* Update_Account
+* Update_Password
+* Upload
+* Video_Games
+* Video_Player
+* Webspace
+
+45 Registered Member-Level Application Modules
+
+====Background-Level Application Modules====
+
+Activity Logging
+* Internal_Loops
+* Log_Administration
+* Log_Background
+* Log_Member
+* Log_Visitor
+
+5 Background Application-Modules
+
+====Panel Application Modules====
+* Administration.panel
+* Applications_Panel.panel
+* Banned_Networks.panel
+* Language.panel
+* Latest_Articles.panel
+* Latest_Files.panel
+* Latest_Members.panel
+* Latest_Shouts.panel
+* Member_Panel.panel
+* Project_Badges.panel
+* RSS_Panel.panel
+
+11 Application Panels
+
+====Open :: Public Application Modules====
+Engine_Validation
+
+1 Public-Level Application Module
+
+====Maintenance Applications====
+* Diagnostics
+* integrity
+
+2 Maintenance Applications
+
+====Installation and Configuration Applications====
+* Architect
+* SQL_Generator
+* Installation_ToolKit
+
+3 Pre-Configuration and Installation Applications.
+
+====Secret Application Modules====
+With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module named Lightning Calculate ! this Application Module teaches the user how to mentally calculate at lightning speed through repetitive patterns.
+
+The author has mental calculating capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication as well as several other kinds of lightning mental calculating capabilities.
+
+The Application Module teaches fundamentally how to Mentally Calculate all Mathematical Arithmetic up to 4 Digit * 4 Digit Numbers as well as Exponents.
+
+1 secret Application Module
+
+====Other Application Modules====
+* CerberusCMS comes with Android and Disk Operating System Emulator Application Modules
+that successfully emulate Android Applications and Disk Operating System Application Images Directly From
+the web browser itself.
+
+* CerberusCMS additionally comes with a Digital Store Front named Store_Front where Administrators can list and sell physical and digital items within item categories and entries.
+The additional Application Module is capable of securely handling personal credit card, debit card, coupon card and CryptoCurrency transactions.
+The Store Front Application Module stores encrypted personal information for shipping and receiving items. It also provides and stores printable invoices with tracking numbers, bar codes and QR codes.
+
+2 Extra Application Modules
+
+====Plug-In Modules====
+* WYSIWYG Text-Editor
+This Plug-In is a very simple WYSIWYG Text Editor that can be included into any form throughout the system by invoking a variable.
+
+* Safe-HTML
+This Plug-In automatically converts Hyper-Text-Markup-Language tags to Hyper-Text-Markup-Language entities from all of the input forms throughout the system. Example of this would be converting: '''< B >''' to '''& lt ;''' before it is inserted into the Database Management System Data. This eliminates any possibility of malicious Hyper-Text-Markup-Language tag injection, JavaScript scripting code injection and Post-Hyper-Text-Pre-Processor programming code injection into the Database Management System. All of the entities are converted back to Hyper-Text-Markup-Language tags after being retrieved from the Database Management System.
+
+==Project Software Compatibility==
+
+===Programming Code Parser Engines===
+* Pre-Hyper-Text-Post-Processor, Version Number: 8.2.2
+
+===Containers===
+* Cascading-Style-Sheet, Version Number: 3
+
+===Relational Database Management Systems===
+* My-Structured-Query-Language Server, Version Number: 8.0.32
+* Microsoft Structured-Query-Language Server, Version Number: 2022
+
+===Database Management Systems===
+* Mini-Structured-Query-Language Server, Version Number: 4.4
+
+===Web Server Software===
+* Apache, Version Number: 2.4.55
+* Microsoft, Version Number: 10.0
+
+==Project Installation==
+A Fresh configuration and installation of CerberusCMS through Architect can be made in <~ 5 minutes. CerberusCMS installs a backup Administration-Level account with the same password as the installed Administration-Level account as well as a Services Root Administration-Level bot account named Cerberus. The Cerberus bot account can be logged into to schedule background tasks and perform Services Root Administration-Level tasks that an Administration-Level account would not be able to perform. This bot account automatically performs programming code tasks, database management server data organization tasks and more. The bot account can also receive commands from Administration-Level accounts as well as from Text-Message, Electronic Mail Message and from any input form on the system.
+
+'''Member Account Access Levels'''
+* Services Root Administration-Level
+* Administration-Level
+* Moderator-Level
+* Registered Member-Level
+* Open :: Non-Registered Visitor-Level
+
+===Package Download and Upload===
+CerberusCMS packages can be downloaded and uploaded in 6 different ways
+* Through File-Transfer-Protocol.
+* Through GIT Terminal Command From Included Installation ToolKit Web Application.
+* Through Mercurial Terminal Command From Included Installation ToolKit Web Application.
+* Through CURL Terminal Command.
+* Through Windows / BSD / GNU / Linux / Apple OS Package.
+* Through Windows Terminal BITS command.
+
+===Installation===
+Once the official CerberusCMS package has been downloaded to the web server through any of the previous methods the package
+can then be unpacked and CerberusCMS can then be installed through Architect which is an included Web Application for pre-configuring and installing CerberusCMS.
+
+==Project Features==
+
+===Interaction Features===
+
+====Entertainment and Interaction====
+* Administration and Registered Members can download data from any torrent network from the CerberusCMS Web Application itself. This includes movies and video games where the movies can then be played in the web browser for free. The Video Player Application Module automatically searches for and downloads high definition thumbnail images of box art of the movies downloaded.
+* Administration and Registered Members can use a feature named Cerberus-Streams which is very much like a FaceBook wall or Twitter feed and where other Registered Member Accounts can comment and post Audio, Documents, Images and Videos. Content could be anything from interaction videos and video communication streams.
+* Administration and Registered Members can watch video streams and listen to audio streams from anywhere on the Internet free of any advertisements through the included Application Modules. This includes YouTube, SoundCloud and more.
+* Administration and Registered Members can communicate in different ways with encrypted messages through the Messenger Application Module.
+* Digital Rights Management Free.
+* Encrypted voice and video communications.
+
+===Project Control Features===
+
+====Kernel File Control Features====
+* Expert Digital Security Programming Code.
+* Expert Kernel File Switching With Version Tracking.
+
+====Cache Control Features====
+* Expert Data Cache Control Programming Code.
+* Output Web-Page Cache-Free Programming Code.
+* Unique and Completely Random 512 Character Length URL Addition String.
+This is makes it impossible to cache / freeze the Web Page content by a malicious M-I-T-M server such as a malicious server block to control or freeze the web-page output.
+* Cache-Free Programming Code For Live Data On Every Refresh.
+
+====Application Module Control Features====
+* Application Module Access Level Controls.
+* Application Module Access Restriction Controls where specified Application Modules cannot execute programming code that would compromise the system.
+* Location By G.P.S., Location By GeoLocation, Location By Internet Protocol Address Controls.
+* Device Microphone Access Controls.
+* Device Camera Access Controls.
+
+====Internet and Intranet Network Control Features====
+* Internet Protocol Address and Internet Protocol Network Range Blocking and Filtering.
+* Advertisement Server Blocking and Filtering, With Extensive Lists.
+
+====Internal Language Control Features====
+Internal language files allow for instant translation of the output messages to any language. Custom languages can also be made and installed such as Hackish, Binary, Elvish and more. Each output message is invoked throughout the system by variables with an organized prefix name. The entire Master Language File can be updated to display the messages in any language.
+
+The language can be changed at any time to any other language through the Language Application Module. Additional languages can be downloaded and installed from the Administration Control Panel.
+
+===Digital Trust Features===
+CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application itself which is loaded into the web browser from the web server running CerberusCMS and at the same time all of the transmitting data and stored information is secure from vulnerabilities and exploitation as well as being information secure because only certain details of information are actually displayed.
+
+This establishes trust with the user because they can read all of the programming source code of the system itself directly from the web browser to ensure that everything is private and secure.
+
+All of the data that is stored in the Database Server is encrypted using G.N.U.-Privacy Guard, Pretty-Good-Privacy, BCRYPT, Advanced Encryption Standard - 256, Advanced Encryption Standard - 512 and other
+algorithms, hashes and cipers deemed secure by the information security community.
+
+It also allows for custom encryption algorithms and ciphers and custom mathematics to be used system-wide so as to secure the storage and transimission of specified data.
+This is made for corporate-level security, medium to small business security and academic security so as to securely store the data and information of its users.
+
+CerberusCMS features Master Security Modules where when each module is included by the Master File so named the Kernel the programming code then eliminates all possibility of:
+* Malicious S.Q.L. Injection Attacks
+* Malicious Cross-Site-Scripting Attacks
+* Malicious H.T.M.L. Code Attacks
+* Malicious Cookie Injection Attacks
+* Malicious Cookie Tampering Attacks
+* Large File Upload Attacks
+* Unrestricted File Upload Attacks
+* Local File Inclusion Attacks
+* Remote File Inclusion Attacks
+* P.H.P. Buffer Overflows
+* P.H.P. Function Overflows and Underruns
+and more.
+
+The Master_Sanitization file features expert Pre-Hyper-Text-Post-Processor programming code that sanitizes all GET and POST data used throughout the forms as well as anything used in the U.R.L. bar in the web browser.
+
+===Digital Information Security Features===
+CerberusCMS aims to be a secure Content Management System and is hardcoded for security.
+
+====Vulnerability and Exploitation Security====
+* Automatic Directory Listing Denial
+* Automatic GET and POST Sanitization
+* Automatic Variable Sanitization
+
+'''Injections'''
+* Structured-Query-Language Code Injection
+* Cookie Injection
+* Cross Server Injection
+* Mixed Information Injection
+* Hyper-Text-Markup-Language Character Injection
+* Lightweight Directory Access Protocol Injection
+* Programming Code Injection
+* Operating System Command Injection
+* Arbitrary Code Injection
+* Cross Site Scripting
+
+'''Information and Data Tampering'''
+* Data Tampering
+* Cookie Tampering
+* File Swapping
+* Internet Protocol Address Tampering
+* H.T.T.P. Verb Tampering
+
+'''Programming Code Execution'''
+* Remote Code Execution
+
+'''File and Directory Handling'''
+* Local File Inclusion
+* Remote File Inclusion
+* Directory Traversal
+* Fake File Extensions
+* Large File Upload
+* Unrestricted File Upload
+
+'''Buffers'''
+* Buffer Overflow
+* Buffer Underrun
+* Integer Underrun
+* Integer Overflow
+
+'''Web Server Origins'''
+* Cross Request Forgery
+* Cross Site Request Forgery
+* Cross Origin Resources
+
+'''Configurations'''
+* Security Misconfigurations
+
+'''Extensible Markup Language'''
+* XML External Entity Processing
+* XML External Entities
+
+'''Password Storage'''
+* Password Decryption
+
+'''Data Exfiltration'''
+* Data Mining and Exfiltration
+* Encapsulation
+* Cross U.R.L. Poisoning
+* H.T.T.P. Response Splitting
+
+'''Data Storage'''
+* Insecure Cryptographic Storage
+* Insecure Digest
+* Insecure Direct Object Referencing
+* Sensitive Data Exposure
+
+'''Denial of Service'''
+* Denial of Service Through RAW Connection
+* Denial of Service Through Ping
+* Denial of Service Through H.T.T.P. Code
+
+===Integrity Features===
+* Automatic Kernel and Application Module integrity checks on every execution.
+If even 1 byte changes in the official programming code of the Kernel and Application Modules included they are automatically reinstalled
+by GIT command from the Cerberus Root account which remains active at all times.
+This makes it impossible to hack the CerberusCMS instance by different programming code injection attacks just incase sanitization fails.
+
+There is a stand-alone integrity Application that checks the CerberusCMS instance integrity of each file and then compares the SHA-512 hashes of each file to
+the Master Server. If the SHA-512 HASHES are different it then provides options to reinstall the Kernel and Application Modules by GIT command.
+
+===Data Sanitization Features===
+* Automatic data sanitization of all input forms, variables and POST and GET data.
+This makes it impossible to hack the CerberusCMS instance by injection attacks.
+
+===Internal Security Loop Features===
+* Automatic Cookie Data Checks.
+* Automatic File and Directory Permission Checks.
+* Automatic Exploitation Technique Checks and Security.
+* Automatic Encryption of Files, Passwords and Sensitive Data.
+* Automatic Randomization and Encryption of Registered Member Account File Names.
+* Automatic Data Sanitization.
+and much more.
+
+===Account Authentication Features===
+* Automatic 2-Factor Authentication by SHA-512 Security Token String From Electronic Mail Message or Mobile Phone Text Message.
+* Automatic Internet Protocol Address Restricted Authentication.
+This makes it impossible for anyone else to login to the account on the same authorized Internet Protocol Address. Only one device can be logged in at a time.
+
+===Encryption Features===
+* Pretty-Good-Privacy and Advanced Encryption Standard - 256 Encrypted Electronic Mail Messages.
+* Pretty-Good-Privacy Signed Electronic Mail Messages.
+* Pretty-Good-Privacy, Advanced Encryption Standard - 256 and Advanced Encryption Standard - 512 Encrypted Instant Messenger.
+* Advanced Encryption Standard - 256 and Advanced Encryption Standard - 512 Encrypted Personal Files.
+
+===Activity Monitoring and Logging Features===
+* Extensive and Detailed activity monitoring with exact G.P.S. coordinates of Registered Member Accounts and Non-Registered visitors based on device reporting.
+* Unique Digital Fingerprinting.
+
+===Notable Features===
+CerberusCMS is capable of playing video game console games by Read-Only-Memory image file through the Emulator Application Module.
+Through this Application Module one can play Nintendo, Super Nintendo and other types of video games from the web browser for free.
+
+==Project Details==
+
+===Project Programming Code Size===
+Programming Code
+CerberusCMS as of Version Number: 4, Build Number: 0.8 has approximately 40,000 lines of Pure Pre-Hyper-Text-Post-Processor programming code.
+
+===Quality Programming Code===
+CerberusCMS as of Version Number: 4, Build Number: 0.8 features 40,000 lines of quality and thoroughly documented Pre-Hyper-Text-Post-Processor programming code.
+
+===Programming Code Documentation===
+All of the programming code is extremely documented and manageable with approximately 7,000 panels of programming code documentation. The documentation panels within the source code explain in detail what every line of programming code in the system does. All of the programming code documentation features searchable programming code keys such as:
+* [ @ ], meaning header.
+* [ + ], meaning ending logical statement with explanation.
+and more.
+
+Adding features to this web application as a novice programmer is very simple and straightforward.
+
+The idea behind the CerberusCMS project is for it to remain 100% Pure Pre-Hyper-Text-Post-Processor programming code with digital information security in mind.
+
+===End-User / Unofficial Application Module Development===
+End-Users with limited programming knowledge can create their own Application Modules by just a few steps, being:
+
+* 1. By writing the custom Application Module in the style of the Programming Code Framework.
+* 2. By adding the output message variables to the language file.
+* 3. By adding the POST and GET variables to the Master Sanitization security module.
+
+Application Modules can be written to do just about any computing task that P.H.P. is capable of from the web browser.
+
+===Bundled Software and Packages===
+CerberusCMS as of Version Number: 4, Build Number: 0.8 comes with Charon alternately named Freyja which is a compilable C++ application that can be compiled with G.C.C. and other C++ compiling applications from a terminal.
+
+Charon alternately named Freyja was combined from other C++ programming code that generated the theme files necessary to have a custom graphical theme on CerberusCMS.
+
+CerberusCMS also comes with Iris alternately named Hel which is an Android Open Source Software Project application as well as a SWIFT application for Apple iOS.
+
+Charon alternately named Freyja does numerous things such as:
+* Generates the clean, malware free organized directory structure of CerberusCMS to the local hard drive and then manually copies and pastes the CerberusCMS Project programming source code from the official GIT Repository to each file. This eliminates any possibility of malware carryover from system to system in case any files are injected with malicious code at any point in time in the development cycle.
+* Generates custom CerberusCMS themes.
+
+Iris alternately named Hel does numerous things as well, such as:
+* Connects a mobile device that is flashed with Android Open Source Software Project or with Apple iOS to the specified CerberusCMS installation on the specified web server.
+* Capable of sending and receiving encrypted messenger messages.
+* Capable of browsing the CerberusCMS installation.
+
+[[Charon]] is named after the ferryman of Hades in Greek Mythology who carried the living and the dead back and forth from Hades to Earth. [[Iris]] is named after the Greek Goddess of Messages in Greek Mythology.
+[[Hel]] or [[Helvegen]] is a gatekeeper of the afterlife in [[Heathen]] / Germanic-Pagan mythology who is very similar to Charon in Greek Mythology.
+
+==User-Interfaces==
+
+===Programming Code Interface===
+
+===Terminal Interface===
+CerberusCMS has a feature where an Administrator can use a terminal on a personal computer or mobile phone to connect to it to issue low-level priviledge operating system commands such as management of specific data
+in the system itself where it is connected to the Database Management System or other web server things including Internet of Things Devices.
+
+===Graphical User-Interface===
+Unix-Like with Modular appearance.
+CerberusCMS comes with a theme pack that contains 4 different quality levels of graphics.
+* 4K or 3840 × 2160  P / I
+* 2560 x 1440 or "1440" P / I
+* 1920 x 1080 or "1080" P / I
+* 1280 x 720 or "720P" P / I
+CerberusCMS automatically detects the connection speed of the connection and optimizes the graphics quality to meet the connection speed. For network connection speed at ~ 800 KiloBytes it will choose to load the 1920 x 1080 resolution theme graphics. Faster connection speeds will automatically choose to load the 4K resolution theme graphics. The entire theme system uses percentages in the programming code so that it can be perfectly fit and rendered to any device resolution. Mobile cell phones, Mobile devices, computer monitors, laptops and other devices of different resolutions.
+
+===Internet of Things Interface===
+Custom Application Modules can be written to control IoT Devices connected to the system such as Smart House Electricity Usage Monitoring, Smart House Lightning Systems to turn lights on and off, programmable logic controllers, SCADA and more. All of these things can be controlled from an Application Module with buttons and more.
+
+==Programming Code Architecture==
+CerberusCMS - Version Number: 4, Build Number: 0.8 is written in a Linux Operating System Architecture Style where everything is modular.
+
+===Programming Code Execution===
+* The programming code is executed from top to bottom in a Pre-Ordered logical and Pre-Ordered Mathematical process.
+* The entire system is executed, exploded and then imploded in a microsecond.
+* The system is capable of handling ~500 concurrent connections with ~500 concurrent Database Management Server connections at a time on a 500 Kilobyte bandwith web server.
+* The entire system including programming code and graphics is ~12 Megabytes.
+
+===Programming Code Statements===
+* Simplicity of Object-Oriented-Like Variables and Functions.
+* Simplicity of Proceedural Style Programming Code.
+* Expert and Unique Variable Prefix Naming System.
+* Expert Programming Code Statements.
+* Expert Riced Database Server Query Statements.
+
+===Programming Code Searchability===
+* Expert Searchable Programming Code Keys.
+
+===Programming Code Documentation===
+* ~7,000 Panels of Expert In-Line Programming Code Documentation.
+
+===Other Features===
+CerberusCMS comes with a feature where each Registered Member Account is allotted an amount of storage data space specified by the Administration. It also has a Messenger
+written in Pure Pre-Hyper-Text-Post-Processor programming code that allows for custom encryption, Pretty-Good-Privacy, Advanced Encryption Standard - 512 encrypted and signed messaging as well as sending and receiving cell phone text messages world-wide.
+
+===Software Licensing===
+CerberusCMS free and open source edition comes with a custom FOSS license.
+
+==Project Development Team==
+
+===Company Projects===
+TinkeSoftware was renamed from RuneSoftware and maintains and periodically develops 15 different software projects
+
+* Cerberus Content Management System / Runic/Rune Content Management System
+* Magysk Theme Writer
+* Stokje Application Writer
+* Charon / Helvegen
+* Grutte Forces // Troll Unmasker Written in Python and C++
+* Lightning Calculate !
+* Iris
+* Runic Alphabets
+* Runic Calendars
+* Runic Keyboard Layouts
+* Runic Keyboard Stickers
+* Runic Language Packs
+* Runic / Rune Messenger // Encrypted Messenger Written in P.H.P. and C++
+* Runic / Rune / Sowilo Dashboard // Dashboard Based on the Original XBMC Project
+* Runic / Rune / Sowilo Operating System // Based on Gentoo-Linux
+* Grand Theft Auto - Oildale // GTA - San Andreas Expansion Pack For P.C. and Modded XBOX featuring Oildale, California
+* G.C.'s Calculator
+* Lightning Calculate
+
+17 unique and original software projects.
+
+Each software project combined totals around ~450,000 lines of original programming code across several different programming and scripting languages.
+
+==Project Copyrights==
+Every line of programming code in CerberusCMS up to CerberusCMS, Version Number: 4, Build Number: 0.8 is 100% original from and was written by the programmer Gary Christopher Johnson.
+
+This web application was developed and written in Southern California. This project was started in 2001 when I was about 14 or maybe 15 years old... My girlfriend at the time... a nice laptop was given to me. I started learning computer programming back then. The updates for this specific project is slow because I don't have the time to work on it every day.
