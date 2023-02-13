@@ -65,7 +65,30 @@
 */
 
 $_GLOBAL_SQL_SERVER_CONFIGURATION_FILE			= "./System/Configuration/Global_SQL_Server_Configuration.php";
-$_GLOBAL_SQL_SERVER_DATABASE_CLASS_FILE			= "./System/Configuration/Global_SQL_Server_Database_Class.php";
+
+/*
+ ============================================================================================================
+ + IF: Pre-Hyper-Text-Post-Processor Engine Version Is: 5, Include Specified Database Server Class File
+ ============================================================================================================
+*/
+
+if ($_ACCESS_PHP_ENGINE_VERSION == "5") {
+
+$_GLOBAL_SQL_SERVER_DATABASE_CLASS_FILE			= "./System/Configuration/Global_SQL_Server_Database_Class_PHP_5";
+
+} // [ + ] IF: Pre-Hyper-Text-Post-Processor Engine Version Is: 5, Include Specified Database Server Class File
+
+/*
+ ============================================================================================================
+ + IF: Pre-Hyper-Text-Post-Processor Engine Version Is: 8, Include Specified Database Server Class File
+ ============================================================================================================
+*/
+
+if ($_ACCESS_PHP_ENGINE_VERSION == "8") {
+
+$_GLOBAL_SQL_SERVER_DATABASE_CLASS_FILE			= "./System/Configuration/Global_SQL_Server_Database_Class_PHP_8";
+
+} // [ + ] IF: Pre-Hyper-Text-Post-Processor Engine Version Is: 8, Include Specified Database Server Class File
 
 /*
  ============================================================================================================
