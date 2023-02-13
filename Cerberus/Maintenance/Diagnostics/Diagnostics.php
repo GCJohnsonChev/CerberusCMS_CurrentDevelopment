@@ -51,7 +51,7 @@
 /*
  ============================================================================================================
  +
- + Diagnostics :: Error Handling Systems 
+ + Diagnostics Application :: Error Handling Systems 
  +
  ============================================================================================================
 */
@@ -87,7 +87,11 @@ echo ("
  ============================================================================================================
 */
 
-		echo ("<CENTER>[ <A HREF=\"?InternalApplication&#61;File_Testing\" TITLE=\":: Test The File Integrity Of Cerberus' Files ::\">File Integrity Testing</A>&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;SQL_Testing\" TITLE=\":: Test The S.Q.L. Database Server Connection ::\">S.Q.L. Server Testing</A>&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;Backup_Login\" TITLE=\":: Open & Display The Internal Backup Login Application ::\">Backup Login Application</A> ]</CENTER><HR><BR><BR>");
+		echo ("
+<CENTER>[ <A HREF=\"?InternalApplication&#61;File_Testing\" TITLE=\":: Test The File Integrity Of Cerberus' Files ::\">File Integrity Testing</A>
+&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;MySQL_Testing\" TITLE=\":: Test The MyS.Q.L. Database Server Connection Through The MyS.Q.L. Driver ::\">MyS.Q.L. Server Standard Driver Testing</A>
+&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;MySQLi_Testing\" TITLE=\":: Test The MyS.Q.L. Database Server Connection Through The MyS.Q.L. Improved Driver ::\">MyS.Q.L. Server Improved Driver Testing</A>
+&nbsp;&middot;&nbsp;<A HREF=\"?InternalApplication&#61;Backup_Login\" TITLE=\":: Open & Display The Internal Backup Login Application ::\">Backup Login Application</A> ]</CENTER><HR><BR><BR>");
 
 if ($_GET["InternalApplication"] == "File_Testing") {
 
@@ -102,7 +106,7 @@ if ($_GET["InternalApplication"] == "File_Testing") {
 /*
  ============================================================================================================
  +
- + Retrieve Files, Include Into An Array
+ + Specify and Retrieve Files, Include Into Arrays
  +
  ============================================================================================================
 */
@@ -114,9 +118,9 @@ if ($_GET["InternalApplication"] == "File_Testing") {
 */
 
 $_ARRAY_SYSTEM_FILES_ROOT_0						= "../../Cerberus.php";
-$_ARRAY_SYSTEM_FILES_ROOT_2						= "../../index.php";
-$_ARRAY_SYSTEM_FILES_ROOT_4						= "../../RSS.php";
-$_ARRAY_SYSTEM_FILES_ROOT_5						= "../../robots.txt";
+$_ARRAY_SYSTEM_FILES_ROOT_1						= "../../index.php";
+$_ARRAY_SYSTEM_FILES_ROOT_2						= "../../RSS.php";
+$_ARRAY_SYSTEM_FILES_ROOT_3						= "../../robots.txt";
 
 /*
  ============================================================================================================
@@ -251,7 +255,7 @@ $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_14			= "../../Applications/Membe
 $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_15			= "../../Applications/Member/Legal";
 $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_16			= "../../Applications/Member/Links";
 $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_17			= "../../Applications/Member/List";
-$_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_28			= "../../Applications/Member/Login";
+$_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_18			= "../../Applications/Member/Login";
 $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_19			= "../../Applications/Member/Member_Directory";
 $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_20			= "../../Applications/Member/Messenger";
 $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_21			= "../../Applications/Member/News";
@@ -281,26 +285,16 @@ $_ARRAY_SYSTEM_FILES_APPLICATION_MODULES_MEMBER_38			= "../../Applications/Membe
 
 /*
  ============================================================================================================
- + Directory: Root->Applications->Public
- ============================================================================================================
-*/
-
-$_ARRAY_SYSTEM_FILES_CLASSES_0						= "../../System/Configuration/Class_Database.php";
-$_ARRAY_SYSTEM_FILES_CLASSES_0						= "../../System/Configuration/Main_Access.php";
-$_ARRAY_SYSTEM_FILES_CLASSES_0						= "../../System/Configuration/Main_Configuration.php";
-
-/*
- ============================================================================================================
  + Read Number of Lines of Each System File
  ============================================================================================================
 */
 
-// $_Diagnose_READ_FILE_ARRAY 						= basename($_SERVER['$_ARRAY_SYSTEM_FILES[$i]']); 
-// $_Diagnose_COUNT_FILE_ARRAY 						= count(file($_Diagnose_READ_FILE_ARRAY);
+$_Diagnose_READ_FILE_ARRAY 						= basename($_SERVER['$_ARRAY_SYSTEM_FILES_ROOT[$i]']); 
+//$_Diagnose_COUNT_FILE_ARRAY 						= count(file($_Diagnose_READ_FILE_ARRAY);
 
 /*
  ============================================================================================================
- + Calculate Message Digest, Version: 5 Signatures->Root Files
+ + Calculate Message Digest, Version: 5 Signatures :: Root Files
  ============================================================================================================
 */
 
@@ -313,7 +307,7 @@ $_ARRAY_SYSTEM_FILES_ROOT_5_MD5						= md5_file($_ARRAY_SYSTEM_FILES_ROOT_5);
 
 /*
  ============================================================================================================
- + Calculate Message Digest, Version: 5 Signatures->System Configuration Files
+ + Calculate Message Digest, Version: 5 Signatures :: System Configuration Files
  ============================================================================================================
 */
 
@@ -486,7 +480,9 @@ if (!file_exists($_ARRAY_SYSTEM_FILES_CONFIGURATION_2)) {
  ============================================================================================================
 */
 
-if ($_GET["InternalApplication"] == "SQL_Testing") {
+if ($_GET["InternalApplication"] == "MySQL_Testing") {
+
+	echo ("<B>My Structured Query Language :: Driver :: Connection Testing</B><BR>");
 
 	echo ("[ * ] Including Global Configuration File...<BR>");
 
