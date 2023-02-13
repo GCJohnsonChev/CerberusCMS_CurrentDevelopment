@@ -16,7 +16,7 @@ CerberusCMS comes with several additional applications:
 * Charon, which is named after the Ferryman to the afterlife in Greek Mythology.
 * Iris, which is named after the Goddess of Messages in Greek Mythology.
 
-CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later it was used in the XBMC community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser.
+CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later it was used in the XBMC community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser. This Web Application was originally written and used as a communications platform.
 
 ===Loss of Development Progress===
 Around 2 years of development progress was lost before 2013. Several fake versions of this project were put on display so as to distract certain groups.
@@ -26,8 +26,8 @@ The official project is 100% Pure Pre-Hyper-Text-Post-Processor Programming Code
 
 ====Software Project Versioning System====
 The Cerberus Content Management System Project versioning system follows a logical pattern of versioning by ascending number and builds by ascending number with edit numbers.
-All builds are generated from a C++ application named Charon alternately named Freyja where this C++ application takes manually written Pre-Hyper-Text-Post-Processor programming code
-from the official CerberusCMS GIT repository and then it generates the organized directory structure to the hard disk drive where it can be further hand typed and manually hand updated.
+
+All builds are generated from a C++ application named Charon alternately named Freyja where this C++ application takes manually written Pre-Hyper-Text-Post-Processor programming code from the official CerberusCMS GIT repositories and then it generates the organized directory structure to the hard disk drive where it can be further hand typed and manually hand updated. This eliminates the possibilities of malware carryover in case any files are injected with malicious code during the project development process.
 
 Once an official build number reaches 100 where it has progressed to an acceptable level of development and features an entirely new version of the project is announced and released into public circulation.
 
@@ -41,7 +41,7 @@ documentation file and a SHA-512 HASH for comparison.
 Each Application Module has a version number where newer and improved Application Modules ascend in number.
 
 ====Kernel File Versioning System====
-The Kernel File versioning system follows a logical pattern of version numbers by ascending number.
+The Kernel File versioning system follows a logical pattern of version numbers by ascending number. Newer and improved Kernel Files ascend in number.
 
 ==Project Cycles==
 
@@ -82,7 +82,7 @@ the official GIT repository. This makes it impossible to be hacked from null byt
 ===Project Release Cycles===
 
 ====Official Project Release Cycles====
-CerberusCMS comes with around 89 to 100 official and unique Application Modules that are capable of performing daily tasks as well as management of content and data.
+CerberusCMS comes with a Kernel File, Installation and Maintenance Applications, Organized Directory Structure, High Definition Graphics and around 89 to 100 official and unique Application Modules that are capable of performing daily tasks as well as management of content and data.
 
 ===Official Application Modules===
 
@@ -92,16 +92,16 @@ CerberusCMS comes with around 89 to 100 official and unique Application Modules 
 * Services
 * Tasks
 
-* Accounts
+* '''Accounts'''
 Options for managing accounts and account access levels.
 
-* Loops
+* '''Loops'''
 Reorganizes all of the data in the database server.
 
-* Services
-Options for managing background services similar to ChronJobs in Linux.
+* '''Services'''
+Options for managing background services and scheduling specific tasks similar to [[ChronJobs]] commands in Linux.
 
-* Tasks
+* '''Tasks'''
 Options for managing current and future tasks as well as an advanced
 Task Manager that monitors connections in real-time.
 
@@ -187,12 +187,13 @@ Task Manager that monitors connections in real-time.
 ====Background-Level Application Modules====
 
 Activity Logging
+* Internal_Loops
 * Log_Administration
 * Log_Background
 * Log_Member
 * Log_Visitor
 
-4 Background Application-Modules
+5 Background Application-Modules
 
 ====Panel Application Modules====
 * Administration.panel
@@ -247,13 +248,19 @@ The Store Front Application Module stores encrypted personal information for shi
 
 2 Extra Application Modules
 
+====Plug-In Modules====
+* WYSIWYG Text-Editor
+This Plug-In is a very simple WYSIWYG Text Editor that can be included into any form throughout the system by invoking a variable.
+
+* Safe-HTML
+This Plug-In automatically converts Hyper-Text-Markup-Language tags to Hyper-Text-Markup-Language entities from all of the input forms throughout the system. Example of this would be converting: '''< B >''' to '''& lt ;''' before it is inserted into the Database Management System Data. This eliminates any possibility of malicious Hyper-Text-Markup-Language tag injection, JavaScript scripting code injection and Post-Hyper-Text-Pre-Processor programming code injection into the Database Management System. All of the entities are converted back to Hyper-Text-Markup-Language tags after being retrieved from the Database Management System.
+
 ==Project Software Compatibility==
 
 ===Programming Code Parser Engines===
 * Pre-Hyper-Text-Post-Processor, Version Number: 8.2.2
 
-===Other===
-* Hyper-Text-Markup-Language, Version Number: 5
+===Containers===
 * Cascading-Style-Sheet, Version Number: 3
 
 ===Relational Database Management Systems===
@@ -264,12 +271,13 @@ The Store Front Application Module stores encrypted personal information for shi
 * Mini-Structured-Query-Language Server, Version Number: 4.4
 
 ===Web Server Software===
-* Apache, Version Number:
-* Microsoft, Version Number:
+* Apache, Version Number: 2.4.55
+* Microsoft, Version Number: 10.0
 
 ==Project Installation==
-A Fresh configuration and installation of CerberusCMS through Architect can be made in <~ 5 minutes. CerberusCMS installs a backup Administration-Level account with the same password as the installed Administration-Level account as well as a Services Root Administration-Level bot account named Cerberus. The Cerberus bot account can be logged into to schedule background tasks and perform Services Root Administration-Level tasks. This bot account automatically performs programming code tasks, database management server data organization tasks and more. The bot account can also receive commands from Administration-Level accounts as well as from Text-Message, Electronic Mail Message and from any input form on the system.
+A Fresh configuration and installation of CerberusCMS through Architect can be made in <~ 5 minutes. CerberusCMS installs a backup Administration-Level account with the same password as the installed Administration-Level account as well as a Services Root Administration-Level bot account named Cerberus. The Cerberus bot account can be logged into to schedule background tasks and perform Services Root Administration-Level tasks that an Administration-Level account would not be able to perform. This bot account automatically performs programming code tasks, database management server data organization tasks and more. The bot account can also receive commands from Administration-Level accounts as well as from Text-Message, Electronic Mail Message and from any input form on the system.
 
+'''Member Account Access Levels'''
 * Services Root Administration-Level
 * Administration-Level
 * Moderator-Level
@@ -365,73 +373,73 @@ CerberusCMS aims to be a secure Content Management System and is hardcoded for s
 * Automatic GET and POST Sanitization
 * Automatic Variable Sanitization
 
-Injections
-* S.Q.L. Injection
+'''Injections'''
+* Structured-Query-Language Code Injection
 * Cookie Injection
 * Cross Server Injection
 * Mixed Information Injection
-* HTML Character Injection
+* Hyper-Text-Markup-Language Character Injection
 * Lightweight Directory Access Protocol Injection
-* Code Injection
-* Malicious Code Injection
+* Programming Code Injection
 * Operating System Command Injection
 * Arbitrary Code Injection
 * Cross Site Scripting
 
-File and Directory Handling
+'''Information and Data Tampering'''
+* Data Tampering
+* Cookie Tampering
+* File Swapping
+* Internet Protocol Address Tampering
+* H.T.T.P. Verb Tampering
+
+'''Programming Code Execution'''
+* Remote Code Execution
+
+'''File and Directory Handling'''
 * Local File Inclusion
 * Remote File Inclusion
-* Large File Upload
 * Directory Traversal
+* Fake File Extensions
+* Large File Upload
+* Unrestricted File Upload
 
-Buffers
+'''Buffers'''
 * Buffer Overflow
 * Buffer Underrun
 * Integer Underrun
 * Integer Overflow
 
-Web Server
+'''Web Server Origins'''
 * Cross Request Forgery
+* Cross Site Request Forgery
+* Cross Origin Resources
 
-Configurations
+'''Configurations'''
 * Security Misconfigurations
 
-Extensible Markup Language
+'''Extensible Markup Language'''
 * XML External Entity Processing
 * XML External Entities
 
-Password Storage
+'''Password Storage'''
 * Password Decryption
 
-Data Exfiltration
+'''Data Exfiltration'''
 * Data Mining and Exfiltration
-* Cross Origin Resources
 * Encapsulation
-* Cross URL Poisoning
-* HTTP Response Splitting
+* Cross U.R.L. Poisoning
+* H.T.T.P. Response Splitting
 
-Information and Data Tampering
-* Data Tampering
-* Cookie Tampering
-* Internet Protocol Address Tampering
-* HTTP Verb Tampering
-
-Data Storage
+'''Data Storage'''
 * Insecure Cryptographic Storage
 * Insecure Digest
 * Insecure Direct Object Referencing
 * Sensitive Data Exposure
 
-File Handling
-* Unrestricted File Upload
-
-* Remote Code Execution
-* CSRF
-
-Denial of Service
+'''Denial of Service'''
 * Denial of Service Through RAW Connection
 * Denial of Service Through Ping
-* Denial of Service Through HTTP Code
+* Denial of Service Through H.T.T.P. Code
 
 ===Integrity Features===
 * Automatic Kernel and Application Module integrity checks on every execution.
