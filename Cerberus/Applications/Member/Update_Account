@@ -198,6 +198,7 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_RANK_LEVEL						= $_Appli
 $_Application_Module_Member_Update_Account_LIST_MEMBER_REGISTRATION_DATE					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_REGISTRATION_DETAILS					= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_details'];
 $_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
+$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE				= $_Application_Module_Member_Update_Account_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_private'];
 
 /*
  ============================================================================================================
@@ -217,7 +218,8 @@ $_Application_Module_Member_Update_Account_LIST_MEMBER_URL_HOMEPAGE						= $_App
  ============================================================================================================
 */
 
-$_Application_Module_Member_Update_Account_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE				= md5($_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PGP_KEY_PANEL_PUBLIC_MD5_SIGNATURE				= md5($_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+$_Application_Module_Member_Update_Account_LIST_MEMBER_PGP_KEY_PANEL_PRIVATE_MD5_SIGNATURE				= md5($_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE);
 
 /*
  ============================================================================================================
@@ -443,6 +445,14 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PA
 
 /*
  ============================================================================================================
+ + Account Settings :: Account Encryption Keys ( Private )
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PRIVATE			= $_POST['member_account_pgp_key_panel_private'];
+
+/*
+ ============================================================================================================
  + Account Settings :: Credit Card Information
  ============================================================================================================
 */
@@ -657,8 +667,11 @@ echo ("
 														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_profile_signature\">$_Application_Module_Member_Update_Account_LIST_MEMBER_PROFILE_SIGNATURE</TEXTAREA><BR><BR>
 
 													<B>Account Security Information</B><HR><BR>
-													* Public PGP Encryption Key Block:<BR>
-													[ <A HREF=\"https://PGPKeyGen.com/\" TITLE=\":: Click Here To Generate Public and Private Pretty-Good-Privacy Encryption Key Pairs ::\" TARGET=\"_NEW\">Generate P.G.P. Encryption Key Pairs</A> ]<BR>
+													* Public Pretty-Good-Privacy Encryption Key Panel:<BR>
+													[ <A HREF=\"https://PGPKeyGen.com/\" TITLE=\":: Click Here To Generate Public and Private Pretty-Good-Privacy Encryption Key Pairs ::\" TARGET=\"_NEW\">Generate Pretty-Good-Privacy Encryption Key Pairs</A> ]<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_pgp_key_panel_public\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC</TEXTAREA><BR><BR>
+													* Private Pretty-Good-Privacy Encryption Key Panel:<BR>
+													[ <A HREF=\"https://PGPKeyGen.com/\" TITLE=\":: Click Here To Generate Public and Private Pretty-Good-Privacy Encryption Key Pairs ::\" TARGET=\"_NEW\">Generate Pretty-Good-Privacy Encryption Key Pairs</A> ]<BR>
 														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"member_account_pgp_key_panel_public\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC</TEXTAREA><BR><BR>
 
 													<B>Account Images</B><HR>
