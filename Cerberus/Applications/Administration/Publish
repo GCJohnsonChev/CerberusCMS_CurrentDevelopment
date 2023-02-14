@@ -142,11 +142,11 @@ $DB->free($_Application_Module_Administration_Publish_DB_Query_SELECT_NEWS_SUBMI
  ============================================================================================================ 
 */
 
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME		= $_POST['AM_Publish_Publish_News_Article_Author_Name'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_DATA			= $_POST['AM_Publish_Publish_News_Article_Data'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD		= $_POST['AM_Publish_Publish_News_Article_Author_Mood'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC		= $_POST['AM_Publish_Publish_News_Article_Author_Music'];
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE			= $_POST['AM_Publish_Publish_News_Article_Title'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME		= $_POST['AM_Publish_News_Article_Author_Name'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_DATA			= $_POST['AM_Publish_News_Article_Data'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD		= $_POST['AM_Publish_News_Article_Author_Mood'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC		= $_POST['AM_Publish_News_Article_Author_Music'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE			= $_POST['AM_Publish_News_Article_Title'];
 
 /*
  ============================================================================================================ 
@@ -273,9 +273,9 @@ $DB->free($_Application_Module_Administration_Publish_DB_Query_PUBLISH_NEWS);
  ============================================================================================================ 
 */
 
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME		= $_POST['AM_Publish_Publish_Article_Author_Name'];
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE			= $_POST['AM_Publish_Publish_Article_Title'];
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT			= $_POST['AM_Publish_Publish_Article_Text'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME		= $_POST['AM_Publish_Article_Author_Name'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE			= $_POST['AM_Publish_Article_Title'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT			= $_POST['AM_Publish_Article_Text'];
 
 /*
  ============================================================================================================ 
