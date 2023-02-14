@@ -1,0 +1,71 @@
+<?php
+/*
+ ============================================================================================================
+ + Cerberus Content Management System
+ + ---
+ + - Author 		     : Gary Christopher Johnson - Rosedale, California
+ + - Electronic Mail Address : TinkeSoftware@Protonmail.com
+ + - Company		     : Tinke Software
+ + - Company Address	     : Rosedale, California, U.S.A.
+ + - Document Notes	     : View this file in a non-formatting text editor without word-wrap for the correct
+ +			       display of this programming code and its indentation.
+ + ---
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ +
+ + ---
+ + - File Location: root->Cerberus->Applications->Panel->Cerberus_Badges.panel
+ + - File Version : 0.6 - Wednesday, March 1st of 2023
+ + ---
+ + -------------------------------------------------------------------------------
+ + --()()--()()()--()()()--()()()---()()()--()()()--()--()------()()()------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()()()--()()()--()()()---()()()--()()()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()----------------
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------/-\-
+ + -()-----()------()--()--()---()--()------()--()--()--()------()------------|4|-  ~ Wynn ~
+ + --()()--()()()--()--()--()()()---()()()--()--()--()()()--()()()------------\-/- Build: 0.8
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Panel :: Cerberus Badges
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TITLE=\":: Cerberus Content Management System :: Official Software Project Page Hosted On SourceForge ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Cerberus_Badge.png\" ALT=\":: Cerberus Content Management System :: Official Software Project Page Hosted On SourceForge ::\"></A><BR><BR>
+											<A HREF=\"https://www.Gentoo.org\" TITLE=\":: Gentoo-Linux :: Official Gentoo-Linux Web Server ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Gentoo-Linux_Badge.png\" ALT=\":: Gentoo-Linux :: Official Gentoo-Linux Web Server ::\"></A><BR><BR>
+											<A HREF=\"https://www.FreeBSD.org\" TITLE=\":: FreeB.S.D. :: Official Free-B.S.D. Web Server ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/FreeBSD_Badge.png\" ALT=\":: FreeB.S.D. :: Official Free-B.S.D. Web Server ::\"></A><BR><BR>
+											<A HREF=\"https://www.Apache.org\" TITLE=\":: Apache HTTP Lite :: Official Apache Software Project Web Server ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Apache_Badge.png\" ALT=\":: Apache HTTP Lite :: Official Apache Software Project Web Server ::\"></A><BR><BR>
+											<A HREF=\"https://www.Chromium.org/\" TITLE=\":: Chromium :: Official Web-Browser Software Project Web Serer ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Chromium_Badge.png\" ALT=\":: Chromium :: Official Web-Browser Software Project Web Serer ::\"></A><BR><BR>
+											<A HREF=\"https://www.Mozilla.org/firefox/\" TITLE=\":: Mozilla FireFox :: Official Web-Browser Software Project Web Server ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/FireFox_Badge.png\" ALT=\":: Mozilla FireFox :: Official Web-Browser Software Project Web Server ::\"></A><BR><BR>
+											<A HREF=\"https://www.GitHub.com/TinkeSoftware/CerberusCMS\" TITLE=\"Cerberus Content Management System :: Clean Code Project :: Official GitHub Repository\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/CleanCode_Badge.png\" ALT=\":: Cerberus Content Management System Is A Clean Code Project ::\"></A><BR><BR>
+											<A TITLE=\":: Cerberus Content Management System Is Hand Written In California ::\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/MadeInCalifornia.png\" WIDTH=\"125\" HEIGHT=\"50\" ALT=\":: Cerberus Content Management System Is Hand Written In California ::\"></A><BR><BR>
+											<A TITLE=\":: Cerberus Content Management System Is A 100% Pure and Clean Pre-HyperText-Post-Processor Software Project Handwritten In Pure Pre-HyperText-Post-Processor Programming Code - JavaScript Programming Code Was Never Allowed ::\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/NoScript_Badge.png\" WIDTH=\"125\" HEIGHT=\"50\" ALT=\":: Cerberus Content Management System Is A 100% Pure and Clean Pre-HyperText-Post-Processor Software Project Handwritten In Pure Pre-HyperText-Post-Processor Programming Code - JavaScript Programming Code Was Never Allowed ::\"></A><BR><BR>
+											<A HREF=\"https://www.Apache.org\" TITLE=\":: Apache Software Foundation ::\" TARGET=\"_NEW\"><IMG SRC=\"Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Apache.png\" ALT=\":: Apache Software Foundation ::\"></A><BR>
+											<A HREF=\"https://www.MySQL.com\" TITLE=\":: MySQL Database Management System ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/MySQL.gif\" ALT=\":: MySQL Database Management System ::\"></A><BR>
+											<A HREF=\"https://www.PHP.net\" TITLE=\":: Post-HyperText Pre-Processor / Pre-HyperText-Post-Processor ( P.H.P. ) Scripting Language ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/PHP.png\" ALT=\":: Post-HyperText Pre-Processor / Pre-HyperText-Post-Processor ( P.H.P. ) Scripting Language ::\"></A><BR>
+											<A HREF=\"http://tool.motoricerca.info/robots-checker.phtml\" TITLE=\":: Official Robots Validation Service ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Robots.png\" ALT=\":: Official Robots Validation Service ::\"></A><BR>
+											<A HREF=\"https://jigsaw.w3.org/css-validator/\" TITLE=\":: Official Cascading Style Sheet Validation Service ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/W3C_CSS.png\" ALT=\":: Official Cascading Style Sheet Validation Service ::\"></A><BR>
+											<A HREF=\"https://validator.w3.org/\" TITLE=\":: Official HyperText Markup Language Validation Service ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/W3C_HTML.png\" ALT=\":: Official HyperText Markup Language Validation Service ::\"></A><BR>
+											<A HREF=\"https://validator.w3.org/feed/\" TITLE=\":: Official Really Simple Syndication Validation Service ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/W3C_RSS.png\" ALT=\":: Official Really Simple Syndication Validation Service ::\"></A>
+");
+?>
