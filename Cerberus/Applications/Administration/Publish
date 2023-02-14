@@ -186,7 +186,7 @@ echo ("
 															What Is The Author's Current Mood ?<BR>
 																<INPUT TYPE=\"text\" NAME=\"AM_Publish_News_Article_Author_Mood\" MAXLENGTH=\"250\"><BR>
 															What Music Are You Currently Listening To ?<BR>
-																<INPUT TYPE=\"text\" NAME=\"AM_Publish_News_Article_Music\" MAXLENGTH=\"250\"><BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Publish_News_Article_Author_Music\" MAXLENGTH=\"250\"><BR>
 															News Article Entry Title:<BR>
 																<INPUT TYPE=\"text\" NAME=\"AM_Publish_News_Article_Title\" MAXLENGTH=\"50\"><BR>
 															News Article Entry Text:<BR>
@@ -199,7 +199,7 @@ echo ("
 
 /*
  ============================================================================================================ 
- + Publish News SQL Query
+ + Database Server Query :: Publish News Query
  ============================================================================================================ 
 */
 
