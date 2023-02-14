@@ -70,9 +70,9 @@
  ============================================================================================================
 */
 
-$_Application_Module_Member_Application_List_KERNEL_FILE_CONTENTS				= file_get_contents("./$_INTERNAL_FILE_KERNEL");
-$_Application_Module_Member_Application_List_KERNEL_FILE_SIZE					= filesize("./$_INTERNAL_FILE_KERNEL");
-$_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256				= hash_file('sha256', "./$_INTERNAL_FILE_KERNEL");
+$_Application_Module_Member_Application_List_KERNEL_FILE_CONTENTS					= file_get_contents("./$_INTERNAL_FILE_KERNEL");
+$_Application_Module_Member_Application_List_KERNEL_FILE_SIZE						= filesize("./$_INTERNAL_FILE_KERNEL");
+$_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256					= hash_file('sha256', "./$_INTERNAL_FILE_KERNEL");
 
 /*
  ============================================================================================================
@@ -80,10 +80,21 @@ $_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256				= hash_f
  ============================================================================================================
 */
 
-$_Application_Module_Member_Application_List_CONFIGURATION_FILE					= "./System/Configuration/Global_Configuration.php";
-$_Application_Module_Member_Application_List_CONFIGURATION_FILE_CONTENTS			= file_get_contents("$_Application_Module_Member_Application_List_CONFIGURATION_FILE");
-$_Application_Module_Member_Application_List_CONFIGURATION_FILE_SIZE				= filesize("$_Application_Module_Member_Application_List_CONFIGURATION_FILE");
-$_Application_Module_Member_Application_List_CONFIGURATION_FILE_HASH_SHA256			= hash_file('sha256', "$_Application_Module_Member_Application_List_CONFIGURATION_FILE");
+$_Application_Module_Member_Application_List_CONFIGURATION_FILE						= "./System/Configuration/Global_Configuration.php";
+$_Application_Module_Member_Application_List_CONFIGURATION_FILE_CONTENTS				= file_get_contents("$_Application_Module_Member_Application_List_CONFIGURATION_FILE");
+$_Application_Module_Member_Application_List_CONFIGURATION_FILE_SIZE					= filesize("$_Application_Module_Member_Application_List_CONFIGURATION_FILE");
+$_Application_Module_Member_Application_List_CONFIGURATION_FILE_HASH_SHA256				= hash_file('sha256', "$_Application_Module_Member_Application_List_CONFIGURATION_FILE");
+
+/*
+ ============================================================================================================
+ + Application List :: Security Module :: Master Sanitization :: Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE			= "./System/Security/Modules/Master_Sanitization.cerberus";
+$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_CONTENTS		= file_get_contents("$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE");
+$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_SIZE		= filesize("$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE");
+$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_HASH_SHA256	= hash_file('sha256', "$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE");
 
 /*
  ============================================================================================================
@@ -110,13 +121,13 @@ $_Application_Module_Member_Application_List_CONFIGURATION_FILE_HASH_SHA256			= 
  ============================================================================================================
 */
 
-$_Application_Module_Member_Application_List_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY		= "./Applications/Administration/";
-$_Application_Module_Member_Application_List_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY		= opendir($_Application_Module_Member_Application_List_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY);
+$_Application_Module_Member_Application_List_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY			= "./Applications/Administration/";
+$_Application_Module_Member_Application_List_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY			= opendir($_Application_Module_Member_Application_List_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY);
 
 while (($_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY = readdir($_Application_Module_Member_Application_List_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY))) {
 
-$_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_HASH_SHA256	= hash_file('sha256', "./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY");
-$_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_SIZE		= filesize("./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY");
+$_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_HASH_SHA256		= hash_file('sha256', "./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY");
+$_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_SIZE			= filesize("./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY");
 
 /*
  ============================================================================================================
@@ -177,17 +188,17 @@ $_Application_Module_Member_Application_List_DB_Query_List_Panels			= $DB->query
 
 while ($_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Application_List_DB_Query_List_Applications)) {
 
-$_Application_Module_Member_Application_List_LIST_APPLICATION_ID				= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['id'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME				= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_name'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_CAMERA		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_camera'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_MICROPHONE	= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_microphone'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GPS	= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_location_gps'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GEO	= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_location_geo'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_LOCATION_IP	= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_location_internet_protocol_address'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_STATUS			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_status'];
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_SIZE				= filesize("./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME");
-$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256			= hash_file('sha256', "./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME");
+$_Application_Module_Member_Application_List_LIST_APPLICATION_ID					= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['id'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME					= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_name'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION				= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_CAMERA			= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_camera'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_MICROPHONE		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_microphone'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GPS		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_location_gps'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GEO		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_location_geo'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION_LOCATION_IP		= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_permission_location_internet_protocol_address'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_STATUS				= $_Application_Module_Member_Application_List_DB_Query_List_Applications_Fetch_Array['application_file_status'];
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_SIZE					= filesize("./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME");
+$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256				= hash_file('sha256', "./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME");
 
 echo ("
 														<B>Application Module: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME</B><HR>
@@ -223,14 +234,14 @@ echo ("
 
 while ($_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Application_List_DB_Query_List_Panels)) {
 
-$_Application_Module_Member_Application_List_LIST_PANEL_ID				= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['id'];
-$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME			= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_file_name'];
-$_Application_Module_Member_Application_List_LIST_PANEL_FILE_SIZE			= filesize("./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel");
-$_Application_Module_Member_Application_List_LIST_PANEL_ALIGNMENT			= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_alignment'];
-$_Application_Module_Member_Application_List_LIST_PANEL_ROW				= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_row'];
-$_Application_Module_Member_Application_List_LIST_PANEL_FILE_STATUS			= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_file_status'];
-$_Application_Module_Member_Application_List_LIST_PANEL_TITLE				= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_title'];
-$_Application_Module_Member_Application_List_LIST_PANEL_FILE_HASH_SHA256		= hash_file('sha256', "./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel");
+$_Application_Module_Member_Application_List_LIST_PANEL_ID						= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['id'];
+$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME					= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_file_name'];
+$_Application_Module_Member_Application_List_LIST_PANEL_FILE_SIZE					= filesize("./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel");
+$_Application_Module_Member_Application_List_LIST_PANEL_ALIGNMENT					= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_alignment'];
+$_Application_Module_Member_Application_List_LIST_PANEL_ROW						= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_row'];
+$_Application_Module_Member_Application_List_LIST_PANEL_FILE_STATUS					= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_file_status'];
+$_Application_Module_Member_Application_List_LIST_PANEL_TITLE						= $_Application_Module_Member_Application_List_DB_Query_List_Panels_Fetch_Array['panel_title'];
+$_Application_Module_Member_Application_List_LIST_PANEL_FILE_HASH_SHA256				= hash_file('sha256', "./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel");
 
 echo ("
 														<B>Application Panel: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME</B><BR>
@@ -259,6 +270,15 @@ echo ("
 		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_CONFIGURATION_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_CONFIGURATION_FILE_CONTENTS</TEXTAREA>
+		</FORM><BR><BR>
+");
+
+echo ("
+		<B>Security Module :: Master Sanitization File Name: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE</B><HR>
+		* System Configuration File HASH, SHA-256: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_HASH_SHA256<BR>
+		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_SIZE<BR>
+		<FORM>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_CONTENTS</TEXTAREA>
 		</FORM><BR><BR>
 ");
 
