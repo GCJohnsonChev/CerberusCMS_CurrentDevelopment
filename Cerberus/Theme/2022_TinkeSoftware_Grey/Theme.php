@@ -154,7 +154,6 @@ $_THIS_THEMES_APPLICATION_MODULE_2			= "
 */
 
 $_THIS_THEME_META_DATA					= "
-		<LINK REL=\"stylesheet\" HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
 		<Link REL=\"shortcut icon\" HREF=\"./Theme/$_THIS_THEME_DIRECTORY/$_THIS_THEME_IMAGE_DIRECTORY/Icon/FavIcon.ico\" TYPE=\"image/x-icon\">
 		<META NAME=\"COPYRIGHT\" CONTENT=\"(C) Tinke Software\">
 		<META NAME=\"KEYWORDS\" CONTENT=\"Tinke Software, Tinke Byte, Content, Management, System, Cerberus, Web, Application, Framework, Apache, PHP, MySQL, SQL\">
