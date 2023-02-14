@@ -2438,6 +2438,7 @@ echo ("
 
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
+		<LINK REL=\"stylesheet\" HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
 		$_THIS_THEME_META_DATA
 	</HEAD>
 
