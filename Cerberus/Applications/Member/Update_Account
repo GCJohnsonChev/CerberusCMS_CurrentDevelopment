@@ -353,7 +353,7 @@ $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_C
 
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_AREA_CODE			= $_POST['AM_Update_Account_Member_Number_Phone_Area_Code'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_CELL				= $_POST['AM_Update_Account_Member_Number_Phone_Cell'];
-$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_COUNTRY_CODE			= $_POST['AM_Update_Account_Member_Number_Phone_Country_code'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_COUNTRY_CODE			= $_POST['AM_Update_Account_Member_Number_Phone_Country_Code'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_HOME				= $_POST['AM_Update_Account_Member_Number_Phone_Home'];
 $_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_WORK				= $_POST['AM_Update_Account_Member_Number_Phone_Work'];
 
@@ -525,7 +525,7 @@ echo ("
 													* Nick Name:<BR>
 														<INPUT TYPE=\"text\" NAME=\"AM_Update_Account_Member_Name_Nickname\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_NAME_NICKNAME\" MAXLENGTH=\"100\"><BR><BR>
 													* Birth-Date:<BR>
-														<INPUT TYPE=\"date\" NAME=\"AM_Update_Account_Member_Name_Birthdate\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_BIRTHDATE\" MAXLENGTH=\"100\"><BR><BR>
+														<INPUT TYPE=\"date\" NAME=\"AM_Update_Account_Member_Birthdate\" VALUE=\"$_Application_Module_Member_Update_Account_LIST_MEMBER_BIRTHDATE\" MAXLENGTH=\"100\"><BR><BR>
 													* Gender:<BR>
 														<SELECT NAME=\"AM_Update_Account_Member_Gender\">
 															<OPTION VALUE=\"0\">Non-Specified</OPTION>
@@ -687,7 +687,7 @@ echo ("
 														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Update_Account_Member_PGP_Key_Panel_Public\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC</TEXTAREA><BR><BR>
 													* Private Pretty-Good-Privacy Encryption Key Panel:<BR>
 													[ <A HREF=\"https://PGPKeyGen.com/\" TITLE=\":: Click Here To Generate Public and Private Pretty-Good-Privacy Encryption Key Pairs ::\" TARGET=\"_NEW\">Generate Pretty-Good-Privacy Encryption Key Pairs</A> ]<BR>
-														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Update_Account_Member_PGP_Key_Panel_Private\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC</TEXTAREA><BR><BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Update_Account_Member_PGP_Key_Panel_Private\">$_Application_Module_Member_Update_Account_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE</TEXTAREA><BR><BR>
 
 													<B>Account Images</B><HR>
 													* Member Account Profile Image:<BR>
@@ -936,6 +936,7 @@ member_number_phone_work='$_Application_Module_Member_Update_Account_POST_UPDATE
 member_profile_about='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT',
 member_profile_signature='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_SIGNATURE',
 member_security_pgp_key_panel_public='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC',
+member_security_pgp_key_panel_private='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PRIVATE',
 member_settings_language='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_LANGUAGE',
 member_settings_control_panel_audio='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO',
 member_settings_newsletter='$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER',
