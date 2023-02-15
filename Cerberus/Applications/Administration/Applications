@@ -69,7 +69,7 @@ $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_P
 $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_LOCATION_IP 	= $_POST['AM_Applications_Install_Application_File_Permission_Location_IP'];
 $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 			= $_POST['AM_Applications_Install_Application_File_Status'];
 
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME);
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME);
 
 /*
  ============================================================================================================
@@ -154,7 +154,7 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_DB_Query_Insert_Application			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME','$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION','$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS')");
+$_Application_Module_Administration_Applications_DB_Query_Insert_Application				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_status)VALUES('$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME','$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION','$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS')");
 
 if ($_Application_Module_Administration_Applications_DB_Query_Insert_Application) {
 
@@ -190,9 +190,9 @@ $DB->free($_Application_Module_Administration_Applications_DB_Query_Insert_Appli
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY			= "./Applications/Member/";
-$_Application_Module_Administration_Applications_UPLOAD_FILE 					= $_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Applications_Upload_Application_File_Name']['name']);
-$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 				= $_POST['AM_Applications_Upload_Temporary'];
+$_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY				= "./Applications/Member/";
+$_Application_Module_Administration_Applications_UPLOAD_FILE 						= $_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Applications_Upload_Application_File_Name']['name']);
+$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 					= $_POST['AM_Applications_Upload_Temporary'];
 
 /*
  ============================================================================================================
@@ -233,21 +233,21 @@ if (move_uploaded_file($_FILES['AM_Applications_Upload_Application_File_Name']['
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_DB_Query_Select_Application_File		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY application_file_name ASC");
+$_Application_Module_Administration_Applications_DB_Query_Select_Application_File			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY application_file_name ASC");
 
 											echo ("<HR><CENTER><B>Existing Application Entries</B></CENTER><HR>");
 
 while ($_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Applications_DB_Query_Select_Application_File)) {
 
-$_Application_Module_Administration_Applications_LIST_APPLICATION_ID 				= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['id'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_name'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION 		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_CAMERA	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_camera'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_MICROPHONE	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_microphone'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GPS	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_gps'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GEO	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_geo'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_IP	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_ip'];
-$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_STATUS 			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_status'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_ID 					= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['id'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME				= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_name'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION 			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_CAMERA		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_camera'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_MICROPHONE		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_microphone'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GPS		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_gps'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GEO		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_geo'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_IP		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_ip'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_STATUS 				= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_status'];
 
 /*
  ============================================================================================================
@@ -280,7 +280,7 @@ if ($_GET["Delete"] == "$_Application_Module_Administration_Applications_LIST_AP
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
+$_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
 
 if ($_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID) {
 
@@ -397,7 +397,7 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_DB_Query_Update_Application_ID			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications SET 
+$_Application_Module_Administration_Applications_DB_Query_Update_Application_ID				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications SET 
 application_file_name='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME',
 application_file_permission='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION',
 application_file_permission_camera='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_CAMERA',
