@@ -60,9 +60,14 @@
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 		= $_POST['AM_Applications_Install_Application_File_Name'];
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION 	= $_POST['AM_Applications_Install_Application_File_Permissions'];
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 		= $_POST['AM_Applications_Install_Application_File_Status'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 			= $_POST['AM_Applications_Install_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION 		= $_POST['AM_Applications_Install_Application_File_Permissions'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_CAMERA 	= $_POST['AM_Applications_Install_Application_File_Permission_Camera'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_MICROPHONE 	= $_POST['AM_Applications_Install_Application_File_Permission_Microphone'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_LOCATION_GPS 	= $_POST['AM_Applications_Install_Application_File_Permission_Location_GPS'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_LOCATION_GEO 	= $_POST['AM_Applications_Install_Application_File_Permission_Location_GEO'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_LOCATION_IP 	= $_POST['AM_Applications_Install_Application_File_Permission_Location_IP'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 			= $_POST['AM_Applications_Install_Application_File_Status'];
 
 $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME);
 
@@ -106,6 +111,31 @@ echo ("
 															<OPTION VALUE=\"0\">Public</OPTION>
 															<OPTION VALUE=\"1\">Member</OPTION>
 															<OPTION VALUE=\"2\">Administrator</OPTION>
+														</SELECT><BR>
+													Application File Permission, Camera:<BR>
+														<SELECT NAME=\"AM_Applications_Install_Application_File_Permission_Camera\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Microphone:<BR>
+														<SELECT NAME=\"AM_Applications_Install_Application_File_Permission_Microphone\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Location By Global-Positioning-System:<BR>
+														<SELECT NAME=\"AM_Applications_Install_Application_File_Permission_Location_GPS\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Location By GEO:<BR>
+														<SELECT NAME=\"AM_Applications_Install_Application_File_Permission_Location_GEO\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Location By Internet Protocol Address:<BR>
+														<SELECT NAME=\"AM_Applications_Install_Application_File_Permission_Location_IP\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
 														</SELECT><BR>
 													Application File Status:<BR>
 														<SELECT NAME=\"AM_Applications_Install_Application_File_Status\">
@@ -212,6 +242,11 @@ while ($_Application_Module_Administration_Applications_DB_Query_Select_Applicat
 $_Application_Module_Administration_Applications_LIST_APPLICATION_ID 				= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['id'];
 $_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_name'];
 $_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION 		= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_CAMERA	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_camera'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_MICROPHONE	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_microphone'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GPS	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_gps'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_GEO	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_geo'];
+$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_PERMISSION_LOCATION_IP	= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_permission_location_ip'];
 $_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_STATUS 			= $_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array['application_file_status'];
 
 /*
@@ -287,11 +322,16 @@ if ($_GET["Update"] == "$_Application_Module_Administration_Applications_LIST_AP
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 		= $_POST['AM_Applications_Update_Application_File_Name'];
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION 	= $_POST['AM_Applications_Update_Application_File_Permission'];
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 		= $_POST['AM_Applications_Update_Application_File_Status'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 			= $_POST['AM_Applications_Update_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION 		= $_POST['AM_Applications_Update_Application_File_Permission'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_CAMERA 	= $_POST['AM_Applications_Update_Application_File_Permission_Camera'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_MICROPHONE 	= $_POST['AM_Applications_Update_Application_File_Permission_Microphone'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_LOCATION_GPS 	= $_POST['AM_Applications_Update_Application_File_Permission_Location_GPS'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_LOCATION_GEO 	= $_POST['AM_Applications_Update_Application_File_Permission_Location_GEO'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_LOCATION_IP 	= $_POST['AM_Applications_Update_Application_File_Permission_Location_IP'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 			= $_POST['AM_Applications_Update_Application_File_Status'];
 
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME);
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME);
 
 if (!$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME) {
 /*
@@ -308,10 +348,35 @@ echo ("
 													Application File Name:<BR>
 														<INPUT TYPE=\"text\" NAME=\"AM_Applications_Update_Application_File_Name\" VALUE=\"$_Application_Module_Administration_Applications_LIST_APPLICATION_FILE_NAME\" MAXLENGTH=\"100\"><BR>
 													Application File Permissions:<BR>
-														<SELECT NAME=\"AM_Applications_Update_Application_File_Permission\">
+														<SELECT NAME=\"AM_Applications_Update_Application_File_Permissions\">
 															<OPTION VALUE=\"0\">Public</OPTION>
 															<OPTION VALUE=\"1\">Member</OPTION>
 															<OPTION VALUE=\"2\">Administrator</OPTION>
+														</SELECT><BR>
+													Application File Permission, Camera:<BR>
+														<SELECT NAME=\"AM_Applications_Update_Application_File_Permission_Camera\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Microphone:<BR>
+														<SELECT NAME=\"AM_Applications_Update_Application_File_Permission_Microphone\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Location By Global-Positioning-System:<BR>
+														<SELECT NAME=\"AM_Applications_Update_Application_File_Permission_Location_GPS\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Location By GEO:<BR>
+														<SELECT NAME=\"AM_Applications_Update_Application_File_Permission_Location_GEO\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
+														</SELECT><BR>
+													Application File Permission, Location By Internet Protocol Address:<BR>
+														<SELECT NAME=\"AM_Applications_Update_Application_File_Permission_Location_IP\">
+															<OPTION VALUE=\"0\">OFF</OPTION>
+															<OPTION VALUE=\"1\">ON</OPTION>
 														</SELECT><BR>
 													Application File Status:<BR>
 														<SELECT NAME=\"AM_Applications_Update_Application_File_Status\">
@@ -332,7 +397,15 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_DB_Query_Update_Application_ID			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications SET application_file_name='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME',application_file_permission='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION',application_file_status='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS' WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
+$_Application_Module_Administration_Applications_DB_Query_Update_Application_ID			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications SET 
+application_file_name='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME',
+application_file_permission='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION',
+application_file_permission_camera='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_CAMERA',
+application_file_permission_microphone='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_MICROPHONE',
+application_file_permission_location_gps='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_GPS',
+application_file_permission_location_geo='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_GEO',
+application_file_permission_location_ip='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_IP',
+application_file_status='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS' WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
 
 if ($_Application_Module_Administration_Applications_DB_Query_Update_Application_ID) {
 
