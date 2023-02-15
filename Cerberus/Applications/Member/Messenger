@@ -228,22 +228,32 @@ $_Application_Module_Messenger_GNUPG_ENCRYPT_MESSAGE									= $_Application_Mod
 /*
  ============================================================================================================
  +
- + Internal Application Variables :: Encrypted-Text-File Messenger :: Advanced Encryption Standard :: 128 :: Variables
+ +
+ + Internal Application Variables :: Encrypted-Text-File Messenger :: Advanced Encryption Standard
+ +
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Clear-Text Message Data
+ +
+ + Encryption
+ +
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA			= $_POST[''];
+/*
+ ============================================================================================================
+ + Encryption :: Clear-Text Message Data :: Variables :: POST Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA			= $_POST['AM_Messenger_Encrypted_Text_File_Messenger_Room_Message'];
 
 /*
  ============================================================================================================
- + Encryption :: Cipher Method :: Cipher Specifications :: Advanced Encryption Standard :: 128
+ + Encryption :: Advanced Encryption Standard :: 128 :: Cipher Method :: Cipher Specifications
  ============================================================================================================
 */
 
@@ -265,7 +275,7 @@ $_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Vector		= '123
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_Encryption_Type_AES_Key					= "";
+$_Application_Module_Messenger_Encryption_Type_AES_Key					= "test";
 
 /*
  ============================================================================================================
@@ -277,19 +287,36 @@ $_Application_Module_Messenger_Encryption_Type_AES_Random_Bytes				= random_byte
 
 /*
  ============================================================================================================
- + Encryption :: Cipher Method :: Digest Keys :: Open Secure Socket Layer
+ + Encryption :: Cipher Method :: Open Secure Socket Layer :: Digest Key
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_Encryption_Type_AES_Key 					= openssl_digest(php_uname(), 'MD5', true);
+$_Application_Module_Messenger_Encryption_Type_AES_Digest_Key 				= openssl_digest(php_uname(), 'MD5', true);
 
 /*
  ============================================================================================================
- + Encryption :: Cipher Method :: Encryption :: Message Data
+ + Encryption :: Cipher Method :: Encryption :: Of :: Message Data
  ============================================================================================================
 */
 
 $_Application_Module_Messenger_Encryption_Type_AES_Encrypt_Message_Data			= openssl_encrypt($_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA, $_Application_Module_Messenger_Encryption_Cipher_Ring_Type, $_Application_Module_Messenger_Encryption_Key, $_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Encryption_Random_Bytes);
+
+/*
+ ============================================================================================================
+ +
+ + Decryption
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Decryption :: Of :: Encrypted Message Data
+ ============================================================================================================
+*/
+
+
+$_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA				= "";
 
 /*
  ============================================================================================================
@@ -301,19 +328,35 @@ $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Vector		= '123
 
 /*
  ============================================================================================================
- + Decryption :: Cipher Method :: Cipher Ring :: Vector
+ + Decryption :: Cipher Method :: Randomization
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA				= "";
+$_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes				= random_bytes($_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
 
 /*
  ============================================================================================================
- + Decryption :: Open Secure Socket Layer :: Function
+ + Decryption :: Cipher Method :: Open Secure Socket Layer :: Digest Key
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_Decryption_Type_AES_					= openssl_decrypt($_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes);
+$_Application_Module_Messenger_Decryption_Type_AES_Digest_Key				= openssl_digest(php_uname(), 'MD5', true);
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Cipher :: Key
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Decryption_Type_AES_Key					= "test";
+
+/*
+ ============================================================================================================
+ + Decryption :: Functions :: Open Secure Socket Layer
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Decryption_Type_AES_OpenSSL_Decrypt_Message		= openssl_decrypt($_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes);
 
 /*
  ============================================================================================================
