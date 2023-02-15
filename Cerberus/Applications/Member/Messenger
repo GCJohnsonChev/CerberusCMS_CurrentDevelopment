@@ -228,7 +228,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
 /*
  ============================================================================================================
  +
- + Internal Application Variables :: Encrypted-Text-File Messenger :: Advanced Encryption Standard :: Variables
+ + Internal Application Variables :: Encrypted-Text-File Messenger :: Advanced Encryption Standard :: 128 :: Variables
  +
  ============================================================================================================
 */
@@ -243,7 +243,7 @@ $_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA			= $_POST[
 
 /*
  ============================================================================================================
- + Encryption :: Cipher Method :: Cipher Specifications :: Advanced Encryption Standard 128
+ + Encryption :: Cipher Method :: Cipher Specifications :: Advanced Encryption Standard :: 128
  ============================================================================================================
 */
 
@@ -289,7 +289,7 @@ $_Application_Module_Messenger_Encryption_Type_AES_Key 					= openssl_digest(php
  ============================================================================================================
 */
 
-$_Application_Module_Messenger_Encryption_Type_AES_Encrypt_Message			= openssl_encrypt($_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA, $_Application_Module_Messenger_Encryption_Cipher_Ring_Type, $_Application_Module_Messenger_Encryption_Key, $_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Encryption_Random_Bytes);
+$_Application_Module_Messenger_Encryption_Type_AES_Encrypt_Message_Data			= openssl_encrypt($_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA, $_Application_Module_Messenger_Encryption_Cipher_Ring_Type, $_Application_Module_Messenger_Encryption_Key, $_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Encryption_Random_Bytes);
 
 /*
  ============================================================================================================
@@ -309,7 +309,7 @@ $_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA				= "";
 
 /*
  ============================================================================================================
- + Decryption :: Open Secure Socket Layer Function
+ + Decryption :: Open Secure Socket Layer :: Function
  ============================================================================================================
 */
 
@@ -496,21 +496,21 @@ fclose($_Application_Module_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME);
 
 						echo ("*&nbsp;Creating Plain-Text-File Messenger Room File Directories<BR>");
 
-mkdir("Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files");
-mkdir("Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio");
-mkdir("Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document");
-mkdir("Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image");
-mkdir("Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video");
+mkdir("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files");
+mkdir("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio");
+mkdir("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document");
+mkdir("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image");
+mkdir("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video");
 
 						echo ("*&nbsp;Done<BR>");
 
-						echo ("*&nbsp;Copying Default <I>index</I> Files To Messenger Room File Directories<BR>");
+						echo ("*&nbsp;Copying Default <I>index</I> Files To Messenger Room File Directories...<BR>");
 
-copy("Temporary/Messenger/Setup/Audio/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/index.php");
-copy("Temporary/Messenger/Setup/Audio/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/index.php");
-copy("Temporary/Messenger/Setup/Document/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/index.php");
-copy("Temporary/Messenger/Setup/Image/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/index.php");
-copy("Temporary/Messenger/Setup/Video/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/index.php");
+copy("./Temporary/Messenger/Setup/Audio/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/index.php");
+copy("./Temporary/Messenger/Setup/Audio/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/index.php");
+copy("./Temporary/Messenger/Setup/Document/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/index.php");
+copy("./Temporary/Messenger/Setup/Image/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/index.php");
+copy("./Temporary/Messenger/Setup/Video/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/index.php");
 
 						echo ("*&nbsp;Done<BR>");
 
@@ -665,7 +665,7 @@ $_Application_Module_Messenger_SQL_LIST_MESSENGER_PLAIN_TEXT_FILE_MESSENGER_ROOM
 /*
  =============================================================================================================
  +
- + Internal Application->SelectedPlainTextChatRoom
+ + Internal Application :: Display :: Selected Plain-Text-File Chat Room By Name
  +
  =============================================================================================================
 */
@@ -682,7 +682,7 @@ if(file_exists("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_M
 
 /*
  =============================================================================================================
- + Display The Plain-Text-File Messenger Room
+ + Display The Specified Plain-Text-File Messenger Room
  =============================================================================================================
 */
 
