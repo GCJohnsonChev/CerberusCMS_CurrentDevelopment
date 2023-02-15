@@ -162,8 +162,8 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg");
-//putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg");
+	putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg");
+	putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg");
 
 /*
  ============================================================================================================
@@ -171,8 +171,8 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_1              							= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg') . 'public.key');
-//$_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_2              							= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg') . 'public.key');
+$_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_1              							= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg') . 'public.key');
+$_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_2              							= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg') . 'public.key');
 
 /*
  ============================================================================================================
@@ -180,7 +180,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_INITIALIZE_GNUPG                               					= new gnupg();
+$_Application_Module_Messenger_INITIALIZE_GNUPG                               						= new gnupg();
 //$_Application_Module_Messenger_INITIALIZE_GNUPG->
 
 /*
@@ -189,7 +189,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_INITIALIZE_GNUPG->seterrormode(gnupg::ERROR_EXCEPTION);
+$_Application_Module_Messenger_INITIALIZE_GNUPG->seterrormode(gnupg::ERROR_EXCEPTION);
 
 /*
  ============================================================================================================
@@ -197,8 +197,8 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1								= $_Application_Module_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_1);
-//$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2								= $_Application_Module_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_2);
+$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1								= $_Application_Module_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_1);
+$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2								= $_Application_Module_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Messenger_SPECIFY_PGP_PUBLIC_KEY_2);
 
 /*
  ============================================================================================================
@@ -206,8 +206,8 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_1							= $_Application_Module_Messenger_GNUPG->addencryptkey($_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1['fingerprint']);
-//$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_2							= $_Application_Module_Messenger_GNUPG->addencryptkey($_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2['fingerprint']);
+$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_1							= $_Application_Module_Messenger_GNUPG->addencryptkey($_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1['fingerprint']);
+$_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_2							= $_Application_Module_Messenger_GNUPG->addencryptkey($_Application_Module_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2['fingerprint']);
 
 /*
  ============================================================================================================
@@ -215,7 +215,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE						= file_get_contents('./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME.html');
+$_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE							= file_get_contents('./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME.html');
 
 /*
  ============================================================================================================
@@ -223,7 +223,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_GNUPG_ENCRYPT_MESSAGE									= $_Application_Module_Messenger_GNUPG->encrypt($_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
+$_Application_Module_Messenger_GNUPG_ENCRYPT_MESSAGE									= $_Application_Module_Messenger_GNUPG->encrypt($_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
 
 /*
  ============================================================================================================
@@ -430,13 +430,13 @@ echo ("
 
 						echo ("*&nbsp;Creating Plain-Text-File Messenger Room Directory: <I>$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME</I>...<BR>");
 
-mkdir("Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME");
+mkdir("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 						echo ("*&nbsp;Done<BR>");
 
 						echo ("*&nbsp;Copying Default Index File To Plain-Text-File Messenger Room Directory: <I>$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME</I>...<BR>");
 
-copy("Temporary/Messenger/Setup/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/index.php");
+copy("./Temporary/Messenger/Setup/index.php","Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME/index.php");
 
                                                 echo ("*&nbsp;Done<BR>");
 
