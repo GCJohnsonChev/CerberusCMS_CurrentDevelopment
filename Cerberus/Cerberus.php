@@ -1067,7 +1067,7 @@ The Member Account: $_GLOBAL_COOKIE_MEMBER_USERNAME Successfully Logged-Out
 * Member Account Password: ****************************
 * Remote Server Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
 * Local Server Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Unique HASH Fingerprint: $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH
+* Unique HASH Fingerprint: $_Kernel_Member_Account_Logout_Log_TIMESTAMP_HASH
 * Logout Timestamp From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
 ---------------------------------------------------------------------------------------
 ");
