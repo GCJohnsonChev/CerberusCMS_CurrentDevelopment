@@ -150,6 +150,14 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
 
 /*
  ============================================================================================================
+ +
+ + Internal Application Variables :: Encrypted-Text-File Messenger :: Pretty-Good-Privacy :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
  + Specify G.N.U.-Privacy Guard Operating Environment
  ============================================================================================================
 */
@@ -216,6 +224,96 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
 */
 
 //$_Application_Module_Messenger_GNUPG_ENCRYPT_MESSAGE									= $_Application_Module_Messenger_GNUPG->encrypt($_Application_Module_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application Variables :: Encrypted-Text-File Messenger :: Advanced Encryption Standard :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Clear-Text Message Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA			= $_POST[''];
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Cipher Specifications :: Advanced Encryption Standard 128
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_Type			= "AES-128-CTR";
+$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length		= openssl_cipher_iv_length($_Application_Module_Messenger_Encryption_Cipher_Ring_Type);
+$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options		= 0;
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Cipher Ring :: Vector
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Vector		= '1234567891011121';
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Cipher :: Key
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_Key					= "";
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Randomization
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_Random_Bytes				= random_bytes($_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Length);
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Digest Keys :: Open Secure Socket Layer
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_Key 					= openssl_digest(php_uname(), 'MD5', true);
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Encryption :: Message Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Encryption_Type_AES_Encrypt_Message			= openssl_encrypt($_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA, $_Application_Module_Messenger_Encryption_Cipher_Ring_Type, $_Application_Module_Messenger_Encryption_Key, $_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Encryption_Random_Bytes);
+
+/*
+ ============================================================================================================
+ + Decryption :: Cipher Method :: Cipher Ring :: Vector
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Vector		= '1234567891011121';
+
+/*
+ ============================================================================================================
+ + Decryption :: Cipher Method :: Cipher Ring :: Vector
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA				= "";
+
+/*
+ ============================================================================================================
+ + Decryption :: Open Secure Socket Layer Function
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_Decryption_Type_AES_					= openssl_decrypt($_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes);
 
 /*
  ============================================================================================================
