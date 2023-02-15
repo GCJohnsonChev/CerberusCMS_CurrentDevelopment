@@ -198,14 +198,14 @@ echo ("
 
 											Additional Options<HR>
 											Member Account Authentication Connection Options :: Insecure :: Clear-Text<BR>
-											* <A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Insecure Over Clear-Text Insecure Connection ::\">Insecure Clear-Text Login</A><BR>
+											* <A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Insecure Over Clear-Text Insecure Connection ::\">Insecure Clear-Text Login</A><BR><BR>
 
 											Member Account Authentication Connection Options :: Secure :: Secure Socket Layer<BR>
 											* <A HREF=\"$_ACCESS_URL_SECURE_SSL/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection ::\">SSL Secure Login</A><BR>
-											* <A HREF=\"$_ACCESS_URL_SECURE_OPENSSL/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Open Secure Socket Layer Encrypted Connection ::\">OpenSSL Secure Login</A><BR>
+											* <A HREF=\"$_ACCESS_URL_SECURE_OPENSSL/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Open Secure Socket Layer Encrypted Connection ::\">OpenSSL Secure Login</A><BR><BR>
 
 											Member Account Authentication Connection Options :: Secure :: Transport Layer Security<BR>
-											* <A HREF=\"$_ACCESS_URL_SECURE_TLS/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection ::\">TLS Secure Login</A><BR>
+											* <A HREF=\"$_ACCESS_URL_SECURE_TLS/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection ::\">TLS Secure Login</A><BR><BR>
 
 											Member Account Authentication Connection Options :: Secure :: Other<BR>
 											* <A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Secure Encrypted Connection ::\">Secure Login</A><BR><BR>
