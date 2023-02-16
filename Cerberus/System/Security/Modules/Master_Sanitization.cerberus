@@ -702,6 +702,8 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4						= $_POS
  ============================================================================================================
 */
 
+$_Application_Module_Administration_Settings_POST_UPDATE_LOCATION_DIRECTORY					= $_POST['AM_Settings_Update_Location_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_LOCATION_STATUS					= $_POST['AM_Settings_Update_Location_Status'];
 $_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY					= $_POST['AM_Settings_Update_SafeHTML_Directory'];
 $_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS					= $_POST['AM_Settings_Update_SafeHTML_Status'];
 $_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME						= $_POST['AM_Settings_Update_Session_Time'];
