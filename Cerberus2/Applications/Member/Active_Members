@@ -132,6 +132,14 @@ if ($_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL == "3") 
 
 } // [ + ] IF: Registered Member Access Level Is: 3
 
+/*
+ ============================================================================================================
+ +
+ + Display :: Currently Active Member Accounts
+ +
+ ============================================================================================================
+*/
+
 if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
 
 echo ("
