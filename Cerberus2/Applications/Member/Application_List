@@ -98,6 +98,17 @@ $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION
 
 /*
  ============================================================================================================
+ + Application List :: Language Module :: English
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE				= "./System/Language/English/Language.cerberus";
+$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_CONTENTS			= file_get_contents("$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE");
+$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_SIZE				= filesize("$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE");
+$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_HASH_SHA256			= hash_file('sha256', "$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE");
+
+/*
+ ============================================================================================================
  + File Permissions Key
  ============================================================================================================
 */
@@ -279,6 +290,15 @@ echo ("
 		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_CONTENTS</TEXTAREA>
+		</FORM><BR><BR>
+");
+
+echo ("
+		<B>Language Module :: English :: File Name: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE</B><HR>
+		* System Configuration File HASH, SHA-256: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_HASH_SHA256<BR>
+		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_SIZE<BR>
+		<FORM>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_CONTENTS</TEXTAREA>
 		</FORM><BR><BR>
 ");
 
