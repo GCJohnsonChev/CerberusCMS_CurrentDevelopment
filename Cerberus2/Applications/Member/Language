@@ -62,7 +62,7 @@
  ============================================================================================================
 */
 
-$_Application_Module_Language_SPECIFY_LANGUAGE_DIRECTORY			= "System/Language/";
+$_Application_Module_Language_SPECIFY_LANGUAGE_DIRECTORY			= "./System/Language/";
 $_Application_Module_Language_OPEN_LANGUAGE_DIRECTORY				= opendir($_Application_Module_Language_SPECIFY_LANGUAGE_DIRECTORY);
 
 /*
