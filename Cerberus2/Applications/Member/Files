@@ -39,29 +39,29 @@
 */
 
 /*
- ================================================================
+ ============================================================================================================
  +
  +
  + [ ^ ] Application Module :: Member :: Files and File Categories
  +
  +
- ================================================================
+ ============================================================================================================
 */
 
 /*
- ================================================================
+ ============================================================================================================
  + Application Module Header
- ================================================================
+ ============================================================================================================
 */
 
 											echo ($_Application_Module_Member_Message_Files_Header);
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + DB->Retrieve Category Entries
+ + Retrieve All File Category Entries From Database Server
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Files_DB_Query_SELECT_CATEGORIES 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories ORDER BY file_category_title ASC");
@@ -80,11 +80,11 @@ $_Application_Module_Member_Files_LIST_FILE_CATEGORY_TIME 				= $_Application_Mo
 $_Application_Module_Member_Files_LIST_FILE_CATEGORY_TITLE 				= $_Application_Module_Member_Files_DB_Query_SELECT_CATEGORIES_Fetch_Array['file_category_title'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + List All Categories
+ + List All File Categories Entries
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["CategoryID"] == "All") {
@@ -107,11 +107,11 @@ echo ("
 } // [ + ] IF: Internal Application: File Category By ID Is Activated
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + List Files Within Selected Category ID
+ + List Files Within Selected File Category ID
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["CategoryID"] == "$_Application_Module_Member_Files_LIST_FILE_CATEGORY_ID") {
@@ -121,9 +121,9 @@ $_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY 			= $DB->q
 											echo ("<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;CategoryID&#61;All\" TITLE=\":: All File Category Entries ::\">File Categories</A> => $_Application_Module_Member_Files_LIST_FILE_CATEGORY_TITLE<BR><BR>");
 
 /*
- ================================================================
- + IF: No Rows Exist, Display Message
- ================================================================
+ ============================================================================================================
+ + IF: No Database Table Rows Exist, Display Message
+ ============================================================================================================
 */
 
 if ($DB->num_rows($_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY) <= 0) {
@@ -133,9 +133,9 @@ if ($DB->num_rows($_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CA
 } // [ + ] IF: File Category Entry Number of Rows IS Less Than OR Equal To Zero
 
 /*
- ================================================================
+ ============================================================================================================
  + List File Entries
- ================================================================
+ ============================================================================================================
 */
 
 while ($_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY)) {
@@ -146,9 +146,9 @@ $_Application_Module_Member_Files_LIST_FILE_FOR_CATEGORY_TIME 				= $_Applicatio
 $_Application_Module_Member_Files_LIST_FILE_FOR_CATEGORY_NUMBER_OF_DOWNLOADS 		= $_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY_Fetch_Array['file_number_of_downloads'];
 
 /*
- ================================================================
- + If Number of Downloads Null
- ================================================================
+ ============================================================================================================
+ + IF: Number of Downloads Is Empty, Specify As Zero
+ ============================================================================================================
 */
 
 if ($_Application_Module_Member_Files_LIST_FILE_FOR_CATEGORY_NUMBER_OF_DOWNLOADS == "") {
@@ -158,9 +158,9 @@ if ($_Application_Module_Member_Files_LIST_FILE_FOR_CATEGORY_NUMBER_OF_DOWNLOADS
 } // [ + ] IF: File Category Entry Number Of Downloads Is Empty
 
 /*
- ================================================================
- + List All Files In Category
- ================================================================
+ ============================================================================================================
+ + List All Files Entries In Specified File Category
+ ============================================================================================================
 */
 
 echo ("
@@ -177,9 +177,9 @@ echo ("
 } // [ + ] WHILE: Retrieving File Category Entries From Database Server
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select All Files From File Category
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY);
@@ -189,19 +189,19 @@ $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_FILES_FOR_CATEGORY);
 } // [ + ] WHILE: Retrieving File Category Entries From Database Server
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select All File Category Entries
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_CATEGORIES);
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + List File Entries
+ + Retrieve All File Entries From Database Server
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Files_DB_Query_SELECT_FILES							= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files");
@@ -228,11 +228,11 @@ while ($_Application_Module_Member_Files_DB_Query_SELECT_CATEGORIES_BY_ID_Fetch_
 $_Application_Module_Member_Files_LIST_FILE_CATEGORY_FOR_FILE 				= $_Application_Module_Member_Files_DB_Query_SELECT_CATEGORIES_BY_ID_Fetch_Array['file_category_title'];
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + List Selected File ID
+ + List Selected File Entry By ID
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["FileID"] == "$_Application_Module_Member_Files_LIST_FILE_ID") {
@@ -272,11 +272,11 @@ echo ("
 ");
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + Download Selected File ID
+ + Download Selected File Entry By ID
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["Download"] == "Yes") {
@@ -286,9 +286,9 @@ $_Application_Module_Member_Files_UPDATE_FILE_NUMBER_OF_DOWNLOADS 			= $_Applica
 $_Application_Module_Member_Files_DB_Query_UPDATE_FILES 				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files SET file_number_of_downloads='$_Application_Module_Member_Files_UPDATE_FILE_NUMBER_OF_DOWNLOADS' WHERE id='$_Application_Module_Member_Files_LIST_FILE_ID'");
 
 /*
- ================================================================
- + Update File Entry
- ================================================================
+ ============================================================================================================
+ + Update File Entry Data In Database Server
+ ============================================================================================================
 */
 
 if ($_Application_Module_Member_Files_DB_Query_UPDATE_FILES) {
@@ -311,9 +311,9 @@ if (!file_exists("$_Application_Module_Member_Files_LIST_FILE_LOCATION")) {
 } // [ + ] IF: Update File Entry Variable Has Executed
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Update File Entry
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_UPDATE_FILES);
@@ -321,11 +321,11 @@ $DB->free($_Application_Module_Member_Files_DB_Query_UPDATE_FILES);
 } // [ + ] IF: Download Selected File Entry
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + List File Comments
+ + List File Entry Comments
  +
- ================================================================
+ ============================================================================================================
 */
 
 $_Application_Module_Member_Files_DB_Query_SELECT_COMMENTS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments WHERE comment_application_id='$_Application_Module_Member_Files_LIST_FILE_ID' AND comment_application_name='FILES'");
@@ -333,9 +333,9 @@ $_Application_Module_Member_Files_DB_Query_SELECT_COMMENTS 				= $DB->query("SEL
 											echo ("<CENTER>&nbsp;</CENTER><CENTER>&nbsp;</CENTER><CENTER><B>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Member_Files_LIST_FILE_ID&amp;Display&#61;Comment_Field\" TITLE=\":: Comment On The File Entry :: $_Application_Module_Member_Files_LIST_FILE_TITLE\">Comments</A> ]</B></CENTER><HR><CENTER>&nbsp;</CENTER>");
 
 /*
- ================================================================
- + If There Are No Comments
- ================================================================
+ ============================================================================================================
+ + IF: There Are No Comments Avaiable For Specified File Entry
+ ============================================================================================================
 */
 
 if ($DB->num_rows($_Application_Module_Member_Files_DB_Query_SELECT_COMMENTS) <= 0) {
@@ -363,9 +363,9 @@ $_Application_Module_Member_Files_LIST_COMMENT_AUTHOR_JOIN_DATE				= $_Applicati
 $_Application_Module_Member_Files_LIST_COMMENT_AUTHOR_SIGNATURE				= $_Application_Module_Member_Files_DB_Query_SELECT_MEMBERS_FOR_COMMENT_Fetch_Array['member_profile_signature'];
 
 /*
- ================================================================
- + List Comments
- ================================================================
+ ============================================================================================================
+ + List Comments By File Entry ID Number
+ ============================================================================================================
 */
 
 echo ("
@@ -380,9 +380,9 @@ echo ("
 } // [ + ] WHILE: Retrieving File Entry Comments From Database Server
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select Member Entry For Comment
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_MEMBERS_FOR_COMMENT);
@@ -390,19 +390,19 @@ $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_MEMBERS_FOR_COMMENT)
 } // [ + ] WHILE: Retrieving Comment And Member Account Information For File Entry
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select All File Comments
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_COMMENTS);
 
 /*
- ================================================================
+ ============================================================================================================
  +
- + Comment Form
+ + Display :: Comment Form
  +
- ================================================================
+ ============================================================================================================
 */
 
 if ($_GET["Display"] == "Comment_Field") {
@@ -428,17 +428,17 @@ echo ("
 } // [ + ] WHILE: Retrieving File Category Entries From Database Server
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select File Category By ID
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_CATEGORIES_BY_ID);
 
 /*
- ================================================================
+ ============================================================================================================
  + Kill SQL Database Server Query: Select Files
- ================================================================
+ ============================================================================================================
 */
 
 $DB->free($_Application_Module_Member_Files_DB_Query_SELECT_FILES);
