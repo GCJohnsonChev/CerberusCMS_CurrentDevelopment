@@ -602,16 +602,16 @@ if (mysqli_select_db($_GLOBAL_SQL_DATABASE_SERVER_CONNECTION, $_ACCESS_DATABASE_
 if ($_GET["InternalApplication"] == "Backup_Login") {
 
 echo ("
-		<FORM ACTION=\"../../Cerberus.php?InternalApplication&#61;Login\" METHOD=\"POST\">
+		<FORM ACTION=\"../../Cerberus.php?Application_Internal&#61;Login\" METHOD=\"POST\">
 			<HR>Backup Login Form<HR>
 			Are You Locked-Out Of Cerberus Content Management System ?<BR>
-			Try Using The Account UserName: <I>'Cerberus'</I> With Original Password<BR><BR>
+			Try Using The Member Account UserName: <I>'Cerberus'</I> With Original Administration Password<BR><BR>
 			<I>Member' Electronic Mail Address</I>:<BR>
-				<INPUT TYPE=\"TEXT\" NAME=\"post_login_electronic_mail_address\"><BR>
+				<INPUT TYPE=\"TEXT\" NAME=\"AM_Login_Electronic_Mail_Address\"><BR>
 			<I>Member' Username</I>:<BR>
-				<INPUT TYPE=\"TEXT\" NAME=\"post_login_username\"><BR>
+				<INPUT TYPE=\"TEXT\" NAME=\"AM_Login_UserName\"><BR>
 			<I>Member' Password</I>:<BR>
-				<INPUT TYPE=\"PASSWORD\" NAME=\"post_login_password\"><BR>
+				<INPUT TYPE=\"PASSWORD\" NAME=\"AM_Login_Password\"><BR>
 			<INPUT TYPE=\"SUBMIT\" VALUE=\"Login\">
 		</FORM>
 ");
