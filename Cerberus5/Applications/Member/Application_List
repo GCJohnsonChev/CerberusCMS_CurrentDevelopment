@@ -78,6 +78,16 @@ $_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256					= hash_
 
 /*
  ============================================================================================================
+ + Application List :: Maintenance :: Diagnostics File :: Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Application_List_MAINTENANCE_DIAGNOSTICS_FILE_CONTENTS			= file_get_contents("./Maintenance/Diagnostics/$_INTERNAL_FILE_MAINTENANCE_DIAGNOSTICS");
+$_Application_Module_Member_Application_List_MAINTENANCE_DIAGNOSTICS_FILE_SIZE				= filesize("./Maintenance/Diagnostics/$_INTERNAL_FILE_MAINTENANCE_DIAGNOSTICS");
+$_Application_Module_Member_Application_List_MAINTENANCE_DIAGNOSTICS_FILE_HASH_SHA256			= hash_file('sha256', "./Maintenance/Diagnostics/$_INTERNAL_FILE_MAINTENANCE_DIAGNOSTICS");
+
+/*
+ ============================================================================================================
  + Application List :: Configuration File :: Variables
  ============================================================================================================
 */
@@ -158,7 +168,9 @@ if ($_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATIO
 
 echo ("
 														<B>Application: $_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY</B><BR>
-														* Application File HASH, SHA-256: $_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_HASH_SHA256<BR>
+														* Application File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+														* Application File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+														* Application File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_HASH_SHA256<BR>
 														* Application File Size: Bytes :: $_Application_Module_Member_Application_List_APPLICATIONS_ADMINISTRATION_FILE_SIZE<BR>
 														<A HREF=\"./Applications/Administration/$_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY\" TITLE=\":: Open & Display The Source Code :: For The Administration-Level Application Module :: $_Application_Module_Member_Application_List_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY ::\">Source Code</A><BR><BR>
 ");
@@ -230,7 +242,9 @@ echo ("
 														<B>Application Module File Details</B><BR>
 														* Application File ID: $_Application_Module_Member_Application_List_LIST_APPLICATION_ID<BR>
 														* Application File Name: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open & Display The Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME ::\">$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME</A><BR>
-														* Application File HASH, Secure-Hash-Algorithm-256: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256<BR>
+														* Application File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+														* Application File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+														* Application File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_HASH_SHA256<BR>
 														* Application File Size: Bytes :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_SIZE<BR>
 														<A HREF=\"./Applications/Member/$_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME\" TITLE=\":: Open & Display The Source Code :: For The Application Module :: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_NAME ::\">Source Code</A><BR><BR><HR>
 ");
@@ -261,7 +275,9 @@ echo ("
 														* Application File ID: $_Application_Module_Member_Application_List_LIST_PANEL_ID<BR>
 														* Application Panel File Permission: $_Application_Module_Member_Application_List_LIST_APPLICATION_FILE_PERMISSION<BR>
 														* Application Panel File Status: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_STATUS<BR>
-														* Application Panel File HASH, SHA-256: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_HASH_SHA256<BR>
+														* Application Panel HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+														* Application Panel HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+														* Application Panel File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_HASH_SHA256<BR>
 														* Application Panel File Size: Bytes :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_SIZE<BR>
 														<A HREF=\"./Applications/Panel/$_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME.panel\" TITLE=\":: Open & Display The Source Code :: For The Application Panel :: $_Application_Module_Member_Application_List_LIST_PANEL_FILE_NAME ::\">Source Code</A><BR><BR>
 ");
@@ -270,7 +286,9 @@ echo ("
 
 echo ("
 		<B>Kernel File Name: $_INTERNAL_FILE_KERNEL</B><HR>
-		* Kernel File HASH, SHA-256: $_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256<BR>
+		* Kernel File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+		* Kernel File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+		* Kernel File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_KERNEL_FILE_HASH_SHA256<BR>
 		* Kernel File Size: Bytes :: $_Application_Module_Member_Application_List_KERNEL_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_KERNEL_FILE_CONTENTS</TEXTAREA>
@@ -278,8 +296,21 @@ echo ("
 ");
 
 echo ("
+		<B>System Maintenance Diagnostics File Name: $_INTERNAL_FILE_MAINTENANCE_DIAGNOSTICS</B><HR>
+		* System Maintenance Diagnostics File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+		* System Maintenance Diagnostics File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+		* System Maintenance Diagnostics File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_MAINTENANCE_DIAGNOSTICS_FILE_HASH_SHA256<BR>
+		* System Maintenance Diagnostics File Size: Bytes :: $_Application_Module_Member_Application_List_MAINTENANCE_DIAGNOSTICS_FILE_SIZE<BR>
+		<FORM>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_MAINTENANCE_DIAGNOSTICS_FILE_CONTENTS</TEXTAREA>
+		</FORM><BR><BR>
+");
+
+echo ("
 		<B>System Configuration File Name: $_Application_Module_Member_Application_List_CONFIGURATION_FILE</B><HR>
-		* System Configuration File HASH, SHA-256: $_Application_Module_Member_Application_List_CONFIGURATION_FILE_HASH_SHA256<BR>
+		* System Configuration File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+		* System Configuration File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+		* System Configuration File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_CONFIGURATION_FILE_HASH_SHA256<BR>
 		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_CONFIGURATION_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_CONFIGURATION_FILE_CONTENTS</TEXTAREA>
@@ -288,8 +319,10 @@ echo ("
 
 echo ("
 		<B>Security Module :: Master Sanitization File Name: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE</B><HR>
-		* System Configuration File HASH, SHA-256: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_HASH_SHA256<BR>
-		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_SIZE<BR>
+		* Master Sanitization File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+		* Master Sanitization File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+		* Master Sanitization File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_HASH_SHA256<BR>
+		* Master Sanitization File Size: Bytes :: $_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_SECURITY_MODULE_MASTER_SANITIZATION_FILE_CONTENTS</TEXTAREA>
 		</FORM><BR><BR>
@@ -297,8 +330,10 @@ echo ("
 
 echo ("
 		<B>Language Module :: English :: File Name: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE</B><HR>
-		* System Configuration File HASH, SHA-256: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_HASH_SHA256<BR>
-		* System Configuration File Size: Bytes :: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_SIZE<BR>
+		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_HASH_SHA256<BR>
+		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
+		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+		* Language Module File Size: Bytes :: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_CONTENTS</TEXTAREA>
 		</FORM><BR><BR>
