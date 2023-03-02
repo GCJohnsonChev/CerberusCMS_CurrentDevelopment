@@ -74,7 +74,6 @@ error_reporting("E_WARNING ^ E_NOTICE");
  ============================================================================================================
 */
 
-
 /*
  ============================================================================================================
  +
@@ -177,8 +176,14 @@ $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT							= $_SERVER['HTTP_USER_AGENT'];
 /*
  ============================================================================================================
  +
- + System Configuration Files Inclusion
+ + File Inclusion :: System :: Configuration
  +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + File Inclusion :: System :: Configuration :: Global Configuration File
  ============================================================================================================
 */
 
@@ -481,7 +486,7 @@ echo ("
 		=>&nbsp;<A HREF=\"./Architect/MySQL/MySQL_Generator.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Internal Application :: Structured-Query-Language Database Table Structure Generator ::\">Structured-Query-Language Table Structure Generator</A><BR>
 		=>&nbsp;<A HREF=\"./Architect/ToolKit/Installation_ToolKit.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Post-Installation ToolKit ::\">Post-Installation Toolkit</A><BR>
 		=>&nbsp;<A HREF=\"?InternalApplication&#61;File_Permissions\" TITLE=\":: Open & Display The Internal Application :: Change-Mode ( CHMOD ) File Permissions Loop ::\">File Permissions Loop</A><BR>
-		=>&nbsp;<A HREF=\"./Maintenance/Diagnostics/Diagnostics.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display The System Diagnostics Application ::\">System Diagnostics Application</A><BR><BR>
+		=>&nbsp;<A HREF=\"./Maintenance/Diagnostics/$_INTERNAL_FILE_MAINTENANCE_DIAGNOSTICS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The System Diagnostics Application ::\">System Diagnostics Application</A><BR><BR>
 
 		<B>Post-Installation Tools</B><HR>
 		=>&nbsp;<A HREF=\"?InternalApplication&#61;Install_Defaults\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Administration Account Installer & Default Database Server Data Installer ::\">Database Data Installer</A><BR><BR>
