@@ -22,7 +22,7 @@
  +
  +
  + ---
- + - File Location: Master Root Directory->Root Directory->Applications->Architect->ToolKit->Installation_ToolKit.php
+ + - File Location: Master Root Directory->Root Directory->Architect->ToolKit->Installation_ToolKit.php
  + - File Version : 0.7 - Pure Pre-Hyper-Text-Post-Processor
  + - Release Date : Saturday, April 8th of 2023
  + ---

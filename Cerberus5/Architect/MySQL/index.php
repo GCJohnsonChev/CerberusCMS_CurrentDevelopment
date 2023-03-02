@@ -22,7 +22,7 @@
  +
  +
  + ---
- + - File Location: Master Root Directory->Root Directory->Applications->Architect->MySQL->index.php
+ + - File Location: Master Root Directory->Root Directory->Architect->MySQL->index.php
  + - File Version : 0.7 - Pure Pre-Hyper-Text-Post-Processor
  + - Release Date : Saturday, April 8th of 2023
  + ---
