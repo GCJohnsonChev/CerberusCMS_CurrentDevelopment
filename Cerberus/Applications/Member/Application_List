@@ -330,9 +330,9 @@ echo ("
 
 echo ("
 		<B>Language Module :: English :: File Name: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE</B><HR>
-		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_HASH_SHA256<BR>
 		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Master Database Server:<BR>
 		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Local Database Server:<BR>
+		* Language Module File HASH, Secure-Hash-Algorithm-256 :: Local File: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_HASH_SHA256<BR>
 		* Language Module File Size: Bytes :: $_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_SIZE<BR>
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Application_List_LANGUAGE_MODULE_ENGLISH_FILE_CONTENTS</TEXTAREA>
