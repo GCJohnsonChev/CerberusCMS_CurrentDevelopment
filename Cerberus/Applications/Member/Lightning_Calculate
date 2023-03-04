@@ -222,13 +222,13 @@ if ($_GET['Excercise'] == "Multiplication") {
 
 if ($_GET['Type'] == "2D_2D") {
 
-header("Refresh:15; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_2D");
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_2D");
 
 echo ("
 
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;2D_2D\" METHOD=\"post\">
 													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2 ?<BR>
-													You have 15 Seconds...<BR>
+													You have up to 60 Seconds...<BR>
 														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2D_2D_Input\" MAXLENGTH=\"5\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_2D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1\">
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_2D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2\">
@@ -265,13 +265,13 @@ echo ("Incorrect!");
 
 if ($_GET['Type'] == "2D_3D") {
 
-header("Refresh:15; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_3D");
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_3D");
 
 echo ("
 
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;2D_3D\" METHOD=\"post\">
 													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2 ?<BR>
-													You have 15 Seconds...<BR>
+													You have up to 60 Seconds...<BR>
 														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2D_3D_Input\" MAXLENGTH=\"5\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_3D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1\">
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_3D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2\">
@@ -312,13 +312,13 @@ if ($_GET['Excercise'] == "Exponents") {
 
 if ($_GET['Type'] == "2Places_2Exponent") {
 
-header("Refresh:15; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Exponents&Type=2Places_2Exponent");
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Exponents&Type=2Places_2Exponent");
 
 echo ("
 
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_2Exponent\" METHOD=\"post\">
 													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_EXPONENTS_2PLACES_2EXPONENT ^ 2 ?<BR>
-													You have 15 Seconds...<BR>
+													You have up to 60 Seconds...<BR>
 														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2Places_2Exponent_Input\" MAXLENGTH=\"5\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2Places_2Exponent_Input\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_EXPONENTS_2PLACES_2EXPONENT\">
 													<INPUT TYPE=\"submit\" VALUE=\"Check\">
