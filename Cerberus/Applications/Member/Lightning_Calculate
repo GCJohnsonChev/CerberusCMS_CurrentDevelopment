@@ -99,13 +99,13 @@ Lightning Mental Exponents<HR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_9Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 9 ::  From 2 :: Perfect Enneract</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_10Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 10 :: From 2 :: Perfect Dekeract</A><BR><BR>
 
-<BR>Exponents :: 2 Places :: ^ n :: Imerfect</B><BR>
+<BR>Exponents :: 2 Places :: ^ n :: Imperfect</B><BR>
 
-<BR>Exponents :: 3 Places :: ^ n</B><BR>
+<BR>Exponents :: 3 Places :: ^ n :: Perfect</B><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_2Exponent\">Mental Exponents :: Excercise :: 3 Places :: ^ 2 ::  From 3 :: Perfect Squares</A><BR>
 
 <BR>Exponent :: Roots</B><HR>
-Exponents :: 2 Places :: √Root n</B><BR>
+Exponents :: 2 Places :: √Root n :: Perfect</B><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_2Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √Root 2 :: Perfect Squares</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_3Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √Root 3 :: Perfect Cubes</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_4Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √Root 4 :: Perfect Tesseracts</A><BR>
@@ -116,8 +116,16 @@ Exponents :: 2 Places :: √Root n</B><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_9Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √Root 9 :: Perfect Enneract</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_10Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √Root 10 :: Perfect Dekeract</A><BR><BR>
 
-Exponents :: 3 Places :: √Root n</B><BR>
-* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;3Places_2Root\">Mental Exponents :: Roots :: Excercise :: 3 Places :: √Root 2 ::</A><BR>
+Exponents :: 2 Places :: √Root n :: Imperfect</B><BR><BR>
+
+Exponents :: 3 Places :: √Root n :: Perfect</B><BR>
+* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;3Places_2Root\">Mental Exponents :: Roots :: Excercise :: 3 Places :: √Root 2 ::</A><BR><BR>
+
+Lightning Mental Calendar Calculating<HR>
+* Day of The Week<BR>
+* Moon Phases<BR>
+* Solar Phases<BR>
+* Event Prediction<BR>
 ");
 
 } // [ + ] IF: Internal Application :: Display: Options Is: Activated
