@@ -87,7 +87,8 @@ Lightning Mental Modulus<HR><BR><BR>
 
 Lightning Mental Fractions<HR><BR><BR>
 
-Lightning Mental Exponents and Exponent Roots<HR><BR>
+Lightning Mental Exponents and Exponent Roots<HR>
+<BR>Exponents :: 2 Places ^ n</B><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_2Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 2 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_3Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 3 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_4Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 4 ::</A><BR>
@@ -98,6 +99,9 @@ Lightning Mental Exponents and Exponent Roots<HR><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_9Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 9 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_10Exponent\">Mental Exponents :: Excercise :: 2 Places :: ^ 10 ::</A><BR><BR>
 
+<BR>Exponents :: 3 Places ^ n</B><BR>
+
+<BR>Exponent :: Roots</B><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_2Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √ 2 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_3Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √ 3 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_4Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √ 4 ::</A><BR>
@@ -107,11 +111,10 @@ Lightning Mental Exponents and Exponent Roots<HR><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_8Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √ 8 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_9Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √ 9 ::</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_10Root\">Mental Exponents :: Roots :: Excercise :: 2 Places :: √ 10 ::</A><BR><BR>
-
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;3Places_2Root\">Mental Exponents :: Roots :: Excercise :: 3 Places :: √ 2 ::</A><BR>
 ");
 
-}
+} // [ + ] IF: Internal Application :: Display: Options Is: Activated
 
 /*
  ============================================================================================================
@@ -127,49 +130,14 @@ Lightning Mental Exponents and Exponent Roots<HR><BR>
  ============================================================================================================
 */
 
-$_Application_Module_Member_Lightning_Calculate_POST_ANSWER_ADDITION_1						= $_POST[''];
-$_Application_Module_Member_Lightning_Calculate_POST_ANSWER_ADDITION_2						= $_POST[''];
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_1			= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_2			= rand(10, 99);
 
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2_PLACES_1				= rand(10, 99);
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2_PLACES_2				= rand(10, 99);
-
-/*
- ============================================================================================================
- +
- + Lightning Calculate :: Exercises :: Multiplication
- +
- ============================================================================================================
-*/
-
-/*
- ============================================================================================================
- + Multiplication :: 2 Digit * 2 Digit
- ============================================================================================================
-*/
-
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1		= rand(10, 99);
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2		= rand(10, 99);
-
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_INPUT			= $_POST['AM_Lightning_Calculate_2D_2D_Input'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_VALUE_1			= $_POST['AM_Lightning_Calculate_2D_2D_Value_1'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_VALUE_2			= $_POST['AM_Lightning_Calculate_2D_2D_Value_2'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_ANSWER			= $_POST['AM_Lightning_Calculate_2D_2D_Answer'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_COMPUTE			= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2;
-	
-/*
- ============================================================================================================
- + Multiplication :: 3 Digit * 2 Digit
- ============================================================================================================
-*/
-
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1		= rand(10, 999);
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2		= rand(10, 999);
-
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_INPUT			= $_POST['AM_Lightning_Calculate_2D_3D_Input'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_VALUE_1			= $_POST['AM_Lightning_Calculate_2D_3D_Value_1'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_VALUE_2			= $_POST['AM_Lightning_Calculate_2D_3D_Value_2'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_ANSWER			= $_POST['AM_Lightning_Calculate_2D_3D_Answer'];
-$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_COMPUTE			= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2;
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_INPUT			= $_POST['AM_Lightning_Calculate_Addition_2Places_2Places_Input'];
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_VALUE_1		= $_POST['AM_Lightning_Calculate_Addition_2Places_2Places_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_VALUE_2		= $_POST['AM_Lightning_Calculate_Addition_2Places_2Places_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_ANSWER		= $_POST['AM_Lightning_Calculate_Addition_2Places_2Places_Answer'];
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_COMPUTATION		= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_VALUE_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_ADDITION_2PLACES_2PLACES_VALUE_2;
 
 /*
  ============================================================================================================
@@ -178,7 +146,6 @@ $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLA
  +
  ============================================================================================================
 */
-
 
 /*
  ============================================================================================================
@@ -189,7 +156,7 @@ $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLA
 /*
  ============================================================================================================
  +
- + Lightning Calculate :: Exercises :: Division and Long Division
+ + Lightning Calculate :: Exercises :: Division
  +
  ============================================================================================================
 */
@@ -203,36 +170,257 @@ $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLA
 /*
  ============================================================================================================
  +
- + Lightning Calculate :: Exercises :: Exponents and Exponent Roots
+ + Lightning Calculate :: Exercises :: Long Division
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Exponents :: 1 - 2 Places
+ + Long Division
  ============================================================================================================
 */
 
-$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_EXPONENTS_2PLACES_2EXPONENT			= rand(10, 99);
-$_Application_Module_Member_Lightning_Calculate_POST_EXPONENTS_2PLACES_2EXPONENT_INPUT				= $_POST['AM_Lightning_Calculate_2Places_2Exponent_Input'];
-$_Application_Module_Member_Lightning_Calculate_POST_EXPONENTS_2PLACES_2EXPONENT_ANSWER				= $_POST['AM_Lightning_Calculate_2Places_2Exponent_Answer'];
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Exercises :: Multiplication
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Multiplication :: 2 Places * 2 Places
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1		= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2		= rand(10, 99);
+
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_INPUT			= $_POST['AM_Lightning_Calculate_Multiplication_2Places_2Places_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_VALUE_1			= $_POST['AM_Lightning_Calculate_Multiplication_2Places_2Places_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_VALUE_2			= $_POST['AM_Lightning_Calculate_Multiplication_2Places_2Places_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_ANSWER			= $_POST['AM_Lightning_Calculate_Multiplication_2Places_2Places_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_COMPUTATION			= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2;
+	
+/*
+ ============================================================================================================
+ + Multiplication :: 2 Places * 3 Places
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1		= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2		= rand(100, 999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_INPUT			= $_POST['AM_Lightning_Calculate_2D_3D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_VALUE_1			= $_POST['AM_Lightning_Calculate_2D_3D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_VALUE_2			= $_POST['AM_Lightning_Calculate_2D_3D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_ANSWER			= $_POST['AM_Lightning_Calculate_2D_3D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_COMPUTATION			= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2;
+
+/*
+ ============================================================================================================
+ + Multiplication :: 2 Places * 4 Places
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_1		    = rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_2		    = rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_INPUT			    = $_POST['AM_Lightning_Calculate_2D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_VALUE_1		       	    = $_POST['AM_Lightning_Calculate_2D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_VALUE_2		            = $_POST['AM_Lightning_Calculate_2D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_ANSWER		            = $_POST['AM_Lightning_Calculate_2D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_COMPUTATION			    = $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_2;
+
+/*
+ ============================================================================================================
+ + Multiplication :: 3 Places * 3 Places
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_1		    = rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_2		    = rand(100, 999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_INPUT			    = $_POST['AM_Lightning_Calculate_3D_3D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_VALUE_1		       	    = $_POST['AM_Lightning_Calculate_3D_3D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_VALUE_2		            = $_POST['AM_Lightning_Calculate_3D_3D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_ANSWER		            = $_POST['AM_Lightning_Calculate_3D_3D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_COMPUTATION			    = $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_2;
+
+/*
+ ============================================================================================================
+ + Multiplication :: 3 Places * 4 Places
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_1		    = rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_2		    = rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_INPUT			    = $_POST['AM_Lightning_Calculate_3D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_VALUE_1		       	    = $_POST['AM_Lightning_Calculate_3D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_VALUE_2		            = $_POST['AM_Lightning_Calculate_3D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_ANSWER		            = $_POST['AM_Lightning_Calculate_3D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_COMPUTATION			    = $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_2;
+
+/*
+ ============================================================================================================
+ + Multiplication :: 4 Places * 4 Places
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_1		    = rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_2		    = rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_INPUT			    = $_POST['AM_Lightning_Calculate_4D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_VALUE_1		       	    = $_POST['AM_Lightning_Calculate_4D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_VALUE_2		            = $_POST['AM_Lightning_Calculate_4D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_ANSWER		            = $_POST['AM_Lightning_Calculate_4D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_COMPUTATION			    = $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Exercises :: Exponents :: 2 Places ^ n
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Exponents :: 2 Places - 2 ^ Exponent
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATOR				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_INPUT				= $_POST['AM_Lightning_Calculate_Exponents_2Places_2Exponent_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_ANSWER				= $_POST['AM_Lightning_Calculate_Exponents_2Places_2Exponent_Answer'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATED				= $_POST['AM_Lightning_Calculate_Exponents_2Places_2Exponent_Generated'];
+
+/*
+ ============================================================================================================
+ + Exponents :: 2 Places - 3 ^ Exponent
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_GENERATOR				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_INPUT				= $_POST['AM_Lightning_Calculate_Exponents_2Places_3Exponent_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_ANSWER				= $_POST['AM_Lightning_Calculate_Exponents_2Places_3Exponent_Answer'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3EXPONENT_GENERATED				= $_POST['AM_Lightning_Calculate_Exponents_2Places_3Exponent_Generated'];
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Exercises :: Exponents :: 3 Places ^ n
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Exponents :: 3 Places - 2 ^ Exponent
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_GENERATOR				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_INPUT				= $_POST['AM_Lightning_Calculate_Exponents_3Places_2Exponent_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_ANSWER				= $_POST['AM_Lightning_Calculate_Exponents_3Places_2Exponent_Answer'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2EXPONENT_GENERATED				= $_POST['AM_Lightning_Calculate_Exponents_3Places_2Exponent_Generated'];
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Exercises :: Exponent Roots :: 2 Places ^ n
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Exponent Roots :: 2 Places ^ 2 Root
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_GENERATOR				    = rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_COMPUTATION				    = $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_INPUT					    = $_POST['AM_Lightning_Calculate_Exponents_2Places_2Root_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_ANSWER					    = $_POST['AM_Lightning_Calculate_Exponents_2Places_2Root_Answer'];
+
+/*
+ ============================================================================================================
+ + Exponent Roots :: 2 Places ^ 3 Root
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_GENERATOR				    = rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_COMPUTATION				    = $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_INPUT					    = $_POST['AM_Lightning_Calculate_Exponents_2Places_3Root_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_ANSWER					    = $_POST['AM_Lightning_Calculate_Exponents_2Places_3Root_Answer'];
+
+/*
+ ============================================================================================================
+ + Exponent Roots :: 2 Places ^ 4 Root
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_GENERATOR				    = rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_COMPUTATION				    = $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_INPUT					    = $_POST['AM_Lightning_Calculate_Exponents_2Places_4Root_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_ANSWER					    = $_POST['AM_Lightning_Calculate_Exponents_2Places_4Root_Answer'];
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Exercises :: Exponent Roots :: 3 Places ^ n
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Exponent Roots :: 3 Places ^ 2 Root
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_GENERATOR				    = rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_COMPUTATION				    = $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_GENERATOR * $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_GENERATOR;
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_INPUT					    = $_POST['AM_Lightning_Calculate_Exponents_3Places_2Root_Input'];
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_ANSWER					    = $_POST['AM_Lightning_Calculate_Exponents_3Places_2Root_Answer'];
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercise :: Multiplication
+ +
+ ============================================================================================================
+*/
 
 if ($_GET['Excercise'] == "Multiplication") {
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercise :: Multiplication :: 2 Places * 2 Places :: Form
+ +
+ ============================================================================================================
+*/
 
 if ($_GET['Type'] == "2D_2D") {
 
 header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_2D");
 
 echo ("
-
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;2D_2D\" METHOD=\"post\">
 													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2 ?<BR>
 													You have up to 60 Seconds...<BR>
-														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2D_2D_Input\" MAXLENGTH=\"5\"><BR>
-														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_2D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1\">
-														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_2D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2\">
-														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_2D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_COMPUTE\">
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_Multiplication_2Places_2Places_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Multiplication_2Places_2Places_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_1\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Multiplication_2Places_2Places_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_2PLACES_2\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Multiplication_2Places_2Places_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_2PLACES_COMPUTATION\">
 													<INPUT TYPE=\"submit\" VALUE=\"Check\">
 												<HR>
 											</FORM><BR>
@@ -257,25 +445,32 @@ This Answer Is Correct !
 
 echo ("Incorrect!");
 
-} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Digit * 2 Digit Input Is Correct Answer
+} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Places * 2 Places Input Is Correct Answer
 
-} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Digit * 2 Digit Form Variables Have Executed
+} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Places * 2 Places Form Variables Have Executed
 
-} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: 2 Digit * 2 Digit :: Is Activated
+} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: 2 Places * 2 Places :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Multiplication :: 2 Places * 3 Places :: Form
+ +
+ ============================================================================================================
+*/
 
 if ($_GET['Type'] == "2D_3D") {
 
 header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_3D");
 
 echo ("
-
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;2D_3D\" METHOD=\"post\">
 													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2 ?<BR>
 													You have up to 60 Seconds...<BR>
-														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2D_3D_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2D_3D_Input\" MAXLENGTH=\"15\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_3D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_1\">
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_3D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_3PLACES_2\">
-														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_3D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_COMPUTE\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_3D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_3PLACES_COMPUTATION\">
 													<INPUT TYPE=\"submit\" VALUE=\"Check\">
 												<HR>
 											</FORM><BR>
@@ -300,34 +495,476 @@ This Answer Is Correct !
 
 echo ("Incorrect!");
 
-} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Digit * 3 Digit Input Is Correct Answer
+} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Places * 3 Places Input Is Correct Answer
 
-} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Digit * 3 Digit Form Variables Have Executed
+} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Places * 3 Places Form Variables Have Executed
 
-} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: 2 Digit * 3 Digit :: Is Activated
+} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: Type :: 2 Places * 3 Places :: Is Activated
 
-}
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Multiplication :: 2 Places * 4 Places :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "2D_4D") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=2D_4D");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;2D_4D\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_2 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2D_4D_Input\" MAXLENGTH=\"15\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_4D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_1\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_4D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_2PLACES_4PLACES_2\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2D_4D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_COMPUTATION\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_INPUT == "$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_VALUE_1 * $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_VALUE_2<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_2PLACES_4PLACES_ANSWER<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Places * 4 Places Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 2 Places * 4 Places Form Variables Have Executed
+
+} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: Type :: 2 Places * 4 Places :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Multiplication :: 3 Places * 3 Places :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "3D_3D") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=3D_3D");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;3D_3D\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_2 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_3D_3D_Input\" MAXLENGTH=\"15\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_3D_3D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_1\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_3D_3D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_3PLACES_2\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_3D_3D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_COMPUTATION\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_INPUT == "$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_VALUE_1 * $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_VALUE_2<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_3PLACES_ANSWER<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 3 Places * 3 Places Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 3 Places * 3 Places Form Variables Have Executed
+
+} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: Type :: 3 Places * 3 Places :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Multiplication :: 3 Places * 4 Places :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "3D_4D") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=3D_4D");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;3D_3D\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_2 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_3D_4D_Input\" MAXLENGTH=\"15\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_3D_4D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_1\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_3D_4D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_3PLACES_4PLACES_2\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_3D_4D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_COMPUTATION\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_INPUT == "$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_VALUE_1 * $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_VALUE_2<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_3PLACES_4PLACES_ANSWER<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 3 Places * 4 Places Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 3 Places * 4 Places Form Variables Have Executed
+
+} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: Type :: 3 Places * 4 Places :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Multiplication :: 4 Places * 4 Places :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "4D_4D") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Multiplication&Type=4D_4D");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Multiplication&amp;Type&#61;4D_4D\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_1 * $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_2 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_4D_4D_Input\" MAXLENGTH=\"15\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_4D_4D_Value_1\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_1\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_4D_4D_Value_2\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_MULTIPLICATION_4PLACES_4PLACES_2\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_4D_4D_Answer\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_COMPUTATION\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_INPUT == "$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_VALUE_1 * $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_VALUE_2<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_POST_MULTIPLICATION_4PLACES_4PLACES_ANSWER<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 4 Places * 4 Places Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: 4 Places * 4 Places Form Variables Have Executed
+
+} // [ + ] IF: Internal Application :: Excercise :: Multiplication :: Type :: 4 Places * 4 Places :: Is Activated
+
+} // [ + ] IF: Internal Application :: Exercise :: Multiplication :: Is: Activated
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponents
+ +
+ ============================================================================================================
+*/
 
 if ($_GET['Excercise'] == "Exponents") {
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponents :: 2 Places ^ 2 Exponent :: Form
+ +
+ ============================================================================================================
+*/
 
 if ($_GET['Type'] == "2Places_2Exponent") {
 
 header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=Exponents&Type=2Places_2Exponent");
 
 echo ("
-
 											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;Exponents&amp;Type&#61;2Places_2Exponent\" METHOD=\"post\">
-													What is $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_EXPONENTS_2PLACES_2EXPONENT ^ 2 ?<BR>
+													What is $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATOR &#178; ( $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATOR ^ 2 ) ?<BR>
 													You have up to 60 Seconds...<BR>
-														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_2Places_2Exponent_Input\" MAXLENGTH=\"5\"><BR>
-														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_2Places_2Exponent_Input\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_EXPONENTS_2PLACES_2EXPONENT\">
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_2Exponent_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_2Exponent_Generated\" MAXLENGTH=\"5\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATOR\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_2Exponent_Answer\" MAXLENGTH=\"5\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_COMPUTATION\">
 													<INPUT TYPE=\"submit\" VALUE=\"Check\">
 												<HR>
 											</FORM><BR>
 ");
 
-}
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_INPUT) {
 
-}
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_INPUT == "$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_ANSWER") {
 
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_GENERATED ^ 2 Is: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_INPUT<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2EXPONENT_INPUT<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 2 Places ^ 2 Root Form Variable Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 2 Places ^ 2 Root Form Variables Have Executed
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 2 Places ^ 2 Exponent Form Variables Have Executed
+
+} // [ + ] IF: Internal Application :: Excercise :: Exponents :: 2 Places ^ 2 Exponent
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponent Roots
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Excercise'] == "ExponentRoots") {
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponent Roots :: 2 Places ^ 2 Exponent Root :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "2Places_2Root") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=ExponentRoots&Type=2Places_2Root");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_2Root\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_COMPUTATION √2 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_2Root_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_2Root_Answer\" MAXLENGTH=\"3\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_GENERATOR\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_INPUT == "$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_COMPUTATION √2 Is: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_INPUT<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_2ROOT_INPUT<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 2 Places Root 2 Form Variable Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 2 Places Root 2 Form Variables Have Executed
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 2 Places ^ 2 Exponent Root Form Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponent Roots :: 2 Places ^ 3 Exponent Root :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "2Places_3Root") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=ExponentRoots&Type=2Places_3Root");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_3Root\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_COMPUTATION √3 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_3Root_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_3Root_Answer\" MAXLENGTH=\"3\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_GENERATOR\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_INPUT == "$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_COMPUTATION √3 Is: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_INPUT<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_INPUT<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 2 Places Root 3 Form Variable Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 2 Places Root 3 Form Variables Have Executed
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 2 Places ^ 3 Exponent Form Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponent Roots :: 2 Places ^ 4 Exponent Root :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "2Places_4Root") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=ExponentRoots&Type=2Places_4Root");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;2Places_4Root\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_COMPUTATION √4 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_4Root_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Exponents_2Places_4Root_Answer\" MAXLENGTH=\"3\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_GENERATOR\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_INPUT == "$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_COMPUTATION √4 Is: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_INPUT<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_4ROOT_INPUT<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 2 Places Root 4 Form Variable Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 2 Places Root 4 Form Variables Have Executed
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 2 Places ^ 4 Exponent Form Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Lightning Calculate :: Exercises :: Exponent Roots :: 3 Places ^ 2 Exponent Root :: Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Type'] == "3Places_2Root") {
+
+header("Refresh:60; URL=?$_INTERNAL_APPLICATION_MODULE_MEMBER=Lightning_Calculate&Excercise=ExponentRoots&Type=3Places_2Root");
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Lightning_Calculate&amp;Excercise&#61;ExponentRoots&amp;Type&#61;3Places_2Root\" METHOD=\"post\">
+													What is $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_COMPUTATION √2 ?<BR>
+													You have up to 60 Seconds...<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Lightning_Calculate_Exponents_3Places_2Root_Input\" MAXLENGTH=\"5\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Lightning_Calculate_Exponents_3Places_2Root_Answer\" MAXLENGTH=\"3\" VALUE=\"$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_GENERATOR\">
+													<INPUT TYPE=\"submit\" VALUE=\"Check\">
+												<HR>
+											</FORM><BR>
+");
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_INPUT) {
+
+if ($_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_INPUT == "$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_ANSWER") {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+$_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_COMPUTATION √3 Is: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_2PLACES_3ROOT_INPUT<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_ANSWER<BR>
+------------------------------------------------------------------------<BR>
+Your Answer Was: $_Application_Module_Member_Lightning_Calculate_EXPONENTS_3PLACES_2ROOT_INPUT<BR>
+This Answer Is Correct !
+");
+
+} else {
+
+echo ("Incorrect!");
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 3 Places Root 2 Form Variable Input Is Correct Answer
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponent Roots :: 3 Places Root 2 Form Variables Have Executed
+
+} // [ + ] IF: Lightning Calculate :: Excercise :: Exponents :: 3 Places ^ 2 Root Form Variables Have Executed
+
+} // [ + ] IF: Internal Application :: Excercise :: Exponents :: Exponent Roots Is: Activated
 ?>
