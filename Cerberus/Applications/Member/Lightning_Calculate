@@ -126,6 +126,7 @@ Lightning Mental Calendar Calculating<HR>
 * Moon Phases<BR>
 * Solar Phases<BR>
 * Event Prediction<BR>
+* Leap Year Calculating<BR>
 ");
 
 } // [ + ] IF: Internal Application :: Display: Options Is: Activated
