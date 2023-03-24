@@ -264,6 +264,22 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE			= $
 
 /*
  ============================================================================================================
+ + Member Details :: Clothing and Acessories :: Physical Details
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS_FINGER			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_finger'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS_HANDS			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_hands'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS_HEIGHT			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_height'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS_LENGTH_ARMS		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_length_arms'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS_LENGTH_LEGS		= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_length_legs'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS_WAIST			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_waist'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_COLOR_EYE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_color_eye'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_COLOR_HAIR				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions_color_hair'];
+$_Application_Module_Members_Profile_LIST_MEMBER_PHYSICAL_WEIGHT				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_weight'];
+
+/*
+ ============================================================================================================
  +
  + Member Account Profile :: Loops
  +
@@ -467,7 +483,7 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY
 if ($_GET["Name"] == "$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME") {
 
 echo ("
-											<CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;AccountDetails\" TITLE=\":: Display Detailed Information For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST\">:: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::</A>&nbsp;]</CENTER>
+											<CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;AccountDetails\" TITLE=\":: Display Detailed Information For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST\">Detailed Information</A> &#8212; <A HREF=\"\">Image Gallery</A> &#8212; <A HREF=\"\">Streams</A> ]</CENTER>
 												<HR>
 													<A HREF=\"$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: Open & Display This Image ::\"><IMG SRC=\"$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME :: $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" ALT=\":: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME :: $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" WIDTH=\"120\" HEIGHT=\"120\"></A><BR><BR>
 													$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_ABOUT
@@ -488,7 +504,7 @@ echo ("
 if ($_GET["Display"] == "AccountDetails") {
 
 echo ("
-											<BR><CENTER><B>:: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST :: More Information ::</B></CENTER>
+											<BR><CENTER><B>:: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST :: Detailed Member Account Information ::</B></CENTER>
 											<HR><BR>
 												<B>Detailed Account Information</B><HR><BR>
 
@@ -499,17 +515,47 @@ echo ("
 												&nbsp;*&nbsp;Name, Nickname: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_NICKNAME<BR>
 												&nbsp;*&nbsp;Birthdate: $_Application_Module_Members_Profile_LIST_MEMBER_BIRTHDATE<BR>
 												&nbsp;*&nbsp;Gender: $_Application_Module_Members_Profile_LIST_MEMBER_GENDER_DISPLAY<BR>
+												&nbsp;*&nbsp;Member Preferred Language: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_LANGUAGE<BR>
 												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Account Profile Image :: $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE</A><BR><BR>
 
-												<I>Account Registration and Details</I><BR>
+												<I>Member Physical Details :: Physical Dimensions</I><BR>
+												&nbsp;*&nbsp;Head Size:<BR>
+												&nbsp;*&nbsp;Neck Size:<BR>
+												&nbsp;*&nbsp;Arm Size:<BR>
+												&nbsp;*&nbsp;Wrist Size:<BR>
+												&nbsp;*&nbsp;Hand Length:<BR>
+												&nbsp;*&nbsp;Palm Width:<BR>
+												&nbsp;*&nbsp;Index Finger Length:<BR>
+												&nbsp;*&nbsp;Index Finger Width:<BR>
+												&nbsp;*&nbsp;Chest / Breast Size:<BR>
+												&nbsp;*&nbsp;Waist:<BR>
+												&nbsp;*&nbsp;Legs:<BR>
+												&nbsp;*&nbsp;Ankles:<BR>
+												&nbsp;*&nbsp;Feet Length:<BR>
+												&nbsp;*&nbsp;Feet Width:<BR>
+												&nbsp;*&nbsp;Toe Length:<BR>
+												&nbsp;*&nbsp;Toe Width:<BR><BR>
+
+												<I>Member Physical Details :: Biometric Information</I><BR>
+												&nbsp;*&nbsp;Blood-Type:<BR><BR>
+
+												<I>Member Account Details :: Emergency Contact Information</I><BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #1:<BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #2:<BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #3:<BR><BR>
+
+												<I>Account Registration and Other Details</I><BR>
 												&nbsp;*&nbsp;Account Registered On: $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE<BR>
-												&nbsp;*&nbsp;Current Location: $_Application_Module_Members_Profile_LIST_MEMBER_LOCATION_CURRENT<BR>
+												&nbsp;*&nbsp;Current Given Location: $_Application_Module_Members_Profile_LIST_MEMBER_LOCATION_CURRENT<BR>
+												&nbsp;*&nbsp;Last Exact Device-Reported Global-Positioning-System Coordinates: <A HREF=\"\" TITLE=\":: Open & Display The Device-Reported Global-Positioning-System Coordinates Log ::\">INSERT COORDINATES VARIABLE HERE LATER</A><BR>
 												&nbsp;*&nbsp;Current Avatar: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR>
 												&nbsp;*&nbsp;Is This Account Activated ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY<BR>
 												&nbsp;*&nbsp;Is This Account Banned ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY<BR>
 												&nbsp;*&nbsp;Is This Account Active ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account Locked ?:<BR>
 												&nbsp;*&nbsp;Is This Account a Newsletter Recipient ?: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY<BR>
 												&nbsp;*&nbsp;Account Access Level: $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY<BR>
+												&nbsp;*&nbsp;Account Last Successful Authentication TimeStamp:<BR>
 												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: Last Web-Page View ::\">Last Web-Page View</A><BR><BR>
 
 												<I>Activity Information</I><BR>
