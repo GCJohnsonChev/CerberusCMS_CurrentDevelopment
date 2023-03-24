@@ -902,6 +902,14 @@ member_number_phone_country_code VARCHAR(5),
 member_number_phone_home VARCHAR(20),
 member_number_phone_work VARCHAR(20),
 member_password VARCHAR(250),
+member_physical_dimensions_hands VARCHAR(10),
+member_physical_dimensions_waist VARCHAR(10),
+member_physical_dimensions_length_arms VARCHAR(10),
+member_physical_dimensions_length_legs VARCHAR(10),
+member_physical_color_eye VARCHAR(20),
+member_physical_color_hair VARCHAR(20),
+member_physical_height VARCHAR(4),
+member_physical_weight VARCHAR(4),
 member_profile_about TEXT,
 member_profile_signature TEXT,
 member_registration_date VARCHAR(100),
@@ -1267,19 +1275,20 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Legal','016','?Application_Member&#61;Legal')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Links','017','?Application_Member&#61;Links&amp;DisplayID&#61;All')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Login','018','?Application_Member&#61;Login')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Member Directory','019','?Application_Member&#61;Member_Directory')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Messenger','20','?Application_Member&#61;Messenger&amp;Display&#61;MessengerOptions')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('News','021','?Application_Member&#61;News')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Referrers','022','?Application_Member&#61;Referrers&amp;Display&#61;Box')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('RSS Feed','023','./RSS.php?')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Register','024','?Application_Member&#61;Register')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Search','025','?Application_Member&#61;Search')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Statistics','026','?Application_Member&#61;Statistics')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Submit Link','027','?Application_Member&#61;Links&amp;SubmitLink&#61;Yes')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Submit News','028','?Application_Member&#61;Submit_News')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Upload File','029','?Application_Member&#61;Upload')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Video Player','030','?Application_Member&#61;Video_Player')");
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Welcome !','031','?Application_Custom&#61;1')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Market','019','?Application_Member&#61;Market&amp;Display&#61;Options')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Member Directory','020','?Application_Member&#61;Member_Directory')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Messenger','021','?Application_Member&#61;Messenger&amp;Display&#61;MessengerOptions')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('News','022','?Application_Member&#61;News')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Referrers','023','?Application_Member&#61;Referrers&amp;Display&#61;Box')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('RSS Feed','024','./RSS.php?')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Register','025','?Application_Member&#61;Register')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Search','026','?Application_Member&#61;Search')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Statistics','027','?Application_Member&#61;Statistics')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Submit Link','028','?Application_Member&#61;Links&amp;SubmitLink&#61;Yes')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Submit News','029','?Application_Member&#61;Submit_News')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Upload File','030','?Application_Member&#61;Upload')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Video Player','031','?Application_Member&#61;Video_Player')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Welcome !','032','?Application_Custom&#61;1')");
 
 	echo ("[ Done ]<BR>");
 
@@ -1319,6 +1328,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Links','1','1','1','1','1','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('List','1','1','1','1','1','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Login','0','1','1','1','1','1','1')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Market','0','1','1','1','1','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Member_Directory','0','1','1','1','1','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Messenger','1','1','1','1','1','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('News','0','1','1','1','1','1','1')");
@@ -1413,6 +1423,14 @@ member_number_phone_country_code,
 member_number_phone_home,
 member_number_phone_work,
 member_password,
+member_physical_dimensions_hands,
+member_physical_dimensions_waist,
+member_physical_dimensions_length_arms,
+member_physical_dimensions_length_legs,
+member_physical_color_eye,
+member_physical_color_hair,
+member_physical_height,
+member_physical_weight,
 member_profile_about,
 member_profile_signature,
 member_registration_date,
@@ -1490,6 +1508,14 @@ member_username)VALUES(
 '000-0000',
 '000-0000',
 '$_POST_ADMINISTRATOR_PASSWORD_3',
+'0',
+'0',
+'0',
+'0',
+'0',
+'0',
+'0',
+'0',
 'Account Profile :: Installation Administration Account',
 'Account Signature :: Installation Administration Account',
 '$_GLOBAL_LOCAL_SERVER_DATE',
@@ -1576,6 +1602,14 @@ member_number_phone_country_code,
 member_number_phone_home,
 member_number_phone_work,
 member_password,
+member_physical_dimensions_hands,
+member_physical_dimensions_waist,
+member_physical_dimensions_length_arms,
+member_physical_dimensions_length_legs,
+member_physical_color_eye,
+member_physical_color_hair,
+member_physical_height,
+member_physical_weight,
 member_profile_about,
 member_profile_signature,
 member_registration_date,
@@ -1653,6 +1687,14 @@ member_username)VALUES(
 '000-0000',
 '000-0000',
 '$_POST_ADMINISTRATOR_PASSWORD_3',
+'0',
+'0',
+'0',
+'0',
+'0',
+'0',
+'0',
+'0',
 'I am Cerberus ! I am the Services Root Administrator.',
 'I guard the entrance to Hades !',
 '$_GLOBAL_LOCAL_SERVER_DATE',
