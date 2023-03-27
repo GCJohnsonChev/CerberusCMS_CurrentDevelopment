@@ -41,16 +41,15 @@
 
 /*
  ================================================================
- + Current SandBoxing Server
+ + Current SandBoxing and Development Server
  ================================================================
 */
 
-https://ccmssandbox2.000webhostapp.com/SandBox
+https://ccmssandbox3.000webhostapp.com
 
-GCSandBox1001@GMail.com
-HSFHPSZXJMTPO1090
+gcjohnsoncheval@outlook.com
 
-Target Release Date: March of 2023
+Target Release Date: April of 2023
 
 /*
  ================================================================
@@ -58,4 +57,4 @@ Target Release Date: March of 2023
  ================================================================
 */
 
-https://ccmssandbox2.000webhostapp.com/Demonstration/
+https://ccmssandbox3.000webhostapp.com
