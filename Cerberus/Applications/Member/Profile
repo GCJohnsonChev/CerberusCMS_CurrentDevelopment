@@ -569,7 +569,7 @@ echo ("
 												<I>Business Related Platforms</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"https://www.Linkedin.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" TITLE=\"Linkedin :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" TARGET=\"_NEW\">LinkedIn</A><BR><BR>
 
-												<I>Gallery Platforms</I><BR>
+												<I>Image Gallery Platforms</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"https://www.Instagram.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" TITLE=\"Instagram :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" TARGET=\"_NEW\">Instagram</A><BR><BR>
 
 												<I>Scroll Posting Platforms</I><BR>
