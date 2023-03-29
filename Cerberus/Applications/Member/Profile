@@ -622,7 +622,7 @@ echo ("
 												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Private<BR>
 												=> Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"\"></A><BR><BR>
 
-												<I>Encrypted Communications</I><BR>
+												<I>Encrypted Communications Settings</I><BR>
 												&nbsp;*&nbsp;Pretty-Good-Privacy: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY<BR><BR>
 
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;Add&#61;Yes\" METHOD=\"post\">
