@@ -547,7 +547,8 @@ echo ("
 												<I>Member' Account Details :: Contact Information</I><BR>
 												&nbsp;*&nbsp;Phone Number, Mobile:<BR>
 												&nbsp;*&nbsp;Phone Number, Home:<BR>
-												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;ShortMessageService&amp;SMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Short Message Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Short Message Service</A><BR><BR>
 
 												<I>Member' Account Details :: Personal Servers</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Personal Web-Page</A><BR>
@@ -575,11 +576,10 @@ echo ("
 												&nbsp;*&nbsp;<A HREF=\"https://www.FaceBook.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" TITLE=\"Facebook :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" TARGET=\"_NEW\">Facebook</A><BR>
 												&nbsp;*&nbsp;<A HREF=\"https://www.Twitter.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" TITLE=\"Twitter :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" TARGET=\"_NEW\">Twitter</A><BR><BR>
 
-
 												<I>Video Streaming Platforms</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"https://www.YouTube.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TITLE=\"YouTube :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TARGET=\"_NEW\">YouTube</A><BR><BR>
 
-												<I><B>Digital Communications Networks</B></I><BR>
+												<I>Digital Communications Networks</I><BR>
 												&nbsp;*&nbsp;<A TITLE=\"Discord :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD\">Discord</A><BR>
 												&nbsp;*&nbsp;<A TITLE=\"ICQ :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ\">ICQ</A><BR>
 												&nbsp;*&nbsp;<A TITLE=\"Skype :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE\">Skype</A><BR>
@@ -622,14 +622,13 @@ echo ("
 												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Private<BR>
 												=> Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"\"></A><BR><BR>
 
+												&nbsp;*&nbsp;Unique Account Fingerprint, Public<BR>
+												=> Secure Hash Algorithm, 256 - String ( Digital Fingerprint ):<BR><BR>
+
 												<I>Encrypted Communications Settings</I><BR>
 												&nbsp;*&nbsp;Pretty-Good-Privacy: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY<BR><BR>
 
-												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;Add&#61;Yes\" METHOD=\"post\">
-													<INPUT TYPE=\"hidden\" NAME=\"AM_Friend_Save_Friend\" VALUE=\"$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\"><INPUT TYPE=\"submit\" VALUE=\"Add To Friends List\">
-												</FORM>
-
-												<I>Physical Dimensions, Biometrics, Nationality and Emergency Contacts</I><HR><BR>
+												<B>Physical Dimensions, Biometrics, Nationality and Emergency Contacts</B><HR><BR>
 												&nbsp;*&nbsp;Head<BR><BR>
 
 												&nbsp;*&nbsp;Neck<BR><BR>
