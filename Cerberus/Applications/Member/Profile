@@ -657,7 +657,14 @@ echo ("
 												<B>Physical Dimensions and Biometrics</B><HR><BR>
 
 												<I>Member' Physical Details :: Physical Dimensions</I><BR>
-												&nbsp;*&nbsp;Head<BR><BR>
+												&nbsp;*&nbsp;Head<BR>
+												Skull Cap Circumference<BR>
+												Nose Width<BR>
+												Nose Length<BR>
+												Ear Width<BR>
+												Ear Length<BR>
+												Chin Width<BR>
+												Width Between Eyes<BR><BR>
 
 												&nbsp;*&nbsp;Neck<BR><BR>
 
@@ -725,11 +732,13 @@ echo ("
 												&nbsp;*&nbsp;Feet<BR><BR>
 												&nbsp;-&nbsp;Left Foot<BR>
 												Left Foot Circumference<BR>
-												Left Foot Length<BR><BR>
+												Left Foot Length<BR>
+												Left Foot Width<BR><BR>
 
 												&nbsp;-&nbsp;Right Foot<BR>
 												Right Foot Circumference<BR>
-												Right Foot Length<BR><BR>
+												Right Foot Length<BR>
+												Right Foot With<BR><BR>
 
 												&nbsp;*&nbsp;Toes<BR><BR>
 												&nbsp;-&nbsp;Left Foot Toes<BR>
