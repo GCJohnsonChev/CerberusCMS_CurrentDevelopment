@@ -548,7 +548,10 @@ echo ("
 												&nbsp;*&nbsp;Phone Number, Mobile:<BR>
 												&nbsp;*&nbsp;Phone Number, Home:<BR>
 												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR>
-												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;ShortMessageService&amp;SMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Short Message Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Short Message Service</A><BR><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;SMS&amp;SMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Short Message Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Short Messaging Service</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;MMS&amp;MMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Multimedia Messaging Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Multimedia Messaging Service</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;MemberAccountID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Instant Messenger Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Instant Messenger</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;MemberAccountID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Private Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Private Message</A><BR><BR>
 
 												<I>Member' Account Details :: Personal Servers</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Personal Web-Page</A><BR>
@@ -652,6 +655,8 @@ echo ("
 
 
 												<B>Physical Dimensions and Biometrics</B><HR><BR>
+
+												<I>Member' Physical Details :: Physical Dimensions</I><BR>
 												&nbsp;*&nbsp;Head<BR><BR>
 
 												&nbsp;*&nbsp;Neck<BR><BR>
