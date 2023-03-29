@@ -628,7 +628,30 @@ echo ("
 												<I>Encrypted Communications Settings</I><BR>
 												&nbsp;*&nbsp;Pretty-Good-Privacy: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY<BR><BR>
 
-												<B>Physical Dimensions, Biometrics, Nationality and Emergency Contacts</B><HR><BR>
+												<B>Ethnicity, Nationality and Race</B><HR><BR>
+												<I>Member' Physical Details :: Ethnicity</I><BR>
+												&nbsp;*&nbsp;Ethnicity #1:<BR>
+												&nbsp;*&nbsp;Ethnicity #2:<BR><BR>
+
+												<I>Member' Physical Details :: Nationality</I><BR>
+												&nbsp;*&nbsp;Nationality #1:<BR>
+												&nbsp;*&nbsp;Nationality #2:<BR>
+												&nbsp;*&nbsp;Nationality #3:<BR><BR>
+
+												<I>Member' Physical Details :: Race</I><BR>
+												&nbsp;*&nbsp;Race #1:<BR>
+												&nbsp;*&nbsp;Race #2:<BR>
+												&nbsp;*&nbsp;Race #3:<BR>
+												&nbsp;*&nbsp;Race #4:<BR><BR>
+
+												<B>Emergency Information</B><HR><BR>
+												<I>Member' Account Details :: Emergency Contact Information</I><BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #1:<BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #2:<BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #3:<BR><BR>
+
+
+												<B>Physical Dimensions and Biometrics</B><HR><BR>
 												&nbsp;*&nbsp;Head<BR><BR>
 
 												&nbsp;*&nbsp;Neck<BR><BR>
@@ -720,23 +743,6 @@ echo ("
 
 												<I>Member' Physical Details :: Biometric Information</I><BR>
 												&nbsp;*&nbsp;Blood-Type:<BR><BR>
-
-												<I>Member' Physical Details :: Ethnicity, Nationality and Race</I><BR>
-												&nbsp;*&nbsp;Ethnicity #1:<BR>
-												&nbsp;*&nbsp;Ethnicity #2:<BR><BR>
-
-												&nbsp;*&nbsp;Nationality #1:<BR>
-												&nbsp;*&nbsp;Nationality #2:<BR><BR>
-
-												&nbsp;*&nbsp;Race #1:<BR>
-												&nbsp;*&nbsp;Race #2:<BR>
-												&nbsp;*&nbsp;Race #3:<BR>
-												&nbsp;*&nbsp;Race #4:<BR><BR>
-
-												<I>Member' Account Details :: Emergency Contact Information</I><BR>
-												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #1:<BR>
-												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #2:<BR>
-												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #3:<BR><BR>
 											<HR>
 											[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\" TITLE=\":: Close :: More Information ::\">Close</A> ]<BR><BR>
 ");
