@@ -508,7 +508,7 @@ echo ("
 											<HR><BR>
 												<B>Detailed Account Information</B><HR><BR>
 
-												<I>Member Personal Information</I><BR>
+												<I>Member' Account Details :: Personal Information</I><BR>
 												&nbsp;*&nbsp;Name, First: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST<BR>
 												&nbsp;*&nbsp;Name, Last: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST<BR>
 												&nbsp;*&nbsp;Name, Middle: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_MIDDLE<BR>
@@ -516,60 +516,44 @@ echo ("
 												&nbsp;*&nbsp;Birthdate: $_Application_Module_Members_Profile_LIST_MEMBER_BIRTHDATE<BR>
 												&nbsp;*&nbsp;Gender: $_Application_Module_Members_Profile_LIST_MEMBER_GENDER_DISPLAY<BR>
 												&nbsp;*&nbsp;Member Preferred Language: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_LANGUAGE<BR>
-												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Account Profile Image :: $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE</A><BR><BR>
+												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Account Profile Image :: $_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_PICTURE</A><BR>
+												&nbsp;*&nbsp;Member Account Avatar Image: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR><BR>
 
-												<I>Member Physical Details :: Physical Dimensions</I><BR>
-												&nbsp;*&nbsp;Head Size:<BR>
-												&nbsp;*&nbsp;Neck Size:<BR>
-												&nbsp;*&nbsp;Arm Size:<BR>
-												&nbsp;*&nbsp;Wrist Size:<BR>
-												&nbsp;*&nbsp;Hand Length:<BR>
-												&nbsp;*&nbsp;Palm Width:<BR>
-												&nbsp;*&nbsp;Index Finger Length:<BR>
-												&nbsp;*&nbsp;Index Finger Width:<BR>
-												&nbsp;*&nbsp;Chest / Breast Size:<BR>
-												&nbsp;*&nbsp;Waist:<BR>
-												&nbsp;*&nbsp;Legs:<BR>
-												&nbsp;*&nbsp;Ankles:<BR>
-												&nbsp;*&nbsp;Feet Length:<BR>
-												&nbsp;*&nbsp;Feet Width:<BR>
-												&nbsp;*&nbsp;Toe Length:<BR>
-												&nbsp;*&nbsp;Toe Width:<BR><BR>
+												<I>Member' Account Details :: Account Registration Information</I><BR>
+												&nbsp;*&nbsp;Account Registered On: $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE<BR><BR>
 
-												<I>Member Physical Details :: Biometric Information</I><BR>
-												&nbsp;*&nbsp;Blood-Type:<BR><BR>
-
-												<I>Member Account Details :: Emergency Contact Information</I><BR>
-												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #1:<BR>
-												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #2:<BR>
-												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #3:<BR><BR>
-
-												<I>Account Registration and Other Details</I><BR>
-												&nbsp;*&nbsp;Account Registered On: $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE<BR>
-												&nbsp;*&nbsp;Current Given Location: $_Application_Module_Members_Profile_LIST_MEMBER_LOCATION_CURRENT<BR>
-												&nbsp;*&nbsp;Last Exact Device-Reported Global-Positioning-System Coordinates: <A HREF=\"\" TITLE=\":: Open & Display The Device-Reported Global-Positioning-System Coordinates Log ::\">INSERT COORDINATES VARIABLE HERE LATER</A><BR>
-												&nbsp;*&nbsp;Current Avatar: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Members_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR>
+												<I>Member' Account Details :: Account Status</I><BR>
+												&nbsp;*&nbsp;Is This Account Active ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY<BR>
 												&nbsp;*&nbsp;Is This Account Activated ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY<BR>
 												&nbsp;*&nbsp;Is This Account Banned ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY<BR>
-												&nbsp;*&nbsp;Is This Account Active ?: $_Application_Module_Members_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY<BR>
 												&nbsp;*&nbsp;Is This Account Locked ?:<BR>
-												&nbsp;*&nbsp;Is This Account a Newsletter Recipient ?: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY<BR>
-												&nbsp;*&nbsp;Account Access Level: $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY<BR>
-												&nbsp;*&nbsp;Account Last Successful Authentication TimeStamp:<BR>
+												&nbsp;*&nbsp;Is This Account a System Newsletter Recipient ?: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY<BR>
+												&nbsp;*&nbsp;Account Access Level: $_Application_Module_Members_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY<BR><BR>
+
+												<I>Member' Account Details :: Location Information</I><BR>
+												&nbsp;*&nbsp;Current Given Location: $_Application_Module_Members_Profile_LIST_MEMBER_LOCATION_CURRENT<BR>
+												&nbsp;*&nbsp;Last Exact Device-Reported Global-Positioning-System Coordinates: <A HREF=\"\" TITLE=\":: Open & Display The Detailed Device-Reported Global-Positioning-System Coordinates Log ::\">INSERT COORDINATES VARIABLE HERE LATER</A><BR><BR>
+	
+												<I>Member' Account Details :: Authentication Details</I><BR>
+												&nbsp;*&nbsp;Account Last Successful Authentication Timestamp, Local Server:<BR>
+												&nbsp;*&nbsp;Account Last Successful Authentication Timestamp, Remote Server:<BR>
+												&nbsp;*&nbsp;Account Last Successful Authentication Timestamp, Member Device:<BR>
 												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: Last Web-Page View ::\">Last Web-Page View</A><BR><BR>
 
-												<I>Activity Information</I><BR>
+												<I>Member' Account Details :: Activity Information</I><BR>
 												&nbsp;*&nbsp;Currently Feeling: $_Application_Module_Members_Profile_LIST_MEMBER_MOOD<BR>
 												&nbsp;*&nbsp;Currently Listening To: $_Application_Module_Members_Profile_LIST_MEMBER_MUSIC<BR><BR>
 
-												<I>Contact Information</I><BR>
+												<I>Member' Account Details :: Contact Information</I><BR>
+												&nbsp;*&nbsp;Phone Number, Mobile:<BR>
+												&nbsp;*&nbsp;Phone Number, Home:<BR>
 												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR><BR>
 
-												<I>Personal Servers</I><BR>
+												<I>Member' Account Details :: Personal Servers</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Personal Web-Page</A><BR>
 												&nbsp;*&nbsp;<A HREF=\"./Member/$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME/\" TITLE=\":: Open & View Home Web-Space ::\">Home Web-Space</A><BR><BR>
 
-												<I>Member' Account Statistics</I><BR>
+												<I>Member' Account Details :: Account Statistics</I><BR>
 												&nbsp;*&nbsp;Experience Amount: $_Application_Module_Members_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT<BR>
 												&nbsp;*&nbsp;Rank Level: $_Application_Module_Members_Profile_LIST_MEMBER_RANK_LEVEL<BR>
 												&nbsp;*&nbsp;Total Number of Posts System-Wide: $_Application_Module_Members_Profile_LIST_MEMBER_NUMBER_OF_POSTS<BR>
@@ -594,7 +578,6 @@ echo ("
 
 												<I>Video Streaming Platforms</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"https://www.YouTube.com/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TITLE=\"YouTube :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TARGET=\"_NEW\">YouTube</A><BR><BR>
-
 
 												<I><B>Digital Communications Networks</B></I><BR>
 												&nbsp;*&nbsp;<A TITLE=\"Discord :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD\">Discord</A><BR>
@@ -627,13 +610,17 @@ echo ("
 												* TronCoin: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_TRONCOIN<BR>
 												* ZCash: $_Application_Module_Members_Profile_LIST_MEMBER_ADDRESS_ZCASH<BR><BR>
 
-												<B>Security Information</B><HR><BR>
+												<B>Account Security Information</B><HR><BR>
 
 												<I>Security Accounts</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"https://www.KeyBase.io/$_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TITLE=\"KeyBase :: $_Application_Module_Members_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TARGET=\"_NEW\">KeyBase</A><BR><BR>
 
 												<I>Digital Fingerprints</I><BR>
-												&nbsp;*&nbsp;Public Pretty-Good-Privacy Key Block => Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE</A><BR><BR>
+												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Public<BR>
+												=> Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE</A><BR><BR>
+
+												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Private<BR>
+												=> Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"\"></A><BR><BR>
 
 												<I>Encrypted Communications</I><BR>
 												&nbsp;*&nbsp;Pretty-Good-Privacy: $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY<BR><BR>
@@ -641,6 +628,116 @@ echo ("
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;Add&#61;Yes\" METHOD=\"post\">
 													<INPUT TYPE=\"hidden\" NAME=\"AM_Friend_Save_Friend\" VALUE=\"$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\"><INPUT TYPE=\"submit\" VALUE=\"Add To Friends List\">
 												</FORM>
+
+												<I>Physical Dimensions, Biometrics, Nationality and Emergency Contacts</I><HR><BR>
+												&nbsp;*&nbsp;Head<BR><BR>
+
+												&nbsp;*&nbsp;Neck<BR><BR>
+
+												&nbsp;*&nbsp;Shoulders<BR><BR>
+
+												&nbsp;*&nbsp;Arms<BR><BR>
+
+												&nbsp;*&nbsp;Wrists<BR><BR>
+												&nbsp;-&nbsp;Left Wrist<BR>
+												&nbsp;-&nbsp;Right Wrist<BR><BR>
+
+												&nbsp;*&nbsp;Fingers<BR>
+												&nbsp;-&nbsp;Left Hand Fingers<BR>
+												Thumb<BR>
+												Index Finger<BR>
+												Middle Finger<BR>
+												Ring Finger<BR>
+												Little Finger<BR><BR>
+
+												&nbsp;-&nbsp;Right Hand Fingers<BR>
+												Thumb<BR>
+												Index Finger<BR>
+												Middle Finger<BR>
+												Ring Finger<BR>
+												Little Finger<BR><BR>
+
+												&nbsp;*&nbsp;Hands<BR>
+												&nbsp;-&nbsp;Left Hand<BR>
+												Left Hand Circumference<BR>
+												Left Hand Length<BR><BR>
+
+												&nbsp;-&nbsp;Right Hand<BR>
+												Right Hand Circumference<BR>
+												Right Hand Length<BR><BR>
+
+												&nbsp;*&nbsp;Chest / Breast<BR>
+												Chest Circumference<BR><BR>
+
+												&nbsp;*&nbsp;Stomach<BR>
+												Stomach Circumference<BR><BR>
+
+												&nbsp;*&nbsp;Waist<BR>
+												Waist Circumference<BR><BR>
+
+												&nbsp;*&nbsp;Legs<BR><BR>
+
+												Upper Left Leg Thigh<BR>
+												Upper Left Leg Thigh Circumference<BR>
+												Upper Left Leg Thigh Length<BR>
+												Upper Right Leg Thigh<BR>
+												Upper Right Leg Thigh Circumference<BR>
+												Upper Right Leg Thigh Length<BR>
+												Lower Left Leg Circumference<BR>
+												Lower Left Leg Length<BR><BR>
+
+												&nbsp;*&nbsp;Ankles<BR><BR>
+												&nbsp;-&nbsp;Left Ankle<BR>
+												Left Leg Ankle Circumference<BR>
+												Left Leg Ankle Length<BR><BR>
+
+												&nbsp;-&nbsp;Right Ankle<BR>
+												Right Leg Ankle Circumference<BR>
+												Right Leg Ankle Length<BR><BR>
+
+												&nbsp;*&nbsp;Feet<BR><BR>
+												&nbsp;-&nbsp;Left Foot<BR>
+												Left Foot Circumference<BR>
+												Left Foot Length<BR><BR>
+
+												&nbsp;-&nbsp;Right Foot<BR>
+												Right Foot Circumference<BR>
+												Right Foot Length<BR><BR>
+
+												&nbsp;*&nbsp;Toes<BR><BR>
+												&nbsp;-&nbsp;Left Foot Toes<BR>
+												Big Toe<BR>
+												Index Toe<BR>
+												Middle Toe<BR>
+												Fourth Toe<BR>
+												Little Toe<BR><BR>
+
+												&nbsp;-&nbsp;Right Foot Toes<BR>
+												Big Toe<BR>
+												Index Toe<BR>
+												Middle Toe<BR>
+												Fourth Toe<BR>
+												Little Toe<BR><BR>
+
+												<I>Member' Physical Details :: Biometric Information</I><BR>
+												&nbsp;*&nbsp;Blood-Type:<BR><BR>
+
+												<I>Member' Physical Details :: Ethnicity, Nationality and Race</I><BR>
+												&nbsp;*&nbsp;Ethnicity #1:<BR>
+												&nbsp;*&nbsp;Ethnicity #2:<BR><BR>
+
+												&nbsp;*&nbsp;Nationality #1:<BR>
+												&nbsp;*&nbsp;Nationality #2:<BR><BR>
+
+												&nbsp;*&nbsp;Race #1:<BR>
+												&nbsp;*&nbsp;Race #2:<BR>
+												&nbsp;*&nbsp;Race #3:<BR>
+												&nbsp;*&nbsp;Race #4:<BR><BR>
+
+												<I>Member' Account Details :: Emergency Contact Information</I><BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #1:<BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #2:<BR>
+												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #3:<BR><BR>
 											<HR>
 											[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\" TITLE=\":: Close :: More Information ::\">Close</A> ]<BR><BR>
 ");
