@@ -91,6 +91,7 @@ if ($_GET["Electronic_MailID"] == "$_Application_Module_Member_Electronic_Mail_L
 */
 
 $_Application_Module_Member_Electronic_Mail_POST_MESSAGE					= $_POST['AM_Electronic_Mail_Message'];
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE_HASH_SHA_256				= hash('sha256', $_Application_Module_Member_Electronic_Mail_POST_MESSAGE);
 
 /*
  ============================================================================================================
@@ -113,22 +114,30 @@ echo ("
 /*
  ============================================================================================================
  +
- + Send Electronic Mail Notification
+ + Send Non-Encrypted Electronic Mail Message
  +
  ============================================================================================================
 */
 
-if(mail($_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME - $_GLOBAL_SYSTEM_SITE_TITLE","
+if(mail($_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Electronic Mail Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME @ $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
-=============================================================
-[ $_GLOBAL_COOKIE_MEMBER_USERNAME ] has sent you this Private Electronic Message from the Electronic Mail Application Module:
+----------------------------------------------------------------------------------------
+$_GLOBAL_COOKIE_MEMBER_USERNAME has sent you this Non-Encrypted Private Electronic Message from the Electronic Mail Application Module:
 
-$_Application_Module_Member_Electronic_Mail_POST_MESSAGE
-=============================================================
+\"$_Application_Module_Member_Electronic_Mail_POST_MESSAGE\"
+----------------------------------------------------------------------------------------
 Have a nice day,
-		    ~ $_GLOBAL_SYSTEM_SITE_TITLE.
+		    - $_GLOBAL_SYSTEM_SITE_TITLE
 
-[ $_GLOBAL_REMOTE_ADDRESS ]")) {
+The Internet Protocol Address That Initiated This Electronic Mail Message Was, Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+The Internet Protocol Address That Initiated This Electronic Mail Message Was, Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+The Internet Protocol Address Port Number Was, Remote Server: $_GLOBAL_REMOTE_SERVER_PORT
+The Internet Protocol Address Port Number Was, Local Server:
+This Electronic Mail Message Timestamp Was, Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+This Electronic Mail Message Timestamp Was, Remote Server:
+This Electronic Mail Message Unique Fingerprint :: Secure Hash Algorithm, 256: $_Application_Module_Member_Electronic_Mail_POST_MESSAGE_HASH_SHA_256
+The Document Root Was: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT
+")) {
 
 											echo ($_Application_Module_Member_Message_Electronic_Mail_SEND);
 
