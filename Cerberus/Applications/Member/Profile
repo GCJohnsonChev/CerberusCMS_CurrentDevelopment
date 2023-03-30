@@ -170,6 +170,7 @@ $_Application_Module_Members_Profile_LIST_MEMBER_RANK_LEVEL					= $_Application_
 $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DATE				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
 $_Application_Module_Members_Profile_LIST_MEMBER_REGISTRATION_DETAILS				= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_details'];
 $_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
+$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE			= $_Application_Module_Members_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_private'];
 
 /*
  ============================================================================================================
@@ -189,7 +190,8 @@ $_Application_Module_Members_Profile_LIST_MEMBER_URL_HOMEPAGE					= $_Applicatio
  ============================================================================================================
 */
 
-$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE			= md5($_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_PENEL_PUBLIC_SIGNATURE_SHA_256		= hash('sha256', $_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256	= hash('sha256', $_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE);
 
 /*
  ============================================================================================================
@@ -548,10 +550,10 @@ echo ("
 												&nbsp;*&nbsp;Phone Number, Mobile:<BR>
 												&nbsp;*&nbsp;Phone Number, Home:<BR>
 												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR>
-												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;SMS&amp;SMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Short Message Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Short Messaging Service</A><BR>
-												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;MMS&amp;MMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Multimedia Messaging Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Multimedia Messaging Service</A><BR>
-												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;MemberAccountID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Instant Messenger Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Instant Messenger</A><BR>
-												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;MemberAccountID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Private Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Private Message</A><BR><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS&amp;SMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Short Message Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Short Messaging Service</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;MMS&amp;MMSID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Multimedia Messaging Service Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Multimedia Messaging Service</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;InstantMessage&amp;MemberAccountID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Instant Messenger Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Instant Messenger</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;PrivateMessage&amp;MemberAccountID&#61;$_Application_Module_Members_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Private Message To :: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME\">Private Message</A><BR><BR>
 
 												<I>Member' Account Details :: Personal Servers</I><BR>
 												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Members_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Personal Web-Page</A><BR>
@@ -620,10 +622,10 @@ echo ("
 
 												<I>Digital Fingerprints</I><BR>
 												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Public<BR>
-												=> Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_BLOCK_MD5_SIGNATURE</A><BR><BR>
+												=> Secure Hash Algorithm, 256 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Members_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_PENEL_PUBLIC_SIGNATURE_SHA_256</A><BR><BR>
 
 												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Private<BR>
-												=> Message Digest Algorithm, Version: 5 - Signature ( Digital Fingerprint ): <A TITLE=\"\"></A><BR><BR>
+												=> Secure Hash Algorithm, 256 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256\">$_Application_Module_Members_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256</A><BR><BR>
 
 												&nbsp;*&nbsp;Unique Account Fingerprint, Public<BR>
 												=> Secure Hash Algorithm, 256 - String ( Digital Fingerprint ):<BR><BR>
