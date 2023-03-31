@@ -198,7 +198,7 @@ if (file_exists($_GLOBAL_SYSTEM_CONFIGURATION_FILE)) {
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE				= "./System/Security/Module/Sanitization/Default/Sanitization.cerberus";
+$_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE				= "./System/Security/Module/Sanitization/Default/Sanitization.$_INTERNAL_FILE_EXTENSION";
 
 if (file_exists($_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE)) {
 
@@ -1641,7 +1641,7 @@ $_GLOBAL_SECURITY_MEMBER_FINGERPRINT						= "$_GLOBAL_COOKIE_MEMBER_USERNAME :::
 
 if ($_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS >= 1) {
 
-	include_once "./System/Plug-Ins/Location/$_GLOBAL_SYSTEM_PLUGIN_LOCATION_DIRECTORY/Location.cerberus";
+	include_once "./System/Plug-Ins/Location/$_GLOBAL_SYSTEM_PLUGIN_LOCATION_DIRECTORY/Location.$_INTERNAL_FILE_EXTENSION";
 
 } else {
 
@@ -1665,7 +1665,7 @@ if ($_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS >= 1) {
 
 if ($_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS >= 1) {
 
-	include_once "./System/Plug-Ins/Safe-HTML/$_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_DIRECTORY/Safe-HTML.cerberus";
+	include_once "./System/Plug-Ins/Safe-HTML/$_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_DIRECTORY/Safe-HTML.$_INTERNAL_FILE_EXTENSION";
 
 } else {
 
@@ -2325,7 +2325,7 @@ $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_GLOBAL_COOKIE_MEMBER_LANGUAGE;
  ============================================================================================================
 */
 
-	include_once "./System/Language/$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY/Language.cerberus";
+	include_once "./System/Language/$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY/Language.$_INTERNAL_FILE_EXTENSION";
 
 /*
  ============================================================================================================
@@ -2437,7 +2437,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-	include_once "./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY/Text-Editor.cerberus";
+	include_once "./System/Plug-Ins/Text-Editor/$_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY/Text-Editor.$_INTERNAL_FILE_EXTENSION";
 
 /*
  ============================================================================================================

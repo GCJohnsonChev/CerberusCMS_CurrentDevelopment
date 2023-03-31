@@ -269,7 +269,7 @@ $_ARCHITECT_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABL
 if (!$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME) {
 
 echo ("
-		<HR><CENTER><BIG><B>[ <A HREF=\"https://www.SourceForge.net/projects/cerberuscms/files/Documentation/\" TARGET=\"_NEW\" TITLE=\":: Read The $_PROJECT_STRING_NAME_EXTENDED Architect Installation Documentation ::\">Architect Installation Documentation</A> ]</B></BIG></CENTER><HR>
+		<HR><CENTER><BIG><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SOURCEFORGE_SECURE/files/Documentation/\" TARGET=\"_NEW\" TITLE=\":: Read The $_PROJECT_STRING_NAME_EXTENDED Architect Installation Documentation ::\">Architect Installation Documentation</A> ]</B></BIG></CENTER><HR>
 		<BR>
 		<FORM ACTION=\"?\" METHOD=\"post\">
 		Database Server Connection Settings<HR>
@@ -312,7 +312,7 @@ echo ("
 
 		System Hyper-Text-Transfer-Protocol Settings<HR>
 		* <I>Secure Uniform Resource Locator With Path-To-Kernel Directory</I>:<BR>
-		[ General Secure Uniform Resource Location, Example: https://TinkeSoftware.com/Cerberus ]<BR>
+		[ General Secure Uniform Resource Location, Example: $_PROJECT_SERVER_URL_SECURE/$_PROJECT_STRING_NAME_SHORT ]<BR>
 			<INPUT TYPE=\"TEXT\" NAME=\"Architect_URL_Secure\"><BR>
 		[ Secure Sockets Layer ( S.S.L. ) Uniform Resource Location, Example: https://SSL.TinkeSoftware.com/Cerberus ]<BR>
 			<INPUT TYPE=\"TEXT\" NAME=\"Architect_URL_Secure_SSL\"><BR>
@@ -320,7 +320,7 @@ echo ("
 			<INPUT TYPE=\"TEXT\" NAME=\"Architect_URL_Secure_openssl\"><BR>
 		[ Transport Layer Security Uniform Resource Location, Example: https://TLS.TinkeSoftware.com/Cerberus ]<BR>
 			<INPUT TYPE=\"TEXT\" NAME=\"Architect_URL_Secure_TLS\"><BR>
-		* <I>Clear-Text Uniform Resource Locator With Path-To-Cerberus Directory</I>:<BR>
+		* <I>Clear-Text Uniform Resource Locator With Path-To-$_PROJECT_STRING_NAME_SHORT Directory</I>:<BR>
 		[ Example: http://TinkeSoftware.com/Cerberus ]<BR>
 			<INPUT TYPE=\"TEXT\" NAME=\"Architect_URL_ClearText\"><BR>
 			<INPUT TYPE=\"submit\" VALUE=\"Start Installation\">
@@ -1564,7 +1564,7 @@ member_username)VALUES(
 '$_GLOBAL_LOCAL_SERVER_DATE_WITH_SEPARATION',
 '$_GLOBAL_LOCAL_SERVER_DATE_MINUTES',
 '0',
-'https://www.Twitter.com/CerberusCMS',
+'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
 '$_POST_ADMINISTRATOR_USERNAME')");
 
 /*
@@ -1676,7 +1676,7 @@ member_username)VALUES(
 'Empty Entry :: CryptoCurrency :: ZCash Address',
 'Empty Entry :: Physical Home Address',
 'Empty Entry :: Physical Mailing Address',
-'Cerberus@Localhost',
+'$_PROJECT_STRING_NAME_SHORT@Localhost',
 '10000',
 '1',
 'Default.png',
@@ -1690,7 +1690,7 @@ member_username)VALUES(
 'Cyberspace',
 'On Guard',
 'Nine Inch Nails - Deep',
-'Cerberus',
+'$_PROJECT_STRING_NAME_SHORT',
 'CMS',
 'None',
 'None Provided :: Nick Name',
@@ -1709,7 +1709,7 @@ member_username)VALUES(
 '0',
 '0',
 '0',
-'I am Cerberus ! I am the Services Root Administrator.',
+'I am $_PROJECT_STRING_NAME_SHORT ! I am the Services Root Administrator.',
 'I guard the entrance to Hades !',
 '$_GLOBAL_LOCAL_SERVER_DATE',
 'Account Registered @ Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS On: $_GLOBAL_LOCAL_SERVER_DATE',
@@ -1730,7 +1730,7 @@ member_username)VALUES(
 'Empty Entry :: Social Media :: Communications :: SnapChat',
 'Empty Entry :: Social Media :: Gallery :: InstaGram',
 'Empty Entry :: Social Media :: Posting :: FaceBook',
-'CerberusCMS',
+'$_PROJECT_STRING_NAME_UNIX',
 'Empty Entry :: Social Media :: Programming :: BITBucket',
 'Empty Entry :: Social Media :: Programming :: GITHub',
 'Empty Entry :: Social Media :: Programming :: LaunchPad',
@@ -1743,8 +1743,8 @@ member_username)VALUES(
 '$_GLOBAL_LOCAL_SERVER_DATE_WITH_SEPARATION',
 '$_GLOBAL_LOCAL_SERVER_DATE_MINUTES',
 '0',
-'https://www.Twitter.com/CerberusCMS',
-'Cerberus')");
+'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
+'$_PROJECT_STRING_NAME_SHORT')");
 
 	echo ("[ Done ]<BR>");
 
@@ -1823,7 +1823,7 @@ copy("./System/Default/Register/Register.html","./Member/$_POST_ADMINISTRATOR_US
  + Copy Default Files To Organized Directory Structure: Administrator Electronic Mail Address
 */
 
-copy("./System/Default/Friend/Friend.cerberus","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
 
 	echo ("[ Done ]<BR>");
 
@@ -1833,7 +1833,7 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/$_POST_ADMINISTRATOR_US
  + Copy Administrator Electronic Mail Address To Master List
 */
 
-copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_Mail_Addresses/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
 
 	echo ("[ Done ]<BR>");
 
@@ -1849,65 +1849,65 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_
  + Make Directory: Backup Services-Root Administrator Account ( Cerberus )
 */
 
-mkdir("./Member/Cerberus");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT");
 
 /*
  + Make Directory: Backup Services-Root Administrator Account ( Cerberus ) Organized File Directory Structure
 */
 
-mkdir("./Member/Cerberus/Files");
-mkdir("./Member/Cerberus/Files/Audio");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio");
 
-mkdir("./Member/Cerberus/Files/Document");
-mkdir("./Member/Cerberus/Files/Document/Activity_Logging");
-mkdir("./Member/Cerberus/Files/Document/Electronic_Mail");
-mkdir("./Member/Cerberus/Files/Document/Friends");
-mkdir("./Member/Cerberus/Files/Document/Streams");
-mkdir("./Member/Cerberus/Files/Document/Streams/Wall");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Friends");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall");
 
-mkdir("./Member/Cerberus/Files/Image");
-mkdir("./Member/Cerberus/Files/Image/Profile");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile");
 
-mkdir("./Member/Cerberus/Files/Video");
+mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video");
 
 /*
  + Directory Security: Copy Directory Denial Index Files
 */
 
-copy("./Member/Setup/Indexes/Files/Files.php","./Member/Cerberus/Files/index.php");
+copy("./Member/Setup/Indexes/Files/Files.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/index.php");
 
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/Cerberus/Files/Audio/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/index.php");
 
-copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/Cerberus/Files/Document/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/Cerberus/Files/Document/Activity_Logging/index.php");
-copy("./System/Default/Friend/Friend.cerberus","./Member/Cerberus/Files/Document/Activity_Logging/Activity_Log.php");
-copy("./Member/Setup/Indexes/Files/Document/Electronic_Mail/Electronic_Mail.php","./Member/Cerberus/Files/Document/Electronic_Mail/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/Cerberus/Files/Document/Friends/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/Cerberus/Files/Document/Streams/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/Cerberus/Files/Document/Streams/Wall/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging/index.php");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging/Activity_Log.php");
+copy("./Member/Setup/Indexes/Files/Document/Electronic_Mail/Electronic_Mail.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Friends/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall/index.php");
 
-copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/Cerberus/Files/Image/index.php");
-copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/Cerberus/Files/Image/Profile/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile/index.php");
 
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/Cerberus/Files/Video/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/index.php");
 
 /*
  + Make Directory: Backup Services-Root Administrator Account ( Cerberus ) Hyper-Text-Markup-Language Web-Page Index File
 */
 
-copy("./System/Default/Register/Register.html","./Member/Cerberus/index.html");
+copy("./System/Default/Register/Register.html","./Member/$_PROJECT_STRING_NAME_SHORT/index.html");
 
 /*
  + Copy Default Files To Organized Directory Structure: Administrator Electronic Mail Address
 */
 
-copy("./System/Default/Friend/Friend.cerberus","./Member/Cerberus/Files/Document/Electronic_Mail/Cerberus@Localhost");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail/$_PROJECT_STRING_NAME_SHORT@Localhost");
 
 /*
  + Copy Administrator Electronic Mail Address To Master List
 */
 
-copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_Mail_Addresses/Cerberus@Localhost");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_PROJECT_STRING_NAME_SHORT@Localhost");
 
 	echo ("[ Done ]<BR>");
 
@@ -2053,7 +2053,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_date,topic_description,topic_forum_id,topic_last_post,topic_last_poster,topic_title)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE','This is an Example Topic.','1','$_GLOBAL_LOCAL_SERVER_DATE','Cerberus','This Is The Example Topic #1 Entry Within The Example Forum #1 Entry')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_date,topic_description,topic_forum_id,topic_last_post,topic_last_poster,topic_title)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE','This is an Example Topic.','1','$_GLOBAL_LOCAL_SERVER_DATE','$_PROJECT_STRING_NAME_SHORT','This Is The Example Topic #1 Entry Within The Example Forum #1 Entry')");
 
 	echo ("[ Done ]<BR>");
 
@@ -2065,7 +2065,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post(post_access_level,post_author,post_data,post_date,post_last_edit,post_topic_id)VALUES('1','Cerberus','This is an Example Post -- you can Administer the Forum via the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','$_GLOBAL_LOCAL_SERVER_DATE','1')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post(post_access_level,post_author,post_data,post_date,post_last_edit,post_topic_id)VALUES('1','$_PROJECT_STRING_NAME_SHORT','This is an Example Post -- you can Administer the Forum via the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','$_GLOBAL_LOCAL_SERVER_DATE','1')");
 
 	echo ("[ Done ]<BR>");
 
@@ -2089,7 +2089,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_c
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(file_author,file_category,file_description,file_image,file_location,file_number_of_downloads,file_time,file_title,file_uploader)VALUES('None','1','This is an Example File Entry -- You can Delete this Example File Entry from the Administration Control Panel.','./Upload/Default/0987654321-0987654321.png','./Upload/Default/0987654321-0987654321.png','1','$_GLOBAL_LOCAL_SERVER_DATE','Example File','Cerberus')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(file_author,file_category,file_description,file_image,file_location,file_number_of_downloads,file_time,file_title,file_uploader)VALUES('None','1','This is an Example File Entry -- You can Delete this Example File Entry from the Administration Control Panel.','./Upload/Default/0987654321-0987654321.png','./Upload/Default/0987654321-0987654321.png','1','$_GLOBAL_LOCAL_SERVER_DATE','Example File','$_PROJECT_STRING_NAME_SHORT')");
 
 	echo ("[ Done ]<BR>");
 
@@ -2101,7 +2101,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles(article_author,article_data,article_time,article_title)VALUES('Cerberus','This is an Example Article Entry -- You can Delete this Article Entry from the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','Example Article')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles(article_author,article_data,article_time,article_title)VALUES('$_PROJECT_STRING_NAME_SHORT','This is an Example Article Entry -- You can Delete this Article Entry from the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','Example Article')");
 
 	echo ("[ Done ]<BR>");
 
@@ -2113,7 +2113,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articl
  ============================================================================================================
 */
 
-mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news(news_author,news_avatar,news_data,news_mood,news_music,news_rss_rfc,news_time,news_title)VALUES('Cerberus','Default.png','This is an Example News Article Entry -- You can Delete this News Article Entry from the Administration Control Panel.','None','None','Wed, 05 Aug 2009 15:04:18 -0700','$_GLOBAL_LOCAL_SERVER_DATE','Example News')");
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news(news_author,news_avatar,news_data,news_mood,news_music,news_rss_rfc,news_time,news_title)VALUES('$_PROJECT_STRING_NAME_SHORT','Default.png','This is an Example News Article Entry -- You can Delete this News Article Entry from the Administration Control Panel.','None','None','Wed, 05 Aug 2009 15:04:18 -0700','$_GLOBAL_LOCAL_SERVER_DATE','Example News')");
 
 	echo ("[ Done ]<BR>");
 
@@ -2198,7 +2198,7 @@ if (unlink("./$_INTERNAL_FILE_ARCHITECT")) {
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Redirecting To This <B>$_PROJECT_STRING_NAME_EXTENDED Installation</B> Login Application Module... Please Wait 15 Seconds.<BR><BR>");
 
-	echo ("<META HTTP-EQUIV=Refresh CONTENT=\"15; URL=Cerberus.php?Application_Member=Login\">");
+	echo ("<META HTTP-EQUIV=Refresh CONTENT=\"15; URL=$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Login\">");
 
 } else {
 
@@ -2273,11 +2273,11 @@ echo ("
 		*&nbsp;Source Forge Secure Server: <I>$_PROJECT_SERVER_URL_SOURCEFORGE_SECURE</I><BR>
 		*&nbsp;Source Forge Clear-Text Server: <I>$_PROJECT_SERVER_URL_SOURCEFORGE_CLEARTEXT</I><BR><BR>
 
-		Tinke Software Internal Project Hosting<BR>
-		*&nbsp;Data Validation Secure Server: <I>$_PROJECT_SERVER_URL_SECURE/CerberusCMS</I><BR>
-		*&nbsp;Data Validation Clear-Text Server: <I>$_PROJECT_SERVER_URL_CLEARTEXT/CerberusCMS</I><BR><BR>
+		$_PROJECT_DEVELOPER_STRING_NAME_EXTENDED Internal Project Hosting<BR>
+		*&nbsp;Data Validation Secure Server: <I>$_PROJECT_SERVER_URL_SECURE/$_PROJECT_STRING_NAME_UNIX</I><BR>
+		*&nbsp;Data Validation Clear-Text Server: <I>$_PROJECT_SERVER_URL_CLEARTEXT/$_PROJECT_STRING_NAME_UNIX</I><BR><BR>
 
-		Tinke Software Official Servers<BR>
+		$_PROJECT_DEVELOPER_STRING_NAME_EXTENDED Official Servers<BR>
 		*&nbsp;Data Validation Secure Server: <I>$_PROJECT_SERVER_URL_SECURE</I><BR>
 		*&nbsp;Data Validation Clear-Text Server: <I>$_PROJECT_SERVER_URL_CLEARTEXT</I>
 ");
@@ -2373,7 +2373,7 @@ echo ("
  ============================================================================================================
 */
 
-	echo ("<HR><CENTER>Copyright <BIG><B>&copy;</B></BIG> <A HREF=\"https://www.GitHub.com/TinkeSoftware\" TARGET=\"_NEW\" TITLE=\":: Tinke Software On :: GitHub\">Tinke Software</A>, <A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TITLE=\":: $_PROJECT_STRING_NAME_EXTENDED Software Project On :: SourceForge ::\">$_PROJECT_STRING_NAME_EXTENDED</A>, <A HREF=\"mailto:GCJohnsonChevalier@Protonmail.com\" TITLE=\":: Send Electronic Mail Message To :: GCJohnsonChevalier@Protonmail.com ::\">Gary Christopher Johnson</A>, 2000 - 2023.</CENTER><HR></TD></TR></TABLE>
+	echo ("<HR><CENTER>Copyright <BIG><B>&copy;</B></BIG> <A HREF=\"https://www.GitHub.com/TinkeSoftware\" TARGET=\"_NEW\" TITLE=\":: $_PROJECT_DEVELOPER_STRING_NAME_EXTENDED On :: GitHub\">$_PROJECT_DEVELOPER_STRING_NAME_EXTENDED</A>, <A HREF=\"$_PROJECT_SERVER_URL_SOURCEFORGE_SECURE\" TITLE=\":: $_PROJECT_STRING_NAME_EXTENDED Software Project On :: SourceForge ::\">$_PROJECT_STRING_NAME_EXTENDED</A>, <A HREF=\"mailto:GCJohnsonChevalier@Protonmail.com\" TITLE=\":: Send Electronic Mail Message To :: GCJohnsonChevalier@Protonmail.com ::\">Gary Christopher Johnson</A>, 2000 - 2023.</CENTER><HR></TD></TR></TABLE>
 	</BODY>
 </HTML>
 ");
