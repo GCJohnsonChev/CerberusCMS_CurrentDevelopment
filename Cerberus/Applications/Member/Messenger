@@ -136,11 +136,57 @@ $_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWO
 
 /*
  ============================================================================================================
- + Post Variables :: Find Hidden Messenger Room Name
+ + Post Variables :: Find :: Hidden Messenger Room Name
  ============================================================================================================
 */
 
 $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_POST['AM_Messenger_Find_Messenger_Room_Name_Invisible'];
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application Variables :: Mobile Device Messaging Service
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: Find :: Mobile Device Messaging Service :: Member Account Name
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_POST_FIND_SMS_RECIPIENT_NAME								= $_POST['AM_Messenger_Find_Messenger_SMS_Recipient_Name'];
+$_Application_Module_Messenger_POST_FIND_MMS_RECIPIENT_NAME								= $_POST['AM_Messenger_Find_Messenger_MMS_Recipient_Name'];
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application Variables :: :: Mobile Device Messaging Service
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: Short Messaging Service
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER								= $_POST['AM_Messenger_SMS_Mobile_Device_Carrier'];
+$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER						= $_POST['AM_Messenger_SMS_Mobile_Device_Carrier_Phone_Number'];
+$_Application_Module_Messenger_POST_SMS_MESSAGE										= $_POST['AM_Messenger_SMS_Message'];
+
+/*
+ ============================================================================================================
+ + Post Variables :: Multimedia Messaging Service
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER								= $_POST['AM_Messenger_MMS_Mobile_Device_Carrier'];
+$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER						= $_POST['AM_Messenger_MMS_Mobile_Device_Carrier_Phone_Number'];
+$_Application_Module_Messenger_POST_MMS_MESSAGE										= $_POST['AM_Messenger_MMS_Message'];
+$_Application_Module_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD								= $_POST['AM_Messenger_MMS_Message_File_Upload'];
 
 /*
  ============================================================================================================
@@ -251,7 +297,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA			= $_POST['AM_Messenger_Encrypted_Text_File_Messenger_Room_Message'];
+//$_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA							= $_POST['AM_Messenger_Encrypted_Text_File_Messenger_Room_Message'];
 
 /*
  ============================================================================================================
@@ -259,9 +305,9 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_Type			= "AES-128-CTR";
-//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length		= openssl_cipher_iv_length($_Application_Module_Messenger_Encryption_Cipher_Ring_Type);
-//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options		= 0;
+//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_Type							= "AES-128-CTR";
+//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length						= openssl_cipher_iv_length($_Application_Module_Messenger_Encryption_Cipher_Ring_Type);
+//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options						= 0;
 
 /*
  ============================================================================================================
@@ -269,7 +315,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Vector		= '1234567891011121';
+//$_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Vector						= '1234567891011121';
 
 /*
  ============================================================================================================
@@ -277,7 +323,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_Encryption_Key			= "test";
+//$_Application_Module_Messenger_Encryption_Type_AES_Encryption_Key							= "test";
 
 /*
  ============================================================================================================
@@ -285,7 +331,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_Random_Bytes			= random_bytes($_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Length);
+//$_Application_Module_Messenger_Encryption_Type_AES_Random_Bytes							= random_bytes($_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Length);
 
 /*
  ============================================================================================================
@@ -293,7 +339,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_Digest_Key 			= openssl_digest(php_uname(), 'MD5', true);
+//$_Application_Module_Messenger_Encryption_Type_AES_Digest_Key 							= openssl_digest(php_uname(), 'MD5', true);
 
 /*
  ============================================================================================================
@@ -301,7 +347,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Encryption_Type_AES_Encrypt_Message_Data		= openssl_encrypt($_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA, $_Application_Module_Messenger_Encryption_Cipher_Ring_Type, $_Application_Module_Messenger_Encryption_Type_AES_Encryption_Key, $_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Encryption_Random_Bytes);
+//$_Application_Module_Messenger_Encryption_Type_AES_Encrypt_Message_Data						= openssl_encrypt($_Application_Module_Messenger_Encryption_Type_AES_POST_MESSAGE_DATA, $_Application_Module_Messenger_Encryption_Cipher_Ring_Type, $_Application_Module_Messenger_Encryption_Type_AES_Encryption_Key, $_Application_Module_Messenger_Encryption_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Encryption_Random_Bytes);
 
 /*
  ============================================================================================================
@@ -317,7 +363,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA			= "";
+//$_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA							= "";
 
 /*
  ============================================================================================================
@@ -325,7 +371,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Vector		= '1234567891011121';
+//$_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Vector						= '1234567891011121';
 
 /*
  ============================================================================================================
@@ -333,7 +379,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes			= random_bytes($_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
+//$_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes							= random_bytes($_Application_Module_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
 
 /*
  ============================================================================================================
@@ -341,7 +387,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Decryption_Type_AES_Digest_Key				= openssl_digest(php_uname(), 'MD5', true);
+//$_Application_Module_Messenger_Decryption_Type_AES_Digest_Key								= openssl_digest(php_uname(), 'MD5', true);
 
 /*
  ============================================================================================================
@@ -349,7 +395,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key			= "test";
+//$_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key							= "test";
 
 /*
  ============================================================================================================
@@ -357,7 +403,7 @@ $_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND							= $_PO
  ============================================================================================================
 */
 
-//$_Application_Module_Messenger_Decryption_Type_AES_OpenSSL_Decrypt_Message		= openssl_decrypt($_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes);
+//$_Application_Module_Messenger_Decryption_Type_AES_OpenSSL_Decrypt_Message						= openssl_decrypt($_Application_Module_Messenger_Decryption_Type_AES_MESSAGE_DATA, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Messenger_Decryption_Type_AES_Decryption_Key, $_Application_Module_Messenger_Decryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Messenger_Decryption_Type_AES_Random_Bytes);
 
 /*
  ============================================================================================================
@@ -425,6 +471,20 @@ echo ("
 													* <I><B>Find Invisible Messenger Room</B></I>:<BR>
 													[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
 														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Find_Messenger_Room_Name_Invisible\" VALUE=\"Write Invisible Messenger Room Name Here...\" MAXLENGTH=\"50\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Find\">
+												</FORM><BR><BR>
+
+											<B>Mobile Device Messaging Service Options</B><HR>
+
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS&amp;SMSID&#61;$_Application_Module_Messenger_POST_FIND_SMS_RECIPIENT_NAME\" METHOD=\"POST\">
+													* <I><B>Send Short Messaging Service Message :: Find Member Account UserName</B></I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Find_Messenger_SMS_Recipient_Name\" VALUE=\"Write Member Account UserName Here...\" MAXLENGTH=\"25\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Find\">
+												</FORM><BR>
+
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS&amp;MMSID&#61;$_Application_Module_Messenger_POST_FIND_MMS_RECIPIENT_NAME\" METHOD=\"POST\">
+													* <I><B>Send Multimedia Messaging Service Message :: Find Member Account UserName</B></I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Find_Messenger_MMS_Recipient_Name\" VALUE=\"Write Member Account UserName Here...\" MAXLENGTH=\"25\"><BR>
 													<INPUT TYPE=\"submit\" VALUE=\"Find\">
 												</FORM>
 ");
@@ -820,7 +880,7 @@ echo ("Writing Plain-Text Message: <I>$_Application_Module_Messenger_POST_PLAIN_
 
 echo ("To Plain-Text File Name: ./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN.html ...");
 
-$_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE				= fopen("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN.html", "a");
+$_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE								= fopen("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN.html", "a");
 
 /*
  ============================================================================================================
@@ -861,4 +921,140 @@ fclose($_Application_Module_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE);
 if ($_GET["DeleteMessengerRoom"] == "$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME") {
 
 } // [ + ] IF: Internal Application: Delete Specified Messenger Room Name
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Option :: Short Messaging Service
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Option"] == "SMS") {
+
+if (!$_Application_Module_Messenger_POST_SMS_MESSAGE) {
+
+echo ("
+
+												<B>Short Messaging Service :: Message</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS\" METHOD=\"POST\">
+													* <I>Mobile Device Service Provider</I>:<BR>
+														<SELECT NAME=\"AM_Messenger_SMS_Mobile_Device_Carrier\">
+															<OPTION VALUE=\"\">United States of America</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"txt.att.net\">USA :: American Telephone and Telegraph</OPTION>
+															<OPTION VALUE=\"smsmyboostmobile.com\">USA :: Boost Mobile</OPTION>
+															<OPTION VALUE=\"sms.cricketwireless.net\">USA :: Cricket</OPTION>
+															<OPTION VALUE=\"mymetropcs.com\">USA :: Metro Personal Communications Service</OPTION>
+															<OPTION VALUE=\"tmomail.net\">USA :: T-Mobile</OPTION>
+															<OPTION VALUE=\"email.ussc.net\">USA :: U.S. Cellular</OPTION>
+															<OPTION VALUE=\"vmobil.com\">USA :: Virgin Mobile</OPTION>
+															<OPTION VALUE=\"vtext.com\">USA :: Verizon</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"\">Digital, Emulated and Simulated Mobile Device Carriers</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"textnow.com\">TextNow !</OPTION>
+														</SELECT><BR>
+													* <I>Mobile Device Service Provider Phone Number</I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_SMS_Mobile_Device_Carrier_Phone_Number\" VALUE=\"+1\" MAXLENGTH=\"14\"><BR>
+													* <I>Short Messaging Service Message</I>:<BR>
+													[ Maximum Length: 160 Alpha-Numeric Characters ]<BR>
+														<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"160\" NAME=\"AM_Messenger_SMS_Message\" ID=\"WYSIWYG\">Write Short Messaging Service Messages Here...</TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Send Message\">
+												</FORM>
+
+");
+
+} else {
+
+if(mail("$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER","Short Messaging Service Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME @ $_GLOBAL_SYSTEM_SITE_TITLE","
+---
+\"$_Application_Module_Messenger_POST_SMS_MESSAGE\"
+---
+$_GLOBAL_REMOTE_SERVER_ADDRESS
+")) {
+
+												echo ("Message Sent!<BR>$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Messenger_POST_SMS_MESSAGE");
+
+} else {
+
+												echo ("Error: Message Has Not Sent!<BR>$_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER $_Application_Module_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Messenger_POST_SMS_MESSAGE");
+
+} // [ + ] IF: Short Messaging Service Electronic Mail Message Has Sent
+
+} // [ + ] IF: Internal Application: Short Messaging Service Application Form Variables Have Executed
+
+} // [ + ] IF: Option: Short Messaging Service
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Option :: Multimedia Messaging Service
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Option"] == "MMS") {
+
+if (!$_Application_Module_Messenger_POST_MMS_MESSAGE) {
+
+echo ("
+
+												<B>Multimedia Messaging Service :: Message</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;MMS\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+													* <I>Mobile Device Service Provider</I>:<BR>
+														<SELECT NAME=\"AM_Messenger_MMS_Mobile_Device_Carrier\">
+															<OPTION VALUE=\"\">United States of America</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"txt.att.net\">USA :: American Telephone and Telegraph</OPTION>
+															<OPTION VALUE=\"smsmyboostmobile.com\">USA :: Boost Mobile</OPTION>
+															<OPTION VALUE=\"sms.cricketwireless.net\">USA :: Cricket</OPTION>
+															<OPTION VALUE=\"mymetropcs.com\">USA :: Metro Personal Communications Service</OPTION>
+															<OPTION VALUE=\"tmomail.net\">USA :: T-Mobile</OPTION>
+															<OPTION VALUE=\"email.ussc.net\">USA :: U.S. Cellular</OPTION>
+															<OPTION VALUE=\"vmobil.com\">USA :: Virgin Mobile</OPTION>
+															<OPTION VALUE=\"vtext.com\">USA :: Verizon</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"\">Digital, Emulated and Simulated Mobile Device Carriers</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"textnow.com\">TextNow !</OPTION>
+														</SELECT><BR>
+													* <I>Mobile Device Service Provider Phone Number</I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_MMS_Mobile_Device_Carrier_Phone_Number\" VALUE=\"+1\" MAXLENGTH=\"14\"><BR>
+													* <I>Short Messaging Service Message</I>:<BR>
+													[ Maximum Length: 160 Alpha-Numeric Characters ]<BR>
+														<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"160\" NAME=\"AM_Messenger_MMS_Message\" ID=\"WYSIWYG\">Write Multimedia Messaging Service Messages Here...</TEXTAREA><BR>
+														* <I>Upload Unique File To This Multimedia Messaging Service Message</I>:<BR>
+														[ Permitted Audio, Document, Image, Package and Video Files ]<BR>
+														* PNG, JPG, TIF / TIFF, BMP, TGA, DPE<BR>
+														* WAV, MP3, WMA, AAC, FLAC, OGG, WMA<BR>
+														* AVI, MP4, MOV, WMV, AVCHD, FLV, SWF, MKV, WEBM<BR>
+														* DOC, XLS, PPT, PDF, EPS, PSD, TXT<BR>
+														* ZIP, TAR, TAR.GZ, GIT, Mercurial<BR>
+													<INPUT TYPE=\"file\" NAME=\"AM_Messenger_MMS_Message_File_Upload\" MAXLENGTH=\"60\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Send Message\">
+												</FORM>
+
+");
+
+} else {
+
+if(mail("$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER","Multimedia Messaging Service Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME @ $_GLOBAL_SYSTEM_SITE_TITLE","
+---
+\"$_Application_Module_Messenger_POST_MMS_MESSAGE\"
+---
+$_GLOBAL_REMOTE_SERVER_ADDRESS
+")) {
+
+												echo ("Message Sent!<BR>$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Messenger_POST_MMS_MESSAGE");
+
+} else {
+
+												echo ("Error: Message Has Not Sent!<BR>$_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER $_Application_Module_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Messenger_POST_MMS_MESSAGE");
+
+} // [ + ] IF: Multimedia Messaging Service Electronic Mail Message Has Sent
+
+} // [ + ] IF: Internal Application: Multimedia Messaging Service Application Form Variables Have Executed
+
+} // [ + ] IF: Option: Multimedia Messaging Service
 ?>

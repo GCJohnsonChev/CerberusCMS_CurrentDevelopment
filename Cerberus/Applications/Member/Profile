@@ -485,7 +485,15 @@ $_Application_Module_Members_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY
 if ($_GET["Name"] == "$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME") {
 
 echo ("
-											<CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;AccountDetails\" TITLE=\":: Display Detailed Information For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST\">Detailed Information</A> &#8212; <A HREF=\"\">Image Gallery</A> &#8212; <A HREF=\"\">Streams</A> ]</CENTER>
+											<CENTER>
+												[&nbsp;
+													<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;AccountDetails\" TITLE=\":: Open & Display Detailed Information For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::\">Detailed Information</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Gallery&amp;Type&#61;Image\" TITLE=\":: Open & Display The Image Gallery For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::\">Image Gallery</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Gallery&amp;Type&#61;Video\" TITLE=\":: Open & Display The Video Gallery For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::\">Video Gallery</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Streams\" TITLE=\":: Open & Display The Video Gallery For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::\">Streams</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Friends\" TITLE=\":: Open & Display The Friends List For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::\">Friends</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Members_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;More\" TITLE=\":: Open & Display More Options For The Registered Member Account :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Members_Profile_LIST_MEMBER_NAME_LAST ::\">More</A>
+												&nbsp;]</CENTER>
 												<HR>
 													<A HREF=\"$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: Open & Display This Image ::\"><IMG SRC=\"$_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME :: $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" ALT=\":: $_Application_Module_Members_Profile_LIST_MEMBER_USERNAME :: $_Application_Module_Members_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" WIDTH=\"120\" HEIGHT=\"120\"></A><BR><BR>
 													$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_ABOUT
@@ -494,6 +502,60 @@ echo ("
 													$_Application_Module_Members_Profile_LIST_MEMBER_PROFILE_SIGNATURE
 												<HR>
 ");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Gallery
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "Gallery") {
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Gallery :: Type :: Image
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Type"] == "Image") {
+
+echo ("<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Private Files Upload Application Module ::\">Upload Images</A>");
+
+} // [ + ] IF: Internal Application: Display :: Gallery :: Type :: Image Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Gallery :: Type :: Video
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Type"] == "Video") {
+
+echo ("<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Private Files Upload Application Module ::\">Upload Videos</A>");
+
+} // [ + ] IF: Internal Application: Display :: Gallery :: Type :: Video Is Activated
+
+} // [ + ] IF: Internal Application: Display :: Gallery Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Streams
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "Streams") {
+
+echo ("Live Video Stream - Write New Post");
+
+} // [ + ] IF: Internal Application: Display :: Streams Is Activated
 
 /*
  ============================================================================================================
