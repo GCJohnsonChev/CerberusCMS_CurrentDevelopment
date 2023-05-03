@@ -222,7 +222,7 @@ echo ("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http:/
 
 /*
  ============================================================================================================
- + Installation Form Post Variables
+ + Installation Form :: Post Variables
  ============================================================================================================
 */
 
@@ -242,15 +242,10 @@ $_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_SSL								= $_POST['Architect_URL_Secu
 $_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_OPENSSL							= $_POST['Architect_URL_Secure_openssl'];
 $_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_TLS								= $_POST['Architect_URL_Secure_TLS'];
 $_ARCHITECT_INSTALL_FORM_POST_URL_CLEARTEXT								= $_POST['Architect_URL_ClearText'];
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_ARCHITECT					= file_get_contents("./$_INTERNAL_FILE_ARCHITECT");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_CONFIGURATION					= file_get_contents("./System/Configuration/Global_Configuration.php");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_STANDARD		= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Standard.php");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_IMPROVED		= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Improved.php");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_KERNEL						= file_get_contents("./$_INTERNAL_FILE_KERNEL");
 
 /*
  ============================================================================================================
- + Database Create Form Post Variables
+ + Database Create Form :: Post Variables
  ============================================================================================================
 */
 
@@ -259,6 +254,18 @@ $_ARCHITECT_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_USERNAME					= $_P
 $_ARCHITECT_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_PASSWORD					= $_POST['Architect_Create_SQL_Database_Server_Database_Password'];
 $_ARCHITECT_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME					= $_POST['Architect_Create_SQL_Database_Server_Database_Name'];
 $_ARCHITECT_INSTALL_FORM_POST_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX		= $_POST['Architect_Create_SQL_Database_Server_Database_Name_Table_Prefix'];
+
+/*
+ ============================================================================================================
+ + Retrieve File Contents From :: System Files
+ ============================================================================================================
+*/
+
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_ARCHITECT					= file_get_contents("./$_INTERNAL_FILE_ARCHITECT");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_CONFIGURATION					= file_get_contents("./System/Configuration/Global_Configuration.php");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_STANDARD		= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Standard.php");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_IMPROVED		= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Improved.php");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_KERNEL						= file_get_contents("./$_INTERNAL_FILE_KERNEL");
 
 /*
  ============================================================================================================
@@ -1173,24 +1180,39 @@ if ( $_GET["InternalApplication"] == "Install_Defaults" ) {
 
 /*
  ============================================================================================================
- + Install Default Data Form Post Variables
+ + Administration Account :: Post Variables
  ============================================================================================================
 */
 
-$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS						= $_POST['post_administrator_electronic_mail_address'];
-$_POST_ADMINISTRATOR_USERNAME								= $_POST['post_administrator_username'];
-$_POST_ADMINISTRATOR_PASSWORD_1								= $_POST['post_administrator_password_1'];
-$_POST_ADMINISTRATOR_PASSWORD_2								= $_POST['post_administrator_password_2'];
-
-$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS						= strtolower($_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS);
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_ELECTRONIC_MAIL_ADDRESS				= $_POST['post_administrator_electronic_mail_address'];
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME						= $_POST['post_administrator_username'];
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1					= $_POST['post_administrator_password_1'];
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_2					= $_POST['post_administrator_password_2'];
 
 /*
  ============================================================================================================
- + Administration Accounts Password Hashing System
+ + Internal Security => Administration Account :: Post Variables :: Electronic Mail Address :: Convert String To LowerCase
  ============================================================================================================
 */
 
-$_POST_ADMINISTRATOR_PASSWORD_3								= password_hash($_POST_ADMINISTRATOR_PASSWORD_1, PASSWORD_BCRYPT);
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_ELECTRONIC_MAIL_ADDRESS				= strtolower($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_ELECTRONIC_MAIL_ADDRESS);
+
+/*
+ ============================================================================================================
+ + Internal Security => Administration Account :: Post Variables :: UserName :: Convert String To LowerCase With UpperCase First Character
+ ============================================================================================================
+*/
+
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME						= strtolower($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME);
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME						= ucfirst($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME);
+
+/*
+ ============================================================================================================
+ + Internal Security => Administration Accounts Password Hashing System
+ ============================================================================================================
+*/
+
+$_POST_ADMINISTRATOR_PASSWORD_3								= password_hash($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1, PASSWORD_BCRYPT);
 
 /*
  ============================================================================================================
@@ -1198,7 +1220,7 @@ $_POST_ADMINISTRATOR_PASSWORD_3								= password_hash($_POST_ADMINISTRATOR_PASS
  ============================================================================================================
 */
 
-if ((!$_POST_ADMINISTRATOR_USERNAME) || (!$_POST_ADMINISTRATOR_PASSWORD_1) || (!$_POST_ADMINISTRATOR_PASSWORD_2)) {
+if ((!$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME) || (!$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1) || (!$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_2)) {
 
 echo ("
 	<HR><CENTER>Create Administration Account</CENTER><HR><BR>
@@ -1228,7 +1250,7 @@ echo ("
  ============================================================================================================
 */
 
-if ($_POST_ADMINISTRATOR_PASSWORD_1 == "$_POST_ADMINISTRATOR_PASSWORD_2") {
+if ($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1 == "$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_2") {
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Default S.Q.L. Data to Database Server Tables:<BR>");
 
@@ -1497,7 +1519,7 @@ member_username)VALUES(
 'Empty Entry :: CryptoCurrency :: ZCash Address',
 'Empty Entry :: Physical Home Address',
 'Empty Entry :: Physical Mailing Address',
-'$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS',
+'$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_ELECTRONIC_MAIL_ADDRESS',
 '10000',
 '1',
 'Default.png',
@@ -1565,12 +1587,12 @@ member_username)VALUES(
 '$_GLOBAL_LOCAL_SERVER_DATE_MINUTES',
 '0',
 'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
-'$_POST_ADMINISTRATOR_USERNAME')");
+'$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME')");
 
 /*
  ============================================================================================================
  + Install Backup Services Root Administrator Account Details
- + ( Cerberus ) With Specified Administration Account Password
+ + With Specified Administration Account Password
  ============================================================================================================
 */
 
@@ -1762,9 +1784,9 @@ member_username)VALUES(
  + Make Directory: Administrator UserName
 */
 
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME<BR><BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME<BR><BR>");
 
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME");
 
 	echo ("[ Done ]<BR><BR>");
 
@@ -1772,75 +1794,75 @@ member_username)VALUES(
  + Make Directory: Administrator' Organized File Directory Structure
 */
 
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files<BR>");
 
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files");
 
 	echo ("[ Done ]<BR><BR>");
 
 // Audio
 
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Gallery<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Live<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Music<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Recordings<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Streams<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Gallery<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Live<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Music<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Recordings<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Streams<BR>");
 
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Gallery");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Live");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Music");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Recordings");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Streams");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Gallery");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Live");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Music");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Recordings");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Streams");
 
 	echo ("[ Done ]<BR><BR>");
 
 // Document
 
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Activity_Logging<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Electronic_Mail<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Friends<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams/Wall<BR>");
 
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Activity_Logging");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Electronic_Mail");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Friends");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams/Wall");
 
 	echo ("[ Done ]<BR>");
 
 // Image
 
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Gallery<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Streams<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Gallery<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Profile<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Streams<BR>");
 
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Gallery");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Streams");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Gallery");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Profile");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Streams");
 
 	echo ("[ Done ]<BR><BR>");
 
 // Video
 
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Gallery<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Live<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Movies<BR>");
-	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Streams<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Gallery<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Live<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Movies<BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Streams<BR>");
 
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Gallery");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Live");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Movies");
-	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Streams");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Gallery");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Live");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Movies");
+	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Streams");
 
 	echo ("[ Done ]<BR><BR>");
 
@@ -1852,41 +1874,41 @@ member_username)VALUES(
 
 // Audio
 
-copy("./Member/Setup/Indexes/Files/Files.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/index.php");
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/index.php");
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Gallery/index.php");
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Live/index.php");
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Music/index.php");
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Recordings/index.php");
-copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Streams/index.php");
+copy("./Member/Setup/Indexes/Files/Files.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Music/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Recordings/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Audio/Streams/index.php");
 
 // Document
 
-copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging/index.php");
-copy("./Member/Setup/Files/Document/Activity_Logging/Activity_Log.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging/Activity_Log.php");
-copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Electronic_Mail/Electronic_Mail.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/index.php");
-copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Activity_Logging/index.php");
+copy("./Member/Setup/Files/Document/Activity_Logging/Activity_Log.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Activity_Logging/Activity_Log.php");
+copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Electronic_Mail/Electronic_Mail.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Electronic_Mail/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Friends/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams/index.php");
+copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams/Wall/index.php");
 
 // Image
 
-copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/index.php");
-copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Gallery/index.php");
-copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile/index.php");
-copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Streams/index.php");
-copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Profile/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Streams/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Image/Profile/index.php");
 
 // Video
 
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/index.php");
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Gallery/index.php");
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Live/index.php");
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Movies/index.php");
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Streams/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Movies/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/Streams/index.php");
 
-copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Video/index.php");
 
 	echo ("[ Done ]<BR><BR>");
 
@@ -1896,7 +1918,7 @@ copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRAT
  + Make Directory: Administrator Hyper-Text-Markup-Language Web-Page Index File
 */
 
-copy("./System/Default/Register/Register.html","./Member/$_POST_ADMINISTRATOR_USERNAME/index.html");
+copy("./System/Default/Register/Register.html","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/index.html");
 
 	echo ("[ Done ]<BR><BR>");
 
@@ -1906,7 +1928,7 @@ copy("./System/Default/Register/Register.html","./Member/$_POST_ADMINISTRATOR_US
  + Copy Default Files To Organized Directory Structure: Administrator Electronic Mail Address
 */
 
-copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Electronic_Mail/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_ELECTRONIC_MAIL_ADDRESS");
 
 	echo ("[ Done ]<BR><BR>");
 
@@ -1916,7 +1938,7 @@ copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_POST
  + Copy Administrator Electronic Mail Address To Master List
 */
 
-copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_ELECTRONIC_MAIL_ADDRESS");
 
 	echo ("[ Done ]<BR><BR>");
 
