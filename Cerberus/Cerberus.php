@@ -880,12 +880,11 @@ $_KERNEL_LOGIN_USERNAME_CLEAR								= stripslashes($_KERNEL_LOGIN_USERNAME_CLEA
 
 /*
  ============================================================================================================
- + Internal Security => Convert Electronic Mail Address String To LowerCase String With UpperCase First Character
+ + Internal Security => Convert Electronic Mail Address String To LowerCase String
  ============================================================================================================
 */
 
 $_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= strtolower($_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
-$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= ucfirst($_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
 
 /*
  ============================================================================================================
