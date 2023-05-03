@@ -124,7 +124,7 @@ error_reporting("E_WARNING ^ E_NOTICE");
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_INSTALLATION_FILE						= "Architect.php";
+$_GLOBAL_SYSTEM_INSTALLATION_FILE							= "Architect.php";
 
 /*
  ============================================================================================================
@@ -162,7 +162,7 @@ if (file_exists($_GLOBAL_SYSTEM_INSTALLATION_FILE)) {
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_CONFIGURATION_FILE						= "./System/Configuration/Global_Configuration.php";
+$_GLOBAL_SYSTEM_CONFIGURATION_FILE							= "./System/Configuration/Global_Configuration.php";
 
 if (file_exists($_GLOBAL_SYSTEM_CONFIGURATION_FILE)) {
 
@@ -198,7 +198,7 @@ if (file_exists($_GLOBAL_SYSTEM_CONFIGURATION_FILE)) {
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE				= "./System/Security/Module/Sanitization/Default/Sanitization.$_INTERNAL_FILE_EXTENSION";
+$_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE					= "./System/Security/Module/Sanitization/Default/Sanitization.$_INTERNAL_FILE_EXTENSION";
 
 if (file_exists($_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE)) {
 
@@ -234,8 +234,8 @@ if (file_exists($_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE)) {
  ============================================================================================================
 */
 
-$DB										= new DB();
-//$DB										= new mysqli($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
+$DB											= new DB();
+//$DB											= new mysqli($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
 
 /*
  ============================================================================================================
@@ -251,8 +251,8 @@ $DB										= new DB();
  ============================================================================================================
 */
 
-$_KERNEL_DATABASE_SERVER_CONNECT 						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
-$_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 					= mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME);
+$_KERNEL_DATABASE_SERVER_CONNECT 							= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
+$_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 						= mysql_select_db($_ACCESS_DATABASE_SERVER_DATABASE_NAME);
 
 /*
  ============================================================================================================
@@ -260,8 +260,8 @@ $_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 					= mysql_select_db($_ACCESS_DA
  ============================================================================================================
 */
 
-//$_KERNEL_DATABASE_SERVER_CONNECT 						= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
-//$_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 				= mysql_select_db($_KERNEL_DATABASE_SERVER_CONNECT, $_ACCESS_DATABASE_SERVER_DATABASE_NAME);
+//$_KERNEL_DATABASE_SERVER_CONNECT 							= mysql_connect($_ACCESS_DATABASE_SERVER_HOSTNAME, $_ACCESS_DATABASE_SERVER_USERNAME, $_ACCESS_DATABASE_SERVER_PASSWORD);
+//$_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT 					= mysql_select_db($_KERNEL_DATABASE_SERVER_CONNECT, $_ACCESS_DATABASE_SERVER_DATABASE_NAME);
 
 /*
  ============================================================================================================
@@ -303,8 +303,8 @@ if ($_KERNEL_DATABASE_SERVER_DATABASE_NAME_SELECT) {
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Select_Main_Settings						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings WHERE id='1'");
-$_DB_Query_Kernel_Settings_Fetch_Array						= $DB->fetch_array($_DB_Query_Kernel_Select_Main_Settings);
+$_DB_Query_Kernel_Select_Main_Settings							= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings WHERE id='1'");
+$_DB_Query_Kernel_Settings_Fetch_Array							= $DB->fetch_array($_DB_Query_Kernel_Select_Main_Settings);
 
 /*
  ============================================================================================================
@@ -318,8 +318,8 @@ $_DB_Query_Kernel_Settings_Fetch_Array						= $DB->fetch_array($_DB_Query_Kernel
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_PLUGIN_LOCATION_DIRECTORY					= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_location'];
-$_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_location'];
+$_GLOBAL_SYSTEM_PLUGIN_LOCATION_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_location'];
+$_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_location'];
 
 /*
  ============================================================================================================
@@ -327,8 +327,8 @@ $_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS						= $_DB_Query_Kernel_Settings_Fetch_A
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_DIRECTORY					= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_safeHTML'];
-$_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_safeHTML'];
+$_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_safeHTML'];
+$_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_safeHTML'];
 
 /*
  ============================================================================================================
@@ -336,8 +336,8 @@ $_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS						= $_DB_Query_Kernel_Settings_Fetch_A
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY					= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_text_editor'];
-$_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_STATUS					= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_text_editor'];
+$_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_text_editor'];
+$_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_STATUS						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_status_text_editor'];
 
 /*
  ============================================================================================================
@@ -345,7 +345,7 @@ $_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_STATUS					= $_DB_Query_Kernel_Settings_Fetch
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_time_cookies'];
+$_GLOBAL_SYSTEM_COOKIE_TIME								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_time_cookies'];
 
 /*
  ============================================================================================================
@@ -353,7 +353,7 @@ $_GLOBAL_SYSTEM_COOKIE_TIME							= $_DB_Query_Kernel_Settings_Fetch_Array['sett
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_embedded_compression_gzip'];
+$_GLOBAL_SYSTEM_GZIP_STATUS								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_embedded_compression_gzip'];
 
 /*
  ============================================================================================================
@@ -361,7 +361,7 @@ $_GLOBAL_SYSTEM_GZIP_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['sett
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_file_extension_image'];
+$_GLOBAL_SYSTEM_IMAGE_EXTENSION								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_file_extension_image'];
 
 /*
  ============================================================================================================
@@ -369,7 +369,7 @@ $_GLOBAL_SYSTEM_IMAGE_EXTENSION							= $_DB_Query_Kernel_Settings_Fetch_Array['
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_directory_language'];
+$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_directory_language'];
 
 /*
  ============================================================================================================
@@ -377,7 +377,7 @@ $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_smileys'];
+$_GLOBAL_SYSTEM_SMILEYS_DIRECTORY							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_plugin_directory_smileys'];
 
 /*
  ============================================================================================================
@@ -385,7 +385,7 @@ $_GLOBAL_SYSTEM_SMILEYS_DIRECTORY						= $_DB_Query_Kernel_Settings_Fetch_Array[
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_offline_mode'];
+$_GLOBAL_SYSTEM_OFFLINE_STATUS								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_offline_mode'];
 
 /*
  ============================================================================================================
@@ -393,9 +393,9 @@ $_GLOBAL_SYSTEM_OFFLINE_STATUS							= $_DB_Query_Kernel_Settings_Fetch_Array['s
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SITE_TITLE							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_website_title'];
-$_GLOBAL_SYSTEM_SOUND_EXTENSION							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_file_extension_audio'];
-$_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_directory_theme'];
+$_GLOBAL_SYSTEM_SITE_TITLE								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_website_title'];
+$_GLOBAL_SYSTEM_SOUND_EXTENSION								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_file_extension_audio'];
+$_GLOBAL_SYSTEM_THEME_DIRECTORY								= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_directory_theme'];
 
 /*
  ============================================================================================================
@@ -403,8 +403,8 @@ $_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_DB_Query_Kernel_Settings_Fetch_Array['
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_upload_size_private'];
-$_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC						= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_upload_size_public'];
+$_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_upload_size_private'];
+$_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC							= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_upload_size_public'];
 
 /*
  ============================================================================================================
@@ -420,7 +420,7 @@ $_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC						= $_DB_Query_Kernel_Settings_Fetch_Array
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_PLUGIN_STATUS_MASTER_SANITIZATION				= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_security_module_master_sanitization'];
+$_GLOBAL_SYSTEM_PLUGIN_STATUS_MASTER_SANITIZATION					= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_status_security_module_master_sanitization'];
 
 /*
  ============================================================================================================
@@ -428,7 +428,7 @@ $_GLOBAL_SYSTEM_PLUGIN_STATUS_MASTER_SANITIZATION				= $_DB_Query_Kernel_Setting
  ============================================================================================================
 */
 
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS				= rand(0,9999999999);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS					= rand(0,9999999999);
 
 /*
  ============================================================================================================
@@ -436,11 +436,11 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS				= rand(0,9999999999);
  ============================================================================================================
 */
 
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_MD5			= hash('md5',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA1			= hash('sha1',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA256		= hash('sha256',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA512		= hash('sha512',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_OF_SHA1_OF_SHA256	= hash('sha256',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA1);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_MD5				= hash('md5',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA1				= hash('sha1',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA256			= hash('sha256',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA512			= hash('sha512',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_OF_SHA1_OF_SHA256		= hash('sha256',$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_SHA1);
 
 /*
  ============================================================================================================
@@ -448,7 +448,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_OF_SHA1_OF_SHA256	= ha
  ============================================================================================================
 */
 
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_MERSENNE_TWISTER		= mt_rand(0,9999999999);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_MERSENNE_TWISTER			= mt_rand(0,9999999999);
 
 /*
  ============================================================================================================
@@ -474,7 +474,7 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_MERSENNE_TWISTER		= mt_rand
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['kernel_member_electronic_mail_address'];
+$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS						= $_COOKIE['kernel_member_electronic_mail_address'];
 
 /*
  ============================================================================================================
@@ -482,7 +482,7 @@ $_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_COOKIE['kernel_member_ele
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['kernel_member_password'];
+$_GLOBAL_COOKIE_MEMBER_PASSWORD								= $_COOKIE['kernel_member_password'];
 
 /*
  ============================================================================================================
@@ -490,7 +490,7 @@ $_GLOBAL_COOKIE_MEMBER_PASSWORD							= $_COOKIE['kernel_member_password'];
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['kernel_member_username'];
+$_GLOBAL_COOKIE_MEMBER_USERNAME								= $_COOKIE['kernel_member_username'];
 
 /*
  ============================================================================================================
@@ -498,7 +498,7 @@ $_GLOBAL_COOKIE_MEMBER_USERNAME							= $_COOKIE['kernel_member_username'];
  ============================================================================================================
 */
 
-$_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_COOKIE['kernel_member_language'];
+$_GLOBAL_COOKIE_MEMBER_LANGUAGE								= $_COOKIE['kernel_member_language'];
 
 /*
  ============================================================================================================
@@ -522,8 +522,8 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Select_Member_Credentials 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
-$_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array 			= $DB->fetch_array($_DB_Query_Kernel_Select_Member_Credentials);
+$_DB_Query_Kernel_Select_Member_Credentials 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array 				= $DB->fetch_array($_DB_Query_Kernel_Select_Member_Credentials);
 
 /*
  ============================================================================================================
@@ -531,7 +531,7 @@ $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array 			= $DB->fetch_array($_
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_ACCESS_LEVEL							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_access_level'];
+$_GLOBAL_MEMBER_ACCESS_LEVEL								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_access_level'];
 
 /*
  ============================================================================================================
@@ -539,7 +539,7 @@ $_GLOBAL_MEMBER_ACCESS_LEVEL							= $_DB_Query_Kernel_Select_Member_Credentials
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_ACCOUNT_LOCK_STATUS						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_locked'];
+$_GLOBAL_MEMBER_ACCOUNT_LOCK_STATUS							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_locked'];
 
 /*
  ============================================================================================================
@@ -547,7 +547,7 @@ $_GLOBAL_MEMBER_ACCOUNT_LOCK_STATUS						= $_DB_Query_Kernel_Select_Member_Crede
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_ATTEMPT_AUTHENTICATION						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_attempt_authentication'];
+$_GLOBAL_MEMBER_ATTEMPT_AUTHENTICATION							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_attempt_authentication'];
 
 /*
  ============================================================================================================
@@ -555,7 +555,7 @@ $_GLOBAL_MEMBER_ATTEMPT_AUTHENTICATION						= $_DB_Query_Kernel_Select_Member_Cr
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVATION					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_activation'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVATION						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_activation'];
 
 /*
  ============================================================================================================
@@ -563,7 +563,7 @@ $_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVATION					= $_DB_Query_Kernel_Select_Member_
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_active'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_active'];
 
 /*
  ============================================================================================================
@@ -571,8 +571,8 @@ $_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE						= $_DB_Query_Kernel_Select_Member_Cre
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active'];
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES				= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_minutes'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_minutes'];
 
 /*
  ============================================================================================================
@@ -580,7 +580,7 @@ $_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES				= $_DB_Query_Kernel_Select
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IMAGE_AVATAR							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_image_avatar'];
+$_GLOBAL_MEMBER_IMAGE_AVATAR								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_image_avatar'];
 
 /*
  ============================================================================================================
@@ -588,7 +588,7 @@ $_GLOBAL_MEMBER_IMAGE_AVATAR							= $_DB_Query_Kernel_Select_Member_Credentials
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_BANNED						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_banned'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_BANNED							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_banned'];
 
 /*
  ============================================================================================================
@@ -596,7 +596,7 @@ $_GLOBAL_MEMBER_STATUS_ACCOUNT_BANNED						= $_DB_Query_Kernel_Select_Member_Cre
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_ELECTRONIC_MAIL_ADDRESS						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_electronic_mail_address'];
+$_GLOBAL_MEMBER_ELECTRONIC_MAIL_ADDRESS							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_electronic_mail_address'];
 
 /*
  ============================================================================================================
@@ -604,7 +604,7 @@ $_GLOBAL_MEMBER_ELECTRONIC_MAIL_ADDRESS						= $_DB_Query_Kernel_Select_Member_C
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_EXPERIENCE_AMOUNT						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_experience_amount'];
+$_GLOBAL_MEMBER_EXPERIENCE_AMOUNT							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_experience_amount'];
 
 /*
  ============================================================================================================
@@ -612,7 +612,7 @@ $_GLOBAL_MEMBER_EXPERIENCE_AMOUNT						= $_DB_Query_Kernel_Select_Member_Credent
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_GENDER								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_gender'];
+$_GLOBAL_MEMBER_GENDER									= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_gender'];
 
 /*
  ============================================================================================================
@@ -620,7 +620,7 @@ $_GLOBAL_MEMBER_GENDER								= $_DB_Query_Kernel_Select_Member_Credentials_Fetc
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LANGUAGE							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_language'];
+$_GLOBAL_MEMBER_LANGUAGE								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_language'];
 
 /*
  ============================================================================================================
@@ -628,7 +628,7 @@ $_GLOBAL_MEMBER_LANGUAGE							= $_DB_Query_Kernel_Select_Member_Credentials_Fet
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LAST_REFERRER							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_last_referrer'];
+$_GLOBAL_MEMBER_LAST_REFERRER								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_last_referrer'];
 
 /*
  ============================================================================================================
@@ -636,7 +636,7 @@ $_GLOBAL_MEMBER_LAST_REFERRER							= $_DB_Query_Kernel_Select_Member_Credential
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_NUMBER_OF_POSTS							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_number_of_posts'];
+$_GLOBAL_MEMBER_NUMBER_OF_POSTS								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_number_of_posts'];
 
 /*
  ============================================================================================================
@@ -644,7 +644,7 @@ $_GLOBAL_MEMBER_NUMBER_OF_POSTS							= $_DB_Query_Kernel_Select_Member_Credenti
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IMAGE_PROFILE							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_image_picture'];
+$_GLOBAL_MEMBER_IMAGE_PROFILE								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_image_picture'];
 
 /*
  ============================================================================================================
@@ -652,7 +652,7 @@ $_GLOBAL_MEMBER_IMAGE_PROFILE							= $_DB_Query_Kernel_Select_Member_Credential
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_level_rank'];
+$_GLOBAL_MEMBER_LEVEL_RANK								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_level_rank'];
 
 /*
  ============================================================================================================
@@ -660,7 +660,7 @@ $_GLOBAL_MEMBER_LEVEL_RANK							= $_DB_Query_Kernel_Select_Member_Credentials_F
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_THEME_DIRECTORY							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_settings_theme_directory'];
+$_GLOBAL_MEMBER_THEME_DIRECTORY								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_settings_theme_directory'];
 
 /*
  ============================================================================================================
@@ -668,7 +668,7 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_DB_Query_Kernel_Select_Member_Credenti
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_last_login'];
+$_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_last_login'];
 
 /*
  ============================================================================================================
@@ -676,7 +676,7 @@ $_GLOBAL_MEMBER_IP_ADDRESS_LAST_LOGIN						= $_DB_Query_Kernel_Select_Member_Cre
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_authorized'];
+$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_authorized'];
 
 /*
  ============================================================================================================
@@ -684,7 +684,7 @@ $_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED						= $_DB_Query_Kernel_Select_Member_Cre
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_IP_ADDRESS_LOG							= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_log'];
+$_GLOBAL_MEMBER_IP_ADDRESS_LOG								= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_log'];
 
 /*
  ============================================================================================================
@@ -722,8 +722,8 @@ if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_BANNED >= 1) {
  ============================================================================================================
 */
 
-$_GLOBAL_LOCAL_SERVER_DATE_STANDARD						= date("l, F j, Y g:i:s A");
-$_GLOBAL_LOCAL_SERVER_DATE_RFC							= date("r");
+$_GLOBAL_LOCAL_SERVER_DATE_STANDARD							= date("l, F j, Y g:i:s A");
+$_GLOBAL_LOCAL_SERVER_DATE_RFC								= date("r");
 
 /*
  ============================================================================================================
@@ -731,10 +731,10 @@ $_GLOBAL_LOCAL_SERVER_DATE_RFC							= date("r");
  ============================================================================================================
 */
 
-$_GLOBAL_LOCAL_SERVER_TIME_HOURS						= date("g");
-$_GLOBAL_LOCAL_SERVER_TIME_MINUTES						= date("i");
-$_GLOBAL_LOCAL_SERVER_TIME_SECONDS						= date("s");
-$_GLOBAL_LOCAL_SERVER_TIME_HOURS_MINUTES_SECONDS				= date("g-i-s");
+$_GLOBAL_LOCAL_SERVER_TIME_HOURS							= date("g");
+$_GLOBAL_LOCAL_SERVER_TIME_MINUTES							= date("i");
+$_GLOBAL_LOCAL_SERVER_TIME_SECONDS							= date("s");
+$_GLOBAL_LOCAL_SERVER_TIME_HOURS_MINUTES_SECONDS					= date("g-i-s");
 
 /*
  ============================================================================================================
@@ -742,7 +742,7 @@ $_GLOBAL_LOCAL_SERVER_TIME_HOURS_MINUTES_SECONDS				= date("g-i-s");
  ============================================================================================================
 */
 
-$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER						= $_SERVER['HTTP_REFERER'];
+$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER							= $_SERVER['HTTP_REFERER'];
 
 /*
  ============================================================================================================
@@ -758,10 +758,10 @@ $_GLOBAL_LOCAL_SERVER_HTTP_REFERRER						= $_SERVER['HTTP_REFERER'];
  ============================================================================================================
 */
 
-$_GLOBAL_REMOTE_SERVER_ADDRESS							= $_SERVER['REMOTE_ADDR'];
-$_GLOBAL_REMOTE_SERVER_HOSTNAME							= $_SERVER['REMOTE_HOST'];
-$_GLOBAL_REMOTE_SERVER_PORT							= $_SERVER['REMOTE_PORT'];
-$_GLOBAL_REMOTE_USER								= $_SERVER['REMOTE_USER'];
+$_GLOBAL_REMOTE_SERVER_ADDRESS								= $_SERVER['REMOTE_ADDR'];
+$_GLOBAL_REMOTE_SERVER_HOSTNAME								= $_SERVER['REMOTE_HOST'];
+$_GLOBAL_REMOTE_SERVER_PORT								= $_SERVER['REMOTE_PORT'];
+$_GLOBAL_REMOTE_USER									= $_SERVER['REMOTE_USER'];
 
 /*
  ============================================================================================================
@@ -777,12 +777,12 @@ $_GLOBAL_REMOTE_USER								= $_SERVER['REMOTE_USER'];
  ============================================================================================================
 */
 
-$_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE						= $_SERVER['GATEWAY_INTERFACE'];
-$_GLOBAL_LOCAL_SERVER_ADDRESS							= $_SERVER['SERVER_ADDR'];
-$_GLOBAL_LOCAL_SERVER_NAME							= $_SERVER['SERVER_NAME'];
-$_GLOBAL_LOCAL_SERVER_SOFTWARE							= $_SERVER['SERVER_SOFTWARE'];
-$_GLOBAL_LOCAL_SERVER_PROTOCOL							= $_SERVER['SERVER_PROTOCOL'];
-$_GLOBAL_LOCAL_SERVER_SIGNATURE							= $_SERVER['SERVER_SIGNATURE'];
+$_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE							= $_SERVER['GATEWAY_INTERFACE'];
+$_GLOBAL_LOCAL_SERVER_ADDRESS								= $_SERVER['SERVER_ADDR'];
+$_GLOBAL_LOCAL_SERVER_NAME								= $_SERVER['SERVER_NAME'];
+$_GLOBAL_LOCAL_SERVER_SOFTWARE								= $_SERVER['SERVER_SOFTWARE'];
+$_GLOBAL_LOCAL_SERVER_PROTOCOL								= $_SERVER['SERVER_PROTOCOL'];
+$_GLOBAL_LOCAL_SERVER_SIGNATURE								= $_SERVER['SERVER_SIGNATURE'];
 
 /*
  ============================================================================================================
@@ -790,11 +790,11 @@ $_GLOBAL_LOCAL_SERVER_SIGNATURE							= $_SERVER['SERVER_SIGNATURE'];
  ============================================================================================================
 */
 
-$_GLOBAL_LOCAL_SERVER_REQUEST_METHOD						= $_SERVER['REQUEST_METHOD'];
-$_GLOBAL_LOCAL_SERVER_REQUEST_TIME						= $_SERVER['REQUEST_TIME'];
-$_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT					= $_SERVER['REQUEST_TIME_FLOAT'];
-$_GLOBAL_LOCAL_SERVER_QUERY_STRING						= $_SERVER['QUERY_STRING'];
-$_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT						= $_SERVER['DOCUMENT_ROOT'];
+$_GLOBAL_LOCAL_SERVER_REQUEST_METHOD							= $_SERVER['REQUEST_METHOD'];
+$_GLOBAL_LOCAL_SERVER_REQUEST_TIME							= $_SERVER['REQUEST_TIME'];
+$_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT						= $_SERVER['REQUEST_TIME_FLOAT'];
+$_GLOBAL_LOCAL_SERVER_QUERY_STRING							= $_SERVER['QUERY_STRING'];
+$_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT							= $_SERVER['DOCUMENT_ROOT'];
 
 /*
  ============================================================================================================
@@ -802,15 +802,15 @@ $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT						= $_SERVER['DOCUMENT_ROOT'];
  ============================================================================================================
 */
 
-$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT						= $_SERVER['HTTP_ACCEPT'];
-$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET					= $_SERVER['HTTP_ACCEPT_CHARSET'];
-$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING					= $_SERVER['HTTP_ACCEPT_ENCODING'];
-$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING					= $_SERVER['HTTP_ACCEPT_LOADING'];
-$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE					= $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-$_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE					= $_SERVER['HTTP_CONNECTION'];
-$_GLOBAL_LOCAL_SERVER_HTTP_HOST							= $_SERVER['HTTP_HOST'];
-$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER						= $_SERVER['HTTP_REFERER'];
-$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT						= $_SERVER['HTTP_USER_AGENT'];
+$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT							= $_SERVER['HTTP_ACCEPT'];
+$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET						= $_SERVER['HTTP_ACCEPT_CHARSET'];
+$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING						= $_SERVER['HTTP_ACCEPT_ENCODING'];
+$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING						= $_SERVER['HTTP_ACCEPT_LOADING'];
+$_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE						= $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+$_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE						= $_SERVER['HTTP_CONNECTION'];
+$_GLOBAL_LOCAL_SERVER_HTTP_HOST								= $_SERVER['HTTP_HOST'];
+$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER							= $_SERVER['HTTP_REFERER'];
+$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT							= $_SERVER['HTTP_USER_AGENT'];
 
 /*
  ============================================================================================================
@@ -850,33 +850,51 @@ if ($_GET["$_INTERNAL_APPLICATION_MODULE_INTERNAL"] == "Login") {
 
 /*
  ============================================================================================================
- + Internal Security=>Sanitize Electronic Mail Address Post Data
+ + Internal Security => Sanitize Electronic Mail Address Post Data
  ============================================================================================================
 */
 
-$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR					= $_POST['AM_Login_Electronic_Mail_Address'];
-$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR					= preg_replace("/'/","`", $_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
-$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR					= stripslashes($_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
+$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= $_POST['AM_Login_Electronic_Mail_Address'];
+$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= preg_replace("/'/","`", $_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
+$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= stripslashes($_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
 
 /*
  ============================================================================================================
- + Internal Security=>Sanitize Password Post Data
+ + Internal Security => Sanitize Password Post Data
  ============================================================================================================
 */
 
-$_KERNEL_LOGIN_PASSWORD_CLEAR							= $_POST['AM_Login_Password'];
-$_KERNEL_LOGIN_PASSWORD_CLEAR							= preg_replace("/'/","`", $_KERNEL_LOGIN_PASSWORD_CLEAR);
-$_KERNEL_LOGIN_PASSWORD_CLEAR							= stripslashes($_KERNEL_LOGIN_PASSWORD_CLEAR);
+$_KERNEL_LOGIN_PASSWORD_CLEAR								= $_POST['AM_Login_Password'];
+$_KERNEL_LOGIN_PASSWORD_CLEAR								= preg_replace("/'/","`", $_KERNEL_LOGIN_PASSWORD_CLEAR);
+$_KERNEL_LOGIN_PASSWORD_CLEAR								= stripslashes($_KERNEL_LOGIN_PASSWORD_CLEAR);
 
 /*
  ============================================================================================================
- + Internal Security=>Sanitize UserName Post Data
+ + Internal Security => Sanitize UserName Post Data
  ============================================================================================================
 */
 
-$_KERNEL_LOGIN_USERNAME_CLEAR							= $_POST['AM_Login_UserName'];
-$_KERNEL_LOGIN_USERNAME_CLEAR							= preg_replace("/'/","`", $_KERNEL_LOGIN_USERNAME_CLEAR);
-$_KERNEL_LOGIN_USERNAME_CLEAR							= stripslashes($_KERNEL_LOGIN_USERNAME_CLEAR);
+$_KERNEL_LOGIN_USERNAME_CLEAR								= $_POST['AM_Login_UserName'];
+$_KERNEL_LOGIN_USERNAME_CLEAR								= preg_replace("/'/","`", $_KERNEL_LOGIN_USERNAME_CLEAR);
+$_KERNEL_LOGIN_USERNAME_CLEAR								= stripslashes($_KERNEL_LOGIN_USERNAME_CLEAR);
+
+/*
+ ============================================================================================================
+ + Internal Security => Convert Electronic Mail Address String To LowerCase String With UpperCase First Character
+ ============================================================================================================
+*/
+
+$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= strtolower($_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
+$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR						= ucfirst($_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR);
+
+/*
+ ============================================================================================================
+ + Internal Security => Convert UserName String To LowerCase String With UpperCase First Character
+ ============================================================================================================
+*/
+
+$_KERNEL_LOGIN_USERNAME_CLEAR								= strtolower($_KERNEL_LOGIN_USERNAME_CLEAR);
+$_KERNEL_LOGIN_USERNAME_CLEAR								= ucfirst($_KERNEL_LOGIN_USERNAME_CLEAR);
 
 /*
  ============================================================================================================
@@ -892,7 +910,7 @@ $_KERNEL_LOGIN_USERNAME_CLEAR							= stripslashes($_KERNEL_LOGIN_USERNAME_CLEAR
  ============================================================================================================
 */
 
-$DB_Query_Kernel_Check_Member_Account_Credentials 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_KERNEL_LOGIN_USERNAME_CLEAR' AND member_electronic_mail_address='$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR'");
+$DB_Query_Kernel_Check_Member_Account_Credentials 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_KERNEL_LOGIN_USERNAME_CLEAR' AND member_electronic_mail_address='$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR'");
 
 /*
  ============================================================================================================
@@ -900,12 +918,12 @@ $DB_Query_Kernel_Check_Member_Account_Credentials 						= $DB->query("SELECT * F
  ============================================================================================================
 */
 
-$DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array					= $DB->fetch_array($DB_Query_Kernel_Check_Member_Account_Credentials);
-$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Username				= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_username'];
-$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Electronic_Mail_Address 		= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_electronic_mail_address'];
-$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password				= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_password'];
-$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Status_Account_Locked			= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_status_account_locked'];
-$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Attempt_Authentication			= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_attempt_authentication'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array				= $DB->fetch_array($DB_Query_Kernel_Check_Member_Account_Credentials);
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Username			= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_username'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Electronic_Mail_Address	= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_electronic_mail_address'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Password			= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_password'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Status_Account_Locked		= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_status_account_locked'];
+$DB_Query_Kernel_Check_Member_Account_Credentials_Member_Attempt_Authentication		= $DB_Query_Kernel_Check_Member_Account_Credentials_Fetch_Array['member_attempt_authentication'];
 
 /*
  ============================================================================================================
@@ -955,8 +973,8 @@ if (password_verify($_KERNEL_LOGIN_PASSWORD_CLEAR, $DB_Query_Kernel_Check_Member
  ============================================================================================================
 */
 
-$_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME			= fopen("./Member/$_KERNEL_LOGIN_USERNAME_CLEAR/Files/Document/Activity_Logging/Authentication_Log.php", "a");
-$_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH			= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
+$_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME				= fopen("./Member/$_KERNEL_LOGIN_USERNAME_CLEAR/Files/Document/Activity_Logging/Authentication_Log.php", "a");
+$_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH				= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
 
 /*
  ============================================================================================================
@@ -992,8 +1010,8 @@ fclose($_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME);
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Login_Set_Member_Status_Account_Last_Login			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_last_login='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_username='$_KERNEL_LOGIN_USERNAME_CLEAR'");
-$_DB_Query_Kernel_Login_Set_Member_Status_Account_Active			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1' WHERE member_username='$_KERNEL_LOGIN_USERNAME_CLEAR'");
+$_DB_Query_Kernel_Login_Set_Member_Status_Account_Last_Login				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_last_login='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_username='$_KERNEL_LOGIN_USERNAME_CLEAR'");
+$_DB_Query_Kernel_Login_Set_Member_Status_Account_Active				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1' WHERE member_username='$_KERNEL_LOGIN_USERNAME_CLEAR'");
 
 /*
  ============================================================================================================
@@ -1035,8 +1053,8 @@ if ($_DB_Query_Kernel_Login_Set_Member_Status_Account_Last_Login && $_DB_Query_K
  ============================================================================================================
 */
 
-$_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME			= fopen("./Member/$_KERNEL_LOGIN_USERNAME_CLEAR/Files/Document/Activity_Logging/Authentication_Log.php", "a");
-$_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH			= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
+$_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME				= fopen("./Member/$_KERNEL_LOGIN_USERNAME_CLEAR/Files/Document/Activity_Logging/Authentication_Log.php", "a");
+$_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH				= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
 
 /*
  ============================================================================================================
@@ -1247,7 +1265,7 @@ $DB->free($_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address);
 
 if ($_GET["$_INTERNAL_APPLICATION_MODULE_INTERNAL"] == "Language") {
 
-$_KERNEL_POST_LANGUAGE	 							= $_POST['AM_Specify_Language'];
+$_KERNEL_POST_LANGUAGE	 								= $_POST['AM_Specify_Language'];
 	
 	setcookie("kernel_member_language","$_KERNEL_POST_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 	header("location: ?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&Message=Language");
@@ -1358,7 +1376,7 @@ if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != "$_GLOBAL_REMOTE_SERVER_ADDRESS") {
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER			= 100;
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER				= 100;
 
 /*
  ============================================================================================================
@@ -1374,8 +1392,8 @@ function getRandomString($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS			= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING						= '';
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS				= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING							= '';
 
 /*
  ============================================================================================================
@@ -1391,8 +1409,8 @@ for ($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INVISIBLE = 0; $_GLOBAL_SYSTEM_SECUR
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX					= rand(0, strlen($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING						.= $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS[$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX];
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX						= rand(0, strlen($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING							.= $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS[$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX];
 
 } // [ + ] Function: Random Character Generator: Increment Invisible String
 
@@ -1406,7 +1424,7 @@ return $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING;
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH		= hash('sha512',getRandomString($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH			= hash('sha512',getRandomString($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
 
 /*
  ============================================================================================================
@@ -1414,7 +1432,7 @@ $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH		= hash('sha
  ============================================================================================================
 */
 
-$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION			= "$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH&amp;CacheCircumvention";
+$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION				= "$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH&amp;CacheCircumvention";
 
 /*
  ============================================================================================================
@@ -1438,7 +1456,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Cookie_Security_Check 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_password='$_GLOBAL_COOKIE_MEMBER_PASSWORD'");
+$_DB_Query_Kernel_Cookie_Security_Check 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_password='$_GLOBAL_COOKIE_MEMBER_PASSWORD'");
 
 /*
  ============================================================================================================
@@ -1488,7 +1506,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_MEMBER_DIRECTORY_INDEX_FILE							= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/index.html";
+$_MEMBER_DIRECTORY_INDEX_FILE								= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/index.html";
 
 /*
  ============================================================================================================
@@ -1522,7 +1540,7 @@ if (!file_exists($_MEMBER_DIRECTORY_INDEX_FILE)) {
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check 			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks WHERE ip_address_string='$_GLOBAL_REMOTE_SERVER_ADDRESS'");
+$_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks WHERE ip_address_string='$_GLOBAL_REMOTE_SERVER_ADDRESS'");
 
 /*
  ============================================================================================================
@@ -1552,7 +1570,7 @@ if ($DB->num_rows($_DB_Query_Kernel_Member_Account_Banned_Status_Security_Check)
 
 if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE == "") {
 
-$_GLOBAL_COOKIE_MEMBER_LANGUAGE							= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
+$_GLOBAL_COOKIE_MEMBER_LANGUAGE								= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
 
 } // [ + ] IF: Language Cookie Is Null, Set System Configured Language
 
@@ -1612,16 +1630,16 @@ if (strlen($_GLOBAL_COOKIE_MEMBER_LANGUAGE) > "15") {
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS		= $_SERVER['REMOTE_ADDR'];
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME				= date("Y-m-j-g-i-s-A");
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS			= $_SERVER['REMOTE_ADDR'];
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME					= date("Y-m-j-g-i-s-A");
 
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS	= strlen($_GLOBAL_REMOTE_SERVER_ADDRESS);
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME		= strlen($_GLOBAL_COOKIE_MEMBER_USERNAME);
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD		= strlen($_GLOBAL_COOKIE_MEMBER_PASSWORD);
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strlen($_GLOBAL_REMOTE_SERVER_ADDRESS);
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen($_GLOBAL_COOKIE_MEMBER_USERNAME);
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen($_GLOBAL_COOKIE_MEMBER_PASSWORD);
 
 //$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH
 
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT						= "$_GLOBAL_COOKIE_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT							= "$_GLOBAL_COOKIE_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
 
 } // [ + ] IF: Registered Member Is: Logged-In
 
@@ -1645,7 +1663,7 @@ if ($_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS >= 1) {
 
 } else {
 
-	$_GLOBAL_SYSTEM_PLUGIN_LOCATION_MESSAGE_DEACTIVATED			= "<CENTER>Kernel Message: The Location Plug-In Application Module Is: Deactivated</CENTER>";
+	$_GLOBAL_SYSTEM_PLUGIN_LOCATION_MESSAGE_DEACTIVATED				= "<CENTER>Kernel Message: The Location Plug-In Application Module Is: Deactivated</CENTER>";
 
 } // [ + ] IF: System :: Plug-In :: Location :: Is: On or Off
 
@@ -1669,7 +1687,7 @@ if ($_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS >= 1) {
 
 } else {
 
-	$_GLOBAL_PLUGIN_SAFEHTML_LIST_COMMANDS					= "<CENTER>Kernel Message: The Safe-HTML Plug-In Application Module Is: Deactivated</CENTER>";
+	$_GLOBAL_PLUGIN_SAFEHTML_LIST_COMMANDS						= "<CENTER>Kernel Message: The Safe-HTML Plug-In Application Module Is: Deactivated</CENTER>";
 
 } // [ + ] IF: System :: Plug-In :: Safe-HTML :: Is: On or Off
 
@@ -1705,9 +1723,9 @@ if ($_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS >= 1) {
  ============================================================================================================
 */
 
-$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME				= "Upload";
-$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE			= "0600";
-$_KERNEL_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY					= opendir($_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME);
+$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME					= "Upload";
+$_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_CHMOD_VALUE				= "0600";
+$_KERNEL_INTERNAL_LOOP_OPEN_UPLOAD_DIRECTORY						= opendir($_KERNEL_INTERNAL_LOOP_CHMOD_UPLOAD_DIRECTORY_NAME);
 
 /*
  ============================================================================================================
@@ -1760,7 +1778,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 if ($_GLOBAL_MEMBER_THEME_DIRECTORY == "") {
 
-$_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
+$_GLOBAL_MEMBER_THEME_DIRECTORY								= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 
 } // [ + ] IF: Member Theme Directory Settings Are Null
 
@@ -1772,7 +1790,7 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 
 if ($_GLOBAL_MEMBER_THEME_DIRECTORY != null) {
 
-$_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_GLOBAL_MEMBER_THEME_DIRECTORY;
+$_GLOBAL_SYSTEM_THEME_DIRECTORY								= $_GLOBAL_MEMBER_THEME_DIRECTORY;
 
 } // [ + ] IF: Member Theme Directory Settings Are Null
 
@@ -1786,7 +1804,7 @@ $_GLOBAL_SYSTEM_THEME_DIRECTORY							= $_GLOBAL_MEMBER_THEME_DIRECTORY;
 
 if ($_GLOBAL_MEMBER_THEME_DIRECTORY == "") {
 
-$_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
+$_GLOBAL_MEMBER_THEME_DIRECTORY								= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 
 } // [ + ] IF: Member Theme Directory Settings Are Null
 
@@ -1812,7 +1830,7 @@ $_GLOBAL_MEMBER_THEME_DIRECTORY							= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
  ============================================================================================================
 */
 
-//$_DB_Query_Kernel_Set_Member_Status_Account_Active 				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_status_account_last_active_minutes='$_GLOBAL_LOCAL_SERVER_TIME_MINUTES' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+//$_DB_Query_Kernel_Set_Member_Status_Account_Active 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_status_account_last_active_minutes='$_GLOBAL_LOCAL_SERVER_TIME_MINUTES' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 //if ($_DB_Query_Kernel_Set_Member_Status_Account_Active) {
 /**
@@ -1848,7 +1866,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Member_Account_Last_Referrer 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_last_referrer='$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Kernel_Member_Account_Last_Referrer 						= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_last_referrer='$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 /*
  ============================================================================================================
@@ -1892,7 +1910,7 @@ $DB->free($_DB_Query_Kernel_Member_Account_Last_Referrer);
 
 if ($_GLOBAL_MEMBER_GENDER <= "0") {
 
-	$_GLOBAL_MEMBER_GENDER_DISPLAY		= "Non-Specified";
+	$_GLOBAL_MEMBER_GENDER_DISPLAY	= "Non-Specified";
 
 } // [ + ] IF: Member Account Gender Is: 1, Define as Non-Specified
 
@@ -1904,7 +1922,7 @@ if ($_GLOBAL_MEMBER_GENDER <= "0") {
 
 if ($_GLOBAL_MEMBER_GENDER == "1") {
 
-	$_GLOBAL_MEMBER_GENDER_DISPLAY		= "Male";
+	$_GLOBAL_MEMBER_GENDER_DISPLAY	= "Male";
 
 } // [ + ] IF: Member Account Gender Is: 1, Define as Male
 
@@ -1916,7 +1934,7 @@ if ($_GLOBAL_MEMBER_GENDER == "1") {
 
 if ($_GLOBAL_MEMBER_GENDER == "2") {
 
-	$_GLOBAL_MEMBER_GENDER_DISPLAY		= "Female";
+	$_GLOBAL_MEMBER_GENDER_DISPLAY	= "Female";
 
 } // [ + ] IF: Member Account Gender Is: 1, Define as Female
 
@@ -1944,7 +1962,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 if ($_GLOBAL_MEMBER_GENDER <= "0") {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "-";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "-";
 
 } // [ + ] IF: Member Account Gender Is: 0, Non-Specified
 
@@ -1970,7 +1988,7 @@ if ($_GLOBAL_MEMBER_GENDER == "1") {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS <= 50) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "0";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "0";
 
 } // [ + ] IF: Member Number Of Posts Is Less Than Or Equal To: 50
 
@@ -1982,7 +2000,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS <= 50) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 100) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "1";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "1";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 100
 
@@ -1994,7 +2012,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 100) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 500) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "2";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "2";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 500
 
@@ -2006,7 +2024,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 500) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1000) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "3";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "3";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 1000
 
@@ -2018,7 +2036,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1000) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1500) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "4";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "4";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 1500
 
@@ -2046,7 +2064,7 @@ if ($_GLOBAL_MEMBER_GENDER == "2") {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS <= 50) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "5";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "5";
 
 } // [ + ] IF: Member Number Of Posts Is Less Than Or Equal To: 50
 
@@ -2058,7 +2076,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS <= 50) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 100) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "6";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "6";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 100
 
@@ -2070,7 +2088,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 100) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 500) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "7";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "7";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 500
 
@@ -2082,7 +2100,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 500) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1000) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "8";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "8";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 1000
 
@@ -2094,7 +2112,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1000) {
 
 if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1500) {
 
-	$_MAIN_MEMBER_RANK_UPDATE_DIGIT		= "9";
+	$_MAIN_MEMBER_RANK_UPDATE_DIGIT	= "9";
 
 } // [ + ] IF: Member Number Of Posts Is Greater Than Or Equal To: 1500
 
@@ -2114,7 +2132,7 @@ if ($_GLOBAL_MEMBER_NUMBER_OF_POSTS >= 1500) {
  ============================================================================================================
 */
 
-$_DB_Query_Main_Member_Update_Rank 						= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_level_rank='$_MAIN_MEMBER_RANK_UPDATE_DIGIT' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_DB_Query_Main_Member_Update_Rank 							= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_level_rank='$_MAIN_MEMBER_RANK_UPDATE_DIGIT' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
 
 /*
  ============================================================================================================
@@ -2154,7 +2172,7 @@ $DB->free($_DB_Query_Main_Member_Update_Rank);
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Member_Rank_Select_All_Ranks					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks ORDER BY id ASC");
+$_DB_Query_Kernel_Member_Rank_Select_All_Ranks						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_ranks ORDER BY id ASC");
 
 
 while ($_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Member_Rank_Select_All_Ranks)) {
@@ -2165,7 +2183,7 @@ while ($_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array = $DB->fetch_a
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0				= "Chaos";
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0					= "Chaos";
 
 /*
  ============================================================================================================
@@ -2173,11 +2191,11 @@ $_GLOBAL_MEMBER_LEVEL_RANK_GENDER_NON_SPECIFIED_0				= "Chaos";
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_0					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_0'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_1					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_1'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_2					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_2'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_3					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_3'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_4'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_0						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_0'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_1						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_1'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_2						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_2'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_3						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_3'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_male_4'];
 
 /*
  ============================================================================================================
@@ -2185,11 +2203,11 @@ $_GLOBAL_MEMBER_LEVEL_RANK_GENDER_MALE_4					= $_DB_Query_Kernel_Member_Rank_Sel
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_5					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_0'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_6					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_1'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_7					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_2'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_8					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_3'];
-$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_9					= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_4'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_5						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_0'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_6						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_1'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_7						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_2'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_8						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_3'];
+$_GLOBAL_MEMBER_LEVEL_RANK_GENDER_FEMALE_9						= $_DB_Query_Kernel_Member_Rank_Select_All_Ranks_Fetch_Array['rank_gender_female_4'];
 
 /*
  ============================================================================================================
@@ -2303,7 +2321,7 @@ $DB->free($_DB_Query_Kernel_Member_Rank_Select_All_Ranks);
 
 if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE != null) {
 
-$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY						= $_GLOBAL_COOKIE_MEMBER_LANGUAGE;
+$_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY							= $_GLOBAL_COOKIE_MEMBER_LANGUAGE;
 
 } // [ + ] IF: Language Cookie Is Null, Set System Configured Language
 
@@ -2555,7 +2573,7 @@ if ($_GLOBAL_SYSTEM_GZIP_STATUS >= 1) {
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START				= microtime();
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= microtime();
 
 /*
  ============================================================================================================
@@ -2563,7 +2581,7 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START				= microtime();
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY			= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY				= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START);
 
 /*
  ============================================================================================================
@@ -2571,7 +2589,7 @@ $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY			= explode(" ", $_KE
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START				= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[0];
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START					= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_START_ARRAY[0];
 
 /*
  ============================================================================================================
@@ -2679,12 +2697,12 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Application_Panels_Aligned_Left 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='0' AND panel_file_status='1' ORDER BY panel_row ASC");
+$_DB_Query_Kernel_Application_Panels_Aligned_Left 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='0' AND panel_file_status='1' ORDER BY panel_row ASC");
 
 while ($_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Application_Panels_Aligned_Left)) {
 
-$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_FILE_NAME				= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_name'];
-$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE					= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_FILE_NAME					= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_name'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE						= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_title'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 echo ($_KERNEL_APPLICATION_PANEL_ALIGNED_LEFT_TITLE);
@@ -2733,10 +2751,10 @@ echo ($_GLOBAL_THEME_LAYOUT_2);
  ============================================================================================================
 */
 
-$_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY					= "./Applications/Administration/";
-$_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY					= opendir($_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY);
+$_KERNEL_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY					= "./Applications/Administration/";
+$_KERNEL_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY					= opendir($_KERNEL_FIND_APPLICATIONS_ADMINISTRATION_DIRECTORY);
 
-while (($_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY = readdir($_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY))) {
+while (($_KERNEL_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY = readdir($_KERNEL_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY))) {
 
 /*
  ============================================================================================================
@@ -2746,7 +2764,7 @@ while (($_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY = readdir($_OPEN_APPLICATIO
  ============================================================================================================
 */
 
-if ($_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "." || $_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == ".." || $_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "index.php") {
+if ($_KERNEL_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "." || $_KERNEL_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == ".." || $_KERNEL_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "index.php") {
 /**
  * Do Nothing
 **/
@@ -2760,7 +2778,7 @@ if ($_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY == "." || $_READ_APPLICATIONS_A
  ============================================================================================================
 */
 
-if ($_GET[$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR] == "$_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY") {
+if ($_GET[$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR] == "$_KERNEL_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY") {
 
 /*
  ============================================================================================================
@@ -2770,8 +2788,7 @@ if ($_GET[$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR] == "$_READ_APPLICATIONS_A
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null && $_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
 
-
-	include_once "./Applications/Administration/$_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY";
+	include_once "./Applications/Administration/$_KERNEL_READ_APPLICATIONS_ADMINISTRATION_DIRECTORY";
 
 } else {
 
@@ -2791,7 +2808,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null &
  ============================================================================================================
 */
 
-closedir($_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY);
+closedir($_KERNEL_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY);
 
 /*
  ============================================================================================================
@@ -2811,13 +2828,13 @@ closedir($_OPEN_APPLICATIONS_ADMINISTRATION_DIRECTORY);
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Select_Applications 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY id ASC");
+$_DB_Query_Kernel_Select_Applications 							= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY id ASC");
 
 while ($_DB_Query_Kernel_Select_Applications_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Select_Applications)) {
 
-$_KERNEL_APPLICATION_FILE_NAME							= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_name'];
-$_KERNEL_APPLICATION_FILE_PERMISSION						= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_permission'];
-$_KERNEL_APPLICATION_FILE_STATUS						= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_status'];
+$_KERNEL_APPLICATION_FILE_NAME								= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_name'];
+$_KERNEL_APPLICATION_FILE_PERMISSION							= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_permission'];
+$_KERNEL_APPLICATION_FILE_STATUS							= $_DB_Query_Kernel_Select_Applications_Fetch_Array['application_file_status'];
 
 /*
  ============================================================================================================
@@ -2919,14 +2936,14 @@ $DB->free($_DB_Query_Kernel_Select_Applications);
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Select_Custom_Applications 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom ORDER BY id ASC");
+$_DB_Query_Kernel_Select_Custom_Applications 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom ORDER BY id ASC");
 
 while ($_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Select_Custom_Applications)) {
 
-$_KERNEL_APPLICATION_CUSTOM_ID							= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['id'];
-$_KERNEL_APPLICATION_CUSTOM_DATA						= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_data'];
-$_KERNEL_APPLICATION_CUSTOM_NAME						= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_name'];
-$_KERNEL_APPLICATION_CUSTOM_TIME						= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_time'];
+$_KERNEL_APPLICATION_CUSTOM_ID								= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['id'];
+$_KERNEL_APPLICATION_CUSTOM_DATA							= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_data'];
+$_KERNEL_APPLICATION_CUSTOM_NAME							= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_name'];
+$_KERNEL_APPLICATION_CUSTOM_TIME							= $_DB_Query_Kernel_Select_Custom_Applications_Fetch_Array['custom_application_time'];
 
 /*
  ============================================================================================================
@@ -2982,12 +2999,12 @@ echo ($_GLOBAL_THEME_LAYOUT_3);
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Application_Panels_Aligned_Right 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='1' AND panel_file_status='1' ORDER BY panel_row ASC");
+$_DB_Query_Kernel_Application_Panels_Aligned_Right 					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels WHERE panel_alignment='1' AND panel_file_status='1' ORDER BY panel_row ASC");
 
 while ($_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Application_Panels_Aligned_Right)) {
 
-$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME				= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
-$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE					= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_FILE_NAME					= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
+$_KERNEL_APPLICATION_PANEL_ALIGNED_RIGHT_TITLE						= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_title'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 
@@ -3051,7 +3068,7 @@ echo ($_GLOBAL_THEME_LAYOUT_4);
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= microtime();
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END						= microtime();
 
 /*
  ============================================================================================================
@@ -3059,7 +3076,7 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= microtime();
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY			= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY				= explode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
 
 /*
  ============================================================================================================
@@ -3067,7 +3084,7 @@ $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY			= explode(" ", $_KERN
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY			= implode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
+$_KERNEL_WEBPAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY				= implode(" ", $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END);
 
 /*
  ============================================================================================================
@@ -3075,7 +3092,7 @@ $_KERNEL_WEBPAGE_GENERATION_DATATIME_IMPLOSION_END_ARRAY			= implode(" ", $_KERN
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[0];
+$_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END						= $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[1] + $_KERNEL_WEBPAGE_GENERATION_DATATIME_EXPLOSION_END_ARRAY[0];
 
 /*
  ============================================================================================================
@@ -3083,8 +3100,8 @@ $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END					= $_KERNEL_WEBPAGE_GENERATION
  ============================================================================================================
 */
 
-$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME					= $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END - $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START; 
-$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME					= round($_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME,5);
+$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME						= $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_END - $_KERNEL_WEBPAGE_GENERATION_TIME_MICROTIME_START; 
+$_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME						= round($_KERNEL_WEBPAGE_GENERATION_TIME_TOTAL_TIME,5);
 
 /*
  ============================================================================================================
