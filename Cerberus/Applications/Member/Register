@@ -591,8 +591,8 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams/Wall");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image");
-mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Gallery");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Streams");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video");
@@ -605,8 +605,17 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
  + Directory Security: Copy Directory Denial Index Files
 */
 
+// Audio
+
 copy("./Member/Setup/Indexes/Files/Files.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/index.php");
 copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Music/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Recordings/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Streams/index.php");
+
+// Document
 
 copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Activity_Logging/index.php");
 copy("./Member/Setup/Files/Document/Activity_Logging/Activity_Log.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Activity_Logging/Activity_Log.php");
@@ -616,10 +625,21 @@ copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/$_App
 copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams/Wall/index.php");
 
+// Image
+
 copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Streams/index.php");
 copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile/index.php");
 
+// Video
+
 copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Movies/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Streams/index.php");
 
 /*
  + Make Directory: Registrar Hyper-Text-Markup-Language Web-Page Index File
