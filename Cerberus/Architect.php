@@ -1252,6 +1252,7 @@ echo ("
 
 if ($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1 == "$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_2") {
 
+	echo ("Installation Process Started<HR>");
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Default S.Q.L. Data to Database Server Tables:<BR>");
 
 include_once "./System/Configuration/Global_Configuration.php";
@@ -1326,7 +1327,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Video Player','031','?Application_Member&#61;Video_Player')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('Welcome !','032','?Application_Custom&#61;1')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Packaged Applications and Application Settings... Please Wait.<BR>");
 
@@ -1383,7 +1384,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Video_Player','1','1','1','1','1','1','1')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications(application_file_name,application_file_permission,application_file_permission_camera,application_file_permission_microphone,application_file_permission_location_gps,application_file_permission_location_geo,application_file_permission_location_internet_protocol_address,application_file_status)VALUES('Webspace','1','1','1','1','1','1','1')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Packaged Panels... Please Wait.<BR>");
 
@@ -1404,9 +1405,10 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('Latest_Members','1','4','1','<CENTER><B>Newest Members</B></CENTER><HR>')");
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_panels(panel_file_name,panel_alignment,panel_row,panel_file_status,panel_title)VALUES('RSS_Panel','1','4','1','<CENTER><B>Real-Simple-Syndication</B></CENTER><HR>')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Details and Services Root Administrator Account ( Cerberus )... Please Wait.<BR>");
+	echo ("-----------------------------------<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Details and Services Root Administrator Account ( $_PROJECT_STRING_NAME_SHORT )... Please Wait.<BR>");
 
 /*
  ============================================================================================================
@@ -1768,7 +1770,7 @@ member_username)VALUES(
 'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
 '$_PROJECT_STRING_NAME_SHORT')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Organized Directory Structure... Please Wait.<BR>");
 
@@ -1778,13 +1780,13 @@ member_username)VALUES(
  ============================================================================================================
 */
 
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Making:<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Currently Making:<BR><BR>");
 
 /*
  + Make Directory: Administrator UserName
 */
 
-	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME<BR><BR>");
+	echo ("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME<BR>");
 
 	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME");
 
@@ -1834,7 +1836,7 @@ member_username)VALUES(
 	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams");
 	mkdir("./Member/$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME/Files/Document/Streams/Wall");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 // Image
 
@@ -1950,13 +1952,13 @@ copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master
  ============================================================================================================
 */
 
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Making:<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Currently Making:<BR>");
 
 /*
  + Make Directory: Administrator UserName
 */
 
-	echo ("./Member/$_PROJECT_STRING_NAME_SHORT<BR><BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT<BR>");
 
 	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT");
 
@@ -2006,7 +2008,7 @@ copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master
 	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams");
 	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 // Image
 
@@ -2088,7 +2090,8 @@ copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_N
 
 copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_PROJECT_STRING_NAME_SHORT@Localhost");
 
-	echo ("[ Done ]<BR><BR>");
+	echo ("[ Done ]<BR>");
+	echo ("-----------------------------------<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Custom Web Applications... Please Wait.<BR>");
 
