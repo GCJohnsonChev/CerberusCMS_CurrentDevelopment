@@ -80,7 +80,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 /*
  ============================================================================================================
- + Random Keys
+ + Member Account Registration :: Set Random Keys
  ============================================================================================================
 */
 
@@ -89,7 +89,7 @@ $_Application_Module_Member_Register_RANDOM_KEY_MD5 					= md5($_Application_Mod
 
 /*
  ============================================================================================================
- + Member Account Registration Form :: Variables :: Post Variables
+ + Internal Security => String Santization :: Member Account Registration Form :: Post Variables :: Post Variables
  ============================================================================================================
 */
 
@@ -104,30 +104,65 @@ $_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST[
 
 /*
  ============================================================================================================
- + Member Account Registration Form :: Variables :: Replace Characters
+ + Internal Security => String Santization :: Member Account Registration Form :: Post Variables :: Replace Characters
  ============================================================================================================
 */
 
-$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
-$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= preg_replace("/</","&lt;", $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
+// First Name
+
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= preg_replace("/'/","", $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= preg_replace("/</","", $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
 $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
 
-$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
-$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= preg_replace("/</","&lt;", $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
+// Last Name
+
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= preg_replace("/'/","", $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= preg_replace("/</","", $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
 $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
 
-$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= preg_replace("/'/","&#39;", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
-$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= preg_replace("/</","&lt;", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
-$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
-$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= strtolower($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
+// Electronic Mail Address
 
-$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= preg_replace("/'/","&#39;", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
-$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= preg_replace("/</","&lt;", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
-$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= str_replace(".", "[dot]", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= preg_replace("/'/","", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= preg_replace("/</","", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
+
+// UserName
+
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= preg_replace("/'/","", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= preg_replace("/</","", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
 $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
-$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= strtolower($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
+
+/*
+ ============================================================================================================
+ + Internal Security => Member Account Registration Form :: String Counting :: Post Variables
+ ============================================================================================================
+*/
 
 $_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME		= strlen($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
+
+/*
+ ============================================================================================================
+ + Internal Security => Convert :: Registration Strings To LowerCase Or UpperCase Characters
+ ============================================================================================================
+*/
+
+// Electronic Mail Address
+
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= strtolower($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
+
+// First Name
+
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= strtolower($_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= ucfirst($_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
+
+// Last Name
+
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= strtolower($_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= ucfirst($_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME);
 
 /*
  ============================================================================================================
@@ -136,9 +171,6 @@ $_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME		= str
 */
 
 $_Application_Module_Member_Register_RANDOM_DIGITS 					= rand(1,1000000000);
-
-
-
 $_Application_Module_Member_Register_POST_REGISTRAR_PASSWORD_HASHED			= password_hash($_Application_Module_Member_Register_RANDOM_DIGITS, PASSWORD_BCRYPT);
 
 /*
@@ -206,7 +238,7 @@ if ($_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY != $_Applicat
 
 /*
  ============================================================================================================
- + Strip Characters From Post Data
+ + Internal Security => Strip Characters From Post Data
  ============================================================================================================
 */
 
@@ -545,6 +577,11 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Gallery");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Live");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Music");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Recordings");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Streams");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Activity_Logging");
@@ -555,8 +592,14 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Gallery");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Streams");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Gallery");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Live");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Movies");
+mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Streams");
 
 /*
  + Directory Security: Copy Directory Denial Index Files
