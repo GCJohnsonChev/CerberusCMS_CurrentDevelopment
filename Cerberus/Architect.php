@@ -1748,7 +1748,7 @@ member_username)VALUES(
 
 	echo ("[ Done ]<BR>");
 
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Directory Structure... Please Wait.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Organized Directory Structure... Please Wait.<BR>");
 
 /*
  ============================================================================================================
@@ -1756,32 +1756,93 @@ member_username)VALUES(
  ============================================================================================================
 */
 
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Making:<BR>");
+
 /*
  + Make Directory: Administrator UserName
 */
 
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME<BR><BR>");
+
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME");
+
+	echo ("[ Done ]<BR><BR>");
 
 /*
  + Make Directory: Administrator' Organized File Directory Structure
 */
 
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files<BR>");
 
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files");
 
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image");
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile");
+	echo ("[ Done ]<BR><BR>");
 
-mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video");
+// Audio
+
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Gallery<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Live<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Music<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Recordings<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Streams<BR>");
+
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Gallery");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Live");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Music");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Recordings");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Streams");
+
+	echo ("[ Done ]<BR><BR>");
+
+// Document
+
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall<BR>");
+
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall");
 
 	echo ("[ Done ]<BR>");
+
+// Image
+
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Gallery<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Streams<BR>");
+
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Gallery");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Streams");
+
+	echo ("[ Done ]<BR><BR>");
+
+// Video
+
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Gallery<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Live<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Movies<BR>");
+	echo ("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Streams<BR>");
+
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Gallery");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Live");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Movies");
+	mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Streams");
+
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Directory Structure Index Files... Please Wait.<BR>");
 
@@ -1789,23 +1850,45 @@ mkdir("./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video");
  + Directory Security: Copy Directory Denial Index Files
 */
 
+// Audio
+
 copy("./Member/Setup/Indexes/Files/Files.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/index.php");
 copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Music/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Recordings/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Audio/Streams/index.php");
+
+// Document
 
 copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging/index.php");
-copy("./Member/Setup/Files/Document/Activity_Log.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging/Activity_Log.php");
+copy("./Member/Setup/Files/Document/Activity_Logging/Activity_Log.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Activity_Logging/Activity_Log.php");
 copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Electronic_Mail/Electronic_Mail.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Friends/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Streams/Wall/index.php");
 
+// Image
+
 copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Streams/index.php");
 copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Image/Profile/index.php");
+
+// Video
+
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Movies/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/Streams/index.php");
 
 copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Video/index.php");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Personal Web Page... Please Wait.<BR>");
 
@@ -1815,7 +1898,7 @@ copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_POST_ADMINISTRAT
 
 copy("./System/Default/Register/Register.html","./Member/$_POST_ADMINISTRATOR_USERNAME/index.html");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Physical Electronic Mail Address File... Please Wait.<BR>");
 
@@ -1825,7 +1908,7 @@ copy("./System/Default/Register/Register.html","./Member/$_POST_ADMINISTRATOR_US
 
 copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_POST_ADMINISTRATOR_USERNAME/Files/Document/Electronic_Mail/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Adding Specified Administrator Account Electronic Mail To Electronic Mail Master List... Please Wait.<BR>");
 
@@ -1835,9 +1918,9 @@ copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_POST
 
 copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_POST_ADMINISTRATOR_ELECTRONIC_MAIL_ADDRESS");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Services Root Administrator Account ( Cerberus ) Directory Structure Clone... Please Wait.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Services Root Administrator Account ( $_PROJECT_STRING_NAME_SHORT ) Directory Structure Clone... Please Wait.<BR><BR>");
 
 /*
  ============================================================================================================
@@ -1845,71 +1928,145 @@ copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master
  ============================================================================================================
 */
 
-/*
- + Make Directory: Backup Services-Root Administrator Account ( Cerberus )
-*/
-
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Making:<BR>");
 
 /*
- + Make Directory: Backup Services-Root Administrator Account ( Cerberus ) Organized File Directory Structure
+ + Make Directory: Administrator UserName
 */
 
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT<BR><BR>");
 
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Friends");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT");
 
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image");
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile");
+	echo ("[ Done ]<BR><BR>");
 
-mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video");
+/*
+ + Make Directory: Administrator' Organized File Directory Structure
+*/
+
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files<BR>");
+
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files");
+
+	echo ("[ Done ]<BR><BR>");
+
+// Audio
+
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Gallery<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Live<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Music<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Recordings<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Streams<BR>");
+
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Gallery");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Live");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Music");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Recordings");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Streams");
+
+	echo ("[ Done ]<BR><BR>");
+
+// Document
+
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Friends<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall<BR>");
+
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Friends");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall");
+
+	echo ("[ Done ]<BR>");
+
+// Image
+
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Gallery<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Streams<BR>");
+
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Gallery");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Streams");
+
+	echo ("[ Done ]<BR><BR>");
+
+// Video
+
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Gallery<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Live<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Movies<BR>");
+	echo ("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Streams<BR>");
+
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Gallery");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Live");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Movies");
+	mkdir("./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Streams");
+
+	echo ("[ Done ]<BR><BR>");
+
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Specified Administrator Account Directory Structure Index Files... Please Wait.<BR>");
 
 /*
  + Directory Security: Copy Directory Denial Index Files
 */
 
+// Audio
+
 copy("./Member/Setup/Indexes/Files/Files.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/index.php");
-
 copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Music/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Recordings/index.php");
+copy("./Member/Setup/Indexes/Files/Audio/Audio.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Audio/Streams/index.php");
 
-copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/index.php");
+// Document
+
 copy("./Member/Setup/Indexes/Files/Document/Activity_Logging/Activity_Logging.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging/index.php");
-copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging/Activity_Log.php");
+copy("./Member/Setup/Files/Document/Activity_Logging/Activity_Log.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Activity_Logging/Activity_Log.php");
+copy("./Member/Setup/Indexes/Files/Document/Document.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Electronic_Mail/Electronic_Mail.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Friends/Friends.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Friends/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Streams/Streams.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/index.php");
 copy("./Member/Setup/Indexes/Files/Document/Streams/Wall/Wall.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Streams/Wall/index.php");
 
+// Image
+
 copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile/index.php");
+copy("./Member/Setup/Indexes/Files/Image/Image.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Streams/index.php");
 copy("./Member/Setup/Indexes/Files/Image/Profile/Profile.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Image/Profile/index.php");
+
+// Video
+
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Gallery/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Live/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Movies/index.php");
+copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/Streams/index.php");
 
 copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Video/index.php");
 
-/*
- + Make Directory: Backup Services-Root Administrator Account ( Cerberus ) Hyper-Text-Markup-Language Web-Page Index File
-*/
+	echo ("[ Done ]<BR><BR>");
 
-copy("./System/Default/Register/Register.html","./Member/$_PROJECT_STRING_NAME_SHORT/index.html");
-
-/*
- + Copy Default Files To Organized Directory Structure: Administrator Electronic Mail Address
-*/
-
-copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_PROJECT_STRING_NAME_SHORT/Files/Document/Electronic_Mail/$_PROJECT_STRING_NAME_SHORT@Localhost");
-
-/*
- + Copy Administrator Electronic Mail Address To Master List
-*/
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Default Friend System... Please Wait.<BR>");
 
 copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_PROJECT_STRING_NAME_SHORT@Localhost");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Custom Web Applications... Please Wait.<BR>");
 
@@ -1929,7 +2086,7 @@ custom_application_time
 '$_GLOBAL_LOCAL_SERVER_DATE'
 )");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Default Ranking System... Please Wait.<BR>");
 
@@ -1963,7 +2120,7 @@ rank_gender_female_4
 'Athena'
 )");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Pre-Configured System Settings... Please Wait.<BR>");
 
@@ -2013,7 +2170,7 @@ settings_system_plugin_status_text_editor
 '1'
 )");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Statistics... Please Wait.<BR>");
 
@@ -2031,7 +2188,7 @@ statistics_installation_date
 '$_GLOBAL_LOCAL_SERVER_DATE'
 )");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Forum Entry... Please Wait.<BR>");
 
@@ -2043,7 +2200,7 @@ statistics_installation_date
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum(forum_access_level,forum_date,forum_description,forum_title)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE','This is an Example Forum Entry','Example Forum #1')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Forum Topic Entry... Please Wait.<BR>");
 
@@ -2055,7 +2212,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_date,topic_description,topic_forum_id,topic_last_post,topic_last_poster,topic_title)VALUES('1','$_GLOBAL_LOCAL_SERVER_DATE','This is an Example Topic.','1','$_GLOBAL_LOCAL_SERVER_DATE','$_PROJECT_STRING_NAME_SHORT','This Is The Example Topic #1 Entry Within The Example Forum #1 Entry')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Forum Topic Post... Please Wait.<BR>");
 
@@ -2067,7 +2224,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post(post_access_level,post_author,post_data,post_date,post_last_edit,post_topic_id)VALUES('1','$_PROJECT_STRING_NAME_SHORT','This is an Example Post -- you can Administer the Forum via the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','$_GLOBAL_LOCAL_SERVER_DATE','1')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example File Category Entry ( For File Upload / Download Application Module )... Please Wait.<BR>");
 
@@ -2079,7 +2236,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories(file_category_description,file_category_time,file_category_title)VALUES('This is an Example File Category Entry -- You can Delete this File Category Entry from the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','Example File Category Entry')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example File Entry ( For File Upload / Download Application Module )... Please Wait.<BR>");
 
@@ -2091,7 +2248,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_c
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(file_author,file_category,file_description,file_image,file_location,file_number_of_downloads,file_time,file_title,file_uploader)VALUES('None','1','This is an Example File Entry -- You can Delete this Example File Entry from the Administration Control Panel.','./Upload/Default/0987654321-0987654321.png','./Upload/Default/0987654321-0987654321.png','1','$_GLOBAL_LOCAL_SERVER_DATE','Example File','$_PROJECT_STRING_NAME_SHORT')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Article Entry... Please Wait.<BR>");
 
@@ -2103,7 +2260,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles(article_author,article_data,article_time,article_title)VALUES('$_PROJECT_STRING_NAME_SHORT','This is an Example Article Entry -- You can Delete this Article Entry from the Administration Control Panel.','$_GLOBAL_LOCAL_SERVER_DATE','Example Article')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Example Article Entry... Please Wait.<BR>");
 
@@ -2115,7 +2272,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articl
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news(news_author,news_avatar,news_data,news_mood,news_music,news_rss_rfc,news_time,news_title)VALUES('$_PROJECT_STRING_NAME_SHORT','Default.png','This is an Example News Article Entry -- You can Delete this News Article Entry from the Administration Control Panel.','None','None','Wed, 05 Aug 2009 15:04:18 -0700','$_GLOBAL_LOCAL_SERVER_DATE','Example News')");
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("&nbsp;=>&nbsp;<A HREF=\"?InternalApplication&#61;Unlink_Installation\" TITLE=\":: Remove Installation Files ::\">Remove Installation Files</A>");
 
@@ -2157,7 +2314,7 @@ if ($_GET["InternalApplication"] == "Unlink_Installation") {
 
 if (unlink("./Architect/MySQL/MySQL_Generator.php") && unlink("./Architect/MySQL/index.php") && unlink("./Architect/index.php") && unlink("./Architect/ToolKit/index.php") && unlink("./Architect/ToolKit/Installation_ToolKit.php")) {
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 } else {
 
@@ -2170,7 +2327,7 @@ if (unlink("./Architect/MySQL/MySQL_Generator.php") && unlink("./Architect/MySQL
 
 if (rmdir("./Architect/MySQL/") && rmdir("./Architect/ToolKit/")) {
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 } else {
 
@@ -2182,7 +2339,7 @@ if (rmdir("./Architect/MySQL/") && rmdir("./Architect/ToolKit/")) {
 
 if (rmdir("./Architect/")) {
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 } else {
 
@@ -2194,7 +2351,7 @@ if (rmdir("./Architect/")) {
 
 if (unlink("./$_INTERNAL_FILE_ARCHITECT")) {
 
-	echo ("[ Done ]<BR>");
+	echo ("[ Done ]<BR><BR>");
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Redirecting To This <B>$_PROJECT_STRING_NAME_EXTENDED Installation</B> Login Application Module... Please Wait 15 Seconds.<BR><BR>");
 
