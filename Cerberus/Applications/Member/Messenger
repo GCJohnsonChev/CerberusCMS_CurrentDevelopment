@@ -257,15 +257,6 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[12]									= "wma
 
 /*
  ============================================================================================================
- + File Extensions :: Executable
- ============================================================================================================
-*/
-
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_EXECUTABLE									= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_EXECUTABLE[0]								= "exe";
-
-/*
- ============================================================================================================
  + File Extensions :: Audio
  ============================================================================================================
 */
@@ -292,8 +283,16 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[9]									= 
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT									= array();
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[0]								= "doc";
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[1]								= "docx";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[2]								= "txt";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[3]								= "pdf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[2]								= "eps";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[3]								= "git";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[4]								= "mercurial";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[5]								= "pdf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[6]								= "psd";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[7]								= "tar";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[8]								= "tar.gz";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[9]								= "txt";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[10]								= "xls";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[11]								= "zip";
 
 /*
  ============================================================================================================
