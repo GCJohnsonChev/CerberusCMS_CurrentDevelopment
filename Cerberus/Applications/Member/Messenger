@@ -97,7 +97,14 @@ $_Application_Module_Member_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM
 */
 
 $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Message'];
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN						= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Hidden'];
+
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("'","&apos;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("<","&lt;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace(">","&gt;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("\"\","&quot;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= str_replace(".", "", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("`","&#96;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= stripslashes($_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
 
 /*
  ============================================================================================================
