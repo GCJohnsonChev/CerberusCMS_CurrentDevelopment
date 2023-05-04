@@ -1470,6 +1470,12 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO
 
 											echo ("* Audio File has been copied.<BR>");
 
+											echo ("* Deleting Orignal Audio File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Original Audio File Deleted.");
+
 											echo ("* Redirecting To Messenger Room...<BR>");
 
 	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
@@ -1498,9 +1504,61 @@ if ($_GET["UploadFile"] == "Document") {
 
 /*
  ============================================================================================================
- + Move Files To Temporary Directory
+ + Check File :: Document :: For Allowed File Extension Type
  ============================================================================================================
 */
+
+											echo ("* Checking For Document File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Document :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Document/: $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Document :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Document File already exists in ./Document/Files/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Document File Deleted.<BR>");
+
+											echo ("* Document File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Document :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Document File Type Is Allowed...<BR>");
 
 											echo ("* Uploading Document File...<BR>");
 
@@ -1508,17 +1566,41 @@ move_uploaded_file($_FILES['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Fil
 
 											echo ("* Done...<BR>");
 
+											echo ("* Renaming Document File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Document File has been renamed.<BR>");
+
 											echo ("* Copying Document File To File Type Directory Within Messenger Room:<BR>");
 
-											echo ("* Copying Document File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
+											echo ("* Copying Document File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
 
-copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME","./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Document File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Document File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Document File Deleted.");
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
+	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
 
-} // [ + ] IF: Internal Application: Upload File :: Docuement :: Is Activated
+} // [ + ] IF: File :: Document :: Already Exists Within: Document Directory
+
+} else {
+
+											echo ("* Document File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Document File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Document :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
+
+} // [ + ] IF: Internal Application: Upload File :: Document :: Is Activated
 
 /*
  ============================================================================================================
@@ -1532,9 +1614,61 @@ if ($_GET["UploadFile"] == "Image") {
 
 /*
  ============================================================================================================
- + Move Files To Temporary Directory
+ + Check File :: Image :: For Allowed File Extension Type
  ============================================================================================================
 */
+
+											echo ("* Checking For Image File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Image :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Image/: $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Image :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Image File already exists in ./Files/Image/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Image File Deleted.<BR>");
+
+											echo ("* Image File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Image :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Image File Type Is Allowed...<BR>");
 
 											echo ("* Uploading Image File...<BR>");
 
@@ -1542,15 +1676,39 @@ move_uploaded_file($_FILES['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Fil
 
 											echo ("* Done...<BR>");
 
+											echo ("* Renaming Image File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Image File has been renamed.<BR>");
+
 											echo ("* Copying Image File To File Type Directory Within Messenger Room:<BR>");
 
 											echo ("* Copying Image File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
 
-copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME","./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Image File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Image File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Original Image File Deleted.");
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
+	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
+
+} // [ + ] IF: File :: Image :: Already Exists Within: Image Directory
+
+} else {
+
+											echo ("* Image File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Image File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Image :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
 
 } // [ + ] IF: Internal Application: Upload File :: Image :: Is Activated
 
@@ -1566,9 +1724,61 @@ if ($_GET["UploadFile"] == "Video") {
 
 /*
  ============================================================================================================
- + Move Files To Temporary Directory
+ + Check File :: Video :: For Allowed File Extension Type
  ============================================================================================================
 */
+
+											echo ("* Checking For Video File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Video :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Video/: $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Video :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Video File already exists in ./Files/Video/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Video File Deleted.<BR>");
+
+											echo ("* Video File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Video :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Video File Type Is Allowed...<BR>");
 
 											echo ("* Uploading Video File...<BR>");
 
@@ -1576,15 +1786,39 @@ move_uploaded_file($_FILES['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Fil
 
 											echo ("* Done...<BR>");
 
+											echo ("* Renaming Video File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Video File has been renamed.<BR>");
+
 											echo ("* Copying Video File To File Type Directory Within Messenger Room:<BR>");
 
 											echo ("* Copying Video File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
 
-copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME","./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Physical/Plain-Text/$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Video File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Video File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Original Video File Deleted.");
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
+	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedPlainTextFileMessengerRoom=$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN");
+
+} // [ + ] IF: File :: Video :: Already Exists Within: Video Directory
+
+} else {
+
+											echo ("* Video File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Video File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Video :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
 
 } // [ + ] IF: Internal Application: Upload File :: Video :: Is Activated
 
