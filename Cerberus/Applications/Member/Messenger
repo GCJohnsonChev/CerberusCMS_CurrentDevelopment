@@ -89,6 +89,7 @@ $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_HASH_MD5									=
 */
 
 $_Application_Module_Member_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME							= $_POST['AM_Messenger_Plain_Text_File_Messenger_Select_Room_Name'];
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN						= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Hidden'];
 
 /*
  ============================================================================================================
@@ -98,13 +99,13 @@ $_Application_Module_Member_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM
 
 $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Message'];
 
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("'","&apos;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("<","&lt;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace(">","&gt;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("\"\","&quot;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= str_replace(".", "", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace("`","&#96;", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
-$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= stripslashes($_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace('/</','&lt;', $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= preg_replace('/>/','&gt;', $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= str_replace("[image]", "<IMG SRC=\"", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= str_replace("[/image]", "\" WIDTH=\"200\" HEIGHT=\"150\"></IMG>", $_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
+
+//$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE								= stripslashes($_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE);
 
 /*
  ============================================================================================================
@@ -240,19 +241,19 @@ $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_PLAIN_TEXT_FILE_MESSENGE
 */
 			
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS										= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[0]]									= "jpg";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[1]]									= "gif";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[2]]									= "png";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[3]]									= "bmp";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[4]]									= "pdf";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[5]]									= "zip";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[6]]									= "rar";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[7]]									= "wmv";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[8]]									= "swf";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[9]]									= "wav";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[10]]									= "mp3";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[11]]									= "mov";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[12]]									= "wma";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[0]									= "jpg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[1]									= "gif";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[2]									= "png";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[3]									= "bmp";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[4]									= "pdf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[5]									= "zip";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[6]									= "rar";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[7]									= "wmv";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[8]									= "swf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[9]									= "wav";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[10]									= "mp3";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[11]									= "mov";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[12]									= "wma";
 
 /*
  ============================================================================================================
@@ -261,7 +262,7 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[12]]									= "wm
 */
 
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_EXECUTABLE									= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_EXECUTABLE[0]]								= "exe";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_EXECUTABLE[0]								= "exe";
 
 /*
  ============================================================================================================
@@ -270,16 +271,16 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_EXECUTABLE[0]]					
 */
 
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO									= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[0]]									= "mp3";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[1]]									= "aac";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[2]]									= "aax";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[3]]									= "aiff";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[4]]									= "alac";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[5]]									= "flac";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[6]]									= "m4a";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[7]]									= "ogg";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[8]]									= "wav";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[9]]									= "wma";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[0]									= "mp3";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[1]									= "aac";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[2]									= "aax";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[3]									= "aiff";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[4]									= "alac";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[5]									= "flac";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[6]									= "m4a";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[7]									= "ogg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[8]									= "wav";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[9]									= "wma";
 
 
 /*
@@ -289,7 +290,7 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[9]]									=
 */
 	
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT									= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[0]]								= "doc";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[0]								= "doc";
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[1]								= "docx";
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[2]								= "txt";
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[3]								= "pdf";
@@ -301,11 +302,11 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[3]								
 */
 
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE									= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[0]]									= "jpg";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[1]]									= "jpeg";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[2]]									= "png";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[3]]									= "gif";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[4]]									= "bmp";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[0]									= "jpg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[1]									= "jpeg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[2]									= "png";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[3]									= "gif";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[4]									= "bmp";
 
 /*
  ============================================================================================================
@@ -314,16 +315,16 @@ $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[4]]									=
 */
 
 $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO									= array();
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[0]]									= "mp4";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[1]]									= "mov";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[2]]									= "wmv";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[3]]									= "avi";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[4]]									= "flv";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[5]]									= "swf";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[6]]									= "webm";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[7]]									= "qt";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[8]]									= "mpeg";
-$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[9]]									= "mpg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[0]									= "mp4";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[1]									= "mov";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[2]									= "wmv";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[3]									= "avi";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[4]									= "flv";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[5]									= "swf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[6]									= "webm";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[7]									= "qt";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[8]									= "mpeg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[9]									= "mpg";
 
 /*
  ============================================================================================================
@@ -1862,7 +1863,7 @@ if (fwrite($_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_FILE, 
 					<A HREF=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" TARGET=\"_NEW\" TITLE=\":: Open & Display This Registered Member Account Profile Image :: \"><IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"125\" HEIGHT=\"125\"></A><BR>
 						<B><A HREF=\"../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote This Message:</B><BR>
 							----------------------------------------------<BR>
-							&ldquo;<I>$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I>&rdquo;<BR>
+							<BIG>&ldquo;</BIG><I>$_Application_Module_Member_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE</I><BIG>&rdquo;</BIG><BR>
 							----------------------------------------------<BR>
 							<B>Message Timestamp, Local Server:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
 							<B>Message Timestamp, Remote Server:</B>&nbsp;<BR>
