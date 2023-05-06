@@ -224,13 +224,6 @@ echo ("
 
 } else { // [ + ] IF: Member Account Registration Form Variables Have Executed, Check Random Key
 
-echo ("Posted Data, Debug:<BR>
-	First Name: $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME<BR>
-	Last Name: $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME<BR>
-	Electronic Mail Address: $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS<BR>
-	UserName: $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME<BR>
-");
-
 /*
  ============================================================================================================
  + IF: Compare Random Key Does Not Match :: Halt Registration
