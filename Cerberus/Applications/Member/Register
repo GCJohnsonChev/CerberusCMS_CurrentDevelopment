@@ -121,7 +121,6 @@ $_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= stripslashes(
 
 // Electronic Mail Address
 
-$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
 $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= str_replace("`", "", $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
 $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS);
 
@@ -171,7 +170,7 @@ $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= ucfirst($_Appl
  ============================================================================================================
 */
 
-$_Application_Module_Member_Register_RANDOM_DIGITS 					= rand(1,1000000000);
+$_Application_Module_Member_Register_RANDOM_DIGITS 					= rand(10000000000, 9999999999);
 $_Application_Module_Member_Register_POST_REGISTRAR_PASSWORD_HASHED			= password_hash($_Application_Module_Member_Register_RANDOM_DIGITS, PASSWORD_BCRYPT);
 
 /*
@@ -279,11 +278,17 @@ $_Application_Module_Member_Register_POST_STRIP_CHARACTERS[25]				= " ";
 
 /*
  ============================================================================================================
- + IF: Registrar Electronic Mail Address Is Invalid: Does Not Contain @ Character :: Halt Registration
+ + IF: Registrar Electronic Mail Address Is Invalid: Does Not Contain @ OR . Character :: Halt Registration
  ============================================================================================================
 */
 
 if (substr_count($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS,"@") != 1) {
+
+											echo ($_Application_Module_Member_Message_Register_REGISTRATION_INVALID_ELECTRONIC_MAIL_ADDRESS);
+
+} else { // [ + ] IF: Member Account Electronic Mail Address Is Valid: Check For Disallowed Characters
+
+if (substr_count($_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS,".") != 1) {
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_INVALID_ELECTRONIC_MAIL_ADDRESS);
 
@@ -367,7 +372,7 @@ This is the Member Account information that you have provided:
 * Member Account, Specified Gender: $_Application_Module_Member_Register_POST_REGISTRAR_GENDER
 -------------------
 * Member Account UserName: $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME
-* Member Account Password: $_Application_Module_Member_Register_RANDOM_DIGITS
+* Member Account Password: $_Application_Module_Member_Register_RANDOM_DIGITS - $_Application_Module_Member_Register_POST_REGISTRAR_PASSWORD_HASHED
 * Member Account Electronic Mail Address: $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS
 * Member Account Activation Key: $_Application_Module_Member_Register_RANDOM_KEY_MD5
 -------------------------------------------------------------------
@@ -385,7 +390,7 @@ The steps for authenticating into this Non-Registered Member Account are as foll
 2. Input the correct Member Account Login information:
 	* Member Account Electronic Mail Address
 	* Member Account UserName
-	* Member Account Password ( $_Application_Module_Member_Register_RANDOM_DIGITS )
+	* Member Account Password, $_Application_Module_Member_Register_RANDOM_DIGITS
 
 3. Input the Member Account Activation Key:
 	* $_Application_Module_Member_Register_RANDOM_KEY_MD5
@@ -754,11 +759,13 @@ $DB->free($_Application_Module_Member_Register_DB_Query_INSERT_REGISTRAR);
 
 } // [ + ] IF: REGISTRATION FORM MEMBER ELECTRONIC MAIL ADDRESS IS VALID [ 6 ]
 
-} // [ + ] IF: REGISTRATION FORM MEMBER USERNAME IS VALID [ 7 ]
+} // [ + ] IF: REGISTRATION FORM MEMBER ELECTRONIC MAIL ADDRESS IS VALID [ 7 ]
 
-} // [ + ] IF: REGISTRATION FORM KEY IS VALID [ 8 ]
+} // [ + ] IF: REGISTRATION FORM MEMBER USERNAME IS VALID [ 8 ]
 
-} // [ + ] IF: REGISTRATION FORM POSTED [ 9 ]
+} // [ + ] IF: REGISTRATION FORM KEY IS VALID [ 9 ]
+
+} // [ + ] IF: REGISTRATION FORM POSTED [ 10 ]
 
 } // [ + ] IF: USER CREDENTIALS ALREADY EXIST
 ?>
