@@ -1460,7 +1460,7 @@ $_Application_Module_Member_Message_Register_Header									= "<CENTER>[ <B><A H
  ============================================================================================================
 */
 
-$_Application_Module_Member_Message_Register_REGISTRATION_SUCCESSFUL							= "<CENTER>Cerberus: Thank you for Registering. Check the Electronic Mail Message Inbox to Activate and Access this Account.</CENTER>";
+$_Application_Module_Member_Message_Register_REGISTRATION_SUCCESSFUL							= "<CENTER>Cerberus: Thank you for Registering. Check the provided Electronic Mail Message Inbox to Access and Activate this Account.</CENTER>";
 $_Application_Module_Member_Message_Register_REGISTRATION_ERROR								= "<CENTER>Cerberus: I was not able to Register the Information that you have provided. Try Again ?</CENTER>";
 $_Application_Module_Member_Message_Register_REGISTRATION_DENIED							= "<CENTER>Cerberus: You are already Registered. If you would like to create a new Account, please Log-out first.</CENTER>";
 $_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_EXISTS							= "<CENTER>Cerberus: I am sorry, but that Member Name / Electronic Mail Address combination already exists in our system. Try Again ?</CENTER>";
