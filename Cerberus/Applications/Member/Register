@@ -621,7 +621,7 @@ if ($_Application_Module_Member_Register_DB_Query_INSERT_REGISTRAR) {
 
 echo ("Registration Process Has Started<HR>");
 
-echo ("Making Registered Member Account Directory: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME<BR>");
+echo ("* Making Registrar Directory: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
 
@@ -629,9 +629,11 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
  + Make Directory: Registrar Organized File Directory Structure
 */
 
-echo ("Making Registered Member Account Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files<BR>");
+echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files");
+
+echo ("* Making Member Account Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Gallery");
@@ -640,6 +642,8 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Recordings");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Streams");
 
+echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document<BR>");
+
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Activity_Logging");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Electronic_Mail");
@@ -647,10 +651,14 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams/Wall");
 
+echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image<BR>");
+
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Gallery");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Streams");
+
+echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Gallery");
@@ -661,6 +669,8 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 /*
  + Directory Security: Copy Directory Denial Index Files
 */
+
+echo ("* Copying Registrar Directory Index Denial Files<BR>");
 
 // Audio
 
@@ -702,17 +712,23 @@ copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Modu
  + Make Directory: Registrar Hyper-Text-Markup-Language Web-Page Index File
 */
 
+echo ("* Making Registrar index.html File<BR>");
+
 copy("./System/Default/Register/Register.html","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/index.html");
 
 /*
  + Copy Default Files To Organized Directory Structure: Registrar Electronic Mail Address
 */
 
+echo ("* Making Registrar Friend File<BR>");
+
 copy("./System/Default/Friend/Friend.cerberus","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Electronic_Mail/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
 
 /*
  + Copy Registrar Electronic Mail Address To Master List
 */
+
+echo ("* Adding Registrar Electronic Mail Address to Master List<BR>");
 
 copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_Mail_Addresses/$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS");
 
