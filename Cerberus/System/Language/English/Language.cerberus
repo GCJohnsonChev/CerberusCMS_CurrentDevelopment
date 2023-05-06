@@ -1469,6 +1469,7 @@ $_Application_Module_Member_Message_Register_REGISTRATION_KEY_ERROR							= "<CE
 $_Application_Module_Member_Message_Register_REGISTRATION_ELECTRONIC_MAIL_FUNCTION_ERROR				= "<CENTER>Cerberus: There was an error: I was not able to Send the Account Activation Electronic Mail Message.</CENTER>";
 $_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_ERROR						= "<CENTER>Cerberus: The Member Name that you have provided me is not valid. The Name cannot contain any symbols or spaces.</CENTER>";
 $_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_LENGTH_ERROR 					= "<CENTER>Cerberus: The Member Name cannot be less than 4 Characters.</CENTER>";
+$_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_MATCH						= "<CENTER>Cerberus: The provided First Name cannot match the provided Last Name.</CENTER>";
 
 /*
  ============================================================================================================
