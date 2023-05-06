@@ -108,7 +108,6 @@ $_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST[
  ============================================================================================================
 */
 
-/*
 // First Name
 
 $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME);
@@ -131,8 +130,6 @@ $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= s
 $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= str_replace(".", "", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
 $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= str_replace("`", "", $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
 $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= stripslashes($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME);
-*/
-
 
 /*
  ============================================================================================================
@@ -147,7 +144,6 @@ $_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME		= str
  + Internal Security => Convert :: Registration Strings To LowerCase Or UpperCase Characters
  ============================================================================================================
 */
-
 
 // Electronic Mail Address
 
