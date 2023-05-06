@@ -170,7 +170,7 @@ $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= ucfirst($_Appl
  ============================================================================================================
 */
 
-$_Application_Module_Member_Register_RANDOM_DIGITS 					= rand(10000000000, 9999999999);
+$_Application_Module_Member_Register_RANDOM_DIGITS 					= rand(1, 9999999999);
 $_Application_Module_Member_Register_POST_REGISTRAR_PASSWORD_HASHED			= password_hash($_Application_Module_Member_Register_RANDOM_DIGITS, PASSWORD_BCRYPT);
 
 /*
@@ -316,7 +316,7 @@ if (substr_count("$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME",
 if (strlen($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME) <= 4) {
 
 											echo ($_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_LENGTH_ERROR);
-											echo ("UserName String Length Is: $_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME - $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
+											//echo ("UserName String Length Is: $_Application_Module_Member_Register_GET_STRING_LENGTH_REGISTRAR_USERNAME - $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
 
 } else { // [ + ] IF: Member Account Registration UserName Is Greater Than 4 Characters: Check For Existing Member Account In Database Server
 
@@ -328,7 +328,7 @@ if (strlen($_Application_Module_Member_Register_POST_REGISTRAR_USERNAME) <= 4) {
 
 if ("$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME" == "$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME") {
 
-											echo ("Cerberus: The provided First Name cannot match the provided Last Name.");
+											echo ($_Application_Module_Member_Message_Register_REGISTRATION_MEMBER_NAME_MATCH);
 
 } else { // [ + ] IF: Member Account Registration First Name Is Exactly Member Account Registration Last Name :: Halt Registration
 
@@ -372,7 +372,7 @@ This is the Member Account information that you have provided:
 * Member Account, Specified Gender: $_Application_Module_Member_Register_POST_REGISTRAR_GENDER
 -------------------
 * Member Account UserName: $_Application_Module_Member_Register_POST_REGISTRAR_USERNAME
-* Member Account Password: $_Application_Module_Member_Register_RANDOM_DIGITS - $_Application_Module_Member_Register_POST_REGISTRAR_PASSWORD_HASHED
+* Member Account Password: $_Application_Module_Member_Register_RANDOM_DIGITS
 * Member Account Electronic Mail Address: $_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS
 * Member Account Activation Key: $_Application_Module_Member_Register_RANDOM_KEY_MD5
 -------------------------------------------------------------------
@@ -620,9 +620,9 @@ if ($_Application_Module_Member_Register_DB_Query_INSERT_REGISTRAR) {
  + Make Directory: Registrar UserName
 */
 
-echo ("Registration Process Has Started<HR>");
+//echo ("Registration Process Has Started<HR>");
 
-echo ("* Making Registrar Directory: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME<BR>");
+//echo ("* Making Registrar Directory: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
 
@@ -630,11 +630,11 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
  + Make Directory: Registrar Organized File Directory Structure
 */
 
-echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files<BR>");
+//echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files");
 
-echo ("* Making Member Account Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio<BR>");
+//echo ("* Making Member Account Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Gallery");
@@ -643,7 +643,7 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Recordings");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Audio/Streams");
 
-echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document<BR>");
+//echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Activity_Logging");
@@ -652,14 +652,14 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Streams/Wall");
 
-echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image<BR>");
+//echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Gallery");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Profile");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Image/Streams");
 
-echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video<BR>");
+//echo ("* Making Registrar Organized Directory Structure: ./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video<BR>");
 
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video");
 mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Video/Gallery");
@@ -671,7 +671,7 @@ mkdir("./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Fil
  + Directory Security: Copy Directory Denial Index Files
 */
 
-echo ("* Copying Registrar Directory Index Denial Files<BR>");
+//echo ("* Copying Registrar Directory Index Denial Files<BR>");
 
 // Audio
 
@@ -713,7 +713,7 @@ copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_Application_Modu
  + Make Directory: Registrar Hyper-Text-Markup-Language Web-Page Index File
 */
 
-echo ("* Making Registrar index.html File<BR>");
+//echo ("* Making Registrar index.html File<BR>");
 
 copy("./System/Default/Register/Register.html","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/index.html");
 
@@ -721,7 +721,7 @@ copy("./System/Default/Register/Register.html","./Member/$_Application_Module_Me
  + Copy Default Files To Organized Directory Structure: Registrar Electronic Mail Address
 */
 
-echo ("* Making Registrar Friend File<BR>");
+//echo ("* Making Registrar Friend File<BR>");
 
 copy("./System/Default/Friend/Friend.cerberus","./Member/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME/Files/Document/Electronic_Mail/$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME");
 
@@ -729,7 +729,7 @@ copy("./System/Default/Friend/Friend.cerberus","./Member/$_Application_Module_Me
  + Copy Registrar Electronic Mail Address To Master List
 */
 
-echo ("* Adding Registrar Electronic Mail Address to Master List<BR>");
+//echo ("* Adding Registrar Electronic Mail Address to Master List<BR>");
 
 copy("./System/Default/Friend/Friend.cerberus","./Member/Master_List/Electronic_Mail_Addresses/$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS");
 
