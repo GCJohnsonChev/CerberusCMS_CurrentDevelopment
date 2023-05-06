@@ -515,7 +515,7 @@ member_status_account_last_active_minutes,
 member_status_account_locked,
 member_url_homepage,
 member_username)VALUES(
-'3',
+'1',
 '0',
 '$_Application_Module_Member_Register_POST_REGISTRAR_BIRTHDATE',
 'Empty Entry :: CryptoCurrency :: BitCoin Address',
