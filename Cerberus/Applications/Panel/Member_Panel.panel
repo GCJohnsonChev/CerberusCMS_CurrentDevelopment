@@ -135,7 +135,7 @@ echo ("
 												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Activity_Log\" TITLE=\":: Open & Display The Activity Log For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Activity Log</A><BR>
 												<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authentication_Log\" TITLE=\":: Open & Display The Authentication Log For :: $_GLOBAL_COOKIE_MEMBER_USERNAME ::\">Authentication Log</A><BR>
 		
-											<BR><BR>
+											<BR>
 											<I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=System_Message&amp;Message&#61;Default\" TITLE=\":: Open & Display The System Message Application ::\">Latest System Messages</A></I><HR>
 												<TEXTAREA ROWS=\"7\" COLS=\"25\">$_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_AUTHOR Wrote This System Message: $_Application_Module_Block_Members_LIST_SYSTEM_MESSAGE_DATA</TEXTAREA>
 ");
