@@ -559,7 +559,7 @@ $_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type				= "AES-256-CBC";
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length				= openssl_cipher_iv_length($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type);
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV					= openssl_random_pseudo_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
-$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options				= 0;
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options				= '0';
 
 /*
  ============================================================================================================
@@ -583,7 +583,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Random				= random_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
+//$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Random				= random_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
 
 /*
  ============================================================================================================
@@ -609,7 +609,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Decryption_Type_AES_Decrypted_Data					= openssl_decrypt(DATA, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Decryption_Type_AES_Decrypted_Data					= openssl_decrypt("", $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
 
 /*
  ============================================================================================================
