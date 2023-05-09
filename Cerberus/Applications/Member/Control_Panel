@@ -177,8 +177,6 @@ Member Account Social Interaction<BR>
 Messaging<BR>
 <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;PrivateMessageID&#61;All\" TITLE=\":: Send & Receive Private Messages ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Messages.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
 
-Member Account Activity and Logging<BR>
-
 											<HR>
 											<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Logout\" TITLE=\":: Logout :: Secure-Delete Sessions, Credentials & Cookies ::\">Logout</A> ]</CENTER>
 ");
@@ -313,7 +311,10 @@ $DB->free($_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS);
 if ($_GET["Display"] == "Activity_Log") {
 
 echo ("
-		<BR><BR>
+		<HR><BR><BR>
+		------------------------------------------------------------------<BR>
+		Member Account Activity and Logging<BR>
+		------------------------------------------------------------------<BR>
 		Activity Log For: $_GLOBAL_COOKIE_MEMBER_USERNAME<BR>
 		<IFRAME SRC=\"$_Application_Module_Member_Control_Panel_LOGGING_ACTIVITY_LOG\" WIDTH=\"80%\" HEIGHT=\"300\"></IFRAME>
 ");
@@ -331,7 +332,10 @@ echo ("
 if ($_GET["Display"] == "Authentication_Log") {
 
 echo ("
-		<B>Member Account Authentication Log</B><HR>
+		<HR><BR><BR>
+		------------------------------------------------------------------<BR>
+		Member Account Activity and Logging<BR>
+		------------------------------------------------------------------<BR>
 		Authentication Log File HASH, SHA-256: $_Application_Module_Member_Control_Panel_CONTENTS_AUTHENTICATION_LOG_FILE_HASH_SHA256
 		<FORM>
 			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Control_Panel_CONTENTS_AUTHENTICATION_LOG_FILE</TEXTAREA>
