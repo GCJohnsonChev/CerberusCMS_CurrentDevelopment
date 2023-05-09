@@ -2122,8 +2122,6 @@ $_GLOBAL_REMOTE_SERVER_ADDRESS
 
 if ($_GET["ArchiveMessengerRoom"] == "$_Application_Module_Member_Messenger_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
 
-echo ("Nothing here yet...");
-
 } // [ + ] IF: Internal Application: Archive Messenger Room Is Activated
 
 /*
