@@ -1529,7 +1529,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Audio :: Already Exists Within: Audio Directory
 
@@ -1639,7 +1639,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUM
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Document :: Already Exists Within: Document Directory
 
@@ -1749,7 +1749,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Image :: Already Exists Within: Image Directory
 
@@ -1859,7 +1859,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Video :: Already Exists Within: Video Directory
 
@@ -1919,7 +1919,7 @@ echo ("* Done...<BR>");
 
 echo ("* Automatically Redirecting To Visible Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } else {
 
@@ -1965,7 +1965,7 @@ $_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESS
 
 if ($DB->num_rows($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME) >= 1) {
 
-$_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME								= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Write To The Plain-Text Messenger Room: $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+$_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME								= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Write To The Visible Clear-Text Messenger Room: $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
 
 /*
  ============================================================================================================
@@ -1973,7 +1973,7 @@ $_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_
  ============================================================================================================
 */
 
-unlink ("./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+unlink ("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
 
 /*
  ============================================================================================================
@@ -1989,8 +1989,8 @@ unlink ("./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_ERASE_
 
 						echo ("*&nbsp;Writing Default Data To Visible Clear-Text File Messenger Room...<BR>");
 
-$_Application_Module_Member_Messenger_ERASE_WRITE_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA						= "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"15\">
-															<LINK REL=\"stylesheet\" HREF=\"../../../../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
+$_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE_DATA						= "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"15\">
+															<LINK REL=\"stylesheet\" HREF=\"../../../../../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
 															<BODY ONLOAD=\"window.scrollTo(0,document.body.scrollHeight);\">";
 
 /*
@@ -1999,7 +1999,7 @@ $_Application_Module_Member_Messenger_ERASE_WRITE_PLAIN_TEXT_FILE_MESSENGER_FILE
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME, "$_Application_Module_Member_Messenger_ERASE_WRITE_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA");
+fwrite($_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME, "$_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE_DATA");
 
 						echo ("*&nbsp;Done<BR>");
 
@@ -2011,11 +2011,11 @@ fclose($_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGE
 
 						echo ("*&nbsp;Redirecting To Visible Clear-Text Instant Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 } else {
 
-	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED<BR>");
 
@@ -2029,7 +2029,7 @@ echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_E
 
 $DB->free($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME);
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 } else {
 /**
