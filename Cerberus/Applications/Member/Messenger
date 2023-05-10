@@ -766,7 +766,7 @@ copy("./Temporary/Messenger/Setup/index.php","./Temporary/Messenger/Text-File/Cl
 
 						echo ("*&nbsp;Creating Visible Clear-Text File Messenger Room File: <I>$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html</I>...<BR>");
 
-$_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME								= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Create The Visible Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+$_Application_Module_Member_Messenger_GENERATE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_NAME						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Create The Visible Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
 
 						echo ("*&nbsp;Done<BR>");
 
@@ -786,8 +786,8 @@ $_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME							
 
 						echo ("*&nbsp;Writing Default Data To Visible Clear-Text File Messenger Room...<BR>");
 
-$_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA								= "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"15\">
-															<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
+$_Application_Module_Member_Messenger_GENERATE_WRITE_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_DATA						= "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"15\">
+															<LINK REL=\"stylesheet\" HREF=\"../../../../../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
 															<BODY ONLOAD=\"window.scrollTo(0,document.body.scrollHeight);\">";
 
 /*
@@ -796,13 +796,13 @@ $_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA							
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME, "$_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_DATA");
+fwrite($_Application_Module_Member_Messenger_GENERATE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_NAME, "$_Application_Module_Member_Messenger_GENERATE_WRITE_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_DATA");
 
 						echo ("*&nbsp;Done<BR>");
 
 						echo ("*&nbsp;Closing File...<BR>");
 
-fclose($_Application_Module_Member_Messenger_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME);
+fclose($_Application_Module_Member_Messenger_GENERATE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_NAME);
 
 						echo ("*&nbsp;Done<BR>");
 
@@ -1061,7 +1061,7 @@ if ($_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_M
 **/
 } else {
 
-$_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_AUDIO							= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html", "a");
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_AUDIO						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html", "a");
 
 /*
  ============================================================================================================
@@ -1069,7 +1069,7 @@ $_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_AUDIO							
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_AUDIO, "
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_AUDIO, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
 		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
@@ -1114,7 +1114,7 @@ if ($_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FIL
 **/
 } else {
 
-$_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_DOCUMENT							= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html", "a");
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_DOCUMENT					= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html", "a");
 
 /*
  ============================================================================================================
@@ -1122,7 +1122,7 @@ $_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_DOCUMENT				
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_DOCUMENT, "
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_DOCUMENT, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
 		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
@@ -1167,7 +1167,7 @@ if ($_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_M
 **/
 } else {
 
-$_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_IMAGE							= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html", "a");
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_IMAGE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html", "a");
 
 /*
  ============================================================================================================
@@ -1175,7 +1175,7 @@ $_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_IMAGE							
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_WRITE_TO_PLAIN_TEXT_CHAT_LIST_IMAGE, "
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_IMAGE, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
 		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
@@ -1220,7 +1220,7 @@ if ($_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_M
 **/
 } else {
 
-$_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_LIST_VIDEO							= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html", "a");
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_VIDEO							= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html", "a");
 
 /*
  ============================================================================================================
@@ -1228,7 +1228,7 @@ $_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_LIST_VIDE
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_LIST_VIDEO, "
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_VIDEO, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
 		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
@@ -1529,7 +1529,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Audio :: Already Exists Within: Audio Directory
 
@@ -1639,7 +1639,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUM
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Document :: Already Exists Within: Document Directory
 
@@ -1749,7 +1749,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Image :: Already Exists Within: Image Directory
 
@@ -1859,7 +1859,7 @@ copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO
 
 											echo ("* Redirecting To Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } // [ + ] IF: File :: Video :: Already Exists Within: Video Directory
 
@@ -1919,7 +1919,7 @@ echo ("* Done...<BR>");
 
 echo ("* Automatically Redirecting To Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
 } else {
 
@@ -2011,11 +2011,11 @@ fclose($_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGE
 
 						echo ("*&nbsp;Redirecting To Visible Clear-Text Instant Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 } else {
 
-	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED<BR>");
 
@@ -2029,7 +2029,7 @@ echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_E
 
 $DB->free($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME);
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedVisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 } else {
 /**
