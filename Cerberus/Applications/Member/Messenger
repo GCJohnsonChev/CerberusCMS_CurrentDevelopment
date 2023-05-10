@@ -548,7 +548,10 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AM_Messenger_Visible_Encrypted_Text_File_Messenger_Room_Message'];
+//$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AM_Messenger_Visible_Encrypted_Text_File_Messenger_Room_Message'];
+
+// Quick Test
+$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE;
 
 /*
  ============================================================================================================
@@ -575,7 +578,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password					= "";
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password					= "$_GLOBAL_MEMBER_PASSWORD";
 
 /*
  ============================================================================================================
@@ -1908,7 +1911,9 @@ if (fwrite($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSEN
 						<B><I><A HREF=\"../../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote This Message:</B></I><BR>
 							----------------------------------------------<BR>
 							<BIG>&ldquo;</BIG><I>$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE</I><BIG>&rdquo;</BIG><BR>
-							----------------------------------------------<BR>
+							----------------------------------------------<BR><BR><BR>
+							Encrypted Message, Test: $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Encrypted_Data<BR>
+							----------------------------------------------<BR><BR><BR>
 							<B>Message Timestamp, Local Server:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
 							<B>Message Timestamp, Remote Server:</B>&nbsp;<BR>
 							<B>Internet Protocol Address Sent From:</B>&nbsp;<A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A> :: $_GLOBAL_REMOTE_SERVER_PORT
