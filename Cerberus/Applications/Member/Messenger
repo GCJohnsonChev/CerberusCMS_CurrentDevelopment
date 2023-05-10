@@ -173,8 +173,8 @@ $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESS
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME								= $_POST['AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Hidden'];
-$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD							= $_POST['AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password'];
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME							= $_POST['AM_Messenger_Visible_Erase_Clear_Text_File_Messenger_Room_Name_'];
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD						= $_POST['AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password'];
 
 /*
  ============================================================================================================
@@ -182,7 +182,7 @@ $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED						= hash('md5', $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD);
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED						= hash('md5', $_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD);
 
 
 /*
@@ -1356,7 +1356,7 @@ echo ("
 														* <I>Erase This Clear-Text File Messenger Room</I>:<BR>
 														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
 														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
-														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Erase_Clear_Text_File_Messenger_Room_Name_\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
 														<INPUT TYPE=\"submit\" VALUE=\"Erase Messenger Room\">
 													</FORM><BR><BR>
 ");
@@ -1945,9 +1945,9 @@ fclose($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_
  ============================================================================================================
 */
 
-if ($_GET["Erase"] == "$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
+if ($_GET["Erase"] == "$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
 
-if (($_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD) && ($_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME)) {
+if ($_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD) {
 
 /*
  ============================================================================================================
@@ -1955,7 +1955,7 @@ if (($_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_
  ============================================================================================================
 */
 
-$_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_clear_text_file_room WHERE messenger_room_name='$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME' AND messenger_room_password_maintenance='$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED' ORDER BY id ASC");
+$_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_clear_text_file_room WHERE messenger_room_name='$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME' AND messenger_room_password_maintenance='$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED' ORDER BY id ASC");
 
 /*
  ============================================================================================================
@@ -1965,7 +1965,7 @@ $_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESS
 
 if ($DB->num_rows($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME) >= 1) {
 
-$_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME								= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Write To The Visible Clear-Text Messenger Room: $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_ERASE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Write To The Visible Clear-Text Messenger Room: $_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
 
 /*
  ============================================================================================================
@@ -1973,7 +1973,7 @@ $_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_
  ============================================================================================================
 */
 
-unlink ("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+unlink ("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
 
 /*
  ============================================================================================================
@@ -1999,25 +1999,25 @@ $_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE
  ============================================================================================================
 */
 
-fwrite($_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME, "$_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE_DATA");
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_ERASE, "$_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE_DATA");
 
 						echo ("*&nbsp;Done<BR>");
 
 						echo ("*&nbsp;Closing File...<BR>");
 
-fclose($_Application_Module_Member_Messenger_ERASE_OPEN_PLAIN_TEXT_FILE_MESSENGER_FILE_NAME);
+fclose($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_ERASE);
 
 						echo ("*&nbsp;Done<BR>");
 
 						echo ("*&nbsp;Redirecting To Visible Clear-Text Instant Messenger Room...<BR>");
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 } else {
 
-	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
-echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED<BR>");
+echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED<BR>");
 
 } // [ + ] IF: Visible Clear-Text File Messenger Room Database Server Entries Is Greater Than Or Equal To One
 
@@ -2029,7 +2029,7 @@ echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_E
 
 $DB->free($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME);
 
-	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
 
 } else {
 /**
