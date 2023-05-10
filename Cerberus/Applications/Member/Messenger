@@ -1009,7 +1009,7 @@ $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENG
 /*
  =============================================================================================================
  +
- + Internal Application :: Display :: Selected Clear-Text File Chat Room By Name
+ + Internal Application :: Display :: Selected Clear-Text File Messenger Room By Name
  +
  =============================================================================================================
 */
@@ -1072,7 +1072,7 @@ $_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIS
 fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_AUDIO, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
-		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
 	</HEAD>
 
 	<BODY>
@@ -1125,7 +1125,7 @@ $_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIS
 fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_DOCUMENT, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
-		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
 	</HEAD>
 
 	<BODY>
@@ -1178,7 +1178,7 @@ $_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIS
 fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_IMAGE, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
-		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
 	</HEAD>
 
 	<BODY>
@@ -1231,7 +1231,7 @@ $_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIS
 fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_VIDEO, "
 	<HEAD>
 		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
-		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
 	</HEAD>
 
 	<BODY>
