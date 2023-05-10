@@ -1266,7 +1266,7 @@ if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Applicatio
 */
 
 echo ("
-												Clear-Text File Messenger Room: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</I><BR>
+												Visible Clear-Text File Messenger Room: <I><A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" TITLE=\":: Open & Display This Visible Clear-Text Messenger Log ::\" TARGET=\"_NEW\">$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</A></I><BR>
 												<IFRAME SRC=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" WIDTH=\"90%\" HEIGHT=\"300\"></IFRAME><BR><BR>
 ");
 
@@ -1385,10 +1385,10 @@ echo ("
 
 echo ("
 
-														* This Clear-Text File Messenger Room Refreshes Every 5 Seconds<BR>
-														* This Clear-Text File Messenger Room Name Is: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</I><BR>
-														* This Clear-Text File Messenger Room Was Created By: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR @ $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_DEVICE_IP_ADDRESS</I><BR>
-														* This Clear-Text File Messenger Room Was Created On: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_DATE</I>
+														* This Visible Clear-Text File Messenger Room Automatically Refreshes Every 15 Seconds<BR>
+														* This Visible Clear-Text File Messenger Room Name Is: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</I><BR>
+														* This Visible Clear-Text File Messenger Room Was Created By: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR @ $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_DEVICE_IP_ADDRESS</I><BR>
+														* This Visible Clear-Text File Messenger Room Was Created On: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_DATE</I>
 ");
 
 // Delete Files.html Files
