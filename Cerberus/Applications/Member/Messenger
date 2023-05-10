@@ -657,7 +657,7 @@ echo ("
 												</FORM><BR><BR>
 
 											<B>Visible Messenger Room Selection Options</B><HR>
-												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Display&#61;VisibleTextFileMessengers\" METHOD=\"post\">
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Display&#61;VisibleTextFileMessenger\" METHOD=\"post\">
 													<I><B>Messenger Selection</B></I>:<BR>
 												<SELECT NAME=\"\">
 													<OPTION VALUE=\"\">:: Clear-Text File Messenger Options ::</OPTION>
@@ -868,7 +868,8 @@ messenger_room_creation_author_system_access_level,
 messenger_room_creation_date,
 messenger_room_name,
 messenger_room_password_entry,
-messenger_room_password_maintenance
+messenger_room_password_maintenance,
+messenger_room_status_visibility
 )VALUES(
 '$_GLOBAL_COOKIE_MEMBER_USERNAME',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
@@ -877,6 +878,7 @@ messenger_room_password_maintenance
 '$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME',
 '$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY_HASH_MD5',
 '$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE_HASH_MD5'
+'1';
 )");
 
 						echo ("*&nbsp;Inserting Visible Clear-Text File Messenger Room Name Details Into The S.Q.L. Database...<BR>");
@@ -954,6 +956,7 @@ $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENG
 $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_name'];
 $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE			= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_maintenance'];
 $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_entry'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_STATUS_VISIBILITY			= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_status_visibility'];
 
 											echo ("<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;SelectedClearTextFile&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</A><BR>");
 
@@ -1011,7 +1014,7 @@ $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENG
  =============================================================================================================
 */
 
-if ($_GET["SelectedVisibleTextFileMessenger"] == "$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
+if ($_GET["SelectedClearTextFile"] == "$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
 
 copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html");
 copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html");
