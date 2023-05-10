@@ -1889,11 +1889,11 @@ if ($_GET["Send"] == "ClearTextFileMessage") {
  ============================================================================================================
 */
 
-echo ("* Writing Visible Clear-Text File Message: <I>$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE</I><BR>");
+echo ("* Writing Visible Clear-Text Messenger File Message: <I>$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE</I><BR>");
 
-echo ("* To Visible Clear-Text File Name: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN.html<BR>");
+echo ("* To Visible Clear-Text Messenger File Name: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN.html<BR>");
 
-$_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_FILE								= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN.html", "a");
+$_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_MESSAGES_FILE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN.html", "a");
 
 /*
  ============================================================================================================
@@ -1901,9 +1901,9 @@ $_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_FILE					
  ============================================================================================================
 */
 
-if (fwrite($_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_FILE, "
+if (fwrite($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_MESSAGES_FILE, "
 						<HR>
-					<A HREF=\"../../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" TARGET=\"_NEW\" TITLE=\":: Open & Display This Registered Member Account Profile Image :: \"><IMG SRC=\"../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"75\" HEIGHT=\"75\" CLASS=\"MessengerImageMemberProfile\"></A>
+					<A HREF=\"../../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" TARGET=\"_NEW\" TITLE=\":: Open & Display This Registered Member Account Profile Image :: \"><IMG SRC=\"../../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"75\" HEIGHT=\"75\" CLASS=\"MessengerImageMemberProfile\"></A>
 						&nbsp;
 						<B><I><A HREF=\"../../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote This Message:</B></I><BR>
 							----------------------------------------------<BR>
@@ -1917,7 +1917,7 @@ if (fwrite($_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHA
 
 echo ("* Done...<BR>");
 
-echo ("* Automatically Redirecting To Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN<BR>");
+echo ("* Automatically Redirecting To Visible Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN<BR>");
 
 	header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&VisibleTextFileMessenger=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
 
@@ -1931,7 +1931,7 @@ echo ("* Error: Unable To Write To Clear-Text File Messenger Room File.<BR>");
  ============================================================================================================
 */
 
-fclose($_Application_Module_Member_Messenger_WRITE_TO_VISIBLE_CLEAR_TEXT_CHAT_FILE);
+fclose($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_MESSAGES_FILE);
 
 } // [ + ] IF: Write Message Data To Clear-Text File Messenger Room Message File
 
