@@ -1266,7 +1266,7 @@ if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Applicatio
 */
 
 echo ("
-												Visible Clear-Text File Messenger Room: <I><A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" TITLE=\":: Open & Display This Visible Clear-Text Messenger Log ::\" TARGET=\"_NEW\">$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</A></I><BR>
+												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;SelectedClearTextFile&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" TITLE=\":: Instantly Reload This Visible Clear-Text File Messenger Room ::\">Visible Clear-Text File Messenger Room</A>: <I><A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" TITLE=\":: Open & Display This Visible Clear-Text Messenger Log ::\" TARGET=\"_NEW\">$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</A></I><BR>
 												<IFRAME SRC=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" WIDTH=\"90%\" HEIGHT=\"300\"></IFRAME><BR><BR>
 ");
 
@@ -1292,7 +1292,7 @@ echo ("
 
 echo ("
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Audio\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
-														* <I>Upload Unique Audio File To This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Upload Unique Audio File To This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Permitted Audio Files ]<BR>
 														* WAV, MP3, WMA, AAC, FLAC, OGG<BR>
 														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio\" MAXLENGTH=\"100\"><BR>
@@ -1308,7 +1308,7 @@ echo ("
 
 echo ("
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Document\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
-														* <I>Upload Unique Document File To This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Upload Unique Document File To This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Permitted Document Files ]<BR>
 														* DOC, XLS, PPT, PDF, EPS, PSD, TXT<BR>
 														* ZIP, TAR, TAR.GZ, GIT, Mercurial<BR>
@@ -1325,7 +1325,7 @@ echo ("
 
 echo ("
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Image\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
-														* <I>Upload Unique Image File To This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Upload Unique Image File To This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Permitted Image Files ]<BR>
 														* PNG, JPG, TIF / TIFF, BMP, TGA, DPE<BR>
 														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image\" MAXLENGTH=\"100\"><BR>
@@ -1341,7 +1341,7 @@ echo ("												Available Files :: Video<BR>
 
 echo ("
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Video\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
-														* <I>Upload Unique Video File To This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Upload Unique Video File To This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Permitted Video Files ]<BR>
 														* AVI, MP4, MOV, WMV, AVCHD, FLV, SWF, MKV, WEBM<BR>
 														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video\" MAXLENGTH=\"100\"><BR>
@@ -1353,7 +1353,7 @@ echo ("
 echo ("
 
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Erase&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
-														* <I>Erase This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Erase This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
 														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Erase_Clear_Text_File_Messenger_Room_Name_\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
@@ -1364,7 +1364,7 @@ echo ("
 echo ("
 
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;DeleteMessengerRoom&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
-														* <I>Delete This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Delete This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
 														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Delete_Clear_Text_File_Messenger_Room_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Delete_Clear_Text_File_Messenger_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
@@ -1375,7 +1375,7 @@ echo ("
 echo ("
 
 													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;ArchiveMessengerRoom&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
-														* <I>Archive This Clear-Text File Messenger Room</I>:<BR>
+														* <I>Archive This Visible Clear-Text File Messenger Room</I>:<BR>
 														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
 														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Archive_CLEAR_TEXT_FILE_MESSENGER_ROOM_Name_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
 														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Archive_CLEAR_TEXT_FILE_MESSENGER_ROOM_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
