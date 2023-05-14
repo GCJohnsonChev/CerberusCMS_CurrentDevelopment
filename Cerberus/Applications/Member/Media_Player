@@ -1,0 +1,238 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Media_Player
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Media Player
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Media_Player_Header);
+											echo ("<BR><HR><CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;DisplayVideo&#61;URL\" TITLE=\":: Display Video Stream From Uniform-Resource-Location ::\">Display Video From URL</A>
+											- <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;DisplayVideo&#61;FileName\" TITLE=\":: Display Video Stream From Video File ::\">Display Video From Video File</A> 
+											- <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;PlayAudioStream&#61;FileName\" TITLE=\":: Play Audio Stream From File ::\">Play Audio From Audio File</A> 
+											- <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;PlayAudioStream&#61;URL\" TITLE=\":: Play Audio Stream From Uniform-Resource-Location ::\">Play Audio From URL</A> ]</CENTER><HR><BR><BR>");
+
+/*
+ ============================================================================================================
+ +
+ + Post Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Video :: Uniform-Resource-Location
+ ============================================================================================================
+*/
+
+$_Application_Module_Media_Player_POST_VIDEO_URL							= $_POST['AM_Media_Player_Video_URL'];
+
+/*
+ ============================================================================================================
+ + Video :: File
+ ============================================================================================================
+*/
+
+$_Application_Module_Media_Player_POST_VIDEO_FILE_NAME							= $_POST['AM_Media_Player_Video_File_Name'];
+
+/*
+ ============================================================================================================
+ + Audio Stream URL
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Media_Player_POST_AUDIO_URL							= $_POST['AM_Media_Player_Play_Audio_URL'];
+
+/*
+ ============================================================================================================
+ + Audio Stream File
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Media_Player_POST_AUDIO_FILE_NAME						= $_POST['AM_Media_Player_Play_Audio_File_Name'];
+
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Video Stream :: From Uniform-Resource-Location
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DisplayVideo"] == "URL") {
+
+if (!$_Application_Module_Media_Player_POST_VIDEO_URL) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;DisplayVideo&#61;URL\" METHOD=\"POST\">
+												* Video File Uniform Resource Location:<BR>
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Media_Player_Video_URL\">Paste Video Uniform-Resource-Location Here...</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Video URL\"><BR>
+											</FORM>
+");
+
+} else {
+
+echo ("
+											<CENTER><IFRAME SRC=\"$_Application_Module_Media_Player_POST_VIDEO_URL\" WIDTH=\"500\" HEIGHT=\"350\"></IFRAME></CENTER>
+");
+
+} // [ + ] IF: Display Video Stream From Uniform-Resource-Location Embedded Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Display Video By Uniform-Resource-Location Embedded Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Video Stream :: From Video File
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DisplayVideo"] == "FileName") {
+
+if (!$_Application_Module_Media_Player_POST_VIDEO_FILE_NAME) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;DisplayVideo&#61;FileName\" METHOD=\"POST\">
+												* Video File Name Uniform Resource Location:<BR>
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Media_Player_Video_File_Name\">Paste Video File Name URL Here...</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Video File Name\"><BR>
+											</FORM>
+");
+
+} else {
+
+echo ("
+											<CENTER>
+												<VIDEO WIDTH=\"500\" HEIGHT=\"350\" CONTROLS>
+													<SOURCE SRC=\"$_Application_Module_Media_Player_POST_VIDEO_FILE_NAME\" TYPE=\"VIDEO/MP4\">
+												</VIDEO>
+											</CENTER>
+");
+
+} // [ + ] IF: Display Video Stream From Local Or Remote File Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Display Video Stream From Local Or Remote File Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Play :: Audio Stream :: From Uniform-Resource-Location
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["PlayAudioStream"] == "URL") {
+
+if (!$_Application_Module_Member_Media_Player_POST_AUDIO_URL) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;PlayAudioStream&#61;URL\" METHOD=\"POST\">
+												* Audio File Uniform Resource Location:<BR>
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Media_Player_Play_Audio_URL\">Paste Audio Stream Uniform Resource Location String Here...</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Audio URL Stream\"><BR>
+											</FORM>
+");
+
+} else {
+
+echo ("
+											<CENTER>
+												<AUDIO CONTROLS>
+													<SOURCE SRC=\"$_Application_Module_Member_Media_Player_POST_AUDIO_URL\" TYPE=\"AUDIO/MPEG\">
+											</CENTER>
+");
+
+} // [ + ] IF: Audio Player Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Play Audio Stream From Uniform-Resource-Location Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Play :: Audio Stream :: From Audio File
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["PlayAudioStream"] == "FileName") {
+
+if (!$_Application_Module_Member_Media_Player_POST_AUDIO_FILE_NAME) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Media_Player&amp;PlayAudioStream&#61;FileName\" METHOD=\"POST\">
+												* Audio File Name Uniform-Resource-Location:<BR>
+												<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Media_Player_Play_Audio_File_Name\">Paste Audio Stream File Name Uniform-Resource-Location String Here...</TEXTAREA><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Submit Audio File Stream\"><BR>
+											</FORM>
+");
+
+} else {
+
+echo ("
+											<CENTER>
+												<AUDIO CONTROLS>
+													<SOURCE SRC=\"$_Application_Module_Member_Media_Player_POST_AUDIO_FILE_NAME\" TYPE=\"AUDIO/MPEG\">
+											</CENTER>
+");
+
+} // [ + ] IF: Audio Player Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Play Audio Stream From File Name Is Activated
+?>
