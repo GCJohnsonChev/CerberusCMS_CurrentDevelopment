@@ -64,26 +64,33 @@
 											echo ($_Application_Module_Member_Recommendations_Header);
 
 echo ("
-<B>Personal :: Recommended Firmware and Software</B><BR>
-* Security Hardened LineageOS AOSP or Linux Mobile Operating System For Mobile Cell Phone Devices<BR>
-* Security Hardened Arch-Linux or Arch-Linux Based Linux Operating System Distribution For Laptop / NoteBook<BR>
-* Security Hardened Linux-BIOS or Linux CoreBoot-BIOS For Laptop / NoteBook<BR>
-* Security Hardened FreshTomato For Home Router<BR><BR>
+<B>Personal :: Recommended Device Firmware, Operating Systems and Software</B><BR>
+------------------------------------------------------------------------------------<BR>
+* Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: LineageOS<BR>
+* Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: Linux Mobile<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Arch-Linux Based<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Free-BSD Based<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Firmware :: BIOS :: Linux-BIOS<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Firmware :: BIOS :: CoreBoot<BR>
+* Personal :: Home Router :: Firmware :: Security Hardened FreshTomato<BR>
+* Personal :: Home Router :: Operating System :: Security Hardened Free-BSD<BR>
 
 <B>Personal :: Recommended Electronic Devices</B><BR>
-* Samsung or Lenovo T-460s Through To T-560s Laptop With AMD CPU / GPU<BR>
-* Samsung or Lenovo Smart Mobile Phone<BR>
-* Samsung or Leveno Smart Watch<BR>
-* Samsung or Lenovo Smart Glasses<BR>
-* ASUS Home Router<BR><BR>
+* Personal :: Laptop / NoteBook :: Lenovo :: T-460s Through To T-560s :: AMD CPU / Dedicated GPU<BR>
+* Personal :: Laptop / NoteBook :: Samsung :: Galaxy Book :: With AMD CPU / Dedicated GPU<BR>
+* Personal :: Smart Watch :: Lenovo Smart Watch<BR>
+* Personal :: Smart Glasses :: Lenovo<BR>
+* Personal :: Smart Glasses :: Ray-Ban<BR>
+* Personal :: Smart Glasses :: Samsung<BR>
+* Personal :: Home Router :: Lenovo<BR>
+* Personal :: Home Router :: Samsung<BR>
+* Personal :: Home Router :: ASUS<BR>
+* Personal :: Home Router :: Custom Built<BR><BR>
 
-<B>Web Server :: Recommended Electronic Devices and Hardware</B><BR>
-* ASRock MB
-* Crucial
-* WD SSD
-* 
-
-<B>Recommended AOSP Applications</B><BR>
+<B>Personal :: Web Server :: Recommended Hardware</B><BR>
+*
+<B>Personal :: Recommended Applications :: AOSP</B><BR>
+<B>Software Repository :: AOSP :: F-Droid</B><BR>
 * gApps Pico
 * IPTables
 * DNSCrypt
