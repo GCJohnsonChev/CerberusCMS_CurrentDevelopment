@@ -1,22 +1,30 @@
-Cerberus Content Management System, Officially Registered Unix-Name: CerberusCMS and Cerberus-Content-Management-System In 2001 on F.M. which became SourceForge and then SlashDot Media.
+﻿Cerberus Content Management System, Officially Registered Unix-Name: CerberusCMS and Cerberus-Content-Management-System in year 2000 - 2001 on FreshMeat which became SourceForge and then SlashDot Media.
 
 ==Origins==
 
 ===Project Pagan-Like Cultural Theme===
-Cerberus Content Management System // Cerberus Web Application Framework With Officially Registered Unix Name: 'CerberusCMS' in 2001 on F.M. which is not to be confused with any other Applications or Web Applications with the name Cerberus. This Web Application project features all Pagan-Like visible theming as well as Pagan-Like programming because of the Scandinavian Northern-Frisian and Western-Frisian Heathen ancestry of its author who has absolutely no Greek ancestry at all but who followed the standard adoption of Greek culture in Western-American Academia where Greek cultural ideas and symbols are used.
+Cerberus Content Management System // Cerberus Web Application Framework With Officially Registered Unix Name: 'CerberusCMS' in year ~2000 - 2001 on http://www.FreshMeat.org is not to be confused with any other Applications or Web Applications with the name Cerberus.
+Cerberus Content Management System was custom written in Pre-Hyper-Text-Post-Processor Programming Code over a span of 2 summers in Oildale, California from around year ~2000 - 2001 and then it was officially registered on http://www.FreshMeat.org.
 
-The name Cerberus however comes from the Greek Three-Headed Hound of Hades who guarded the entrance to the after life in Greek Mythology. The idea was that in computer binary: 1 is: on and 0 is: off which can
+The direct Web Application project fork is named Fenrir Content Management System. The word Fenrir is from Scandinavian Folklore and was supposedly the name of the Demi-God Wolf belonging to the Scandinavian God Loki.
+Fenrir Content Management System features all Heathen-Like visible theming as well as Heathen-Like Programming and Heathen-Themed Programming Code ASCII Art because of the Scandinavian Northern-Frisian and Western-Frisian Heathen ancestry of its author.
+The Official Cerberus Content Managemet System Software Project follows the standard adoption of Greek culture in Western-American Academia where Greek cultural ideas and symbols are used.
+
+The name Cerberus is from the Greek Three-Headed Hound of Hades who guarded the entrance to the after life in Greek Mythology. The idea was that in computer binary: 1 is: on and 0 is: off which can
 also be likened to 1 is: alive or 0 is: dead.
 
-Each release of CerberusCMS after CerberusCMS - Version Number: 4, Build Number: 0.8, Edit Number: 399 comes with an alternate edition for installation where the entire system is themed around Heathen / Germanic Pagan Gods and Goddesses where in this alternate edition there is no mention of Cerberus and it is replaced instead with the names of Heathen / Germanic Gods and Goddesses with those themed graphics. Wodan / Odin, Freyja, Heimdallr and others.
-
-The alternate edition is named RuneCMS which should not be confused with any other project with that name.
+Each release of CerberusCMS after CerberusCMS - Version Number: 4, Build Number: 0.8, Edit Number: 399 comes with alternate editions named FenrirCMS and RuneCMS for installation where the entire system is themed around Heathen / Germanic Pagan Gods and Goddesses where in these alternate editions there is no mention of Cerberus and instead of Cerberus it is themed with the names of Heathen / Germanic Gods and Goddesses with Heathen themed graphics and ascii art.
+Wodan / Odin, Freyja, Heimdallr and others.
 
 CerberusCMS comes with several additional applications:
-* Charon, which is named after the Ferryman to the afterlife in Greek Mythology.
-* Iris, which is named after the Goddess of Messages in Greek Mythology.
+* Architect, This is a Pre-Hyper-Text-Post-Processor Web Application that configures and installs CerberusCMS to the Web Server.
+* Hephaestus, which is named after the Greek God of architecture. This is a Pre-Hyper-Text-Post-Processor Web Application that builds CerberusCMS from scratch by creating and making the organized directory structure and each of the Application files directly on the Web Server Data Storage Medium itself. This builds a clean and free-of-malware instance of CerberusCMS.
+* Pre-Installation ToolKit, This is a Pre-Hyper-Text-Post-Processor Web Application that downloads and unpacks pre-made archive packages of CerberusCMS to a Web Server.
+* Charon, which is named after the Ferryman to the afterlife in Greek Mythology. This is a Personal-Computer Compilable C++ Application that builds a clean installation of CerberusCMS to the local server data storage medium.
+* Iris, which is named after the Goddess of Messages in Greek Mythology. This is a Google Android Open Source Software Project Application as well as an Apple iOS Swift Application that can be installed to an Android Mobile Phone and an Apple iPhone. It is used to connect to a web server that has CerberusCMS installed on it. It is much like the FaceBook Messenger and FaceBook Application.
+* Asclepius, which is named after the Goddess of healing. This is a Pre-Hyper-Text-Post-Processor Web Application that performs extensive diagnostics on the installation of CerberusCMS and offers to reinstall any files with permission from the automated Services Administration Account.
 
-CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later it was used in the [[XBMC]] community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser. This Web Application was originally used as a communications platform for small groups before that.
+CerberusCMS was the author's first software project started when the author was 14 years old. The project originally was written to cater to a small V-TM:R video game community to host expansion packs and video game mods. Later in 2007 - 2009 it was used in the [[XBMC]] community before that project was forked to Kodi Media Center. Customized Application Modules were made to control the XBMC install from any web browser. This Web Application was originally used as a long distance communications platform from the Internet by small groups from ~2000 to 2006.
 
 ===Loss of Development Progress===
 Around 2 years of development progress was lost before 2013. Several fake versions of this project were put on display so as to distract certain groups.
@@ -68,6 +76,12 @@ All programming code is organized in Pre-Ordered Logical and Pre-Oredered Mathem
 ===Project Update Cycles===
 System Updates consist of Programming Code Updates, Programming Code Security Updates, Graphics Updates and more.
 Officially released versions come with an embedded build number where the build itself takes several weeks or months of quality code implementation and updates from the project developer.
+CerberusCMS - Version Number: 4, Build Number: 0.8 was hand updated by rewrite periodically from ~ January of 2022 to November of 2023.
+
+===Project Compatibility and Life Cycle===
+CerberusCMS - Version Number: 4, Build Number: 0.8 was hand updated by rewrite periodically from ~ January of 2022 to November of 2023. This specific Version Number and Build Number will work for 10 years on Pre-Hyper-Text-Post-Processor Version Number: 8.
+Major programming code updates implemented heavy use of encryption and data sanitization. It was remade for heavy use of Structured-Query-Language queries and concurrent connections numbering in the 100s of thousands.
+With a Server Setup on a rack with 3 different dedicated, separated and security hardened S.Q.L. Server, P.H.P. / Apache Server and Data Storage Server the system can support up to 20,000 unique active concurrent user-connections without any lag in response time.
 
 ====End-User System Update Cycles====
 * The entire system can be updated from the Administration Control Panel where a Services Root Administrator can initiate the update.
@@ -77,7 +91,7 @@ Officially released versions come with an embedded build number where the build 
 * The official file Hash Strings are checked against the official Master Server and Master GIT Repository hash strings where then the Master File allows or disallows the installation based on authentic file integrity if the Application Module undergoing installation is an official Application Module.
 
 Since this CMS is so modular the entire system will continue working if any connected part ever breaks. If any connected Application Module that is official ever breaks or if any byte changes in the programming code it is instantly reinstalled from
-the official GIT repository. This makes it impossible to be hacked from null byte exploits or other kinds of programming code exploits.
+the official GIT repository upon one reload of any part of the system. This layer of security makes it just about impossible for this CMS to be hacked because it would instantly reinstall the component that changed in HASH integrity.
 
 ===Project Release Cycles===
 
@@ -141,13 +155,13 @@ Task Manager that monitors connections in real-time.
 * All_Shouts
 * Application_List
 * Articles
-* Audio_Player
 * Calendar
 * Comment
 * Contact_Administrator
 * Control_Panel
 * Clock
 * Documentation
+* Download / Torrent
 * Electronic_Mail
 * Emulators
 * File_Manager
@@ -161,6 +175,8 @@ Task Manager that monitors connections in real-time.
 * Links
 * List
 * Login
+* Market
+* Media_Player
 * Member_Directory
 * Messenger
 * News
@@ -174,15 +190,14 @@ Task Manager that monitors connections in real-time.
 * Statistics
 * Submit_News
 * System_Message
-* Torrent
 * Update_Account
 * Update_Password
 * Upload
 * Video_Games
-* Video_Player
 * Webspace
+* VoIP
 
-45 Registered Member-Level Application Modules
+46 Registered Member-Level Application Modules
 
 ====Background-Level Application Modules====
 
@@ -216,12 +231,13 @@ Engine_Validation
 1 Public-Level Application Module
 
 ====Maintenance Applications====
-* Diagnostics
-* integrity
+* Asclepius, Diagnostics
+* Fides, Integrity
 
 2 Maintenance Applications
 
-====Installation and Configuration Applications====
+====Pre-Installation and Pre-Configuration Applications====
+* Hephaestus
 * Architect
 * SQL_Generator
 * Installation_ToolKit
@@ -229,7 +245,7 @@ Engine_Validation
 3 Pre-Configuration and Installation Applications.
 
 ====Secret Application Modules====
-With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module named Lightning Calculate ! this Application Module teaches the user how to mentally calculate at lightning speed through repetitive patterns.
+With Version Number: 4, Build Number: 0.8 CerberusCMS comes with a secret Application Module named 'Lightning Calculate !' this Application Module teaches the user how to mentally calculate at lightning speed through repetitive patterns.
 
 The author has mental calculating capabilities as a high-level Lightning Human Calculator capable of 4 Digit * 4 Digit mental multiplication as well as several other kinds of lightning mental calculating capabilities.
 
@@ -242,7 +258,7 @@ The Application Module teaches fundamentally how to Mentally Calculate all Mathe
 that successfully emulate Android Applications and Disk Operating System Application Images Directly From
 the web browser itself.
 
-* CerberusCMS additionally comes with a Digital Store Front named Store_Front where Administrators can list and sell physical and digital items within item categories and entries.
+* CerberusCMS additionally comes with a Digital Store Front named Market where Administrators can list and sell physical and digital items within item categories and entries.
 The additional Application Module is capable of securely handling personal credit card, debit card, coupon card and CryptoCurrency transactions.
 The Store Front Application Module stores encrypted personal information for shipping and receiving items. It also provides and stores printable invoices with tracking numbers, bar codes and QR codes.
 
@@ -255,7 +271,10 @@ This Plug-In is a very simple WYSIWYG Text Editor that can be included into any 
 * Safe-HTML
 This Plug-In automatically converts Hyper-Text-Markup-Language tags to Hyper-Text-Markup-Language entities from all of the input forms throughout the system. Example of this would be converting: '''< B >''' to '''& lt ;''' before it is inserted into the Database Management System Data. This eliminates any possibility of malicious Hyper-Text-Markup-Language tag injection, JavaScript scripting code injection and Post-Hyper-Text-Pre-Processor programming code injection into the Database Management System. All of the entities are converted back to Hyper-Text-Markup-Language tags after being retrieved from the Database Management System.
 
-==Project Software Compatibility==
+* Location
+This Plug-In gets the exact Global-Positioning-System x,y coordinates of the Devices connected to CerberusCMS.
+
+==Project Web Server Software Compatibility==
 
 ===Programming Code Parser Engines===
 * Pre-Hyper-Text-Post-Processor, Version Number: 8.2.2
@@ -553,7 +572,7 @@ Custom Application Modules can be written to control IoT Devices connected to th
 CerberusCMS - Version Number: 4, Build Number: 0.8 is written in a Linux Operating System Architecture Style where everything is modular.
 
 ===Programming Code Execution===
-* The programming code is executed from top to bottom in a Pre-Ordered logical and Pre-Ordered Mathematical process.
+* The programming code is executed from top to bottom in a Pre-Order logical and Pre-Order Mathematical process.
 * The entire system is executed, exploded and then imploded in a microsecond.
 * The system is capable of handling ~500 concurrent connections with ~500 concurrent Database Management Server connections at a time on a 500 Kilobyte bandwith web server.
 * The entire system including programming code and graphics is ~12 Megabytes.

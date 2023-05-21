@@ -1,0 +1,8 @@
+==Cerberus Content Management System==
+
+===Digital Information Security Features===
+
+====List all of the information security features here====
+* Can use a variable that random generates an impossible to guess hash and use that variable
+as the ?Application_Administrator, ?Application_Member, etc. would become ?randomhash=ApplicationModuleName.
+This makes it 100% impossible to do any kind of Cross-Site-Request-Forgery, S.Q.L. injection or hacks on the prefixed URL string.

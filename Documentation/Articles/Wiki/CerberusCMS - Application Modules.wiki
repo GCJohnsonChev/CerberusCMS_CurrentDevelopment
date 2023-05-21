@@ -1,0 +1,124 @@
+==Cerberus Content Management System :: Application Modules==
+
+This Wiki Document will list and explain in detail all of the Application Modules that are Officially Released with
+Cerberus Content Management System.
+
+===Root-Level Application Modules===
+* Integrity
+Integrity is an extensive Root Application that automatically checks the file integrity of every file discoverable in the ./Cerberus directory.
+
+===Services-Level Application Modules===
+* Loops
+Loops is an extensive Services Application that automatically executes hundreds of Programming Code Loops to protect all parts
+of the system.
+
+* Commander
+Commander is an extensive Services Application that receives commands from SMS text messages from a mobile device or from an authorized Electronic Mail Address or from within the included Instant Messenger Application Module with authorization codes.
+Once a correct command is received it is executed on the system. Commands could be things like network blocking I.P. addresses or printing
+messages on the screen for everyone to see at once.
+
+===Background-Level Application Modules===
+* Log_Administration
+* Log_Background
+* Log_Member
+* Log_Visitor
+
+===Administrator-Level Application Modules===
+* Administrators
+* Applications
+* Archive
+* Control_Panel
+* Emulators
+* File_Categories
+* Forum
+* GIT
+* Messenger
+* Networking
+* Panels
+* Publish
+* Ranks
+* Referrers
+* Robot_Monitor
+* Settings
+* Submissions
+* Terminal
+* Update
+* Web_Pages
+* PHP_Information
+
+===Moderator-Level Application Modules===
+
+===Registered Member-Level Application Modules===
+* Account_Recovery
+* Active_Members
+* All_News
+* All_Shouts
+* Application_List
+* Articles
+* Calculator
+* Clock
+* Comment
+* Contact_Administrator
+* Control_Panel
+* Documentation
+* Download
+* Electronic_Mail
+* Emulators
+* Files
+* Forum
+* Forward
+* Friend
+* Language
+* Legal
+* Lightning_Calculate
+* Links
+* List
+* Login
+* Media_Player
+* Messenger
+* News
+* Private_Files
+* Private_Message
+* Profile
+* Referrers
+* Register
+* Reset_Password
+* Search
+* Submit_News
+* System_Message
+* Update_Account
+* Update_Password
+* Upload
+* VoIP
+* Webspace
+
+===Panel-Level Application Modules===
+* Administration.panel
+* Applications_Panel.panel
+* Banned_Networks.panel
+* Language.panel
+* Latest_Articles.panel
+* Latest_Files.panel
+* Latest_Members.panel
+* Latest_Shouts.panel
+* Member_Panel.panel
+* Project_Badges.panel
+* RSS_Panel.panel
+
+===Public-Level Application Modules===
+* Engine_Validation
+
+===Custom-Level Application Modules===
+
+==Cerberus Content Management System :: Applications==
+
+===Maintenance and Diagnostics Applications===
+* Asclepius
+
+===Pre-Installation and Pre-Configuration Applications===
+* Charon
+* Hephaestus
+* Installation_ToolKit
+
+===Apple iOS and Google Android Applications===
+* Iris
