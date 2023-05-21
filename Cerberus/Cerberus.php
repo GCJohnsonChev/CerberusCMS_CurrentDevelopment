@@ -106,11 +106,6 @@
 */
 
 error_reporting("E_WARNING ^ E_NOTICE");
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
-
-//session_start();
 
 /*
  ============================================================================================================
@@ -1172,8 +1167,8 @@ if ($_DB_Query_Kernel_Login_Set_Member_Status_Account_Last_Login && $_DB_Query_K
  ============================================================================================================
 */
 
-$_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME				= fopen("./Member/$_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR/Files/Document/Activity_Logging/Authentication_Log.php", "a");
-$_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH				= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
+$_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME					= fopen("./Member/$_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR/Files/Document/Activity_Logging/Authentication_Log.php", "a");
+$_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH					= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
 
 /*
  ============================================================================================================
@@ -1209,8 +1204,8 @@ This Registered Member Account Attempted To Authenticate: $_Kernel_Authenticate_
  ============================================================================================================
 */
 
-$_Kernel_Check_Member_Account_Credentials_Increment_Member_Attempt_Authentication	= $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Attempt_Authentication + 1;
-$DB_Query_Kernel_Member_Account_Update_Attempt_Authentication				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_attempt_authentication='$_Kernel_Check_Member_Account_Credentials_Increment_Member_Attempt_Authentication' WHERE member_username='$_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR'");
+$_Kernel_Check_Member_Account_Credentials_Increment_Member_Attempt_Authentication		= $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Attempt_Authentication + 1;
+$DB_Query_Kernel_Member_Account_Update_Attempt_Authentication					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_attempt_authentication='$_Kernel_Check_Member_Account_Credentials_Increment_Member_Attempt_Authentication' WHERE member_username='$_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR'");
 
 if ($DB_Query_Kernel_Member_Account_Update_Attempt_Authentication) {
 /**
@@ -1306,9 +1301,9 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
 */
 
-$_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='000.000.000.000' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
-$_DB_Query_Kernel_Logout_Remove_Member_Account_Status_Active				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
-$_DB_Query_Kernel_Logout_Remove_Member_Account_IP_Authorization_Token			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
+$_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='000.000.000.000' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
+$_DB_Query_Kernel_Logout_Remove_Member_Account_Status_Active					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
+$_DB_Query_Kernel_Logout_Remove_Member_Account_IP_Authorization_Token				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='0' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME' AND member_electronic_mail_address='$_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
 
 /*
  ============================================================================================================
@@ -1335,8 +1330,8 @@ if ($_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address && $_DB
  ============================================================================================================
 */
 
-$_Kernel_Member_Account_Logout_Log_OPEN_FILE_NAME					= fopen("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Authentication_Log.php", "a");
-$_Kernel_Member_Account_Logout_Log_TIMESTAMP_HASH					= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
+$_Kernel_Member_Account_Logout_Log_OPEN_FILE_NAME						= fopen("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Authentication_Log.php", "a");
+$_Kernel_Member_Account_Logout_Log_TIMESTAMP_HASH						= hash('sha256', $_GLOBAL_LOCAL_SERVER_DATE_STANDARD);
 
 /*
  ============================================================================================================
@@ -1420,7 +1415,7 @@ $DB->free($_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address);
 
 if ($_GET["$_INTERNAL_APPLICATION_MODULE_INTERNAL"] == "Language") {
 
-	$_KERNEL_POST_SPECIFY_LANGUAGE	 						= $_POST['IAM_Specify_Language'];
+	$_KERNEL_POST_SPECIFY_LANGUAGE	 							= $_POST['IAM_Specify_Language'];
 	
 	setcookie("kernel_member_language", "$_KERNEL_POST_SPECIFY_LANGUAGE", time()+$_GLOBAL_SYSTEM_COOKIE_TIME);
 
@@ -1542,7 +1537,7 @@ if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != "$_GLOBAL_REMOTE_SERVER_ADDRESS") {
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER				= 100;
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER					= 100;
 
 /*
  ============================================================================================================
@@ -1558,8 +1553,8 @@ function getRandomString($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS				= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING							= '';
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS					= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING								= '';
 
 /*
  ============================================================================================================
@@ -1575,8 +1570,8 @@ for ($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INVISIBLE = 0; $_GLOBAL_SYSTEM_SECUR
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX						= rand(0, strlen($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING							.= $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS[$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX];
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX							= rand(0, strlen($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING								.= $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS[$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_INDEX];
 
 } // [ + ] Function: Random Character Generator: Increment Invisible String
 
@@ -1590,7 +1585,7 @@ return $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING;
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH			= hash('sha512',getRandomString($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
+$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH				= hash('sha512',getRandomString($_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
 
 /*
  ============================================================================================================
@@ -1598,7 +1593,7 @@ $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH			= hash('sh
  ============================================================================================================
 */
 
-$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION				= "$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH&amp;CacheCircumvention";
+$_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION					= "$_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH&amp;CacheCircumvention";
 
 /*
  ============================================================================================================
@@ -1614,7 +1609,7 @@ $_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION				= "$_GLOBAL_SY
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER = 100;
+$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER 	= 100;
 
 /*
  ============================================================================================================
@@ -1630,8 +1625,8 @@ function getRandomStringImage($_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_CHARACTERS	= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING			= '';
+$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_CHARACTERS		= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING				= '';
 
 /*
  ============================================================================================================
@@ -1647,8 +1642,8 @@ for ($_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_INVISIBLE = 0; $_GLOBAL_SYSTEM
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_INDEX					= rand(0, strlen($_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
-$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING						.= $_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_CHARACTERS[$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_INDEX];
+$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_INDEX						= rand(0, strlen($_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
+$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING							.= $_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_CHARACTERS[$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_INDEX];
 
 } // [ + ] Function: Random Character Generator :: Image :: Increment Invisible String
 
@@ -1662,7 +1657,7 @@ return $_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING;
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH		= hash('sha512',getRandomStringImage($_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
+$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH			= hash('sha512',getRandomStringImage($_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
 
 /*
  ============================================================================================================
@@ -1670,7 +1665,7 @@ $_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH		= has
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION		= "$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH&amp;CacheCircumvention";
+$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION			= "$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH&amp;CacheCircumvention";
 
 /*
  ============================================================================================================
@@ -1926,7 +1921,7 @@ if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT == null) {
 
 if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT != null) {
 
-$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY					= "$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT";
+$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY	= "$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT";
 
 /*
  ==========================================================================
@@ -1956,71 +1951,15 @@ if (substr_count($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY,">") == 1) {
 
 /*
  ==========================================================================
- + IF: User-Agent :: String :: Is Null
+ + IF: User-Agent :: String :: Is Empty
  ==========================================================================
 */
 
-if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT == null) {
+if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY == "") {
 
 	header("Location: ./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/HTML/Banned.html"); // Web Browser :: User-Agent :: String :: Is Null - Redirect To Internet Protocol Address and Network Banishment Notification
 
-} // [ + ] IF: Web Browser :: User-Agent :: String :: Is Null
-
-/*
- ============================================================================================================
- +
- + Internal Security :: Cookies :: Check For Empty and Null Data
- +
- ============================================================================================================
-*/
-
-/*
- ============================================================================================================
- + Null Data Check :: Cookie :: Language
- ============================================================================================================
-*/
-
-if ($_GLOBAL_COOKIE_MEMBER_LANGUAGE == "") {
-
-$_GLOBAL_COOKIE_MEMBER_LANGUAGE								= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
-
-} // [ + ] IF: Language Cookie Is Null, Set System Configured Language
-
-/*
- ============================================================================================================
- + Null Data Check :: Cookie :: Registered Member Account :: UserName
- ============================================================================================================
-*/
-
-if ($_GLOBAL_COOKIE_MEMBER_USERNAME == "") {
-
-	//header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
-
-} // [ + ] IF: Registered Member Account :: UserName :: Cookie Is Null, Redirect To Logout and Destroy All Cookies
-
-/*
- ============================================================================================================
- + Null Data Check :: Cookie :: Registered Member Account :: Password
- ============================================================================================================
-*/
-
-if ($_GLOBAL_COOKIE_MEMBER_PASSWORD == "") {
-
-	//header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
-
-} // [ + ] IF: Registered Member Account :: Password :: Cookie Is Null, Redirect To Logout and Destroy All Cookies
-
-/*
- ============================================================================================================
- + Null Data Check :: Cookie :: Registered Member Account :: Electronic Mail Address
- ============================================================================================================
-*/
-
-if ($_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS == "") {
-
-	//header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
-
-} // [ + ] IF: Registered Member Account :: Electronic Mail Address :: Cookie Is Null, Redirect To Logout and Destroy All Cookies
+} // [ + ] IF: Web Browser :: User-Agent :: String :: Is Empty
 
 /*
  ============================================================================================================
@@ -2424,7 +2363,7 @@ if ($_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS >= 1) {
  * 0777 :: Read, Write and Execute
  * 0600 :: Read and Write To Directory and Files. Execution Forbidden
  * 000x :: Executable File
- ===============================================================
+ ============================================================================================================
 */
 
 /*
@@ -2517,92 +2456,6 @@ if ($_GLOBAL_MEMBER_THEME_DIRECTORY == "") {
 $_GLOBAL_MEMBER_THEME_DIRECTORY								= $_GLOBAL_SYSTEM_THEME_DIRECTORY;
 
 } // [ + ] IF: Non-Logged-In Visitor :: Settings :: Theme Is Empty, Set System Theme
-
-/*
- ============================================================================================================
- +
- + Registered Member Account :: Loop :: Update :: Registered Member Account :: Active Status
- +
- ============================================================================================================
-*/
-
-/*
- ============================================================================================================
- + IF: Check For Valid Member Account Credential Data In Browser Cookies
- ============================================================================================================
-*/
-
-//if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
-
-/*
- ============================================================================================================
- + IF: Member Is Logged-In: Update Member Active Status
- ============================================================================================================
-*/
-
-//$_DB_Query_Kernel_Set_Member_Status_Account_Active 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_active='1',member_status_account_last_active_minutes='$_GLOBAL_LOCAL_SERVER_TIME_MINUTES' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
-
-//if ($_DB_Query_Kernel_Set_Member_Status_Account_Active) {
-/**
- * Do Nothing
-**/
-//} else {
-/**
- * Do Nothing
-**/
-//} // [ + ] IF: Update Member Account Active Status Database Query Variable Is Executed
-
-//} // [ + ] IF: Member Is Logged-In
-
-/*
- ============================================================================================================
- +
- + Registered Member Account :: Loop :: Update :: Last Referrer
- +
- ============================================================================================================
-*/
-
-/*
- ============================================================================================================
- + IF: Check For Valid Member Account Credential Data In Browser Cookies
- ============================================================================================================
-*/
-
-if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
-
-/*
- ============================================================================================================
- + IF: Member Credentials Exist And Are Valid: Set Last Post
- ============================================================================================================
-*/
-
-$_DB_Query_Kernel_Update_Member_Account_Last_Referrer 					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_last_referrer='$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
-
-/*
- ============================================================================================================
- + IF: Database Server Query: Registered Member Account :: Update :: Registered Member Account Entry :: Was Successful
- ============================================================================================================
-*/
-
-if ($_DB_Query_Kernel_Update_Member_Account_Last_Referrer) {
-/**
- * Do Nothing
-**/
-} else {
-
-	echo ($_Message_Kernel_ERROR_SQL_MEMBER_LAST_POST);
-
-} // [ + ] IF: Registered Member Account Is Logged-In: Update Last Referrer In Registered Member Account Database Server Entry
-
-/*
- ============================================================================================================
- + Kill Database Server Query: Registered Member Account :: Set :: Registered Member Account :: Last Referrer
- ============================================================================================================
-*/
-
-$DB->free($_DB_Query_Kernel_Update_Member_Account_Last_Referrer);
-
-} // [ + ] IF: Registered Member Account Is: Logged-In
 
 /*
  ============================================================================================================

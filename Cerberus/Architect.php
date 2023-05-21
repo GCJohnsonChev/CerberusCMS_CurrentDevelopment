@@ -290,7 +290,7 @@ $_GLOBAL_REMOTE_USER											= $_SERVER['REMOTE_USER'];
 */
 
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME							= $_POST['Architect_SQL_Database_Server_HostName'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PORT							= $_POST['Architect_SQL_Database_Server_Port'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PORT							= $_POST['Architect_SQL_Database_Server_HostName_Port'];
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_USERNAME							= $_POST['Architect_SQL_Database_Server_UserName'];
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PASSWORD							= $_POST['Architect_SQL_Database_Server_Password'];
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME						= $_POST['Architect_SQL_Database_Server_Database_Name'];
