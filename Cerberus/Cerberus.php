@@ -109,7 +109,8 @@ error_reporting("E_WARNING ^ E_NOTICE");
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
-//ini_set for cookies will fix the cookie problem
+
+//session_start();
 
 /*
  ============================================================================================================
@@ -628,8 +629,13 @@ $_GLOBAL_MEMBER_STATUS_ACCOUNT_ACTIVE							= $_DB_Query_Kernel_Select_Member_Cr
  ============================================================================================================
 */
 
-$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_timestamp'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_YEAR						= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_years'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MONTH					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_months'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MONTH_DAY					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_days'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_HOURS					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_hours'];
 $_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_minutes'];
+$_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_SECONDS					= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_status_account_last_active_seconds'];
 
 /*
  ============================================================================================================
@@ -1090,14 +1096,22 @@ $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH					= hash('sha256', $
 fwrite($_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME, "
 ---------------------------------------------------------------------------------------
 Kernel Message: 
-The Member Account: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR Successfully Authenticated
+This Registered Member Account Successfully Authenticated: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
 ---------------------------------------------------------------------------------------
-* Member Account UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
-* Member Account Password: ****************************
-* Remote Server Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Local Server Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Unique HASH Fingerprint: $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH
-* Authentication Timestamp From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Registered Member Account :: Electronic Mail Address: $_Kernel_Authenticate_Member_Account_POST_ELECTRONIC_MAIL_ADDRESS_CLEAR
+* Registered Member Account :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+* Registered Member Account :: Password: ****************************
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
+* Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH
+* Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Digital Fingerprint :: Unique :: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT
+* Device :: Reported Web Browser :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY
+* Device :: Location :: Global-Positioning-Coordinates In x,y :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GPS
+* Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
+* Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1170,14 +1184,22 @@ $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH				= hash('sha256', $_
 fwrite($_Kernel_Member_Account_Authentication_Log_OPEN_FILE_NAME, "
 ---------------------------------------------------------------------------------------
 Kernel Message: 
-The Member Account: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR Failed To Authenticate
+This Registered Member Account Attempted To Authenticate: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
 ---------------------------------------------------------------------------------------
-* Member Account UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
-* Member Account Password: ****************************
-* Remote Server Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Local Server Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Unique HASH Fingerprint: $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH
-* Authentication Attempt Timestamp From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Input :: Electronic Mail Address: $_Kernel_Authenticate_Member_Account_POST_ELECTRONIC_MAIL_ADDRESS_CLEAR
+* Input :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+* Input :: Password: ****************************
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
+* Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH
+* Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Digital Fingerprint :: Unique :: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT
+* Device :: Reported Web Browser :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY
+* Device :: Location :: Global-Positioning-Coordinates In x,y :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GPS
+* Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
+* Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1325,14 +1347,22 @@ $_Kernel_Member_Account_Logout_Log_TIMESTAMP_HASH					= hash('sha256', $_GLOBAL_
 fwrite($_Kernel_Member_Account_Logout_Log_OPEN_FILE_NAME, "
 ---------------------------------------------------------------------------------------
 Kernel Message: 
-The Member Account: $_GLOBAL_COOKIE_MEMBER_USERNAME Successfully Logged-Out
+This Registered Member Account Successfully Logged-Out: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
 ---------------------------------------------------------------------------------------
-* Member Account UserName: $_GLOBAL_COOKIE_MEMBER_USERNAME
-* Member Account Password: ****************************
-* Remote Server Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Local Server Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Unique HASH Fingerprint: $_Kernel_Member_Account_Logout_Log_TIMESTAMP_HASH
-* Logout Timestamp From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Registered Member Account :: Electronic Mail Address: $_Kernel_Authenticate_Member_Account_POST_ELECTRONIC_MAIL_ADDRESS_CLEAR
+* Registered Member Account :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+* Registered Member Account :: Password: ****************************
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
+* Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_TIMESTAMP_HASH
+* Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Digital Fingerprint :: Unique :: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT
+* Device :: Reported Web Browser :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY
+* Device :: Location :: Global-Positioning-Coordinates In x,y :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GPS
+* Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
+* Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1896,7 +1926,7 @@ if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT == null) {
 
 if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT != null) {
 
-$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY_DISPLAY				= "$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY";
+$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY					= "$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT";
 
 /*
  ==========================================================================
@@ -1923,6 +1953,18 @@ if (substr_count($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY,">") == 1) {
 } // [ + ] IF: Web Browser :: User-Agent :: String :: Is Tampered: > :: Filter String and Redirect
 
 } // [ + ] IF: Web Browser :: User-Agent :: String :: Is NOT Null
+
+/*
+ ==========================================================================
+ + IF: User-Agent :: String :: Is Null
+ ==========================================================================
+*/
+
+if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT == null) {
+
+	header("Location: ./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/HTML/Banned.html"); // Web Browser :: User-Agent :: String :: Is Null - Redirect To Internet Protocol Address and Network Banishment Notification
+
+} // [ + ] IF: Web Browser :: User-Agent :: String :: Is Null
 
 /*
  ============================================================================================================
@@ -1952,7 +1994,7 @@ $_GLOBAL_COOKIE_MEMBER_LANGUAGE								= $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY;
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME == "") {
 
-	header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
+	//header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
 
 } // [ + ] IF: Registered Member Account :: UserName :: Cookie Is Null, Redirect To Logout and Destroy All Cookies
 
@@ -1964,7 +2006,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME == "") {
 
 if ($_GLOBAL_COOKIE_MEMBER_PASSWORD == "") {
 
-	header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
+	//header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
 
 } // [ + ] IF: Registered Member Account :: Password :: Cookie Is Null, Redirect To Logout and Destroy All Cookies
 
@@ -1976,7 +2018,7 @@ if ($_GLOBAL_COOKIE_MEMBER_PASSWORD == "") {
 
 if ($_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS == "") {
 
-	header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
+	//header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Null Data Found - Redirect To Logout Section
 
 } // [ + ] IF: Registered Member Account :: Electronic Mail Address :: Cookie Is Null, Redirect To Logout and Destroy All Cookies
 
@@ -2290,7 +2332,7 @@ $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strl
 $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen($_GLOBAL_COOKIE_MEMBER_USERNAME);
 $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen($_GLOBAL_COOKIE_MEMBER_PASSWORD);
 
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT							= "$_GLOBAL_COOKIE_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT							= "$_GLOBAL_COOKIE_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
 
 } else {
 
@@ -2307,7 +2349,7 @@ $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strl
 $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen("Visitor");
 $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen("Visitor");
 
-$_GLOBAL_SECURITY_MEMBER_FINGERPRINT							= "Non-Registered Visitor ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
+$_GLOBAL_SECURITY_MEMBER_FINGERPRINT							= "Non-Registered Visitor ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
 
 } // [ + ] IF: Registered Member Account Is: Logged-In
 
@@ -3041,8 +3083,6 @@ $DB->free($_DB_Query_Kernel_Member_Rank_Select_All_Ranks);
 
 } // [ + ] WHILE: Retrieving Registered Member Account Rank Level Names
 
-//} // [ + ] IF: Registered Member Account Is: Logged-In With Valid Credentials
-
 /*
  ============================================================================================================
  +
@@ -3440,8 +3480,11 @@ $_DB_Query_Kernel_Application_Panels_Aligned_Left 					= $DB->query("SELECT * FR
 
 while ($_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Application_Panels_Aligned_Left)) {
 
+$_KERNEL_APPLICATION_PANEL_FILE_INTEGRITY_ALIGNED_LEFT					= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_integrity'];
+$_KERNEL_APPLICATION_PANEL_FILE_INTEGRITY_INSTALLATION_ALIGNED_LEFT			= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_integrity_installation'];
 $_KERNEL_APPLICATION_PANEL_FILE_NAME_ALIGNED_LEFT					= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_name'];
 $_KERNEL_APPLICATION_PANEL_TITLE_ALIGNED_LEFT						= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_FILE_TIMESTAMP_INSTALLATION_ALIGNED_LEFT			= $_DB_Query_Kernel_Application_Panels_Aligned_Left_Fetch_Array['panel_file_timestamp_installation'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 echo ($_KERNEL_APPLICATION_PANEL_TITLE_ALIGNED_LEFT);
@@ -3750,8 +3793,11 @@ $_DB_Query_Kernel_Application_Panels_Aligned_Right 					= $DB->query("SELECT * F
 
 while ($_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array = $DB->fetch_array($_DB_Query_Kernel_Application_Panels_Aligned_Right)) {
 
+$_KERNEL_APPLICATION_PANEL_FILE_INTEGRITY_ALIGNED_RIGHT					= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_integrity'];
+$_KERNEL_APPLICATION_PANEL_FILE_INTEGRITY_INSTALLATION_ALIGNED_RIGHT			= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_integrity_installation'];
 $_KERNEL_APPLICATION_PANEL_FILE_NAME_ALIGNED_RIGHT					= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_name'];
 $_KERNEL_APPLICATION_PANEL_TITLE_ALIGNED_RIGHT						= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_title'];
+$_KERNEL_APPLICATION_PANEL_FILE_TIMESTAMP_INSTALLATION_ALIGNED_RIGHT			= $_DB_Query_Kernel_Application_Panels_Aligned_Right_Fetch_Array['panel_file_timestamp_installation'];
 
 echo ($_THIS_THEME_APPLICATION_PANEL_1);
 

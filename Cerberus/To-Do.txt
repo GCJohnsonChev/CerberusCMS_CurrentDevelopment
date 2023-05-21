@@ -136,3 +136,4 @@
 * Add a random generated hash string to the end of each file included and embedded with PHP and HTML
 * Add file size integrity hash checking into the programming code in Loops. Write something like if hash of file does not match the file integrity hash stored
 in the master database server and in the local database server do not include file and print a kernel message notifying that the hashes are different.
+* fix the member rank display variables stuff in the kernel and make it to where it only does that if valid member credential cookies are present.
