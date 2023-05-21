@@ -17,7 +17,7 @@
  +  ------------------------------
  +  Background-Level Application Module
  + ----------------------------------------------------------------------------------------------------------
- + - This File, Location	 : Root Directory => Applications => Background => Log_Administration
+ + - This File, Location	 : Root Directory => Applications => Background => Log_Member
  + - This File, Version		 : 0.7.1
  + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
  + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
@@ -47,7 +47,7 @@
  ============================================================================================================
  +
  +
- + [ ^ ] Application Module :: Background :: Log :: Activity :: Administration-Level Activity
+ + [ ^ ] Application Module :: Background :: Log :: Administrator-Level Activity
  +
  +
  ============================================================================================================
@@ -56,63 +56,69 @@
 /*
  ============================================================================================================
  +
- + Administration-Level :: Log :: Variables
+ + Administrator-Level :: Log :: Variables
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Administration-Level :: Log :: Variables :: Visitor Details
+ + Administrator-Level :: Log :: Variables :: Visitor Details
  ============================================================================================================
 */
 
-$_Application_Module_Background_Log_Administration_GET_IP					= $_SERVER['REMOTE_ADDR'];
-$_Application_Module_Background_Log_Administration_GET_HOST					= $_SERVER['REMOTE_HOST'];
-$_Application_Module_Background_Log_Administration_GET_REFERRER					= $_SERVER['HTTP_REFERER'];
-$_Application_Module_Background_Log_Administration_GET_USER_AGENT				= $_SERVER['HTTP_USER_AGENT'];
-$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER				= $_GLOBAL_COOKIE_MEMBER_USERNAME;
+$_Application_Module_Background_Log_Administrator_GET_IP					= $_SERVER['REMOTE_ADDR'];
+$_Application_Module_Background_Log_Administrator_GET_HOST					= $_SERVER['REMOTE_HOST'];
+$_Application_Module_Background_Log_Administrator_GET_REFERRER					= $_SERVER['HTTP_REFERER'];
+$_Application_Module_Background_Log_Administrator_GET_USER_AGENT				= $_SERVER['HTTP_USER_AGENT'];
+$_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME			= $_GLOBAL_COOKIE_MEMBER_USERNAME;
 
 /*
  ============================================================================================================
- + Find and Open The Administration-Level Activity Log File
+ + Find and Open :: The Administrator-Level Activity Log File
  ============================================================================================================
 */
 
 $_Application_Module_Background_Log_Administration_FIND_FILE_NAME				= "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/Log.txt";
-$_Application_Module_Background_Log_Administration_OPEN_FILE_NAME				= fopen("./Applications/Administration/Logging/Activity_Logging/Log.txt", "a");
+$_Application_Module_Background_Log_Administration_OPEN_FILE_NAME				= fopen("$_Application_Module_Background_Log_Administration_FIND_FILE_NAME", "a");
 
 /*
  ============================================================================================================
- + Replace Harmful Characters
+ + Detect :: Harmful Character Entities
  ============================================================================================================
 */
 
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[0]			= "<";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[1]			= ">";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[2]			= "'";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[3]			= "\"";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS[4]			= "`"";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[0]			= "Z";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[1] 			= "Z";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[2] 			= "Z";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[3] 			= "Z";
-$_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH[4] 			= "Z";
-
-$_Application_Module_Background_Log_Administration_GET_REFERRER					= str_replace($_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administration_GET_REFERRER);
-$_Application_Module_Background_Log_Administration_GET_USER_AGENT				= str_replace($_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administration_GET_USER_AGENT);
-$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER				= str_replace($_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administration_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administration_GET_LOG_MEMBER);
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS[0]				= "<";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS[1]				= ">";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS[2]				= "'";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS[3]				= "\"";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS[4]				= "`";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH[0]			= "Z";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH[1] 			= "Z";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH[2] 			= "Z";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH[3] 			= "Z";
+$_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH[4] 			= "Z";
 
 /*
  ============================================================================================================
- + IF: Administration-Level Activity Log File Directory :: Numerical Year Does Not Exist, Create It
+ + Replace :: Harmful Character Entities
+ ============================================================================================================
+*/
+
+$_Application_Module_Background_Log_Administrator_GET_REFERRER					= str_replace($_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administrator_GET_REFERRER);
+$_Application_Module_Background_Log_Administrator_GET_USER_AGENT				= str_replace($_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administrator_GET_USER_AGENT);
+$_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME			= str_replace($_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Administrator_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME);
+
+/*
+ ============================================================================================================
+ + IF: Administration-Level :: Activity Log File Directory :: Numerical Year Does Not Exist, Create It
  ============================================================================================================
 */
 
 if (!file_exists("./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/index.php")) {
 
 	mkdir("./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL");
-	copy("./System/Log/Activity_Logging/Administration/Year/Index_File.php", "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/index.php");
+	copy("./System/Log/Activity_Logging/Administration/Year/index.php", "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/index.php");
 
 } else {
 /**
@@ -122,14 +128,14 @@ if (!file_exists("./Applications/Administration/Logging/Activity_Logging/$_GLOBA
 
 /*
  ============================================================================================================
- + IF: Administration-Level Activity Log File Directory :: Numerical Year :: Numerical Month Does Not Exist, Create It
+ + IF: Administration-Level :: Activity Log File Directory :: Numerical Year :: Numerical Month Does Not Exist, Create It
  ============================================================================================================
 */
 
 if (!file_exists("./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/index.php")) {
 
 	mkdir("./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL");
-	copy("./System/Log/Activity_Logging/Administration/Year/Month/Index_File.php", "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/index.php");
+	copy("./System/Log/Activity_Logging/Administration/Year/Month/index.php", "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/index.php");
 
 } else {
 /**
@@ -139,14 +145,14 @@ if (!file_exists("./Applications/Administration/Logging/Activity_Logging/$_GLOBA
 
 /*
  ============================================================================================================
- + IF: Administration-Level Activity Log File Directory :: Numerical Year :: Numerical Month :: Numerical Day Does Not Exist, Create It
+ + IF: Administration-Level :: Activity Log File Directory :: Numerical Year :: Numerical Month :: Numerical Day Does Not Exist, Create It
  ============================================================================================================
 */
 
 if (!file_exists("./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/index.php")) {
 
 	mkdir("./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL");
-	copy("./System/Log/Activity_Logging/Administration/Year/Month/Day/Index_File.php", "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/index.php");
+	copy("./System/Log/Activity_Logging/Setup/Administration/Year/Month/Day/index.php", "./Applications/Administration/Logging/Activity_Logging/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/index.php");
 
 } else {
 /**
@@ -156,65 +162,91 @@ if (!file_exists("./Applications/Administration/Logging/Activity_Logging/$_GLOBA
 
 /*
  ============================================================================================================
- + IF: Internet Protocol Address String Length Is Greater Than
- ============================================================================================================
-*/
-
-if (strlen($_Application_Module_Background_Log_Administration_GET_IP) > "250") {
-
-	$_Application_Module_Background_Log_Administration_GET_IP 				= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
-
-if (strlen($_Application_Module_Background_Log_Administration_GET_REFERRER) > "250") {
-
-	$_Application_Module_Background_Log_Administration_GET_REFERRER 			= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
-
-if (strlen($_Application_Module_Background_Log_Administration_GET_USER_AGENT) > "250") {
-
-	$_Application_Module_Background_Log_Administration_GET_USER_AGENT			= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
-
-if (strlen($_Application_Module_Background_Log_Administration_GET_LOG_MEMBER) > "20") {
-
-	$_Application_Module_Background_Log_Administration_GET_LOG_MEMBER 			= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
-
-/*
- ============================================================================================================
- + Write Data To File
+ +
+ + Check :: String Length :: Connection :: Details :: Administrator-Level Account
+ +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Log Interaction Details Data To Be Written To File
+ + IF: Registered Administrator Account :: Internet Protocol Address :: String Length :: Is Greater Than: 250
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Administrator_GET_IP) > "250") {
+
+	$_Application_Module_Background_Log_Administrator_GET_IP 			= "String Removed :: Registered Administrator Account :: Internet Protocol Address";
+
+} // [ + ] IF: String Length Is Greater Than: 250
+
+/*
+ ============================================================================================================
+ + IF: Registered Administrator Account :: Referrer :: String Length :: Is Greater Than: 250
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Administrator_GET_REFERRER) > "250") {
+
+	$_Application_Module_Background_Log_Administrator_GET_REFERRER 			= "String Removed :: Registered Administrator Account :: Referrer";
+
+} // [ + ] IF: String Length Is Greater Than: 250
+
+/*
+ ============================================================================================================
+ + IF: Registered Administrator Account :: User-Agent :: String Length :: Is Greater Than: 250
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Administrator_GET_USER_AGENT) > "250") {
+
+	$_Application_Module_Background_Log_Administrator_GET_USER_AGENT		= "String Removed :: Registered Administrator Account :: User-Agent";
+
+} // [ + ] IF: String Length Is Greater Than: 250
+
+/*
+ ============================================================================================================
+ + IF: Registered Administrator Account :: UserName :: String Length :: Is Greater Than: 20
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME) > "20") {
+
+	$_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME 	= "String Removed :: Registered Administrator Account :: UserName";
+
+} // [ + ] IF: String Length Is Greater Than: 20
+
+/*
+ ============================================================================================================
+ + Data To Be Written To File :: Activity Log :: Interaction Details :: Administration-Level
  ============================================================================================================
 */
 
 fwrite($_Application_Module_Background_Log_Administration_OPEN_FILE_NAME, "
-<B>Registered Administration-Level :: Activity Log :: Detailed Information</B>
+<B>Activity Log :: Detailed Information :: Registered Member Account</B>
 <HR>
-<B>Registered Administration-Level Machine and Connection Information</B><BR>
-* Registered Administration-Level' UserName: <A HREF=\"../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Registered Member Account Profile For :: $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME</A><BR>
-* Registered Administration-Level' Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
-* Registered Administration-Level' Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Member_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Member_GET_REFERRER</A><BR>
-* Registered Administration-Level' User-Agent ( Browser ): $_Application_Module_Background_Log_Member_GET_USER_AGENT<BR>
-* Registered Administration-Level' Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
-* Registered Administration-Level' Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
-* Registered Administration-Level' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-* Registered Administration-Level' Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
+<B>Machine and Connection Information :: Registered Member Account</B><BR>
+* Registered-Member' UserName: <A HREF=\"../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Administrator_GET_LOG_MEMBER_USERNAME</A><BR>
+* Registered-Member' Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+* Registered-Member' Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Administrator_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Administrator_GET_REFERRER</A><BR>
+* Registered-Member' User-Agent ( Browser ): $_Application_Module_Background_Log_Administrator_GET_USER_AGENT<BR>
+* Registered-Member' Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+* Registered-Member' Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
+* Registered-Member' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+* Registered-Member' Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
 
-<B>Registered Administration-Level Connection Information</B><BR>
-* Registered Administration-Level' Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
-* Registered Administration-Level' Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
-* Registered Administration-Level' Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+<B>Connection Information :: Registered Member Account</B><BR>
+* Registered-Member' Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+* Registered-Member' Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+* Registered-Member' Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
 
-<B>Local Server Information</B><BR>
+<B>Location Information :: Registered Member Account</B><BR>
+* Registered-Member' Location By Global-Positioning-System Coordinates: $_GPS_VAR<BR>
+* Registered-Member' Location By Geographical Localization of Objects: <BR>
+* Registered-Member' Location By Region: <BR>
+* Registered-Member' Location By Internet Protocol Address: <BR><BR>
+
+<B>Local Server Information :: Registered Member Account</B><BR>
 * Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
 * Local Server Network Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
 * Local Server Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For Local Server Internet Protocol Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
@@ -231,12 +263,15 @@ fwrite($_Application_Module_Background_Log_Administration_OPEN_FILE_NAME, "
 <B>Digital Fingerprint Information</B><HR>
 * Unique Digital Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR><BR>
 
-<A HREF=\"../../../../../Applications/Background/Log_Visitor\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
+<B>Digital Fingerprint Information</B><HR>
+* Unique Digital Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR><BR>
+
+<A HREF=\"../../../../Applications/Background/Log_Administrator\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
 ");
 
 /*
  ============================================================================================================
- + Close File
+ + Close File :: Activity Log File :: Raw Log
  ============================================================================================================
 */
 

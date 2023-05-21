@@ -75,7 +75,7 @@ $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME			= $_GLOBAL_
 
 /*
  ============================================================================================================
- + Find and Open The Registered Member-Level Activity Log File
+ + Find and Open :: The Registered Member-Level Activity Log File
  ============================================================================================================
 */
 
@@ -87,7 +87,7 @@ $_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME				= fopen("$_Appl
 
 /*
  ============================================================================================================
- + Replace Harmful Characters
+ + Detect :: Harmful Character Entities
  ============================================================================================================
 */
 
@@ -102,13 +102,19 @@ $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[2] 			= "Z";
 $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[3] 			= "Z";
 $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH[4] 			= "Z";
 
+/*
+ ============================================================================================================
+ + Replace :: Harmful Character Entities
+ ============================================================================================================
+*/
+
 $_Application_Module_Background_Log_Member_GET_REFERRER					= str_replace($_Application_Module_Background_Log_Member_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Member_GET_REFERRER);
 $_Application_Module_Background_Log_Member_GET_USER_AGENT				= str_replace($_Application_Module_Background_Log_Member_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Member_GET_USER_AGENT);
 $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME			= str_replace($_Application_Module_Background_Log_Member_REPLACE_CHARACTERS, $_Application_Module_Background_Log_Member_REPLACE_CHARACTERS_WITH, $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME);
 
 /*
  ============================================================================================================
- + IF: The Registered Member-Level Activity Log File Directory :: Numerical Year Does Not Exist, Create It
+ + IF: The Registered Member-Level Account Activity Log File Directory :: Numerical Year Does Not Exist, Create It
  ============================================================================================================
 */
 
@@ -125,7 +131,7 @@ if (!file_exists("./Member/$_GLOBAL_MEMBER_USERNAME/Document/Activity_Logging/$_
 
 /*
  ============================================================================================================
- + IF: The Registered Member-Level Activity Log File Directory :: Numerical Year :: Numerical Month Does Not Exist, Create It
+ + IF: The Registered Member-Level Account Activity Log File Directory :: Numerical Year :: Numerical Month Does Not Exist, Create It
  ============================================================================================================
 */
 
@@ -142,7 +148,7 @@ if (!file_exists("./Member/$_GLOBAL_MEMBER_USERNAME/Document/Activity_Logging/$_
 
 /*
  ============================================================================================================
- + IF: The Registered Member-Level Activity Log File Directory :: Numerical Year :: Numerical Month :: Numerical Day Does Not Exist, Create It
+ + IF: The Registered Member-Level Account Activity Log File Directory :: Numerical Year :: Numerical Month :: Numerical Day Does Not Exist, Create It
  ============================================================================================================
 */
 
@@ -159,50 +165,76 @@ if (!file_exists("./Member/$_GLOBAL_MEMBER_USERNAME/Document/Activity_Logging/$_
 
 /*
  ============================================================================================================
- + IF: Internet Protocol Address String Length Is Greater Than
+ +
+ + Check :: Registered Member Account :: String Length :: Connection :: Details
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Internet Protocol Address :: String Length :: Is Greater Than: 250
  ============================================================================================================
 */
 
 if (strlen($_Application_Module_Background_Log_Member_GET_IP) > "250") {
 
-	$_Application_Module_Background_Log_Member_GET_IP 				= "Internet Protocol Address Removed";
+	$_Application_Module_Background_Log_Member_GET_IP 				= "String Removed :: Registered Member Account :: Internet Protocol Address";
 
-} // [ + ] IF: String Length Is Less Than 250
-
-if (strlen($_Application_Module_Background_Log_Member_GET_REFERRER) > "250") {
-
-	$_Application_Module_Background_Log_Member_GET_REFERRER 			= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
-
-if (strlen($_Application_Module_Background_Log_Member_GET_USER_AGENT) > "250") {
-
-	$_Application_Module_Background_Log_Member_GET_USER_AGENT			= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
-
-if (strlen($_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME) > "20") {
-
-	$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME 		= "Internet Protocol Address Removed";
-
-} // [ + ] IF: String Length Is Less Than 250
+} // [ + ] IF: String Length Is Greater Than: 250
 
 /*
  ============================================================================================================
- + Write Data To File
+ + IF: Referrer :: String Length :: Is Greater Than: 250
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Member_GET_REFERRER) > "250") {
+
+	$_Application_Module_Background_Log_Member_GET_REFERRER 			= "String Removed :: Registered Member Account :: Referrer";
+
+} // [ + ] IF: String Length Is Greater Than: 250
+
+/*
+ ============================================================================================================
+ + IF: User-Agent :: String Length :: Is Greater Than: 250
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Member_GET_USER_AGENT) > "250") {
+
+	$_Application_Module_Background_Log_Member_GET_USER_AGENT			= "String Removed :: Registered Member Account :: User-Agent";
+
+} // [ + ] IF: String Length Is Greater Than: 250
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: UserName :: String Length :: Is Greater Than: 20
+ ============================================================================================================
+*/
+
+if (strlen($_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME) > "20") {
+
+	$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME 		= "String Removed :: Registered Member Account :: UserName";
+
+} // [ + ] IF: String Length Is Greater Than: 20
+
+/*
+ ============================================================================================================
+ + Data To Be Written To File :: Activity Log :: Box Log :: Interaction Details
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Log Interaction Details Data To Be Written To File :: Box Log
+ + Write To File :: Activity Log :: Box Log :: Interaction Details
  ============================================================================================================
 */
 
 fwrite($_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME, "
-<B>Registered Member :: Activity Log :: Detailed Information</B>
+<B>Activity Log :: Detailed Information :: Registered Member Account</B>
 <HR>
-<B>Registered-Member Machine and Connection Information</B><BR>
+<B>Machine and Connection Information :: Registered Member Account</B><BR>
 * Registered-Member' UserName: <A HREF=\"../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME</A><BR>
 * Registered-Member' Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
 * Registered-Member' Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Member_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Member_GET_REFERRER</A><BR>
@@ -212,12 +244,18 @@ fwrite($_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME, "
 * Registered-Member' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
 * Registered-Member' Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
 
-<B>Visitor Connection Information</B><BR>
+<B>Connection Information :: Registered Member Account</B><BR>
 * Registered-Member' Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
 * Registered-Member' Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
 * Registered-Member' Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
 
-<B>Local Server Information</B><BR>
+<B>Location Information :: Registered Member Account</B><BR>
+* Registered-Member' Location By Global-Positioning-System Coordinates: $_GPS_VAR<BR>
+* Registered-Member' Location By Geographical Localization of Objects: <BR>
+* Registered-Member' Location By Region: <BR>
+* Registered-Member' Location By Internet Protocol Address: <BR><BR>
+
+<B>Local Server Information :: Registered Member Account</B><BR>
 * Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
 * Local Server Network Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
 * Local Server Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For Local Server Internet Protocol Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
@@ -234,40 +272,49 @@ fwrite($_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME, "
 <B>Digital Fingerprint Information</B><HR>
 * Unique Digital Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR><BR>
 
+<B>Digital Fingerprint Information</B><HR>
+* Unique Digital Fingerprint: $_GLOBAL_SECURITY_MEMBER_FINGERPRINT<BR><BR>
+
 <A HREF=\"../../../../Applications/Background/Log_Visitor\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
 ");
 
 /*
  ============================================================================================================
- + Log Interaction Details Data To Be Written To File :: Raw Log
+ + Write To File :: Activity Log :: Raw Log :: Interaction Details
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Write To File :: Activity Log :: Raw Log :: Interaction Details
  ============================================================================================================
 */
 
 fwrite($_Application_Module_Background_Log_Member_Raw_OPEN_FILE_NAME, "
-<B>Registered Member :: Activity Log :: Detailed Information</B>
+<B>Activity Log :: Detailed Information :: Registered Member Account</B>
 <HR>
-<B>Visitor Machine and Connection Information</B><BR>
-Registered-Member' UserName: <A HREF=\"../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME</A><BR>
-Registered-Member' Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
-Registered-Member' Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Member_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Member_GET_REFERRER</A><BR>
-Registered-Member' User-Agent ( Browser ): $_Application_Module_Background_Log_Member_GET_USER_AGENT<BR>
-Registered-Member' Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
-Registered-Member' Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
-Registered-Member' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-Registered-Member' Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
+<B>Machine and Connection Information :: Registered Member Account</B><BR>
+* Registered-Member' UserName: <A HREF=\"../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME ::\">$_Application_Module_Background_Log_Member_GET_LOG_MEMBER_USERNAME</A><BR>
+* Registered-Member' Server Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+* Registered-Member' Server Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Member_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Member_GET_REFERRER</A><BR>
+* Registered-Member' User-Agent ( Browser ): $_Application_Module_Background_Log_Member_GET_USER_AGENT<BR>
+* Registered-Member' Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+* Registered-Member' Remote Server Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
+* Registered-Member' Remote Server Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+* Registered-Member' Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR><BR>
 
-<B>Visitor Connection Information</B><BR>
-Registered-Member' Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
-Registered-Member' Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
-Registered-Member' Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
+<B>Connection Information :: Registered Member Account</B><BR>
+* Registered-Member' Server Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+* Registered-Member' Server Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+* Registered-Member' Server Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR><BR>
 
-<B>Visitor Location Information</B><BR>
-Registered-Member' Location By Global-Positioning-System Coordinates: $_GPS_VAR<BR>
-Registered-Member' Location By Geographical Localization of Objects: <BR>
-Registered-Member' Location By Region: <BR>
-Registered-Member' Location By Internet Protocol Address: <BR><BR>
+<B>Location Information :: Registered Member Account</B><BR>
+* Registered-Member' Location By Global-Positioning-System Coordinates: $_GPS_VAR<BR>
+* Registered-Member' Location By Geographical Localization of Objects: <BR>
+* Registered-Member' Location By Region: <BR>
+* Registered-Member' Location By Internet Protocol Address: <BR><BR>
 
-<B>Local Server Information</B><BR>
+<B>Local Server Information :: Registered Member Account</B><BR>
 * Local Hyper-Text-Transfer-Protocol Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
 * Local Server Network Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
 * Local Server Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For Local Server Internet Protocol Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
@@ -286,6 +333,14 @@ Registered-Member' Location By Internet Protocol Address: <BR><BR>
 
 <A HREF=\"./Applications/Background/Log_Visitor\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
 ");
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Update :: Registered Member Account :: Last Referrer
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Background_Log_Member_Update_Member_Account_Last_Referrer);
 
 /*
  ============================================================================================================
