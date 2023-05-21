@@ -69,7 +69,7 @@ while ($_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array =
 
 /*
  ============================================================================================================
- + Member Account Details :: ID, Access Level
+ + Registered Member Account Details :: ID, Access Level
  ============================================================================================================
 */
 
@@ -78,7 +78,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL						= $_Applicatio
 
 /*
  ============================================================================================================
- + Member Account Details :: Account Settings :: Images
+ + Registered Member Account Details :: Account Settings :: Images
  ============================================================================================================
 */
 
@@ -87,7 +87,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_PICTURE						= $_Applicati
 
 /*
  ============================================================================================================
- + Member Account Details :: Account Settings :: Other
+ + Registered Member Account Details :: Account Settings :: Other
  ============================================================================================================
 */
 
@@ -98,7 +98,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP					= $_
 
 /*
  ============================================================================================================
- + Member Account Details :: Personal Information
+ + Registered Member Account Details :: Personal Information
  ============================================================================================================
 */
 
@@ -113,7 +113,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_GENDER							= $_Application_Mod
 
 /*
  ============================================================================================================
- + Member Account Details :: Personal Digital Information
+ + Registered Member Account Details :: Personal Digital Information
  ============================================================================================================
 */
 
@@ -121,7 +121,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_
 
 /*
  ============================================================================================================
- + Member Account Details :: Account UserName and Password
+ + Registered Member Account Details :: Account UserName and Password
  ============================================================================================================
 */
 
@@ -130,7 +130,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_PASSWORD						= $_Application_Mo
 
 /*
  ============================================================================================================
- + Member Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
+ + Registered Member Account Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
  ============================================================================================================
 */
 
@@ -148,7 +148,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_ZCASH						= $_Applicati
 
 /*
  ============================================================================================================
- + Member Details :: Account Details :: Internet Protocol Addresses
+ + Registered Member Account Details :: Account Details :: Internet Protocol Addresses
  ============================================================================================================
 */
 
@@ -158,7 +158,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_IP_ADDRESS_LOG						= $_Applicat
 
 /*
  ============================================================================================================
- + Member Details :: Account Details :: Account Information
+ + Registered Member Account Details :: Account Details :: Account Information
  ============================================================================================================
 */
 
@@ -179,7 +179,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE		
 
 /*
  ============================================================================================================
- + Member Details :: Account Status
+ + Registered Member Account Details :: Account Status
  ============================================================================================================
 */
 
@@ -191,7 +191,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_URL_HOMEPAGE						= $_Applicatio
 
 /*
  ============================================================================================================
- + Member Details :: Account Security
+ + Registered Member Account Details :: Account Security
  ============================================================================================================
 */
 
@@ -200,7 +200,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Audio
+ + Registered Member Account Details :: Social Media Accounts :: Audio
  ============================================================================================================
 */
 
@@ -209,7 +209,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY				= $
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Business
+ + Registered Member Account Details :: Social Media Accounts :: Business
  ============================================================================================================
 */
 
@@ -217,7 +217,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN			
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Communications
+ + Registered Member Account Details :: Social Media Accounts :: Communications
  ============================================================================================================
 */
 
@@ -228,7 +228,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPC
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Gallery
+ + Registered Member Account Details :: Social Media Accounts :: Gallery
  ============================================================================================================
 */
 
@@ -236,7 +236,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM			
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Posting
+ + Registered Member Account Details :: Social Media Accounts :: Posting
  ============================================================================================================
 */
 
@@ -245,7 +245,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER				=
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Software Development
+ + Registered Member Account Details :: Social Media Accounts :: Software Development
  ============================================================================================================
 */
 
@@ -255,7 +255,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPA
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Security
+ + Registered Member Account Details :: Social Media Accounts :: Security
  ============================================================================================================
 */
 
@@ -263,7 +263,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE				
 
 /*
  ============================================================================================================
- + Member Details :: Social Media Accounts :: Video
+ + Registered Member Account Details :: Social Media Accounts :: Video
  ============================================================================================================
 */
 
@@ -271,7 +271,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE				= $
 
 /*
  ============================================================================================================
- + Member Details :: Clothing and Acessories :: Physical Details
+ + Registered Member Account Details :: Clothing and Acessories :: Physical Details
  ============================================================================================================
 */
 
@@ -301,7 +301,21 @@ $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_WEIGHT						= $_Applica
 
 /*
  ============================================================================================================
- + Member Account Details :: Member Account Security :: Member Account Statuses
+ + Registered Member Account Details :: Timestamps :: Activity
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_timestamp'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_YEARS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_years'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MONTHS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_months'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_DAYS				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_days'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_HOURS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_hours'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_minutes'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_SECONDS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_seconds'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account Details :: Member Account Security :: Member Account Statuses
  ============================================================================================================
 */
 
@@ -546,7 +560,7 @@ $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY	
 
 if ($_GET["Name"] == "Non-Registered") {
 
-											echo ("<CENTER>The Member Account :: Non-Registered does not exist.</CENTER>");
+											echo ("<CENTER>The Queried Member Account :: Non-Registered does not exist.</CENTER>");
 
 } // [ + ] IF: Internal Application: Display: Non-Registered Is: Activated
 
@@ -621,12 +635,21 @@ echo ("
 												&nbsp;*&nbsp;Last Exact Device-Reported Global-Positioning-System Coordinates: <A HREF=\"\" TITLE=\":: Open & Display The Detailed Device-Reported Global-Positioning-System Coordinates Log ::\">INSERT COORDINATES VARIABLE HERE LATER</A><BR><BR>
 	
 												<I>Member' Account Details :: Authentication Details</I><BR>
-												&nbsp;*&nbsp;Account Last Successful Authentication Timestamp, Local Server:<BR>
-												&nbsp;*&nbsp;Account Last Successful Authentication Timestamp, Remote Server:<BR>
-												&nbsp;*&nbsp;Account Last Successful Authentication Timestamp, Member Device:<BR>
-												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Member_Profile_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: Last Web-Page View ::\">Last Web-Page View</A><BR><BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Successful Authentication :: Local Server:<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Successful Authentication :: Remote Server:<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Successful Authentication :: Device:<BR><BR>
 
 												<I>Member' Account Details :: Activity Information</I><BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Date: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Year: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_YEARS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Month: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MONTHS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Day: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_DAYS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Hour: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_HOURS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Minute: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Second: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_SECONDS<BR>
+												&nbsp;*&nbsp;Account :: <A HREF=\"$_Application_Module_Member_Profile_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: Last Web-Page View ::\">Last Web-Page Document Loaded</A><BR><BR>
+
+												<I>Member' Account Details :: Personal Activity Information</I><BR>
 												&nbsp;*&nbsp;Currently Feeling: $_Application_Module_Member_Profile_LIST_MEMBER_MOOD<BR>
 												&nbsp;*&nbsp;Currently Listening To: $_Application_Module_Member_Profile_LIST_MEMBER_MUSIC<BR><BR>
 
@@ -640,8 +663,8 @@ echo ("
 												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;PrivateMessage&amp;MemberAccountID&#61;$_Application_Module_Member_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Private Message To :: $_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\">Private Message</A><BR><BR>
 
 												<I>Member' Account Details :: Personal Servers</I><BR>
-												&nbsp;*&nbsp;<A HREF=\"$_Application_Module_Member_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Personal Web-Page</A><BR>
-												&nbsp;*&nbsp;<A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/\" TITLE=\":: Open & View Home Web-Space ::\">Home Web-Space</A><BR><BR>
+												&nbsp;*&nbsp;Personal :: <A HREF=\"$_Application_Module_Member_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & View Personal Web-Page ::\">Web-Page Document :: External Server</A><BR>
+												&nbsp;*&nbsp;Personal :: <A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/\" TITLE=\":: Open & View Home Web-Space ::\">Web-Page Document :: Local Server</A><BR><BR>
 
 												<I>Member' Account Details :: Account Statistics</I><BR>
 												&nbsp;*&nbsp;Experience Amount: $_Application_Module_Member_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT<BR>
@@ -705,14 +728,17 @@ echo ("
 												&nbsp;*&nbsp;<A HREF=\"https://www.KeyBase.io/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TITLE=\"KeyBase :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TARGET=\"_NEW\">KeyBase</A><BR><BR>
 
 												<I>Digital Fingerprints</I><BR>
-												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Public<BR>
-												=> Secure Hash Algorithm, 256 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PUBLIC_SIGNATURE_SHA_256</A><BR><BR>
+												&nbsp;*&nbsp;Unique Pretty-Good-Privacy Key Panel, Public<BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - Signature: <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PUBLIC_SIGNATURE_SHA_256</A><BR><BR>
 
-												&nbsp;*&nbsp;Pretty-Good-Privacy Key Panel, Private<BR>
-												=> Secure Hash Algorithm, 256 - Signature ( Digital Fingerprint ): <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256\">$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256</A><BR><BR>
+												&nbsp;*&nbsp;Unique Pretty-Good-Privacy Key Panel, Private<BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - Signature: <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256\">$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PENEL_PRIVATE_SIGNATURE_SHA_256</A><BR><BR>
 
 												&nbsp;*&nbsp;Unique Account Fingerprint, Public<BR>
-												=> Secure Hash Algorithm, 256 - String ( Digital Fingerprint ):<BR><BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - String:<BR>
+
+												&nbsp;*&nbsp;Unique Account Fingerprint, Public<BR>
+												=> Digital Fingerprint :: Advanced Encryption Standard, 256 - String:<BR><BR>
 
 												<I>Encrypted Communications Settings</I><BR>
 												&nbsp;*&nbsp;Pretty-Good-Privacy: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY<BR><BR>
@@ -738,7 +764,6 @@ echo ("
 												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #1:<BR>
 												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #2:<BR>
 												&nbsp;*&nbsp;Emergency Contact Name and Phone Number #3:<BR><BR>
-
 
 												<B>Physical Dimensions and Biometrics</B><HR><BR>
 

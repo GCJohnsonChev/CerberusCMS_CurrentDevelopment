@@ -2071,7 +2071,7 @@ if (fwrite($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSEN
 							<B>This Message Timestamp, Local Server:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
 							<B>Remote Internet Protocol Address, Sent From:</B>&nbsp;<A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A> :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
 							<B>Local Internet Protocol Address, Sent From:</B>&nbsp;<A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
-							<B>Remote Device Sent From:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT<BR>
+							<B>Remote Device Sent From:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY<BR>
 						<HR><BR>
 ")) {
 

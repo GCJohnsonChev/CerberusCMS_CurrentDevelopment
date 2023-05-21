@@ -220,7 +220,7 @@ echo ("
 												*&nbsp;Visitor' Server Connection Type :: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR>
 												*&nbsp;Visitor' Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS<BR>
 												*&nbsp;Visitor' Internet Protocol Address :: Connecting Port :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-												*&nbsp;Visitor' Web-Browser :: User-Agent :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT<BR><BR>
+												*&nbsp;Visitor' Web-Browser :: User-Agent :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY<BR><BR>
 
 											<B>Local Web Server Information</B><BR>
 												*&nbsp;Local Hyper-Text-Transfer-Protocol Host :: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>

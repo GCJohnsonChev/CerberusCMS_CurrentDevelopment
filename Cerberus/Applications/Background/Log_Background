@@ -71,8 +71,8 @@
  ============================================================================================================
 */
 
-$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics");
-$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array 			= $DB->fetch_array($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
+$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics");
+$_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array 					= $DB->fetch_array($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS);
 
 /*
  ============================================================================================================
@@ -82,9 +82,13 @@ $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_
  ============================================================================================================
 */
 
-$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS 		= $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array['statistics_total_number_of_page_views'];
-$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS_INCREMENT 	= $_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS + 1;
-$_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics SET statistics_total_number_of_page_views='$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_PAGE_VIEWS_INCREMENT' WHERE id='1'");
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_NON_UNIQUE 		= $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array['statistics_total_number_of_document_executions_non_unique'];
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_NON_UNIQUE_INCREMENT = $_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_NON_UNIQUE + 1;
+
+$_Application_Module_Background_Log_Background_DB_Query_UPDATE_SYSTEM_STATISTICS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics SET statistics_total_number_of_document_executions_non_unique='$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_NON_UNIQUE_INCREMENT' WHERE id='1'");
+
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_UNIQUE 		= $_Application_Module_Background_Log_Background_DB_Query_SELECT_STATISTICS_Fetch_Array['statistics_total_number_of_document_executions_unique'];
+$_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_UNIQUE_INCREMENT 	= $_Application_Module_Background_Log_Background_LIST_STATISTICS_TOTAL_NUMBER_OF_DOCUMENT_EXECUTIONS_NON_UNIQUE + 1;
 
 /*
  ============================================================================================================
@@ -92,7 +96,7 @@ $_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS				= $
  ============================================================================================================
 */
 
-if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
+if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_SYSTEM_STATISTICS) {
 /**
  * Do Nothing
 **/
@@ -100,7 +104,7 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
 
 											echo ($_Message_Log_Background_ERROR_SQL_STATISTICS);
 
-} // [ + ] IF: Database Server Query: Update Statistics Variables Have Executed
+} // [ + ] IF: Database Server Query: Update :: System Statistics :: Variables Have Executed
 
 /*
  ============================================================================================================
@@ -110,16 +114,32 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS) {
 
 if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
 
-$_Application_Module_Background_Log_Background_DATE 							= date("HdmY");
-$_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_last_active='$_Application_Module_Background_Log_Background_DATE' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_TIMESTAMP				= date("l, F j, Y g:i:s A");
+$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_YEAR					= date("Y");
+$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_MONTH					= date("m");
+$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_MONTH_DAY				= date("d");
+$_Application_Module_Background_Log_Background_TIMESTAMP_HOURS								= date("g");
+$_Application_Module_Background_Log_Background_TIMESTAMP_MINUTES							= date("i");
+$_Application_Module_Background_Log_Background_TIMESTAMP_SECONDS							= date("s");
+
+$_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBER_ACCOUNT_STATUS_LAST_ACTIVE							= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET 
+member_status_account_last_active_timestamp='$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_TIMESTAMP',
+member_status_account_last_active_years='$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_YEAR',
+member_status_account_last_active_months='$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_MONTH',
+member_status_account_last_active_days='$_Application_Module_Background_Log_Background_MEMBER_ACCOUNT_LAST_ACTIVE_DATE_MONTH_DAY',
+member_status_account_last_active_hours='$_Application_Module_Background_Log_Background_TIMESTAMP_HOURS',
+member_status_account_last_active_minutes='$_Application_Module_Background_Log_Background_TIMESTAMP_MINUTES',
+member_status_account_last_active_seconds='$_Application_Module_Background_Log_Background_TIMESTAMP_SECONDS', 
+WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'
+");
 
 /*
  ============================================================================================================
- + IF: Database Server Query :: Update Member Account, Last Active Timestamp
+ + IF: Database Server Query :: Update :: Registered Member Account :: Timestamp :: Last Active
  ============================================================================================================
 */
 
-if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
+if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBER_ACCOUNT_STATUS_LAST_ACTIVE) {
 /**
  * Do Nothing
 **/
@@ -127,21 +147,21 @@ if ($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS) {
 
 											echo ($_Message_Log_Background_ERROR_SQL_MEMBERS);
 
-} // [ + ] IF: Database Server Query: Update Member Account Variables Have Executed
+} // [ + ] IF: Database Server Query: Update :: Registered Member Account :: Variables Have Executed
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Update Member Account Data
+ + Kill :: SQL Database Server Query: Update :: Registered Member Account :: Timestamp :: Last Active
  ============================================================================================================
 */
 
-$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBERS);
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_MEMBER_ACCOUNT_STATUS_LAST_ACTIVE);
 
-} // [ + ] IF: Database Query: Update Member Account Variables Have Executed
+} // [ + ] IF: Database Query: Update :: Registered Member Account :: Variables Have Executed
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Select From Statistics
+ + Kill :: SQL Database Server Query: Select :: From System Statistics
  ============================================================================================================
 */
 
@@ -149,9 +169,9 @@ $DB->free($_Application_Module_Background_Log_Background_DB_Query_SELECT_STATIST
 
 /*
  ============================================================================================================
- + Kill SQL Database Server Query: Update Statistics Data :: Number of Non-Unique Web Page Executions
+ + Kill :: SQL Database Server Query: Update :: System Statistics Data :: Number of Non-Unique and Unique Web Page Document Executions
  ============================================================================================================
 */
 
-$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_STATISTICS);
+$DB->free($_Application_Module_Background_Log_Background_DB_Query_UPDATE_SYSTEM_STATISTICS);
 ?>
