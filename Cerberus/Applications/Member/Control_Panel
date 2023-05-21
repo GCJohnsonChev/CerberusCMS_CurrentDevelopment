@@ -1,0 +1,349 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Control_Panel
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Member Control Panel
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+										echo ($_Application_Module_Member_Message_Control_Panel_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Member Control Panel :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Member Control Panel :: Variables :: Activity Log
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Control_Panel_LOGGING_ACTIVITY_LOG				= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Activity_Log.php";
+
+/*
+ ============================================================================================================
+ + Member Control Panel :: Variables :: Authentication Log
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Control_Panel_CONTENTS_AUTHENTICATION_LOG_FILE		= file_get_contents("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Authentication_Log.php");
+$_Application_Module_Member_Control_Panel_CONTENTS_AUTHENTICATION_LOG_FILE_HASH_SHA256	= hash_file('sha256', "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Activity_Logging/Authentication_Log.php");
+
+/*
+ ============================================================================================================
+ +
+ + Member Control Panel Audio Settings
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Member Rank Level Is: 1
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_MEMBER_LEVEL_RANK <= 1) {
+
+	$_Application_Module_Member_Control_Panel_AUDIO_PLAY_CONTROL_PANEL	= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Audio/Rank_1.$_GLOBAL_SYSTEM_SOUND_EXTENSION";
+
+} // [ + ] IF: Member Rank Level Is Less Than Or Equal To: 1, Play Specific Audio File
+
+/*
+ ============================================================================================================
+ + IF: Member Rank Level Is: 2
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_MEMBER_LEVEL_RANK = 2) {
+
+	$_Application_Module_Member_Control_Panel_AUDIO_PLAY_CONTROL_PANEL	= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Audio/Rank_2.$_GLOBAL_SYSTEM_SOUND_EXTENSION";
+
+} // [ + ] IF: Member Rank Level Is Less Than Or Equal To: 2, Play Specific Audio File
+
+/*
+ ============================================================================================================
+ + IF: Member Rank Level Is: 3
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_MEMBER_LEVEL_RANK = 3) {
+
+	$_Application_Module_Member_Control_Panel_AUDIO_PLAY_CONTROL_PANEL	= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Audio/Rank_3.$_GLOBAL_SYSTEM_SOUND_EXTENSION";
+
+} // [ + ] IF: Member Rank Level Is Less Than Or Equal To: 3, Play Specific Audio File
+
+/*
+ ============================================================================================================
+ + IF: Member Rank Level Is: 4
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_MEMBER_LEVEL_RANK = 4) {
+
+	$_Application_Module_Member_Control_Panel_AUDIO_PLAY_CONTROL_PANEL	= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Audio/Rank_4.$_GLOBAL_SYSTEM_SOUND_EXTENSION";
+
+} // [ + ] IF: Member Rank Level Is Less Than Or Equal To: 4, Play Specific Audio File
+
+/*
+ ============================================================================================================
+ + IF: Member Rank Level Is: 5
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_MEMBER_LEVEL_RANK = 5) {
+
+	$_Application_Module_Member_Control_Panel_AUDIO_PLAY_CONTROL_PANEL	= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Audio/Rank_5.$_GLOBAL_SYSTEM_SOUND_EXTENSION";
+
+} // [ + ] IF: Member Rank Level Is Less Than Or Equal To: 5, Play Specific Audio File
+
+/*
+ ============================================================================================================
+ +
+ + Display Member Control Panel
+ +
+ ============================================================================================================
+*/
+
+echo ("
+Member Account Options<HR>
+
+Member Account Credentials and Authentication<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Password\" TITLE=\":: Update Password ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Password.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+Member Account Data<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Update_Account\" TITLE=\":: Update Account Profile Data ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Profile.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TITLE=\":: Upload & Manage Private Files ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Files.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Webspace\" TITLE=\":: Manage Personal Hyper-Text-Markup-Language Web-Page ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Web_Page.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A>&nbsp;
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Archive\" TITLE=\":: Mange Personal Member Account Data Archives ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Archive.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+Member Account Social Interaction<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;DisplayID&#61;All\" TITLE=\":: Open Friends List ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Friends.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+Messaging<BR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Message&amp;PrivateMessageID&#61;All\" TITLE=\":: Send & Receive Private Messages ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Member/Icon_Messages.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" HEIGHT=\"60\" WIDTH=\"60\"></IMG></A><BR><BR>
+
+											<HR>
+											<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Logout\" TITLE=\":: Logout :: Secure-Delete Sessions, Credentials & Cookies ::\">Logout</A> ]</CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve Member Account Settings From Database Server
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+$_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS);
+
+$_Application_Module_Member_Control_Panel_LIST_MEMBER_ID						= $_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Control_Panel_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION				= $_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
+$_Application_Module_Member_Control_Panel_LIST_MEMBER_ACCOUNT_ACTIVATION_KEY				= $_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation_key'];
+$_Application_Module_Member_Control_Panel_LIST_MEMBER_SETTINGS_CONTROL_PANEL_SOUND			= $_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS_Fetch_Array['member_sound'];
+
+/*
+ ============================================================================================================
+ + Member Key Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= $_POST['AM_Control_Panel_Account_Activation_Key'];
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= stripslashes($_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY);
+
+/*
+ ============================================================================================================
+ +
+ + Control Panel Audio Settings
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Control Panel Audio Settings Are On, Play Audio Files
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Control_Panel_LIST_MEMBER_SETTINGS_CONTROL_PANEL_SOUND >= "1") {
+
+echo ("
+											<EMBED SRC=\"$_Application_Module_Member_Control_Panel_AUDIO_PLAY_CONTROL_PANEL\" HIDDEN=\"true\" AUTOPLAY=\"true\" LOOP=\"false\"></EMBED>
+");
+
+} // [ + ] IF: Member Control_Panel Sound Option Is On
+
+/*
+ ============================================================================================================
+ +
+ + Member Account Activation By Stored Activation Key
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Member Account Is Not Activated, Display Activation Message
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY) {
+
+if($_Application_Module_Member_Control_Panel_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION <= 0) {
+
+echo ("
+											<BR><BR>$_Application_Module_Member_Message_Control_Panel_KEY_ACTIVATE<HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel\" METHOD=\"POST\">
+													Account Activation Key:<BR>
+														<INPUT TYPE=\"TEXT\" NAME=\"AM_Control_Panel_Account_Activation_Key\" MAXLENGTH=\"32\"><BR>
+													<INPUT TYPE=\"SUBMIT\" VALUE=\"Activate\">
+												</FORM>
+");
+
+} // [ + ] IF: Member Account Is Not Activated
+
+} else {
+
+											echo ("$_Application_Module_Member_Message_Control_Panel_KEY_CHECK <BR>");
+
+if ($_Application_Module_Member_Control_Panel_LIST_MEMBER_ACCOUNT_ACTIVATION_KEY != $_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY) {
+
+											echo ($_Application_Module_Member_Message_Control_Panel_KEY_CHECK_ERROR);
+
+} else {
+
+$_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_activation='1' WHERE id='$_Application_Module_Member_Control_Panel_LIST_MEMBER_ID'");
+
+if ($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS) {
+
+											echo ($_Application_Module_Member_Message_Control_Panel_KEY_ACCEPT);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Control_Panel_KEY_ACCEPT_ERROR);
+
+} // [ + ] IF: Update Database=>Member Account
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Update Member Activation Key
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS);
+
+} // [ + ] IF: Database Query=>List Member Account Details
+
+} // [ + ] IF: Post Update=>Member Account Activation
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Select All Member Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Control_Panel_DB_Query_SELECT_MEMBERS);
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Member Account Activity Log
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "Activity_Log") {
+
+echo ("
+		<HR><BR><BR>
+		------------------------------------------------------------------<BR>
+		Member Account Activity and Logging<BR>
+		------------------------------------------------------------------<BR>
+		Activity Log For: $_GLOBAL_COOKIE_MEMBER_USERNAME<BR>
+		<OBJECT DATA=\"$_Application_Module_Member_Control_Panel_LOGGING_ACTIVITY_LOG\" WIDTH=\"80%\" HEIGHT=\"250\"></OBJECT>
+");
+
+} // [ + ] IF: Internal Application: Display Activity Logging
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Member Account Authentication Log
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "Authentication_Log") {
+
+echo ("
+		<HR><BR><BR>
+		------------------------------------------------------------------<BR>
+		Member Account Activity and Logging<BR>
+		------------------------------------------------------------------<BR>
+		Authentication Log File HASH, SHA-256: $_Application_Module_Member_Control_Panel_CONTENTS_AUTHENTICATION_LOG_FILE_HASH_SHA256
+		<FORM>
+			<TEXTAREA ROWS=\"20\" COLS=\"150\">$_Application_Module_Member_Control_Panel_CONTENTS_AUTHENTICATION_LOG_FILE</TEXTAREA>
+		</FORM>
+");
+
+} // [ + ] IF: Internal Application: Display Activity Logging
+?>

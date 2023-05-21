@@ -1,0 +1,2425 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Messenger
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Messenger
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Messenger_Header);
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ @ ] Internal Application :: Variables :: Generate :: Clear-Text File Messenger Room
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Clear-Text File :: Variables :: Random Number Generator
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1										= rand(0, 999999999);
+$_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_2										= rand(100000000, 999999999);
+
+/*
+ ============================================================================================================
+ + Variables :: Global :: Random Number Generator :: HASH
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1								= hash('md5', $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1);
+$_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_2								= hash('md5', $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_2);
+
+/*
+ ============================================================================================================
+ + Variables :: Visible :: Clear-Text File :: Select :: Clear-Text File Messenger Room Name
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME							= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name'];
+$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN						= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden'];
+
+/*
+ ============================================================================================================
+ + Post Variables :: Generate :: Clear-Text File Messenger Room :: Messenger Room Message
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Message'];
+
+/*
+ ============================================================================================================
+ + Variables :: Generate :: Clear-Text File Messenger Room :: Messenger Room Message :: Data Sanitization
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= preg_replace('/</','&lt;', $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= preg_replace('/>/','&gt;', $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[image]", "<IMG SRC=\"", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/image]", "\" WIDTH=\"200\" HEIGHT=\"150\" CLASS=\"MessengerImageMessage\"></IMG>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[b]", "<B>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/b]", "</B>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[u]", "<U>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/u]", "</U>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[i]", "<I>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/i]", "</I>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[center]", "<CENTER>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/center]", "</CENTER>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[br]", "<BR>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[video]", "<VIDEO WIDTH=\"150\" HEIGHT=\"75\" CONTROLS><SOURCE SRC=\"", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/video]", "\" TYPE=\"VIDEO/MP4\"></VIDEO>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+
+//$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[link]", "<A HREF=\"\">", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+//$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/link]", "\" TITLE=\":: Open & Display This Inserted Uniform-Resource-Location Link ::\">Inserted Uniform-Resource-Location Link</A>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[link]", " ", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/link]", " ", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+
+//$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= stripslashes($_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Generate :: Clear-Text File Messenger Room Name :: Clear-Text Passwords
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Password_Entry'];
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE				= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Password_Maintenance'];
+
+/*
+ ============================================================================================================
+ + Variables :: Generate :: Clear-Text File Messenger Room Name :: Hashed Passwords :: Message Digest, Version: 5
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY_HASH_MD5			= hash('md5', $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY);
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE_HASH_MD5		= hash('md5', $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE);
+
+/*
+ ============================================================================================================
+ + Variables :: Generate :: Visible :: Clear-Text File Messenger Room Name :: Hashed Passwords :: BlowFish Crypt
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY_HASH_BCRYPT			= password_hash($_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY, PASSWORD_BCRYPT);
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE_HASH_BCRYPT		= password_hash($_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE, PASSWORD_BCRYPT);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Generate :: Visible :: Clear-Text File Messenger Room :: Create Messenger Room Name
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_Generate'];
+
+/*
+ ============================================================================================================
+ + Post Variables :: Generate :: Visible :: Clear-Text File Messenger Room :: Archive Room :: Password
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Archive_Clear_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD					= $_POST['AM_Messenger_Visible_Archive_Clear_Text_File_Messenger_Room_Name_Password'];
+
+/*
+ ============================================================================================================
+ + Variables :: Generate :: Visible :: Clear-Text File Messenger Room :: Archive Room :: Password :: HASH
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED				= hash('md5', $_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Generate :: Visible :: Clear-Text File Messenger Room :: Erase Room :: Password
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Erase_Clear_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD					= $_POST['AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password'];
+
+/*
+ ============================================================================================================
+ + Variables :: Generate :: Visible :: Clear-Text File Messenger Room :: Erase Room :: Password :: HASH
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED				= hash('md5', $_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD);
+
+
+/*
+ ============================================================================================================
+ + Post Variables :: Visible :: Clear-Text File Messenger Room :: Delete Room :: Password
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_DELETE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME							= $_POST['AM_Messenger_Delete_Clear_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Member_Messenger_POST_DELETE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD						= $_POST['AM_Messenger_Delete_Clear_Text_File_Messenger_Room_Password'];
+
+/*
+ ============================================================================================================
+ + Variables :: Generate :: Visible :: Clear-Text File Messenger Room :: Delete Room :: Password :: HASH
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_DELETE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED				= hash('md5', $_Application_Module_Member_Messenger_POST_DELETE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Visible :: Clear-Text File Messenger Room :: Upload File :: Audio
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY			= "./Temporary/Upload/";
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME				= $_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio']['name']);
+
+/*
+ ============================================================================================================
+ + File Data Specifications :: Audio
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO 		= pathinfo($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio']['name']);
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION 		= $_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['extension'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME		= $_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['basename'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE		= pathinfo($_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME, PATHINFO_EXTENSION);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Clear-Text File Messenger Room :: Upload File :: Document
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY			= "./Temporary/Upload/";
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Document'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME			= $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Document']['name']);
+
+/*
+ ============================================================================================================
+ + File Data Specifications :: Document
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO 		= pathinfo($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Document']['name']);
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION 		= $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['extension'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME		= $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['basename'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE	= pathinfo($_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME, PATHINFO_EXTENSION);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Clear-Text File Messenger Room :: Upload File :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY			= "./Temporary/Upload/";
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME				= $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image']['name']);
+
+/*
+ ============================================================================================================
+ + File Data Specifications :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO 		= pathinfo($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image']['name']);
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION 		= $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['extension'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME		= $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['basename'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE		= pathinfo($_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME, PATHINFO_EXTENSION);
+
+/*
+ ============================================================================================================
+ + Post Variables :: Clear-Text File Messenger Room :: Upload File :: Video
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY			= "./Temporary/Upload/";
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME				= $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video']['name']);
+
+/*
+ ============================================================================================================
+ + File Data Specifications :: Video
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO 		= pathinfo($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video']['name']);
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION 		= $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['extension'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME		= $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_PATHINFO['basename'];
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE		= pathinfo($_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME, PATHINFO_EXTENSION);
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Variables :: Allowed File Extensions
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Allowed File Extensions
+ ============================================================================================================
+*/
+			
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS										= array();
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[0]									= "jpg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[1]									= "gif";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[2]									= "png";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[3]									= "bmp";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[4]									= "pdf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[5]									= "zip";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[6]									= "rar";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[7]									= "wmv";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[8]									= "swf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[9]									= "wav";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[10]									= "mp3";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[11]									= "mov";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSIONS[12]									= "wma";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Audio
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO									= array();
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[0]									= "mp3";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[1]									= "aac";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[2]									= "aax";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[3]									= "aiff";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[4]									= "alac";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[5]									= "flac";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[6]									= "m4a";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[7]									= "ogg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[8]									= "wav";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO[9]									= "wma";
+
+
+/*
+ ============================================================================================================
+ + File Extensions :: Document
+ ============================================================================================================
+*/
+	
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT									= array();
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[0]								= "doc";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[1]								= "docx";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[2]								= "eps";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[3]								= "git";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[4]								= "mercurial";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[5]								= "pdf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[6]								= "psd";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[7]								= "tar";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[8]								= "tar.gz";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[9]								= "txt";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[10]								= "xls";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT[11]								= "zip";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE									= array();
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[0]									= "jpg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[1]									= "jpeg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[2]									= "png";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[3]									= "gif";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE[4]									= "bmp";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Video
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO									= array();
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[0]									= "mp4";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[1]									= "mov";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[2]									= "wmv";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[3]									= "avi";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[4]									= "flv";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[5]									= "swf";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[6]									= "webm";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[7]									= "qt";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[8]									= "mpeg";
+$_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO[9]									= "mpg";
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Variables :: Invisible Messenger Room
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: Clear-Text File :: Invisible :: Messenger Room :: Find
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_FIND_CLEAR_TEXT_FILE_INVISIBLE_MESSENGER_ROOM_NAME						= $_POST['AM_Messenger_Clear_Text_File_Invisible_Messenger_Room_Name'];
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Variables :: Mobile Device Messaging Service
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: Find :: Mobile Device Messaging Service :: Member Account Name
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_FIND_SMS_RECIPIENT_NAME									= $_POST['AM_Messenger_Find_Messenger_SMS_Recipient_Name'];
+$_Application_Module_Member_Messenger_POST_FIND_MMS_RECIPIENT_NAME									= $_POST['AM_Messenger_Find_Messenger_MMS_Recipient_Name'];
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Variables :: :: Mobile Device Messaging Service
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: Short Messaging Service
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER									= $_POST['AM_Messenger_SMS_Mobile_Device_Carrier'];
+$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER							= $_POST['AM_Messenger_SMS_Mobile_Device_Carrier_Phone_Number'];
+$_Application_Module_Member_Messenger_POST_SMS_MESSAGE											= $_POST['AM_Messenger_SMS_Message'];
+
+/*
+ ============================================================================================================
+ + Post Variables :: Multimedia Messaging Service
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER									= $_POST['AM_Messenger_MMS_Mobile_Device_Carrier'];
+$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER							= $_POST['AM_Messenger_MMS_Mobile_Device_Carrier_Phone_Number'];
+$_Application_Module_Member_Messenger_POST_MMS_MESSAGE											= $_POST['AM_Messenger_MMS_Message'];
+$_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_POST['AM_Messenger_MMS_Message_File_Upload'];
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Variables :: Encrypted-Text File Messenger
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Variables :: Encrypted-Text File Messenger :: Pretty-Good-Privacy
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Define The G.N.U.-Not-Unix Privacy Guard Operating Environment
+ ============================================================================================================
+*/
+
+//putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg");
+//putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg");
+
+/*
+ ============================================================================================================
+ + Define The Pretty-Good-Privacy Public Keys
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_1              								= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg') . 'public.key');
+//$_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_2              								= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg') . 'public.key');
+
+/*
+ ============================================================================================================
+ + Initialize G.N.U.-Privacy Guard
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_INITIALIZE_GNUPG                               							= new gnupg();
+//$_Application_Module_Member_Messenger_INITIALIZE_GNUPG->
+
+/*
+ ============================================================================================================
+ + Set G.N.U.-Privacy Guard Error Mode
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_INITIALIZE_GNUPG->seterrormode(gnupg::ERROR_EXCEPTION);
+
+/*
+ ============================================================================================================
+ + Import G.N.U.-Pretty-Good-Privacy Public Keys
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1									= $_Application_Module_Member_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_1);
+//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2									= $_Application_Module_Member_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_2);
+
+/*
+ ============================================================================================================
+ + Add Pretty-Good-Privacy Key Fingerprints
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_1								= $_Application_Module_Member_Messenger_GNUPG->addencryptkey($_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1['fingerprint']);
+//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_2								= $_Application_Module_Member_Messenger_GNUPG->addencryptkey($_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2['fingerprint']);
+
+/*
+ ============================================================================================================
+ + Get File Contents of The Encrypted-Text-File Messenger Room Messenger File
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE								= file_get_contents('./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME.html');
+
+/*
+ ============================================================================================================
+ + Encrypt Message Using Pretty-Good-Privacy
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_GNUPG_ENCRYPT_MESSAGE										= $_Application_Module_Member_Messenger_GNUPG->encrypt($_Application_Module_Member_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Internal Application Variables :: Encrypted-Text File Messenger :: Advanced Encryption Standard
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Variables :: Encryption :: Advanced Encryption Standard :: 256
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Post Variables :: Encryption :: Advanced Encryption Standard :: 256 :: Clear-Text Message Data
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AM_Messenger_Visible_Encrypted_Text_File_Messenger_Room_Message'];
+
+// Quick Test
+$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE;
+
+/*
+ ============================================================================================================
+ + Variables :: Encryption :: Advanced Encryption Standard :: 256 :: Cipher Parameters
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type				= "AES-256-CBC";
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length				= openssl_cipher_iv_length($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV					= openssl_random_pseudo_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options				= '0';
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Cipher Ring :: Vector
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Vector				= '1234567891011121';
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Cipher :: Key
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password					= "$_GLOBAL_MEMBER_PASSWORD";
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Randomization
+ ============================================================================================================
+*/
+
+//$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Random				= random_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Open Secure Socket Layer :: Digest Key
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Digest_Length					= openssl_digest(php_uname(), 'MD5', true);
+
+/*
+ ============================================================================================================
+ + Encryption :: Cipher Method :: Encryption :: Of :: Message Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Encrypted_Data					= openssl_encrypt($_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
+
+/*
+ ============================================================================================================
+ +
+ + Variables :: Decryption :: Advanced Encryption Standard :: 256
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Decryption_Type_AES_Decrypted_Data					= openssl_decrypt("", $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Messenger Options
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "MessengerOptions") {
+
+/*
+ ============================================================================================================
+ + Messenger Options Form
+ ============================================================================================================
+*/
+
+echo ("
+											<B>Messenger Room Generation Options</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\" METHOD=\"post\">
+													<I><B>Messenger Generation Options</B></I>:<BR>
+												<SELECT NAME=\"\">
+													<OPTION VALUE=\"\">:: Non-Encrypted Clear-Text File Messenger Options ::</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">Generate :: Visible :: Clear-Text File Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">Generate :: Invisible :: Clear-Text File Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">:: Non-Encrypted Clear-Text Database Server Messenger Options ::</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;\">Generate :: Visible :: Clear-Text D.B.M.S. Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;\">Generate :: Invisible :: Clear-Text D.B.M.S. Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">:: Encrypted-Text File Messenger Options ::</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;\">Generate :: Visible :: Encrypted-Text-File Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;\">Generate :: Invisible :: Encrypted-Text-File Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">:: Encrypted-Text Database-Server Messenger Options ::</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;\">Generate :: Visible :: Encrypted-Text D.B.M.S. Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;\">Generate :: Invisible :: Encrypted-Text D.B.M.S. Messenger Room</OPTION>
+													<OPTION VALUE=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\">--------------------------------------------------</OPTION>
+												</SELECT><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Generate\">
+												</FORM><BR><BR>
+
+											<B>Visible Messenger Room Selection Options</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Display&#61;VisibleTextFileMessenger\" METHOD=\"post\">
+													<I><B>Messenger Selection</B></I>:<BR>
+												<SELECT NAME=\"\">
+													<OPTION VALUE=\"\">:: Clear-Text File Messenger Options ::</OPTION>
+													<OPTION VALUE=\"\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">Visible Non-Encrypted / Clear-Text File Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">Invisible Non-Encrypted / Clear-Text File Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">Visible Encrypted-Text File Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">Invisible Encrypted-Text File Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">:: Database Management System Backed Options ::</OPTION>
+													<OPTION VALUE=\"\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">Visible Non-Encrypted / Clear-Text DBMS-Backed Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">Invisible Non-Encrypted / Clear-Text DBMS-Backed Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">--------------------------------------------------</OPTION>
+													<OPTION VALUE=\"\">Visible Encrypted DBMS-Backed Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">Invisible Encrypted DBMS-Backed Messenger Rooms</OPTION>
+													<OPTION VALUE=\"\">--------------------------------------------------</OPTION>
+												</SELECT><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Select\">
+												</FORM><BR><BR>
+
+											<B>Invisible Messenger Room Options</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Find&#61;InvisibleMessengerRoom&amp;Name&#61;$_Application_Module_Member_Messenger_POST_FIND_CLEAR_TEXT_FILE_INVISIBLE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
+													* <I><B>Find Invisible Messenger Room</B></I>:<BR>
+													[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Clear_Text_File_Invisible_Messenger_Room_Name\" VALUE=\"Write Invisible Messenger Room Name Here...\" MAXLENGTH=\"50\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Find\">
+												</FORM><BR><BR>
+
+											<B>Mobile Device Messaging Service Options</B><HR>
+
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS&amp;SMSID&#61;$_Application_Module_Member_Messenger_POST_FIND_SMS_RECIPIENT_NAME\" METHOD=\"POST\">
+													* <I><B>Send Short Messaging Service Message :: Find Member Account UserName</B></I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Find_Messenger_SMS_Recipient_Name\" VALUE=\"Write Member Account UserName Here...\" MAXLENGTH=\"25\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Find\">
+												</FORM><BR>
+
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS&amp;MMSID&#61;$_Application_Module_Member_Messenger_POST_FIND_MMS_RECIPIENT_NAME\" METHOD=\"POST\">
+													* <I><B>Send Multimedia Messaging Service Message :: Find Member Account UserName</B></I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Find_Messenger_MMS_Recipient_Name\" VALUE=\"Write Member Account UserName Here...\" MAXLENGTH=\"25\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Find\">
+												</FORM>
+");
+
+} // [ + ] IF: Display Messenger Options
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Generate :: Visible :: Clear-Text File Messenger Room
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Generate"] == "VisibleTextFileMessenger") {
+
+/*
+ ============================================================================================================
+ + IF: Generate Room Variables Have Not Executed, Display Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME) {
+
+echo ("
+												<B>Generate :: Visible :: Clear-Text File Messenger Room</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Generate&#61;VisibleTextFileMessenger\" METHOD=\"POST\">
+													* <I>Name This Clear-Text File Messenger Room</I>:<BR>
+													[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_Generate\" VALUE=\"Name This Messenger Room...\" MAXLENGTH=\"50\"><BR><BR>
+													* <I>Messenger Room Entry Password</I><BR>
+													[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Password_Entry\" MAXLENGTH=\"100\"><BR>
+													* <I>Messenger Room Maintenance Password</I><BR>
+														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Password_Maintenance\" MAXLENGTH=\"100\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Create Messenger Room\">
+												</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Variables Have Executed, Generate Specified Visible Clear-Text File Messenger Room Directory Structure
+ ============================================================================================================
+*/
+
+						echo ("*&nbsp;Creating Visible Clear-Text File Messenger Room Directory: <I>$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</I>...<BR>");
+
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+
+						echo ("*&nbsp;Done<BR>");
+
+						echo ("*&nbsp;Copying Default Index File To Clear-Text File Messenger Room Directory: <I>$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</I>...<BR>");
+
+copy("./Temporary/Messenger/Setup/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/index.php");
+
+                                                echo ("*&nbsp;Done<BR>");
+
+/*
+ ============================================================================================================
+ + Create Clear-Text File Messenger Room File
+ ============================================================================================================
+*/
+
+						echo ("*&nbsp;Creating Visible Clear-Text File Messenger Room File: <I>$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html</I>...<BR>");
+
+$_Application_Module_Member_Messenger_GENERATE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_NAME						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "w") or die("Unable To Create The Visible Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+
+						echo ("*&nbsp;Done<BR>");
+
+/*
+ ============================================================================================================
+ +
+ + Write Default Clear-Text File Message Data
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Define Default Clear-Text File Data To Be Written To File
+ ============================================================================================================
+*/
+
+						echo ("*&nbsp;Writing Default Data To Visible Clear-Text File Messenger Room...<BR>");
+
+$_Application_Module_Member_Messenger_GENERATE_WRITE_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_DATA						= "
+															<LINK REL=\"stylesheet\" HREF=\"../../../../../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
+															<BODY ONLOAD=\"window.scrollTo(0,document.body.scrollHeight);\">
+";
+
+/*
+ ============================================================================================================
+ + Write Default Non-Encrypted Data To Visible Clear-Text File
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_GENERATE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_NAME, "$_Application_Module_Member_Messenger_GENERATE_WRITE_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_DATA");
+
+						echo ("*&nbsp;Done<BR>");
+
+						echo ("*&nbsp;Closing File...<BR>");
+
+fclose($_Application_Module_Member_Messenger_GENERATE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_NAME);
+
+						echo ("*&nbsp;Done<BR>");
+
+/*
+ ============================================================================================================
+ + Create Default Plain-Text Messenger Room File Directories
+ ============================================================================================================
+*/
+
+						echo ("*&nbsp;Creating Clear-Text File Messenger Room File Directories $_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME<BR>");
+
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files");
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive");
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio");
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document");
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image");
+mkdir("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video");
+
+						echo ("*&nbsp;Creating Default ./Archive/Files.html File...<BR>");
+
+copy("./Temporary/Messenger/Setup/Files/Archive/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/Files.html");
+
+						echo ("*&nbsp;Done.<BR>");
+
+						echo ("*&nbsp;Creating Default ./Audio/Files.html File...<BR>");
+
+copy("./Temporary/Messenger/Setup/Files/Audio/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html");
+
+						echo ("*&nbsp;Done.<BR>");
+
+						echo ("*&nbsp;Creating Default ./Document/Files.html File...<BR>");
+
+copy("./Temporary/Messenger/Setup/Files/Document/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html");
+
+						echo ("*&nbsp;Done.<BR>");
+
+						echo ("*&nbsp;Creating Default ./Image/Files.html File...<BR>");
+
+copy("./Temporary/Messenger/Setup/Files/Image/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html");
+
+						echo ("*&nbsp;Done.<BR>");
+
+						echo ("*&nbsp;Creating Default ./Video/Files.html File...<BR>");
+
+copy("./Temporary/Messenger/Setup/Files/Video/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html");
+
+						echo ("*&nbsp;Done.<BR>");
+
+						echo ("*&nbsp;Copying Default <I>index</I> Files To Messenger Room File Directories...<BR>");
+
+copy("./Temporary/Messenger/Setup/Files/Audio/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/index.php");
+
+copy("./Temporary/Messenger/Setup/Files/Archive/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/index.php");
+copy("./Temporary/Messenger/Setup/Files/Audio/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/index.php");
+copy("./Temporary/Messenger/Setup/Files/Document/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/index.php");
+copy("./Temporary/Messenger/Setup/Files/Image/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/index.php");
+copy("./Temporary/Messenger/Setup/Files/Video/index.php","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/index.php");
+
+						echo ("*&nbsp;Done<BR>");
+
+/*
+ ============================================================================================================
+ + Insert Plain-Text Messenger Room Name Details To Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DB_Query_INSERT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_clear_text_file_room(
+messenger_room_creation_author,
+messenger_room_creation_author_device_ip_address,
+messenger_room_creation_author_system_access_level,
+messenger_room_creation_date,
+messenger_room_name,
+messenger_room_password_entry,
+messenger_room_password_maintenance,
+messenger_room_status_visibility
+)VALUES(
+'$_GLOBAL_COOKIE_MEMBER_USERNAME',
+'$_GLOBAL_REMOTE_SERVER_ADDRESS',
+'$_GLOBAL_MEMBER_ACCESS_LEVEL',
+'$_GLOBAL_LOCAL_SERVER_DATE_STANDARD',
+'$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME',
+'$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY_HASH_MD5',
+'$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE_HASH_MD5',
+'1'
+)");
+
+						echo ("*&nbsp;Inserting Visible Clear-Text File Messenger Room Name Details Into The S.Q.L. Database...<BR>");
+/*
+ ============================================================================================================
+ + IF: Database Query Has Executed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Messenger_DB_Query_INSERT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME) {
+
+						echo ("*&nbsp;Done<BR><HR>");
+
+} else {
+
+						echo ("*&nbsp;Error: Cannot Insert S.Q.L. Data.<HR>");
+
+} // [ + ] IF: Insert Visible Clear-Text File Messenger Room Name Database Query Variable Has Executed
+
+/*
+ ==================================================================================================================================================================
+ + Kill SQL Database Server Query: Insert Clear-Text File Messenger Room Name
+ ==================================================================================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Messenger_DB_Query_INSERT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME);
+
+} // [ + ] IF: Generate Visible Clear-Text File Messenger Room Variables Have Executed
+
+} // [ + ] IF: Internal Application: Generate Visible Clear-Text File Messenger Room Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display All Clear-Text File Messenger Rooms
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "VisibleTextFileMessenger") {
+
+/*
+ ============================================================================================================
+ + Retrieve Complete List of Clear-Text File Messenger Rooms
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_clear_text_file_room ORDER BY id ASC");
+
+/*
+ ============================================================================================================
+ + IF: The Number of S.Q.L. Rows Is Less Than 0
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES) <= 0) {
+
+											echo ($_Application_Module_Member_Message_Messenger_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOMS_LIST_EMPTY);
+
+} // [ + ] IF: Visible Clear-Text File Messenger Room Database Server Entries Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Fetch Array of Visible Clear-Text File Room Name Details
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY = $DB->fetch_array($_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES)) {
+
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_ID					= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['id'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR				= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_author'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_DEVICE_IP_ADDRESS	= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_author_device_ip_address'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_SYSTEM_ACCESS_LEVEL	= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_author_system_access_level'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_DATE				= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_date'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_name'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE			= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_maintenance'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_entry'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_STATUS_VISIBILITY			= $_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_status_visibility'];
+
+											echo ("<B>&middot;</B>&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;SelectedClearTextFile&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</A><BR>");
+
+} // [ + ] WHILE: Retrieving List of Visible Clear-Text File Messenger Room Entries From Database Server
+
+} // [ + ] IF: Internal Application: Display List of Visible Clear-Text File Messenger Rooms Is Activated
+
+/*
+ ==================================================================================================================================================================
+ + Kill SQL Database Server Query: Select All From Clear-Text File Messenger Room Names
+ ==================================================================================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Messenger_DB_Query_RETRIEVE_ALL_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES);
+
+/*
+ =============================================================================================================
+ +
+ + Retrieve Visible Clear-Text File Messenger Room Names
+ +
+ =============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_clear_text_file_room ORDER BY id ASC");
+
+
+if ($DB->num_rows($_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES) <= 0) {
+
+											echo ($_Application_Module_Member_Message_Messenger_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOMS_LIST_EMPTY);
+
+} // [ + ] IF: Clear-Text File Room Name Database Server Entries Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Fetch Array of Clear-Text File Room Name Details
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY = $DB->fetch_array($_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES)) {
+
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_ID					= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['id'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR				= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_author'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_DEVICE_IP_ADDRESS	= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_author_device_ip_address'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_SYSTEM_ACCESS_LEVEL	= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_author_system_access_level'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_DATE				= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_creation_date'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_name'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_entry'];
+$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE			= $_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES_ARRAY['messenger_room_password_maintenance'];
+
+/*
+ =============================================================================================================
+ +
+ + Internal Application :: Display :: Selected Clear-Text File Messenger Room By Name
+ +
+ =============================================================================================================
+*/
+
+if ($_GET["SelectedClearTextFile"] == "$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
+
+/*
+ =============================================================================================================
+ + Delete :: Selected Clear-Text File Messenger Room :: Existing File Listing Documents
+ =============================================================================================================
+*/
+
+unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/Files.html");
+unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html");
+unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html");
+unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html");
+unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html");
+
+/*
+ =============================================================================================================
+ + Copy :: Selected Clear-Text File Messenger Room :: New File Listing Documents
+ =============================================================================================================
+*/
+
+copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/Files.html");
+copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html");
+copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html");
+copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html");
+copy("./Temporary/Messenger/Setup/Files/Files.txt","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html");
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Clear-Text File Messenger Room :: All Directories
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Clear-Text File Messenger Room :: File List :: Archive
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DIRECTORY_FIND_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive";
+$_Application_Module_Member_Messenger_DIRECTORY_OPEN_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM					= opendir($_Application_Module_Member_Messenger_DIRECTORY_FIND_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Clear-Text File Messenger Room :: File List :: Audio
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DIRECTORY_FIND_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio";
+$_Application_Module_Member_Messenger_DIRECTORY_OPEN_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM					= opendir($_Application_Module_Member_Messenger_DIRECTORY_FIND_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Clear-Text File Messenger Room :: File List :: Document
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DIRECTORY_FIND_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document";
+$_Application_Module_Member_Messenger_DIRECTORY_OPEN_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM					= opendir($_Application_Module_Member_Messenger_DIRECTORY_FIND_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Clear-Text File Messenger Room :: File List :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DIRECTORY_FIND_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image";
+$_Application_Module_Member_Messenger_DIRECTORY_OPEN_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM					= opendir($_Application_Module_Member_Messenger_DIRECTORY_FIND_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Clear-Text File Messenger Room :: File List :: Video
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DIRECTORY_FIND_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video";
+$_Application_Module_Member_Messenger_DIRECTORY_OPEN_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM					= opendir($_Application_Module_Member_Messenger_DIRECTORY_FIND_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ +
+ + Read Directory :: Clear-Text File Messenger Room :: File Directory :: Archive
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + While Reading Directory :: Clear-Text File Messenger Room :: Archive :: Write Audio List To File List
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM = readdir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM))) {
+
+if ($_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM == "." || $_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM == ".." || $_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM == "index.php" || $_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM == "Files.html") {
+/**
+ * Do Nothing
+**/
+} else {
+
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_ARCHIVE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/Files.html", "a");
+
+/*
+ ============================================================================================================
+ + IF: Write Message To Clear-Text File Messenger Room Name :: File List :: Audio
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_ARCHIVE, "
+	<HEAD>
+		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+	</HEAD>
+
+	<BODY>
+		*&nbsp;<A HREF=\"$_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM\" TITLE=\":: Open & Play This Archive File ::\" TARGET=\"_NEW\">./Files/Archive/$_Application_Module_Member_Messenger_DIRECTORY_READ_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM</A><BR>
+	</BODY>
+");
+
+} // [ + ] IF: Specified Archive Directory AND Files ARE NOT Specified Archive Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Archive Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory :: Clear-Text File :: Messenger Room :: Directory :: Archive
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_ARCHIVE_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ +
+ + Read Directory :: Clear-Text File Messenger Room :: File Directory :: Audio
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + While Reading Directory :: Clear-Text File Messenger Room :: Audio :: Write Audio List To File List
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM = readdir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM))) {
+
+if ($_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM == "." || $_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM == ".." || $_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM == "index.php" || $_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM == "Files.html") {
+/**
+ * Do Nothing
+**/
+} else {
+
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_AUDIO						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html", "a");
+
+/*
+ ============================================================================================================
+ + IF: Write Message To Clear-Text File Messenger Room Name :: File List :: Audio
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_AUDIO, "
+	<HEAD>
+		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+	</HEAD>
+
+	<BODY>
+		*&nbsp;<A HREF=\"$_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM\" TITLE=\":: Open & Play This Audio File ::\" TARGET=\"_NEW\">./Files/Audio/$_Application_Module_Member_Messenger_DIRECTORY_READ_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM</A><BR>
+	</BODY>
+");
+
+} // [ + ] IF: Specified Audio Directory AND Files ARE NOT Specified Audio Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Audio Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory :: Clear-Text File :: Messenger Room :: Directory :: Audio
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ +
+ + Read Directory :: Clear-Text File Messenger Room :: File Directory :: Document
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + While Reading Directory :: Clear-Text File Messenger Room :: Document :: Write Document List To File List
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM = readdir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM))) {
+
+if ($_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM == "." || $_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM == ".." || $_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM == "index.php" || $_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM == "Files.html") {
+/**
+ * Do Nothing
+**/
+} else {
+
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_DOCUMENT					= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html", "a");
+
+/*
+ ============================================================================================================
+ + IF: Write Message To Clear-Text File Messenger Room Name :: File List :: Document
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_DOCUMENT, "
+	<HEAD>
+		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+	</HEAD>
+
+	<BODY>
+		*&nbsp;<A HREF=\"$_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM\" TITLE=\":: Open & Display This Document File ::\" TARGET=\"_NEW\">./Files/Document/$_Application_Module_Member_Messenger_DIRECTORY_READ_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM</A><BR>
+	</BODY>
+");
+
+} // [ + ] IF: Specified Document Directory AND Files ARE NOT Specified Document Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Document Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory :: Clear-Text File :: Messenger Room :: Directory :: Document
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ +
+ + Read Directory :: Clear-Text File Messenger Room :: File Directory :: Image
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + While Reading Directory :: Clear-Text File Messenger Room :: Image :: Write Image List To File List
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM = readdir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM))) {
+
+if ($_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM == "." || $_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM == ".." || $_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM == "index.php" || $_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM == "Files.html") {
+/**
+ * Do Nothing
+**/
+} else {
+
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_IMAGE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html", "a");
+
+/*
+ ============================================================================================================
+ + IF: Write Message To Clear-Text File Messenger Room Name :: File List :: Image
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_IMAGE, "
+	<HEAD>
+		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+	</HEAD>
+
+	<BODY>
+		*&nbsp;<A HREF=\"$_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM\" TITLE=\":: Open & Display This Image File ::\" TARGET=\"_NEW\">./Files/Image/$_Application_Module_Member_Messenger_DIRECTORY_READ_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM</A><BR>
+	</BODY>
+");
+
+} // [ + ] IF: Specified Image Directory AND Files ARE NOT Specified Image Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Image Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory :: Clear-Text File :: Messenger Room :: Directory :: Image
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ ============================================================================================================
+ +
+ + Read Directory :: Clear-Text File Messenger Room :: File Directory :: Video
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + While Reading Directory :: Clear-Text File Messenger Room :: Video :: Write Document List To File List
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM = readdir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM))) {
+
+if ($_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM == "." || $_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM == ".." || $_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM == "index.php" || $_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM == "Files.html") {
+/**
+ * Do Nothing
+**/
+} else {
+
+$_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_VIDEO							= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html", "a");
+
+/*
+ ============================================================================================================
+ + IF: Write Message To Clear-Text File Messenger Room Name :: File List :: Video
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE_LIST_VIDEO, "
+	<HEAD>
+		<TITLE>$_GLOBAL_SYSTEM_SITE_TITLE</TITLE>
+		<LINK REL=\"stylesheet\" HREF=\"../../../../../../../../Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Style_Sheet/Style.css\" TYPE=\"text/css\">
+	</HEAD>
+
+	<BODY>
+		*&nbsp;<A HREF=\"$_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM\" TITLE=\":: Open & Display This Video File ::\" TARGET=\"_NEW\">./Files/Video/$_Application_Module_Member_Messenger_DIRECTORY_READ_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM</A><BR>
+	</BODY>
+");
+
+} // [ + ] IF: Specified Video Directory AND Files ARE NOT Specified Video Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Video Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory :: Clear-Text File :: Messenger Room :: Directory :: Video
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Messenger_DIRECTORY_OPEN_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM);
+
+/*
+ =============================================================================================================
+ + IF: Clear-Text File Messenger Room Files Exist, Include Them
+ =============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html")) {
+
+/*
+ =============================================================================================================
+ + Display The Specified Clear-Text File Messenger Room
+ =============================================================================================================
+*/
+
+echo ("
+												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;SelectedClearTextFile&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" TITLE=\":: Instantly Reload This Visible Clear-Text File Messenger Room ::\">Visible Clear-Text File Messenger Room</A>: <I><A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" TITLE=\":: Open & Display This Visible Clear-Text Messenger Log ::\" TARGET=\"_NEW\">$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</A></I><BR>
+												<OBJECT DATA=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html\" WIDTH=\"90%\" HEIGHT=\"300\"></OBJECT><BR><BR>
+");
+
+echo ("											
+													
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Send&#61;ClearTextFileMessage\" METHOD=\"POST\">
+														* <I>Short or Extensive Message</I>:<BR>
+														[ Maximum Length: 5,000 Alpha-Numeric Characters ]<BR>
+															$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
+															<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"5000\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Message\" ID=\"WYSIWYG\">Write Messages Here...</TEXTAREA><BR>
+															<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Send Message\">
+													</FORM>
+													<BR><BR>
+
+
+");
+
+echo ("												
+												Available Files :: <A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html\" TITLE=\":: Open & Display :: The Audio File List For This Visible Clear-Text File Messenger Room :: \" TARGET=\"_NEW\">Audio</A><BR>
+												<OBJECT DATA=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html\" WIDTH=\"90%\" HEIGHT=\"150\"></OBJECT><BR><BR>
+");
+
+echo ("
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Audio\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+														* <I>Upload Unique Audio File To This Visible Clear-Text File Messenger Room</I>:<BR>
+														[ Permitted Audio Files ]<BR>
+														* WAV, MP3, WMA, AAC, FLAC, OGG<BR>
+														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio\" MAXLENGTH=\"100\"><BR>
+															<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Upload Audio\">
+													</FORM><BR><BR>
+");
+
+echo ("												
+												Available Files :: <A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html\" TITLE=\":: Open & Display :: The Document File List For This Visible Clear-Text File Messenger Room :: \" TARGET=\"_NEW\">Document</A><BR>
+												<OBJECT DATA=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html\" WIDTH=\"90%\" HEIGHT=\"150\"></OBJECT><BR><BR>
+");
+
+echo ("
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Document\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+														* <I>Upload Unique Document File To This Visible Clear-Text File Messenger Room</I>:<BR>
+														[ Permitted Document Files ]<BR>
+														* DOC, XLS, PPT, PDF, EPS, PSD, TXT<BR>
+														* ZIP, TAR, TAR.GZ, GIT, Mercurial<BR>
+														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Document\" MAXLENGTH=\"100\"><BR>
+															<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Upload Document\">
+													</FORM><BR><BR>
+");
+
+echo ("
+												Available Files :: <A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html\" TITLE=\":: Open & Display :: The Image File List For This Visible Clear-Text File Messenger Room :: \" TARGET=\"_NEW\">Image</A><BR>
+												<OBJECT DATA=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html\" WIDTH=\"90%\" HEIGHT=\"150\"></OBJECT><BR><BR>
+");
+
+echo ("
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Image\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+														* <I>Upload Unique Image File To This Visible Clear-Text File Messenger Room</I>:<BR>
+														[ Permitted Image Files ]<BR>
+														* PNG, JPG, TIF / TIFF, BMP, TGA, DPE<BR>
+														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image\" MAXLENGTH=\"100\"><BR>
+															<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Upload Image\">
+													</FORM><BR><BR>
+");
+
+echo ("
+												Available Files :: <A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html\" TITLE=\":: Open & Display ::: The Video File List For This Visible Clear-Text File Messenger Room :: \" TARGET=\"_NEW\">Video</A><BR>
+												<OBJECT DATA=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html\" WIDTH=\"90%\" HEIGHT=\"150\"></OBJECT><BR><BR>
+
+");
+
+echo ("												
+												Available Files :: <A HREF=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/Files.html\" TITLE=\":: Open & Display :: The Archive File List For This Visible Clear-Text File Messenger Room :: \" TARGET=\"_NEW\">Archives</A><BR>
+												<OBJECT DATA=\"./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/Files.html\" WIDTH=\"90%\" HEIGHT=\"150\"></OBJECT><BR><BR>
+");
+
+echo ("
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;UploadFile&#61;Video\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+														* <I>Upload Unique Video File To This Visible Clear-Text File Messenger Room</I>:<BR>
+														[ Permitted Video Files ]<BR>
+														* AVI, MP4, MOV, WMV, AVCHD, FLV, SWF, MKV, WEBM<BR>
+														<INPUT TYPE=\"file\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video\" MAXLENGTH=\"100\"><BR>
+															<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Upload Video\">
+													</FORM><BR><BR>
+");
+
+echo ("
+
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Erase&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
+														* <I>Erase This Visible Clear-Text File Messenger Room</I><BR>
+														<I>Maintenance Password</I>:<BR>
+														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Erase_Clear_Text_File_Messenger_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Erase Messenger Room\">
+													</FORM><BR><BR>
+");
+
+echo ("
+
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;DeleteMessengerRoom&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
+														* <I>Delete This Visible Clear-Text File Messenger Room</I><BR>
+														<I>Maintenance Password</I>:<BR>
+														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Delete_Clear_Text_File_Messenger_Room_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Delete_Clear_Text_File_Messenger_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Delete Messenger Room\">
+													</FORM><BR><BR>
+");
+
+echo ("
+
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Archive&#61;$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\" METHOD=\"POST\">
+														* <I>Archive This Visible Clear-Text File Messenger Room</I><BR>
+														<I>Maintenance Password</I>:<BR>
+														[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"password\" NAME=\"AM_Messenger_Visible_Archive_Clear_Text_File_Messenger_Room_Password\" VALUE=\"Password\" MAXLENGTH=\"50\"><BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Messenger_Visible_Archive_Clear_Text_File_Messenger_Room_Name_Hidden\" VALUE=\"$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME\">
+														<INPUT TYPE=\"submit\" VALUE=\"Archive Messenger Room\">
+													</FORM><BR><BR>
+");
+
+echo ("
+
+														* This Visible Clear-Text File Messenger Room Automatically Refreshes Every 15 Seconds<BR>
+														* This Visible Clear-Text File Messenger Room Name Is: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME</I><BR>
+														* This Visible Clear-Text File Messenger Room Was Created By: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR @ $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_AUTHOR_DEVICE_IP_ADDRESS</I><BR>
+														* This Visible Clear-Text File Messenger Room Was Created On: <I>$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_CREATION_DATE</I>
+");
+
+// Delete Files.html Files
+
+//unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio/Files.html");
+//unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Files.html");
+//unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image/Files.html");
+//unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video/Files.html");
+
+} else {
+
+												echo ("* File Does Not Exist: $_Application_Module_Member_Messenger_SQL_LIST_MESSENGER_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+
+} // [ + ] IF: File Exists: Clear-Text File Messenger Room
+
+} // [ + ] IF: Internal Application: Display Specified Clear-Text File Messenger Room Name
+
+} // [ + ] WHILE: Retrieving List of Clear-Text File Messenger Room Names
+
+/*
+ ==================================================================================================================================================================
+ + Kill SQL Database Server Query: Select All From Clear-Text File Messenger Room Names
+ ==================================================================================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Messenger_DB_Query_SELECT_ALL_INCLUDE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAMES);
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Hidden Messenger Room
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "") {
+
+if ($_GET["Find"] == "") {
+
+
+} // [ + ] IF: Messenger Room: Specified Hidden Messenger Room
+
+} // [ + ] IF: Internal Application: Display Hidden Messenger Room :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Clear-Text File :: Upload File :: Audio
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UploadFile"] == "Audio") {
+
+/*
+ ============================================================================================================
+ + Check File :: Audio :: For Allowed File Extension Type
+ ============================================================================================================
+*/
+
+											echo ("* Checking For Audio File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_AUDIO)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_AUDIO_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_AUDIO_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Audio :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_AUDIO_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Audio/: $_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Audio :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_AUDIO_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Audio/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Audio File already exists in ./Audio/Files/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Audio File Deleted.<BR>");
+
+											echo ("* Audio File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Audio :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Audio File Type Is Allowed...<BR>");
+
+											echo ("* Uploading Audio File...<BR>");
+
+move_uploaded_file($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio']['tmp_name'], $_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME);
+
+											echo ("* Done...<BR>");
+
+											echo ("* Renaming Audio File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Audio File has been renamed.<BR>");
+
+											echo ("* Copying Audio File To File Type Directory Within Messenger Room:<BR>");
+
+											echo ("* Copying Audio File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Audio/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
+
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Audio/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Audio File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Audio File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Original Audio File Deleted.");
+
+											echo ("* Redirecting To Messenger Room...<BR>");
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+
+} // [ + ] IF: File :: Audio :: Already Exists Within: Audio Directory
+
+} else {
+
+											echo ("* Audio File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Audio File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Audio :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
+
+} // [ + ] IF: Internal Application: Upload File :: Audio :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Post Message :: Clear-Text File :: Upload File :: Document
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UploadFile"] == "Document") {
+
+/*
+ ============================================================================================================
+ + Check File :: Document :: For Allowed File Extension Type
+ ============================================================================================================
+*/
+
+											echo ("* Checking For Document File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_DOCUMENT)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Document :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Document/: $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Document :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_DOCUMENT_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Document File already exists in ./Document/Files/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Document File Deleted.<BR>");
+
+											echo ("* Document File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Document :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Document File Type Is Allowed...<BR>");
+
+											echo ("* Uploading Document File...<BR>");
+
+move_uploaded_file($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Document']['tmp_name'], $_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME);
+
+											echo ("* Done...<BR>");
+
+											echo ("* Renaming Document File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Document File has been renamed.<BR>");
+
+											echo ("* Copying Document File To File Type Directory Within Messenger Room:<BR>");
+
+											echo ("* Copying Document File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
+
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Document/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Document File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Document File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Document File Deleted.");
+
+											echo ("* Redirecting To Messenger Room...<BR>");
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+
+} // [ + ] IF: File :: Document :: Already Exists Within: Document Directory
+
+} else {
+
+											echo ("* Document File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Document File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Document :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
+
+} // [ + ] IF: Internal Application: Upload File :: Document :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Post Message :: Clear-Text File :: Upload File :: Image
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UploadFile"] == "Image") {
+
+/*
+ ============================================================================================================
+ + Check File :: Image :: For Allowed File Extension Type
+ ============================================================================================================
+*/
+
+											echo ("* Checking For Image File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_IMAGE)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Image :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Image/: $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Image :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_IMAGE_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Image File already exists in ./Files/Image/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Image File Deleted.<BR>");
+
+											echo ("* Image File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Image :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Image File Type Is Allowed...<BR>");
+
+											echo ("* Uploading Image File...<BR>");
+
+move_uploaded_file($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image']['tmp_name'], $_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME);
+
+											echo ("* Done...<BR>");
+
+											echo ("* Renaming Image File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Image File has been renamed.<BR>");
+
+											echo ("* Copying Image File To File Type Directory Within Messenger Room:<BR>");
+
+											echo ("* Copying Image File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
+
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Image/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Image File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Image File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Original Image File Deleted.");
+
+											echo ("* Redirecting To Messenger Room...<BR>");
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+
+} // [ + ] IF: File :: Image :: Already Exists Within: Image Directory
+
+} else {
+
+											echo ("* Image File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Image File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Image :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
+
+} // [ + ] IF: Internal Application: Upload File :: Image :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Post Message :: Clear-Text File :: Upload File :: Video
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UploadFile"] == "Video") {
+
+/*
+ ============================================================================================================
+ + Check File :: Video :: For Allowed File Extension Type
+ ============================================================================================================
+*/
+
+											echo ("* Checking For Video File Extension Type...<BR>");
+
+if (in_array($_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION, $_Application_Module_Member_Messenger_ALLOWED_FILE_EXTENSION_VIDEO)) {
+
+$_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE									= "1";
+
+} else {
+
+$_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE									= "0";
+
+} // [ + ] IF: File Extension :: Video :: Is In Allowed File Extension Array
+
+											echo ("* File Extension Type Is: $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+											echo ("* File Extension Type Is: $_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE Where 1 is allowed and 0 is not allowed.<BR>");
+
+											echo ("* Checking For Existing File Name In ./Files/Video/: $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR>");
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File :: Video :: Is Allowed File Extension
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Messenger_UPLOAD_FILE_VIDEO_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + IF: File Exists, Delete ELSE: Allow File Upload
+ ============================================================================================================
+*/
+
+if (file_exists("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME")) {
+
+											echo ("* Video File already exists in ./Files/Video/ ... Deleting Temporary File<BR>");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME");
+
+											echo ("* Video File Deleted.<BR>");
+
+											echo ("* Video File Upload Halted.<BR>");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move File :: Video :: To Temporary Directory
+ ============================================================================================================
+*/
+
+											echo ("* Video File Type Is Allowed...<BR>");
+
+											echo ("* Uploading Video File...<BR>");
+
+move_uploaded_file($_FILES['AM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video']['tmp_name'], $_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_FILE_NAME);
+
+											echo ("* Done...<BR>");
+
+											echo ("* Renaming Video File From: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION<BR>");
+
+rename("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME", "./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Video File has been renamed.<BR>");
+
+											echo ("* Copying Video File To File Type Directory Within Messenger Room:<BR>");
+
+											echo ("* Copying Video File From Location: ./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME To Location: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME<BR><BR>");
+
+copy("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION","./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/Files/Video/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Video File has been copied.<BR>");
+
+											echo ("* Deleting Orignal Video File From: ./Temporary/Upload");
+
+											unlink("./Temporary/Upload/$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_BASENAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_SPECIFY_UPLOAD_FILE_EXTENSION");
+
+											echo ("* Original Video File Deleted.");
+
+											echo ("* Redirecting To Messenger Room...<BR>");
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+
+} // [ + ] IF: File :: Video :: Already Exists Within: Video Directory
+
+} else {
+
+											echo ("* Video File Extension Type Is Not Allowed...<BR>");
+
+											echo ("* Video File Upload Halted.<BR>");
+
+} // [ + ] IF: File :: Video :: Is: Allowed Or Not Allowed In File Extensions Array AND Is: Prepared For Upload
+
+} // [ + ] IF: Internal Application: Upload File :: Video :: Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Post Message :: Clear-Text File Message Data
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Send"] == "ClearTextFileMessage") {
+
+/*
+ ============================================================================================================
+ + Open Clear-Text File Messenger Room Name Messenger File
+ ============================================================================================================
+*/
+
+echo ("* Writing Visible Clear-Text Messenger File Message: <I>$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE</I><BR>");
+
+echo ("* To Visible Clear-Text Messenger File Name: ./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN.html<BR>");
+
+$_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_MESSAGES_FILE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN/$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN.html", "a");
+
+/*
+ ============================================================================================================
+ + IF: Write Message To Clear-Text File Messenger Room Name Messenger File
+ ============================================================================================================
+*/
+
+if (fwrite($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_MESSAGES_FILE, "
+						<HR>
+					<A HREF=\"../../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" TARGET=\"_NEW\" TITLE=\":: Open & Display This Registered Member Account Profile Image :: \"><IMG SRC=\"../../../../../../Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_GLOBAL_MEMBER_IMAGE_PROFILE\" WIDTH=\"75\" HEIGHT=\"75\" CLASS=\"MessengerImageMemberProfile\"></A>
+						&nbsp;
+						<B><I><A HREF=\"../../../../../../$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_GLOBAL_COOKIE_MEMBER_USERNAME\" TARGET=\"_NEW\">$_GLOBAL_COOKIE_MEMBER_USERNAME</A> Wrote This Message:</B></I><BR>
+							----------------------------------------------<BR>
+							<BIG>&ldquo;</BIG><I>$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE</I><BIG>&rdquo;</BIG><BR>
+							----------------------------------------------<BR>
+							Message Details<BR>
+							----------------------------------------------<BR>
+							<B>This Message Timestamp, Local Server:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+							<B>Remote Internet Protocol Address, Sent From:</B>&nbsp;<A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A> :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+							<B>Local Internet Protocol Address, Sent From:</B>&nbsp;<A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
+							<B>Remote Device Sent From:</B>&nbsp;$_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT<BR>
+						<HR><BR>
+")) {
+
+echo ("* Done...<BR>");
+
+echo ("* Automatically Redirecting To Visible Clear-Text File Messenger Room: $_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN<BR>");
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN");
+
+} else {
+
+echo ("* Error: Unable To Write To Clear-Text File Messenger Room File.<BR>");
+
+/*
+ ============================================================================================================
+ + Close Clear-Text File Messenger Room Name Messages File
+ ============================================================================================================
+*/
+
+fclose($_Application_Module_Member_Messenger_FIND_VISIBILE_CLEAR_TEXT_MESSENGER_MESSAGES_FILE);
+
+} // [ + ] IF: Write Message Data To Clear-Text File Messenger Room Message File
+
+} // [ + ] IF: Clear-Text File Messenger Room Message Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Post Message :: Clear-Text File Message Data
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Erase"] == "$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
+
+if ($_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD) {
+
+/*
+ ============================================================================================================
+ + Select Data From Specified Clear-Text File Messenger Room In Database Management System
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_messenger_clear_text_file_room WHERE messenger_room_name='$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME' AND messenger_room_password_maintenance='$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED' ORDER BY id ASC");
+
+/*
+ ============================================================================================================
+ + IF: The Number of S.Q.L. Entries Is Greater Than 0 OR Equal To Zero
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME) >= 1) {
+
+$_Application_Module_Member_Messenger_ERASE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE						= fopen("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html", "a") or die("Unable To Write To The Visible Clear-Text Messenger Room: $_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+
+/*
+ ============================================================================================================
+ + Delete :: Clear-Text File Messenger Room Messages File
+ ============================================================================================================
+*/
+
+unlink("./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+
+/*
+ ============================================================================================================
+ + Copy :: Default Clear-Text File Messenger Room Messages File
+ ============================================================================================================
+*/
+
+copy("./Temporary/Messenger/Setup/Files/Default.html", "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME.html");
+
+/*
+ ============================================================================================================
+ + Write :: Default Clear-Text File Document Formatted Data
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Define Default Clear-Text File Document Formatted Data To Be Written To File
+ ============================================================================================================
+*/
+
+						echo ("*&nbsp;Writing Default Data To Visible Clear-Text File Messenger Room...<BR>");
+
+$_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE_DATA						= "<HTML>
+																													<HEAD>
+																															<TITLE>Messenger :: Log </TITLE>
+																																<LINK REL=\"stylesheet\" HREF=\"../../../../../../Theme/Global/Style_Sheet/Style.css\" TYPE=\"text/css\">
+																													</HEAD>
+																												<BODY>
+																													<BODY ONLOAD=\"window.scrollTo(0,document.body.scrollHeight);\">
+																												</BODY>
+																												</HTML>";
+
+/*
+ ============================================================================================================
+ + Write Default Clear-Text File Data To Messenger File
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Messenger_ERASE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE, $_Application_Module_Member_Messenger_ERASE_WRITE_CLEAR_TEXT_FILE_MESSENGER_FILE_DATA);
+
+						echo ("*&nbsp;Done<BR>");
+
+						echo ("*&nbsp;Closing File...<BR>");
+
+fclose($_Application_Module_Member_Messenger_ERASE_FIND_VISIBLE_CLEAR_TEXT_MESSENGER_FILE);
+
+						echo ("*&nbsp;Done<BR>");
+
+						echo ("*&nbsp;Redirecting To Visible Clear-Text Instant Messenger Room...<BR>");
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+
+} else {
+
+//header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+
+echo ("* Error: Incorrect Password: $_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_HASHED<BR>");
+
+} // [ + ] IF: Visible Clear-Text File Messenger Room Database Server Entries Is Greater Than Or Equal To One
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Specified Messenger Rooms :: For Erase
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Messenger_DB_Query_SELECT_ERASE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME);
+
+header("location: ./$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Messenger&SelectedClearTextFile=$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Visible Clear-Text File Messenger Room Erase Variable Have Executed
+
+} // [ + ] IF: Internal Application: Delete Specified Messenger Room Name
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Delete :: Specified Messenger Room Name
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteMessengerRoom"] == "$_Application_Module_Member_Messenger_POST_DELETE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
+
+} // [ + ] IF: Internal Application: Delete Specified Messenger Room Name
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Delete :: File Upload :: Specified Messenger Room File
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Delete"] == "UploadedFile") {
+	
+} // [ + ] IF: Internal Application :: Delete Uploaded File Is: Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Archive :: Specified Visible Clear-Text Messenger Room Name
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Archive"] == "$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME") {
+
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY						= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME";
+
+/*
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY 						= array();
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[0]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME";
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[1]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/";
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[2]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive";
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[3]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Audio";
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[4]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document";
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[5]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Image";
+$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY[6]					= "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Video";
+*/
+ 
+echo ("Archiving The Visible Clear-Text Messenger Room :: $_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME");
+
+// Enter the name of directory
+$pathdir = "$_Application_Module_Member_Messenger_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_DIRECTORY"; 
+  
+// Enter the name to creating zipped directory
+//$zipcreated = "./Temporary/Messenger/Text-File/Clear-Text/Visible/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Archive/$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.zip";
+$zipcreated = "$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME - $_Application_Module_Member_Messenger_RANDOM_NUMBER_GENERATOR_1_HASH_MD5_1.zip";
+
+// Create new zip class
+$zip = new ZipArchive;
+   
+if ($zip->open($zipcreated, ZipArchive::CREATE ) === TRUE) {
+      
+    // Store the path into the variable
+    $dir = opendir($pathdir);
+       
+    while ($file = readdir($dir)) {
+        if(is_file($pathdir.$file)) {
+            $zip -> addFile($pathdir.$file, $file);
+        }
+    }
+    $zip ->close();
+}
+
+} // [ + ] IF: Internal Application: Archive Visible Clear-Text Messenger Room Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Option :: Short Messaging Service
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Option"] == "SMS") {
+
+if (!$_Application_Module_Member_Messenger_POST_SMS_MESSAGE) {
+
+echo ("
+
+												<B>Short Messaging Service :: Message</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS\" METHOD=\"POST\">
+													* <I>Mobile Device Service Provider</I>:<BR>
+														<SELECT NAME=\"AM_Messenger_SMS_Mobile_Device_Carrier\">
+															<OPTION VALUE=\"\">United States of America</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"txt.att.net\">USA :: American Telephone and Telegraph</OPTION>
+															<OPTION VALUE=\"smsmyboostmobile.com\">USA :: Boost Mobile</OPTION>
+															<OPTION VALUE=\"sms.cricketwireless.net\">USA :: Cricket</OPTION>
+															<OPTION VALUE=\"mymetropcs.com\">USA :: Metro Personal Communications Service</OPTION>
+															<OPTION VALUE=\"tmomail.net\">USA :: T-Mobile</OPTION>
+															<OPTION VALUE=\"email.ussc.net\">USA :: U.S. Cellular</OPTION>
+															<OPTION VALUE=\"vmobil.com\">USA :: Virgin Mobile</OPTION>
+															<OPTION VALUE=\"vtext.com\">USA :: Verizon</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"\">Digital, Emulated and Simulated Mobile Device Carriers</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"textnow.com\">TextNow !</OPTION>
+														</SELECT><BR>
+													* <I>Mobile Device Service Provider Phone Number</I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_SMS_Mobile_Device_Carrier_Phone_Number\" VALUE=\"+1\" MAXLENGTH=\"14\"><BR>
+													* <I>Short Messaging Service Message</I>:<BR>
+													[ Maximum Length: 160 Alpha-Numeric Characters ]<BR>
+														<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"160\" NAME=\"AM_Messenger_SMS_Message\" ID=\"WYSIWYG\">Write Short Messaging Service Messages Here...</TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Send Message\">
+												</FORM>
+
+");
+
+} else {
+
+if(mail("$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER","Short Messaging Service Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME @ $_GLOBAL_SYSTEM_SITE_TITLE","
+---
+\"$_Application_Module_Member_Messenger_POST_SMS_MESSAGE\"
+---
+$_GLOBAL_REMOTE_SERVER_ADDRESS
+")) {
+
+												echo ("Message Sent!<BR>$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Member_Messenger_POST_SMS_MESSAGE");
+
+} else {
+
+												echo ("Error: Message Has Not Sent!<BR>$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER $_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Member_Messenger_POST_SMS_MESSAGE");
+
+} // [ + ] IF: Short Messaging Service Electronic Mail Message Has Sent
+
+} // [ + ] IF: Internal Application: Short Messaging Service Application Form Variables Have Executed
+
+} // [ + ] IF: Option: Short Messaging Service
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Option :: Multimedia Messaging Service
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Option"] == "MMS") {
+
+if (!$_Application_Module_Member_Messenger_POST_MMS_MESSAGE) {
+
+echo ("
+
+												<B>Multimedia Messaging Service :: Message</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;MMS\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+													* <I>Mobile Device Service Provider</I>:<BR>
+														<SELECT NAME=\"AM_Messenger_MMS_Mobile_Device_Carrier\">
+															<OPTION VALUE=\"\">United States of America</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"txt.att.net\">USA :: American Telephone and Telegraph</OPTION>
+															<OPTION VALUE=\"smsmyboostmobile.com\">USA :: Boost Mobile</OPTION>
+															<OPTION VALUE=\"sms.cricketwireless.net\">USA :: Cricket</OPTION>
+															<OPTION VALUE=\"mymetropcs.com\">USA :: Metro Personal Communications Service</OPTION>
+															<OPTION VALUE=\"tmomail.net\">USA :: T-Mobile</OPTION>
+															<OPTION VALUE=\"email.ussc.net\">USA :: U.S. Cellular</OPTION>
+															<OPTION VALUE=\"vmobil.com\">USA :: Virgin Mobile</OPTION>
+															<OPTION VALUE=\"vtext.com\">USA :: Verizon</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"\">Digital, Emulated and Simulated Mobile Device Carriers</OPTION>
+															<OPTION VALUE=\"\">------------------------------------------</OPTION>
+															<OPTION VALUE=\"textnow.com\">TextNow !</OPTION>
+														</SELECT><BR>
+													* <I>Mobile Device Service Provider Phone Number</I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Messenger_MMS_Mobile_Device_Carrier_Phone_Number\" VALUE=\"+1\" MAXLENGTH=\"14\"><BR>
+													* <I>Short Messaging Service Message</I>:<BR>
+													[ Maximum Length: 160 Alpha-Numeric Characters ]<BR>
+														<TEXTAREA ROWS=\"10%\" COLS=\"80%\" MAXLENGTH=\"160\" NAME=\"AM_Messenger_MMS_Message\" ID=\"WYSIWYG\">Write Multimedia Messaging Service Messages Here...</TEXTAREA><BR>
+														* <I>Upload Unique File To This Multimedia Messaging Service Message</I>:<BR>
+														[ Permitted Audio, Document, Image, Package and Video Files ]<BR>
+														* PNG, JPG, TIF / TIFF, BMP, TGA, DPE<BR>
+														* WAV, MP3, WMA, AAC, FLAC, OGG, WMA<BR>
+														* AVI, MP4, MOV, WMV, AVCHD, FLV, SWF, MKV, WEBM<BR>
+														* DOC, XLS, PPT, PDF, EPS, PSD, TXT<BR>
+														* ZIP, TAR, TAR.GZ, GIT, Mercurial<BR>
+													<INPUT TYPE=\"file\" NAME=\"AM_Messenger_MMS_Message_File_Upload\" MAXLENGTH=\"60\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Send Message\">
+												</FORM>
+
+");
+
+} else {
+
+if (mail("$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER","Multimedia Messaging Service Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME @ $_GLOBAL_SYSTEM_SITE_TITLE","
+---
+\"$_Application_Module_Member_Messenger_POST_MMS_MESSAGE\"
+---
+$_GLOBAL_REMOTE_SERVER_ADDRESS
+")) {
+
+												echo ("Message Sent !<BR>$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER@$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Member_Messenger_POST_MMS_MESSAGE");
+
+} else {
+
+												echo ("Error: Message Has Not Sent!<BR>$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER $_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER<BR>$_Application_Module_Member_Messenger_POST_MMS_MESSAGE");
+
+} // [ + ] IF: Multimedia Messaging Service Electronic Mail Message Has Sent
+
+} // [ + ] IF: Internal Application: Multimedia Messaging Service Application Form Variables Have Executed
+
+} // [ + ] IF: Option: Multimedia Messaging Service
+?>

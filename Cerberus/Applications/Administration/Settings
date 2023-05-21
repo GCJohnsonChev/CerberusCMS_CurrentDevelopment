@@ -1,0 +1,331 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Settings
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: System Settings Management
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Databse Query: Select System Settings Entry
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings ORDER BY id ASC LIMIT 1");
+
+while ($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS)) {
+
+/*
+ ============================================================================================================
+ + List :: Systyem Settings Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_TIME_COOKIES					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_time_cookies'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_EMBEDDED_COMPRESSION_GZIP			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_embedded_compression_gzip'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_IMAGE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_image'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_LANGUAGE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_language'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_OFFLINE_MODE				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_status_offline_mode'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_WEBSITE_TITLE					= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_website_title'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_file_extension_audio'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_THEME				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_directory_theme'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private_member'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER_STREAMS		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_private_member_streams'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PUBLIC_FILE_CATEGORIES		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_public_file_categories'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PUBLIC_MESSENGER			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_upload_size_public_messenger'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_LOCATION			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_location'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_LOCATION				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_location'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SMILEYS			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_smileys'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_TEXT_EDITOR			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_text_editor'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_TEXT_EDITOR			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_text_editor'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML			= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_directory_safeHTML'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_SAFEHTML				= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_plugin_status_safeHTML'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_SECURITY_MODULE_DIRECTORY_SANITIZATION		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_security_module_directory_sanitization'];
+$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_SECURITY_MODULE_STATUS_SANITIZATION		= $_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS_Fetch_Array['settings_system_security_module_status_sanitization'];
+
+/*
+ ============================================================================================================
+ +
+ + System Settings Update Form :: Variables :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Settings_POST_UPDATE_TIME_COOKIE						= $_POST['AM_Settings_Update_Time_Cookie'];
+$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_GZIP						= $_POST['AM_Settings_Update_Status_GZIP'];
+$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION					= $_POST['AM_Settings_Update_Image_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_LANGUAGE					= $_POST['AM_Settings_Update_Directory_Language'];
+$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_OFFLINE_MODE					= $_POST['AM_Settings_Update_Status_Offline_Mode'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE						= $_POST['AM_Settings_Update_Site_Title'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SMILEYS					= $_POST['AM_Settings_Update_Directory_Smileys'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION					= $_POST['AM_Settings_Update_Sound_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_THEME					= $_POST['AM_Settings_Update_Directory_Theme'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER				= $_POST['AM_Settings_Update_Upload_Size_Private_Member'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER_STREAMS			= $_POST['AM_Settings_Update_Upload_Size_Private_Member_Streams'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PUBLIC_FILE_CATEGORIES			= $_POST['AM_Settings_Update_Upload_Size_Public_File_Categories'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_MESSENGER					= $_POST['AM_Settings_Update_Upload_Size_Public_Messenger'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_TEXT_EDITOR					= $_POST['AM_Settings_Update_Directory_Text_Editor'];
+$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_TEXT_EDITOR					= $_POST['AM_Settings_Update_Status_Text_Editor'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_LOCATION					= $_POST['AM_Settings_Update_Directory_Location'];
+$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_LOCATION					= $_POST['AM_Settings_Update_Status_Location'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SAFEHTML					= $_POST['AM_Settings_Update_Directory_SafeHTML'];
+$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_SAFEHTML					= $_POST['AM_Settings_Update_Status_SafeHTML'];
+$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SECURITY_MODULE_SANITIZATION			= $_POST['AM_Settings_Update_Directory_Security_Module_Sanitization'];
+$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_SECURITY_MODULE_SANITIZATION			= $_POST['AM_Settings_Update_Status_Security_Module_Sanitization'];
+
+/*
+ ============================================================================================================
+ +
+ + System Settings :: Update Form
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Update :: System Settings From Variables Have NOT Executed, Display System Settings Update Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE) {
+
+echo ("
+													<CENTER><B>Update System Settings</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Settings\" METHOD=\"post\">
+
+														System Plug-Ins<HR>
+														Default Location Plug-In Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Directory_Location\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_LOCATION\" MAXLENGTH=\"50\"><BR><BR>
+															Location Plug-In Status:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_LOCATION ]<BR>
+																<SELECT NAME=\"AM_Settings_Update_Status_Location\">
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																</SELECT><BR><BR>
+															Default Safe-HyperText-Markup-Language Plug-In Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Directory_SafeHTML\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SAFEHTML\" MAXLENGTH=\"50\"><BR><BR>
+															Safe Hyper-Text-Markup-Language Plugin Status:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_SAFEHTML ]<BR>
+																<SELECT NAME=\"AM_Settings_Update_Status_SafeHTML\">
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																</SELECT><BR><BR>
+															Default Text-Editor Plug-In Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Directory_Text_Editor\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_TEXT_EDITOR\" MAXLENGTH=\"50\"><BR><BR>
+															Text-Editor Plug-In Status:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_STATUS_TEXT_EDITOR ]<BR>
+																<SELECT NAME=\"AM_Settings_Update_Status_Text_Editor\">
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																</SELECT><BR><BR>
+															Default Smiley-Face(s) / Emoji Plug-In Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Directory_Smileys\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_PLUGIN_DIRECTORY_SMILEYS\" MAXLENGTH=\"50\"><BR><BR>
+
+														System Security Modules<HR>
+															Master Sanitization:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_SECURITY_MODULE_STATUS_SANITIZATION ]<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Status_Security_Module_Sanitization\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_SECURITY_MODULE_STATUS_SANITIZATION\" MAXLENGTH=\"10\"><BR>
+																<SELECT NAME=\"AM_Settings_Update_Status_Security_Module_Sanitization\">
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																</SELECT><BR><BR>
+
+														System Generated Cookies<HR>
+															Cookie / Session Time Expiration:<BR>
+															[ In Seconds ]<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Time_Cookie\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_TIME_COOKIES\" MAXLENGTH=\"10\"><BR><BR>
+
+														Website File Compression<HR>
+															G.N.U. ZIP Compression Status:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_EMBEDDED_COMPRESSION_GZIP ]<BR>
+																<SELECT NAME=\"AM_Settings_Update_Status_GZIP\">
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																</SELECT><BR><BR>
+
+														System File Extensions<HR>
+															System-Wide Image Extension:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Image_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_IMAGE\" MAXLENGTH=\"3\"><BR><BR>
+															Theme Audio File Extension:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Sound_Extension\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO\" MAXLENGTH=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_FILE_EXTENSION_AUDIO\"><BR><BR>
+
+														System Languages<HR>
+															Default Language Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Directory_Language\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_DIRECTORY_LANGUAGE\" MAXLENGTH=\"50\"><BR><BR>
+
+														Website Settings<HR>
+															OFFLINE Mode Status:<BR>
+															[ Current: $_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_STATUS_OFFLINE_MODE ]<BR>
+																<SELECT NAME=\"AM_Settings_Update_Status_Offline_Mode\">
+																	<OPTION VALUE=\"0\">0: Off</OPTION>
+																	<OPTION VALUE=\"1\">1: On</OPTION>
+																</SELECT><BR><BR>
+
+															Website Browser Title:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Site_Title\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_WEBSITE_TITLE\" MAXLENGTH=\"250\"><BR><BR>
+
+															Default System Theme Directory:<BR>
+																<SELECT NAME=\"AM_Settings_Update_Directory_Theme\">
+");
+
+/*
+ ============================================================================================================
+ + Update :: Default System Theme Directory
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Settings_SPECIFY_THEME_DIRECTORY						= "./Theme/";
+$_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY						= opendir($_Application_Module_Administration_Settings_SPECIFY_THEME_DIRECTORY);
+
+while (($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY = readdir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY))) {
+
+if ($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == ".." || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "index.php" || $_Application_Module_Administration_Settings_READ_THEME_DIRECTORY == "Global") {
+/**
+ * Do Nothing
+**/
+} else {
+
+																	echo ("<OPTION VALUE=\"$_Application_Module_Administration_Settings_READ_THEME_DIRECTORY\">$_Application_Module_Administration_Settings_READ_THEME_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Theme Directory IS NOT Specified Files AND Directory
+
+} // [ + ] WHILE: Reading Specified Theme Directory And Files
+
+/*
+ ============================================================================================================
+ + Close :: Directory: System Theme Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY);
+
+echo ("
+																</SELECT><BR><BR>
+
+														File Upload and Download System Settings<HR>
+															Upload Size Limitation :: Private :: Registered Member Account :: Member Directory:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Upload_Size_Private_Member\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER\" MAXLENGTH=\"15\"><BR><BR>
+															Upload Size Limitations :: Public :: File Categories:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Upload_Size_Public_File_Categories\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PUBLIC_FILE_CATEGORIES\" MAXLENGTH=\"15\"><BR>
+															Upload Size Limitations :: Public :: Messenger:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Upload_Size_Public_Messenger\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PUBLIC_MESSENGER\" MAXLENGTH=\"15\"><BR>
+															Upload Size Limitations :: Private :: Registered Member Account :: Streams:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Settings_Update_Upload_Size_Private_Member_Streams\" VALUE=\"$_Application_Module_Administration_Settings_LIST_SETTING_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER_STREAMS\" MAXLENGTH=\"15\"><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update System Settings\">
+														</FORM>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Update Form :: Variables Have Executed, Update :: Database Management System :: Settings Entry
+ +
+ ============================================================================================================
+*/
+
+} else {
+
+$_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_settings SET 
+settings_system_time_cookies='$_Application_Module_Administration_Settings_POST_UPDATE_TIME_COOKIE',
+settings_system_status_embedded_compression_gzip='$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_GZIP',
+settings_system_status_offline_mode='$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_OFFLINE_MODE',
+settings_system_file_extension_audio='$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION',
+settings_system_file_extension_image='$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION',
+settings_system_directory_language='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_LANGUAGE',
+settings_system_directory_theme='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_THEME',
+settings_system_website_title='$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE',
+settings_system_upload_size_private_member='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_MEMBER',
+settings_system_upload_size_private_member_streams='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PRIVATE_STREAMS',
+settings_system_upload_size_public_file_categories='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PUBLIC_FILE_CATEGORIES',
+settings_system_upload_size_public_messenger='$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_SIZE_PUBLIC_MESSENGER',
+settings_system_plugin_directory_location='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_LOCATION',
+settings_system_plugin_directory_smileys='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SMILEYS',
+settings_system_plugin_directory_safeHTML='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SAFEHTML',
+settings_system_plugin_directory_text_editor='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_TEXT_EDITOR',
+settings_system_plugin_status_location='$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_LOCATION',
+settings_system_plugin_status_safeHTML='$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_SAFEHTML',
+settings_system_plugin_status_text_editor='$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_TEXT_EDITOR',
+settings_system_security_module_directory_sanitization='$_Application_Module_Administration_Settings_POST_UPDATE_DIRECTORY_SECURITY_MODULE_SANITIZATION',
+settings_system_security_module_status_sanitization='$_Application_Module_Administration_Settings_POST_UPDATE_STATUS_SECURITY_MODULE_SANITIZATION'
+WHERE id='1'");
+
+if ($_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS) {
+
+													echo ($_Application_Module_Administration_Message_Settings_SETTINGS_UPDATED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Updaate System Settings Variable Has Executed
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update System Settings
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Settings_DB_Query_UPDATE_SETTINGS);
+
+} // [ + ] IF: Update System Settings Form Variables Have Executed
+
+} // [ + ] WHILE: Retrieving System Settings From Database
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select System Settings
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Settings_DB_Query_SELECT_SETTINGS);
+?>
