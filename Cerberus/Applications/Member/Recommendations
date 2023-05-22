@@ -65,7 +65,7 @@
 
 echo ("
 <B>Personal :: Recommended Device Firmware, Operating Systems and Software</B><BR>
-------------------------------------------------------------------------------------<BR>
+--------------------------------------------------<BR>
 * Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: LineageOS<BR>
 * Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: Linux Mobile<BR>
 * Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Arch-Linux Based<BR>
@@ -76,6 +76,7 @@ echo ("
 * Personal :: Home Router :: Operating System :: Security Hardened Free-BSD<BR>
 
 <B>Personal :: Recommended Electronic Devices</B><BR>
+--------------------------------------------------<BR>
 * Personal :: Laptop / NoteBook :: Lenovo :: T-460s Through To T-560s :: AMD CPU / Dedicated GPU<BR>
 * Personal :: Laptop / NoteBook :: Samsung :: Galaxy Book :: With AMD CPU / Dedicated GPU<BR>
 * Personal :: Smart Watch :: Lenovo Smart Watch<BR>
@@ -88,8 +89,10 @@ echo ("
 * Personal :: Home Router :: Custom Built<BR><BR>
 
 <B>Personal :: Web Server :: Recommended Hardware</B><BR>
-*
+--------------------------------------------------<BR>
+
 <B>Personal :: Recommended Applications :: AOSP</B><BR>
+--------------------------------------------------<BR>
 * gApps Pico
 * IPTables
 * DNSCrypt
