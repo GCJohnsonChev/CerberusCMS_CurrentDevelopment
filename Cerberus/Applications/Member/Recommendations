@@ -71,10 +71,10 @@ echo ("
 * Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: Linux Mobile<BR><BR>
 
 <B>Laptop / NoteBook</B><BR>
-* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Arch-Linux Based<BR>
-* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Free-BSD Based<BR>
 * Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Firmware :: BIOS :: Linux-BIOS<BR>
 * Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Firmware :: BIOS :: CoreBoot<BR><BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Arch-Linux Based<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Free-BSD Based<BR>
 
 <B>Router</B><BR>
 * Personal :: Home Router :: Firmware :: Security Hardened FreshTomato<BR>
