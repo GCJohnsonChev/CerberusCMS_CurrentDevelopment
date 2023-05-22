@@ -146,8 +146,8 @@ echo ("
 * Apache<BR>
 * MySQL<BR>
 * PHP<BR>
-* SIP Server, FreePBX<BR>
-* Electronic Mail Server, Mailcow<BR>
+* SIP Server<BR>
+* Electronic Mail Server<BR>
 * DNSCrypt<BR>
 * Network Information Security Tools<BR><BR>
 
