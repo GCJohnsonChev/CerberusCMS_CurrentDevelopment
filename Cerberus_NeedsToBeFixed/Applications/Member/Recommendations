@@ -73,7 +73,7 @@ echo ("
 <B>Mobile Device :: Firmware</B><BR>
 * Personal :: Mobile Cell Device :: Component :: Firmware :: Modem :: FireModem<BR>
 * Personal :: Mobile Cell Device :: Component :: Firmware :: SoC :: <BR>
-* Personal :: Mobile Cell Device :: Component :: Firmware :: eMMC ::<BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: eMMC / Flash ::<BR>
 * Personal :: Mobile Cell Device :: Component :: Firmware :: Display ::<BR>
 * Personal :: Mobile Cell Device :: Component :: Firmware :: WLAN :: <BR>
 * Personal :: Mobile Cell Device :: Component :: Firmware :: BlueTooth :: <BR>
