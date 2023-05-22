@@ -148,7 +148,9 @@ echo ("
 <B>Networking Blocking / Network Filtering</B>
 
 <B>Intelligence Gathering</B>
-Image Recognition / Facial Recognition
+Image Recognition / Facial Recognition / Human Identity Recognition
+Discoverability
+License Plate Scanner
 
 <B>
 ");
