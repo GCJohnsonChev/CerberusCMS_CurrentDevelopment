@@ -17,7 +17,7 @@
  +  ------------------------------
  +  Application Module
  + ----------------------------------------------------------------------------------------------------------
- + - This File, Location	 : Root Directory => Applications => Member => Recommended_Software
+ + - This File, Location	 : Root Directory => Applications => Member => Recommendations
  + - This File, Version		 : 0.7.1
  + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
  + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
@@ -48,7 +48,7 @@
  +
  +
  +
- + [ ^ ] Application Module :: Member :: Recommended Software
+ + [ ^ ] Application Module :: Member :: Recommendations
  +
  +
  +
