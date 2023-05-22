@@ -90,7 +90,6 @@ echo ("
 <B>Personal :: Web Server :: Recommended Hardware</B><BR>
 *
 <B>Personal :: Recommended Applications :: AOSP</B><BR>
-<B>Software Repository :: AOSP :: F-Droid</B><BR>
 * gApps Pico
 * IPTables
 * DNSCrypt
@@ -100,7 +99,7 @@ echo ("
 * HTTPS Everywhere
 * Ghostery
 * NOSCRIPT
-* Google VOice
+* Google Voice
 * TTorrent Lite
 * Termux
 * Terminal
@@ -110,5 +109,9 @@ echo ("
 * PDFReader
 * FOSSHub / FOSS Repo
 * Network Monitor
+* KeePass
+* TeamSpeak
+* Discord
+* PGPAuth
 ");
 ?>
