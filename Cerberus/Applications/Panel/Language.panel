@@ -1,0 +1,100 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  --  ()
+ +  ()  --  ()  ()
+ +  ------------------------------
+ +  Panel Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Panel => Language.panel
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Panel :: Language Selection
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Display All System Languages
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Specify and Open System Language Directories
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Block_Language_SPECIFY_LANGUAGE_DIRECTORY			= "./System/Language/";
+$_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY			= opendir($_Application_Module_Block_Language_SPECIFY_LANGUAGE_DIRECTORY);
+
+											echo ("<FORM ACTION=\"?InternalApplication&#61;Language\" METHOD=\"post\"><SELECT NAME=\"post_language\">");
+
+while (($_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY = readdir($_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY))) {
+
+if ($_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == "." || $_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == ".." || $_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ("<OPTION VALUE=\"$_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY\">$_Application_Module_Block_Language_READ_LANGUAGE_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Language Directory ARE NOT Specified Files And Directory
+
+} // [ + ] WHILE: Reading Language Directory
+											echo ("</SELECT><BR><INPUT TYPE=\"submit\" VALUE=\"Set Language\"></FORM><HR><CENTER>[&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Language\" TITLE=\":: Open & Display The Application Module :: Languages ::\">All Languages</A>&nbsp;]");
+
+/*
+ ============================================================================================================
+ + Close System Languages Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Block_Language_OPEN_LANGUAGE_DIRECTORY);
+?>

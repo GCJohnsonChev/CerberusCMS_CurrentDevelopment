@@ -1,0 +1,526 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Web_Pages
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: Custom Applications
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Install Link Form :: Variables :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_POST_LINK_NAME				= $_POST['AM_Web_Pages_Install_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_NAME);
+$_Application_Module_Administration_Web_Pages_POST_LINK_URL				= $_POST['AM_Web_Pages_Install_Link_URL'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_URL				= preg_replace("/'/", "&#39;", $_Application_Module_Administration_Web_Pages_POST_LINK_URL);
+$_Application_Module_Administration_Web_Pages_POST_LINK_TYPE				= $_POST['AM_Web_Pages_Install_Link_Type'];
+
+/*
+ ============================================================================================================
+ +
+ + Install Link Form
+ +
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Web_Pages_POST_LINK_NAME)) {
+
+echo ("
+											<CENTER><B>Install Link Entry</B></CENTER><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages\" METHOD=\"post\">
+													Link Entry Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Install_Link_Name\" MAXLENGTH=\"250\"><BR>
+													Link Entry Uniform-Resource-Location:<BR>
+													Where Does This Link Lead To ? Example: <I>My_Pictures.html</I> or <I>My_Pictures.php</I><BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Install_Link_URL\" MAXLENGTH=\"250\"><BR>
+													Link Entry Type:<BR>
+														<SELECT NAME=\"AM_Web_Pages_Install_Link_Type\">
+															<OPTION VALUE=\"1\">Custom Text / HTML Document</OPTION>
+															<OPTION VALUE=\"2\">Uploaded Application</OPTION>
+														</SELECT><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Install Link Entry\">
+												</FORM><BR>
+");
+
+} else {
+
+if ($_Application_Module_Administration_Web_Pages_POST_LINK_TYPE == 1) {
+
+/*
+ ============================================================================================================
+ + IF: Link Type Is: Custom Text OR Hyper-Text-Markup-Language Document
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('$_Application_Module_Administration_Web_Pages_POST_LINK_NAME','1','?$_INTERNAL_CUSTOM_MODULE=$_Application_Module_Administration_Web_Pages_POST_LINK_URL')");
+
+} // [ + ] IF: Link Type IS Option: 1
+
+/*
+ ============================================================================================================
+ + IF: Link Type Is: Uploaded Application File
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Web_Pages_POST_LINK_TYPE == 2) {
+
+$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links(application_link_name,application_link_row,application_link_url)VALUES('$_Application_Module_Administration_Web_Pages_POST_LINK_NAME','1','?$_INTERNAL_USER_MODULE=$_Application_Module_Administration_Web_Pages_POST_LINK_URL')");
+
+} // [ + ] IF: Link Type IS Option: 2
+
+/*
+ ============================================================================================================
+ + IF: Execute Database Server Query Variable: Install Custom Link
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_LINK) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_LINK_INSTALLED_SUCCESSFULLY);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Install Link Entry Variable Has Executed
+
+} // [ + ] IF: Install Link Entry Form Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve Existing Links From Database Server
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links ORDER BY application_link_row ASC");
+
+if ($DB->num_rows($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS) <= 0) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_NO_LINKS_EXIST);
+
+} else {
+
+											echo ("<HR><CENTER><B>Existing Link Entries</B></CENTER><HR>");
+
+while ($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS)) {
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve Link Entries From Database Server
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_LIST_LINK_ID				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch_Array['id'];
+$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch_Array['application_link_name'];
+$_Application_Module_Administration_Web_Pages_LIST_LINK_ROW				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch_Array['application_link_row'];
+$_Application_Module_Administration_Web_Pages_LIST_LINK_URL				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS_Fetch_Array['application_link_url'];
+
+/*
+ ============================================================================================================
+ +
+ + Display Existing Links From Database Server For Selection
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<CENTER><TABLE BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" WIDTH=\"100%\"><TR>
+											<TD WIDTH=\"90%\">Link Entry Name: <B>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</B></TD>
+												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;DeleteLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Delete The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Delete</A></TD>
+												<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdateLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" TITLE=\"Update The Application Link :: $_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\">Update</A></TD>
+											</TR></TABLE></CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Delete Link Entry
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteLinkID"] == "$_Application_Module_Administration_Web_Pages_LIST_LINK_ID") {
+
+$_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links WHERE id='$_Application_Module_Administration_Web_Pages_LIST_LINK_ID'");
+
+if ($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_LINK_DELETED_SUCCESSFULLY);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Delete Link Entry Variable Has Executed
+
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete Link Entry By ID
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_LINK);
+
+} // [ + ] IF: Internal Application: Delete Link By ID Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Update Selected Link Entry
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateLinkID"] == "$_Application_Module_Administration_Web_Pages_LIST_LINK_ID") {
+
+/*
+ ============================================================================================================
+ + Update Link Entry :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME			= $_POST['AM_Web_Pages_Update_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW			= $_POST['AM_Web_Pages_Update_Link_Row'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL			= $_POST['AM_Web_Pages_Update_Link_URL'];
+
+/*
+ ============================================================================================================
+ +
+ + Update Link Entry Form
+ +
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME) || (!$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW) || (!$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL)) {
+
+echo ("
+											<BR><BR><HR><CENTER><B>Currently Updating Link Entry: <I>$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME</I></B></CENTER><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdateLinkID&#61;$_Application_Module_Administration_Web_Pages_LIST_LINK_ID\" METHOD=\"post\">
+													Link Entry Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Update_Link_Name\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_NAME\" MAXLENGTH=\"250\"><BR>
+													Link Entry Row:<BR>
+													Which Row ? 1-X Example: 1 would place this Link to the top of the Links list<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Update_Link_Row\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_ROW\" MAXLENGTH=\"3\"><BR>
+													Link Entry Uniform-Resource-Location:<BR>
+													Where Does This Link Lead To ? Example: <I>My_Pictures.html</I> or <I>My_Pictures.php</I><BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Update_Link_URL\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_LINK_URL\" MAXLENGTH=\"250\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Update Link Entry\">
+												</FORM><HR><BR><BR>
+");
+
+} else {
+
+$_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_application_links SET application_link_name='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME',application_link_row='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW',application_link_url='$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL' WHERE id='$_Application_Module_Administration_Web_Pages_LIST_LINK_ID'");
+
+if ($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_LINK_UPDATED_SUCCESSFULLY);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Update Link Entry Varible Has Executed
+
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Link Entry By ID
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_LINK);
+
+} // [ + ] IF: Update Link Entry Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Update Link Entry Variables Have Executed
+
+} // [ + ] WHILE: Retrieving Link Entries From Database
+
+} // [ + ] IF: Number of Rows In Database IS Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select Link Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS);
+
+/*
+ ============================================================================================================
+ +
+ + Install Custom Web Page Entries and Custom Web Application Entries
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Install Web Page Entry Form :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 			= $_POST['AM_Web_Pages_Install_Web_Page_Name'];
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME);
+
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 			= $_POST['AM_Web_Pages_Install_Web_Page_Data'];
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA);
+
+/*
+ ============================================================================================================
+ +
+ + Install Web Page Entry Form
+ +
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME) || (!$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA)) {
+
+echo ("
+											<BR><BR><HR><CENTER><B>Install Custom Web Page</B></CENTER><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages\" METHOD=\"post\">
+													Custom Web Page Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Install_Web_Page_Name\" MAXLENGTH=\"250\"><BR>
+													Custom Web Page Data:<BR>
+												$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Web_Pages_Install_Web_Page_Data\" ID=\"WYSIWYG\"></TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Install Custom Web Page\">
+												</FORM>
+");
+
+} else {
+
+$_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_PAGE			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom(custom_application_data,custom_application_name,custom_application_time)VALUES('$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA','$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD')");
+
+if ($_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_PAGE) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_INSTALLED_SUCCESSFULLY);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Install Custom Web Page Variable Has Executed
+
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Install Custom Web Page Entry
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_PAGE);
+
+} // [ + ] IF: Install Custom Web Page Form Variables Have Executed
+
+/*
+ ============================================================================================================
+ + Retrieve Existing Custom Web Page Entries From Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom ORDER BY custom_application_name ASC");
+
+echo ("											<BR><HR><CENTER><B>Existing Custom Web Page Entries</B></CENTER><HR>");
+
+while ($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES)) {
+
+/*
+ ============================================================================================================
+ + List Existing Web Page Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES_Fetch_Array['id'];
+$_Application_Module_Administration_Web_Pages_LIST_PAGE_DATA				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES_Fetch_Array['custom_application_data'];
+$_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES_Fetch_Array['custom_application_name'];
+$_Application_Module_Administration_Web_Pages_LIST_PAGE_TIME				= $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES_Fetch_Array['custom_application_time'];
+
+$_Application_Module_Administration_Web_Pages_LIST_PAGE_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK, $_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Administration_Web_Pages_LIST_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_LIST_PAGE_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Administration_Web_Pages_LIST_PAGE_DATA);
+
+echo ("
+											<CENTER><TABLE BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\" WIDTH=\"100%\"><TR>
+												<TD WIDTH=\"90%\">Custom Web Application Name: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_CUSTOM&#61;$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID\" TITLE=\":: Open & Display The Custom Web Application :: $_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME\">$_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME</A></TD>
+													<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;DeletePageID&#61;$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID\" TITLE=\"Delete The Custom Web Application :: $_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME\">Delete</A></TD>
+													<TD><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdatePageID&#61;$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID\" TITLE=\"Update The Custom Web Application :: $_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME\">Update</A></TD>
+												</TR></TABLE></CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Delete Selected Web Page Entry
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeletePageID"] == "$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID") {
+
+$_Application_Module_Administration_Web_Pages_DB_Query_DELETE_PAGE			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom WHERE id='$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query: Delete Custom Web Page Variable Is Executed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_PAGE) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_DELETED_SUCCESSFULLY);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Delete Custom Web Page By ID Variable Has Executed
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_DELETE_PAGE);
+
+} // [ + ] IF: Internal Application: Delete Custom Web Page By ID Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Update Custom Web Page Entries and Custom Web Application Entries
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UpdatePageID"] == "$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID") {
+
+/*
+ ============================================================================================================
+ + Update Web Page Entry Form :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME			= $_POST['AM_Web_Pages_Update_Custom_Application_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME);
+
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA			= $_POST['AM_Web_Pages_Update_Custom_Application_Data'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_TIME			= $_POST['AM_Web_Pages_Update_Custom_Application_Timestamp'];
+
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA);
+
+/*
+ ============================================================================================================
+ +
+ + Update Web Page Form
+ +
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME) || (!$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA)) {
+
+echo ("
+											<BR><BR><HR><CENTER><B>Currently Updating Custom Web Page Entry: <I>$_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME</I></B></CENTER><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;UpdatePageID&#61;$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID\" METHOD=\"post\">
+													Custom Web Page Entry Name:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Update_Custom_Application_Name\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_PAGE_NAME\" MAXLENGTH=\"250\"><BR>
+													Custom Web Page Entry Timestamp:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Web_Pages_Update_Custom_Application_Timestamp\" VALUE=\"$_Application_Module_Administration_Web_Pages_LIST_PAGE_TIME\" MAXLENGTH=\"250\"><BR>
+													Custom Web Page Entry Data:<BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Web_Pages_Update_Custom_Application_Data\">$_Application_Module_Administration_Web_Pages_LIST_PAGE_DATA</TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Update Custom Web Application\">
+												</FORM><HR><BR><BR>
+");
+
+} else {
+
+$_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_PAGE			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom SET custom_application_data='$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA',custom_application_name='$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME',custom_application_time='$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_TIME' WHERE id='$_Application_Module_Administration_Web_Pages_LIST_PAGE_ID'");
+
+if ($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_PAGE) {
+
+											echo ($_Application_Module_Administration_Message_Web_Pages_WEB_PAGE_UPDATED_SUCCESSFULLY);
+
+} else {
+
+											echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Update Custom Web Page Entry Variable Has Executed
+
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Custom Web Page Entry
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_UPDATE_PAGE);
+
+} // [ + ] IF: Update Custom Web Page Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Update Custom Web Page Entry IS Activated
+
+} // [ + ] WHILE: Retrieving Custom Web Page Entries From Database
+
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select Custom Web Pages
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_PAGES);
+?>

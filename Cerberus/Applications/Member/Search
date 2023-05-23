@@ -1,0 +1,339 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Search
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Search
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+										echo ($_Application_Module_Member_Message_Search_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Search Form :: Variables :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Search_POST_KEYWORD						= $_POST['AM_Search_Search_Keyword'];
+$_Application_Module_Member_Search_POST_SECTION						= $_POST['AM_Search_Search_Section'];
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE[0]				= "'";
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE[1]				= "\"";
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH[0]				= "&#39;";
+$_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH[0]				= "&quot;";
+$_Application_Module_Member_Search_POST_KEYWORD						= str_replace($_Application_Module_Member_Search_POST_KEYWORD_REPLACE, $_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH, $_Application_Module_Member_Search_POST_KEYWORD);
+
+if ((!$_Application_Module_Member_Search_POST_KEYWORD) || (!$_Application_Module_Member_Search_POST_SECTION)) {
+
+echo ("
+										<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Search\" METHOD=\"POST\">
+											Keywords:<BR>
+												<INPUT TYPE=\"TEXT\" NAME=\"AM_Search_Search_Keyword\"><BR>
+											Section:<BR>
+												<SELECT NAME=\"AM_Search_Search_Section\">
+													<OPTION VALUE=\"1\">Article Entires</OPTION>
+													<OPTION VALUE=\"2\">File Entries</OPTION>
+													<OPTION VALUE=\"3\">Forum Entries</OPTION>
+													<OPTION VALUE=\"4\">Registered Members</OPTION>
+													<OPTION VALUE=\"5\">News Article Entries</OPTION>
+													<OPTION VALUE=\"6\">Market Entries</OPTION>
+												</SELECT><BR>
+											<INPUT TYPE=\"SUBMIT\" VALUE=\"Search\">
+										</FORM>
+");
+
+} else {
+
+										echo ("<B>Search Results For Keywords</B>: <I>$_Application_Module_Member_Search_POST_KEYWORD</I><HR>");
+
+/*
+ ============================================================================================================
+ +
+ + SECTION 1: Articles
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 1) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles WHERE article_data LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_ARTICLE_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES)) {
+
+$_Application_Module_Member_Search_LIST_ARTICLE_ID 					= $_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array['id'];
+$_Application_Module_Member_Search_LIST_ARTICLE_DATA 					= $_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array['article_data'];
+$_Application_Module_Member_Search_LIST_ARTICLE_TITLE 					= $_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES_Fetch_Array['article_title'];
+$_Application_Module_Member_Search_LIST_ARTICLE_DATA_REDUCED 				= substr($_Application_Module_Member_Search_LIST_ARTICLE_DATA, 0, 30);
+
+echo ("
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Member_Search_LIST_ARTICLE_ID\" TITLE=\":: Open & Display The Article Entry :: $_Application_Module_Member_Search_LIST_ARTICLE_TITLE ::\">$_Application_Module_Member_Search_LIST_ARTICLE_TITLE</A><BR>
+---------------------------------<BR>
+$_Application_Module_Member_Search_LIST_ARTICLE_DATA_REDUCED...<BR><BR>
+");
+
+} // [ + ] WHILE: Retrieving Article Entries From Database Server With Specified Search Characters
+
+} // [ + ] IF: Article Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Articles
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_ARTICLES);
+
+} // [ + ] IF: Search Type Is: Article Entries
+
+/*
+ ============================================================================================================
+ +
+ + SECTION 2: Files
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 2) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_FILES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files WHERE file_description LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_FILES) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_FILE_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_FILES)) {
+
+$_Application_Module_Member_Search_LIST_FILE_ID						= $_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array['id'];
+$_Application_Module_Member_Search_LIST_FILE_DATA					= $_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array['file_description'];
+$_Application_Module_Member_Search_LIST_FILE_TITLE					= $_Application_Module_Member_Search_DB_Query_SEARCH_FILES_Fetch_Array['file_title'];
+$_Application_Module_Member_Search_LIST_FILE_DATA_REDUCED				= substr($_Application_Module_Member_Search_LIST_FILE_DATA, 0, 30);
+
+echo ("
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Files&amp;FileID&#61;$_Application_Module_Member_Search_LIST_FILE_ID\" TITLE=\":: Open & Display The File Category File Entry :: $_Application_Module_Member_Search_LIST_FILE_TITLE ::\">$_Application_Module_Member_Search_LIST_FILE_TITLE</A><BR>
+---------------------------------<BR>
+$_Application_Module_Member_Search_LIST_FILE_DATA_REDUCED...<BR><BR>
+");
+
+} // [ + ] WHILE: Retrieving File Entries From Database Server With Specified Search Characters
+
+} // [ + ] IF: File Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Files
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_FILES);
+
+} // [ + ] IF: Search Type Is: File Entries
+
+/*
+ ============================================================================================================
+ +
+ + SECTION 3: Forum
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 3) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_FORUM 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post WHERE post_data LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_FORUM_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM)) {
+
+$_Application_Module_Member_Search_LIST_FORUM_ID					= $_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array['post_topic_id'];
+$_Application_Module_Member_Search_LIST_FORUM_AUTHOR					= $_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array['post_author'];
+$_Application_Module_Member_Search_LIST_FORUM_DATA					= $_Application_Module_Member_Search_DB_Query_SEARCH_FORUM_Fetch_Array['post_data'];
+$_Application_Module_Member_Search_LIST_FORUM_DATA_REDUCED				= substr($_Application_Module_Member_Search_LIST_FORUM_DATA, 0, 30);
+
+echo ("
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forum&amp;TopicID&#61;$_Application_Module_Member_Search_LIST_FORUM_ID\" TITLE=\":: Open & Display The Forum' Topic' &amp; Message :: $_Application_Module_Member_Search_LIST_FORUM_DATA_REDUCED\">$_Application_Module_Member_Search_LIST_FORUM_AUTHOR</A> Wrote:<BR><BR>
+---------------------------------<BR>
+$_Application_Module_Member_Search_LIST_FORUM_DATA_REDUCED...<BR><BR>
+");
+
+} // [ + ] WHILE: Retrieving Forum Entries From Database Server With Specified Search Characters
+
+} // [ + ] IF: Forum Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Forum
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_FORUM);
+
+} // [ + ] IF: Search Type Is: Forum Entries
+
+/*
+ ============================================================================================================
+ +
+ + SECTION 4: Members
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 4) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_username LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_MEMBER_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS)) {
+
+$_Application_Module_Member_Search_LIST_MEMBER_USERNAME					= $_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_ABOUT				= $_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS_Fetch_Array['member_profile_about'];
+$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_PICTURE				= $_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS_Fetch_Array['member_profile_picture'];
+
+if ($_Application_Module_Member_Search_LIST_MEMBER_PROFILE_PICTURE == "") {
+
+$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_PICTURE_DISPLAY 			= "./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} else {
+
+$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_PICTURE_DISPLAY 			= "./Member/$_Application_Module_Member_Search_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_PICTURE";
+
+} // [ + ] IF: Registered Member Account :: Image :: Profile Does Not Exist, Replace It With Default No Image Image
+
+echo ("
+<IMG SRC=\"$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" ALT=\":: Profile Image For :: $_Application_Module_Member_Search_LIST_MEMBER_USERNAME\" WIDTH=\"75\" HEIGHT=\"75\" CLASS=\"SearchMemberProfile\"></IMG>
+&nbsp;&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Search_LIST_MEMBER_USERNAME\" TITLE=\":: Open & Display The Registered Member Account Profile For :: $_Application_Module_Member_Search_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Search_LIST_MEMBER_USERNAME</A><BR>
+---------------------------------<BR>
+$_Application_Module_Member_Search_LIST_MEMBER_PROFILE_ABOUT...<BR><BR>
+");
+
+} // [ + ] WHILE: Retrieving Member Account Entries From Database Server With Specified Search Characters
+
+} // [ + ] IF: Member Account Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Members
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_MEMBERS);
+
+} // [ + ] IF: Search Type Is: Registered Member Account Entries
+
+/*
+ ============================================================================================================
+ +
+ + SECTION 5: News
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Search_POST_SECTION == 5) {
+
+$_Application_Module_Member_Search_DB_Query_SEARCH_NEWS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news WHERE news_data LIKE '%$_Application_Module_Member_Search_POST_KEYWORD%' ORDER BY id ASC");
+
+if ($DB->num_rows($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS) <= 0) {
+
+										echo ($_Application_Module_Member_Message_Search_RESULTS_NEWS_NONE);
+
+} else {
+
+while ($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS)) {
+
+$_Application_Module_Member_Search_LIST_NEWS_ID						= $_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array['id'];
+$_Application_Module_Member_Search_LIST_NEWS_DATA					= $_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array['news_data'];
+$_Application_Module_Member_Search_LIST_NEWS_TITLE					= $_Application_Module_Member_Search_DB_Query_SEARCH_NEWS_Fetch_Array['news_title'];
+$_Application_Module_Member_Search_LIST_NEWS_DATA_REDUCED				= substr($_Application_Module_Member_Search_LIST_NEWS_DATA, 0, 30);
+
+echo ("
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;All_News&amp;DisplayID&#61;$_Application_Module_Member_Search_LIST_NEWS_ID\" TITLE=\":: Open & Display The News Article Entry :: $_Application_Module_Member_Search_LIST_NEWS_TITLE\">$_Application_Module_Member_Search_LIST_NEWS_TITLE</A><BR>
+---------------------------------<BR>
+$_Application_Module_Member_Search_LIST_NEWS_DATA_REDUCED...<BR><BR>
+");
+
+} // [ + ] WHILE: Retrieving News Article Entries From Database Server With Specified Search Characters
+
+} // [ + ] IF: News Article Entries In Database Server With Specified Search Characters Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From News
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Search_DB_Query_SEARCH_NEWS);
+
+} // [ + ] IF: Search Type Is: News Article Entries
+
+} // [ + ] IF: Database Server Search Form Variables Have Executed
+?>

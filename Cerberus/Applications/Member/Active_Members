@@ -1,0 +1,186 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Active_Members
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Active Members
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Active_Members_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve Registered Member Account Details From Database Server
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY member_username");
+
+/*
+ ============================================================================================================
+ + Retrieve List of Registered Member Account Entries From Database Server
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS)) {
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_ID				= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL			= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME				= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE	= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE		= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_active'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_BANNED		= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_banned'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER			= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_last_referrer'];
+$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE			= $_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
+
+/*
+ ============================================================================================================
+ + IF: Member Account Is Currently Active
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
+
+if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES > $_GLOBAL_LOCAL_SERVER_TIME_MINUTES) {
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP		= $_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES - $_GLOBAL_LOCAL_SERVER_TIME_MINUTES;
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP_MESSAGE	= "~> $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP Minutes Ago";
+
+} // [ + ]
+
+if ($_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES < $_GLOBAL_LOCAL_SERVER_TIME_MINUTES) {
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP		= $_GLOBAL_LOCAL_SERVER_TIME_MINUTES - $_GLOBAL_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES;
+
+$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP_MESSAGE	= "~> $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP Minutes Ago";
+
+} // [ + ] 
+
+} // [ + ] IF: Registered Member Account Last Active Timestamp Is Greater Than or Equal To or Approximate To Current Local Server Timestamp
+
+/*
+ ============================================================================================================
+ + IF: Account Is: Registered Member / Administrator / Services Root Administrator
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL == "1") {
+
+	$_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION	= "Registered Member";
+
+} // [ + ] IF: Registered Member Access Level Is: 1
+
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL == "2") {
+
+	$_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION	= "Administrator";
+
+} // [ + ] IF: Registered Member Access Level Is: 2
+
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_ACCESS_LEVEL == "3") {
+
+	$_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION	= "Services Root Administrator";
+
+} // [ + ] IF: Registered Member Access Level Is: 3
+
+/*
+ ============================================================================================================
+ + IF: Regsitered Member Account :: Profile Picture Does Not Exist, Set No_Image Picture
+ ============================================================================================================
+*/
+
+if (!file_exists("./Member/$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE")) {
+
+	$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE_DISPLAY 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} else {
+
+	$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE_DISPLAY			= "./Member/$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE";
+
+} // [ + ] IF: Registered Member Account Profile Image Is Empty
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Currently Active Member Accounts
+ +
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE >= 1) {
+
+echo ("
+											Registered Member Account: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\" TITLE=\":: Open & The Display The Member Account Profile Application Module For :: $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME</A></I><HR>
+											<A HREF=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE_DISPLAY\" TITLE=\":: Open & Display The Registered Member Account Profile Image For :: $_Application_Module_Member_Active_Members_LIST_MEMBER_USERNAME ::\"><IMG SRC=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_IMAGE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" WIDTH=\"50\" HEIGHT=\"50\" TITLE=\":: Registered Member Account Profile Image ::\" CLASS=\"ActiveMemberAccounts\"></IMG></A><BR>
+											&nbsp;*&nbsp;Member Account Last Activity Timestamp: <A TITLE=\":: This Registered Member Account Was Last Active On: $_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE ::\">$_Application_Module_Member_Active_Members_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP_MESSAGE</A><BR>
+											&nbsp;*&nbsp;Member Account Last Known Referrer: <A HREF=\"$_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: The Last Referrer For This Registered Member Account Was: $_Application_Module_Member_Active_Members_LIST_MEMBER_LAST_REFERRER ::\">Hover Over</A><BR>
+											&nbsp;*&nbsp;Member Account Permissions Level: $_Application_Module_Member_Active_Members_LIST_MEMBER_PERMISSION<BR><BR>
+");
+
+} // [ + ] IF: Registered Member Account Is Currently Active
+
+} // [ + ] WHILE: Retrieving Registered Member List and Data
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All Member Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Active_Members_DB_Query_SELECT_MEMBERS);
+?>

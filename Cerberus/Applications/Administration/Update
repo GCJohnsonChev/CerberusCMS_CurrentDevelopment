@@ -1,0 +1,761 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Update
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: Modification of Application Module Database Data
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Data Is Articles
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Data"] == "Articles") {
+
+$_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles");
+
+while ($_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES)) {
+
+/*
+ ============================================================================================================
+ + List Selected Article Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_LIST_ARTICLE_ID				= $_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES_Fetch_Array['id'];
+$_Application_Module_Administration_Update_LIST_ARTICLE_AUTHOR				= $_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES_Fetch_Array['article_author'];
+$_Application_Module_Administration_Update_LIST_ARTICLE_DATA				= $_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES_Fetch_Array['article_data'];
+$_Application_Module_Administration_Update_LIST_ARTICLE_TIME				= $_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES_Fetch_Array['article_time'];
+$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE				= $_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES_Fetch_Array['article_title'];
+
+/*
+ ============================================================================================================
+ + Safe-HTML Code, Replace
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_LIST_ARTICLE_DATA				= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_ARTICLE_DATA);
+$_Application_Module_Administration_Update_LIST_ARTICLE_DATA				= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_ARTICLE_DATA);
+
+/*
+ ============================================================================================================
+ + Internal Application: Data Is Articles & Delete Selected Article By ID
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteArticleID"] == "$_Application_Module_Administration_Update_LIST_ARTICLE_ID") {
+
+$_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles WHERE id='$_Application_Module_Administration_Update_LIST_ARTICLE_ID'");
+$_Application_Module_Administration_Update_DELETE_ARTICLE_FILE				= unlink("./System/Printable/Article/$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE.html");
+
+if (($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE) && ($_Application_Module_Administration_Update_DELETE_ARTICLE_FILE)) {
+
+													echo ($_Application_Module_Administration_Message_Update_ARTICLE_DELETED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Internal Application: DeleteArticleID Is Activated
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Delete Article Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_ARTICLE);
+
+} // [ + ] IF: Database Query: Delete Article Entry By ID AND Unlink Article Entry File
+
+/*
+ ============================================================================================================
+ + Update Selected Article Entry By ID
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateArticleID"] == "$_Application_Module_Administration_Update_LIST_ARTICLE_ID") {
+
+/*
+ ============================================================================================================
+ + Update Article Entry Form Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR			= $_POST['AM_Update_Article_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME			= $_POST['AM_Update_Article_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE			= $_POST['AM_Update_Article_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA			= $_POST['AM_Update_Article_Data'];
+
+/*
+ ============================================================================================================
+ + Sanitize Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR);
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME);
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE);
+
+/*
+ ============================================================================================================
+ + Safe-Hyper-Text-Markup-Language Code, Replace
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA);
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA);
+
+/*
+ ============================================================================================================
+ + Update Article Entry Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR) {
+
+echo ("
+													<CENTER><B>Currently Updating Article Entry: <I>$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE</I></B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;UpdateArticleID&#61;$_Application_Module_Administration_Update_LIST_ARTICLE_ID\" METHOD=\"post\">
+															Article Entry Author:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Article_Author\" VALUE=\"$_Application_Module_Administration_Update_LIST_ARTICLE_AUTHOR\" MAXLENGTH=\"50\"><BR>
+															Article Entry Title:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Article_Title\" VALUE=\"$_Application_Module_Administration_Update_LIST_ARTICLE_TITLE\" MAXLENGTH=\"50\"><BR>
+															Article Entry Submission Date:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Article_Time\" VALUE=\"$_Application_Module_Administration_Update_LIST_ARTICLE_TIME\" MAXLENGTH=\"50\"><BR>
+															Article Entry Data:<BR><BR>
+														$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
+																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Update_Article_Data\" ID=\"WYSIWYG\">$_Application_Module_Administration_Update_LIST_ARTICLE_DATA</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update Article Entry\">
+														</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Database Server Query: Update Article Entry By ID
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_DB_Query_UPDATE_ARTICLE			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles SET article_author='$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR',article_data='$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA',article_time='$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME',article_title='$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE' WHERE id='$_Application_Module_Administration_Update_LIST_ARTICLE_ID'");
+
+if ($_Application_Module_Administration_Update_DB_Query_UPDATE_ARTICLE) {
+
+/*
+ ============================================================================================================
+ + IF: Article Entry In Database Server Is Updated, Update Printable Article Entry
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_SPECIFY_ARTICLE_FILE				= "System/Printable/Article/$_Application_Module_Administration_Update_POST_UPDATE_TITLE.html";
+$_Application_Module_Administration_Update_SPECIFY_ARTICLE_DATA = "
+Title: $_Application_Module_Administration_Update_POST_UPDATE_TITLE<HR>
+$_Application_Module_Administration_Update_POST_UPDATE_DATA
+<HR>
+Written by: $_Application_Module_Administration_Update_POST_UPDATE_AUTHOR On: $_GLOBAL_DATE<BR>
+[ <A HREF=\"javascript:print();\">Print Page</A> ]";
+
+$_Application_Module_Administration_Update_SPECIFY_ARTICLE_DATA				= stripslashes($_Application_Module_Administration_Update_SPECIFY_ARTICLE_DATA);
+$_Application_Module_Administration_Update_OPEN_ARTICLE_FILE				= fopen($_Application_Module_Administration_Update_SPECIFY_ARTICLE_FILE, "w");
+
+fwrite($_Application_Module_Administration_Update_OPEN_ARTICLE_FILE, "$_Application_Module_Administration_Update_SPECIFY_ARTICLE_DATA");
+
+/*
+ ============================================================================================================
+ + Close Selected Article Entry File
+ ============================================================================================================
+*/
+
+fclose($_Application_Module_Administration_Update_OPEN_ARTICLE_FILE);
+
+													echo ($_Application_Module_Administration_Message_Update_ARTICLE_UPDATED_SUCCESSFULLY);
+} else {
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+} // [ + ] IF: Database Query: Update Article Entry By ID
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Update Article Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_ARTICLE);
+
+} // [ + ] IF: Update Article Entry Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Update Article Entry By ID Is Activated
+
+} // [ + ] WHILE: Retrieiving Article Entries From Database
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Select All Articles
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_ARTICLES);
+
+} // [ + ] IF: Internal Application: Update Article Entry By ID Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Data Is Links
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Data"] == "Links") {
+
+$_Application_Module_Administration_Update_DB_Query_SELECT_LINKS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links");
+
+while ($_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Update_DB_Query_SELECT_LINKS)) {
+
+/*
+ ============================================================================================================
+ + List Selected Link Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_LIST_LINK_ID					= $_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array['id'];
+$_Application_Module_Administration_Update_LIST_LINK_AUTHOR				= $_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array['link_author'];
+$_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION			= $_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array['link_description'];
+$_Application_Module_Administration_Update_LIST_LINK_TIME				= $_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array['link_time'];
+$_Application_Module_Administration_Update_LIST_LINK_TITLE				= $_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array['link_title'];
+$_Application_Module_Administration_Update_LIST_LINK_URL				= $_Application_Module_Administration_Update_DB_Query_SELECT_LINKS_Fetch_Array['link_url'];
+$_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION);
+$_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION);
+
+/*
+ ============================================================================================================
+ + Internal Application: Data Is Links & Delete Selected Link By ID
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteLinkID"] == "$_Application_Module_Administration_Update_LIST_LINK_ID") {
+
+$_Application_Module_Administration_Update_DB_Query_DELETE_LINK				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links WHERE id='$_Application_Module_Administration_Update_LIST_LINK_ID'");
+
+if ($_Application_Module_Administration_Update_DB_Query_DELETE_LINK) {
+
+													echo ($_Application_Module_Administration_Message_Update_LINK_DELETED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Internal Application: Delete Link By ID Is Activated
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Delete Link Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_LINK);
+
+} // [ + ] IF: Database Query: Delete Link By ID Variable Is Executed
+
+/*
+ ============================================================================================================
+ + Update Selected Link ID
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateLinkID"] == "$_Application_Module_Administration_Update_LIST_LINK_ID") {
+
+/*
+ ============================================================================================================
+ + Update Link Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR			= $_POST['AM_Update_Link_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR);
+
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION			= $_POST['AM_Update_Link_Description'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
+
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME			= $_POST['AM_Update_Link_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME);
+
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE			= $_POST['AM_Update_Link_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE);
+
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL				= $_POST['AM_Update_Link_URL'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_URL);
+
+/*
+ ============================================================================================================
+ + Update Link Entry Form
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE) || (!$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL)) {
+
+echo ("
+													<CENTER><B>Currently Updating Link Entry: <I>$_Application_Module_Administration_Update_LIST_LINK_TITLE</I></B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Links&amp;UpdateLinkID&#61;$_Application_Module_Administration_Update_LIST_LINK_ID\" METHOD=\"post\">
+															Link Entry Author:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Link_Author\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_AUTHOR\" MAXLENGTH=\"50\"><BR>
+															Link Entry Title:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Link_Title\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_TITLE\" MAXLENGTH=\"50\"><BR>
+															Link Entry Uniform Resource Locator:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Link_URL\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_URL\" MAXLENGTH=\"250\"><BR>
+															Link Entry Submission Date:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_Link_Time\" VALUE=\"$_Application_Module_Administration_Update_LIST_LINK_TIME\" MAXLENGTH=\"50\"><BR>
+													$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
+															Link Entry Description:<BR>
+																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Update_Link_Description\" ID=\"WYSIWYG\">$_Application_Module_Administration_Update_LIST_LINK_DESCRIPTION</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update Link Entry\">
+														</FORM>
+");
+
+} else {
+
+$_Application_Module_Administration_Update_DB_Query_UPDATE_LINK				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_links SET link_author='$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR',link_description='$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION',link_time='$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME',link_title='$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE',link_url='$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL' WHERE id='$_Application_Module_Administration_Update_LIST_LINK_ID'");
+
+if ($_Application_Module_Administration_Update_DB_Query_UPDATE_LINK) {
+
+													echo ($_Application_Module_Administration_Message_Update_LINK_UPDATED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Update Link Entry Variable Has Executed
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Update Link Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_LINK);
+
+} // [ + ] IF: Update Link Entry Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Update Link Entry Form Variables Have Executed
+
+} // [ + ] WHILE: Retrieiving Link Entries From S.Q.L. Database
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Select All Link Entries
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_LINKS);
+
+} // [ + ] IF: Internal Application: Data IS Links Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Data Is News Articles
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Data"] == "News") {
+
+$_Application_Module_Administration_Update_DB_Query_SELECT_NEWS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news");
+
+while ($_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Update_DB_Query_SELECT_NEWS)) {
+
+/*
+ ============================================================================================================
+ + List Selected News Article Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_LIST_NEWS_ID					= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['id'];
+$_Application_Module_Administration_Update_LIST_NEWS_AUTHOR				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_author'];
+$_Application_Module_Administration_Update_LIST_NEWS_AVATAR				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_avatar'];
+
+$_Application_Module_Administration_Update_LIST_NEWS_DATA				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_data'];
+$_Application_Module_Administration_Update_LIST_NEWS_DATA				= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_NEWS_DATA);
+$_Application_Module_Administration_Update_LIST_NEWS_DATA				= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_NEWS_DATA);
+
+$_Application_Module_Administration_Update_LIST_NEWS_MOOD				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_mood'];
+$_Application_Module_Administration_Update_LIST_NEWS_MUSIC				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_music'];
+$_Application_Module_Administration_Update_LIST_NEWS_TIME				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_time'];
+$_Application_Module_Administration_Update_LIST_NEWS_TITLE				= $_Application_Module_Administration_Update_DB_Query_SELECT_NEWS_Fetch_Array['news_title'];
+
+/*
+ ============================================================================================================
+ + Internal Application: Data Is News Articles & Update Selected News Article Entry By ID
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateNewsID"] == "$_Application_Module_Administration_Update_LIST_NEWS_ID") {
+
+/*
+ ============================================================================================================
+ + Update News Article Entry :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR			= $_POST['AM_Update_News_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR			= $_POST['AM_Update_News_Avatar'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR);
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA			= $_POST['AM_Update_News_Data'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD			= $_POST['AM_Update_News_Mood'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD);
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC			= $_POST['AM_Update_News_Music'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC);
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME			= $_POST['AM_Update_News_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME);
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE			= $_POST['AM_Update_News_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE);
+
+/*
+ ============================================================================================================
+ + Update News Article Entry Form
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR)) {
+
+echo ("
+													<CENTER><B>Currently Updating The News Article Entry: <I>$_Application_Module_Administration_Update_LIST_NEWS_TITLE</I></B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;News&amp;UpdateNewsID&#61;$_Application_Module_Administration_Update_LIST_NEWS_ID\" METHOD=\"post\">
+															News Article Entry Author:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_News_Author\" VALUE=\"$_Application_Module_Administration_Update_LIST_NEWS_AUTHOR\" MAXLENGTH=\"50\"><BR>
+															News Article Entry Avatar:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_News_Avatar\" VALUE=\"$_Application_Module_Administration_Update_LIST_NEWS_AVATAR\" MAXLENGTH=\"50\"><BR>
+															Author's Mood:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_News_Mood\" VALUE=\"$_Application_Module_Administration_Update_LIST_NEWS_MOOD\" MAXLENGTH=\"250\"><BR>
+															Author's Music:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_News_Music\" VALUE=\"$_Application_Module_Administration_Update_LIST_NEWS_MUSIC\" MAXLENGTH=\"250\"><BR>
+															News Article Entry Publish Timestamp:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_News_Time\" VALUE=\"$_Application_Module_Administration_Update_LIST_NEWS_TIME\" MAXLENGTH=\"50\"><BR>
+															News Article Entry Title:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_News_Title\" VALUE=\"$_Application_Module_Administration_Update_LIST_NEWS_TITLE\" MAXLENGTH=\"50\"><BR>
+															News Article Entry Data:<BR>
+													$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
+																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Update_News_Data\" ID=\"WYSIWYG\">$_Application_Module_Administration_Update_LIST_NEWS_DATA</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update News Article Entry\">
+														</FORM>
+");
+
+} else {
+
+$_Application_Module_Administration_Update_DB_Query_UPDATE_NEWS				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news SET news_author='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR',news_avatar='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR',news_data='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA',news_mood='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD',news_music='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC',news_time='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME',news_title='$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE' WHERE id='$_Application_Module_Administration_Update_LIST_NEWS_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Query: Update News Article Entry In Database, Also Update News Article Entry Printable File
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Update_DB_Query_UPDATE_NEWS) {
+
+$_SPECIFY_NEWS_FILE						= "System/Printable/News/$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE.html";
+$_SPECIFY_NEWS_DATA	= "
+Title: $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE<HR>
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA
+<HR>
+Written by: $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR On: $_GLOBAL_DATE<BR>
+[ <A HREF=\"javascript:print();\">Print Page</A> ]";
+
+$_SPECIFY_NEWS_DATA						= stripslashes($_SPECIFY_NEWS_DATA);
+$_OPEN_NEWS_FILE						= fopen($_SPECIFY_NEWS_FILE, "w");
+
+fwrite($_OPEN_NEWS_FILE, "$_SPECIFY_NEWS_DATA");
+fclose($_OPEN_NEWS_FILE);
+
+													echo ($_Application_Module_Administration_Message_Update_NEWS_UPDATED_SUCCESSFULLY);
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Update News Entry Variable Has Executed
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Update News Article Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_NEWS);
+
+} // [ + ] IF: Update News Entry Variables Have Executed
+
+} // [ + ] IF: Internal Application: Update News Entry By ID
+
+/*
+ ============================================================================================================
+ + Delete Selected News ID
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteNewsID"] == "$_Application_Module_Administration_Update_LIST_NEWS_ID") {
+
+$_Application_Module_Administration_Update_DB_Query_DELETE_NEWS				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news WHERE id='$_Application_Module_Administration_Update_LIST_NEWS_ID'");
+$_Application_Module_Administration_Update_DELETE_NEWS_FILE				= unlink("./System/Printable/News/$_Application_Module_Administration_Update_LIST_NEWS_TITLE.html");
+
+if (($_Application_Module_Administration_Update_DB_Query_DELETE_NEWS) && ($_Application_Module_Administration_Update_DELETE_NEWS_FILE)) {
+
+													echo ($_Application_Module_Administration_Message_Update_NEWS_DELETED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Delete News Article By ID AND Unlink News Article Entry File Is Activated
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Delete News Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_NEWS);
+
+} // [ + ] IF: Internal Application: Delete News Article Entry By ID Is Activated
+
+} // [ + ] WHILE: Retrieving News Article Entries From Database
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Select News
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_NEWS);
+
+} // [ + ] IF: Internal Application: Data IS News Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Data Is Files
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Data"] == "Files") {
+
+$_Application_Module_Administration_Update_DB_Query_SELECT_FILES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files");
+
+while ($_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Update_DB_Query_SELECT_FILES)) {
+
+/*
+ ============================================================================================================
+ + List Selected File Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_LIST_FILE_ID					= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['id'];
+$_Application_Module_Administration_Update_LIST_FILE_AUTHOR				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_author'];
+$_Application_Module_Administration_Update_LIST_FILE_CATEGORY				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_category'];
+$_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION			= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_description'];
+$_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_CODE_BACK, $_GLOBAL_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION);
+$_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_SMILEYS_BACK, $_GLOBAL_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION);
+$_Application_Module_Administration_Update_LIST_FILE_IMAGE				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_image'];
+$_Application_Module_Administration_Update_LIST_FILE_LOCATION				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_location'];
+$_Application_Module_Administration_Update_LIST_FILE_NUMBER_OF_DOWNLOADS		= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_number_of_downloads'];
+$_Application_Module_Administration_Update_LIST_FILE_TIME				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_time'];
+$_Application_Module_Administration_Update_LIST_FILE_TITLE				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_title'];
+$_Application_Module_Administration_Update_LIST_FILE_UPLOADER				= $_Application_Module_Administration_Update_DB_Query_SELECT_FILES_Fetch_Array['file_uploader'];
+
+/*
+ ============================================================================================================
+ + Internal Application: Data Is Files & Delete Selected File By ID
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteFileID"] == "$_Application_Module_Administration_Update_LIST_FILE_ID") {
+
+$_Application_Module_Administration_Update_DB_Query_DELETE_FILE				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files WHERE id='$_Application_Module_Administration_Update_LIST_FILE_ID'");
+
+$_Application_Module_Administration_Update_DELETE_FILE					= unlink("Upload/$_Application_Module_Administration_Update_LIST_FILE_LOCATION");
+$_Application_Module_Administration_Update_DELETE_FILE_IMAGE				= unlink("Upload/$_Application_Module_Administration_Update_LIST_FILE_IMAGE");
+
+if (($_Application_Module_Administration_Update_DB_Query_DELETE_FILE) && ($_Application_Module_Administration_Update_DELETE_FILE) && ($_Application_Module_Administration_Update_DELETE_FILE_IMAGE)) {
+
+													echo ($_Application_Module_Administration_Message_Update_FILE_DELETED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Delete File Entry By ID AND Unlink: File Entry Files Variables Have Executed
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Delete File Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_DELETE_FILE);
+
+} // [ + ] IF: Internal Application: Delete File By ID Is Activated
+
+/*
+ ============================================================================================================
+ + Update Selected File ID
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateFileID"] == "$_Application_Module_Administration_Update_LIST_FILE_ID") {
+
+/*
+ ============================================================================================================
+ + Update File Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR			= $_POST['AM_Update_File_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY			= $_POST['AM_Update_File_Category'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION			= $_POST['AM_Update_File_Description'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE			= $_POST['AM_Update_File_Image'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION			= $_POST['AM_Update_File_Location'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS		= $_POST['AM_Update_File_Downloads'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME			= $_POST['AM_Update_File_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE			= $_POST['AM_Update_File_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER			= $_POST['AM_Update_File_Uploader'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE);
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER);
+
+/*
+ ============================================================================================================
+ + Update File Form
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR)) {
+
+echo ("
+													<CENTER><B>Currently Updating File Entry: <I>$_Application_Module_Administration_Update_LIST_FILE_TITLE</I></B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Files&amp;UpdateFileID&#61;$_Application_Module_Administration_Update_LIST_FILE_ID\" METHOD=\"post\">
+															File Entry Author:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Author\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_AUTHOR\" MAXLENGTH=\"50\"><BR>
+															File Entry Category:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Category\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_CATEGORY\" MAXLENGTH=\"250\"><BR>
+															File Entry Description:<BR>
+																<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Update_File_Description\">$_Application_Module_Administration_Update_LIST_FILE_DESCRIPTION</TEXTAREA><BR>
+															File Entry Image:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Image\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_IMAGE\" MAXLENGTH=\"50\"><BR>
+															File Entry Location:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Location\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_LOCATION\" MAXLENGTH=\"50\"><BR>
+															File Entry Number of Downloads:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Downloads\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_NUMBER_OF_DOWNLOADS\" MAXLENGTH=\"15\"><BR>
+															File Entry Submission Timestamp:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Time\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_TIME\" MAXLENGTH=\"50\"><BR>
+															File Entry Title:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Title\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_TITLE\" MAXLENGTH=\"50\"><BR>
+															File Entry Uploader:<BR>
+																<INPUT TYPE=\"text\" NAME=\"AM_Update_File_Uploader\" VALUE=\"$_Application_Module_Administration_Update_LIST_FILE_UPLOADER\" MAXLENGTH=\"50\"><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Update File Entry\">
+														</FORM>
+");
+
+} else {
+
+$_Application_Module_Administration_Update_DB_Query_UPDATE_FILE				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files SET file_author='$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR',file_category='$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY',file_description='$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION',file_image='$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE',file_location='$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION',file_number_of_downloads='$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS',file_title='$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE',file_time='$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME',file_uploader='$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER' WHERE id='$_Application_Module_Administration_Update_LIST_FILE_ID'");
+
+if ($_Application_Module_Administration_Update_DB_Query_UPDATE_FILE) {
+
+													echo ($_Application_Module_Administration_Message_Update_FILE_UPDATED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Query: Update File Entry Variable Is Executed
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Update File Entry
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_UPDATE_FILE);
+
+} // [ + ] IF: Update File Entry Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Update File Entry By ID Is Activated
+
+} // [ + ] WHILE: Retrieving File Entries From Database
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Select All File Entries
+ =============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Update_DB_Query_SELECT_FILES);
+
+} // [ + ] IF: Internal Application: Data IS File Is Activated
+?>

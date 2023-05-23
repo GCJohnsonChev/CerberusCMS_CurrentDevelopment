@@ -1,0 +1,116 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => News
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: News Articles
+ +
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_News_DB_Query_SELECT_NEWS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news ORDER BY id DESC LIMIT 1");
+
+/*
+ ============================================================================================================
+ + IF: There Are No News Entries
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_News_DB_Query_SELECT_NEWS) <= 0) {
+
+											echo ($_Application_Module_Member_Message_News_NO_NEWS);
+
+} // [ + ] IF: News Article Entries In Database Server Are Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Retrieve Latest News Entry Tables
+ ============================================================================================================
+*/
+
+while ($_Application_Module_News_DB_Query_SELECT_NEWSL = $DB->fetch_array($_Application_Module_News_DB_Query_SELECT_NEWS)) {
+
+$_Application_Module_News_LIST_NEWS_ID				= $_Application_Module_News_DB_Query_SELECT_NEWSL['id'];
+$_Application_Module_News_LIST_NEWS_AUTHOR			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_author'];
+$_Application_Module_News_LIST_NEWS_AVATAR			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_avatar'];
+$_Application_Module_News_LIST_NEWS_DATA			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_data'];
+$_Application_Module_News_LIST_NEWS_MOOD			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_mood'];
+$_Application_Module_News_LIST_NEWS_MUSIC			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_music'];
+$_Application_Module_News_LIST_NEWS_TIME			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_time'];
+$_Application_Module_News_LIST_NEWS_TITLE			= $_Application_Module_News_DB_Query_SELECT_NEWSL['news_title'];
+
+/*
+ ============================================================================================================
+ + Display Latest News Article Entry
+ ============================================================================================================
+*/
+
+echo ("
+											<B>$_Application_Module_News_LIST_NEWS_TITLE</B>
+											<HR>
+												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;All_News&amp;DisplayID&#61;All\" TITLE=\":: Open & Display All News Article Entries ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_News_LIST_NEWS_AVATAR?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: Open & Display All News Article Entries ::\" ALT=\":: Open & Display All News Article Entries ::\"></A><BR><BR>
+												<I>$_Application_Module_News_LIST_NEWS_DATA</I>
+
+											<HR>
+												<B>This News Article Entry Was Written By</B>: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_News_LIST_NEWS_AUTHOR\" TITLE=\":: Open & Display The Registered Member Account Profile For :: $_Application_Module_News_LIST_NEWS_AUTHOR ::\">$_Application_Module_News_LIST_NEWS_AUTHOR</A></I> <B>On</B>: <I>$_Application_Module_News_LIST_NEWS_TIME</I><BR><BR>
+												&#8212;&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forward\" TITLE=\":: Share This News Article Entry Via Electronic Mail ::\">Share</A>&nbsp;-&nbsp;
+												<A HREF=\"System/Printable/News/$_Application_Module_News_LIST_NEWS_TITLE.html\" TITLE=\":: Print This News Article Entry ::\">Print</A>&nbsp;-&nbsp;
+												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;News&amp;UpdateNewsID&#61;$_Application_Module_News_LIST_NEWS_ID\" TITLE=\":: Update This News Article Entry ::\">Update</A>&nbsp;-&nbsp;
+												<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;News&amp;DeleteNewsID&#61;$_Application_Module_News_LIST_NEWS_ID\" TITLE=\":: Delete This News Article Entry ::\">Delete</A>&nbsp;&#8212;<BR>
+");
+
+} // [ + ] WHILE: Retrieving Latest News Article Entry From Database Server
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All News Entries From Database Server
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_News_DB_Query_SELECT_NEWS);
+?>

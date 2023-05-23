@@ -1,0 +1,485 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Login
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Login
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Login_Header);
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Login :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module :: Member :: Login :: Variables :: POST :: Authorization Form
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= $_POST['AM_Login_Authorization_IP_Address_Current'];
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= $_POST['AM_Login_Authorization_IP_Token'];
+$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= $_POST['AM_Login_Authorization_Electronic_Mail_Address'];
+$_Application_Module_Member_Login_AUTHORIZATION_USERNAME					= $_POST['AM_Login_Authorization_UserName'];
+
+/*
+ ============================================================================================================
+ + Application Module :: Member :: Login :: Variables :: POST :: Data Sanitization
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= preg_replace("/'/","#", $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
+
+$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= preg_replace("/'/","#", $_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
+
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= preg_replace("/'/","#", $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
+
+/*
+ ============================================================================================================
+ + Application Module :: Member :: Login :: Variables :: POST :: String Conversion
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= strtolower($_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
+
+/*
+ ============================================================================================================
+ + IF: Internet Protocol Address Authorization Token :: Security and Sanitization Loops
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN == "0") {
+
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= "Denied";
+
+} // [ + ] IF: Submitted Internet Protocol Address Token IS: 0, Set Variable Value To: Denied
+
+/*
+ ============================================================================================================
+ +
+ + Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: Generator
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER		= 128;
+
+/*
+ ============================================================================================================
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: Random Character Generation Function
+ ============================================================================================================
+*/
+
+function getRandomStringLogin($_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER) {
+
+/*
+ ============================================================================================================
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: Random Character Generation Function :: Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS			= '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING					= '';
+
+/*
+ ============================================================================================================
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: FOR: Variable < 0 Variable Increment
+ ============================================================================================================
+*/
+
+for ($_Application_Module_Member_Login_SECURITY_RANDOM_STRING_INVISIBLE = 0; $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_INVISIBLE < $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER; $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_INVISIBLE++) {
+
+/*
+ ============================================================================================================
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: Randomize Generated Strings
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_INDEX					= rand(0, strlen($_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS) - 1);
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING					.= $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_CHARACTERS[$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_INDEX];
+
+} // [ + ] Function: Random Character Generator: Increment Invisible String
+
+return $_Application_Module_Member_Login_SECURITY_RANDOM_STRING;
+
+} // [ + ] Function: getRandomStringLogin
+
+/*
+ ============================================================================================================
+ +  Internal Security :: Login :: Authorization :: Internet Protocol Address Authentication Token :: HASHES
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH		= hash('sha512',getRandomStringLogin($_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER));
+
+/*
+ ============================================================================================================
+ + IF: Check For Valid Member Account Credential Data In Browser Cookies
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+
+											echo ($_Application_Module_Member_Message_Login_CREDENTIALS_SET);
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + Member Account Login Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Login\" METHOD=\"post\">
+													<I>Member' Account Electronic Mail Address</I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"IAM_Login_Electronic_Mail_Address\" MAXLENGTH=\"50\"><BR>
+													<I>Member' Account UserName</I>:<BR>
+														<INPUT TYPE=\"text\" NAME=\"IAM_Login_UserName\" MAXLENGTH=\"50\"><BR>
+													<I>Member' Account Password</I>:<BR>
+														<INPUT TYPE=\"password\" NAME=\"IAM_Login_Password\" MAXLENGTH=\"250\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Login\">
+												<HR>
+											</FORM><BR>
+
+											Additional Options<HR>
+											Member Account :: Authentication :: Connection Options :: Insecure :: Clear-Text<BR>
+											* <A HREF=\"$_ACCESS_URL_CLEARTEXT/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Insecure Over Clear-Text Insecure Connection ::\">Insecure Login :: Clear-Text</A><BR><BR>
+
+											Member Account :: Authentication :: Connection Options :: Secure :: Secure Socket Layer<BR>
+											* <A HREF=\"$_ACCESS_URL_SECURE_SSL/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Secure Socket Layer Encrypted Connection ::\">Secure Login :: SSL</A><BR>
+											* <A HREF=\"$_ACCESS_URL_SECURE_OPENSSL/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Open Secure Socket Layer Encrypted Connection ::\">Secure Login :: OpenSSL</A><BR><BR>
+
+											Member Account :: Authentication :: Connection Options :: Secure :: Transport Layer Security<BR>
+											* <A HREF=\"$_ACCESS_URL_SECURE_TLS/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Transport Layer Security Encrypted Connection ::\">Secure Login :: TLS</A><BR><BR>
+
+											Member Account :: Authentication :: Connection Options :: Secure :: Other<BR>
+											* <A HREF=\"$_ACCESS_URL_SECURE/$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login\" TITLE=\":: Hyper-Text-Transfer-Protocol-Secure Over Secure Encrypted Connection ::\">Secure Login :: Other</A><BR><BR>
+
+											Member Account :: Authentication :: Authorization Options<BR>
+											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Address\" TITLE=\":: Initiate The Internet Protocol Address Authorization Process ::\">Internet Protocol Address :: Authorization Request</A><BR>
+											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Token\" TITLE=\":: Authenticate With Internet Protocol Address Authorization Token ::\">Internet Protocol Address :: Authorization Token</A><BR><BR>
+
+											Member Account :: Credentials :: Credential Options<BR>
+											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Reset_Password\" TITLE=\":: Reset Your Member Account Password Or Other Member Account Credentials ::\">Reset Password</A><BR>
+											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Account_Recovery&amp;Display&#61;Options\" TITLE=\":: Initiate The Member Account Recovery Options ::\">Account Recovery</A></CENTER><BR><BR>
+
+											Member Account :: Registration :: Registration Options<BR>
+											* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Register\" TITLE=\":: Initiate The Member Account Registration Process With $_GLOBAL_SYSTEM_SITE_TITLE ::\">Register</A><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ +
+ + IF: Member Account Credentials Do Not Exist In The Database Server
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Message"] == "No_Member") {
+
+											echo ($_Application_Module_Member_Message_Login_ERROR);
+
+} // [ + ] IF: Internal Application: Display Message: No Existing Member Account Is Activated
+
+} // [ + ] IF: Member Account Credentials Are Already Set
+
+/*
+ ============================================================================================================
+ +
+ + IF: Member Account Credentials Do Not Exist In The Database Server
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Message"] == "AccountLocked") {
+
+											echo ($_Application_Module_Member_Message_Login_ACCOUNT_LOCKED);
+
+} // [ + ] IF: Internal Application: Display Message: Registered Member Account Is Locked
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application :: Internet Protocol Address Authorization
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Authorization"] == "IP_Address") {
+
+if (!$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS) {
+
+echo ("
+											Member Account Authentication :: Internet Protocol Address Authorization<HR>
+											The Internet Protocol Address That You Are Attempting To Authenticate From Is Not Authorized<BR>
+											Would you like to authorize this Internet Protocol Address ?
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Address\" METHOD=\"post\">
+													Your Current Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Login_Authorization_IP_Address_Current\" MAXLENGTH=\"40\" VALUE=\"$_GLOBAL_REMOTE_SERVER_ADDRESS\"><BR>
+													Your Registered Member Account Electronic Mail Address For Authorization Request: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Login_Authorization_Electronic_Mail_Address\" MAXLENGTH=\"100\" VALUE=\"Electronic Mail Address...\"><BR>
+													Your Registered Member Account UserName:<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Login_Authorization_UserName\" MAXLENGTH=\"20\" VALUE=\"UserName...\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Request Authorization\">
+												<HR>
+											</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Retrieve Registered Member Account Details From Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_electronic_mail_address='$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS' AND member_username='$_Application_Module_Member_Login_AUTHORIZATION_USERNAME'");
+
+/*
+ ============================================================================================================
+ + IF: Submitted Electronic Mail Address Exists In Database Server
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE)) {
+
+/*
+ ============================================================================================================
+ + Retrieve List of Registered Member Account Entries From Database Server
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array = $DB->fetch_array($_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE)) {
+
+$_Application_Module_Login_LIST_MEMBER_ID						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['id'];
+$_Application_Module_Login_LIST_MEMBER_USERNAME						= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_username'];
+$_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS				= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_electronic_mail_address'];
+$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_last_login'];
+$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_authorized'];
+$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN	= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_authorization_token'];
+
+if (mail($_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Authentication Authorization Request From :: $_GLOBAL_SYSTEM_SITE_TITLE","
+Dear $_Application_Module_Login_LIST_MEMBER_USERNAME :: $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
+------------------------------------------------------------------
+Either you or someone else has attempted to authenticate into your Registered Member Account at: $_GLOBAL_SYSTEM_SITE_TITLE
+
+There are three pieces of information required by default to successfully authenticate into any Registered Member Account:
+* Member Account, UserName
+* Member Account, Password
+* Member Account, Electronic Mail Address
+
+This Web Application does not display or disclose any Electronic Mail Address belonging to any Registered Member Account anywhere on this system.
+Your Registered Member Account Password is encrypted within the Database Management System by using several different kinds of encryption algorithms combined with multi-layered HASH algorithms and ciphers.
+
+This combination of encryption makes it just about impossible to crack your Registered Member Account Password if in the event an attacker obtains the Encrypted
+Password String. If the Internet Protocol Address Two-Factor Authentication feature is enabled in your Registered Member Account Settings it would be
+completely impossible for anyone else to authenticate into your Registered Member Account even if they have your current
+Registered Member Account Clear-Text Password and are in the exact same location you are in while using the same Internet Protocol Address that you are
+currently authenticating from.
+
+It would only be possible for anyone else to successfully authenticate into your Registered Member Account if they know your Clear-Text Password and also
+if they have access to your Electronic Mail Address Account and are in the exact same location that you are in while using the exact same
+Internet Protocol Address that you are using at that exact moment in time.
+
+If you would like to authorize this specific Internet Protocol Address for authentication please copy and paste the Uniform-Resource-Location Link below this message and
+then paste it into your web browser Uniform-Resource-Location bar:
+* $_GLOBAL_LOCAL_SERVER_HTTP_HOST/PATH_TO_DIRECTORY/$_INTERNAL_FILE_KERNAL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Login&Authorization=IP_Token
+
+Or alternatively you can highlight and open the following Uniform-Resource-Location Link below:
+
+* $_GLOBAL_LOCAL_SERVER_HTTP_HOST/$_GLOBAL_LOCAL_SERVER_DIRECTORY_FILE_CURRENT?$_INTERNAL_APPLICATION_MODULE_MEMBER=Login&Authorization=IP_Token
+
+Keep the following information for your own records:
+* The Internet Protocol Address associated with this authentication attempt was: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* The last Internet Protocol Address on this Member Account that successfully authenticated was: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN
+* The current authorized Internet Protocol Address on this Member Account is: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED
+* The previoius authorization token was: $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN
+* The authorization token available now is: $_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH
+* This Electronic Mail Message Timestamp From The Local Server Was: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* This Electronic Mail Message Unique Digital Fingerprint Is: $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_OF_SHA1_OF_SHA256
+------------------------------------------------------------------
+Have a nice day,
+		~ $_GLOBAL_SYSTEM_SITE_TITLE
+
+")) {
+
+$_Application_Module_Login_DB_Query_UPDATE_MEMBER_ACCOUNT_IP_ADDRESS_AUTHORIZATION_TOKEN	= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH' WHERE member_electronic_mail_address='$_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
+
+if ($_Application_Module_Login_DB_Query_UPDATE_MEMBER_ACCOUNT_IP_ADDRESS_AUTHORIZATION_TOKEN) {
+
+} else {
+
+} // [ + ] IF: Update Member Account Authorization Token
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_ELECTRONIC_MAIL_MESSAGE_SUCCESS);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_ELECTRONIC_MAIL_MESSAGE_ERROR);
+
+} // [ + ] IF: Electronic Mail Message Has Sent
+
+} // [ + ] WHILE: Retrieving Member Account Data From Database Server
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_MEMBER_ACCOUNT_NON_EXISTING);
+
+} // [ + ] IF: Submitted Electronic Mail Address Exists In Database Server
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Check For Valid and Existing Member Account Credentials Data
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE);
+
+} // [ + ] IF: Authorization Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Authorization IS IP_Address
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application :: Authorization From Internet Protocol Address Token
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Authorization"] == "IP_Token") {
+
+if (!$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN) {
+
+echo ("
+											Member Account Authentication :: Internet Protocol Address Authorization Token<HR>
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Login&amp;Authorization&#61;IP_Token\" METHOD=\"post\">
+											Do You Have A Valid Internet Protocol Address Authorization Token ?<BR>
+											Your current Internet Protocol Address is: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TITLE=\":: Open & Display The Who-Is Information For This Internet Protocol Address ::\" TARGET=\"_NEW\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"512\" NAME=\"AM_Login_Authorization_IP_Token\">Authorization Token...</TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Authorize Request\">
+												<HR>
+											</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Update Registered Member Account Details In Database Server :: With Authorization Token
+ ============================================================================================================
+*/
+
+$_Application_Module_Login_DB_Query_UPDATE_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='$_GLOBAL_REMOTE_SERVER_ADDRESS' WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
+$_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
+
+/*
+ ============================================================================================================
+ + IF: Database Query: Update Member Account Internet Protocol Address Authorization BY Authorization Token
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN)) {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_TOKEN_VALID);
+
+/*
+ ============================================================================================================
+ + IF: Database Query: Update Member Account Internet Protocol Address Authorization BY Authorization Token
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Login_DB_Query_UPDATE_MEMBER_AUTHORIZATION_TOKEN) {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_UPDATED_SUCCESSFULLY);
+
+} else {
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_UPDATE_ERROR);
+
+
+} // [ + ] IF: Database Sever Query: Update Authorized Internet Protocol Address By Valid Authorization Token Variable Has Executed
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Login_AUTHORIZATION_TOKEN_INVALID);
+
+} // [ + ] IF: Check Database Server For Valid Internet Protocol Address Authorization Token Variable Has Executed
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Check For Valid Member Account Internet Protocol Address Authorization Token
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Login_DB_Query_SELECT_MEMBERS_AUTHORIZATION_TOKEN);
+
+} // [ + ] IF: Authorization Token Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Authorization IS Internet Protocol Address Token
+?>
