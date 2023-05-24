@@ -528,7 +528,7 @@ fclose($_ARCHITECT_LOG_INTERACTION_LOG_OPEN_FILE_NAME);
 */
 
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME							= $_POST['Architect_SQL_Database_Server_HostName'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PORT							= $_POST['Architect_SQL_Database_Server_HostName_Port'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME_PORT						= $_POST['Architect_SQL_Database_Server_HostName_Port'];
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_USERNAME							= $_POST['Architect_SQL_Database_Server_UserName'];
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PASSWORD							= $_POST['Architect_SQL_Database_Server_Password'];
 $_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME						= $_POST['Architect_SQL_Database_Server_Database_Name'];
@@ -1103,7 +1103,7 @@ mysql_select_db($_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DAT
 
 /* Applications */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATIONS					= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_applications (
+$_Architect_DB_Query_INSTALL_TABLE_APPLICATIONS							= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_applications (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 application_file_integrity VARCHAR(512),
 application_file_integrity_installation VARCHAR(512),
@@ -1122,7 +1122,7 @@ PRIMARY KEY (id)
 
 /* Custom Applications */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATIONS_CUSTOM				= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_APPLICATIONS_CUSTOM						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_applications_custom (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 custom_application_data TEXT,
@@ -1134,7 +1134,7 @@ PRIMARY KEY (id)
 
 /* Application Links */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATION_LINKS				= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_application_links (
+$_Architect_DB_Query_INSTALL_TABLE_APPLICATION_LINKS						= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_application_links (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 application_link_name VARCHAR(250),
 application_link_row CHAR(3),
@@ -1146,7 +1146,7 @@ PRIMARY KEY (id)
 
 /* Application Panels */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATION_PANELS				= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_APPLICATION_PANELS						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_application_panels (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 panel_file_integrity VARCHAR(512),
@@ -1163,7 +1163,7 @@ PRIMARY KEY (id)
 
 /* Articles */
 
-$_Architect_DB_Query_INSTALL_TABLE_ARTICLES					= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_articles (
+$_Architect_DB_Query_INSTALL_TABLE_ARTICLES							= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_articles (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 article_author VARCHAR(50),
 article_data TEXT,
@@ -1175,7 +1175,7 @@ PRIMARY KEY (id)
 
 /* Banned Networks */
 
-$_Architect_DB_Query_INSTALL_TABLE_BANNED_NETWORKS				= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_banned_networks (
+$_Architect_DB_Query_INSTALL_TABLE_BANNED_NETWORKS						= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_banned_networks (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 dns_address_string VARCHAR(128),
 dns_address_text TEXT,
@@ -1187,7 +1187,7 @@ PRIMARY KEY (id)
 
 /* Comments */
 
-$_Architect_DB_Query_INSTALL_TABLE_COMMENTS					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_COMMENTS							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_comments (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 comment_author VARCHAR(50),
@@ -1201,7 +1201,7 @@ PRIMARY KEY (id)
 
 /* File Categories */
 
-$_Architect_DB_Query_INSTALL_TABLE_FILE_CATEGORIES				= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_FILE_CATEGORIES						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_file_categories (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 file_category_description VARCHAR(250),
@@ -1213,7 +1213,7 @@ PRIMARY KEY (id)
 
 /* Files */
 
-$_Architect_DB_Query_INSTALL_TABLE_FILES					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_FILES							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_files (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 file_author VARCHAR(50),
@@ -1231,7 +1231,7 @@ PRIMARY KEY (id)
 
 /* Forum */
 
-$_Architect_DB_Query_INSTALL_TABLE_FORUM_FORUM					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_FORUM_FORUM							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_forum_forum (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 forum_access_level CHAR(1),
@@ -1244,7 +1244,7 @@ PRIMARY KEY (id)
 
 /* Forum Posts */
 
-$_Architect_DB_Query_INSTALL_TABLE_FORUM_POST					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_FORUM_POST							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_forum_post (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 post_access_level CHAR(1),
@@ -1259,7 +1259,7 @@ PRIMARY KEY (id)
 
 /* Forum Topics */
 
-$_Architect_DB_Query_INSTALL_TABLE_FORUM_TOPIC					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_FORUM_TOPIC							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_forum_topic (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 topic_access_level CHAR(1),
@@ -1275,7 +1275,7 @@ PRIMARY KEY (id)
 
 /* Links */
 
-$_Architect_DB_Query_INSTALL_TABLE_LINKS					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_LINKS							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_links (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 link_author VARCHAR(50),
@@ -1289,23 +1289,23 @@ PRIMARY KEY (id)
 
 /* Registered Member Accounts */
 
-$_Architect_DB_Query_INSTALL_TABLE_MEMBERS					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_MEMBERS							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_members (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 member_access_level CHAR(1),
 member_attempt_authentication CHAR(1),
 member_birthdate VARCHAR(10),
-member_address_cryptocurrency_bitcoin VARCHAR(200),
-member_address_cryptocurrency_bitcoin_gold VARCHAR(200),
-member_address_cryptocurrency_dogecoin VARCHAR(200),
-member_address_cryptocurrency_ethereum VARCHAR(200),
-member_address_cryptocurrency_litecoin VARCHAR(200),
-member_address_cryptocurrency_mazacoin VARCHAR(200),
-member_address_cryptocurrency_namecoin VARCHAR(200),
-member_address_cryptocurrency_peercoin VARCHAR(200),
-member_address_cryptocurrency_primecoin VARCHAR(200),
-member_address_cryptocurrency_troncoin VARCHAR(200),
-member_address_cryptocurrency_zcash VARCHAR(200),
+member_address_cryptocurrency_bitcoin VARCHAR(500),
+member_address_cryptocurrency_bitcoin_gold VARCHAR(500),
+member_address_cryptocurrency_dogecoin VARCHAR(500),
+member_address_cryptocurrency_ethereum VARCHAR(500),
+member_address_cryptocurrency_litecoin VARCHAR(500),
+member_address_cryptocurrency_mazacoin VARCHAR(500),
+member_address_cryptocurrency_namecoin VARCHAR(500),
+member_address_cryptocurrency_peercoin VARCHAR(500),
+member_address_cryptocurrency_primecoin VARCHAR(500),
+member_address_cryptocurrency_troncoin VARCHAR(500),
+member_address_cryptocurrency_zcash VARCHAR(500),
 member_address_home TEXT,
 member_address_mail TEXT,
 member_electronic_mail_address VARCHAR(100),
@@ -1326,7 +1326,7 @@ member_location_device_gps VARCHAR(500),
 member_location_device_glo VARCHAR(500),
 member_location_device_region VARCHAR(500),
 member_location_device_timezone VARCHAR(500),
-member_location_given VARCHAR(500),
+member_location_given_area VARCHAR(500),
 member_location_given_region VARCHAR(200),
 member_location_given_timezone VARCHAR(200),
 member_mood VARCHAR(100),
@@ -1534,7 +1534,7 @@ PRIMARY KEY (id)
 
 /* News Articles */
 
-$_Architect_DB_Query_INSTALL_TABLE_NEWS							= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_NEWS								= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_news (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 news_author VARCHAR(50),
@@ -1551,7 +1551,7 @@ PRIMARY KEY (id)
 
 /* News Submissions */
 
-$_Architect_DB_Query_INSTALL_TABLE_NEWS_SUBMISSIONS					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_NEWS_SUBMISSIONS						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_news_submissions (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 news_submission_author VARCHAR(50),
@@ -1563,7 +1563,7 @@ PRIMARY KEY (id)
 
 /* Private Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_PRIVATE_MESSAGES					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_PRIVATE_MESSAGES						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_private_messages (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 private_message_from VARCHAR(50),
@@ -1577,7 +1577,7 @@ PRIMARY KEY (id)
 
 /* Ranks */
 
-$_Architect_DB_Query_INSTALL_TABLE_RANKS						= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_RANKS							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_ranks (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 rank_gender_male_0 VARCHAR(25),
@@ -1596,7 +1596,7 @@ PRIMARY KEY (id)
 
 /* Settings */
 
-$_Architect_DB_Query_INSTALL_TABLE_SETTINGS						= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_SETTINGS							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_settings (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 settings_system_time_cookies VARCHAR(10),
@@ -1628,7 +1628,7 @@ PRIMARY KEY (id)
 
 /* Shout Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_SHOUT_MESSAGES					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_SHOUT_MESSAGES						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_shout_messages (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 message_author VARCHAR(50),
@@ -1640,7 +1640,7 @@ PRIMARY KEY (id)
 
 /* Statistics */
 
-$_Architect_DB_Query_INSTALL_TABLE_STATISTICS						= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_STATISTICS							= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_statistics (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 statistics_total_number_of_document_executions_non_unique CHAR(15),
@@ -1652,7 +1652,7 @@ PRIMARY KEY (id)
 
 /* System Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_SYSTEM_MESSAGES					= "mysql_query(\"
+$_Architect_DB_Query_INSTALL_TABLE_SYSTEM_MESSAGES						= "mysql_query(\"
 CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_system_message (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 message_author VARCHAR(50),
@@ -1958,7 +1958,7 @@ member_location_device_gps,
 member_location_device_glo,
 member_location_device_region,
 member_location_device_timezone,
-member_location_given,
+member_location_given_area,
 member_location_given_region,
 member_location_given_timezone,
 member_mood,
@@ -2194,8 +2194,8 @@ member_username
 'Account Signature :: Installation Administration Account',
 '$_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP',
 'This Registered Member Account Was Registered From The Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS On: $_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP',
-'Uknown :: Fingerprint :: Clear-Text',
-'Uknown :: Fingerprint :: Hashed',
+'Unknown :: Fingerprint :: Clear-Text',
+'Unknown :: Fingerprint :: Hashed',
 'Empty Entry :: P.G.P. :: Key Block :: Public',
 'Empty Entry :: P.G.P. :: Key Block :: Private',
 '1',
@@ -2244,7 +2244,8 @@ member_username
 '$_GLOBAL_LOCAL_SERVER_TIME_SECONDS',
 '0',
 'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
-'$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME'");
+'$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME'
+");
 
 /*
  ============================================================================================================
@@ -2287,7 +2288,7 @@ member_location_device_gps,
 member_location_device_glo,
 member_location_device_region,
 member_location_device_timezone,
-member_location_given,
+member_location_given_area,
 member_location_given_region,
 member_location_given_timezone,
 member_mood,
@@ -2444,13 +2445,13 @@ member_username
 'Empty Entry :: Emergency Contact :: 3',
 '$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER',
 '5',
-'Unknown :: Location :: Device :: GPS',
-'Unknown :: Location :: Device :: GLO',
-'Unknown :: Location :: Device :: Region',
-'Unknown :: Location :: Device :: Timezone',
+'Unknown :: GPS',
+'Unknown :: GLO',
+'Unknown :: Region',
+'Unknown :: Timezone',
 'Greece',
 'Greece',
-'Unknown :: Location :: Given :: Timezone',
+'Unknown',
 'On Guard',
 'Nine Inch Nails - Deep',
 'Cerberus',
@@ -2522,8 +2523,8 @@ member_username
 'I guard the entrance to Hades !',
 '$_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP',
 'This Registered Member Account Was Registered From The Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS On: $_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP',
-'Uknown :: Fingerprint :: Clear-Text',
-'Uknown :: Fingerprint :: Hashed',
+'Unknown :: Fingerprint :: Clear-Text',
+'Unknown :: Fingerprint :: Hashed',
 'Empty Entry :: P.G.P. :: Key Block :: Public',
 'Empty Entry :: P.G.P. :: Key Block :: Private',
 '1',
@@ -2572,7 +2573,8 @@ member_username
 '$_GLOBAL_LOCAL_SERVER_TIME_SECONDS',
 '0',
 'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
-'Cerberus'");
+'Cerberus'
+");
 
 	echo ("[ Done ]<BR><BR>");
 
