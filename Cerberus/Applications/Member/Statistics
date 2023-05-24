@@ -1,0 +1,323 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Statistics
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Statistics
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+												echo ($_Application_Module_Member_Message_Statistics_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Fetch Statistics Data From The Database Server
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Find :: Statistics Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Statistics_DB_Query_SELECT_STATISTICS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_statistics ORDER BY id ASC LIMIT 1");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FILES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post");
+
+/*
+ ============================================================================================================
+ + Count :: Number of Rows
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS		= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS		= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FILES			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FILES);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_MEMBERS			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS);
+
+/*
+ ============================================================================================================
+ + List :: Statistics Data :: Miscellanious
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Statistics_DB_Query_FETCH_ARRAY_STATISTICS			= $DB->fetch_array($_Application_Module_Member_Statistics_DB_Query_SELECT_STATISTICS);
+
+$_Application_Module_Member_Statistics_LIST_NUMBER_OF_PAGE_VIEW				= $_Application_Module_Member_Statistics_DB_Query_FETCH_ARRAY_STATISTICS['statistics_total_number_of_page_views'];
+$_Application_Module_Member_Statistics_LIST_INSTALLATION_DATE				= $_Application_Module_Member_Statistics_DB_Query_FETCH_ARRAY_STATISTICS['statistics_installation_date'];
+
+/*
+ ============================================================================================================
+ + Is GZIP Compression On or Off ?
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_SYSTEM_GZIP_STATUS <= 0) {
+
+	$_Application_Module_Member_Statistics_GZIP_STATUS		= "Off";
+
+} else { // [ + ] IF: G.N.U. ZIP Compression System Setting Is: Off
+
+	$_Application_Module_Member_Statistics_GZIP_STATUS		= "On";
+
+} // [ + ] IF: G.N.U. ZIP Compression System Setting Is: On
+
+/*
+ ============================================================================================================
+ + Is The Safe-HTML Plugin On or Off ?
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_SYSTEM_SAFEHTML_STATUS <= 0) {
+
+	$_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS	= "Off";
+
+} else { // [ + ] IF: Safe-HTML Plugin System Setting Is: Off
+
+	$_Application_Module_Member_Statistics_Safe_HTML_PLUGIN_STATUS	= "On";
+
+} // [ + ] IF: Safe-HTML Plugin System Setting Is: On
+
+/*
+ ============================================================================================================
+ +
+ + Display :: System Settings and System Statistical Information
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<B>System Statistical Information</B><HR>
+												*&nbsp;Installation Date: $_Application_Module_Member_Statistics_LIST_INSTALLATION_DATE<BR>
+												*&nbsp;Total Number of Non-Unique Page Executions: $_Application_Module_Member_Statistics_LIST_NUMBER_OF_PAGE_VIEW<BR>
+												*&nbsp;Total Number of Unique Page Executions: Nothing Here Yet...<BR><BR>
+
+											<B>Current System Settings</B><HR>
+
+											<B>Web-Page Output Data Compression Settings</B><BR>
+												*&nbsp;G.N.U. ZIP ( GZIP ) Data Compression: $_GLOBAL_SYSTEM_GZIP_STATUS_DISPLAY<BR><BR>
+
+											<B>Graphical User Interface :: Theme Settings</B><BR>
+												*&nbsp;System Theme Image Format: $_GLOBAL_SYSTEM_IMAGE_EXTENSION<BR>
+												*&nbsp;System Theme Audio Format: $_GLOBAL_SYSTEM_SOUND_EXTENSION<BR>
+												*&nbsp;System Theme Directory: $_GLOBAL_SYSTEM_THEME_DIRECTORY<BR><BR>
+
+											<B>Language Settings</B><BR>
+												*&nbsp;System Language: $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY<BR><BR>
+
+											<B>Plug-In Settings</B><HR>
+
+											<B>System Plug-Ins</B><BR>
+												*&nbsp;Plug-In :: Location :: Directory: $_GLOBAL_SYSTEM_PLUGIN_LOCATION_DIRECTORY<BR>
+												*&nbsp;Plug-In :: Location :: Status: $_GLOBAL_SYSTEM_PLUGIN_LOCATION_STATUS<BR>
+												*&nbsp;Plug-In :: Safe Hyper-Text-Markup-Language :: Plug-In Directory: $_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_DIRECTORY<BR>
+												*&nbsp;Plug-In :: Safe Hyper-Text-Markup-Language :: Plug-In Status: $_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS<BR>
+												*&nbsp;Plug-In :: Text-Editor ( BB ) Code Plug-In :: Directory: $_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_DIRECTORY<BR>
+												*&nbsp;Plug-In :: Text-Editor ( BB ) Code Plug-In :: Status: $_GLOBAL_SYSTEM_PLUGIN_TEXT_EDITOR_STATUS<BR><BR>
+
+											<B>Terminal and Console Plug-Ins</B><BR><BR>
+
+											<B>Graphical Plug-Ins</B><BR>
+												*&nbsp;Plug-In :: Smileys and Emojis :: Directory: $_GLOBAL_SYSTEM_SMILEYS_DIRECTORY<BR><BR>
+
+											<B>System Security Settings</B><HR>
+
+											<B>Security Modules</B><BR>
+												*&nbsp;Security Module :: Master Sanitization Module :: Directory :: $_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE<BR>
+												*&nbsp;Security Module :: Master Sanitization Module :: Status :: Required<BR><BR>
+
+											<B>Cache-Control :: Random Generated Strings :: Secure HASH Algorithm, 512</B><BR>
+												*&nbsp;Hyper-Text Reference :: $_GLOBAL_SECURITY_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION<BR>
+												*&nbsp;Images :: $_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION<BR><BR>
+
+											<B>System-Wide Social Interaction Information & Statistics</B><HR>
+
+											<B>System-Wide Forum Information</B><BR>
+												*&nbsp;Total Number of Forums: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM<BR>
+												*&nbsp;Total Number of Forum' Topics: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS<BR>
+												*&nbsp;Total Number of Forum' Topic' Posts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS<BR><BR>
+
+											<B>System-Wide Commentation Information</B><BR>
+												*&nbsp;Total Number of Comments: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS<BR><BR>
+
+											<B>Registered Member Accounts Information</B><BR>
+												*&nbsp;Total Number of Registered Member Accounts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_MEMBERS<BR><BR>
+
+											<B>File System Information</B><BR>
+												*&nbsp;Total Number of Files Within The File System: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FILES<BR>
+												*&nbsp;File Size Upload Limitations :: File System :: $_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC KiloBits<BR>
+												*&nbsp;File Size Upload Limitations :: Registered Member Account :: User-Space :: $_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE KiloBits<BR>
+												*&nbsp;File Size Upload Limitations :: Registered Member Account :: Streams :: Individual Files ::<BR>
+												*&nbsp;File Size Upload Limitations :: Registered Member Account :: Streams :: Live Videos ::<BR>
+												*&nbsp;File Size Upload Limitations :: Instant Messenger ::<BR><BR>
+
+											<B>Network Connection and Web Server Information</B><HR>
+
+											<B>Visitor Network Connection Information</B><BR>
+												*&nbsp;Visitor' Server Request Method :: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
+												*&nbsp;Visitor' Server Request Time :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Visitor' Server Connection Type :: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR>
+												*&nbsp;Visitor' Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS<BR>
+												*&nbsp;Visitor' Internet Protocol Address :: Connecting Port :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
+												*&nbsp;Visitor' Web-Browser :: User-Agent :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY<BR><BR>
+
+											<B>Local Web Server Information</B><BR>
+												*&nbsp;Local Hyper-Text-Transfer-Protocol Host :: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
+												*&nbsp;Local Server Gateway Interface :: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
+												*&nbsp;Local Server Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS<BR>
+												*&nbsp;Local Server Software :: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
+												*&nbsp;Local Server Request Time :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
+												*&nbsp;Local Server Request Time ( Float ) :: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME_FLOAT<BR>
+												*&nbsp;Local Server Document Root :: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Accept Type :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Character Set :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_CHARACTER_SET<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Encoding :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_ENCODING<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Loading Type :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LOADING<BR>
+												*&nbsp;Local Server Hyper-Text-Transfer-Protocol Language :: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT_LANGUAGE<BR><BR>
+
+											<B>Current System Date and Time Settings</B><HR>
+												*&nbsp;Local Server :: Date :: Standard :: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
+												*&nbsp;Local Server :: Date :: In Years :: $_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL<BR>
+												*&nbsp;Local Server :: Date :: In Months :: $_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL<BR>
+												*&nbsp;Local Server :: Date :: In Days :: $_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL<BR>
+												*&nbsp;Local Server :: Time :: In Hours: $_GLOBAL_LOCAL_SERVER_TIME_HOURS<BR>
+												*&nbsp;Local Server :: Time :: In Minutes: $_GLOBAL_LOCAL_SERVER_TIME_MINUTES<BR>
+												*&nbsp;Local Server :: Time :: In Seconds: $_GLOBAL_LOCAL_SERVER_TIME_SECONDS<BR><BR>
+
+											<B>Web Server Technologies</B><HR>
+
+											<B>Apache Hyper-Text-Transfer-Protocol Engine Information</B><BR>
+											*&nbsp;Apache Hyper-Text-Transfer-Protocol Engine, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_APACHE<BR><BR>
+
+											<B>My-Structured-Query-Language Engine Information</B><BR>
+											*&nbsp;My-Structured-Query-Language Engine Version Number, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_MYSQL<BR><BR>
+
+											<B>Operating System Environment Information</B><BR>
+											*&nbsp;Operating System Environment, Currently Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_OPERATING_SYSTEM<BR><BR>
+
+											<B>Pre-Hyper-Text-Post-Processor Engine Information</B><BR>
+											*&nbsp;Pre-Hyper-Text-Post-Processor Engine Version Number, Configuration File :: $_ACCESS_PHP_ENGINE_VERSION<BR>
+											*&nbsp;Pre-Hyper-Text-Post-Processor Engine Version Number, Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_PHP<BR>
+											*&nbsp;Pre-Hyper-Text-Post-Processor Zend Engine Version Number, Loaded :: $_PROJECT_WEB_SERVER_TECHNOLOGY_VERSION_PHP_ZEND<BR><BR>
+											
+											<HR>
+											<CENTER><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_PROJECT_VERSION_SHORT\" TITLE=\":: Validate This $_PROJECT_STRING_NAME Installation ::\">$_PROJECT_VERSION_EXTENDED</A> ]</B></CENTER><HR>
+");
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Statistics
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_STATISTICS);
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Members
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS);
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Comments
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS);
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Files
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_SELECT_FILES);
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Forum
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM);
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Forum Topics
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS);
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Forum Posts
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS);
+?>
