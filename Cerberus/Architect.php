@@ -1923,7 +1923,7 @@ mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applic
  ============================================================================================================
 */
 
-INSERT INTO {$_MySQL_Generator_POST_ACCESS_DATABASE_TABLE_NAME_PREFIX}_members(
+mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members(
 member_access_level,
 member_attempt_authentication,
 member_birthdate,
@@ -2245,7 +2245,7 @@ member_username
 '0',
 'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
 '$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME'
-);
+");
 
 /*
  ============================================================================================================
