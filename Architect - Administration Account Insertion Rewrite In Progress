@@ -1,8 +1,11 @@
 This is the most complicated sql table out of the entire fucking thing. It's a fucking nightmare to go back and add features to the Registered Member Account system. This table is the most complicated
 out of all of the tables in the sql system. There are now 126 columns / entries for the _member table. It's almost fucking impossible to keep this fucking thing managed. There were over 150 entires in this before.
 I cleaned it up and despite every single fucking syntax checker saying there was nothing wrong with it it still wouldn't insert any accounts into the fucking database. I spent over 8 hours looking at this over
-and over again. I'm rewritinig the whole fucking thing. Something needs to be made to keep track of this fucking thing. I'm sick of it. If it doesn't work after this I'm moving on. I don't know if it was my own brain
-tricking me over and over again or if someone was hacking my fucking computer in the background while I was working on it or not.
+and over again. I'm rewritinig the whole fucking thing. Something needs to be made to keep track of this fucking thing. I'm so fucking sick of it.
+
+If it doesn't work after this I'm moving on. I don't know if it was my own brain tricking me over and over again or if someone was hacking my fucking computer in the background while I was working on it or not.
+
+I wrote this shit so far with the numbers to keep track of all of the fucking lines so all of the insertion data matches up. The numbers need to be removed after its done.
 
 mysql_query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members(
 1member_access_level,
