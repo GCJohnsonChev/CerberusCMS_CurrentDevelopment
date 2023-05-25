@@ -58,12 +58,32 @@
 /*
  ============================================================================================================
  +
- + [ @ ] Include :: Configuration Files
+ +
+ +
+ + [ @ ] Error Handling Systems
+ +
+ +
  +
  ============================================================================================================
 */
 
-include_once "../../System/Configuration/Global_Configuration.php";
+error_reporting("E_WARNING ^ E_NOTICE");
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Include :: Configuration Files
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+include_once ("../../System/Configuration/Global_Configuration.php");
+include_once ("../../System/Configuration/Global_Server_Configuration.php");
+include_once ("../../System/Configuration/Global_SQL_Server_Database_Class_MySQL_Standard");
 
 /*
  ============================================================================================================
