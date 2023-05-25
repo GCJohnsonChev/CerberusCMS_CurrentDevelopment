@@ -1,4 +1,3 @@
-<?php
 /*
  ============================================================================================================
  + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12,12 +11,12 @@
  + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
  +				 : correct display of this programming code and its indentation.
  + ----------------------------------------------------------------------------------------------------------
- +    ()    () - -
- +  ()  () ()()()()
+ +    () ()()()()() () -- ()
+ +  ()  () () --
  +  ------
- +
+ + Information Text File
  + ----------------------------------------------------------------------------------------------------------
- + - This File, Location	 : Master Root Directory => Root Directory => index.php
+ + - This File, Location	 : Master Root Directory => Root Directory => Security.txt
  + - This File, Version		 : 0.7.1
  + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
  + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
@@ -46,66 +45,33 @@
 /*
  ============================================================================================================
  +
- +
- +
- + [ ^ ] Master Index File
- +
- +
+ + Project Security Notes
  +
  ============================================================================================================
 */
 
-/*
- ============================================================================================================
- +
- + Master Index File :: Variables
- +
- ============================================================================================================
-*/
+***Build Cerberus Content Mangement System by scratch-copy from source to eliminate any possiblity of malware carrying onto your server***
 
-/*
- ============================================================================================================
- + Master Index File :: Variables :: Installation Application File
- ============================================================================================================
-*/
+It is possbile for any file of any kind to be injected / infected by an undetectable Remote Access Trojan that would remotely connect to a RAT / BOT Server. Some of these
+trojans are completely undetectable even to Linux Operating Systems, FreeBSD Operating Systems, Microsoft Windows Operating Systems, Android Operating Systems, Apple Operating Systems
+and just about all malware scanners no matter how current the malware database is. Trojans like these can be hooked / injected into any kind of file whether it be a document,
+audio file, image file or video file. It doesn't matter. Domestic and Foreign State Sponsored malware and just about ever other type of advanced malware is known to infect commercial
+products and commercial hardware firmware itself to survive the reinstallation of the operating systems. This applies to everything on GITHub and everywhere else on the Internet as well.
 
-$_Project_File_Installation				= "./Architect.php";
+It doesn't matter how good your security is. It doesn't matter how good your hardware security or security policies are. 
 
-/*
- ============================================================================================================
- + Master Index File :: Variables :: Kernel Application File
- ============================================================================================================
-*/
+To eliminate any possibility of this you must build CerberusCMS from scratch-copy from the official GITHub. Every file would need to be duplicated into an
+exact copy without actually using the same files from the official GITHub. You manually take the source code from the GITHub files on the web page
+and then reproduce them on the hard drive without actually downloading them to the hard drive.
 
-$_Project_File_Kernel					= "./Cerberus.php";
+First off, each hardware component on the Web Server would need to be flashed with original OEM firmware that is the most up-to-date release.
+Then an operating system would need to be installed and thoroughly configured and secured. After this use the terminal to install, configure and then security harden
+the LAMP / WAMP / AAMP / FAMP / GAMP or other kind of server software and then do a manual scratch-copy build of the latest version of CerberusCMS.
+Once after this is finished you can setup a security hardened web application firewall box. This will eliminate any possibly of any Remote Access Trojans or any other kind of malware 
+infecting any files at all and should make the entire web server really extra difficult to hack remotely.
 
-/*
- ============================================================================================================
- + Master Index File :: Variables :: Root Index File
- ============================================================================================================
-*/
+I wrote some C++ software from scratch that can be copied from source and then compiled in the terminal with G.C.C.. This application then grabs the organized directory structure
+from the official CerberusCMS GITHub and then it copies all of the source code from each of the files and then builds the entire system from scratch without actually downloading
+any of the files from the GITHub in any method at all.
 
-$_Project_File_Index					= "./index.php";
-
-/*
- ============================================================================================================
- + Check For Installation File: If It Exists, Redirect To It
- ============================================================================================================
-*/
-
-if (file_exists($_Project_File_Installation)) {
-
-	header("location: $_Project_File_Installation");
-
-/*
- ============================================================================================================
- + Check For Installation File: If It Does Not Exists, Redirect To Kernel File
- ============================================================================================================
-*/
-
-} else {
-
-	header("location: $_Project_File_Kernel");
-
-} // [ + ] IF: File Exists: Architect Installation Application
-?>
+This makes it impossible for any malware to be carried over into an installation of CerberusCMS. The theme however would need to be made from scratch by you.
