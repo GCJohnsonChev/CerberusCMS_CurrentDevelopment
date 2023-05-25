@@ -140,3 +140,4 @@ in the master database server and in the local database server do not include fi
 * if I go back and rewrite the Applications Panel to read the ./Member directory applications instead of using SQL tables then I can use the $_APPLICATION_MEMBER variables
 to link to the applications from the panel itself.. if I do that then all of the internal links can be 100% randomized with a random string generator.. thereby making it 100%
 impossible to hack the internal names.
+* The Architect and MySQL_Generator will not insert an Administrator account anymore to the _member SQL table. I have tried it 100 different ways and it NEVER FUCKING WORKS DESPITE EVERYTHING TELLING ME THE GOD DAMNED SYNTAX IS PERFECT. That's the end of it. I'm DONE WITH THIS. Take it as it is and fuck off.
