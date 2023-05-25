@@ -527,36 +527,36 @@ fclose($_ARCHITECT_LOG_INTERACTION_LOG_OPEN_FILE_NAME);
  ============================================================================================================
 */
 
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME							= $_POST['Architect_SQL_Database_Server_HostName'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME_PORT						= $_POST['Architect_SQL_Database_Server_HostName_Port'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_USERNAME							= $_POST['Architect_SQL_Database_Server_UserName'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PASSWORD							= $_POST['Architect_SQL_Database_Server_Password'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME						= $_POST['Architect_SQL_Database_Server_Database_Name'];
-$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME_TABLE_PREFIX				= $_POST['Architect_SQL_Database_Server_Database_Name_Table_Prefix'];
-$_ARCHITECT_INSTALL_FORM_POST_PHP_ENGINE_VERSION							= $_POST['Architect_PHP_Engine_Version'];
-$_ARCHITECT_INSTALL_FORM_POST_ELECTRONIC_MAIL_ADDRESS_SYSTEM_ADMINISTRATOR				= $_POST['Architect_Electronic_Mail_Address_System_Administrator'];
-$_ARCHITECT_INSTALL_FORM_POST_ELECTRONIC_MAIL_ADDRESS_SYSTEM_ROOT					= $_POST['Architect_Electronic_Mail_Address_System_Root'];
-$_ARCHITECT_INSTALL_FORM_POST_ELECTRONIC_MAIL_ADDRESS_SYSTEM_SERVICES					= $_POST['Architect_Electronic_Mail_Address_System_Services'];
-$_ARCHITECT_INSTALL_FORM_POST_SYSTEM_SERVICES_ENCRYPTION_STATUS_PGP_ELECTRONIC_MAIL_MESSAGE		= $_POST['Architect_System_Services_Encryption_Status_PGP_Electronic_Mail_Message'];
-$_ARCHITECT_INSTALL_FORM_POST_SYSTEM_SERVICES_ENCRYPTION_ELECTRONIC_MAIL_MESSAGE_PGP_KEY_PANEL_PUBLIC	= $_POST['Architect_System_Services_Encryption_Electronic_Mail_Message_PGP_Key_Panel_Public'];
-$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE								= $_POST['Architect_URL_Secure'];
-$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_SSL								= $_POST['Architect_URL_Secure_SSL'];
-$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_OPENSSL							= $_POST['Architect_URL_Secure_OpenSSL'];
-$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_TLS								= $_POST['Architect_URL_Secure_TLS'];
-$_ARCHITECT_INSTALL_FORM_POST_URL_CLEARTEXT								= $_POST['Architect_URL_ClearText'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME								= $_POST['Architect_SQL_Database_Server_HostName'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_HOSTNAME_PORT							= $_POST['Architect_SQL_Database_Server_HostName_Port'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_USERNAME								= $_POST['Architect_SQL_Database_Server_UserName'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_PASSWORD								= $_POST['Architect_SQL_Database_Server_Password'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME							= $_POST['Architect_SQL_Database_Server_Database_Name'];
+$_ARCHITECT_INSTALL_FORM_POST_DATABASE_SERVER_DATABASE_NAME_TABLE_PREFIX					= $_POST['Architect_SQL_Database_Server_Database_Name_Table_Prefix'];
+$_ARCHITECT_INSTALL_FORM_POST_PHP_ENGINE_VERSION								= $_POST['Architect_PHP_Engine_Version'];
+$_ARCHITECT_INSTALL_FORM_POST_ELECTRONIC_MAIL_ADDRESS_SYSTEM_ADMINISTRATOR					= $_POST['Architect_Electronic_Mail_Address_System_Administrator'];
+$_ARCHITECT_INSTALL_FORM_POST_ELECTRONIC_MAIL_ADDRESS_SYSTEM_ROOT						= $_POST['Architect_Electronic_Mail_Address_System_Root'];
+$_ARCHITECT_INSTALL_FORM_POST_ELECTRONIC_MAIL_ADDRESS_SYSTEM_SERVICES						= $_POST['Architect_Electronic_Mail_Address_System_Services'];
+$_ARCHITECT_INSTALL_FORM_POST_SYSTEM_SERVICES_ENCRYPTION_STATUS_PGP_ELECTRONIC_MAIL_MESSAGE			= $_POST['Architect_System_Services_Encryption_Status_PGP_Electronic_Mail_Message'];
+$_ARCHITECT_INSTALL_FORM_POST_SYSTEM_SERVICES_ENCRYPTION_ELECTRONIC_MAIL_MESSAGE_PGP_KEY_PANEL_PUBLIC		= $_POST['Architect_System_Services_Encryption_Electronic_Mail_Message_PGP_Key_Panel_Public'];
+$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE									= $_POST['Architect_URL_Secure'];
+$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_SSL									= $_POST['Architect_URL_Secure_SSL'];
+$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_OPENSSL								= $_POST['Architect_URL_Secure_OpenSSL'];
+$_ARCHITECT_INSTALL_FORM_POST_URL_SECURE_TLS									= $_POST['Architect_URL_Secure_TLS'];
+$_ARCHITECT_INSTALL_FORM_POST_URL_CLEARTEXT									= $_POST['Architect_URL_ClearText'];
 
 /*
  ============================================================================================================
- + Installation Form :: Install Database Name :: Variables :: Post Variables
+ + Installation Form :: Install Database :: Tables :: Variables :: Post Variables
  ============================================================================================================
 */
 
-$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_HOSTNAME				= $_POST['Architect_Install_Create_SQL_Database_Server_Database_HostName'];
-$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_HOSTNAME_PORT			= $_POST['Architect_Install_Create_SQL_Database_Server_Database_HostName_Port'];
-$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_USERNAME				= $_POST['Architect_Install_Create_SQL_Database_Server_Database_UserName'];
-$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_PASSWORD				= $_POST['Architect_Install_Create_SQL_Database_Server_Database_Password'];
-$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME				= $_POST['Architect_Install_Create_SQL_Database_Server_Database_Name'];
-$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX	= $_POST['Architect_Install_Create_SQL_Database_Server_Database_Name_Table_Prefix'];
+$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_HOSTNAME				= $_POST['Architect_Install_SQL_Database_Server_Database_Tables_Connect_HostName'];
+$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_HOSTNAME_PORT			= $_POST['Architect_Install_SQL_Database_Server_Database_Tables_Connect_HostName_Port'];
+$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_USERNAME				= $_POST['Architect_Install_SQL_Database_Server_Database_Tables_Connect_UserName'];
+$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_PASSWORD				= $_POST['Architect_Install_SQL_Database_Server_Database_Tables_Connect_Password'];
+$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME				= $_POST['Architect_Install_SQL_Database_Server_Database_Tables_Connect_Name'];
+$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX	= $_POST['Architect_Install_SQL_Database_Server_Database_Tables_Connect_Name_Table_Prefix'];
 
 /*
  ============================================================================================================
@@ -564,13 +564,13 @@ $_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATAB
  ============================================================================================================
 */
 
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_INSTALLATION_ARCHITECT				= file_get_contents("./$_INTERNAL_FILE_ARCHITECT");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_CONFIGURATION					= file_get_contents("./System/Configuration/Global_Configuration.php");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_STANDARD		= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Standard.php");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_IMPROVED		= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Improved.php");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_KERNEL						= file_get_contents("./$_INTERNAL_FILE_KERNEL");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_SECURITY_MASTER_SANITIZATION			= file_get_contents("./System/Security/Module/Sanitization/Default/Sanitization.cerberus");
-$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_LOG_FILE_INTERACTION_LOG					= file_get_contents("$_ARCHITECT_LOG_INTERACTION_LOG_FIND_FILE_NAME");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_INSTALLATION_ARCHITECT					= file_get_contents("./$_INTERNAL_FILE_ARCHITECT");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_CONFIGURATION						= file_get_contents("./System/Configuration/Global_Configuration.php");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_STANDARD			= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Standard.php");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_DATABASE_SERVER_CLASS_MySQL_IMPROVED			= file_get_contents("./System/Configuration/Global_SQL_Server_Database_Class_MySQL_Improved.php");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_KERNEL							= file_get_contents("./$_INTERNAL_FILE_KERNEL");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_SYSTEM_FILE_SECURITY_MASTER_SANITIZATION				= file_get_contents("./System/Security/Module/Sanitization/Default/Sanitization.cerberus");
+$_ARCHITECT_INSTALL_FORM_GET_FILE_CONTENTS_LOG_FILE_INTERACTION_LOG						= file_get_contents("$_ARCHITECT_LOG_INTERACTION_LOG_FIND_FILE_NAME");
 
 /*
  ============================================================================================================
@@ -745,6 +745,26 @@ echo ("
 		</FORM><BR><BR>
 
 		<B>Pre-Installation Notes</B><HR>
+
+		<B>Quick Installation Notes:</B><BR>
+		Each Web Server Setup is completely different than every other Web Server Setup depending on how it is Built, Installed, Configured and Setup. Installing this Web Application will require some knowledge of what kind of Web Server it is loaded onto.<BR>
+		[&nbsp;*&nbsp;] AAMP :: Apple, Apache, MySQL, PHP<BR>
+		[&nbsp;*&nbsp;] BAMP :: BSD, Apache, MySQL, PHP<BR>
+		[&nbsp;*&nbsp;] LAMP :: Linux, Apache, MySQL, PHP<BR>
+		[&nbsp;*&nbsp;] WAMP :: Windows, Apache, MySQL, PHP<BR><BR>
+
+		The exact process of installing this Web Application is in logical order:<BR>
+		1.) This Software Project should be completely unpacked onto the Web Server' Digital Storage Medium.<BR>
+		2.) This Software Project' Database Management System Configuration File should be either Configured manually or from this Installation Application.<BR>
+		3.) This Software Project' Database Server Database Table Entries should be Generated and then created in the Database Server.<BR>
+		3.1) Installing this Software Project' organized Database Server Table Entires requires doing so by either using this Installation Application or by Generating them manually and then copying the generated Table Strings and pasting those strings into the S.Q.L. Manager / Editor.<BR>
+		4.) The Database Server Database Table Data should be inserted into the Database Server Database.<BR>
+		4.1) Installing this Software Project' organized Database Server Table Entry Data requires doing so by either using this Installation Application or by Generating them manually and then copying the generated Table Data and pasting those strings into the S.Q.L. Manager / Editor.<BR>
+		This includes: The Administration Account that is created.<BR><BR>
+
+		Sometimes it is difficult to install anything on a shared hosting Web Server or another kind of Web Server that you do not have physical access to.<BR>
+		so in light of those situations: Architect has been designed to split up the installation process of this system to make it easier to install everything either automatically or by installing it manually part by part.<BR><BR>
+
 		<B>Directory and File Permissions Notes</B><BR>
 		[&nbsp;!&nbsp;]&nbsp;*Nix Server Users ( Linux, Unix, B.S.D., G.N.U., etcetera. ): See <A HREF=\"https://en.wikipedia.org/wiki/Chmod\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Wikipedia Entry For :: Access Control List / Change-Mode ( CHMOD ) ::\">Change-Mode ( CHMOD )</A> the following<BR>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directories, sub-directories and each file within these directories to the correct read and write file permissions before proceeding with this installation:<BR>
@@ -907,22 +927,22 @@ echo ("
 
 		<B>Tools :: Pre-Installation</B><HR>
 		<B>Database Management System Server</B><BR>
-		=>&nbsp;<A HREF=\"?InternalApplication&#61;Install_Database\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Internal Application :: Structured-Query-Language Database Server Name Creator ::\">Installer :: Create :: Structured-Query-Language Database Server :: Name</A><BR>
-		=>&nbsp;<A HREF=\"./Architect/MySQL/MySQL_Generator.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Internal Application :: Structured-Query-Language Database Table Structure Generator ::\">Installer :: Generate :: Structured-Query-Language Database Server :: Table Structure</A><BR><BR>
+		=>&nbsp;<A HREF=\"?InternalApplication&#61;Install_DatabaseTables\" TARGET=\"_NEW\" TITLE=\":: Open & Display ::The Internal Application :: Structured-Query-Language Database Table Installer ::\">Installer :: Automatic :: Structured-Query-Language Database Server :: Table Structure</A><BR>
+		=>&nbsp;<A HREF=\"./Architect/MySQL/MySQL_Generator.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display :: The Internal Application :: Structured-Query-Language Database Table Structure Generator ::\">Installer :: Manual :: Generate :: Structured-Query-Language Database Server :: Table Structure</A><BR><BR>
 
 		<B>ToolKits</B><BR>
-		=>&nbsp;<A HREF=\"./Architect/ToolKit/Installation_ToolKit.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Post-Installation ToolKit ::\">ToolKit :: Post-Installation</A><BR><BR>
+		=>&nbsp;<A HREF=\"./Architect/ToolKit/Installation_ToolKit.php\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Pre-Installation ToolKit ::\">ToolKit :: Pre-Installation</A><BR><BR>
 
 		<B>Permissions</B><BR>
-		=>&nbsp;<A HREF=\"?InternalApplication&#61;File_Permissions\" TITLE=\":: Open & Display The Internal Application :: Change-Mode ( CHMOD ) File Permissions Loop ::\">Permissions Loops :: Directories</A><BR>
-		=>&nbsp;<A HREF=\"?InternalApplication&#61;File_Permissions\" TITLE=\":: Open & Display The Internal Application :: Change-Mode ( CHMOD ) File Permissions Loop ::\">Permissions Loops :: Files</A><BR><BR>
+		=>&nbsp;<A HREF=\"?InternalApplication&#61;File_Permissions\" TITLE=\":: Open & Display :: The Internal Application :: Change-Mode ( CHMOD ) File Permissions Loop ::\">Permissions Loops :: Directories</A><BR>
+		=>&nbsp;<A HREF=\"?InternalApplication&#61;File_Permissions\" TITLE=\":: Open & Display :: The Internal Application :: Change-Mode ( CHMOD ) File Permissions Loop ::\">Permissions Loops :: Files</A><BR><BR>
 
 		<B>Diagnostics</B><BR>
 		=>&nbsp;<A HREF=\"./Maintenance/Diagnostics/$_INTERNAL_FILE_MAINTENANCE_DIAGNOSTICS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The System Diagnostics Application ::\">System Diagnostics :: Application</A><BR><BR>
 
 		<B>Tools :: Post-Installation</B><HR>
 		<B>Database Management System Server</B><BR>
-		=>&nbsp;<A HREF=\"?InternalApplication&#61;Install_Defaults\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Administration Account Installer & Default Database Server Data Installer ::\">Installer :: Database Table Data</A><BR><BR>
+		=>&nbsp;<A HREF=\"?InternalApplication&#61;Install_Defaults\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Administration Account Installer & Default Database Server Data Installer ::\">Installer :: Administration Account and Database Server Data</A><BR><BR>
 
 		<B>Server Software, Server Software Engine Versions and Extended Information</B><HR>
 		<B>Detailed Server Software and User-Interface Information:</B><BR>
@@ -1028,26 +1048,27 @@ echo ("
  ============================================================================================================
 */
 
-if ($_GET["InternalApplication"] == "Install_Database") {
+if ($_GET["InternalApplication"] == "Install_DatabaseTables") {
 
-if (!$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME) {
+if (!$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME) {
 
 echo ("
-		<FORM ACTION=\"?InternalApplication&#61;Install_Database\" METHOD=\"post\">
+		Install The Structured-Query-Language Database Server Tables<BR>
+		<FORM ACTION=\"?InternalApplication&#61;Install_DatabaseTables\" METHOD=\"post\">
 		Database Management Server Connection :: Settings<HR>
 		* <I>Database Management Server :: Database HostName</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_Create_SQL_Database_Server_Database_HostName\" VALUE=\"localhost\"><BR>
+			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_SQL_Database_Server_Database_Tables_Connect_HostName\" VALUE=\"localhost\"><BR>
 		* <I>Database Management Server :: Database HostName :: Port Number</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_Create_SQL_Database_Server_Database_Port\" VALUE=\"3306\"><BR>
+			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_SQL_Database_Server_Database_Tables_Connect_HostName_Port\" VALUE=\"3306\"><BR>
 		* <I>Database Management Server :: UserName</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_Create_SQL_Database_Server_Database_UserName\" VALUE=\"Database Server UserName\"><BR>
+			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_SQL_Database_Server_Database_Tables_Connect_UserName\" VALUE=\"Database Server UserName\"><BR>
 		* <I>Database Management Server :: Password</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_Create_SQL_Database_Server_Database_Password\" VALUE=\"Database Server Password\"><BR>
+			<INPUT TYPE=\"PASSWORD\" NAME=\"Architect_Install_SQL_Database_Server_Database_Tables_Connect_Password\" VALUE=\"Database Server Password\"><BR>
 		* <I>Database Management Server :: Database Name</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_Create_SQL_Database_Server_Database_Name\" VALUE=\"Database Server Database Name\"><BR>
+			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_SQL_Database_Server_Database_Tables_Connect_Name\" VALUE=\"Database Server Database Name\"><BR>
 		* <I>Database Management Server :: Database Name Table' Prefix</I>:<BR>
-			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_Create_SQL_Database_Server_Database_Name_Table_Prefix\" VALUE=\"Database Server Database Name Table' Prefix\"><BR>
-			<INPUT TYPE=\"submit\" VALUE=\"Install Database\">
+			<INPUT TYPE=\"TEXT\" NAME=\"Architect_Install_SQL_Database_Server_Database_Tables_Connect_Name_Table_Prefix\" VALUE=\"Database Server Database Name Table' Prefix\"><BR>
+			<INPUT TYPE=\"submit\" VALUE=\"Install Database Tables\">
 		</FORM><BR><BR>
 ");
 
@@ -1061,19 +1082,9 @@ echo ("
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Attempting Connection To Specified Database Server Host Name... Wait.<BR>");
 
-mysql_connect($_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_HOSTNAME, $_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_USERNAME, $_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_PASSWORD);
+mysql_connect($_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_HOSTNAME, $_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_USERNAME, $_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_PASSWORD);
 
 	echo ("[ Connected ]<BR>");
-
-/*
- ============================================================================================================
- + Create :: Specified Database Name
- ============================================================================================================
-*/
-
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Creating Specified Database Name... Wait.<BR>");
-
-mysql_create_db("$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME") or die(mysql_error());
 
 /*
  ============================================================================================================
@@ -1081,10 +1092,9 @@ mysql_create_db("$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DA
  ============================================================================================================
 */
 
-	echo ("[ Done ]<BR>");
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Attempting Connection To Created Database Name: <I>$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME</I>... Wait.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Attempting Connection To Database Management Server HostName: $_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_HOSTNAME and Database Management Server Database Name: Existing Database Name: <I>$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME</I> by using the Credentials :: UserName: $_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_USERNAME and Password: $_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_PASSWORD... Wait.<BR>");
 
-mysql_select_db($_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME);
+mysql_select_db($_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME);
 
 /*
  ============================================================================================================
@@ -1093,7 +1103,7 @@ mysql_select_db($_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DAT
 */
 
 	echo ("[ Done ]<BR>");
-	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing S.Q.L. Database Server Database Structure... Wait.<BR>");
+	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing S.Q.L. Database Server Database Table Structure... Wait.<BR>");
 
 /*
  ============================================================================================================
@@ -1103,7 +1113,7 @@ mysql_select_db($_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DAT
 
 /* Applications */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATIONS							= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_applications (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_applications (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 application_file_integrity VARCHAR(512),
 application_file_integrity_installation VARCHAR(512),
@@ -1117,37 +1127,32 @@ application_file_permission_location_internet_protocol_address CHAR(1),
 application_file_status CHAR(1),
 application_file_timestamp_installation VARCHAR(100),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Custom Applications */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATIONS_CUSTOM						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_applications_custom (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_applications_custom (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 custom_application_data TEXT,
 custom_application_name VARCHAR(250),
 custom_application_timestamp_installation VARCHAR(100),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Application Links */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATION_LINKS						= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_application_links (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_application_links (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 application_link_name VARCHAR(250),
 application_link_row CHAR(3),
 application_link_url VARCHAR(250),
 application_link_timestamp_installation VARCHAR(100),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Application Panels */
 
-$_Architect_DB_Query_INSTALL_TABLE_APPLICATION_PANELS						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_application_panels (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_application_panels (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 panel_file_integrity VARCHAR(512),
 panel_file_integrity_installation VARCHAR(512),
@@ -1158,37 +1163,33 @@ panel_file_status CHAR(1),
 panel_title VARCHAR(250),
 panel_timestamp_installation VARCHAR(100),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Articles */
 
-$_Architect_DB_Query_INSTALL_TABLE_ARTICLES							= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_articles (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_articles (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 article_author VARCHAR(50),
 article_data TEXT,
 article_time VARCHAR(50),
 article_title VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Banned Networks */
 
-$_Architect_DB_Query_INSTALL_TABLE_BANNED_NETWORKS						= "mysql_query(\"CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_banned_networks (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_banned_networks (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 dns_address_string VARCHAR(128),
 dns_address_text TEXT,
 ip_address_string VARCHAR(128),
 ip_address_text TEXT,
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Comments */
 
-$_Architect_DB_Query_INSTALL_TABLE_COMMENTS							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_comments (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_comments (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 comment_author VARCHAR(50),
 comment_data TEXT,
@@ -1196,25 +1197,21 @@ comment_application_id CHAR(20),
 comment_application_name VARCHAR(100),
 comment_time VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* File Categories */
 
-$_Architect_DB_Query_INSTALL_TABLE_FILE_CATEGORIES						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_file_categories (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_file_categories (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 file_category_description VARCHAR(250),
 file_category_time VARCHAR(50),
 file_category_title VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Files */
 
-$_Architect_DB_Query_INSTALL_TABLE_FILES							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_files (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_files (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 file_author VARCHAR(50),
 file_category VARCHAR(250),
@@ -1226,26 +1223,22 @@ file_time VARCHAR(50),
 file_title VARCHAR(50),
 file_uploader VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Forum */
 
-$_Architect_DB_Query_INSTALL_TABLE_FORUM_FORUM							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_forum_forum (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_forum_forum (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 forum_access_level CHAR(1),
 forum_date VARCHAR(50),
 forum_description TEXT,
 forum_title VARCHAR(200),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Forum Posts */
 
-$_Architect_DB_Query_INSTALL_TABLE_FORUM_POST							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_forum_post (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_forum_post (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 post_access_level CHAR(1),
 post_author VARCHAR(50),
@@ -1254,13 +1247,11 @@ post_date VARCHAR(50),
 post_last_edit VARCHAR(50),
 post_topic_id CHAR(20),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Forum Topics */
 
-$_Architect_DB_Query_INSTALL_TABLE_FORUM_TOPIC							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_forum_topic (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_forum_topic (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 topic_access_level CHAR(1),
 topic_date VARCHAR(50),
@@ -1270,13 +1261,11 @@ topic_last_post VARCHAR(50),
 topic_last_poster CHAR(20),
 topic_title VARCHAR(200),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Links */
 
-$_Architect_DB_Query_INSTALL_TABLE_LINKS							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_links (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_links (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 link_author VARCHAR(50),
 link_description TEXT,
@@ -1284,13 +1273,11 @@ link_time VARCHAR(50),
 link_title VARCHAR(50),
 link_url VARCHAR(250),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Registered Member Accounts */
 
-$_Architect_DB_Query_INSTALL_TABLE_MEMBERS							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_members (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_members (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 member_access_level CHAR(1),
 member_attempt_authentication CHAR(1),
@@ -1317,18 +1304,20 @@ member_ip_address_authorized VARCHAR(50),
 member_ip_address_authorization_token VARCHAR(512),
 member_ip_address_last_login VARCHAR(200),
 member_ip_address_log TEXT,
-member_emergency_contact_1 TEXT,
-member_emergency_contact_2 TEXT,
-member_emergency_contact_3 TEXT,
+member_contact_emergency_1 TEXT,
+member_contact_emergency_2 TEXT,
+member_contact_emergency_3 TEXT,
+member_emergency_medical TEXT,
 member_last_referrer TEXT,
 member_level_rank CHAR(1),
-member_location_device_gps TEXT,
+member_location_device_gps_x VARCHAR(250),
+member_location_device_gps_y VARCHAR(250),
 member_location_device_glo TEXT,
-member_location_device_region TEXT,
-member_location_device_timezone TEXT,
-member_location_given_area TEXT,
-member_location_given_region TEXT,
-member_location_given_timezone TEXT,
+member_location_device_region VARCHAR(250),
+member_location_device_timezone VARCHAR(250),
+member_location_given_area VARCHAR(250),
+member_location_given_region VARCHAR(250),
+member_location_given_timezone VARCHAR(250),
 member_mood VARCHAR(100),
 member_music VARCHAR(100),
 member_name_first VARCHAR(100),
@@ -1346,44 +1335,9 @@ member_physical_biometrics_blood_type VARCHAR(10),
 member_physical_biometrics_color_eye_1 VARCHAR(10),
 member_physical_biometrics_color_eye_2 VARCHAR(10),
 member_physical_biometrics_color_hair VARCHAR(10),
-member_physical_dimensions_head_circumference_skull_cap VARCHAR(10),
-member_physical_dimensions_head_width_eye_bridge VARCHAR(10),
-member_physical_dimensions_body_circumference_arm_left VARCHAR(10),
-member_physical_dimensions_body_circumference_arm_right VARCHAR(10),
-member_physical_dimensions_body_circumference_hand_left VARCHAR(10),
-member_physical_dimensions_body_circumference_hand_right VARCHAR(10),
-member_physical_dimensions_hand_length_left VARCHAR(10),
-member_physical_dimensions_hand_length_left_finger_thumb VARCHAR(10),
-member_physical_dimensions_hand_length_left_finger_index VARCHAR(10),
-member_physical_dimensions_hand_length_left_finger_middle VARCHAR(10),
-member_physical_dimensions_hand_length_left_finger_ring VARCHAR(10),
-member_physical_dimensions_hand_length_left_finger_pinky VARCHAR(10),
-member_physical_dimensions_hand_length_right VARCHAR(10),
-member_physical_dimensions_hand_length_right_finger_thumb VARCHAR(10),
-member_physical_dimensions_hand_length_right_finger_index VARCHAR(10),
-member_physical_dimensions_hand_length_right_finger_middle VARCHAR(10),
-member_physical_dimensions_hand_length_right_finger_ring VARCHAR(10),
-member_physical_dimensions_hand_length_right_finger_pinky VARCHAR(10),
-member_physical_dimensions_body_cirumference_waist VARCHAR(10),
-member_physical_dimensions_body_circumference_chest VARCHAR(10),
-member_physical_dimensions_body_circumference_leg_left VARCHAR(10),
-member_physical_dimensions_body_circumference_leg_right VARCHAR(10),
-member_physical_dimensions_body_length_leg_left VARCHAR(10),
-member_physical_dimensions_body_length_leg_right VARCHAR(1),
-member_physical_dimensions_foot_circumference_left VARCHAR(10),
-member_physical_dimensions_foot_length_left VARCHAR(10),
-member_physical_dimensions_foot_length_left_toe_big VARCHAR(10),
-member_physical_dimensions_foot_length_left_toe_index VARCHAR(10),
-member_physical_dimensions_foot_length_left_toe_middle VARCHAR(10),
-member_physical_dimensions_foot_length_left_toe_ring VARCHAR(10),
-member_physical_dimensions_foot_length_left_toe_pinky VARCHAR(10),
-member_physical_dimensions_foot_circumference_right VARCHAR(10),
-member_physical_dimensions_foot_length_right VARCHAR(10),
-member_physical_dimensions_foot_length_right_toe_big VARCHAR(10),
-member_physical_dimensions_foot_length_right_toe_index VARCHAR(10),
-member_physical_dimensions_foot_length_right_toe_middle VARCHAR(10),
-member_physical_dimensions_foot_length_right_toe_ring VARCHAR(10),
-member_physical_dimensions_foot_length_right_toe_pinky VARCHAR(10),
+member_physical_biometrics_height VARCHAR(4),
+member_physical_biometrics_weight VARCHAR(4),
+member_physical_dimensions TEXT,
 member_physical_ethnicity_1 VARCHAR(200),
 member_physical_ethnicity_2 VARCHAR(200),
 member_physical_ethnicity_3 VARCHAR(200),
@@ -1395,8 +1349,6 @@ member_physical_race_1 VARCHAR(200),
 member_physical_race_2 VARCHAR(200),
 member_physical_race_3 VARCHAR(200),
 member_physical_race_4 VARCHAR(200),
-member_physical_height VARCHAR(4),
-member_physical_weight VARCHAR(4),
 member_profile_about TEXT,
 member_profile_signature TEXT,
 member_registration_date VARCHAR(100),
@@ -1405,25 +1357,26 @@ member_security_fingerprint_cleartext TEXT,
 member_security_fingerprint_hashed VARCHAR(512),
 member_security_pgp_key_panel_public TEXT,
 member_security_pgp_key_panel_private TEXT,
+member_security_custom_password_panel TEXT,
+member_settings_control_panel_audio CHAR(1),
 member_settings_encryption_pgp CHAR(1),
 member_settings_language VARCHAR(50),
-member_settings_control_panel_audio CHAR(1),
 member_settings_newsletter CHAR(1),
 member_settings_theme_directory VARCHAR(25),
-member_settings_display_profile_gallery_audio CHAR(1),
-member_settings_display_profile_gallery_document CHAR(1),
-member_settings_display_profile_gallery_image CHAR(1),
-member_settings_display_profile_gallery_video CHAR(1),
-member_settings_display_profile_physical CHAR(1),
-member_settings_display_profile_streams CHAR(1),
-member_settings_display_profile_security CHAR(1),
-member_settings_display_profile_details CHAR(1),
-member_settings_display_profile_location CHAR(1),
-member_settings_display_profile_authentication CHAR(1),
-member_settings_display_profile_contact CHAR(1),
-member_settings_display_profile_contact_emergency CHAR(1),
-member_settings_display_profile_activity CHAR(1),
-member_settings_display_profile_friends CHAR(1),
+member_settings_visibility_profile_activity CHAR(1),
+member_settings_visibility_profile_authentication CHAR(1),
+member_settings_visibility_profile_contact CHAR(1),
+member_settings_visibility_profile_contact_emergency CHAR(1),
+member_settings_visibility_profile_details CHAR(1),
+member_settings_visibility_profile_friends CHAR(1),
+member_settings_visibility_profile_gallery_audio CHAR(1),
+member_settings_visibility_profile_gallery_document CHAR(1),
+member_settings_visibility_profile_gallery_image CHAR(1),
+member_settings_visibility_profile_gallery_video CHAR(1),
+member_settings_visibility_profile_location CHAR(1),
+member_settings_visibility_profile_physical CHAR(1),
+member_settings_visibility_profile_security CHAR(1),
+member_settings_visibility_profile_streams CHAR(1),
 member_socialmedia_audio_spotify VARCHAR(250),
 member_socialmedia_business_linkedin VARCHAR(250),
 member_socialmedia_communications_discord VARCHAR(250),
@@ -1453,13 +1406,11 @@ member_status_account_locked CHAR(1),
 member_url_homepage VARCHAR(250),
 member_username VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Messenger :: Plain-Text-File Room */
 
-$_Architect_DB_Query_INSTALL_TABLE_MESSENGER_CLEAR_TEXT_FILE_ROOM				= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_messenger_clear_text_file_room (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_messenger_clear_text_file_room (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 messenger_room_creation_author VARCHAR(100),
 messenger_room_creation_author_device_ip_address VARCHAR(100),
@@ -1470,13 +1421,11 @@ messenger_room_password_entry VARCHAR(100),
 messenger_room_password_maintenance VARCHAR(100),
 messenger_room_status_visibility CHAR(1),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Messenger :: Plain-Text S.Q.L. Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_MESSENGER_CLEAR_TEXT_MESSAGES				= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_messenger_clear_text_messages (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_messenger_clear_text_messages (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 messenger_room_creation_timestamp VARCHAR(100),
 messenger_room_message TEXT,
@@ -1491,13 +1440,11 @@ messenger_room_message_timestamp VARCHAR(100),
 messenger_room_message_id TEXT,
 messenger_room_name VARCHAR(100),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Messenger :: Encrypted-Text-File Room */
 
-$_Architect_DB_Query_INSTALL_TABLE_MESSENGER_ENCRYPTED_TEXT_FILE_ROOM				= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_messenger_encrypted_text_file_room (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_messenger_encrypted_text_file_room (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 messenger_room_creation_author VARCHAR(100),
 messenger_room_creation_author_device_ip_address VARCHAR(100),
@@ -1508,13 +1455,11 @@ messenger_room_password_entry VARCHAR(100),
 messenger_room_password_maintenance VARCHAR(100),
 messenger_room_status_visibility CHAR(1),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Messenger :: Encrypted-Text S.Q.L. Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_MESSENGER_ENCRYPTED_TEXT_MESSAGES				= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_messenger_encrypted_text_messages (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_messenger_encrypted_text_messages (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 messenger_room_message TEXT,
 messenger_room_message_author VARCHAR(100),
@@ -1529,13 +1474,11 @@ messenger_room_name VARCHAR(100),
 messenger_room_timestamp_message VARCHAR(100),
 messenger_room_timestamp_creation VARCHAR(100),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* News Articles */
 
-$_Architect_DB_Query_INSTALL_TABLE_NEWS								= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_news (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_news (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 news_author VARCHAR(50),
 news_avatar VARCHAR(50),
@@ -1546,25 +1489,21 @@ news_rss_rfc TEXT,
 news_time VARCHAR(50),
 news_title VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* News Submissions */
 
-$_Architect_DB_Query_INSTALL_TABLE_NEWS_SUBMISSIONS						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_news_submissions (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_news_submissions (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 news_submission_author VARCHAR(50),
 news_submission_data TEXT,
 news_submission_time VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Private Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_PRIVATE_MESSAGES						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_private_messages (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_private_messages (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 private_message_from VARCHAR(50),
 private_message_recipient VARCHAR(50),
@@ -1572,13 +1511,11 @@ private_message_subject VARCHAR(250),
 private_message_data TEXT,
 private_message_sent_time VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Ranks */
 
-$_Architect_DB_Query_INSTALL_TABLE_RANKS							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_ranks (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_ranks (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 rank_gender_male_0 VARCHAR(25),
 rank_gender_male_1 VARCHAR(25),
@@ -1591,13 +1528,11 @@ rank_gender_female_2 VARCHAR(25),
 rank_gender_female_3 VARCHAR(25),
 rank_gender_female_4 VARCHAR(25),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Settings */
 
-$_Architect_DB_Query_INSTALL_TABLE_SETTINGS							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_settings (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_settings (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 settings_system_time_cookies VARCHAR(10),
 settings_system_status_embedded_compression_gzip CHAR(1),
@@ -1623,44 +1558,37 @@ settings_system_security_cache_server CHAR(1),
 settings_system_security_module_directory_sanitization VARCHAR(50),
 settings_system_security_module_status_sanitization VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Shout Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_SHOUT_MESSAGES						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_shout_messages (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_shout_messages (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 message_author VARCHAR(50),
 message_data VARCHAR(250),
 message_time VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* Statistics */
 
-$_Architect_DB_Query_INSTALL_TABLE_STATISTICS							= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_statistics (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_statistics (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 statistics_total_number_of_document_executions_non_unique CHAR(15),
 statistics_total_number_of_document_executions_unique CHAR(15),
 statistics_installation_date VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 /* System Messages */
 
-$_Architect_DB_Query_INSTALL_TABLE_SYSTEM_MESSAGES						= "mysql_query(\"
-CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_CREATE_DATABASE_SERVER_DATABASE_NAME_DATABASE_TABLE_PREFIX\"_system_message (
+mysql_query("CREATE TABLE \"$_ARCHITECT_INSTALL_FORM_POST_INSTALL_DATABASE_SERVER_DATABASE_TABLES_CONNECT_NAME_DATABASE_TABLE_PREFIX\"_system_message (
 id MEDIUMINT NOT NULL AUTO_INCREMENT,
 message_author VARCHAR(50),
 message_data TEXT,
 message_member VARCHAR(50),
 PRIMARY KEY (id)
-\");
-";
+") or die(mysql_error());
 
 		echo ("[ Done ]<BR>");
 
@@ -1718,7 +1646,7 @@ $_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME						= ucfirst($_ARCHITECT_POST_
  ============================================================================================================
 */
 
-$_ARCHITECT_ADMINISTRATOR_ACCOUNT_PASSWORD_HASHED					= password_hash($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1, PASSWORD_BCRYPT);
+$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_HASHED					= password_hash($_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_PASSWORD_1, PASSWORD_BCRYPT);
 
 /*
  ============================================================================================================
@@ -1949,12 +1877,14 @@ member_ip_address_authorized,
 member_ip_address_authorization_token,
 member_ip_address_last_login,
 member_ip_address_log,
-member_emergency_contact_1,
-member_emergency_contact_2,
-member_emergency_contact_3,
+member_contact_emergency_1,
+member_contact_emergency_2,
+member_contact_emergency_3,
+member_emergency_medical,
 member_last_referrer,
 member_level_rank,
-member_location_device_gps,
+member_location_device_gps_x,
+member_location_device_gps_y,
 member_location_device_glo,
 member_location_device_region,
 member_location_device_timezone,
@@ -1978,44 +1908,9 @@ member_physical_biometrics_blood_type,
 member_physical_biometrics_color_eye_1,
 member_physical_biometrics_color_eye_2,
 member_physical_biometrics_color_hair,
-member_physical_dimensions_head_circumference_skull_cap,
-member_physical_dimensions_head_width_eye_bridge,
-member_physical_dimensions_body_circumference_arm_left,
-member_physical_dimensions_body_circumference_arm_right,
-member_physical_dimensions_body_circumference_hand_left,
-member_physical_dimensions_body_circumference_hand_right,
-member_physical_dimensions_hand_length_left,
-member_physical_dimensions_hand_length_left_finger_thumb,
-member_physical_dimensions_hand_length_left_finger_index,
-member_physical_dimensions_hand_length_left_finger_middle,
-member_physical_dimensions_hand_length_left_finger_ring,
-member_physical_dimensions_hand_length_left_finger_pinky,
-member_physical_dimensions_hand_length_right,
-member_physical_dimensions_hand_length_right_finger_thumb,
-member_physical_dimensions_hand_length_right_finger_index,
-member_physical_dimensions_hand_length_right_finger_middle,
-member_physical_dimensions_hand_length_right_finger_ring,
-member_physical_dimensions_hand_length_right_finger_pinky,
-member_physical_dimensions_body_cirumference_waist,
-member_physical_dimensions_body_circumference_chest,
-member_physical_dimensions_body_circumference_leg_left,
-member_physical_dimensions_body_circumference_leg_right,
-member_physical_dimensions_body_length_leg_left,
-member_physical_dimensions_body_length_leg_right,
-member_physical_dimensions_foot_circumference_left,
-member_physical_dimensions_foot_length_left,
-member_physical_dimensions_foot_length_left_toe_big,
-member_physical_dimensions_foot_length_left_toe_index,
-member_physical_dimensions_foot_length_left_toe_middle,
-member_physical_dimensions_foot_length_left_toe_ring,
-member_physical_dimensions_foot_length_left_toe_pinky,
-member_physical_dimensions_foot_circumference_right,
-member_physical_dimensions_foot_length_right,
-member_physical_dimensions_foot_length_right_toe_big,
-member_physical_dimensions_foot_length_right_toe_index,
-member_physical_dimensions_foot_length_right_toe_middle,
-member_physical_dimensions_foot_length_right_toe_ring,
-member_physical_dimensions_foot_length_right_toe_pinky,
+member_physical_biometrics_height,
+member_physical_biometrics_weight,
+member_physical_dimensions,
 member_physical_ethnicity_1,
 member_physical_ethnicity_2,
 member_physical_ethnicity_3,
@@ -2027,35 +1922,34 @@ member_physical_race_1,
 member_physical_race_2,
 member_physical_race_3,
 member_physical_race_4,
-member_physical_height,
-member_physical_weight,
 member_profile_about,
 member_profile_signature,
 member_registration_date,
 member_registration_details,
-member_security_fingerprint_cleartext,
+member_security_fingerprint_clear,,
 member_security_fingerprint_hashed,
+member_security_password_panel_custom_private,
 member_security_pgp_key_panel_public,
 member_security_pgp_key_panel_private,
+member_settings_control_panel_audio,
 member_settings_encryption_pgp,
 member_settings_language,
-member_settings_control_panel_audio,
 member_settings_newsletter,
 member_settings_theme_directory,
-member_settings_display_profile_gallery_audio,
-member_settings_display_profile_gallery_document,
-member_settings_display_profile_gallery_image,
-member_settings_display_profile_gallery_video,
-member_settings_display_profile_physical,
-member_settings_display_profile_streams,
-member_settings_display_profile_security,
-member_settings_display_profile_details,
-member_settings_display_profile_location,
-member_settings_display_profile_authentication,
-member_settings_display_profile_contact,
-member_settings_display_profile_contact_emergency,
-member_settings_display_profile_activity,
-member_settings_display_profile_friends,
+member_settings_visibility_profile_activity,
+member_settings_visibility_profile_authentication,
+member_settings_visibility_profile_contact,
+member_settings_visibility_profile_contact_emergency,
+member_settings_visibility_profile_details,
+member_settings_visibility_profile_friends,
+member_settings_visibility_profile_gallery_audio,
+member_settings_visibility_profile_gallery_document,
+member_settings_visibility_profile_gallery_image,
+member_settings_visibility_profile_gallery_video,
+member_settings_visibility_profile_location,
+member_settings_visibility_profile_physical,
+member_settings_visibility_profile_security,
+member_settings_visibility_profile_streams,
 member_socialmedia_audio_spotify,
 member_socialmedia_business_linkedin,
 member_socialmedia_communications_discord,
@@ -2113,9 +2007,11 @@ member_username
 'Emergency Contact :: 1',
 'Emergency Contact :: 2',
 'Emergency Contact :: 3',
+'Emergency :: Medical',
 '$_GLOBAL_LOCAL_SERVER_HTTP_REFERRER',
 '5',
-'Unknown :: Location :: Device :: GPS',
+'Unknown :: Location :: Device :: GPS X',
+'Unknown :: Location :: Device :: GPS Y',
 'Unknown :: Location :: Device :: GLO',
 'Unknown :: Location :: Device :: Region',
 'Unknown :: Location :: Device :: Timezone',
@@ -2139,43 +2035,9 @@ member_username
 'Unkwn',
 'Unkwn',
 'Unkwn',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
-'0',
+'Unkwn',
+'000',
+'000',
 '0',
 'Unknown :: Ethnicity :: 1',
 'Unknown :: Ethnicity :: 2',
@@ -2188,16 +2050,16 @@ member_username
 'Unknown :: Race :: 2',
 'Unknown :: Race :: 3',
 'Unknown :: Race :: 4',
-'000',
-'000',
 'Account Profile :: Installation Administration Account',
 'Account Signature :: Installation Administration Account',
 '$_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP',
 'This Registered Member Account Was Registered From The Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS On: $_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP',
 'Unknown :: Fingerprint :: Clear-Text',
 'Unknown :: Fingerprint :: Hashed',
+'Empty Entry :: Password :: Panel :: Custom :: Private',
 'Empty Entry :: P.G.P. :: Key Block :: Public',
 'Empty Entry :: P.G.P. :: Key Block :: Private',
+'1',
 '1',
 'English',
 '0',
@@ -2245,7 +2107,7 @@ member_username
 '0',
 'https://www.Twitter.com/$_PROJECT_STRING_NAME_UNIX',
 '$_ARCHITECT_POST_ADMINISTRATOR_ACCOUNT_USERNAME'
-");
+)");
 
 /*
  ============================================================================================================
@@ -2598,7 +2460,7 @@ copy("./Member/Setup/Indexes/Files/Video/Video.php","./Member/$_PROJECT_STRING_N
 
 	echo ("<FONT COLOR=\"#CD0000\">[&nbsp;*&nbsp;]</FONT> Installing Default Friend System... Wait.<BR>");
 
-copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_PROJECT_STRING_NAME_SHORT@Localhost");
+copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/Master_List/Electronic_Mail_Addresses/$_PROJECT_STRING_NAME_SHORT@local.host");
 
 	echo ("[ Done ]<BR>");
 	echo ("-----------------------------------<BR><BR>");
