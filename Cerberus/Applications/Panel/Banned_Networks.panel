@@ -1,0 +1,128 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  --  ()
+ +  ()  --  ()  ()
+ +  ------------------------------
+ +  Panel Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Panel => Banned_Networks.panel
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Panel :: Banned Networks
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Display List of Banned Networks
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve List of Banned Networks
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Retrieve List of Banned Networks From Database
+ ============================================================================================================
+*/
+
+$_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_banned_networks ORDER BY id DESC LIMIT 100");
+
+/*
+ ============================================================================================================
+ + IF: Banned Network Entries IS Null
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES) <= 0) {
+
+										echo ("No Banished Network Entries Exist");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Display Banned Networks Into Options
+ ============================================================================================================
+*/		
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Banish\" METHOD=\"post\">
+												<SELECT NAME=\"post_banned_network_address\">");
+
+while ($_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES_Fetch_Array = $DB->fetch_array($_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES)) {
+
+$_Application_Module_Block_Banned_Networks_LIST_IP_ADDRESS_STRING 				= $_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES_Fetch_Array['ip_address_string'];
+$_Application_Module_Block_Banned_Networks_LIST_IP_ADDRESS_TEXT 				= $_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES_Fetch_Array['ip_address_text'];
+$_Application_Module_Block_Banned_Networks_LIST_DNS_ADDRESS_STRING 				= $_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES_Fetch_Array['dns_address_string'];
+$_Application_Module_Block_Banned_Networks_LIST_DNS_ADDRESS_TEXT 				= $_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES_Fetch_Array['dns_address_text'];
+
+										echo ("<OPTION VALUE=\"$_Application_Module_Block_Banned_Networks_LIST_IP_ADDRESS_STRING\">$_Application_Module_Block_Banned_Networks_LIST_IP_ADDRESS_STRING</OPTION>");
+
+} // [ + ] WHILE: Retrieving List of Banished Network Entries From Database Server
+
+										echo ("</SELECT><BR><INPUT TYPE=\"submit\" VALUE=\"Manage Banishments\"></FORM>");
+
+} // [ + ] IF: Banished Network Entries Number of Rows IS Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query: Select Latest Banned I.P. Addresses
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Block_Banned_DB_Query_RETRIEVE_BANNED_NETWORK_ADDRESSES);
+?>

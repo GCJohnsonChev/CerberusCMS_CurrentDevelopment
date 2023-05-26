@@ -1,0 +1,166 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Electronic_Mail
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Electronic Mail
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+ 												echo ($_Application_Module_Member_Message_Electronic_Mail_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Database Query: Retrieve Registered Member Entries
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members");
+
+while ($_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS_Fetch_Array	= $DB->fetch_array($_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS)) {
+
+$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ID					= $_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS			= $_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_USERNAME				= $_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+
+/*
+ ============================================================================================================
+ +
+ + Send Electronic Mail
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Electronic_MailID"] == "$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ID") {
+
+/*
+ ============================================================================================================
+ + Send Electronic Mail Form Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE					= $_POST['AM_Electronic_Mail_Message'];
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE_HASH_SHA_256				= hash('sha256', $_Application_Module_Member_Electronic_Mail_POST_MESSAGE);
+
+/*
+ ============================================================================================================
+ + Send Electronic Mail Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Member_Electronic_Mail_POST_MESSAGE) {
+
+echo ("
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ID\" METHOD=\"post\">
+													Send Private Electronic Mail Message To: <I><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_USERNAME\" TITLE=\"Open Profile For :: $_Application_Module_Member_Electronic_Mail_LIST_MEMBER_USERNAME\">$_Application_Module_Member_Electronic_Mail_LIST_MEMBER_USERNAME</A></I><BR><BR>
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AM_Electronic_Mail_Message\">Write the Electronic Mail Message here... Registered Member Account Electronic Mail Addresses are hidden to prevent malicious use of personal information.</TEXTAREA><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Send Electronic Mail Message\">
+												</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + Send Non-Encrypted Electronic Mail Message
+ +
+ ============================================================================================================
+*/
+
+if(mail($_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,"Electronic Mail Message From :: $_GLOBAL_COOKIE_MEMBER_USERNAME @ $_GLOBAL_SYSTEM_SITE_TITLE","
+Dear $_Application_Module_Member_Electronic_Mail_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS,
+----------------------------------------------------------------------------------------
+$_GLOBAL_COOKIE_MEMBER_USERNAME has sent you this Non-Encrypted Private Electronic Message from the Electronic Mail Application Module:
+
+\"$_Application_Module_Member_Electronic_Mail_POST_MESSAGE\"
+----------------------------------------------------------------------------------------
+Have a nice day,
+		    - $_GLOBAL_SYSTEM_SITE_TITLE
+
+The Internet Protocol Address That Initiated This Electronic Mail Message Was, Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+The Internet Protocol Address That Initiated This Electronic Mail Message Was, Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+The Internet Protocol Address Port Number Was, Remote Server: $_GLOBAL_REMOTE_SERVER_PORT
+The Internet Protocol Address Port Number Was, Local Server:
+This Electronic Mail Message Timestamp Was, Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+This Electronic Mail Message Timestamp Was, Remote Server:
+This Electronic Mail Message Unique Fingerprint :: Secure Hash Algorithm, 256: $_Application_Module_Member_Electronic_Mail_POST_MESSAGE_HASH_SHA_256
+The Document Root Was: $_GLOBAL_LOCAL_SERVER_DOCUMENT_ROOT
+")) {
+
+											echo ($_Application_Module_Member_Message_Electronic_Mail_SEND);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Electronic_Mail_SEND_ERROR);
+
+} // [ + ] IF: Send Electronic Mail Notification
+
+} // [ + ] IF: Send Electronic Mail Form Variables Have Executed
+
+} // [ + ] IF: Internal Application: Electronic Mail By ID Is Activated
+
+} // [ + ] WHILE: Retrieving Electronic Mail Addresses From Database Server
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All From Members
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Electronic_Mail_DB_Query_SELECT_MEMBERS);
+?>
