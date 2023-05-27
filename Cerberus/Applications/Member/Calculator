@@ -1,0 +1,223 @@
+﻿<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Calculator
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Calculator
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Calculator_Header);
+
+/*
+ ============================================================================================================
+ + Application Module Header :: Second Header
+ ============================================================================================================
+*/
+
+echo ("<CENTER>
+— <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Options\" TITLE=\":: Open & Display The Application Module :: Calculator :: Calculator Options ::\">Options</A> — 
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Simple_Calculator\" TITLE=\":: Open & Display The Application Module :: Calculator :: Simple Calculator ::\">Simple Calculator</A> — 
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Advanced_Calculator\" TITLE=\":: Open & Display The Application Module :: Calculator :: Advanced Calculator ::\">Advanced Calculator</A> —<BR> 
+— <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Fraction_Calculator\" TITLE=\":: Open & Display The Application Module :: Calculator :: Fraction Calculator ::\">Fraction Calculator</A> — 
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Exponents_Calculator\" TITLE=\":: Open & Display The Application Module :: Calculator :: Exponents Calculator ::\">Exponents Calculator</A> — 
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Algebraic_Calculator\" TITLE=\":: Open & Display The Application Module :: Calculator :: Algebraic Calculator ::\">Algebraic Calculator</A> —<BR>
+— <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Scientific_Calculator\" TITLE=\":: Open & Display The Application Module :: Calculator :: Scientific Calculator ::\">Scientific Calculator</A> —
+</CENTER><HR><BR>");
+
+/*
+ ============================================================================================================
+ +
+ + Calculator :: Variables :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Calculator :: Simple :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1					= $_POST['AM_Calculator_Simple_Value_Number_1'];
+$_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR						= $_POST['AM_Calculator_Simple_Operator'];
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2					= $_POST['AM_Calculator_Simple_Value_Number_2'];
+
+/*
+ ============================================================================================================
+ +
+ + IF: Display :: Calculator :: Options
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Display'] == "Options") {
+
+} // [ + ] IF: Display Internal Application :: Simple Calculator
+
+/*
+ ============================================================================================================
+ +
+ + IF: Display :: Simple Calculator :: Input Form
+ +
+ ============================================================================================================
+*/
+
+if ($_GET['Display'] == "Simple_Calculator") {
+
+echo ("
+										Maximum Amount of Number Places: 25<BR>
+										------------------------------------------------------------------------<BR>
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Calculator&amp;Display&#61;Simple_Calculator\" METHOD=\"post\">
+													Value Number 1:<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Calculator_Simple_Value_Number_1\" MAXLENGTH=\"25\"><BR>
+													Operator:<BR>
+														<SELECT NAME=\"AM_Calculator_Simple_Operator\">
+															<OPTION VALUE=\"+\">+</OPTION>
+															<OPTION VALUE=\"-\">-</OPTION>
+															<OPTION VALUE=\"*\">*</OPTION>
+															<OPTION VALUE=\"/\">/</OPTION>
+															<OPTION VALUE=\"%\">%</OPTION>
+														</SELECT><BR>
+													Value Number 2:<BR>
+														<INPUT TYPE=\"number\" NAME=\"AM_Calculator_Simple_Value_Number_2\" MAXLENGTH=\"25\"><BR>
+													<INPUT TYPE=\"submit\" VALUE=\"Simple Calculate\">
+												<HR>
+											</FORM><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Simple Calculator :: Operation :: Subtraction
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR == "-") {
+
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_ANSWER						= $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 - $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2;	
+
+} // [ + ] IF: Simple Calculator :: Operator :: Subrtaction
+
+/*
+ ============================================================================================================
+ + IF: Simple Calculator :: Operation :: Addition
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR == "+") {
+
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_ANSWER						= $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 + $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2;	
+
+} // [ + ] IF: Simple Calculator :: Operator :: Addition
+
+/*
+ ============================================================================================================
+ + IF: Simple Calculator :: Operation :: Multiplication
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR == "*") {
+
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_ANSWER						= $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 * $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2;	
+
+} // [ + ] IF: Simple Calculator :: Operator :: Multiplication
+
+/*
+ ============================================================================================================
+ + IF: Simple Calculator :: Operation :: Division
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR == "/") {
+
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_ANSWER						= $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 / $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2;	
+
+} // [ + ] IF: Simple Calculator :: Operator :: Division
+
+/*
+ ============================================================================================================
+ + IF: Simple Calculator :: Operation :: Percentage
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR == "%") {
+
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_ANSWER						= $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 % $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2;	
+
+} // [ + ] IF: Simple Calculator :: Operator :: Percentage
+
+/*
+ ============================================================================================================
+ + Simple Calculator :: Computation
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 && $_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR && $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1) {
+
+echo ("
+Calculator Message<BR>
+------------------------------------------------------------------------<BR>
+ $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1 $_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2<BR>
+------------------------------------------------------------------------<BR>
+= $_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_ANSWER");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Simple Calculator Form Variables Have Executed
+
+} // [ + ] IF: Display Internal Application :: Simple Calculator
+?>

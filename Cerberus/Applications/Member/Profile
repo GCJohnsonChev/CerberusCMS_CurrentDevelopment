@@ -1,0 +1,1496 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Profile
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Member Profile
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Database Server Query :: Select :: Registered Member Account Data From Database Server
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members");
+
+while ($_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS)) {
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: ID, Access Level
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_ID							= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Settings :: Privacy Settings :: Visiblity
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_ACTIVITY		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_activity'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_AUTHENTICATION	= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_authentication'];		
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_CONTACT		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_contact'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_CONTACT_EMERGENCY	= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_contact_emergency'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_DETAILS		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_details'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_FRIENDS		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_friends'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_GALLERY_AUDIO	= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_gallery_audio'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_GALLERY_DOCUMENT	= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_gallery_document'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_GALLERY_IMAGE	= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_gallery_image'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_GALLERY_VIDEO	= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_gallery_video'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_LOCATION		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_location'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_PHYSICAL		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_physical'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_SECURITY		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_security'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_STREAMS		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_visibility_profile_streams'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account Settings :: Images
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_avatar'];
+$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_PICTURE						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account Settings :: Other
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_LANGUAGE					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_language'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_newsletter'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_theme_directory'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_settings_encryption_pgp'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Personal Information
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_BIRTHDATE						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_birthdate'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_HOME						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_home'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_MAIL						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_mail'];
+$_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_first'];
+$_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_last'];
+$_Application_Module_Member_Profile_LIST_MEMBER_NAME_MIDDLE						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_middle'];
+$_Application_Module_Member_Profile_LIST_MEMBER_NAME_NICKNAME						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_nickname'];
+$_Application_Module_Member_Profile_LIST_MEMBER_GENDER							= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_gender'];
+$_Application_Module_Member_Profile_LIST_MEMBER_MARITAL_STATUS						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_marital_status'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SEXUAL_PREFERENCE					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_sexual_preference'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Electronic Mail Address
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account UserName and Password
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PASSWORD						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Addresses :: CryptoCurrency :: BlockChain Platforms
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_BITCOIN						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_BITCOIN_GOLD					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_bitcoin_gold'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_DOGECOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_dogecoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_ETHEREUM					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_ethereum'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_LITECOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_litecoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_MAZACOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_mazacoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_NAMECOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_namecoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_PEERCOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_peercoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_PRIMECOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_primecoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_TRONCOIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_troncoin'];
+$_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_ZCASH						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_address_cryptocurrency_zcash'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account Details :: Internet Protocol Addresses
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_IP_ADDRESS_AUTHORIZED					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_authorized'];
+$_Application_Module_Member_Profile_LIST_MEMBER_IP_ADDRESS_LAST_LOGIN					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_last_login'];
+$_Application_Module_Member_Profile_LIST_MEMBER_IP_ADDRESS_LOG						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_ip_address_log'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account Details :: Statistics
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_experience_amount'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LAST_REFERRER						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_last_referrer'];
+$_Application_Module_Member_Profile_LIST_MEMBER_NUMBER_OF_POSTS						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_number_of_posts'];
+$_Application_Module_Member_Profile_LIST_MEMBER_RANK_LEVEL						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_level_rank'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account Details :: Location
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_GPS_X					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_device_gps_x'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_GPS_Y					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_device_gps_y'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_GLO					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_device_glo'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_REGION					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_device_region'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_TIMEZONE				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_device_timezone'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_AREA					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_given_area'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_REGION					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_given_region'];
+$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_location_given_timezone'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Personal :: Other
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_MOOD							= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_mood'];
+$_Application_Module_Member_Profile_LIST_MEMBER_MUSIC							= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_music'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Security :: Passwords and Encryption
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PASSWORD						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_password'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_public'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_pgp_key_panel_private'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_CUSTOM_PASSWORD_PANEL				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_custom_password_panel'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: About and Signature
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_ABOUT						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_about'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_SIGNATURE					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_profile_signature'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Registration Information
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_REGISTRATION_DATE					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
+$_Application_Module_Member_Profile_LIST_MEMBER_REGISTRATION_DETAILS					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_details'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Personal :: Physical Details :: Biometrics
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_BLOOD_TYPE				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_biometrics_blood_type'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_COLOR_EYE_1				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_biometrics_color_eye_1'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_COLOR_EYE_2				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_biometrics_color_eye_2'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_COLOR_HAIR				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_biometrics_color_hair'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_WEIGHT				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_biometrics_weight'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_HEIGHT				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_biometrics_height'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Personal :: Physical Details :: Ethnicity, Nationality and Race
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_1					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_ethnicity_1'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_2					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_ethnicity_2'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_3					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_ethnicity_3'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_4					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_ethnicity_4'];
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_NATIONALITY_1					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_nationality_1'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_NATIONALITY_2					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_nationality_2'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_NATIONALITY_3					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_nationality_3'];
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_1						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_race_1'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_2						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_race_2'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_3						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_race_3'];
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_4						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_race_4'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Personal :: Physical Details :: Dimensions
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_physical_dimensions'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Account Status
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_KEY				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation_key'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_active'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_banned'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LOCKED					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_locked'];
+$_Application_Module_Member_Profile_LIST_MEMBER_URL_HOMEPAGE						= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_url_homepage'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Security :: Digital Signatures
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PANEL_PUBLIC_SIGNATURE_SHA_256			= hash('sha256', $_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC);
+$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PANEL_PRIVATE_SIGNATURE_SHA_256			= hash('sha256', $_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PRIVATE);
+$_Application_Module_Member_Profile_LIST_MEMBER_CUSTOM_PASSWORD_PANEL_SIGNATURE_SHA_256			= hash('sha256', $_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_CUSTOM_PASSWORD_PANEL);
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Audio
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_soundcloud'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_audio_spotify'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Business
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_business_linkedin'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Communications
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_discord'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_icq'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_skype'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_communications_snapchat'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Gallery
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_gallery_instagram'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Scroll Posting
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_facebook'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_posting_twitter'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Security
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_security_keybase'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Software Development
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_bitbucket'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_github'];
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_programming_launchpad'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Contact :: Emergency
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_CONTACT_EMERGENCY_1					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_contact_emergency_1'];
+$_Application_Module_Member_Profile_LIST_MEMBER_CONTACT_EMERGENCY_2					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_contact_emergency_2'];
+$_Application_Module_Member_Profile_LIST_MEMBER_CONTACT_EMERGENCY_3					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_contact_emergency_3'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Emergency :: Medical
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_EMERGENCY_MEDICAL					= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_emergency_medical'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Social Media Accounts :: Video
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_socialmedia_video_youtube'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Digital Fingerprints
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_UNIQUE_DIGITAL_FINGERPRINT_HASHED		= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_security_fingerprint_hashed'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Details :: Timestamps :: Activity
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_timestamp'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_YEARS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_years'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MONTHS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_months'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_DAYS				= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_days'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_HOURS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_hours'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_minutes'];
+$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_SECONDS			= $_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_last_active_seconds'];
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Streams :: Find :: Member Account Directories :: Streams
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL					= "./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Streams/Wall";
+$_Application_Module_Member_Profile_FIND_WRITE_MEMBER_DIRECTORY_STREAMS_WALL				= "./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Streams/Wall/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL";
+$_Application_Module_Member_Profile_OPEN_WRITE_MEMBER_DIRECTORY_STREAMS_WALL				= fopen("$_Application_Module_Member_Profile_FIND_WRITE_MEMBER_DIRECTORY_STREAMS_WALL/Stream.txt", "a");
+
+$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_FILE_TIMESTAMP_STREAM				= "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/Stream.txt";
+$_Application_Module_Member_Profile_OPEN_MEMBER_DIRECTORY_FILE_TIMESTAMP_STREAM				= fopen("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/Stream.txt", "w");
+
+/*
+ ============================================================================================================
+ + Registered Member Account :: Streams :: Stream Name and Stream Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_POST_STREAM_NAME							= $_POST['AM_Profile_Streams_Stream_Name'];
+$_Application_Module_Member_Profile_POST_STREAM_DATA							= $_POST['AM_Profile_Streams_Stream_Data'];
+
+/*
+ ============================================================================================================
+ + Streams :: Stream Data :: File Upload :: Maximum File Size
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_MAXIMUM_UPLOAD_SIZE			= $_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE_MESSENGER / 1024;
+
+/*
+ ============================================================================================================
+ + Streams :: Stream Data :: File Upload :: File Specifications and Upload Directory
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_HIDDEN						= $_POST['AM_Profile_Streams_Upload_File_Hidden'];
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_DIRECTORY_TEMPORARY				= "./Temporary/Upload/";
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE			 				= $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_DIRECTORY_TEMPORARY . basename($_FILES['AM_Profile_Streams_Upload_File']['name']);
+
+/*
+ ============================================================================================================
+ + Streams :: Stream Data :: File Upload :: Allowed File Extensions
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_ALLOWED_FILE_EXTENSIONS			= "jpg gif png bmp jpeg";
+
+/*
+ ============================================================================================================
+ + Streams :: Stream Data :: File Upload :: File Handling
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_PATHINFO 					= pathinfo($_FILES['AM_Profile_Streams_Upload_File']['name']);
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_EXTENSION 					= $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_PATHINFO['extension'];
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME					= $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_PATHINFO['basename'];
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_EXPLODE					= explode(" ", $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_ALLOWED_FILE_EXTENSIONS);
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_PATHINFO_EXTENSION				= pathinfo($_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME, PATHINFO_EXTENSION);
+
+/*
+ ============================================================================================================
+ +
+ + Registered Member Account :: Profile :: Display Settings :: Information
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Profile Picture Is Empty, Replace With Default Theme Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY					= "./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_PICTURE";
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_PICTURE == "") {
+
+	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY	 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} // [ + ] IF: Registered Member Account :: Image :: Profile Image Is Empty
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Profile Picture Does Not Exist, Replace With Default Theme Image
+ ============================================================================================================
+*/
+
+if (!file_exists($_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY)) {
+
+	$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY 				= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} // [ + ] IF: Registered Member Account :: Image :: Profile Image Does Not Exist
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Status :: Account Activation
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION == "1") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY		= "Yes";
+
+} else {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY		= "No";
+
+} // [ + ] IF: Registered Member Account :: Status :: Account Activation
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Status :: Account Locked
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LOCKED == "1") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LOCKED_DISPLAY			= "Yes";
+
+} else {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LOCKED_DISPLAY			= "No";
+
+} // [ + ] IF: Registered Member Account :: Status :: Account Locked
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Setting :: Newsletter
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER == "1") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY			= "Yes";
+
+} else {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY			= "No";
+
+} // [ + ] IF: Registered Member Account :: Setting :: Newsletter
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Status :: Account Banned
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED <= "0") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY			= "No";
+
+} else {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY			= "Yes";
+
+} // [ + ] IF: Registered Member Account :: Status :: Account Banned
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Status :: Account Active
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE == "1") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY			= "Yes";
+
+} else {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY			= "No";
+
+} // [ + ] IF: Registered Member Account :: Status :: Account Active
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Access-Level :: 1
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL == "1" ) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY				= "Registered Member";
+
+} // [ + ] IF: Registered Member Account :: Access-Level :: Is: 1
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Access-Level :: 2
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL == "2" ) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY				= "Administrator";
+
+} // [ + ] IF: Registered Member Account :: Access-Level :: Is: 2
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Access-Level :: 3
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL == "3" ) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY				= "Services Root Administrator";
+
+} // [ + ] IF: Registered Member Account :: Access-Level :: Is: 3
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Access-Level :: 4
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL == "4" ) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY				= "Root";
+
+} // [ + ] IF: Registered Member Account :: Access-Level :: Is: 4
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Access-Level :: 5
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL == "5" ) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY				= "Automated Services";
+
+} // [ + ] IF: Registered Member Account :: Access-Level :: Is: 5
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Setting :: Gender :: Is 0 OR -
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_GENDER <= 0 || $_Application_Module_Member_Profile_LIST_MEMBER_GENDER == "-") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_GENDER_DISPLAY					= "Non-Specified";
+
+} // [ + ] IF: Registered Member Account :: Setting :: Gender Is: 0 OR -
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Setting :: Gender :: 1
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_GENDER == 1) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_GENDER_DISPLAY					= "Male";
+
+} // [ + ] IF: Registered Member Account :: Setting :: Gender Is: 1
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Setting :: Gender :: 2
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_GENDER == 2) {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_GENDER_DISPLAY					= "Female";
+
+} // [ + ] IF: Registered Member Account :: Setting :: Gender Is: 2
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Setting :: Encryption :: Pretty-Good-Privacy: 0
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP == "0") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY			= "Off";
+
+} // [ + ] IF: Registered Member Account :: Setting :: Encryption :: Pretty-Good-Privacy Is: 0
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Setting :: Encryption :: Pretty-Good-Privacy: 1
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP == "1") {
+
+	$_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY			= "On";
+
+} // [ + ] IF: Registered Member Account :: Setting :: Encryption :: Pretty-Good-Privacy Is: 1
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Name IS Non-Registered
+ ============================================================================================================
+*/
+
+if ($_GET["Name"] == "Non-Registered") {
+
+											echo ("<CENTER>The Queried Registered Member Account does not exist.</CENTER>");
+
+} // [ + ] IF: Internal Application: Display: Non-Registered Is: Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Name :: Profile
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Name"] == "$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME") {
+
+echo ("
+											<CENTER>
+												[&nbsp;
+													<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;AccountDetails\" TITLE=\":: Open & Display Detailed Information For The Registered Member Account :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST ::\">Detailed Information</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Gallery&amp;Type&#61;Image\" TITLE=\":: Open & Display The Image Gallery For The Registered Member Account :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST ::\">Image Gallery</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Gallery&amp;Type&#61;Video\" TITLE=\":: Open & Display The Video Gallery For The Registered Member Account :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST ::\">Video Gallery</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Streams\" TITLE=\":: Open & Display The Streams For The Registered Member Account :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST ::\">Streams</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Friends\" TITLE=\":: Open & Display The Friends List For The Registered Member Account :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST ::\">Friends</A>
+												&#8212; <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;More\" TITLE=\":: Open & Display More Options For The Registered Member Account :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST ::\">More</A>
+												&nbsp;]</CENTER>
+												<HR>
+													<A HREF=\"$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TITLE=\":: Open & Display This Registered Member Account Image ::\"><IMG SRC=\"$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" TITLE=\":: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" ALT=\":: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\" CLASS=\"MemberProfile\" WIDTH=\"120\" HEIGHT=\"120\"></A><BR><BR>
+													$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_ABOUT
+												<HR>
+													Forum and Comment Signature:<BR>
+													$_Application_Module_Member_Profile_LIST_MEMBER_PROFILE_SIGNATURE
+												<HR>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Detailed Account Information
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "AccountDetails") {
+
+echo ("
+											<BR><CENTER><B>:: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST :: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST :: Detailed Member Account Information ::</B></CENTER>
+											<HR><BR>
+												<B>Detailed Registered Member Account Information</B><HR><BR>
+
+");
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Profile :: Details IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_DETAILS == "1") {
+
+echo ("
+
+												<I>Member' Account Details :: Personal Information</I><BR>
+												&nbsp;*&nbsp;Name, First: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST<BR>
+												&nbsp;*&nbsp;Name, Last: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST<BR>
+												&nbsp;*&nbsp;Name, Middle: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_MIDDLE<BR>
+												&nbsp;*&nbsp;Name, Nickname: $_Application_Module_Member_Profile_LIST_MEMBER_NAME_NICKNAME<BR>
+												&nbsp;*&nbsp;Birthdate: $_Application_Module_Member_Profile_LIST_MEMBER_BIRTHDATE<BR>
+												&nbsp;*&nbsp;Gender: $_Application_Module_Member_Profile_LIST_MEMBER_GENDER_DISPLAY<BR>
+												&nbsp;*&nbsp;Marital Status:<BR>
+												&nbsp;*&nbsp;Sexual Preference:<BR>
+												&nbsp;*&nbsp;Member Preferred Language: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_LANGUAGE<BR>
+												&nbsp;*&nbsp;Member Account Profile Image: <A TITLE=\":: Registered Member Account Profile Image :: $_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY ::\">$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY</A><BR>
+												&nbsp;*&nbsp;Member Account Avatar Image: <A HREF=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Avatar/$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR\" TITLE=\":: Open & Display This Avatar Image ::\">$_Application_Module_Member_Profile_LIST_MEMBER_IMAGE_AVATAR</A><BR><BR>
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Detailed Information IS: Off OR On
+
+echo ("
+												<I>Member' Account Details :: Account Registration Information</I><BR>
+												&nbsp;*&nbsp;Account Registered On: $_Application_Module_Member_Profile_LIST_MEMBER_REGISTRATION_DATE<BR><BR>
+
+												<I>Member' Account Details :: Account Status</I><BR>
+												&nbsp;*&nbsp;Is This Account Active ?: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVE_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account Activated ?: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account Banned ?: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account Locked ?: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LOCKED_DISPLAY<BR>
+												&nbsp;*&nbsp;Is This Account a System Newsletter Recipient ?: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_NEWSLETTER_DISPLAY<BR>
+												&nbsp;*&nbsp;Account Access Level: $_Application_Module_Member_Profile_LIST_MEMBER_ACCESS_LEVEL_DISPLAY<BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Location IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_LOCATION == "1") {
+
+echo ("
+
+												<I>Member' Account Details :: Location Information</I><BR>
+												Location :: Given<BR>
+												&nbsp;*&nbsp;Location :: Current Given Area: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_AREA<BR>
+												&nbsp;*&nbsp;Location :: Current Given Region: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_REGION<BR>
+												&nbsp;*&nbsp;Location :: Current Given Timezone: $_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_GIVEN_TIMEZONE<BR><BR>
+
+												Location :: Device-Reported<BR>
+												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Area: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Area ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_AREA</A><BR>
+												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Region: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Region ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_REGION</A><BR>
+												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Timezone: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Timezone ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_TIMEZONE</A><BR>
+
+												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Global-Positioning-System In X: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Global-Positioning-System Coordinates In X ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_GPS_X</A><BR>
+												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Global-Positioning-System In X: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Global-Positioning-System Coordinates In Y ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_GPS_Y</A><BR>
+
+												&nbsp;*&nbsp;Location :: Last Exact Device-Reported :: Geo-Localization-Objects: <A HREF=\"\" TITLE=\":: Open & Display :: The Log File For :: The Detailed Device-Reported :: Geo-Localization-Objects ::\">$_Application_Module_Member_Profile_LIST_MEMBER_LOCATION_DEVICE_GEO</A><BR><BR>
+
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Location Information IS: Off OR On
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Authentication IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_AUTHENTICATION == "1") {
+
+echo ("
+												<I>Member' Account Details :: Authentication Details</I><BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Successful Authentication :: Local Server: $_Application_Module_Member_Profile_LIST_MEMBER_TIMESTAMP_LAST_LOGIN_LOCAL_SERVER From Internet Protocol Address:<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Successful Authentication :: Remote Server: $_Application_Module_Member_Profile_LIST_MEMBER_TIMESTAMP_LAST_LOGIN_REMOTE_SERVER From Internet Protocol Address:<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Successful Authentication :: Device: $_Application_Module_Member_Profile_LIST_MEMBER_TIMESTAMP_LAST_LOGIN_REMOTE_SERVER From Internet Protocol Address:<BR><BR>
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Authentication Information IS: Off OR On
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Activity IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_ACTIVITY == "1") {
+
+echo ("
+												<I>Member' Account Details :: Activity Information</I><BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Date :: Timestamp $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_TIMESTAMP<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Date :: Year: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_YEARS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Date :: Month: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MONTHS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Date :: Day: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_DAYS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Time :: Hour: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_HOURS<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Time :: Minute: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_MINUTES<BR>
+												&nbsp;*&nbsp;Account :: Timestamp :: Last Active :: Time :: Second: $_Application_Module_Member_Profile_LIST_MEMBER_STATUS_ACCOUNT_LAST_ACTIVE_SECONDS<BR>
+												&nbsp;*&nbsp;Account :: <A HREF=\"$_Application_Module_Member_Profile_LIST_MEMBER_LAST_REFERRER\" TITLE=\":: Last Web-Page View ::\">Last Web-Page Document Loaded</A><BR><BR>
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Activity Information IS: Off OR On
+
+echo ("
+
+												<I>Member' Account Details :: Personal Activity Information</I><BR>
+												&nbsp;*&nbsp;Currently Feeling: $_Application_Module_Member_Profile_LIST_MEMBER_MOOD<BR>
+												&nbsp;*&nbsp;Currently Listening To: $_Application_Module_Member_Profile_LIST_MEMBER_MUSIC<BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Contact IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_CONTACT == "1") {
+
+echo ("
+												<I>Member' Account Details :: Contact Information</I><BR>
+												&nbsp;*&nbsp;Phone Number, Mobile:<BR>
+												&nbsp;*&nbsp;Phone Number, Home:<BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Electronic_Mail&amp;Electronic_MailID&#61;$_Application_Module_Member_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Electronic Mail Message To :: $_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\">Electronic Mail</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;SMS&amp;SMSID&#61;$_Application_Module_Member_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Short Message Service Message To :: $_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\">Short Messaging Service</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;MMS&amp;MMSID&#61;$_Application_Module_Member_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Multimedia Messaging Service Message To :: $_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\">Multimedia Messaging Service</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;InstantMessage&amp;MemberAccountID&#61;$_Application_Module_Member_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Instant Messenger Message To :: $_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\">Instant Messenger</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Messenger&amp;Option&#61;PrivateMessage&amp;MemberAccountID&#61;$_Application_Module_Member_Profile_LIST_MEMBER_ID\" TITLE=\":: Send Private Message To :: $_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\">Private Message</A><BR><BR>
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: Registered Member Account :: Settings :: Privacy :: Contact Information IS: Off OR On
+
+echo ("
+
+												<I>Member' Account Details :: Personal Servers</I><BR>
+												&nbsp;*&nbsp;Personal :: <A HREF=\"$_Application_Module_Member_Profile_LIST_MEMBER_HOMEPAGE\" TITLE=\":: Open & Display :: This Registered Member Account :: Personal Web-Page ::\">Web-Page Document :: External Server</A><BR>
+												&nbsp;*&nbsp;Personal :: <A HREF=\"./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/\" TITLE=\":: Open & Display :: This Registered Member Account :: Home Web-Space ::\">Web-Page Document :: Local Server</A><BR><BR>
+
+												<I>Member' Account Details :: Account Statistics</I><BR>
+												&nbsp;*&nbsp;Experience Amount: $_Application_Module_Member_Profile_LIST_MEMBER_EXPERIENCE_AMOUNT<BR>
+												&nbsp;*&nbsp;Rank Level: $_Application_Module_Member_Profile_LIST_MEMBER_RANK_LEVEL<BR>
+												&nbsp;*&nbsp;Total Number of Posts System-Wide: $_Application_Module_Member_Profile_LIST_MEMBER_NUMBER_OF_POSTS<BR>
+												&nbsp;*&nbsp;Favorite Theme: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_THEME_DIRECTORY<BR><BR>
+
+												<B>Digital Social Media Networks, Digital Communications Networks</B><HR><BR>
+
+												<I>Audio Streaming Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.SoundCloud.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD\" TITLE=\"SoundCloud :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SOUNDCLOUD\" TARGET=\"_NEW\">SoundCloud</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Spotify.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY\" TITLE=\"Spotify :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_AUDIO_SPOTIFY\" TARGET=\"_NEW\">Spotify</A><BR><BR>
+
+												<I>Business Related Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Linkedin.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" TITLE=\"Linkedin :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_BUSINESS_LINKEDIN\" TARGET=\"_NEW\">LinkedIn</A><BR><BR>
+
+												<I>Image Gallery Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Instagram.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" TITLE=\"Instagram :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_GALLERY_INSTAGRAM\" TARGET=\"_NEW\">Instagram</A><BR><BR>
+
+												<I>Scroll Posting Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.FaceBook.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" TITLE=\"Facebook :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_FACEBOOK\" TARGET=\"_NEW\">Facebook</A><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.Twitter.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" TITLE=\"Twitter :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_POSTING_TWITTER\" TARGET=\"_NEW\">Twitter</A><BR><BR>
+
+												<I>Video Streaming Platforms</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.YouTube.com/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TITLE=\"YouTube :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_VIDEO_YOUTUBE\" TARGET=\"_NEW\">YouTube</A><BR><BR>
+
+												<I>Digital Communications Networks</I><BR>
+												&nbsp;*&nbsp;<A TITLE=\"Discord :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_DISCORD\">Discord</A><BR>
+												&nbsp;*&nbsp;<A TITLE=\"ICQ :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_ICQ\">ICQ</A><BR>
+												&nbsp;*&nbsp;<A TITLE=\"Skype :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SKYPE\">Skype</A><BR>
+												&nbsp;*&nbsp;<A TITLE=\"Snapchat :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT\">Snapchat</A><BR><BR>
+
+												<I>Security Accounts</I><BR>
+												&nbsp;*&nbsp;<A HREF=\"https://www.KeyBase.io/$_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TITLE=\"KeyBase :: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_SECURITY_KEYBASE\" TARGET=\"_NEW\">KeyBase</A><BR><BR>
+
+												<B>Software Development Platforms</B><HR><BR>
+
+												<I>GIT</I><BR>
+												&nbsp;*&nbsp;BITBucket: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_BITBUCKET<BR>
+												&nbsp;*&nbsp;GITHub: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_GITHUB<BR>
+												&nbsp;*&nbsp;LaunchPad: $_Application_Module_Member_Profile_LIST_MEMBER_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD<BR><BR>
+
+												<I>Mercurial</I><BR>
+												&nbsp;*&nbsp;CodeBase:<BR><BR>
+
+												<B>CryptoCurrency Platforms</B><HR><BR>
+
+												<I>CryptoCurrency BlockChains</I><BR>
+												* BitCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_BITCOIN<BR>
+												* BitCoin Gold: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_BITCOIN_GOLD<BR>
+												* DogeCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_DOGECOIN<BR>
+												* Ethereum: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_ETHEREUM<BR>
+												* LiteCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_LITECOIN<BR>
+												* MazaCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_MAZACOIN<BR>
+												* NameCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_NAMECOIN<BR>
+												* PeerCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_PEERCOIN<BR>
+												* PrimeCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_PRIMECOIN<BR>
+												* TronCoin: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_TRONCOIN<BR>
+												* ZCash: $_Application_Module_Member_Profile_LIST_MEMBER_ADDRESS_ZCASH<BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Security IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_SECURITY == "1") {
+
+echo ("
+												<B>Security Information</B><HR><BR>
+
+												<B>Account Digital Fingerprints</I><BR>
+												&nbsp;*&nbsp;Unique Pretty-Good-Privacy Key Panel, Public<BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - Signature: <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_SECURITY_PGP_KEY_PANEL_PUBLIC\">$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PANEL_PUBLIC_SIGNATURE_SHA_256</A><BR><BR>
+
+												&nbsp;*&nbsp;Unique Pretty-Good-Privacy Key Panel, Private<BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - Signature: <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PANEL_PRIVATE_SIGNATURE_SHA_256\">$_Application_Module_Member_Profile_LIST_MEMBER_PGP_KEY_PANEL_PRIVATE_SIGNATURE_SHA_256</A><BR><BR>
+
+												&nbsp;*&nbsp;Custom Password Panel, Private<BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - Signature: <A TITLE=\"$_Application_Module_Member_Profile_LIST_MEMBER_CUSTOM_PASSWORD_PANEL_SIGNATURE_SHA_256\">$_Application_Module_Member_Profile_LIST_MEMBER_CUSTOM_PASSWORD_PANEL_SIGNATURE_SHA_256</A><BR><BR>
+
+												&nbsp;*&nbsp;Unique Account Fingerprint, Public<BR>
+												=> Digital Fingerprint :: Secure Hash Algorithm, 256 - String:<BR><BR>
+
+												&nbsp;*&nbsp;Unique Account Fingerprint, Public<BR>
+												=> Digital Fingerprint :: Advanced Encryption Standard, 256 - String:<BR><BR>
+
+												<I>Encrypted Communications Settings</I><BR>
+												&nbsp;*&nbsp;Pretty-Good-Privacy: $_Application_Module_Member_Profile_LIST_MEMBER_SETTINGS_ENCRYPTION_PGP_DISPLAY<BR><BR>
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Security Information IS: Off OR On
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Ethnicity, Nationality, Race IS: On
+ ============================================================================================================
+*/
+
+echo ("
+												<B>Ethnicity, Nationality and Race</B><HR><BR>
+
+												<I>Member' Physical Details :: Ethnicity</I><BR>
+												&nbsp;*&nbsp;Ethnicity, #1: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_1<BR>
+												&nbsp;*&nbsp;Ethnicity, #2: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_2<BR>
+												&nbsp;*&nbsp;Ethnicity, #3: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_3<BR>
+												&nbsp;*&nbsp;Ethnicity, #4: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_ETHNICITY_4<BR><BR>
+
+												<I>Member' Physical Details :: Nationality</I><BR>
+												&nbsp;*&nbsp;Nationality, #1: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_NATIONALITY_1<BR>
+												&nbsp;*&nbsp;Nationality, #2: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_NATIONALITY_2<BR>
+												&nbsp;*&nbsp;Nationality, #3: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_NATIONALITY_3<BR><BR>
+
+												<I>Member' Physical Details :: Race</I><BR>
+												&nbsp;*&nbsp;Race, #1: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_1<BR>
+												&nbsp;*&nbsp;Race, #2: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_2<BR>
+												&nbsp;*&nbsp;Race, #3: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_3<BR>
+												&nbsp;*&nbsp;Race, #4: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_RACE_4<BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Contact :: Emergency IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_CONTACT_EMERGENCY == "1") {
+
+echo ("
+												<B>Emergency Information</B><HR><BR>
+
+												<I>Member' Account Details :: Emergency Contact Information</I><BR><BR>
+
+												&nbsp;*&nbsp;Emergency Contact Information, #1:<BR>
+													<FORM>
+														<TEXTAREA ROWS=\"10\" COLS=\"50\">$_Application_Module_Member_Profile_LIST_MEMBER_CONTACT_EMERGENCY_1</TEXTAREA>
+													</FORM><BR><BR>
+
+												&nbsp;*&nbsp;Emergency Contact Information, #2:<BR>
+													<FORM>
+														<TEXTAREA ROWS=\"10\" COLS=\"50\">$_Application_Module_Member_Profile_LIST_MEMBER_CONTACT_EMERGENCY_2</TEXTAREA>
+													</FORM><BR><BR>
+
+												&nbsp;*&nbsp;Emergency Contact Information, #3:<BR>
+													<FORM>
+														<TEXTAREA ROWS=\"10\" COLS=\"50\">$_Application_Module_Member_Profile_LIST_MEMBER_CONTACT_EMERGENCY_3</TEXTAREA>
+													</FORM><BR><BR>
+
+
+												<I>Member' Account Details :: Emergency Medical Information</I><BR><BR>
+
+												&nbsp;*&nbsp;Emergency Medical Information:<BR>
+													<FORM>
+														<TEXTAREA ROWS=\"10\" COLS=\"50\">$_Application_Module_Member_Profile_LIST_MEMBER_EMERGENCY_MEDICAL</TEXTAREA>
+													</FORM><BR><BR>
+
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Contact :: Emergency Contact Information IS: Off OR On
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: Profile :: Settings :: Visibility :: Biometrics and Physical IS: On
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_SETTINGS_PRIVACY_VISIBILITY_PHYSICAL == "1") {
+
+echo ("
+
+												<B>Physical Dimensions and Biometrics</B><HR><BR>
+
+												&nbsp;*&nbsp;<I><B>Member' Physical Details :: Biometrics</B></I><BR>
+												&nbsp;*&nbsp;Personal :: Biometrics :: Blood-Type: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_BLOOD_TYPE<BR>
+												&nbsp;*&nbsp;Personal :: Biometrics :: Eye Color :: Primary: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_COLOR_EYE_1<BR>
+												&nbsp;*&nbsp;Personal :: Biometrics :: Eye Color :: Secondary: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_COLOR_EYE_2<BR>
+												&nbsp;*&nbsp;Personal :: Biometrics :: Hair Color: $_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_BIOMETRICS_COLOR_HAIR<BR><BR>
+
+												&nbsp;*&nbsp;<I>Member' Physical Details :: Physical Dimensions</I><BR>
+													<FORM>
+														<TEXTAREA ROWS=\"10\" COLS=\"50\">$_Application_Module_Member_Profile_LIST_MEMBER_PHYSICAL_DIMENSIONS</TEXTAREA>
+													</FORM>
+");
+
+} else {
+
+echo ("Cerberus: This Registered Member Account Details Section Is Marked Private.<BR>");
+
+} // [ + ] IF: The Registered Member Account :: Settings :: Privacy :: Biometrics and Physical Information IS: Off OR On
+
+echo ("
+
+											<HR>
+											[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\" TITLE=\":: Close :: More Information ::\">Close</A> ]<BR><BR>
+");
+
+} // [ + ] IF: Internal Application: Display :: Registered Member Account :: Extensive Information Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Gallery
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "Gallery") {
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Gallery :: Audio
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Type"] == "Audio") {
+
+echo ("Audio Gallery - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Private Files Upload Application Module ::\">Upload Audio</A>");
+
+} // [ + ] IF: Internal Application: Display :: Gallery :: Type :: Audio Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Gallery :: Document
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Type"] == "Document") {
+
+echo ("Document Gallery - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Private Files Upload Application Module ::\">Upload Documents</A>");
+
+} // [ + ] IF: Internal Application: Display :: Gallery :: Type :: Document Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Gallery :: Image
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Type"] == "Image") {
+
+echo ("Image Gallery - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Private Files Upload Application Module ::\">Upload Images</A>");
+
+} // [ + ] IF: Internal Application: Display :: Gallery :: Type :: Image Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Gallery :: Video
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Type"] == "Video") {
+
+echo ("Video Gallery - Live Video Gallery - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Private Files Upload Application Module ::\">Upload Videos</A>");
+
+} // [ + ] IF: Internal Application: Display :: Gallery :: Type :: Video Is Activated
+
+} // [ + ] IF: Internal Application: Display :: Gallery Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Streams
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "Streams") {
+
+echo ("<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Streams&amp;Write&#61;NewStream\" TITLE=\":: Open & Display The New Stream Option ::\">Write New Stream</A> - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Streams&amp;&#61;NewStream&#61;LiveVideo\" TITLE=\":: Open & Display :: The Live Video Stream Application ::\">Live Video Stream</A> - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Streams&amp;Render&#61;ArchivedStreams\" TITLE=\":: Search & Display Archived Streams ::\">Render Archived Streams</A><BR><BR>");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Streams :: Write :: New Stream
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Write"] == "NewStream") {
+
+if ($_Application_Module_Member_Profile_LIST_MEMBER_USERNAME == "$_GLOBAL_COOKIE_MEMBER_USERNAME") {
+
+/*
+ ============================================================================================================
+ + IF: Internal Application: Streams :: Write :: New Stream Variables Have Not Executed, Display Streams Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Member_Profile_POST_STREAM_NAME) {
+
+echo ("
+												<B>Streams :: Write :: New Stream</B><HR>
+												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER=Profile&Name=$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&Display=Streams&Write=NewStream\" METHOD=\"POST\" ENCTYPE=\"multipart/form-data\">
+													* <I>Name This Stream</I>:<BR>
+													[ Maximum Length: 100 Alpha-Numeric Characters ]<BR>
+														<INPUT TYPE=\"text\" NAME=\"AM_Profile_Streams_Stream_Name\" VALUE=\"Name This Stream\" MAXLENGTH=\"100\"><BR>
+													* <I>Stream Message and Content</I>:<BR>
+													[ Maximum Length: 5,000 Alpha-Numeric Characters ]<BR>
+														<TEXTAREA ROWS=\"10%\" COLS=\"80%\" NAME=\"AM_Profile_Streams_Stream_Data\" MAXLENGTH=\"5000\" ID=\"WYSIWYG\">Write Messages Here...</TEXTAREA><BR>
+													* <I>Upload Unique Files To This Stream</I>:<BR>
+														<INPUT TYPE=\"hidden\" NAME=\"AM_Profile_Streams_Upload_File_Hidden\" VALUE=\"1\" MAXLENGTH=\"100\"><BR>
+														<INPUT TYPE=\"file\" NAME=\"AM_Profile_Streams_Upload_File\" MAXLENGTH=\"100\"><BR>
+														<INPUT TYPE=\"submit\" VALUE=\"Create Stream\">
+													</FORM><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Directory: Streams -> Wall => Current Year Does Not Exist, Create It
+ ============================================================================================================
+*/
+
+if (!file_exists("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/index.php")) {
+
+mkdir("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL");
+copy ("./Member/Setup/Indexes/Files/Document/Streams/Wall/Year/Wall.php", "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/index.php");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Registered Member Account :: File Directory: Streams -> Wall => Year Does Not Exist
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Directory: Streams -> Wall => Current Year => Current Month Does Not Exist, Create It
+ ============================================================================================================
+*/
+
+if (!file_exists("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/index.php")) {
+
+mkdir("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL");
+copy ("./Member/Setup/Indexes/Files/Document/Streams/Wall/Year/Month/Wall.php", "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/index.php");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Registered Member Account :: File Directory: Streams -> Wall => Year => Month Does Not Exist
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Directory: Streams -> Wall => Current Year => Current Month => Current Day Does Not Exist, Create It
+ ============================================================================================================
+*/
+
+if (!file_exists("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/index.php")) {
+
+mkdir("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL");
+copy ("./Member/Setup/Indexes/Files/Document/Streams/Wall/Year/Month/Day/Wall.php", "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/index.php");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Registered Member Account :: File Directory: Streams -> Wall => Year => Month => Day Does Not Exist
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Directory: Streams -> Wall => Current Year => Current Month => Current Day => Current Timestamp Does Not Exist, Create It
+ ============================================================================================================
+*/
+
+if (!file_exists("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL/index.php")) {
+
+mkdir("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL");
+copy ("./Member/Setup/Indexes/Files/Document/Streams/Wall/Year/Month/Day/Timestamp/Wall.php", "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL/index.php");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Registered Member Account :: File Directory: Streams -> Wall => Year => Month => Day => Timestamp Does Not Exist
+
+/*
+ ============================================================================================================
+ + IF: Stream :: Selection :: Upload File Variable Is Executed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_HIDDEN == "1") {
+
+/*
+ ============================================================================================================
+ + IF: Upload :: Stream File Selection :: To Registered Member Account Directory :: Temporary Directory
+ ============================================================================================================
+*/
+
+if (move_uploaded_file($_FILES['AM_Profile_Streams_Upload_File']['tmp_name'], $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE)) {
+
+/*
+ ============================================================================================================
+ + Copy :: Registered Member Account :: Profile :: Streams :: Uploaded File :: From Temporary Directory
+ ============================================================================================================
+*/
+
+copy("$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE", "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL/$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME");
+
+/*
+ ============================================================================================================
+ + Delete :: Registered Member Account :: Profile :: Streams :: Uploaded File :: From Temporary Directory
+ ============================================================================================================
+*/
+
+unlink("$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE");
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Internal Application: Display :: Streams :: Write :: New Stream :: File Upload :: File Upload Attempt Has Executed
+
+} else {
+/**
+ * Do Nothing
+**/
+} // [ + ] IF: Internal Application: Display :: Streams :: Write :: New Stream :: File Upload :: File Upload Variable Has Executed
+
+/*
+ ============================================================================================================
+ + Write :: New Stream Data :: To Stream File
+ ============================================================================================================
+*/
+
+fwrite($_Application_Module_Member_Profile_OPEN_MEMBER_DIRECTORY_FILE_TIMESTAMP_STREAM, "
+<B>$_Application_Module_Member_Profile_POST_STREAM_NAME</B>
+	<HR>
+		<A HREF=\"$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY\" TARGET=\"_NEW\" TITLE=\":: Open & Display This Registered Member Account Profile Image :: \"><IMG SRC=\"$_Application_Module_Member_Profile_IMAGE_PROFILE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" WIDTH=\"50\" HEIGHT=\"50\" CLASS=\"StreamImageMessage\"></A>
+			&nbsp;&nbsp;
+			<I><A HREF=\"$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME\" TARGET=\"_NEW\">$_Application_Module_Member_Profile_LIST_MEMBER_NAME_FIRST $_Application_Module_Member_Profile_LIST_MEMBER_NAME_LAST</A> Wrote:</B><BR><BR>
+			<BIG>&quot;</BIG> $_Application_Module_Member_Profile_POST_STREAM_DATA <BIG>&quot;</BIG><BR><BR>
+			<A HREF=\"$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL/$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME\" TITLE=\":: Open & Display :: This Stream Image File :: $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME ::\" TARGET=\"_NEW\"><IMG SRC=\"$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL/$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME\" WIDTH=\"75\" HEIGHT=\"75\" ALT=\":: $_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_BASENAME ::\" CLASS=\"StreamImageMessage\"></IMG></A>
+	<HR>
+			Stream :: Timestamp :: Message :: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+	<HR>
+		<A HREF=\"$_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&amp;Display&#61;Streams&amp;DeleteStream&#61;$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL\" TITLE=\":: Delete This Stream ::\">Delete This Stream</A>
+	<BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + Close :: Written Stream File
+ ============================================================================================================
+*/
+
+fclose("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/Stream.txt");
+
+/*
+ ============================================================================================================
+ + Copy :: Written Stream File To :: Registered Member Account Directory :: Stream Timestamp Directory
+ ============================================================================================================
+*/
+
+copy("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/Stream.txt", "$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL/$_GLOBAL_LOCAL_SERVER_DATE_TIME_NUMERICAL_FULL/Stream.txt");
+
+/*
+ ============================================================================================================
+ + Delete :: Original Written Stream File From :: Registered Member Account Directory :: Stream File
+ ============================================================================================================
+*/
+
+unlink("$_Application_Module_Member_Profile_FIND_MEMBER_DIRECTORY_STREAMS_WALL/Stream.txt");
+
+/*
+ ============================================================================================================
+ + Redirect :: Registered Member Account :: Profile :: Streams
+ ============================================================================================================
+*/
+
+	header("Location: $_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Profile&Name=$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME&Display=Streams&Write=NewStream");
+
+} // [ + ] IF: Internal Application: Display :: Streams :: Write :: New Stream :: Stream Form Variables Have Executed
+
+} else { // The Registered Member Account :: Cookie :: UserName :: Does Not Match :: The Listed Registered Member Account Profile
+
+						echo ("Cerberus: You are not allowed to Create a Stream on this Registered Member Account Profile.");
+
+} // [ + ] IF: The Registered Member Account :: Cookie :: UserName :: Matches :: The Listed Registered Member Account Profile
+
+} // [ + ] IF: Internal Application: Display :: Streams :: Write :: New Stream Is Activated
+
+/*
+ ============================================================================================================
+ + Retrieve and List :: Latest Streams
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Profile_Streams_FIND_DIRECTORY_STREAMS_LATEST				= "./Member/$_Application_Module_Member_Profile_LIST_MEMBER_USERNAME/Files/Document/Streams/Wall/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_YEAR_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_FULL/$_GLOBAL_LOCAL_SERVER_DATE_NUMERICAL_MONTH_DAY_FULL";
+$_Application_Module_Member_Profile_Streams_OPEN_DIRECTORY_STREAMS_LATEST				= opendir($_Application_Module_Member_Profile_Streams_FIND_DIRECTORY_STREAMS_LATEST);
+
+/*
+ ============================================================================================================
+ +
+ + Read :: Directory :: Registered Member Account :: File Directory :: Streams :: Latest Streams
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + While :: Reading Directory :: Registered Member Account :: File Directory :: Latest Stream
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Profile_Streams_READ_DIRECTORY_STREAMS_LATEST = readdir($_Application_Module_Member_Profile_Streams_OPEN_DIRECTORY_STREAMS_LATEST))) {
+
+if ($_Application_Module_Member_Profile_Streams_READ_DIRECTORY_STREAMS_LATEST == "." || $_Application_Module_Member_Profile_Streams_READ_DIRECTORY_STREAMS_LATEST == ".." || $_Application_Module_Member_Profile_Streams_READ_DIRECTORY_STREAMS_LATEST == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+		include_once ("$_Application_Module_Member_Profile_Streams_FIND_DIRECTORY_STREAMS_LATEST/$_Application_Module_Member_Profile_Streams_READ_DIRECTORY_STREAMS_LATEST/Stream.txt");
+
+} // [ + ] IF: Streams Directory AND Files ARE NOT Streams Directory AND Files
+
+} // [ + ] WHILE: Reading Directory: Registered Member Account :: Latest Streams
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application :: Display :: Profile :: Name :: Streams :: Delete :: Stream Entry
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteStream"] == "") {
+
+} // [ + ] IF: Internal Application: Display :: Streams :: Delete :: Stream Is Activated
+
+} // [ + ] IF: Internal Application: Display :: Streams Is Activated
+
+} // [ + ] IF: Internal Application: Display :: Name IS Registered Member Account Name Is Activated
+
+} // [ + ] WHILE: Retrieving Registered Member Account Entry Data From Database Server Database
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From Registered Member Accounts
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Profile_DB_Query_SELECT_MEMBERS);
+?>
