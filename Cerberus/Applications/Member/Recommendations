@@ -121,11 +121,12 @@ echo ("
 
 <B>Recommended :: Hardware :: Web Server</B><BR>
 --------------------------------------------------<BR>
-* Cloud Server :: Hardware Component :: Case ::<BR>
-* Cloud Server :: Hardware Component :: Power Supply ::<BR>
+* Web Server :: Hardware Component :: Case ::<BR>
+* Web Server :: Hardware Component :: Power Supply ::<BR>
 * Web Server :: Hardware Component :: Mainboard ::<BR>
 * Web Server :: Hardware Component :: Processor ::<BR>
 * Web Server :: Hardware Component :: Graphics Processor ::<BR>
+* Web Server :: Hardware Component :: Sound Card::<BR>
 * Web Server :: Hardware Component :: Memory ::<BR>
 * Web Server :: Hardware Component :: Digital Storage Drive ::<BR>
 * Web Server :: Hardware Component :: Optical Drive ::<BR><BR>
@@ -138,6 +139,7 @@ echo ("
 * Cloud Server :: Hardware Component :: Processor ::<BR>
 * Cloud Server :: Hardware Component :: Graphics Processor ::<BR>
 * Cloud Server :: Hardware Component :: Memory ::<BR>
+* Cloud Server :: Hardware Component :: Sound Card::<BR>
 * Cloud Server :: Hardware Component :: Digital Storage Drive ::<BR>
 * Cloud Server :: Hardware Component :: Optical Drive ::<BR><BR>
 
@@ -175,25 +177,23 @@ echo ("
 * PGPAuth<BR>
 * Call Recorder<BR><BR>
 
-<B>Web Browsers</B>
+<B>Web Browsers</B><BR><BR>
 
-<B>Audio</B>
+<B>Audio</B><BR><BR>
 
-<B>Call Recording</B>
+<B>Call Recording</B><BR><BR>
 
-<B>Digital Information Security</B>
+<B>Digital Information Security</B><BR><BR>
 
-<B>Security</B>
+<B>Security</B><BR><BR>
 
-<B>Networking</B>
+<B>Networking</B><BR><BR>
 
-<B>Networking Blocking / Network Filtering</B>
+<B>Networking Blocking / Network Filtering</B><BR><BR>
 
-<B>Intelligence Gathering</B>
-Image Recognition / Facial Recognition / Human Identity Recognition
-Discoverability
-License Plate Scanner
-
-<B>
+<B>Intelligence Gathering</B><BR>
+Image Recognition / Facial Recognition / Human Identity Recognition<BR>
+Discoverability<BR>
+License Plate Scanner<BR>
 ");
 ?>
