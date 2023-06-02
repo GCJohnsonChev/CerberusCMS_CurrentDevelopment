@@ -1,0 +1,161 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Friend
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Friend
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Friend_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME					= $_POST['AM_Friend_Save_Friend'];
+
+/*
+ ============================================================================================================
+ +
+ + Add Selected Friend
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Add"] == "Yes") {
+
+if (!$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME) {
+
+											echo ($_Application_Module_Member_Message_Friend_ADD_ERROR);
+
+} else {
+
+
+if (copy("./System/Default/Friend/Friend.cerberus","./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME")) {
+
+											echo ($_Application_Module_Member_Message_Friend_ADD);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Friend_ADD_ERROR);
+
+} // [ + ] IF: Copy: Friend.cerberus File To: Member Friend Directory
+
+} // [ + ] IF: Add To Friend List Variable Is Executed
+
+} // [ + ] IF: Internal Application: Add To Friend List Is Activated
+
+/*
+ ============================================================================================================
+ +
+ + List All Friends
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DisplayID"] == "All") {
+
+$_Application_Module_Member_Friend_SPECIFY_FRIEND_DIRECTORY				= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/";
+$_Application_Module_Member_Friend_OPEN_FRIEND_DIRECTORY				= opendir($_Application_Module_Member_Friend_SPECIFY_FRIEND_DIRECTORY);
+
+while (($_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY = readdir($_Application_Module_Member_Friend_OPEN_FRIEND_DIRECTORY))) {
+
+if ($_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY == "." || $_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY == ".." || $_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+											echo ("<CENTER><TABLE BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"0\" CELLSPACING=\"0\"><TR><TD WIDTH=\"90%\"><B>Friend Name</B>: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY\" TITLE=\"Open Profile For Friend :: $_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY\">$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY</A></TD><TD WIDTH=\"10%\"><A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;DisplayID&#61;All&amp;RemoveFriend&#61;$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY\" TITLE=\":: Remove Friend ::\">Remove</A></TD></TR></TABLE></CENTER>");
+/*
+ ============================================================================================================
+ +
+ + Remove Selected Friend
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["RemoveFriend"] == "$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY") {
+
+if(unlink("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Friend/$_Application_Module_Member_Friend_READ_FRIEND_DIRECTORY")) {
+
+											echo ($_Application_Module_Member_Message_Friend_REMOVE);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Friend_REMOVE_ERROR);
+
+} // [ + ] IF: Unlink: Friend File From Friend List
+
+} // [ + ] IF: Internal Application: Remove Friend Is Activated
+
+} // [ + ] IF: Specified Friend List Directory AND Files ARE NOT Specified Friend List Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Friend List Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Friend_OPEN_FRIEND_DIRECTORY);
+
+} // [ + ] IF: Internal Application: Display Friend List Is Activated
+?>
