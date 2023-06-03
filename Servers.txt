@@ -28,39 +28,39 @@
 /*
  ================================================================
  +
+ +
  + CerberusCMS Official Servers
+ +
  +
  ================================================================
 */
 
 /*
  ================================================================
+ +
  + Current Development Servers
+ +
  ================================================================
 */
 
 /*
  ================================================================
- + Current SandBoxing and Development Server
+ + Current Demonstration Servers
  ================================================================
 */
 
-* http://rolufsgc.hyperphp.com
+https://ccmsandbox4.000webhostapp.com
 
+/*
+ ================================================================
+ + Current SandBoxing and Development Servers
+ ================================================================
+*/
+
+* https://ccmsandbox4.000webhostapp.com
 * https://ccmssandbox3.000webhostapp.com
-* https://ccmssandbox4.000webhostapp.com
+* http://rolufsgc.hyperphp.com
 
 gcjohnsoncheval@outlook.com
 
 Target Release Date: August of 2023
-
-/*
- ================================================================
- + Current Demonstration Server
- ================================================================
-*/
-
-* http://rolufsgc.hyperphp.com
-
-* https://ccmssandbox3.000webhostapp.com
-* https://ccmssandbox4.000webhostapp.com
