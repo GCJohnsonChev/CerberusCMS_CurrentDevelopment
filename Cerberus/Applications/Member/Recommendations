@@ -1,0 +1,202 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Recommendations
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Recommendations
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Recommendations_Header);
+
+echo ("
+<B>Recommended :: Device Firmware, Operating Systems and Software</B><BR>
+--------------------------------------------------<BR>
+<B>Mobile Device :: Operating System</B><BR>
+* Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: LineageOS<BR>
+* Personal :: Mobile Cell Device :: Digital Information Security Hardened :: Operating System :: Linux Mobile<BR><BR>
+
+<B>Mobile Device :: Firmware</B><BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: Modem :: FireModem<BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: SoC :: <BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: eMMC ::<BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: Display ::<BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: WLAN :: <BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: BlueTooth :: <BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: CPU :: <BR>
+* Personal :: Mobile Cell Device :: Component :: Firmware :: GPU :: <BR><BR>
+
+<B>Laptop / NoteBook :: Operating System</B><BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Arch-Linux<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Operating System :: Free-BSD<BR><BR>
+
+<B>Laptop / NoteBook :: Firmware</B><BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Firmware :: BIOS :: Linux-BIOS<BR>
+* Personal :: Laptop / NoteBook :: Digital Information Security Hardened :: Firmware :: BIOS :: CoreBoot<BR><BR>
+
+<B>Router :: Operating System</B><BR>
+* Personal :: Home Router :: Digital Information Security Hardened :: Operating System :: Free-BSD<BR><BR>
+
+<B>Router :: Firmware</B><BR>
+* Personal :: Home Router :: Digital Information Security Hardened :: Firmware :: FreshTomato<BR><BR>
+
+<B>Recommended :: Electronic Devices</B><BR>
+--------------------------------------------------<BR>
+<B>Laptop / NoteBook</B><BR>
+* Personal :: Laptop / NoteBook :: Lenovo<BR>
+* Personal :: Laptop / NoteBook :: Samsung<BR><BR>
+
+<B>Smart Watch</B><BR>
+* Personal :: Smart Watch :: Lenovo<BR>
+* Personal :: Smart Watch :: Samsung<BR><BR>
+
+<B>Smart Glasses</B><BR>
+* Personal :: Smart Glasses :: Lenovo<BR>
+* Personal :: Smart Glasses :: Ray-Ban<BR>
+* Personal :: Smart Glasses :: Samsung<BR><BR>
+
+<B>Home Router</B><BR>
+* Personal :: Home Router :: ASUS<BR>
+* Personal :: Home Router :: Custom Built<BR>
+* Personal :: Home Router :: Lenovo<BR>
+* Personal :: Home Router :: Samsung<BR><BR>
+
+<B>EarPhones / EarBuds</B><BR>
+* Personal :: Wired :: SkullCandy<BR>
+* Personal :: Wireless :: SkullCandy<BR><BR>
+
+<B>Recommended :: Hardware :: Web Server</B><BR>
+--------------------------------------------------<BR>
+* Cloud Server :: Hardware Component :: Case ::<BR>
+* Cloud Server :: Hardware Component :: Power Supply ::<BR>
+* Web Server :: Hardware Component :: Mainboard ::<BR>
+* Web Server :: Hardware Component :: Processor ::<BR>
+* Web Server :: Hardware Component :: Graphics Processor ::<BR>
+* Web Server :: Hardware Component :: Memory ::<BR>
+* Web Server :: Hardware Component :: Digital Storage Drive ::<BR>
+* Web Server :: Hardware Component :: Optical Drive ::<BR><BR>
+
+<B>Recommended :: Hardware :: Cloud Server</B><BR>
+--------------------------------------------------<BR>
+* Cloud Server :: Hardware Component :: Case ::<BR>
+* Cloud Server :: Hardware Component :: Power Supply ::<BR>
+* Cloud Server :: Hardware Component :: Mainboard ::<BR>
+* Cloud Server :: Hardware Component :: Processor ::<BR>
+* Cloud Server :: Hardware Component :: Graphics Processor ::<BR>
+* Cloud Server :: Hardware Component :: Memory ::<BR>
+* Cloud Server :: Hardware Component :: Digital Storage Drive ::<BR>
+* Cloud Server :: Hardware Component :: Optical Drive ::<BR><BR>
+
+<B>Recommended :: Hardware :: Web Server :: Hardware Security Appliance</B><BR>
+--------------------------------------------------<BR>
+* Web Server :: Hardware Security Appliance :: Forti Web Guard<BR>
+* Web Server :: Hardware Security Appliance :: Fire Guardian<BR><BR>
+
+<B>Recommended :: Web Server :: Operating System :: Applications :: Linux</B><BR>
+--------------------------------------------------<BR>
+* Apache<BR>
+* MySQL<BR>
+* PHP<BR>
+* SIP Server<BR>
+* Electronic Mail Server<BR>
+* DNSCrypt / DNSCrypt-Proxy<BR>
+* Network Information Security Tools<BR><BR>
+
+<B>Recommended :: Mobile Cell Device :: Operating System :: AOSP :: Applications</B><BR>
+--------------------------------------------------<BR>
+* gApps Pico<BR>
+* IPTables<BR>
+* DNSCrypt / DNSCrypt-Proxy<BR>
+* AdAway<BR>
+* OpenVPN<BR>
+* Mozilla FireFox, AdBlock Pro, Ghostery, HTTPSEverywhere, NoSCRIPT<BR>
+* Google Voice<BR>
+* TTorrent Lite<BR>
+* Termux<BR>
+* Terminal<BR>
+* MacChanger<BR>
+* VoIP Client<BR>
+* Remote Administrator Client<BR>
+* PDFReader<BR>
+* FOSSHub / FOSS Repo<BR>
+* Network Monitor<BR>
+* KeePass<BR>
+* TeamSpeak<BR>
+* Discord<BR>
+* PGPAuth<BR>
+* Call Recorder<BR><BR>
+
+<B>Web Browsers</B>
+
+<B>Audio</B>
+
+<B>Call Recording</B>
+
+<B>Digital Information Security</B>
+
+<B>Security</B>
+
+<B>Networking</B>
+
+<B>Networking Blocking / Network Filtering</B>
+
+<B>Intelligence Gathering</B>
+Image Recognition / Facial Recognition / Human Identity Recognition<BR>
+Discoverability<BR>
+License Plate Scanner<BR>
+");
+?>

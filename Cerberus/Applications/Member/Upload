@@ -1,0 +1,504 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Upload
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Upload
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+ 											echo ($_Application_Module_Member_Message_Upload_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Form Post Variables
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_DB_Query_SELECT_CATEGORIES			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories ORDER BY file_category_title ASC");
+
+/*
+ ============================================================================================================
+ + Upload Size Limit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_MAXIMUM_UPLOAD_LIMIT				= $_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC / 1024;
+
+/*
+ ============================================================================================================
+ + File Upload Details
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY			= "./Temporary/";
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE				= $_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Upload_File_Name']['name']);
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_IMAGE				= $_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AM_Upload_Image_Name']['name']);
+
+/*
+ ============================================================================================================
+ + Allowed File Extensions
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS			= array();
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[0]			= "jpg";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[1]			= "gif";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[2]			= "png";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[3]			= "bmp";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[4]			= "pdf";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[5]			= "zip";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[6]			= "rar";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[7]			= "wmv";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[8]			= "swf";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[9]			= "wav";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[10]			= "mp3";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[11]			= "mov";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS[12]			= "wma";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Executable
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_EXECUTABLE		= array();
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_EXECUTABLE[0]		= "exe";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Audio
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO			= array();
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[0]		= "mp3";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[1]		= "aac";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[2]		= "aax";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[3]		= "aiff";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[4]		= "alac";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[5]		= "flac";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[6]		= "m4a";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[7]		= "ogg";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[8]		= "wav";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_AUDIO[9]		= "wma";
+
+
+/*
+ ============================================================================================================
+ + File Extensions :: Document
+ ============================================================================================================
+*/
+	
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_DOCUMENT		= array();
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_DOCUMENT[0]		= "doc";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_DOCUMENT[1]		= "docx";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_DOCUMENT[2]		= "txt";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_DOCUMENT[3]		= "pdf";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_IMAGE			= array();
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_IMAGE[0]		= "jpg";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_IMAGE[1]		= "jpeg";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_IMAGE[2]		= "png";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_IMAGE[3]		= "gif";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_IMAGE[4]		= "bmp";
+
+/*
+ ============================================================================================================
+ + File Extensions :: Video
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO			= array();
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[0]		= "mp4";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[1]		= "mov";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[2]		= "wmv";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[3]		= "avi";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[4]		= "flv";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[5]		= "swf";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[6]		= "webm";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[7]		= "qt";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[8]		= "mpeg";
+$_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSION_VIDEO[9]		= "mpg";
+
+/*
+ ============================================================================================================
+ + File Data Specifications
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_FILE_PATHINFO_FILE 				= pathinfo($_FILES['AM_Upload_File_Name']['name']);
+$_Application_Module_Member_Upload_FILE_PATHINFO_IMAGE 				= pathinfo($_FILES['AM_Upload_Image_Name']['name']);
+$_Application_Module_Member_Upload_EXTENSION_FILE 				= $_Application_Module_Member_Upload_FILE_PATHINFO_FILE['extension'];
+$_Application_Module_Member_Upload_EXTENSION_IMAGE 				= $_Application_Module_Member_Upload_FILE_PATHINFO_IMAGE['extension'];
+$_Application_Module_Member_Upload_BASENAME_FILE 				= $_Application_Module_Member_Upload_FILE_PATHINFO_FILE['basename'];
+$_Application_Module_Member_Upload_BASENAME_IMAGE 				= $_Application_Module_Member_Upload_FILE_PATHINFO_IMAGE['basename'];
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE		= pathinfo($_Application_Module_Member_Upload_BASENAME_FILE, PATHINFO_EXTENSION);
+
+/*
+ ============================================================================================================
+ + Post File Details
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_POST_AUTHOR					= $_POST['AM_Upload_File_Author'];
+$_Application_Module_Member_Upload_POST_TITLE					= $_POST['AM_Upload_File_Title'];
+$_Application_Module_Member_Upload_POST_CATEGORY				= $_POST['AM_Upload_File_Category'];
+$_Application_Module_Member_Upload_POST_FILE_DATA				= $_POST['AM_Upload_File_Data'];
+$_Application_Module_Member_Upload_POST_FILE					= $_POST['AM_Upload_File_Name_File'];
+$_Application_Module_Member_Upload_POST_IMAGE					= $_POST['AM_Upload_File_Name_Image'];
+
+/*
+ ============================================================================================================
+ + Character Replace
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_POST_FILE					= stripslashes($_Application_Module_Member_Upload_POST_FILE);
+$_Application_Module_Member_Upload_POST_IMAGE					= stripslashes($_Application_Module_Member_Upload_POST_IMAGE);
+$_Application_Module_Member_Upload_POST_AUTHOR					= str_replace("<", "&lt;", $_Application_Module_Member_Upload_POST_AUTHOR);
+$_Application_Module_Member_Upload_POST_AUTHOR					= str_replace("'", "&#39;", $_Application_Module_Member_Upload_POST_AUTHOR);
+$_Application_Module_Member_Upload_POST_TITLE					= str_replace("<", "&lt;", $_Application_Module_Member_Upload_POST_TITLE);
+$_Application_Module_Member_Upload_POST_TITLE					= str_replace("'", "&#39;", $_Application_Module_Member_Upload_POST_TITLE);
+
+/*
+ ============================================================================================================
+ + SafeHTMl Code && Smileys
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_POST_FILE_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Upload_POST_FILE_DATA);
+$_Application_Module_Member_Upload_POST_FILE_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Upload_POST_FILE_DATA);
+
+/*
+ ============================================================================================================
+ +
+ + Upload File Form
+ +
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Member_Upload_POST_AUTHOR)) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Upload\" METHOD=\"post\" ENCTYPE=\"multipart/form-data\">
+												* File Author:<BR>
+													<INPUT TYPE=\"text\" NAME=\"AM_Upload_File_Author\" MAXLENGTH=\"60\"><BR>
+												* File Title:<BR>
+													<INPUT TYPE=\"text\" NAME=\"AM_Upload_File_Title\" MAXLENGTH=\"50\"><BR>
+												* File Category:<BR>
+													<SELECT NAME=\"AM_Upload_File_Category\">
+");
+
+/*
+ ============================================================================================================
+ +
+ + List File Category Entries
+ +
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Upload_DB_Query_SELECT_CATEGORIES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Upload_DB_Query_SELECT_CATEGORIES)) {
+
+$_Application_Module_Member_Upload_LIST_FILE_CATEGORY_ID			= $_Application_Module_Member_Upload_DB_Query_SELECT_CATEGORIES_Fetch_Array['id'];
+$_Application_Module_Member_Upload_LIST_FILE_CATEGORY_TITLE			= $_Application_Module_Member_Upload_DB_Query_SELECT_CATEGORIES_Fetch_Array['file_category_title'];
+
+											echo ("<OPTION VALUE=\"$_Application_Module_Member_Upload_LIST_FILE_CATEGORY_ID\">$_Application_Module_Member_Upload_LIST_FILE_CATEGORY_TITLE</OPTION>");
+
+} // [ + ] WHILE: Retrieving File Category Entries From Database Server
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select From File Categories
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Upload_DB_Query_SELECT_CATEGORIES);
+
+echo ("
+													</SELECT><BR><BR>
+												$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS<BR>
+												* File Description:<BR>
+													<TEXTAREA ROWS=\"15\" COLS=\"75\" MAXLENGTH=\"2000\" NAME=\"AM_Upload_File_Data\" ID=\"WYSIWYG\">description of this file...</TEXTAREA><BR>
+												* File: [ Maximum File Name Length: 50 Characters ]<BR>
+													<INPUT TYPE=\"file\" name=\"AM_Upload_File_Name_File\"><BR>
+												* Image: [ Maximum File Name Length: 50 Characters ]<BR>
+													<INPUT TYPE=\"file\" name=\"AM_Upload_File_Name_Image\"><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Upload\">
+											</FORM><BR>
+											[ Maximum File Size: $_Application_Module_Member_Upload_MAXIMUM_UPLOAD_LIMIT Kilo-Bits ]<BR>
+											[ Maximum Image File Size: 150 Kilo-Bits ]
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Move Files To Temporary Directory
+ ============================================================================================================
+*/
+
+if (move_uploaded_file($_FILES['AM_Upload_Image_Name']['tmp_name'], $_Application_Module_Member_Upload_SPECIFY_UPLOAD_IMAGE) && move_uploaded_file($_FILES['AM_Upload_File_Name']['tmp_name'], $_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE)) {
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_TEMPORARY);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_TEMPORARY_ERROR);
+
+} // [ + ] IF: Move Uploaded File: File Entry Image
+
+/*
+ ============================================================================================================
+ + Check And Prepare Files
+ ============================================================================================================
+*/
+
+if (in_array($_Application_Module_Member_Upload_EXTENSION_FILE, $_Application_Module_Member_Upload_ALLOWED_FILE_EXTENSIONS)) {
+
+$_Application_Module_Member_Upload_PREPARE_FILE				= "1";
+
+} // [ + ] IF: File Extension Is In Allowed File Extension Array
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_CHECK);
+
+/*
+ ============================================================================================================
+ + If Files Are Allowed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_PREPARE_FILE == "1") {
+
+/*
+ ============================================================================================================
+ + Check For Existing File Names
+ ============================================================================================================
+*/
+
+if (file_exists("./Upload/$_Application_Module_Member_Upload_BASENAME_FILE") || file_exists("./Upload/$_Application_Module_Member_Upload_BASENAME_IMAGE")) {
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_EXISTS_ERROR);
+
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_FILE");
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_IMAGE");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Check For File Sizes
+ ============================================================================================================
+*/
+
+if (filesize($_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE) > $_GLOBAL_SYSTEM_UPLOAD_SIZE_PUBLIC || filesize($_Application_Module_Member_Upload_SPECIFY_UPLOAD_IMAGE) > 160000) {
+
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_FILE");
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_IMAGE");
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_TOO_LARGE);
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + Check For Successfully Uploaded File Type Defined In File Type Arrays
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Successfully Uploaded File Type Defined In File Type Arrays :: Audio
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE == "$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE_AUDIO") {
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY_FILE_TYPE	= "./Upload/Audio";
+
+} // [ + ] IF: Successfully Uploaded File Extension Type Is: Audio
+
+/*
+ ============================================================================================================
+ + IF: Successfully Uploaded File Type Defined In File Type Arrays :: Document
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE == "$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE_DOCUMENT") {
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY_FILE_TYPE	= "./Upload/Document";
+
+} // [ + ] IF: Successfully Uploaded File Extension Type Is: Document
+
+/*
+ ============================================================================================================
+ + IF: Successfully Uploaded File Type Defined In File Type Arrays :: Image
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE == "$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE_IMAGE") {
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY_FILE_TYPE	= "./Upload/Image";
+
+} // [ + ] IF: Successfully Uploaded File Extension Type Is: Image
+
+/*
+ ============================================================================================================
+ + IF: Successfully Uploaded File Type Defined In File Type Arrays :: Video
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE == "$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE_VIDEO") {
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY_FILE_TYPE	= "./Upload/Video";
+
+} // [ + ] IF: Successfully Uploaded File Extension Type Is: Video
+
+/*
+ ============================================================================================================
+ + IF: Successfully Uploaded File Type Defined In File Type Arrays :: Executable
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE == "$_Application_Module_Member_Upload_SPECIFY_UPLOAD_FILE_EXTENSION_TYPE_EXECUTABLE") {
+
+$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY_FILE_TYPE	= "./Upload/Executable";
+
+} // [ + ] IF: Successfully Uploaded File Extension Type Is: Executable
+
+/*
+ ============================================================================================================
+ + Files Are Cleared, Move Permanently
+ ============================================================================================================
+*/
+
+											copy("./Temporary/$_Application_Module_Member_Upload_BASENAME_FILE","./$_Application_Module_Member_Upload_SPECIFY_UPLOAD_DIRECTORY_FILE_TYPE/$_Application_Module_Member_Upload_BASENAME_FILE");
+											copy("./Temporary/$_Application_Module_Member_Upload_BASENAME_IMAGE","./Upload/Default//$_Application_Module_Member_Upload_BASENAME_IMAGE");
+
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_FILE");
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_IMAGE");
+
+$_Application_Module_Member_Upload_DB_Query_INSERT_FILE				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files(file_author,file_category,file_description,file_image,file_location,file_number_of_downloads,file_time,file_title,file_uploader)VALUES('$_Application_Module_Member_Upload_POST_AUTHOR','$_Application_Module_Member_Upload_POST_CATEGORY','$_Application_Module_Member_Upload_POST_FILE_DATA','$_Application_Module_Member_Upload_BASENAME_IMAGE','$_Application_Module_Member_Upload_BASENAME_FILE','0','$_GLOBAL_DATE','$_Application_Module_Member_Upload_POST_TITLE','$_GLOBAL_COOKIE_MEMBER_USERNAME')");
+
+/*
+ ============================================================================================================
+ + Update Member Details
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_UPDATE_MEMBER_EXPERIENCE_AMOUNT		= $_GLOBAL_MEMBER_EXPERIENCE_AMOUNT + 50;
+$_Application_Module_Member_Upload_UPDATE_MEMBER_NUMBER_OF_POSTS		= $_GLOBAL_MEMBER_NUMBER_OF_POSTS + 1;
+
+$_Application_Module_Member_Upload_DB_Query_UPDATE_MEMBER			= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_experience_amount='$_Application_Module_Member_Upload_UPDATE_MEMBER_EXPERIENCE_AMOUNT',member_number_of_posts='$_Application_Module_Member_Upload_UPDATE_MEMBER_NUMBER_OF_POSTS' WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+if ($_Application_Module_Member_Upload_DB_Query_UPDATE_MEMBER) {
+
+											//echo ($_Application_Module_Member_Message_Upload_MEMBER_EXPERIENCE_AMOUNT_SUCCESSFUL);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Upload_MEMBER_EXPERIENCE_AMOUNT_ERROR);
+
+} // [ + ] IF: Update Member Account Experience AND Number Of Posts Database Server Query Variable Has Executed
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Member Experience Amount
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Upload_DB_Query_UPDATE_MEMBER);
+
+/*
+ ============================================================================================================
+ + If File Information Inserted
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Upload_DB_Query_INSERT_FILE) {
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_UPLOAD_SUCCESSFUL);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_UPLOAD_ERROR);
+
+} // [ + ] IF: Insert File Entry Database Server Query Variable Has Executed
+
+} // [ + ] IF: File Entry Already Exists In Database Server
+
+} // [ + ] IF: File Size Is Great Than Allowed File Size
+
+} else {
+
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_FILE");
+											unlink("./Temporary/$_Application_Module_Member_Upload_BASENAME_IMAGE");
+
+											echo ($_Application_Module_Member_Message_Upload_FILE_EXTENSION_ERROR);
+} // [ + ] IF: Prepared Files Are Allowed
+
+} // [ + ] IF: Upload Data Is Empty
+?>
