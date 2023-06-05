@@ -1,4 +1,4 @@
-﻿Cerberus Content Management System, Officially Registered Unix-Name: CerberusCMS and Cerberus-Content-Management-System in year 2000 - 2001 on FreshMeat which became SourceForge and then SlashDot Media.
+Cerberus Content Management System, Officially Registered Unix-Name: CerberusCMS and Cerberus-Content-Management-System in year 2000 - 2001 on FreshMeat which became SourceForge and then SlashDot Media.
 
 ==Origins==
 
@@ -358,9 +358,10 @@ Internal language files allow for instant translation of the output messages to 
 The language can be changed at any time to any other language through the Language Application Module. Additional languages can be downloaded and installed from the Administration Control Panel.
 
 ===Digital Trust Features===
-CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application itself which is loaded into the web browser from the web server running CerberusCMS and at the same time all of the transmitting data and stored information is secure from vulnerabilities and exploitation as well as being information secure because only certain details of information are actually displayed.
+CerberusCMS is very unique because it allows for anyone to view the source code of all of the Documents, Application Modules and the Master File so named the 'Kernel' directly from the Web Application itself which is loaded into the web browser from the web server that is executing the CerberusCMS Programming Code and at the same time all of the transmitting data and stored information is secure from vulnerabilities and exploitation as well as being information secure because only certain details of information are actually displayed throughout the system.
 
-This establishes trust with the user because they can read all of the programming source code of the system itself directly from the web browser to ensure that everything is private and secure.
+This establishes trust with the human interacting with it because that human can read through all of the Programming Source Code of the CerberusCMS instance running on that specific web server directly from the web browser to ensure that everything is private and secure and that there are no deliberate backdoors or exploit code programmed into the system. This makes it to where anyone can consult
+an information security programming expert to look at the Web Server running CerberusCMS to guarantee the Programming Source Code is secure. Some automated vulnerability scanners will report a vulnerabiity called 'Source Code Disclosure', but this is not a vulnerability so long as the source code programming is secure. It's possible for any web server in the world to report fraudulent information even with integrity checks if the integrity checks are forged by the individual(s) in control of the Web Server. This is why the architecture designed is ingenious.
 
 All of the data that is stored in the Database Server is encrypted using G.N.U.-Privacy Guard, Pretty-Good-Privacy, BCRYPT, Advanced Encryption Standard - 256, Advanced Encryption Standard - 512 and other
 algorithms, hashes and cipers deemed secure by the information security community.
