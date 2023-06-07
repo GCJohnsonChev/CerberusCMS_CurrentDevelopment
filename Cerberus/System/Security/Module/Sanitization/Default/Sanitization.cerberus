@@ -1,0 +1,1990 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () -    ()   () ---  ()
+ +  ()  () () () ()()() ()()
+ +  ------
+ + Security Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => System => Security => Module => Sanitization => Default
+ +				 : => Sanitization.cerberus
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ +
+ + [ ^ ] Cerberus :: Security :: Module :: Master Sanitization
+ +
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ * Note: First count the POST string length with strlen() and IF the POST string length is greater than the MAXLENGTH
+	 specified in the HTML forms, text areas and other input fields then deny the POST data from being inserted anywhere.
+	 Then make sure every POST and GET variable and data received is filtered and sanitized with str_replace, preg_replace
+	 as well as the other PHP functions. This makes it to where no one can create a FORM with the same FORM NAME on a different
+         server and sent more than the MAXLENGTH specified. This will also then strip and then replace all of the harmful keyboard characters
+         to make it completely impossible to achieve an SQL injection on this system. Note to self: this will probably take about 2 - 3 day
+         for me to manually write all of this out in this document in procedural code. All new application modules in the future will have to be added here
+         manually. Make sure to make it impossible to inject any javascript tags and javascript code into any of the forms. Create a class or function with a
+         return and list all of the possible javascript functions and tags in a file or an array or something and make it to where all GET and POST variables
+         pass through those functions to completely remove all javascript functions and javascript tags from any POST and GET variables on this system. This
+         will make it impossible for anyone to paste javascript code into any of the forms on this system. This will make this system 100% unhackable.
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ @ ] Cerberus :: Security :: Module :: Master Sanitization :: Variables :: POST :: Strip Characters Array
+ +
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[0]							= "!";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[1]							= "@";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[2]							= "#";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[3]							= "$";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[4]							= "%";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[5]							= "^";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[6]							= "&";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[7]							= "*";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[8]							= "(";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[9]							= ")";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[10]							= "-";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[11]							= "_";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[12]							= "=";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[13]							= "+";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[14]							= "[";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[15]							= "{";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[16]							= "]";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[17]							= "}";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[18]							= "\";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[19]							= "|";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[20]							= ";"";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[21]							= ":";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[22]							= "'";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[23]							= """;
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[24]							= ",";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[25]							= "<";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[26]							= ".";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[27]							= ">";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[28]							= "?";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[29]							= "/";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[30]							= "`";
+$_Application_Module_System_Security_POST_STRIP_CHARACTERS[31]							= "~";
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: POST :: Preg Parameter Character Replacement
+ +
+ ============================================================================================================
+*/
+
+preg_replace("something","somethingelse", );
+
+if (in_array($_Application_Module_System_Security_POST_STRIP_CHARACTERS)) {
+
+preg_replace($_Application_Module_System_Security_POST_STRIP_CHARACTERS, "");
+
+}
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: POST :: Slash Character Stripping
+ +
+ ============================================================================================================
+*/
+
+stripslashes();
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: POST :: Character Case Forcing
+ +
+ ============================================================================================================
+*/
+
+strtolower();
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: POST :: String Length Counting
+ +
+ ============================================================================================================
+*/
+
+strlen();
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: POST :: Sub-Stract-String Counting
+ +
+ ============================================================================================================
+*/
+
+substr_count(something, $_Application_Module_System_Security_POST_STRIP_CHARACTERS)
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Kernel :: Internal Application :: Language
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+$_KERNEL_POST_LANGUAGE	 							= $_POST['IAM_Specify_Language'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Kernel :: Internal Application :: Login
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+$_KERNEL_LOGIN_ELECTRONIC_MAIL_ADDRESS_CLEAR					= $_POST['AM_Login_Electronic_Mail_Address'];
+$_KERNEL_LOGIN_USERNAME_CLEAR							= $_POST['AM_Login_UserName'];
+$_KERNEL_LOGIN_PASSWORD_CLEAR							= $_POST['AM_Login_Password'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Administrators
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Administrators :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Administrators :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Member Account ID
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_POST_MEMBER_ID								= $_POST['AM_Administrators_Update_Member_ID'];
+
+/*
+ ============================================================================================================
+ + Update Member Account Form Post Data Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_POST_MEMBER_ID_2								= $_POST['AM_Administrators_Update_Member_ID_2'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_ACCESS_LEVEL						= $_POST['AM_Administrators_Update_Member_Access_Level'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS						= $_POST['AM_Administrators_Update_Member_Banned_Status'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_ELECTRONIC_MAIL_ADDRESS					= $_POST['AM_Administrators_Update_Member_Electronic_Mail_Address'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_EXPERIENCE_AMOUNT					= $_POST['AM_Administrators_Update_Member_Experience_Amount'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_FIRST_NAME						= $_POST['AM_Administrators_Update_Member_First_Name'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_LAST_NAME						= $_POST['AM_Administrators_Update_Member_Last_Name'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_NUMBER_OF_POSTS						= $_POST['AM_Administrators_Update_Member_Number_Of_Posts'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD							= $_POST['AM_Administrators_Update_Member_Password'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_RANK							= $_POST['AM_Administrators_Update_Member_Rank'];
+
+/*
+ ============================================================================================================
+ + Update Member Account Form Post Data Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_POST_MEMBER_ID_2								= $_POST['AM_Administrators_Update_Member_ID_2'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_ACCESS_LEVEL						= $_POST['AM_Administrators_Update_Member_Access_Level'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_BANNED_STATUS						= $_POST['AM_Administrators_Update_Member_Banned_Status'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_ELECTRONIC_MAIL_ADDRESS					= $_POST['AM_Administrators_Update_Member_Electronic_Mail_Address'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_EXPERIENCE_AMOUNT					= $_POST['AM_Administrators_Update_Member_Experience_Amount'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_FIRST_NAME						= $_POST['AM_Administrators_Update_Member_First_Name'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_LAST_NAME						= $_POST['AM_Administrators_Update_Member_Last_Name'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_NUMBER_OF_POSTS						= $_POST['AM_Administrators_Update_Member_Number_Of_Posts'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_PASSWORD							= $_POST['AM_Administrators_Update_Member_Password'];
+$_Application_Module_Administration_POST_MEMBER_OPTION_RANK							= $_POST['AM_Administrators_Update_Member_Rank'];
+
+/*
+ ============================================================================================================
+ + Send System Message Form :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_POST_MESSAGE_MEMBER_USERNAME						= $_POST['AM_Administrators_Update_Member_UserName_2'];
+$_Application_Module_Administration_POST_MESSAGE_MEMBER_MESSAGE							= $_POST['AM_Administrators_Update_Member_Message'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Applications
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Applications :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Applications :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module :: Administration :: Applications :: Variables :: POST
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 				= $_POST['AM_Applications_Install_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION 			= $_POST['AM_Applications_Install_Application_File_Permission'];
+$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 				= $_POST['AM_Applications_Install_Application_File_Status'];
+$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 						= $_POST['AM_Applications_Upload_Temporary'];
+
+/*
+ ============================================================================================================
+ + Update Application Form :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 				= $_POST['AM_Applications_Update_Application_File_Name'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION 			= $_POST['AM_Applications_Update_Application_File_Permission'];
+$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 				= $_POST['AM_Applications_Update_Application_File_Status'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Archive
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Archive :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Archive :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Archive :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_FILES							= $_POST['AM_Archive_File_Selection'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Networking
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Networking :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Networking :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Networking :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Networking_POST_INTERNET_PROTOCOL_ADDRESS_STRING				= $_POST['AM_Networking_Banish_Internet_Protocol_Address_String'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: File_Categories
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: File_Categories :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: File_Categories :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: File_Categories :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+/*
+ ============================================================================================================
+ + Post Variables :: File Category Name and Description
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME				= $_POST['AM_File_Categories_Install_File_Category_Name'];
+$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION			= $_POST['AM_File_Categories_Install_File_Category_Description'];
+
+plication_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME					= $_POST['AM_File_Categories_Update_File_Category_Name'];
+$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION 			= $_POST['AM_File_Categories_Update_File_Category_Description'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Forum
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Forum :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Forum :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Forum  :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE						= $_POST['AM_Forum_Install_Forum_Title'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION					= $_POST['AM_Forum_Install_Forum_Description'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL					= $_POST['AM_Forum_Install_Forum_Access_Level'];
+
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= $_POST['AM_Forum_Update_Forum_Title'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= $_POST['AM_Forum_Update_Forum_Date'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL					= $_POST['AM_Forum_Update_Forum_Access_Level'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION						= $_POST['AM_Forum_Update_Forum_Description'];
+
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE					= $_POST['AM_Forum_Install_Forum_Topic_Title'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID					= $_POST['AM_Forum_Install_Forum_Topic_ID'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL					= $_POST['AM_Forum_Install_Forum_Topic_Access_Level'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION					= $_POST['AM_Forum_Install_Forum_Topic_Description'];
+
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE						= $_POST['AM_Forum_Update_Forum_Topic_Title'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= $_POST['AM_Forum_Update_Forum_Topic_Date'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL					= $_POST['AM_Forum_Update_Forum_Topic_Access_Level'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID					= $_POST['AM_Forum_Update_Forum_Topic_Forum_ID'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST					= $_POST['AM_Forum_Update_Forum_Topic_Last_Post'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER					= $_POST['AM_Forum_Update_Forum_Topic_Last_Poster'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION					= $_POST['AM_Forum_Update_Forum_Topic_Description'];
+
+$_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID						= $_POST['AM_Forum_Install_Forum_Topic_ID_Option'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE					= $_POST['AM_Forum_Install_Forum_Topic_Message'];
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCESS_LEVEL				= $_POST['AM_Forum_Install_Forum_Topic_Message_Access_Level'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Panels
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Panels :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Panels :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Panels :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME				= $_POST['AM_Panels_Install_Application_Panel_File_Name'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_ALIGNMENT				= $_POST['AM_Panels_Install_Application_Panel_File_Alignment'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_STATUS				= $_POST['AM_Panels_Install_Application_Panel_File_Status'];
+$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE					= $_POST['AM_Panels_Install_Application_Panel_File_Title'];
+
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME						= $_POST['AM_Panels_Update_Application_Panel_File_Name'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_ALIGNMENT						= $_POST['AM_Panels_Update_Application_Panel_File_Alignment'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_STATUS					= $_POST['AM_Panels_Update_Application_Panel_File_Status'];
+$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE						= $_POST['AM_Panels_Update_Application_Panel_File_Title'];
+$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TEMPORARY				= $_POST['AM_Panels_Upload_Application_Panel_Temporary'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Publish
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Publish :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Publish :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Publish :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME				= $_POST['AM_Publish_News_Article_Author_Name'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_DATA					= $_POST['AM_Publish_News_Article_Data'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD				= $_POST['AM_Publish_News_Article_Author_Mood'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC				= $_POST['AM_Publish_News_Article_Author_Music'];
+$_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE					= $_POST['AM_Publish_News_Article_Title'];
+
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME					= $_POST['AM_Publish_Article_Author_Name'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE						= $_POST['AM_Publish_Article_Title'];
+$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT						= $_POST['AM_Publish_Article_Text'];
+
+$_Application_Module_Administration_Publish_POST_NEWSLETTER_SUBJECT						= $_POST['AM_Publish_Newsletter_Subject'];
+$_Application_Module_Administration_Publish_POST_NEWSLETTER_MESSAGE						= $_POST['AM_Publish_Newsletter_Message'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Ranks
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Ranks :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Ranks :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Ranks :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_0						= $_POST['AM_Ranks_Update_Rank_Male_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_1						= $_POST['AM_Ranks_Update_Rank_Male_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_2						= $_POST['AM_Ranks_Update_Rank_Male_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_3						= $_POST['AM_Ranks_Update_Rank_Male_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_MALE_4						= $_POST['AM_Ranks_Update_Rank_Male_4'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_0						= $_POST['AM_Ranks_Update_Rank_Female_0'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_1						= $_POST['AM_Ranks_Update_Rank_Female_1'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_2						= $_POST['AM_Ranks_Update_Rank_Female_2'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_3						= $_POST['AM_Ranks_Update_Rank_Female_3'];
+$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_FEMALE_4						= $_POST['AM_Ranks_Update_Rank_Female_4'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Settings
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Settings :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Settings :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Settings :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Settings_POST_UPDATE_LOCATION_DIRECTORY					= $_POST['AM_Settings_Update_Location_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_LOCATION_STATUS					= $_POST['AM_Settings_Update_Location_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_DIRECTORY					= $_POST['AM_Settings_Update_SafeHTML_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SAFEHTML_STATUS					= $_POST['AM_Settings_Update_SafeHTML_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_COOKIE_TIME						= $_POST['AM_Settings_Update_Session_Time'];
+$_Application_Module_Administration_Settings_POST_UPDATE_GZIP_STATUS						= $_POST['AM_Settings_Update_GZIP_Compression'];
+$_Application_Module_Administration_Settings_POST_UPDATE_IMAGE_EXTENSION					= $_POST['AM_Settings_Update_Image_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_LANGUAGE_DIRECTORY					= $_POST['AM_Settings_Update_Language_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_OFFLINE_STATUS						= $_POST['AM_Settings_Update_Offline_Status'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SITE_TITLE						= $_POST['AM_Settings_Update_Site_Title'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SMILEYS_DIRECTORY					= $_POST['AM_Settings_Update_Smileys_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_SOUND_EXTENSION					= $_POST['AM_Settings_Update_Sound_Extension'];
+$_Application_Module_Administration_Settings_POST_UPDATE_THEME_DIRECTORY					= $_POST['AM_Settings_Update_Theme_Directory'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PRIVATE						= $_POST['AM_Settings_Update_Upload_Size_Private'];
+$_Application_Module_Administration_Settings_POST_UPDATE_UPLOAD_PUBLIC						= $_POST['AM_Settings_Update_Upload_Size_Public'];
+$_Application_Module_Administration_Settings_POST_UPDATE_TEXT_EDITOR_DIRECTORY					= $_POST['AM_Settings_Update_Text_Editor_Directory'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Terminal
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Terminal :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Terminal :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Terminal :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Terminal_POST_TERMINAL_COMMAND						= $_POST['AM_Terminal_Terminal_Command'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Update
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Update :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Update :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Update :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR						= $_POST['AM_Update_Article_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME						= $_POST['AM_Update_Article_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE						= $_POST['AM_Update_Article_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA						= $_POST['AM_Update_Article_Data'];
+
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR						= $_POST['AM_Update_Link_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION						= $_POST['AM_Update_Link_Description'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME						= $_POST['AM_Update_Link_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE						= $_POST['AM_Update_Link_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL							= $_POST['AM_Update_Link_URL'];
+
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR						= $_POST['AM_Update_News_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR						= $_POST['AM_Update_News_Avatar'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA						= $_POST['AM_Update_News_Data'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD						= $_POST['AM_Update_News_Mood'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC						= $_POST['AM_Update_News_Music'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME						= $_POST['AM_Update_News_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE						= $_POST['AM_Update_News_Title'];
+
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR						= $_POST['AM_Update_File_Author'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY						= $_POST['AM_Update_File_Category'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION						= $_POST['AM_Update_File_Description'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE						= $_POST['AM_Update_File_Image'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION						= $_POST['AM_Update_File_Location'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS					= $_POST['AM_Update_File_Downloads'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME						= $_POST['AM_Update_File_Time'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE						= $_POST['AM_Update_File_Title'];
+$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER						= $_POST['AM_Update_File_Uploader'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Administration :: Web_Pages
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Administration :: Web_Pages :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Web_Pages :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Administration :: Web_Pages :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Web_Pages_POST_LINK_NAME							= $_POST['AM_Web_Pages_Install_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_URL							= $_POST['AM_Web_Pages_Install_Link_URL'];
+$_Application_Module_Administration_Web_Pages_POST_LINK_TYPE							= $_POST['AM_Web_Pages_Install_Link_Type'];
+
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_NAME						= $_POST['AM_Web_Pages_Update_Link_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_ROW						= $_POST['AM_Web_Pages_Update_Link_Row'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_LINK_URL						= $_POST['AM_Web_Pages_Update_Link_URL'];
+
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_NAME 					= $_POST['AM_Web_Pages_Install_Web_Page_Name'];
+$_Application_Module_Administration_Web_Pages_POST_INSTALL_WEB_PAGE_DATA 					= $_POST['AM_Web_Pages_Install_Web_Page_Data'];
+
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_NAME						= $_POST['AM_Web_Pages_Update_Custom_Application_Name'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_DATA						= $_POST['AM_Web_Pages_Update_Custom_Application_Data'];
+$_Application_Module_Administration_Web_Pages_POST_UPDATE_PAGE_TIME						= $_POST['AM_Web_Pages_Update_Custom_Application_Timestamp'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: All_Shouts
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: All_Shouts :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: All_Shouts :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: All_Shouts :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE							= $_POST['AM_All_Shouts_Shout_Message'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Audio_Player
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Audio_Player :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Audio_Player :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Audio_Player :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Audio_Player_POST_AUDIO_URL								= $_POST['AM_Audio_Player_Play_Audio_URL'];
+$_Application_Module_Member_Audio_Player_POST_AUDIO_FILE_NAME							= $_POST['AM_Audio_Player_Play_Audio_File_Name'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Comment
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Comment :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Comment :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Comment :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_POST_APPLICATION_ID								= $_POST['AM_Comment_Application_ID'];
+$_Application_Module_Member_Comment_POST_APPLICATION_NAME							= $_POST['AM_Comment_Application_Name'];
+$_Application_Module_Member_Comment_POST_COMMENT_DATA								= $_POST['AM_Comment_Comment_Data'];
+
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA							= $_POST['AM_Comment_Update_Comment_Data'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Contact_Administrator
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Contact_Administrator :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Contact_Administrator :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Contact_Administrator :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Contact_Administrator_POST_NAME 							= $_POST['AM_Contact_Administrator_My_Name'];
+$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS					= $_POST['AM_Contact_Administrator_Electronic_Mail_Address'];
+$_Application_Module_Member_Contact_Administrator_POST_MESSAGE							= $_POST['AM_Contact_Administrator_Message'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Control_Panel
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Control_Panel :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Control_Panel :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Control_Panel :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY						= $_POST['AM_Control_Panel_Account_Activation_Key'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Electronic_Mail
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Electronic_Mail :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Electronic_Mail :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Electronic_Mail :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE							= $_POST['AM_Electronic_Mail_Message'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Forum
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Forum :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Forum :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Forum :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA								= $_POST['AM_Forum_Update_Forum_Topic_Post'];
+
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE							= $_POST['AM_Forum_Create_Topic_Title'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION							= $_POST['AM_Forum_Create_Topic_Description'];
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_FORUM_ID							= $_POST['AM_Forum_Create_Topic_Forum_ID'];
+$_Application_Module_Member_Forum_POST_CREATE_POST_TOPIC_ID							= $_POST['AM_Forum_Create_Topic_ID_Option'];
+
+$_Application_Module_Member_Forum_POST_CREATE_POST_DATA								= $_POST['AM_Forum_Create_Post_Data'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_DATA								= $_POST['AM_Forum_Reply_Message'];
+
+$_Application_Module_Member_Forum_POST_REPLY_POST_ID								= $_POST['AM_Forum_Reply_Post_ID'];
+$_Application_Module_Member_Forum_POST_REPLY_POST_ID_2								= $_POST['AM_Forum_Reply_Post_ID_2'];
+
+$_Application_Module_Member_Forum_POST_JUMP_TO									= $_POST['AM_Forum_Jump_To'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Forward_Friend
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Forward_Friend :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Forward_Friend :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Forward_Friend :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_MESSAGE							= $_POST['AM_Forward_Friend_Message'];
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_ELECTRONIC_MAIL_ADDRESS					= $_POST['AM_Forward_Friend_Electronic_Mail_Address'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Friend
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Friend :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Friend :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Friend :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Friend_POST_GET_FRIEND_NAME								= $_POST['AM_Friend_Save_Friend'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Language
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Language :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Language :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Language :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Language_Specify_Language		 							= $_POST['AM_Specify_Language'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Links
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Links :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Links :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Links :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Links_POST_LINK_TITLE								= $_POST['AM_Links_Link_Title'];
+$_Application_Module_Member_Links_POST_LINK_URL									= $_POST['AM_Links_Link_URL'];
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION								= $_POST['AM_Links_Link_Description'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Login
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Login :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Login :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Login :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS					= $_POST['AM_Login_Authorization_IP_Address_Current'];
+$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS						= $_POST['AM_Login_Authorization_Electronic_Mail_Address'];
+$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN					= $_POST['AM_Login_Authorization_IP_Token'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Messenger
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Messenger :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Messenger :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Messenger :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Messenger_POST_SELECT_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $_POST['AM_Messenger_Plain_Text_File_Messenger_Select_Room_Name'];
+$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Message'];
+$_Application_Module_Messenger_POST_PLAIN_TEXT_FILE_MESSENGER_MESSAGE_ROOM_NAME_HIDDEN				= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Password_Entry'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_PASSWORD_DELETION			= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Password_Deletion'];
+$_Application_Module_Messenger_GENERATE_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $_POST['AM_Messenger_Plain_Text_File_Messenger_Room_Name_Create'];
+$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME					= $_POST['AM_Messenger_Unlink_Plain_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Messenger_UNLINK_PLAIN_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD_DELETE			= $_POST['AM_Messenger_Unlink_Plain_Text_File_Messenger_Room_Name_Password_Delete'];
+$_Application_Module_Messenger_POST_HIDDEN_MESSENGER_ROOM_NAME_FIND						= $_POST['AM_Messenger_Find_Messenger_Room_Name_Invisible'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Private_Files
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Private_Files :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Private_Files :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Private_Files :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY					= $_POST['AM_Private_Files_Upload_Directory_Temporary'];
+$_Application_Module_Members_Private_Files_POST_DELETE_IMAGE_FILE						= $_POST['AM_Private_Files_Delete_Image_File'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Private_Message
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Private_Message :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Private_Message :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Private_Message :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT							= $_POST['AM_Private_Message_Message_Subject'];
+$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT							= $_POST['AM_Private_Message_Message_Recipient'];
+$_Application_Module_Private_Message_POST_MESSAGE_DATA 								= $_POST['AM_Private_Message_Message_Data'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Register
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Register :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Register :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Register :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME							= $_POST['AM_Register_Registrar_First_Name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME							= $_POST['AM_Register_Registrar_Last_Name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS					= $_POST['AM_Register_Registrar_Electronic_Mail_Address'];
+$_Application_Module_Member_Register_POST_REGISTRAR_BIRTHDATE							= $_POST['AM_Register_Registrar_Birthdate'];
+$_Application_Module_Member_Register_POST_REGISTRAR_GENDER							= $_POST['AM_Register_Registrar_Gender'];
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME							= $_POST['AM_Register_Registrar_UserName'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY							= $_POST['AM_Register_Registrar_Random_Key'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK						= $_POST['AM_Register_Registrar_Random_Key_Check'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Reset_Password
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Reset_Password :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Reset_Password :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Reset_Password :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Reset_Password_POST_ELECTRONIC_MAIL_ADDRESS						= $_POST['AM_Reset_Password_Electronic_Mail_Address'];
+$_Application_Module_Reset_Password_POST_USERNAME								= $_POST['AM_Reset_Password_UserName'];
+$_Application_Module_Reset_Password_POST_RECOVERY_KEY								= $_POST['AM_Reset_Password_Recovery_Key'];
+$_Application_Module_Reset_Password_POST_PICTOGRAPHIC_TEXT							= $_POST['AM_Reset_Password_Pictographic_Text'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Search
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Search :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Search :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Search :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Search_POST_KEYWORD									= $_POST['AM_Search_Search_Keyword'];
+$_Application_Module_Member_Search_POST_SECTION									= $_POST['AM_Search_Search_Section'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Submit_News
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Submit_News :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Submit_News :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Submit_News :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE							= $_POST['AP_Submit_News_Message_Data'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Update_Account
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Update_Account :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Update_Account :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Update_Account :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST				= $_POST['AM_Update_Account_Member_Name_First'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_MIDDLE				= $_POST['AM_Update_Account_Member_Name_Middle'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_LAST					= $_POST['AM_Update_Account_Member_Name_Last'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NAME_NICKNAME				= $_POST['AM_Update_Account_Member_Name_Nickname'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_BIRTHDATE					= $_POST['AM_Update_Account_Member_Birthdate'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_GENDER					= $_POST['AM_Update_Account_Member_Gender'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_HOME				= $_POST['AM_Update_Account_Member_Address_Home'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_MAILING				= $_POST['AM_Update_Account_Member_Address_Mailing'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_LOCATION_CURRENT				= $_POST['AM_Update_Account_Member_Location_Current'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_AREA_CODE			= $_POST['AM_Update_Account_Member_Number_Phone_Area_Code'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_CELL				= $_POST['AM_Update_Account_Member_Number_Phone_Cell'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_COUNTRY_CODE			= $_POST['AM_Update_Account_Member_Number_Phone_Country_Code'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_HOME				= $_POST['AM_Update_Account_Member_Number_Phone_Home'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_PHONE_WORK				= $_POST['AM_Update_Account_Member_Number_Phone_Work'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS			= $_POST['AM_Update_Account_Member_Electronic_Mail_Address'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_URL_HOMEPAGE				= $_POST['AM_Update_Account_Member_URL_Homepage'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_ICQ 		= $_POST['AM_Update_Account_Member_SocialMedia_Communications_ICQ'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SKYPE 		= $_POST['AM_Update_Account_Member_SocialMedia_Communications_Skype'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_SNAPCHAT 	= $_POST['AM_Update_Account_Member_SocialMedia_Communications_SnapChat'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_COMMUNICATIONS_DISCORD 	= $_POST['AM_Update_Account_Member_SocialMedia_Communications_Discord'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_FACEBOOK 		= $_POST['AM_Update_Account_Member_SocialMedia_Posting_Facebook'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_POSTING_TWITTER 		= $_POST['AM_Update_Account_Member_SocialMedia_Posting_Twitter'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_GALLERY_INSTAGRAM 		= $_POST['AM_Update_Account_Member_SocialMedia_Gallery_Instagram'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_AUDIO_SPOTIFY 		= $_POST['AM_Update_Account_Member_SocialMedia_Audio_Spotify'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_BUSINESS_LINKEDIN 		= $_POST['AM_Update_Account_Member_SocialMedia_Business_Linkedin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_VIDEO_YOUTUBE 		= $_POST['AM_Update_Account_Member_SocialMedia_Video_Youtube'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_SECURITY_KEYBASE 		= $_POST['AM_Update_Account_Member_SocialMedia_Security_Keybase'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_BITBUCKET		= $_POST['AM_Update_Account_Member_SocialMedia_Programming_BitBucket'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_GITHUB		= $_POST['AM_Update_Account_Member_SocialMedia_Programming_GitHub'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SOCIALMEDIA_PROGRAMMING_LAUNCHPAD		= $_POST['AM_Update_Account_Member_SocialMedia_Programming_LaunchPad'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_BitCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_BITCOIN_GOLD 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_BitCoin_Gold'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_DOGECOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_DogeCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ETHEREUM	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_Ethereum'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_LITECOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_LiteCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_MAZACOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_MazaCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_NAMECOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_NameCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PEERCOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_PeerCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_PRIMECOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_PrimeCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_TRONCOIN	 	= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_TronCoin'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CRYPTOCURRENCY_ADDRESS_ZCASH		= $_POST['AM_Update_Account_Member_CryptoCurrency_Address_ZCash'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MOOD					= $_POST['AM_Update_Account_Member_Mood'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_MUSIC					= $_POST['AM_Update_Account_Member_Music'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_AUDIO				= $_POST['AM_Update_Account_Member_Settings_Audio'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_NEWSLETTER			= $_POST['AM_Update_Account_Member_Settings_Newsletter'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_THEME				= $_POST['AM_Update_Account_Member_Settings_Theme'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_LANGUAGE				= $_POST['AM_Update_Account_Member_Settings_Language'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_SETTINGS_ENCRYPTION_PGP			= $_POST['AM_Update_Account_Member_Settings_Encryption_PGP'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_AVATAR				= $_POST['AM_Update_Account_Member_Profile_Avatar'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_PICTURE				= $_POST['AM_Update_Account_Member_Profile_Picture'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_ABOUT				= $_POST['AM_Update_Account_Member_Profile_About'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PROFILE_SIGNATURE				= $_POST['AM_Update_Account_Member_Profile_Signature'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PUBLIC			= $_POST['AM_Update_Account_Member_PGP_Key_Panel_Public'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_PGP_KEY_PANEL_PRIVATE			= $_POST['AM_Update_Account_Member_PGP_Key_Panel_Private'];
+
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_ADDRESS_BILLING				= $_POST['AM_Update_Account_Member_Address_Billing'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_NUMBER			= $_POST['AM_Update_Account_Member_Credit_Card_Number'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_CVV				= $_POST['AM_Update_Account_Member_Credit_Card_CVV'];
+$_Application_Module_Member_Update_Account_POST_UPDATE_MEMBER_ACCOUNT_CREDIT_CARD_EXPIRATION_DATE		= $_POST['AM_Update_Account_Member_Credit_Card_Expiration_Date'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Update_Password
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Update_Password :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Update_Password :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Update_Password :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Update_Password_POST_CURRENT_PASSWORD						= $_POST['AM_Update_Password_Current_Password'];
+$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_1						= $_POST['AM_Update_Password_New_Password_1'];
+$_Application_Module_Member_Update_Password_POST_UPDATE_PASSWORD_2						= $_POST['AM_Update_Password_New_Password_2'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Upload
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Upload :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Upload :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Upload :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Upload_POST_AUTHOR									= $_POST['AM_Upload_File_Author'];
+$_Application_Module_Member_Upload_POST_TITLE									= $_POST['AM_Upload_File_Title'];
+$_Application_Module_Member_Upload_POST_CATEGORY								= $_POST['AM_Upload_File_Category'];
+$_Application_Module_Member_Upload_POST_FILE_DATA								= $_POST['AM_Upload_File_Data'];
+$_Application_Module_Member_Upload_POST_FILE									= $_POST['AM_Upload_File_Name_File'];
+$_Application_Module_Member_Upload_POST_IMAGE									= $_POST['AM_Upload_File_Name_Image'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Video_Player
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Video_Player :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Video_Player :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Video_Player :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Video_Player_POST_VIDEO_URL								= $_POST['AM_Video_Player_Video_URL'];
+$_Application_Module_Video_Player_POST_VIDEO_FILE_NAME								= $_POST['AM_Video_Player_Video_File_Name'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application Module :: Member :: Webspace
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Module :: Member :: Webspace :: Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Webspace :: Variables :: GET
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Module :: Member :: Webspace :: Variables :: POST
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Webspace_POST_WEBSPACE_DATA								= $_POST['AM_Web_Space_Update_Web_Page_Data'];
+
+?>
