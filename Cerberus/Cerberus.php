@@ -485,6 +485,7 @@ $_GLOBAL_SETTING_SYSTEM_SECURITY_MODULE_DIRECTORY_MASTER_SANITIZATION			= $_DB_Q
 */
 
 $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS					= rand(0,9999999999);
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_BANNER				= rand(0,10);
 
 /*
  ============================================================================================================
