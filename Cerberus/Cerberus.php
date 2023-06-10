@@ -500,7 +500,15 @@ $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_HASH_OF_SHA1_OF_SHA256		= h
 
 /*
  ============================================================================================================
- + Global :: Security :: Variables :: Random Number Generators :: Mersenne Twister
+ + Global :: Security :: Variables :: Random Number Generator :: Uniform-Resource-Location
+ ============================================================================================================
+*/
+
+$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS					= rand(0,9999999999);
+
+/*
+ ============================================================================================================
+ + Global :: Security :: Variables :: Random Number Generator :: Uniform-Resource-Location :: Mersenne Twister
  ============================================================================================================
 */
 
