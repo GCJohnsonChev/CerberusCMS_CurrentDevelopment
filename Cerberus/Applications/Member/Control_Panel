@@ -300,6 +300,13 @@ if ($_Application_Module_Member_Control_Panel_LIST_MEMBER_ACCOUNT_ACTIVATION_KEY
 
 $_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_status_account_activation='1' WHERE id='$_Application_Module_Member_Control_Panel_LIST_MEMBER_ID'");
 
+/*
+ ============================================================================================================
+ + IF: Database Management System Server :: Database :: Query :: Update :: Registered Member Account :: Activation Key
+ ============================================================================================================
+*/
+
+
 if ($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_MEMBERS) {
 
 											echo ($_Application_Module_Member_Message_Control_Panel_KEY_ACCEPT);
@@ -409,45 +416,45 @@ if ($_GET["Display"] == "Authorizations") {
 echo ("
 <HR>
 <B>Registered Member Account Security Programming :: Device :: Authorization</B><BR>
-Registered Member Account Authorization Security Programming provides the means to Authorize and Revoke Authorizations for Device details.
-Internet Protocol Addresses usually cannot be spoofed, but if an attacker or a malicious individual looking to gain access to your
-account here knows the Internet Protocol Address that you authenticated from they could physically go to that location and authenticate into your account
-if they know your Clear-Text Registered Member Account Electronic Mail Address, Password and UserName Combination. They could also clone the Cookies from the Device and copy them onto their
-Device or Devices and gain access to your account even if they do not know your Clear-Text Registered Member Account Electronic Mail Address, Password and UserName Combination. If this were to happen the Internet Protocol Address could be different than your current Internet Protocol Address 
-shown in the Authentication Logs, Interaction Logs and Location Logs unless they followed you from place to place and used the same Internet Protocol Address that you are using at the same time that you are using it or if they have somehow gained physical access to the Long-Term-Evolution ( LTE ) system
+Registered Member Account Authentication Authorization Security Programming Code provides the means to Authorize and Revoke Authentication Authorizations for Device details instantly if the System Settings for Restricted Device Authorizations Is: Disabled.<BR><BR>
+
+Internet Protocol Addresses usually cannot be spoofed, but if an attacker or a malicious hacker looking to gain access to your Registered Member Account here knows the Internet Protocol Address Location that you Authenticated into this Registered Member Account from they could physically go to that Location and Authenticate into your
+Registered Member Account if the attacker or malicious hacker knows your Clear-Text Registered Member Account Electronic Mail Address, Password and UserName Combination. The attacker or malicious hacker could also Clone the Credential Cookies from the Device itself and copy the Cloned Credential Cookies onto their Device or Devices and gain access to your Registered Member Account even if they do not know your Clear-Text Registered Member Account Electronic Mail Address, Password and UserName Combination.
+This can happen if the attacker or malicious hacker is physically there watching you type in your Registered Member Account Electronic Mail Address, Password and UserName Combination or if you happen to forget to Logout from this Registered Member Account after Successfully Authenticating into this Registered Member Account from a Public Place such as a Public Library, College or University, Coffee Shop or Local-Area-Network Center.<BR><BR>
+
+If the attacker or malicious hacker were to Clone and then Inject the Credential Cookies because you did not Logout from this Registered Member Account after having Successfully Authenticated into it from a Public Place the attacker or Malicious Hacker could then move to a different area that has a different Internet Protocol Address and remain Logged-In to this Registered Member Account.
+If this were to happen the Device Internet Protocol Address in use by the attacker or malicious hacker could be different than your current Device Internet Protocol Address and this would be shown in the Authentication Logs, Interaction Logs and Location Logs unless they followed you from place to place and used the same Internet Protocol Address that you are using at the same time that you are using it or if they have somehow gained physical access to the Long-Term-Evolution ( LTE ) system
 that assigned your Mobile Device Data Internet Protocol Address or if the Internet Service Provider deliberately gave them the same Internet Protocol Address that you are using so as to allow them to gain access to your Registered Member Account and the data in it.<BR><BR>
 
-This malicious hacking technique is almost impossible to secure from especially if using Session Programming. Session Programming Functions are even more insecure
-than using Cookies with Extensive Cookie Validation and Verification Security Programming. Nearly every Social Media Service available on the Internet cannot protect against attacks such as these because there is no built-in Security Programming Functionality that exists in any Programming Language Session Functions to secure from it and just about
+These malicious hacking techniques known as Session Hijacking, Session Cloning and Cookie Cloning are almost impossible to secure from especially if using Session Programming. All Session Programming Functions are easily exploited and all Sessions can be Hijacked and or Cloned from Device to Device. Sessions are even more insecure
+than Credential Cookies with Extensive Cookie Validation and Verification Security Programming. Nearly every Social Media Service available on the Internet including free and paid major Electronic Mail Address providers cannot protect against attacks such as these because there is no built-in Security Programming Functionality that exists in any Programming Language Session Functions to secure from it and just about
 every Social Media Service available on the Internet uses Session Functions.<BR><BR>
 
 The Security Programming of this system uses Non-Exploitable Registered Member Account Cookie Credential Checks in a Pre-Order Algebraic set of Programming Systems
-upon every execution of the document. If any byte changes in the Registered Member Account Cookies the Device is automatically Logged-Out and all of the Authorization details are set back to 0 in the Database Management System Database that keeps your
+upon every execution of the document. If any byte changes in the Registered Member Account Credential Cookies the Device is automatically Logged-Out and all of the Authorization details are set back to 0 in the Database Management System Server Database that keeps your
 Registered Member Account Entry Data.<BR><BR>
 
 Additional Device Security Programming into this System has Authorization Checks that constantly check your current Internet Protocol Address, MAC Address and Web Browser to the Authorized Internet Protocol Address, MAC Address and Web Browser
-on your Registered Member Account. IF this Security Feature is enabled by the Systems Administration you can Authorize and Revoke Authorizations of these details
-to allow for Authentication into your Registered Member Account here. Once after you have successfully Authenticated into your Registered Member Account with one or
-more of these details you can then Revoke the Authorization on any of these details to stay Logged-In while disallowing anyone else from Authenticating from
-the same location with the same details even if they know all of the details.<BR><BR>
+on your Registered Member Account. <B>IF: this Security Feature is enabled by the Systems Administration you can Authorize and Revoke Authorizations of these details instantly to allow for Authentication into your Registered Member Account here. This is not the same thing that is shown on other services that feature Authorization Details and 2-Factor Authentication does not protect against these kinds of attacks. This is the only real way of doing it. Once after you have successfully Authenticated into your Registered Member Account with one or
+more of these details you can then Revoke the Authorization on any of these details instantly to stay Logged-In while then disallowing anyone else from Authenticating from the same Location with the same Authentication Details even if they know all of the details.</B><BR><BR>
 
 <B>Internet Protocol Address Security Enforcement works in a few different ways</B>:<BR>
-* IF: The System Security Setting for Restricted Internet Protocol Address Location Authorization is Enabled then the Registered Member Account requires an Authorization Security Token from Electronic Mail Message Inbox or Short-Message-Service Message to Authenticate into the
+* <B>IF: The System Security Setting for Restricted Internet Protocol Address Location Authorization Is: Enabled</B> then the Registered Member Account requires a completely random Secure-Hash-Algorithm, 512 Authorization Security Token from Electronic Mail Message Inbox or 2-Part Short-Message-Service Message to Authenticate into the
 Registered Member Account every time a new Authentication Authorization is requested even if it is from the exact same Location or previous Locations that Successfully Authenticated. Once after the Device has Successfully Authenticated into the Registered Member Account the Authorization Security Token is set back to 0 and once after the Device is Successfully Logged-Out the Authorized Internet Protocol Address Location is set back to 0 where if a new Authorization Request is made then access to the Registered Member Account
-Electronic Mail Address Inbox to get the Authorization Security Token would be required in order to Successfully Authenticate into the Registered Member Account.<BR><BR>
+Electronic Mail Message Address Inbox to receive the Authorization Security Token would be required in order to then Successfully Authenticate into the Registered Member Account.<BR><BR>
 
-* IF: The System Security Setting for Non-Changing Internet Protocol Address Enforcement Is: Enabled the Authenticated Device will be Logged-Out instantly when the Internet Protocol Address changes such as if you Authenticated into the Registered Member Account from
+* <B>IF: The System Security Setting for Non-Changing Internet Protocol Address Enforcement Is: Enabled</B> the Authenticated Device ***WILL*** be Logged-Out instantly when the Internet Protocol Address changes such as if you Authenticated into the Registered Member Account from
 a Mobile Device Cell Data Connection and that Device began moving from area to area and the Internet Protocol Address changed it would then be instantly Logged-Out because the Internet Protocol Address changed from the Authorized Internet Protocol Address.<BR><BR>
 
-* IF: The System Security Setting for Non-Changing Internet Protocol Address Enforcement Is: Disabled the Device will not be Logged-Out when the Internet Protocol Address Changes, but
+* <B>IF: The System Security Setting for Non-Changing Internet Protocol Address Enforcement Is: Disabled</B> the Device will ***NOT*** be Logged-Out when the Device Internet Protocol Address Changes, but
 if your assigned Internet Protocol Address changes as you move from place to place such as if the Device stays Logged-In on a Mobile Device with a Cellular Data Connection or if the Device physically goes to a different
-Wireless Access Point Location it is still possible for someone to Authenticate into your Registered Member Account if they know the location of where you Authenticated from. This could be
+Wireless Access Point Location it is still possible for someone to Authenticate into your Registered Member Account if they know the Location of where you Authenticated from. This could be
 an Internet Protocol Address at a Public Library, Coffee Shop, Local-Area-Network Center, College or University, Mobile Device Data Cellular Network or somewhere else. If they know, they can physically
-go to that location and Log-In by using cloned Registered Member Account Credential Cookies even if they do not actually know the Clear-Text Registered Member Account Electronic Mail Address, Password and UserName.
+go to that Location and Log-In by using Cloned Registered Member Account Credential Cookies even if they do not actually know the Clear-Text Registered Member Account Electronic Mail Address, Password and UserName.
 While this System Security Programming is invulnerable to Session Hijacking due to this system not using any Session Programming Code anywhere it is still possible for an attacker
-to clone the Registered Member Account Cookies, inject those cloned Registered Member Account cookies into a Web Browser and then Authenticate into the Registered Member Account if the Restricted Internet Protocol Address Authorization Location Setting Is: Off.<BR><BR>
+to Clone the Registered Member Account Cookies, inject those Cloned Registered Member Account Cookies into a Web Browser or a Device they own and control and then Authenticate into the Registered Member Account if the <B>Restricted Internet Protocol Address Authorization Location Setting Is: Off.</B><BR><BR>
 
-In other words: IF: the Internet Protocol Address Location Authorization Setting Is: On no one else can Authenticate into the Registered Member Account even if they know the Clear-Text Electronic Mail Address, Password and UserName combination unless they are also physically at the same exact location that you are in when you Authenticate into the Registered Member Account<BR><BR>
+In other words: <B>IF: the Internet Protocol Address Location Authorization Setting Is: On</B> no one else can Authenticate into the Registered Member Account even if they know the Clear-Text Electronic Mail Address, Password and UserName Combination unless they are also physically at the same exact Location that you are in and using the same exact Internet Protocol Address that you are using when you Authenticate into this Registered Member Account.<BR><BR>
 
 The attacker would need to know four pieces of information to take the intrusion a step further if they do not have physical access to the Device:<BR>
 * The Electronic Mail Address<BR>
@@ -456,34 +463,67 @@ The attacker would need to know four pieces of information to take the intrusion
 * The Internet Protocol Address of where you Authenticated from<BR><BR>
 
 Public Libraries, Local-Area-Network Centers, Coffee Shops and more locations such as these all provide Public Wireless Access Points. Mobile Device Cellular Data Connections and Wide Area Networks often share Internet Protocol Addresses among
-several Devices at the same time even if they are owned and operated by multiple different people. As you can see this is a security risk. Although Device MAC Addresses and Web Browser User-Agent Strings can be spoofed by anyone that knows how, you yourself can also form a custom and or
+several different Devices at the same time even if they are owned and operated by multiple different people. As you can see this is a security risk. Although Device MAC Addresses and Web Browser User-Agent Strings can be spoofed by anyone that knows how, you yourself can also form a custom and or
 completely randomized Web Browser User-Agent String and a completely randomized Device MAC Address and then add those strings to the Authorization at the point of Authentication Authorization.<BR><BR>
 
 Your Device MAC Address whether it is completely randomized or not automatically remains hidden from Public View in the Authentication Logs and the Interaction Logs so as to make
 it impossible for anyone else who should not have access to the Registered Member Account from successfully Authenticating into the Registered Member Account. Your Device Web Browser User-Agent String can also be hidden from Public View or Friend View in the Authentication and Interaction Logs.<BR><BR>
 
-<B>Current Device Details :: Live</B><BR>
-* Device :: Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS :: Conecting Port Number :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-* Device :: MAC Address: $_GLOBAL_REMOTE_SERVER_MAC_ADDRESS<BR>
-* Device :: Web Browser :: User-Agent String: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT<BR><BR>
+Once after you have Successfully Authenticated into your Registered Member Account all that is needed is to Revoke the Authorizations for each Device Detail and or then Update the Password on the Registered Member Account to make it
+impossible for anyone else to Authenticate into this Registered Member Account.<BR><BR>
 
-<B>Current Device Details :: From Registered Member Account :: Database Entry</B><BR>
-* Device :: Internet Protocol Address: $_GLOBAL_MEMBER_IP_ADDRESS_CURRENT<BR>
-* Device :: MAC Address: $_GLOBAL_MEMBER_ACCOUNT_DEVICE_MAC_ADDRESS<BR>
-* Device :: Web Browser :: User-Agent String: $_GLOBAL_MEMBER_ACCOUNT_DEVICE_WEB_BROWSER<BR><BR>
+<B>Current Settings :: System :: Security :: Restrictions :: Authentication :: Authorizations</B><HR>
+* Device :: Restriction :: Authorization :: Internet Protocol Address: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_INTERNET_PROTOCOL_ADDRESS<BR>
+* Device :: Restriction :: Authorization :: MAC Address: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_MAC_ADDRESS<BR>
+* Device :: Restriction :: Authorization :: Web Browser: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_WEB_BROWSER<BR><BR>
 
-<B>Device Details :: Authorized</B><BR>
-* Device :: Internet Protocol Address :: $_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED<BR>
-* Device :: MAC Address :: $_GLOBAL_MEMBER_ACCOUNT_DEVICE_MAC_ADDRESS_AUTHORIZED<BR>
-* Device :: Web Browser :: User-Agent String: $_GLOBAL_MEMBER_ACCOUNT_DEVICE_WEB_BROWSER_AUTHORIZED<BR><BR>
+<B>Current Details :: Device :: Live</B><HR>
 
-<B>Digital Fingerprints</B><BR>
-Digital Fingerprint :: Generated :: Clear-Text: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT<BR>
-Digital Fingerprint :: From Database Entry: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT<BR>
-Digital Fingerprint :: Generated :: HASHED: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED<BR>
-Digital Fingerprint :: Cookie :: HASHED: $_GLOBAL_COOKIE_MEMBER_SECURITY_FINGERPRINT<BR><BR>
+* Device :: Internet Protocol Address<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_REMOTE_SERVER_ADDRESS :: Conecting Port Number :: $_GLOBAL_REMOTE_SERVER_PORT</TEXTAREA><BR><BR>
 
-<B>Revoke Current Authorizations</B>:<BR>
+* Device :: MAC Address<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_REMOTE_SERVER_MAC_ADDRESS</TEXTAREA><BR><BR>
+
+* Device :: Web Browser :: User-Agent String<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT</TEXTAREA><BR><BR>
+
+<B>Current Details :: Device :: From :: Database Management System Server :: Database Entry :: Registered Member Account</B><HR>
+
+* Device :: Internet Protocol Address<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_IP_ADDRESS_CURRENT</TEXTAREA><BR><BR>
+
+* Device :: MAC Address<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_ACCOUNT_DEVICE_MAC_ADDRESS</TEXTAREA><BR><BR>
+
+* Device :: Web Browser :: User-Agent String<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_ACCOUNT_DEVICE_WEB_BROWSER</TEXTAREA><BR><BR>
+
+<B>Device Details :: From Registered Member Account :: Database Entry :: Authorized</B><HR>
+
+* Device :: Internet Protocol Address<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED</TEXTAREA><BR><BR>
+
+* Device :: MAC Address<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED</TEXTAREA><BR><BR>
+
+* Device :: Web Browser :: User-Agent String<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_ACCOUNT_DEVICE_WEB_BROWSER_AUTHORIZED</TEXTAREA><BR><BR>
+
+<B>Digital Fingerprints :: Registered Member Account</B><HR>
+Digital Fingerprint :: Generated :: Random :: Clear-Text:<BR>
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT<BR><BR>
+
+Digital Fingerprint :: Generated :: Random :: HASHED:<BR>
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED<BR><BR>
+
+Digital Fingerprint :: Cookie :: HASHED:<BR>
+$_GLOBAL_COOKIE_MEMBER_SECURITY_FINGERPRINT<BR><BR>
+
+Digital Fingerprint :: From Database Entry:<BR>
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT<BR><BR>
+
+<B>Revoke Current Authorizations</B><HR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;IP\" TITLE=\":: Revoke :: Authorization :: Device :: Internet Protocol Address ::\">Revoke :: Authorization :: Device :: Internet Protocol Address</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;MAC_Address\" TITLE=\":: Revoke :: Authorization :: Device :: MAC Address ::\">Revoke :: Authorization :: Device :: MAC Address</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;Web_Browser\" TITLE=\":: Revoke :: Authorization :: Device :: Web Browser ::\">Revoke :: Authorization :: Device :: Web Browser</A><BR><BR>
