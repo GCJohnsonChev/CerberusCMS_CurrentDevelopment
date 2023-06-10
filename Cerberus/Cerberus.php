@@ -441,7 +441,7 @@ $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_INTERNET_PROTOCOL_A
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_WEB_BROWSER	= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_security_account_restrict_web_browser'];
+$_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_WEB_BROWSER		= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_security_account_restrict_web_browser'];
 
 /*
  ============================================================================================================
@@ -449,7 +449,7 @@ $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_WEB_BROWSER	= $_DB_
  ============================================================================================================
 */
 
-$_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_MAC_ADDRESS	= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_security_account_restrict_mac_address'];
+$_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_MAC_ADDRESS		= $_DB_Query_Kernel_Settings_Fetch_Array['settings_system_security_account_restrict_mac_address'];
 
 /*
  ============================================================================================================
@@ -485,7 +485,6 @@ $_GLOBAL_SETTING_SYSTEM_SECURITY_MODULE_DIRECTORY_MASTER_SANITIZATION			= $_DB_Q
 */
 
 $_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS					= rand(0,9999999999);
-$_GLOBAL_SECURITY_RANDOM_NUMBER_GENERATOR_URL_DIGITS_BANNER				= rand(0,10);
 
 /*
  ============================================================================================================
@@ -1131,6 +1130,74 @@ if (file_exists($_GLOBAL_SYSTEM_SECURITY_MODULE_FILE_MASTER_SANITIZATION)) {
  +
  +
  +
+ + [ @ ] Global :: Fingerprinting
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Fingerprinting :: Non-Registered Visitor and Registered Member Account
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Check For Valid Registered Member Account Credential Data In Browser Cookies
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
+
+/*
+ ============================================================================================================
+ + Valid Registered Member Account Credential Data In Browser Cookies Is Found, Define Member Digital Fingerprint
+ ============================================================================================================
+*/
+
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS			= $_SERVER['REMOTE_ADDR'];
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT			= $_SERVER['REMOTE_PORT'];
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME					= date("Y-m-j-g-i-s-A");
+
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strlen($_GLOBAL_REMOTE_SERVER_ADDRESS);
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen($_GLOBAL_COOKIE_MEMBER_USERNAME);
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen($_GLOBAL_COOKIE_MEMBER_PASSWORD);
+
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT					= "$_GLOBAL_COOKIE_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT ::: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED						= hash('sha512', $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT);
+
+} else {
+
+/*
+ ============================================================================================================
+ + No Valid Registered Member Account Credential Data In Browser Cookies Is Found, Define Visitor Digital Fingerprint
+ ============================================================================================================
+*/
+
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS			= $_SERVER['REMOTE_ADDR'];
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT			= $_SERVER['REMOTE_PORT'];
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME					= date("Y-m-j-g-i-s-A");
+
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strlen($_GLOBAL_REMOTE_SERVER_ADDRESS);
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen("Visitor");
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen("Visitor");
+
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT					= "Non-Registered Visitor ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT ::: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
+$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED						= hash('sha512', $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT);
+
+} // [ + ] IF: Registered Member Account Is: Logged-In
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
  + [ @ ] Internal :: Applications
  +
  +
@@ -1310,46 +1377,59 @@ $_Kernel_Member_Account_Authentication_Log_Public_TIMESTAMP_HASH				= hash('sha2
 */
 
 fwrite($_Kernel_Member_Account_Authentication_Log_Private_OPEN_FILE_NAME, "
+::: Kernel Message :::
 ---------------------------------------------------------------------------------------
-Kernel Message: 
 This Registered Member Account Successfully Authenticated: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+---------------------------------------------------------------------------------------
+
 ---------------------------------------------------------------------------------------
 Registered Member Account
 ---------------------------------------------------------------------------------------
 * Registered Member Account :: Electronic Mail Address: $_Kernel_Authenticate_Member_Account_POST_ELECTRONIC_MAIL_ADDRESS_CLEAR
 * Registered Member Account :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
 * Registered Member Account :: Password: ****************************
-
 ---------------------------------------------------------------------------------------
-Internet Protocol Addresses
----------------------------------------------------------------------------------------
-* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
 
 ---------------------------------------------------------------------------------------
 Timestamps
 ---------------------------------------------------------------------------------------
-* Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH
 * Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
-* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
+* Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
 Digital Fingerprints
 ---------------------------------------------------------------------------------------
-* Digital Fingerprint :: Unique :: Clear-Text :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
-* Digital Fingerprint :: Unique :: HASHED :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: Clear-Text: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: HASHED: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+* Digital Fingerprint :: Unique :: From Database Management System Server :: Clear-Text: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: From Database Management System Server :: HASHED: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
-Device
+Device :: Details :: Internet Protocol Addresses
 ---------------------------------------------------------------------------------------
-* Device :: Reported Web Browser :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Location
+---------------------------------------------------------------------------------------
 * Device :: Location :: From H.T.M.L. :: Global-Positioning-Coordinates In X ::
 * Device :: Location :: From H.T.M.L. :: Global-Positioning-Coordinates In Y ::
 * Device :: Location :: From P.H.P. :: Global-Positioning-Coordinates In X ::
 * Device :: Location :: From P.H.P. :: Global-Positioning-Coordinates In Y ::
 * Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
 * Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Web Browser
+---------------------------------------------------------------------------------------
+* Device :: Reported Web Browser :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1360,46 +1440,59 @@ Device
 */
 
 fwrite($_Kernel_Member_Account_Authentication_Log_Public_OPEN_FILE_NAME, "
+::: Kernel Message :::
 ---------------------------------------------------------------------------------------
-Kernel Message: 
 This Registered Member Account Successfully Authenticated: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+---------------------------------------------------------------------------------------
+
 ---------------------------------------------------------------------------------------
 Registered Member Account
 ---------------------------------------------------------------------------------------
 * Registered Member Account :: Electronic Mail Address: ****************************
 * Registered Member Account :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
 * Registered Member Account :: Password: ****************************
-
 ---------------------------------------------------------------------------------------
-Internet Protocol Addresses
----------------------------------------------------------------------------------------
-* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
 
 ---------------------------------------------------------------------------------------
 Timestamps
 ---------------------------------------------------------------------------------------
 * Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH
 * Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
-* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
 Digital Fingerprints
 ---------------------------------------------------------------------------------------
-* Digital Fingerprint :: Unique :: Clear-Text :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
-* Digital Fingerprint :: Unique :: HASHED :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
+* Digital Fingerprint :: Unique :: Generated :: Clear-Text: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: HASHED: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+* Digital Fingerprint :: Unique :: From Database Management System Server :: Clear-Text: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: From Database Management System Server :: HASHED: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
-Device
+Device :: Details :: Internet Protocol Addresses
 ---------------------------------------------------------------------------------------
-* Device :: Reported Web Browser :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Location
+---------------------------------------------------------------------------------------
 * Device :: Location :: From H.T.M.L. :: Global-Positioning-Coordinates In X ::
 * Device :: Location :: From H.T.M.L. :: Global-Positioning-Coordinates In Y ::
 * Device :: Location :: From P.H.P. :: Global-Positioning-Coordinates In X ::
 * Device :: Location :: From P.H.P. :: Global-Positioning-Coordinates In Y ::
 * Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
 * Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Web Browser
+---------------------------------------------------------------------------------------
+* Device :: Reported Web Browser :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1480,22 +1573,18 @@ $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH					= hash('sh
 */
 
 fwrite($_Kernel_Member_Account_Authentication_Log_Private_OPEN_FILE_NAME, "
+::: Kernel Message :::
 ---------------------------------------------------------------------------------------
-Kernel Message: 
 This Registered Member Account Attempted To Authenticate: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+---------------------------------------------------------------------------------------
+
 ---------------------------------------------------------------------------------------
 Input :: Credentials
 ---------------------------------------------------------------------------------------
 * Input :: Electronic Mail Address: $_Kernel_Authenticate_Member_Account_POST_ELECTRONIC_MAIL_ADDRESS_CLEAR
 * Input :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
 * Input :: Password: ****************************
-
 ---------------------------------------------------------------------------------------
-Internet Protocol Addresses
----------------------------------------------------------------------------------------
-* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
 
 ---------------------------------------------------------------------------------------
 Timestamps
@@ -1503,20 +1592,37 @@ Timestamps
 * Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH
 * Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
 * Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
 Digital Fingerprints
 ---------------------------------------------------------------------------------------
-* Digital Fingerprint :: Unique :: Clear-Text :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
-* Digital Fingerprint :: Unique :: HASHED :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: Clear-Text: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: HASHED: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+* Digital Fingerprint :: Unique :: From Database Management System Server :: Clear-Text: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: From Database Management System Server :: HASHED: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
-Device Details
+Device :: Details :: Internet Protocol Addresses
 ---------------------------------------------------------------------------------------
-* Device :: Reported Web Browser :: ****************************
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Location
+---------------------------------------------------------------------------------------
 * Device :: Location :: Global-Positioning-Coordinates In X,Y :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GPS
 * Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
 * Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Web Browser
+---------------------------------------------------------------------------------------
+* Device :: Reported Web Browser :: ****************************
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1528,6 +1634,12 @@ Device Details
 
 $_Kernel_Check_Member_Account_Credentials_Increment_Member_Attempt_Authentication		= $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Attempt_Authentication + 1;
 $DB_Query_Kernel_Member_Account_Update_Attempt_Authentication					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_attempt_authentication='$_Kernel_Check_Member_Account_Credentials_Increment_Member_Attempt_Authentication' WHERE member_username='$_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query: Update Authentication Log Attempts In Database Server :: Registered Member Account
+ ============================================================================================================
+*/
 
 if ($DB_Query_Kernel_Member_Account_Update_Attempt_Authentication) {
 /**
@@ -1621,7 +1733,7 @@ $DB->free($DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Array);
 
 $DB->free($DB_Query_Kernel_Authenticate_Check_Member_Account_Entry);
 
-} // [ + ] IF: Internal Application: Login Is Activated
+} // [ + ] IF: Internal Application: Login Is: Activated
 
 /*
  ============================================================================================================
@@ -1663,17 +1775,6 @@ if ($_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address && $_DB
 
 /*
  ============================================================================================================
- + Reduce Time On All Stored Browser Cookies
- ============================================================================================================
-*/
-
-	setcookie("kernel_member_electronic_mail_address","", time()-42000);
-	setcookie("kernel_member_username", "", time()-42000);
-	setcookie("kernel_member_password", "", time()-42000);
-	setcookie("kernel_member_language", "", time()-42000);
-
-/*
- ============================================================================================================
  + Member Account :: Log :: Logout :: Private :: Variables
  ============================================================================================================
 */
@@ -1697,43 +1798,56 @@ $_Kernel_Member_Account_Logout_Log_Public_TIMESTAMP_HASH					= hash('sha256', $_
 */
 
 fwrite($_Kernel_Member_Account_Logout_Log_Private_OPEN_FILE_NAME, "
+::: Kernel Message :::
 ---------------------------------------------------------------------------------------
-Kernel Message: 
-This Registered Member Account Successfully Logged-Out: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+This Registered Member Account Successfully Logged-Out: $_GLOBAL_COOKIE_MEMBER_USERNAME
+---------------------------------------------------------------------------------------
+
 ---------------------------------------------------------------------------------------
 Registered Member Account
 ---------------------------------------------------------------------------------------
-* Registered Member Account :: Electronic Mail Address: $_Kernel_Authenticate_Member_Account_POST_ELECTRONIC_MAIL_ADDRESS_CLEAR
-* Registered Member Account :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+* Registered Member Account :: Electronic Mail Address: $_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS
+* Registered Member Account :: UserName: $_GLOBAL_COOKIE_MEMBER_USERNAME
 * Registered Member Account :: Password: ****************************
-
 ---------------------------------------------------------------------------------------
-Internet Protocol Address
----------------------------------------------------------------------------------------
-* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
 
 ---------------------------------------------------------------------------------------
 Timestamp
 ---------------------------------------------------------------------------------------
 * Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH
 * Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
-* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
 Digital Fingerprints
 ---------------------------------------------------------------------------------------
-* Digital Fingerprint :: Unique :: Clear-Text :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
-* Digital Fingerprint :: Unique :: HASHED :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: Clear-Text: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: HASHED: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+* Digital Fingerprint :: Unique :: From Database Management System Server :: Clear-Text: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: From Database Management System Server :: HASHED: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
-Device
+Device :: Details :: Internet Protocol Address
 ---------------------------------------------------------------------------------------
-* Device :: Reported Web Browser :: ****************************
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Location
+---------------------------------------------------------------------------------------
 * Device :: Location :: Global-Positioning-Coordinates In X,Y :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GPS
 * Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
 * Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Web Browser
+---------------------------------------------------------------------------------------
+* Device :: Reported Web Browser :: ****************************
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1744,42 +1858,56 @@ Device
 */
 
 fwrite($_Kernel_Member_Account_Logout_Log_Public_OPEN_FILE_NAME, "
+::: Kernel Message :::
 ---------------------------------------------------------------------------------------
-Kernel Message: 
-This Registered Member Account Successfully Logged-Out: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+This Registered Member Account Successfully Logged-Out: $_GLOBAL_COOKIE_MEMBER_USERNAME
+---------------------------------------------------------------------------------------
+
 ---------------------------------------------------------------------------------------
 Registered Member Account
 ---------------------------------------------------------------------------------------
 * Registered Member Account :: Electronic Mail Address: ****************************
-* Registered Member Account :: UserName: $_Kernel_Authenticate_Member_Account_POST_USERNAME_CLEAR
+* Registered Member Account :: UserName: $_GLOBAL_COOKIE_MEMBER_USERNAME
 * Registered Member Account :: Password: ****************************
-
 ---------------------------------------------------------------------------------------
-Internet Protocol Address
----------------------------------------------------------------------------------------
-* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Internet Protocol Address :: Connecting Port Number :: Local Server: $_GLOBAL_REMOTE_SERVER_PORT
 
 ---------------------------------------------------------------------------------------
 Timestamp
 ---------------------------------------------------------------------------------------
 * Timestamp :: Digital Fingerprint :: Timestamp HASH: $_Kernel_Member_Account_Authentication_Log_Private_TIMESTAMP_HASH
 * Timestamp :: Authentication From The Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
-* Timestamp :: Authentication From The Remote Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Timestamp :: Authentication From The Remote Server: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
 Digital Fingerprints
 ---------------------------------------------------------------------------------------
-* Digital Fingerprint :: Unique :: Clear-Text :: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: Clear-Text: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: Generated :: HASHED: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+* Digital Fingerprint :: Unique :: From Database Management System Server :: Clear-Text: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+* Digital Fingerprint :: Unique :: From Database Management System Server :: HASHED: $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
+---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
-Device
+Device :: Details :: Internet Protocol Address
 ---------------------------------------------------------------------------------------
-* Device :: Reported Web Browser :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY
+* Internet Protocol Address :: Remote Server: $_GLOBAL_REMOTE_SERVER_ADDRESS
+* Internet Protocol Address :: Remote Server :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
+* Internet Protocol Address :: Local Server: $_GLOBAL_LOCAL_SERVER_ADDRESS
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Location
+---------------------------------------------------------------------------------------
 * Device :: Location :: Global-Positioning-Coordinates In X,Y :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GPS
 * Device :: Location :: Geo-Localization-Objects :: $_GLOBAL_MEMBER_LOCATION_CURRENT_GLO
 * Device :: Location :: Region :: $_GLOBAL_MEMBER_LOCATION_CURRENT_REGION
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Device :: Details :: Web Browser
+---------------------------------------------------------------------------------------
+* Device :: Reported Web Browser :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT
 ---------------------------------------------------------------------------------------
 ");
 
@@ -1815,6 +1943,17 @@ $DB->free($_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address);
 
 /*
  ============================================================================================================
+ + Reduce Time On All Stored Browser Cookies
+ ============================================================================================================
+*/
+
+	setcookie("kernel_member_electronic_mail_address","", time()-42000);
+	setcookie("kernel_member_username", "", time()-42000);
+	setcookie("kernel_member_password", "", time()-42000);
+	setcookie("kernel_member_language", "", time()-42000);
+
+/*
+ ============================================================================================================
  + Secure-Destroy All Stored Browser Cookies
  ============================================================================================================
 */
@@ -1833,7 +1972,7 @@ $DB->free($_DB_Query_Kernel_Logout_Remove_Member_Account_Authorized_IP_Address);
 
 } // [ + ] IF: Check For :: Valid Registered Member Account Credential Data :: In Browser Cookies
 
-} // [ + ] IF: Internal Application: Logout Is Activated
+} // [ + ] IF: Internal Application: Logout Is: Activated
 
 /*
  ============================================================================================================
@@ -2134,7 +2273,7 @@ if ($_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED != "$_GLOBAL_REMOTE_SERVER_ADDRESS") {
 /**
  * Do Nothing
 **/
-} // [ + ] IF: Registered Member Account Authorized Internet Protocol Address IS NOT Current Internet Protocol Address, Immediately Logout
+} // [ + ] IF: Registered Member Account Authorized Internet Protocol Address IS NOT The Current Internet Protocol Address, Immediately Logout
 
 } // [ + ] IF: Registered Member Account Is Logged-In And Valid Credentials Are Set
 
@@ -2388,7 +2527,7 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
 
 /*
  ============================================================================================================
- + Database Server Query: Check For Valid Credentials
+ + Database Server Query: Check For Valid Registered Member Account Credentials With Current Credential Cookies
  ============================================================================================================
 */
 
@@ -2396,7 +2535,7 @@ $_DB_Query_Kernel_Security_Check_Cookie_Member_UserName_AND_Password 					= $DB-
 
 /*
  ============================================================================================================
- + IF: Cookie Data Stored In Browser Match Database Management System Server Database Entry Exactly
+ + IF: Credential Cookie Data Stored In Web Browser Match The Database Management System Server Database Entry Exactly
  ============================================================================================================
 */
 
@@ -2406,7 +2545,7 @@ if ($DB->num_rows($_DB_Query_Kernel_Security_Check_Cookie_Member_UserName_AND_Pa
 **/
 } else {
 
-	header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Fake Data Found In Cookies - Redirect To Logout Section, Destroy All Cookies
+	header("Location: ?$_INTERNAL_APPLICATION_MODULE_INTERNAL=Logout"); // Fake Data Found In Credential Cookies - Redirect To Logout Section, Destroy All Cookies
 
 } // [ + ] IF: Database Server Query :: Check The Registered Member Account Data In The Browser Cookies AND Compare That Data To The Registered Member Account Database Management System Server Database Entry
 
@@ -2474,7 +2613,7 @@ $DB->free($_DB_Query_Kernel_Security_Check_Cookie_Member_Electronic_Mail_Address
  ============================================================================================================
  +
  +
- + [ @ ] Internal Security :: Stored Browser Cookies Versus Real Physical Directories and Files
+ + Internal Security :: Stored Browser Cookies Versus Real Physical Directories and Files
  +
  +
  ============================================================================================================
@@ -2648,7 +2787,7 @@ if ($_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT == null) {
 
 /*
  ==========================================================================
- + IF: User-Agent :: String :: Is NOT Null
+ + IF: Web Browser :: User-Agent :: String :: Is NOT Null
  ==========================================================================
 */
 
@@ -2658,7 +2797,7 @@ $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY	= "$_GLOBAL_REMOTE_SERVER_HTTP_US
 
 /*
  ==========================================================================
- + IF: User-Agent :: String :: Contains Programming Code OR Exploit Code
+ + IF: Web Browser :: User-Agent :: String :: Contains Programming Code OR Exploit Code
  ==========================================================================
 */
 
@@ -2670,7 +2809,7 @@ if (substr_count($_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY,"<") == 1) {
 
 /*
  ==========================================================================
- + IF: User-Agent :: String :: Contains Programming Code OR Exploit Code
+ + IF: Web Browser :: User-Agent :: String :: Contains Programming Code OR Exploit Code
  ==========================================================================
 */
 
@@ -2684,7 +2823,7 @@ if (substr_count($_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY,">") == 1) {
 
 /*
  ==========================================================================
- + IF: User-Agent :: String :: Is Empty
+ + IF: Web Browser :: User-Agent :: String :: Is Empty
  ==========================================================================
 */
 
@@ -2978,60 +3117,6 @@ if (strlen($_GLOBAL_COOKIE_MEMBER_ELECTRONIC_MAIL_ADDRESS) >= "100") {
 /*
  ============================================================================================================
  +
- + Internal Security :: Fingerprinting :: Registered Member
- +
- ============================================================================================================
-*/
-
-/*
- ============================================================================================================
- + IF: Check For Valid Registered Member Account Credential Data In Browser Cookies
- ============================================================================================================
-*/
-
-if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) {
-
-/*
- ============================================================================================================
- + Valid Registered Member Account Credential Data In Browser Cookies Is Found, Define Member Digital Fingerprint
- ============================================================================================================
-*/
-
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS			= $_SERVER['REMOTE_ADDR'];
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT			= $_SERVER['REMOTE_PORT'];
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME					= date("Y-m-j-g-i-s-A");
-
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strlen($_GLOBAL_REMOTE_SERVER_ADDRESS);
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen($_GLOBAL_COOKIE_MEMBER_USERNAME);
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen($_GLOBAL_COOKIE_MEMBER_PASSWORD);
-
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT					= "$_GLOBAL_COOKIE_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT ::: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED						= hash('sha512', $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT);
-
-} else {
-
-/*
- ============================================================================================================
- + No Valid Registered Member Account Credential Data In Browser Cookies Is Found, Define Visitor Digital Fingerprint
- ============================================================================================================
-*/
-
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS			= $_SERVER['REMOTE_ADDR'];
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT			= $_SERVER['REMOTE_PORT'];
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME					= date("Y-m-j-g-i-s-A");
-
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS		= strlen($_GLOBAL_REMOTE_SERVER_ADDRESS);
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME			= strlen("Visitor");
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD			= strlen("Visitor");
-
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT					= "Non-Registered Visitor ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_REMOTE_SERVER_PORT ::: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_REMOTE_SERVER_ADDRESS ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_USERNAME ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_LENGTH_MEMBER_PASSWORD ::: $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_STRING_DATE_TIME ::: $_GLOBAL_SYSTEM_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH";
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED						= hash('sha512', $_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT);
-
-} // [ + ] IF: Registered Member Account Is: Logged-In
-
-/*
- ============================================================================================================
- +
  + System :: Plug-In :: Location :: Directives
  +
  ============================================================================================================
@@ -3081,7 +3166,9 @@ if ($_GLOBAL_SYSTEM_PLUGIN_SAFEHTML_STATUS >= 1) {
  ============================================================================================================
  +
  +
+ +
  + [ @ ] Internal :: Loops
+ +
  +
  +
  ============================================================================================================
@@ -3697,7 +3784,9 @@ $_GLOBAL_SYSTEM_LANGUAGE_DIRECTORY							= $_GLOBAL_COOKIE_MEMBER_LANGUAGE;
  ============================================================================================================
  +
  +
+ +
  + [ @ ] Background :: Includes :: Application Modules
+ +
  +
  +
  ============================================================================================================
@@ -3803,7 +3892,9 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
  +
  +
+ +
  + [ @ ] Plug-In and Extension :: Includes :: Application Modules
+ +
  +
  +
  ============================================================================================================
@@ -3829,7 +3920,9 @@ if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null) 
  ============================================================================================================
  +
  +
+ +
  + [ @ ] System :: Protocol :: Loops
+ +
  +
  +
  ============================================================================================================
@@ -3867,7 +3960,9 @@ if ($_GLOBAL_MEMBER_ACCESS_LEVEL >= 2) {
  ============================================================================================================
  +
  +
+ +
  + [ @ ] Hyper-Text-Markup-Language Output :: Data Compression :: Protocols
+ +
  +
  +
  ============================================================================================================
