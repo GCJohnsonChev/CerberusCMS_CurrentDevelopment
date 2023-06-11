@@ -1,0 +1,137 @@
+﻿                             .-.							   
+                            {{@}}							   
+            <>               8@8							   
+          .::::.             888							   
+      @\\/W\/\/W\//@         8@8							   
+       \\/^\/\/^\//      _   )8(    _							   
+        \_O_<>_O_/     (@)__/8@8\__(@)							   
+   ____________________ `~"-=):(=-"~`							   
+  |<><><>  |  |  <><><>|     |.|							   
+  |<>      |  |      <>|     |T|							   
+  |<>      |  |      <>|     |'|							   
+  |<>   .--------.   <>|     |.|							   
+  |     |   ()   |     |     |I|							   
+  |_____| (O\/O) |_____|     |'|							   
+  |     \   /\   /     |     |.|							   
+  |------\  \/  /------|     |N|							   
+  |       '.__.'       |     |'|							   
+  |        |  |        |     |.|							   
+  :        |  |        :     |K|							   
+   \<>     |  |     <>/      |'|							   
+    \<>    |  |    <>/       |.|							   
+     \<>   |  |   <>/        |E|							   
+      `\<> |  | <>/'         |'|							   
+        `-.|  |.-`           \ /							   
+           '--'               ^					    TINKE SOFTWARE
+				Free and Open Source Software // Associated Software Organization: Sowilo Software
+					- 100% Free, Original, Clean and Quality Software Projects -
+
+/*
+============================================================================================================
+ +
+ +
+ + [ @ ] Software Licenses
+ +
+ +
+============================================================================================================
+*/
+
+***************************
+\
+- Commercial Software License
+/
+***************************
+
+Cerberus Content Management System - Commercial License
+
+(C) Tinke Software, G.C. Johnson's Works 2000 - 2023.
+
+https://www.SourceForge.net/project/cerberuscms
+https://CerberusCMS.SourceForge.net
+
+https://www.SourceForge.net/u/tinkesoftware/profile
+https://www.GitHub.com/TinkeSoftware
+============================================================================================================================================================
+LET ("Tinke Software, Inc.") REGISTERED DIGITALLY IN THE YEAR 2016 IN Rosedale, California, United States -- FORMERLY KNOWN AS RuneSoft, Inc. and Rune Software, Inc. REGISTERED IN THE YEAR ~2002 IN Rosedale, California, United States BY Gary Christopher Johnson -- BE KNOWN AS ONE OF THE LICENSE AND RIGHTS HOLDER OF CerberusCMS, Cerberus C.M.S.,
+Cerberus Content Management System AND THE REPRESENTOR, LICENSE AND RIGHTS HOLDER OF Gary Christopher Johnson ALSO KNOWN AS G.C. Johnson's SOFTWARE WORKS.
+RuneSoft, Inc. and Rune Software, Inc. CANNOT BE CONFUSED WITH Rune Software, GmbH IN Germany WHICH WAS OFFICIALLY REGISTERED AFTER 2002.
+
+----------------
+Rules
+----------------
+
+1a.) Tinke Software permits you to operate Cerberus Content Management System on your own web server strictly by the following rules:
+1b.) You may make copies of Cerberus Content Management System and transfer, distribute them freely.
+1c.) You may not usurp, reproduce, copy or plagiarize any of the fundamentals, content or programming code released with Cerberus Content Management System in any other Software Project.
+1d.) You may modify the copy of the Cerberus Content Management System Project you downloaded as well as add to it as you wish but your modifications cannot be included in any of the official Cerberus Content Management System
+     Software Project Releases.
+1e.) You may not modify the master copies of Cerberus Content Management System from the Project Development Team.
+1f.) You may not recreate, reproduce or distribute Cerberus Content Management System.
+
+----------------
+Damages
+----------------
+
+2.) If damage(s) is(are) incurred and you purchased this software from us then you may receive a refund of 100% upon request and explanation of damage(s).
+
+----------------
+Warranty
+----------------
+
+3a.) The software by this License ( Commercial ) comes with warranty.
+3b.) If you are not satisfied with Cerberus Content Management System within 90 days from purchase date you may receive a refund of 100% upon request.
+3c.) If the Cerberus Content Management System Compact Disc, USB Drive you ordered this software project on is damaged in any way you may receive refund of 100% upon request within 90 days from purchase date. Tinke Software however does not sell this Software Project. This Software Project is sold under a different company name.
+============================================================================================================================================================
+THIS LICENSE MAY BE UPDATED AT ANY TIME WITH PRACTICAL NOTICE; YOU CAN FIND NOTICE OF THIS LICENSE BEING UPDATED AT:
+https://CerberusCMS.SourceForge.net
+https://www.TinkeSoftware.com
+https://www.GitHub.com/TinkeSoftware
+
+***************************
+\
+- Non-Commercial Software License
+/
+***************************
+
+Cerberus Content Management System - Non-Commercial License
+
+(C) Tinke Software, G.C. Johnson's Works 2005 - 2023.
+
+https://www.SourceForge.net/project/cerberuscms
+https://CerberusCMS.SourceForge.net
+
+https://www.SourceForge.net/u/tinkesoftware/profile
+https://www.GitHub.com/TinkeSoftware
+============================================================================================================================================================
+LET ("Tinke Software, Inc.") REGISTERED DIGITALLY IN THE YEAR 2016 IN Rosedale, California, United States -- FORMERLY KNOWN AS RuneSoft, Inc. and Rune Software, Inc. REGISTERED IN THE YEAR ~2002 IN Rosedale, California, United States BY Gary Christopher Johnson -- BE KNOWN AS ONE OF THE LICENSE AND RIGHTS HOLDER OF CerberusCMS, Cerberus C.M.S.,
+Cerberus Content Management System AND THE REPRESENTOR, LICENSE AND RIGHTS HOLDER OF Gary Christopher Johnson ALSO KNOWN AS G.C. Johnson's SOFTWARE WORKS.
+RuneSoft, Inc. and Rune Software, Inc. CANNOT BE CONFUSED WITH Rune Software, GmbH IN Tübingen, Germany WHICH WAS REGISTERED AFTER 2002.
+
+----------------
+Rules
+----------------
+
+1a.) Tinke Software permits you to operate Cerberus Content Management System on your own web server strictly by the following rules:
+1b.) You may make copies of Cerberus Content Management System and transfer, distribute them freely.
+1c.) You may not usurp, reproduce, copy or plagiarize any of the fundamentals, content or programming code released with Cerberus Content Management System in any other Software Project.
+1d.) You may modify the copy of the Cerberus Content Management System Project you downloaded as well as add to it as you wish but your modifications cannot be included in any of the official Cerberus Content Management System
+     Software Project Releases.
+1e.) You may not modify the master copies of Cerberus Content Management System from the Project Development Team.
+1f.) You may not recreate, reproduce or distribute Cerberus Content Management System.
+
+----------------
+Damages
+----------------
+
+2.) Tinke Software, Gary Christopher Johnson, G.C. Johnson is not responsible for any damages incurred with the use of this software.
+
+----------------
+Warranty
+----------------
+
+3.) The software by this License ( Free Non-Commercial ) comes with no warranty of any kind, expressed or implied.
+============================================================================================================================================================
+THIS LICENSE MAY BE UPDATED AT ANY TIME WITH PRACTICAL NOTICE; YOU CAN FIND NOTICE OF THIS LICENSE BEING UPDATED AT:
+https://www.TinkeSoftware.com/Projects/CerberusCMS/License.txt
+https://www.GitHub.com/TinkeSoftware/Licenses/Projects/CerberusCMS/License.txt
+http://CerberusCMS.SourceForge.net/Cerberus/License.txt
