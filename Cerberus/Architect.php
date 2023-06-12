@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
  ============================================================================================================
  + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2489,7 +2489,7 @@ member_username
 '0',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
-'$_GLOBAL_REMOTE_SERVER_ADDRESS',
+'$_GLOBAL_LOCAL_SERVER_ADDRESS',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
 'Emergency Contact :: 1',
@@ -2781,7 +2781,7 @@ member_username
 '0',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
-'$_GLOBAL_REMOTE_SERVER_ADDRESS',
+'$_GLOBAL_LOCAL_SERVER_ADDRESS',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
 '$_GLOBAL_REMOTE_SERVER_ADDRESS',
 'Emergency Contact :: 1',
