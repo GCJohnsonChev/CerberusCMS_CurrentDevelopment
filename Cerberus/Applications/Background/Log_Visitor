@@ -1,4 +1,4 @@
-$_GLOBAL_REMOTE_SERVER_PORT<?php
+<?php
 /*
  ============================================================================================================
  + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,7 +226,7 @@ Machine and Connection Information :: Non-Registered Visitor
 --------------------------------------------------------------------------
 * Non-Registered Visitor' :: Machine :: Local Server :: Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
 * Non-Registered Visitor' :: Machine :: Remote Server :: Document View Timestamp: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
-* Non-Registered Visitor' :: Machine :: Local Server :: Document Referrer: $_Application_Module_Background_Log_Administrator_GET_REFERRER
+* Non-Registered Visitor' :: Machine :: Local Server :: Document Referrer: $_Application_Module_Background_Log_Visitor_GET_REFERRER
 * Non-Registered Visitor' :: Machine :: Local Server :: Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING
 * Non-Registered Visitor' :: Machine :: Local Server :: Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD
 * Non-Registered Visitor' :: Machine :: Local Server :: Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME
@@ -234,7 +234,7 @@ Machine and Connection Information :: Non-Registered Visitor
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Internet Protocol Address :: Port Number: $_GLOBAL_REMOTE_SERVER_PORT
-* Non-Registered Visitor' :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $$_Application_Module_Background_Log_Visitor_GET_USER_AGENT
+* Non-Registered Visitor' :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $_Application_Module_Background_Log_Visitor_GET_USER_AGENT
 
 --------------------------------------------------------------------------
 Location :: Information :: Non-Registered Visitor
@@ -289,7 +289,7 @@ fwrite($_Application_Module_Background_Log_Visitor_Raw_OPEN_FILE_NAME, "
 <HR>
 <B>Machine and Connection Information :: Non-Registered Visitor</B><BR>
 * Non-Registered Visitor' :: Machine :: Local Server :: Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD<BR>
-* Non-Registered Visitor' :: Machine :: Local Server :: Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Administrator_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Administrator_GET_REFERRER</A><BR>
+* Non-Registered Visitor' :: Machine :: Local Server :: Document Referrer: <A HREF=\"$_Application_Module_Background_Log_Visitor_GET_REFERRER\" TITLE=\":: Open & Display The Referrer Document Page In New Window ::\" TARGET=\"_NEW\">$_Application_Module_Background_Log_Visitor_GET_REFERRER</A><BR>
 * Non-Registered Visitor' :: Machine :: Local Server :: Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING<BR>
 * Non-Registered Visitor' :: Machine :: Local Server :: Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD<BR>
 * Non-Registered Visitor' :: Machine :: Local Server :: Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME<BR>
