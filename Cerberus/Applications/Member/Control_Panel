@@ -473,7 +473,7 @@ Once after you have Successfully Authenticated into your Registered Member Accou
 impossible for anyone else to Authenticate into this Registered Member Account.<BR><BR>
 
 <B>Current Settings :: System :: Security :: Restrictions :: Registered Member Account :: Authentication :: Authorizations :: Multi-Factor</B><HR>
-* Registered Member Account :: Restriction :: Authentication :: Multi-Factor :: Internet Protocol Address: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_DEVICE_AUTHENTICATION_MULTIFACTOR_IP<BR><BR>
+* Registered Member Account :: Restriction :: Authentication :: Multi-Factor :: Internet Protocol Address: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_DEVICE_AUTHENTICATION_MULTIFACTOR_IP<BR>
 
 <B>Current Settings :: System :: Security :: Restrictions :: Registered Member Account :: Device :: Authorizations</B><HR>
 * Registered Member Account :: Restriction :: Device :: Authorization :: Internet Protocol Address: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_INTERNET_PROTOCOL_ADDRESS<BR>
@@ -507,6 +507,9 @@ impossible for anyone else to Authenticate into this Registered Member Account.<
 * Device :: Internet Protocol Address<BR>
 <TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED_MULTIFACTOR</TEXTAREA><BR><BR>
 
+* Security Token<BR>
+<TEXTAREA ROWS=\"5\" COLS=\"25\" MAXLENGTH=\"1000\">$_GLOBAL_MEMBER_AUTHENTICATION_AUTHORIZATION_SECURITY_TOKEN</TEXTAREA><BR><BR>
+
 <B>Device Details :: From Registered Member Account :: Database Entry :: Authorized</B><HR>
 
 * Device :: Internet Protocol Address<BR>
@@ -532,13 +535,53 @@ Digital Fingerprint :: From Database Entry:<BR>
 $_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT<BR><BR>
 
 <B>Revoke Current :: Registered Member Account :: Authentication :: Multi-Factor</B><HR>
-* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;MultiFactor_IP\" TITLE=\":: Revoke :: Authorization :: Device :: Internet Protocol Address ::\">Revoke Current :: Registered Member Account :: Authentication :: Multi-Factor :: Internet Protocol Address</A><BR><BR>
+* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;MultiFactor_IP\" TITLE=\":: Revoke :: Authorization :: Device :: Internet Protocol Address ::\">Revoke Current :: Registered Member Account :: Authentication :: Multi-Factor :: Internet Protocol Address</A><BR>
+* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;SecurityToken\" TITLE=\":: Revoke :: Authentication :: Authorization :: Security Token ::\">Revoke Current :: Registered Member Account :: Authentication :: Authorization :: Security Token</A><BR><BR>
 
 <B>Revoke Current :: Registered Member Account :: Device :: Authorizations</B><HR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;IP\" TITLE=\":: Revoke Current :: Registered Member Account :: Device :: Authorization :: Internet Protocol Address ::\">Revoke Current :: Registered Member Account :: Device :: Authorized :: Internet Protocol Address</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;MAC_Address\" TITLE=\":: Revoke Current :: Registered Member Account :: Device :: Authorization :: MAC Address ::\">Revoke Current :: Registered Member Account :: Device :: Authorized :: MAC Address</A><BR>
 * <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Control_Panel&amp;Display&#61;Authorizations&amp;Revoke&#61;Web_Browser\" TITLE=\":: Revoke Current :: Registered Member Account :: Device :: Authorization :: Web Browser ::\">Revoke Current :: Registered Member Account :: Device :: Authorized :: Web Browser</A><BR><BR>
 ");
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application: Display :: Authentication :: Authorizations :: Revoke :: Security Token
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Revoke"] == "SecurityToken") {
+
+/*
+ ============================================================================================================
+ + Database Server Query :: Update :: Revoke :: Registered Member Account Entry :: Internet Protocol Address :: Authorized
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Control_Panel_DB_Query_UPDATE_REVOKE_MEMBER_AUTHORIZATION_SECURITY_TOKEN		= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET
+member_ip_address_authorization_token='0'
+WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'
+");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Update :: Revoke :: Registered Member Account Entry :: Authentication :: Authorization :: Security Token
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_REVOKE_MEMBER_AUTHORIZATION_SECURITY_TOKEN) {
+
+echo ("Cerberus: I have Revoked the Security Token Successfully.");
+
+} else {
+
+echo ("Cerberus: I was not able to Revoke the Security Token. Try Again ?");
+
+} // [ + ] IF: Database Management System Database Server :: Query :: Update :: Revoke :: Registered Member Account :: Authentication :: Authorization :: Security Token
+
+} // [ + ] IF: Internal Application: Display :: Authorizations :: Revoke :: Registered Member Account :: Authentication :: Authorization :: Security Token :: Is: Activated
 
 /*
  ============================================================================================================
@@ -595,8 +638,8 @@ if ($_GET["Revoke"] == "IP") {
  ============================================================================================================
 */
 
-$_Application_Module_Member_Control_Panel_DB_Query_UPDATE_REVOKE_MEMBER_ACCOUNT_AUTHORIZED_INTERNET_PROTOCOL_ADDRESS		= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET
-member_ip_address_authorized='000.000.000.000'
+$_Application_Module_Member_Control_Panel_DB_Query_UPDATE_REVOKE_MEMBER_ACCOUNT_AUTHORIZED_IP_MULTIFACTOR		= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET
+member_ip_address_authorized_multifactor='000.000.000.000'
 WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'
 ");
 
@@ -606,7 +649,7 @@ WHERE member_username='$_GLOBAL_COOKIE_MEMBER_USERNAME'
  ============================================================================================================
 */
 
-if ($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_REVOKE_MEMBER_ACCOUNT_AUTHORIZED_INTERNET_PROTOCOL_ADDRESS) {
+if ($_Application_Module_Member_Control_Panel_DB_Query_UPDATE_REVOKE_MEMBER_ACCOUNT_AUTHORIZED_IP_MULTIFACTOR) {
 
 echo ("Cerberus: The Current Authorized Internet Protocol Address Was Revoked Successfully.<BR>");
 

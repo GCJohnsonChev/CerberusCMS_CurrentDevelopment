@@ -76,10 +76,10 @@
  ============================================================================================================
 */
 
-$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= $_POST['AMM_Login_Authorization_IP_Address_Current'];
-$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= $_POST['AMM_Login_Authorization_IP_Token'];
-$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= $_POST['AMM_Login_Authorization_Electronic_Mail_Address'];
-$_Application_Module_Member_Login_AUTHORIZATION_USERNAME					= $_POST['AMM_Login_Authorization_UserName'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= $_POST['AMM_Login_Authorization_IP_Address_Current'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN		= $_POST['AMM_Login_Authorization_IP_Token'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= $_POST['AMM_Login_Authorization_Electronic_Mail_Address'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_USERNAME					= $_POST['AMM_Login_Authorization_UserName'];
 
 /*
  ============================================================================================================
@@ -87,9 +87,9 @@ $_Application_Module_Member_Login_AUTHORIZATION_USERNAME					= $_POST['AMM_Login
  ============================================================================================================
 */
 
-$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= preg_replace("/'/","#", $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
-$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= preg_replace("/'/","#", $_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
-$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= preg_replace("/'/","#", $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= preg_replace("/'/","#", $_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
+$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= preg_replace("/'/","#", $_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN		= preg_replace("/'/","#", $_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
 
 /*
  ============================================================================================================
@@ -97,7 +97,7 @@ $_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN	
  ============================================================================================================
 */
 
-$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= strtolower($_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
+$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= strtolower($_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
 
 /*
  ============================================================================================================
@@ -105,9 +105,9 @@ $_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS				= str
  ============================================================================================================
 */
 
-if ($_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN == "0") {
+if ($_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN == "0") {
 
-$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= "Denied";
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN			= "Denied";
 
 } // [ + ] IF: Submitted Internet Protocol Address Token IS: 0, Set Variable Value To: Denied
 
@@ -247,7 +247,7 @@ if ($_GET["Message"] == "No_Member") {
 
 } // [ + ] IF: Internal Application: Display Message: No Existing Member Account Is Activated
 
-} // [ + ] IF: Member Account Credentials Are Already Set
+} // [ + ] IF: Registered Member Account :: Cookies :: Credentials :: ARE Set
 
 /*
  ============================================================================================================
@@ -315,7 +315,7 @@ if ($_GET["Message"] == "ForcedLogoutMACAddress") {
 
 if ($_GET["Authorization"] == "IP_Address") {
 
-if (!$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS) {
+if (!$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS) {
 
 echo ("
 											Member Account Authentication :: Internet Protocol Address Authorization<HR>
@@ -341,7 +341,7 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_electronic_mail_address='$_Application_Module_Member_Login_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS' AND member_username='$_Application_Module_Member_Login_AUTHORIZATION_USERNAME'");
+$_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_electronic_mail_address='$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS' AND member_username='$_Application_Module_Member_Login_POST_AUTHORIZATION_USERNAME'");
 
 /*
  ============================================================================================================
@@ -362,12 +362,9 @@ while ($_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDA
 $_Application_Module_Login_LIST_MEMBER_ID							= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['id'];
 $_Application_Module_Login_LIST_MEMBER_USERNAME							= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_username'];
 $_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS					= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_electronic_mail_address'];
-$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_LAST_LOGIN			= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_last_login'];
-$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED			= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_authorized'];
-$_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZED_MULTIFACTOR		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_authorized_multifactor'];
 $_Application_Module_Login_LIST_MEMBER_INTERNET_PROTOCOL_ADDRESS_AUTHORIZATION_TOKEN		= $_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_UPDATE_Fetch_Array['member_ip_address_authorization_token'];
 
-$_Application_Module_Login_DB_Query_UPDATE_MEMBER_ACCOUNT_IP_ADDRESS_AUTHORIZATION_TOKEN	= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH' WHERE member_username='$_Application_Module_Member_Login_AUTHORIZATION_USERNAME' AND member_electronic_mail_address='$_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
+$_Application_Module_Login_DB_Query_UPDATE_MEMBER_ACCOUNT_IP_ADDRESS_AUTHORIZATION_TOKEN	= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorization_token='$_Application_Module_Member_Login_SECURITY_RANDOM_STRING_GENERATOR_LENGTH_NUMBER_HASH' WHERE member_username='$_Application_Module_Member_Login_POST_AUTHORIZATION_USERNAME' AND member_electronic_mail_address='$_Application_Module_Login_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS'");
 
 if ($_Application_Module_Login_DB_Query_UPDATE_MEMBER_ACCOUNT_IP_ADDRESS_AUTHORIZATION_TOKEN) {
 /**
@@ -466,7 +463,7 @@ $DB->free($_Application_Module_Login_DB_Query_SELECT_MEMBERS_FOR_AUTHORIZATION_U
 
 if ($_GET["Authorization"] == "IP_Token") {
 
-if (!$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN) {
+if (!$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN) {
 
 echo ("
 											Member Account Authentication :: Internet Protocol Address Authorization Token<HR>
@@ -487,8 +484,8 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Login_DB_Query_UPDATE_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='$_GLOBAL_REMOTE_SERVER_ADDRESS', member_ip_address_authorized_multifactor='$_GLOBAL_REMOTE_SERVER_ADDRESS',member_account_device_mac_address_authorized='$_GLOBAL_REMOTE_DEVICE_MAC_ADDRESS',member_account_device_web_browser_authorized='$_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY' WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
-$_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
+$_Application_Module_Login_DB_Query_SELECT_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
+$_Application_Module_Login_DB_Query_UPDATE_MEMBER_AUTHORIZATION_TOKEN				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members SET member_ip_address_authorized='$_GLOBAL_REMOTE_SERVER_ADDRESS',member_ip_address_authorized_multifactor='$_GLOBAL_REMOTE_SERVER_ADDRESS',member_account_device_mac_address_authorized='$_GLOBAL_REMOTE_DEVICE_MAC_ADDRESS',member_account_device_web_browser_authorized='$_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY' WHERE member_ip_address_authorization_token='$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN'");
 
 /*
  ============================================================================================================
