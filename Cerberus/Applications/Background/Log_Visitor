@@ -234,7 +234,7 @@ Machine and Connection Information :: Non-Registered Visitor
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Internet Protocol Address :: Port Number: $_GLOBAL_REMOTE_SERVER_PORT
-* Non-Registered Visitor' :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $_Application_Module_Background_Log_Administrator_GET_USER_AGENT
+* Non-Registered Visitor' :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $$_Application_Module_Background_Log_Visitor_GET_USER_AGENT
 
 --------------------------------------------------------------------------
 Location :: Information :: Non-Registered Visitor
@@ -297,7 +297,7 @@ fwrite($_Application_Module_Background_Log_Visitor_Raw_OPEN_FILE_NAME, "
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME<BR>
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_REMOTE_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For The Remote User Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS ::\">$_GLOBAL_REMOTE_SERVER_ADDRESS</A><BR>
 * Non-Registered Visitor' :: Machine :: Remote Server :: Network :: Internet Protocol Address :: Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-* Non-Registered Visitor' :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $_Application_Module_Background_Log_Administrator_GET_USER_AGENT<BR><BR>
+* Non-Registered Visitor' :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $_Application_Module_Background_Log_Visitor_GET_USER_AGENT<BR><BR>
 
 <B>Location :: Information :: Non-Registered Visitor</B><BR>
 * Non-Registered Visitor' :: Device Location :: By Global-Positioning-System Coordinates: <BR>
