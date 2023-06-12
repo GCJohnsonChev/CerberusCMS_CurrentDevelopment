@@ -1,4 +1,4 @@
-<?php
+$_GLOBAL_REMOTE_SERVER_PORT<?php
 /*
  ============================================================================================================
  + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -249,7 +249,7 @@ Local Server :: Information :: Non-Registered Visitor
 --------------------------------------------------------------------------
 * Local Server :: Machine :: Server :: Hyper-Text-Transfer-Protocol :: Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST
 * Local Server :: Machine :: Network :: Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Local Server :: Machine :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_LOCAL_SERVER_PORT
+* Local Server :: Machine :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
 * Local Server :: Machine :: Network :: Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE
 * Local Server :: Machine :: Software: $_GLOBAL_LOCAL_SERVER_SOFTWARE
 * Local Server :: Machine Server :: Hyper-Text-Transfer-Protocol :: Accept Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT
@@ -308,7 +308,7 @@ fwrite($_Application_Module_Background_Log_Visitor_Raw_OPEN_FILE_NAME, "
 <B>Local Server :: Information :: Non-Registered Visitor</B><BR>
 * Local Server :: Machine :: Server :: Hyper-Text-Transfer-Protocol :: Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
 * Local Server :: Machine :: Network :: Internet Protocol Address: <A HREF=\"http://www.WhoIs.sc/$_GLOBAL_LOCAL_SERVER_ADDRESS\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Who-Is Information For Local Server Internet Protocol Address :: $_GLOBAL_LOCAL_SERVER_ADDRESS ::\">$_GLOBAL_LOCAL_SERVER_ADDRESS</A><BR>
-* Local Server :: Machine :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_LOCAL_SERVER_PORT<BR>
+* Local Server :: Machine :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT<BR>
 * Local Server :: Machine :: Network :: Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE<BR>
 * Local Server :: Machine :: Software: $_GLOBAL_LOCAL_SERVER_SOFTWARE<BR>
 * Local Server :: Machine Server :: Hyper-Text-Transfer-Protocol :: Accept Type: $_GLOBAL_LOCAL_SERVER_HTTP_ACCEPT<BR>
