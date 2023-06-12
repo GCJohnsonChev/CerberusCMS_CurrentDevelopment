@@ -132,13 +132,13 @@ $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MES
 $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[video]", "<VIDEO WIDTH=\"150\" HEIGHT=\"75\" CONTROLS><SOURCE SRC=\"", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
 $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/video]", "\" TYPE=\"VIDEO/MP4\"></VIDEO>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
 
-//$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[link]", "<A HREF=\"\">", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
-//$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/link]", "\" TITLE=\":: Open & Display This Inserted Uniform-Resource-Location Link ::\">Inserted Uniform-Resource-Location Link</A>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[link]", "<A HREF=\"\">", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/link]", "\" TITLE=\":: Open & Display This Inserted Uniform-Resource-Location Link ::\">Inserted Uniform-Resource-Location Link</A>", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
 
 $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[link]", " ", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
 $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= str_replace("[/link]", " ", $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
 
-//$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= stripslashes($_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= stripslashes($_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE);
 
 /*
  ============================================================================================================
@@ -501,8 +501,8 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg");
-//putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg");
+putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg");
+putenv("GNUPGHOME=./Temporary/Messenger/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg");
 
 /*
  ============================================================================================================
@@ -510,8 +510,8 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_1              								= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg') . 'public.key');
-//$_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_2              								= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg') . 'public.key');
+$_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_1              								= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_1.gnupg') . 'public.key');
+$_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_2              								= file_get_contents(getenv('GNUPGHOME=./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/Files/Document/Encryption/PublicKey_2.gnupg') . 'public.key');
 
 /*
  ============================================================================================================
@@ -519,8 +519,8 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_INITIALIZE_GNUPG                               							= new gnupg();
-//$_Application_Module_Member_Messenger_INITIALIZE_GNUPG->
+$_Application_Module_Member_Messenger_INITIALIZE_GNUPG                               							= new gnupg();
+$_Application_Module_Member_Messenger_INITIALIZE_GNUPG->
 
 /*
  ============================================================================================================
@@ -528,7 +528,7 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_INITIALIZE_GNUPG->seterrormode(gnupg::ERROR_EXCEPTION);
+$_Application_Module_Member_Messenger_INITIALIZE_GNUPG->seterrormode(gnupg::ERROR_EXCEPTION);
 
 /*
  ============================================================================================================
@@ -536,8 +536,8 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1									= $_Application_Module_Member_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_1);
-//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2									= $_Application_Module_Member_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_2);
+$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1										= $_Application_Module_Member_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_1);
+$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2										= $_Application_Module_Member_Messenger_INITIALIZE_GNUPG->import($_Application_Module_Member_Messenger_SPECIFY_PGP_PUBLIC_KEY_2);
 
 /*
  ============================================================================================================
@@ -545,8 +545,8 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_1								= $_Application_Module_Member_Messenger_GNUPG->addencryptkey($_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1['fingerprint']);
-//$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_2								= $_Application_Module_Member_Messenger_GNUPG->addencryptkey($_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2['fingerprint']);
+$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_1								= $_Application_Module_Member_Messenger_GNUPG->addencryptkey($_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_1['fingerprint']);
+$_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_FINGERPRINT_2								= $_Application_Module_Member_Messenger_GNUPG->addencryptkey($_Application_Module_Member_Messenger_GNUPG_IMPORT_PUBLIC_KEY_2['fingerprint']);
 
 /*
  ============================================================================================================
@@ -554,7 +554,7 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE								= file_get_contents('./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME.html');
+$_Application_Module_Member_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE								= file_get_contents('./Temporary/Messenger/Physical/Encrypted/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME/$_Application_Module_Member_Messenger_POST_SELECT_ENCRYPTED_TEXT_FILE_MESSENGER_ROOM_NAME.html');
 
 /*
  ============================================================================================================
@@ -562,7 +562,7 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_GNUPG_ENCRYPT_MESSAGE										= $_Application_Module_Member_Messenger_GNUPG->encrypt($_Application_Module_Member_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
+$_Application_Module_Member_Messenger_GNUPG_ENCRYPT_MESSAGE										= $_Application_Module_Member_Messenger_GNUPG->encrypt($_Application_Module_Member_Messenger_FIND_ENCRYPTED_MESSENGER_ROOM_NAME_FILE);
 
 /*
  ============================================================================================================
@@ -588,9 +588,8 @@ $_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_P
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AMM_Messenger_Visible_Encrypted_Text_File_Messenger_Room_Message'];
+$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AMM_Messenger_Visible_Encrypted_Text_File_Messenger_Room_Message'];
 
-// Quick Test
 $_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE;
 
 /*
@@ -599,12 +598,10 @@ $_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER
  ============================================================================================================
 */
 
-/*
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type				= "AES-256-CBC";
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length				= openssl_cipher_iv_length($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type);
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV					= openssl_random_pseudo_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
 $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options				= '0';
-*/
 
 /*
  ============================================================================================================
@@ -628,7 +625,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Random				= random_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Random				= random_bytes($_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Length);
 
 /*
  ============================================================================================================
@@ -636,7 +633,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Digest_Length					= openssl_digest(php_uname(), 'MD5', true);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Digest_Length					= openssl_digest(php_uname(), 'MD5', true);
 
 /*
  ============================================================================================================
@@ -644,7 +641,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Encrypted_Data				= openssl_encrypt($_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Encrypted_Data					= openssl_encrypt($_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
 
 /*
  ============================================================================================================
@@ -654,7 +651,7 @@ $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_T
  ============================================================================================================
 */
 
-//$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Decryption_Type_AES_Decrypted_Data				= openssl_decrypt("", $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
+$_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Decryption_Type_AES_Decrypted_Data					= openssl_decrypt("", $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_Type, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Password, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV_Options, $_Application_Module_Member_Messenger_Encrypted_Text_File_Messenger_Encryption_Type_AES_Cipher_Ring_IV);
 
 /*
  ============================================================================================================
