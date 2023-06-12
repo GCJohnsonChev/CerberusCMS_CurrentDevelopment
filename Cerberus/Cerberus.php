@@ -809,6 +809,14 @@ $_GLOBAL_MEMBER_IP_ADDRESS_AUTHORIZED_MULTIFACTOR					= $_DB_Query_Kernel_Select
 
 /*
  ============================================================================================================
+ + Global :: Member Account :: Settings :: Variables :: Authentication :: Authorization :: Security Token
+ ============================================================================================================
+*/
+
+$_GLOBAL_MEMBER_AUTHENTICATION_AUTHORIZATION_SECURITY_TOKEN				= $_DB_Query_Kernel_Select_Member_Credentials_Fetch_Array['member_ip_address_authorization_token'];
+
+/*
+ ============================================================================================================
  + Global :: Member Account :: Settings :: Variables :: Internet Protocol Address :: Log
  ============================================================================================================
 */
@@ -1326,6 +1334,7 @@ $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Password		
 $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Status_Account_Locked			= $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Fetch_Array['member_status_account_locked'];
 $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Attempt_Authentication			= $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Fetch_Array['member_attempt_authentication'];
 $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Member_Device_Authentication_MultiFactor_IP	= $DB_Query_Kernel_Authenticate_Check_Member_Account_Credentials_Fetch_Array['member_ip_address_authorized_multifactor'];
+
 
 /*
  ============================================================================================================
