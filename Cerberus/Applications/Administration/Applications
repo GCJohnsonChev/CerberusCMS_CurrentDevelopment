@@ -233,19 +233,19 @@ $DB->free($_Application_Module_Administration_Applications_DB_Query_Insert_Appli
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY				= "./Applications/Member/";
-$_Application_Module_Administration_Applications_UPLOAD_FILE 						= $_Application_Module_Administration_Applications_SPECIFY_UPLOAD_DIRECTORY . basename($_FILES['AMA_Applications_Upload_Application_File_Name']['name']);
-$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP 					= $_POST['AMA_Applications_Upload_Temporary'];
+$_Application_Module_Administration_Applications_FIND_DIRECTORY_APPLICATION_MEMBER			= "./Applications/Member/";
+$_Application_Module_Administration_Applications_UPLOAD_FILE 						= $_Application_Module_Administration_Applications_FIND_DIRECTORY_APPLICATION_MEMBER . basename($_FILES['AMA_Applications_Upload_Application_File_Name']['name']);
+$_Application_Module_Administration_Applications_POST_UPLOAD_DIRECTORY_TEMPORARY 			= $_POST['AMA_Applications_Upload_Temporary'];
 
 /*
  ============================================================================================================
  +
- + Display Upload Application Form
+ + Display :: Upload Application :: Input Form
  +
  ============================================================================================================
 */
 
-if (!$_Application_Module_Administration_Applications_POST_UPLOAD_TEMP ) {
+if (!$_Application_Module_Administration_Applications_POST_UPLOAD_DIRECTORY_TEMPORARY ) {
 
 echo ("
 													<HR><CENTER><B>Upload Application File</B></CENTER><HR>
