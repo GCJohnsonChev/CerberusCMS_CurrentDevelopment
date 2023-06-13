@@ -265,10 +265,10 @@ Local Server :: Information :: Non-Registered Visitor
 Digital Fingerprint Information
 --------------------------------------------------------------------------
 * Non-Registered Visitor' :: Digital Fingerprint :: Generated :: Clear-Text:
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
 
 * Non-Registered Visitor' :: Digital Fingerprint :: Generated :: HASHED:
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
 ");
 
 /*
@@ -322,10 +322,10 @@ fwrite($_Application_Module_Background_Log_Visitor_Raw_OPEN_FILE_NAME, "
 
 <B>Digital Fingerprint Information</B><BR>
 * Non-Registered Visitor' :: Digital Fingerprint :: Generated :: Clear-Text:<BR>
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT<BR><BR>
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT<BR><BR>
 
 * Non-Registered Visitor' :: Digital Fingerprint :: Generated :: HASHED:<BR>
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED<BR><BR>
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED<BR><BR>
 
 <A HREF=\"./Applications/Background/Log_Visitor\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A>
 <HR><BR>

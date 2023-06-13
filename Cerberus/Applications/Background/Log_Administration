@@ -273,11 +273,16 @@ Machine and Connection Information
 Digital Fingerprint Information
 ---------------------------------------------------------------------------------
 * Administrator :: Digital Fingerprint :: Generated :: Clear-Text:
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
 
 * Administrator :: Digital Fingerprint :: Generated :: HASHED:
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
 
+* Administrator :: Digital Fingerprint :: Authentication :: Clear-Text:
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+
+* Administrator :: Digital Fingerprint :: Authentication :: HASHED:
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
 ");
 
 /*

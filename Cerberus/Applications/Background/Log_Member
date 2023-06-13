@@ -271,12 +271,18 @@ fwrite($_Application_Module_Background_Log_Member_Box_OPEN_FILE_NAME, "
 
 <B>Digital Fingerprint Information</B><HR>
 * Registered Member Account :: Digital Fingerprint :: Generated :: Clear-Text:<BR>
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT<BR><BR>
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT<BR><BR>
 
 * Registered Member Account :: Digital Fingerprint :: Generated :: HASHED:<BR>
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED<BR><BR>
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED<BR><BR>
 
-<A HREF=\"../../../../Applications/Background/Log_Visitor\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
+* Registered Member Account :: Digital Fingerprint :: Authentication :: Clear-Text:<BR>
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT<BR><BR>
+
+* Registered Member Account :: Digital Fingerprint :: Authentication :: HASHED:<BR>
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED<BR><BR>
+
+<A HREF=\"../../../../Applications/Background/Log_Member\" TARGET=\"_NEW\" TITLE=\":: Open & Display The Source Code For This Background Activity Log ::\">Source Code For This Background Activity Log</A><BR><BR>
 ");
 
 /*
@@ -334,10 +340,16 @@ Local Server Information :: Registered Member Account
 Digital Fingerprint Information
 ---------------------------------------------------------------------------------------
 * Registered Member Account :: Digital Fingerprint :: Generated :: Clear-Text:
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_CLEARTEXT
 
 * Registered Member Account :: Digital Fingerprint :: Generated :: HASHED:
-$_GLOBAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+$_INTERNAL_SECURITY_GENERATED_MEMBER_FINGERPRINT_HASHED
+
+* Registered Member Account :: Digital Fingerprint :: Authentication :: Clear-Text:
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_CLEARTEXT
+
+* Registered Member Account :: Digital Fingerprint :: Authentication :: HASHED:
+$_GLOBAL_MEMBER_SECURITY_FINGERPRINT_HASHED
 ");
 
 /*
