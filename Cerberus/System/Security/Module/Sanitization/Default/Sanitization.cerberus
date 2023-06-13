@@ -86,7 +86,37 @@ $_Security_Module_Sanitization_GET_STRIP_CHARACTERS_INJECTION_ARRAY[1]					= ">"
 $_Security_Module_Sanitization_GET_STRIP_CHARACTERS_INJECTION_ARRAY[2]					= "`";
 $_Security_Module_Sanitization_GET_STRIP_CHARACTERS_INJECTION_ARRAY[3]					= "~";
 
-/*
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("`", "", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("@", "&commat;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("<", "&lt;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace(">", "&gt;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("\"", "&quot;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("&", "&amp;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("'", "&apos;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("~", "&#126;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("$", "&#36;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("=", "&#61;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("{", "&lcub;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("}", "&rcub;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("(", "&lpar;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace(")", "&rpar;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("#", "&num;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("%", "&percnt;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("*", "&ast;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("+", "&plus;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace(",", "&comma;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("-", "&minus;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace(".", "&period;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("/", "&sol;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("\:", "&colon;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("\;", "&semi;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("?", "&quest;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("[", "&lsqb;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("]", "&rsqb;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("^", "&hat;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("_", "&lowbar;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+$_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY					= str_replace("|", "&verbar;", $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_INJECTION_ARRAY);
+
 $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[0]					= "`";
 $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[1]					= "~";
 $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[2]					= "!";
@@ -118,10 +148,11 @@ $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[27]					= "?";
 $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[28]					= "/";
 $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[29]					= ".";
 $_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ALL_ARRAY[30]					= ",";
-*/
 
-//= str_replace($_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ARRAY, "", var);
-//= str_replace($_Security_Module_Sanitization_GET_STRIP_CHARACTERS_ARRAY, "", var);
+//Example
+
+//= str_replace($_Security_Module_Sanitization_POST_STRIP_CHARACTERS_ARRAY, "Application Module", Variable);
+//= str_replace($_Security_Module_Sanitization_GET_STRIP_CHARACTERS_ARRAY, "Application Module", Variable);
 //strlen();
 //substr_count();
 
@@ -328,27 +359,42 @@ str_replace(">", "", var);
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Accounts_POST_SELECT_MEMBER_ID					= $_POST['AMA_Accounts_Select_Member_ID'];
+$_Application_Module_Administration_Accounts_POST_SELECT_MEMBER_ID						= $_POST['AMA_Accounts_Select_Member_ID'];
 
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ID				= $_POST['AMA_Accounts_Update_Account_ID'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ACCESS_LEVEL			= $_POST['AMA_Accounts_Update_Account_Access_Level'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_BANNED			= $_POST['AMA_Accounts_Update_Account_Status_Banned'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS		= $_POST['AMA_Accounts_Update_Account_Electronic_Mail_Address'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_EXPERIENCE_AMOUNT		= $_POST['AMA_Accounts_Update_Account_Experience_Amount'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST			= $_POST['AMA_Accounts_Update_Account_Name_First'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_LAST			= $_POST['AMA_Accounts_Update_Account_Name_Last'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_MIDDLE			= $_POST['AMA_Accounts_Update_Account_Name_Middle'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_NICKNAME			= $_POST['AMA_Accounts_Update_Account_Name_NickName'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_OF_POSTS			= $_POST['AMA_Accounts_Update_Account_Number_Of_Posts'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_ACTIVATION		= $_POST['AMA_Accounts_Update_Account_Status_Activation'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_ACTIVATION_KEY		= $_POST['AMA_Accounts_Update_Account_Status_Activation_Key'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ATTEMPT_AUTHENTICATION		= $_POST['AMA_Accounts_Update_Account_Attempt_Authentication'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_LOCK			= $_POST['AMA_Accounts_Update_Account_Status_Lock'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_RANK				= $_POST['AMA_Accounts_Update_Account_Rank'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_AUTHORIZED_IP			= $_POST['AMA_Accounts_Update_Account_Authorized_IP'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_AUTHORIZED_WEB_BROWSER		= $_POST['AMA_Accounts_Update_Account_Authorized_Web_Browser'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_AUTHORIZED_MAC_ADDRESS		= $_POST['AMA_Accounts_Update_Account_Authorized_MAC_Address'];
-$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_PASSWORD			= $_POST['AMA_Accounts_Update_Account_Password'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ID					= $_POST['AMA_Accounts_Update_Account_ID'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ACCESS_LEVEL				= $_POST['AMA_Accounts_Update_Account_Access_Level'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_BANNED				= $_POST['AMA_Accounts_Update_Account_Status_Banned'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ELECTRONIC_MAIL_ADDRESS			= $_POST['AMA_Accounts_Update_Account_Electronic_Mail_Address'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_EXPERIENCE_AMOUNT			= $_POST['AMA_Accounts_Update_Account_Experience_Amount'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_FIRST				= $_POST['AMA_Accounts_Update_Account_Name_First'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_LAST				= $_POST['AMA_Accounts_Update_Account_Name_Last'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_MIDDLE				= $_POST['AMA_Accounts_Update_Account_Name_Middle'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NAME_NICKNAME				= $_POST['AMA_Accounts_Update_Account_Name_NickName'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_NUMBER_OF_POSTS				= $_POST['AMA_Accounts_Update_Account_Number_Of_Posts'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_ACTIVATION			= $_POST['AMA_Accounts_Update_Account_Status_Activation'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_ACTIVATION_KEY			= $_POST['AMA_Accounts_Update_Account_Status_Activation_Key'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_ATTEMPT_AUTHENTICATION			= $_POST['AMA_Accounts_Update_Account_Attempt_Authentication'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_STATUS_LOCK				= $_POST['AMA_Accounts_Update_Account_Status_Lock'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_RANK					= $_POST['AMA_Accounts_Update_Account_Rank'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_AUTHORIZED_IP				= $_POST['AMA_Accounts_Update_Account_Authorized_IP'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_AUTHORIZED_WEB_BROWSER			= $_POST['AMA_Accounts_Update_Account_Authorized_Web_Browser'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_AUTHORIZED_MAC_ADDRESS			= $_POST['AMA_Accounts_Update_Account_Authorized_MAC_Address'];
+$_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_PASSWORD				= $_POST['AMA_Accounts_Update_Account_Password'];
+
+/*
+ ============================================================================================================
+ +
+ + Variables :: POST Variables :: Character and String Replacement
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Accounts_POST_SELECT_MEMBER_ID						= $_POST['AMA_Accounts_Select_Member_ID'];
+
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace("`", "REMOVED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace("@", "at", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace("<", "REPLACED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace(">", "REPLACED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
 
 /*
  ============================================================================================================
@@ -368,14 +414,14 @@ $_Application_Module_Administration_Accounts_POST_UPDATE_MEMBER_ACCOUNT_PASSWORD
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_AUTHOR					= $_POST['AMA_Accounts_System_Message_Author'];
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_USERNAME			= $_POST['AMA_Accounts_System_Message_Member_UserName'];
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE				= $_POST['AMA_Accounts_System_Message_Member_Message'];
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_AUTHOR						= $_POST['AMA_Accounts_System_Message_Author'];
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_USERNAME				= $_POST['AMA_Accounts_System_Message_Member_UserName'];
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= $_POST['AMA_Accounts_System_Message_Member_Message'];
 
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE				= str_replace("`", "REMOVED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE				= str_replace("@", "at", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE				= str_replace("<", "REPLACED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE				= str_replace(">", "REPLACED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace("`", "REMOVED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace("@", "at", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace("<", "REPLACED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
+$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE					= str_replace(">", "REPLACED", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
 
 /*
  ============================================================================================================
