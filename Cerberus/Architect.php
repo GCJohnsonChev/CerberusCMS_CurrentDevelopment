@@ -436,10 +436,10 @@ $_ARCHITECT_LOG_INTERACTION_LOG_DATA									= "
 Machine and Connection Information :: Architect
 --------------------------------------------------------------------------
 -- Hyper-Text :: Document
-* Architect :: Machine :: Local Server :: Document View Timestamp: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
-* Architect :: Machine :: Remote Server :: Document View Timestamp: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
-* Architect :: Machine :: Local Server :: Document Referrer: $_GLOBAL_LOCAL_SERVER_HTTP_REFERRER
-* Architect :: Machine :: Local Server :: Request String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING
+* Architect :: Machine :: Document Execution :: Timestamp :: Local Server: $_GLOBAL_LOCAL_SERVER_DATE_STANDARD
+* Architect :: Machine :: Document Execution :: Timestamp :: Remote Server: $_GLOBAL_REMOTE_SERVER_DATE_STANDARD
+* Architect :: Machine :: Local Server :: Document :: Referrer: $_GLOBAL_LOCAL_SERVER_HTTP_REFERRER
+* Architect :: Machine :: Local Server :: Document :: Query String: $_GLOBAL_LOCAL_SERVER_QUERY_STRING
 * Architect :: Machine :: Local Server :: Request Method: $_GLOBAL_LOCAL_SERVER_REQUEST_METHOD
 * Architect :: Machine :: Local Server :: Request Time: $_GLOBAL_LOCAL_SERVER_REQUEST_TIME
 * Architect :: Machine :: Local Server :: Connection Type: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE
@@ -448,7 +448,7 @@ Machine and Connection Information :: Architect
 -- Network
 * Architect :: Machine :: Remote Server :: Network :: Host-Name: $_GLOBAL_REMOTE_SERVER_HOSTNAME
 * Architect :: Machine :: Remote Server :: Network :: Internet Protocol Address: $_GLOBAL_REMOTE_SERVER_ADDRESS
-* Architect :: Machine :: Remote Server :: Network :: Internet Protocol Address :: Port Number: $_GLOBAL_REMOTE_SERVER_PORT
+* Architect :: Machine :: Remote Server :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
 * Architect :: Machine :: Remote Server :: Network :: User-Agent :: Web Browser: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT
 --------------------------------------------------------------------------
 
@@ -467,7 +467,7 @@ Local Server :: Information :: Architect
 -- Network
 * Local Server :: Machine :: Server :: Hyper-Text-Transfer-Protocol :: Host: $_GLOBAL_LOCAL_SERVER_HTTP_HOST
 * Local Server :: Machine :: Network :: Internet Protocol Address: $_GLOBAL_LOCAL_SERVER_ADDRESS
-* Local Server :: Machine :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_LOCAL_SERVER_PORT
+* Local Server :: Machine :: Network :: Internet Protocol Address :: Connecting Port Number: $_GLOBAL_REMOTE_SERVER_PORT
 * Local Server :: Machine :: Network :: Gateway Interface: $_GLOBAL_LOCAL_SERVER_GATEWAY_INTERFACE
 * Local Server :: Machine :: Software: $_GLOBAL_LOCAL_SERVER_SOFTWARE
 
