@@ -950,6 +950,9 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Account_Recovery_STEP_1_MEMBER_ELECTRONIC_MAIL_ADDRESS		= $_POST['AMM_Account_Recovery_Electronic_Mail_Address'];
+$_Application_Module_Member_Account_Recovery_STEP_1_MEMBER_USERNAME				= $_POST['AMM_Account_Recovery_UserName'];
+
 /*
  ============================================================================================================
  +
@@ -985,6 +988,8 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Member_All_Shouts_POST_SHOUT_MESSAGE			= $_POST['AMM_All_Shouts_Shout_Message'];
 
 /*
  ============================================================================================================
@@ -1022,6 +1027,10 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_1					= $_POST['AMM_Calculator_Simple_Value_Number_1'];
+$_Application_Module_Member_Calculator_SIMPLE_POST_OPERATOR						= $_POST['AMM_Calculator_Simple_Operator'];
+$_Application_Module_Member_Calculator_SIMPLE_POST_VALUE_NUMBER_2					= $_POST['AMM_Calculator_Simple_Value_Number_2'];
+
 /*
  ============================================================================================================
  +
@@ -1046,6 +1055,19 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Comment_POST_APPLICATION_ID					= $_POST['AMM_Comment_Application_ID'];
+$_Application_Module_Member_Comment_POST_APPLICATION_NAME				= $_POST['AMM_Comment_Application_Name'];
+
+$_Application_Module_Member_Comment_POST_COMMENT_DATA					= $_POST['AMM_Comment_Comment_Data'];
+
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= $_POST['AMM_Comment_Update_Comment_Data'];
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+
+$_Application_Module_Member_Contact_Administrator_POST_NAME 				= $_POST['AMM_Contact_Administrator_My_Name'];
+$_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS		= $_POST['AMM_Contact_Administrator_Electronic_Mail_Address'];
+$_Application_Module_Member_Contact_Administrator_POST_MESSAGE				= $_POST['AMM_Contact_Administrator_Message'];
+
 /*
  ============================================================================================================
  +
@@ -1069,6 +1091,10 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= $_POST['AMM_Control_Panel_Account_Activation_Key'];
+$_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY					= stripslashes($_Application_Module_Member_Control_Panel_POST_ACCOUNT_ACTIVATION_KEY);
+
 
 /*
  ============================================================================================================
@@ -1106,6 +1132,10 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE					= $_POST['AMM_Electronic_Mail_Message'];
+$_Application_Module_Member_Electronic_Mail_POST_MESSAGE_HASH_SHA_256				= hash('sha256', $_Application_Module_Member_Electronic_Mail_POST_MESSAGE);
+
+
 /*
  ============================================================================================================
  +
@@ -1142,6 +1172,11 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= $_POST['AMM_Forum_Update_Forum_Topic_Post'];
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+$_Application_Module_Member_Forum_POST_UPDATE_POST_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_UPDATE_POST_DATA);
+
+
 /*
  ============================================================================================================
  +
@@ -1153,6 +1188,9 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_MESSAGE					= $_POST['AMM_Forward_Friend_Message'];
+$_Application_Module_Member_Forward_Friend_POST_FORWARD_ELECTRONIC_MAIL_ADDRESS			= $_POST['AMM_Forward_Friend_Electronic_Mail_Address'];
 
 /*
  ============================================================================================================
@@ -1214,6 +1252,11 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Links_POST_LINK_TITLE						= $_POST['AMM_Links_Link_Title'];
+$_Application_Module_Member_Links_POST_LINK_URL							= $_POST['AMM_Links_Link_URL'];
+$_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= $_POST['AMM_Links_Link_Description'];
+
+
 /*
  ============================================================================================================
  +
@@ -1238,6 +1281,11 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= $_POST['AMM_Login_Authorization_IP_Address_Current'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN		= $_POST['AMM_Login_Authorization_IP_Token'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= $_POST['AMM_Login_Authorization_Electronic_Mail_Address'];
+$_Application_Module_Member_Login_POST_AUTHORIZATION_USERNAME					= $_POST['AMM_Login_Authorization_UserName'];
+
 /*
  ============================================================================================================
  +
@@ -1249,6 +1297,11 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Media_Player_POST_VIDEO_URL							= $_POST['AMM_Media_Player_Video_URL'];
+$_Application_Module_Media_Player_POST_VIDEO_FILE_NAME							= $_POST['AMM_Media_Player_Video_File_Name'];
+$_Application_Module_Member_Media_Player_POST_AUDIO_URL							= $_POST['AMM_Media_Player_Play_Audio_URL'];
+$_Application_Module_Member_Media_Player_POST_AUDIO_FILE_NAME						= $_POST['AMM_Media_Player_Play_Audio_File_Name'];
 
 /*
  ============================================================================================================
@@ -1274,6 +1327,49 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME							= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name'];
+$_Application_Module_Member_Messenger_POST_SELECT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_HIDDEN						= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Select_Room_Name_Hidden'];
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_MESSAGE							= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Message'];
+
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_ENTRY				= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Password_Entry'];
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD_MAINTENANCE				= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Password_Maintenance'];
+
+$_Application_Module_Member_Messenger_POST_GENERATE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_Generate'];
+
+$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Archive_Clear_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Member_Messenger_POST_ARCHIVE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD					= $_POST['AMM_Messenger_Visible_Archive_Clear_Text_File_Messenger_Room_Name_Password'];
+
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Erase_Clear_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Member_Messenger_POST_ERASE_VISIBLE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME_PASSWORD					= $_POST['AMM_Messenger_Erase_Clear_Text_File_Messenger_Room_Name_Password'];
+
+$_Application_Module_Member_Messenger_POST_DELETE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME							= $_POST['AMM_Messenger_Delete_Clear_Text_File_Messenger_Room_Name_Hidden'];
+$_Application_Module_Member_Messenger_POST_DELETE_CLEAR_TEXT_FILE_MESSENGER_ROOM_PASSWORD						= $_POST['AMM_Messenger_Delete_Clear_Text_File_Messenger_Room_Password'];
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_AUDIO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Audio'];
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_DOCUMENT_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Document'];
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_IMAGE_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Image'];
+
+$_Application_Module_Member_Messenger_UPLOAD_FILE_VIDEO_CLEAR_TEXT_FILE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Visible_Clear_Text_File_Messenger_Room_Name_File_Upload_Video'];
+
+$_Application_Module_Member_Messenger_POST_FIND_CLEAR_TEXT_FILE_INVISIBLE_MESSENGER_ROOM_NAME						= $_POST['AMM_Messenger_Clear_Text_File_Invisible_Messenger_Room_Name'];
+
+$_Application_Module_Member_Messenger_POST_FIND_SMS_RECIPIENT_NAME									= $_POST['AMM_Messenger_Find_Messenger_SMS_Recipient_Name'];
+$_Application_Module_Member_Messenger_POST_FIND_MMS_RECIPIENT_NAME									= $_POST['AMM_Messenger_Find_Messenger_MMS_Recipient_Name'];
+
+$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER									= $_POST['AMM_Messenger_SMS_Mobile_Device_Carrier'];
+$_Application_Module_Member_Messenger_POST_SMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER							= $_POST['AMM_Messenger_SMS_Mobile_Device_Carrier_Phone_Number'];
+$_Application_Module_Member_Messenger_POST_SMS_MESSAGE											= $_POST['AMM_Messenger_SMS_Message'];
+
+$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER									= $_POST['AMM_Messenger_MMS_Mobile_Device_Carrier'];
+$_Application_Module_Member_Messenger_POST_MMS_MOBILE_DEVICE_CARRIER_PHONE_NUMBER							= $_POST['AMM_Messenger_MMS_Mobile_Device_Carrier_Phone_Number'];
+$_Application_Module_Member_Messenger_POST_MMS_MESSAGE											= $_POST['AMM_Messenger_MMS_Message'];
+$_Application_Module_Member_Messenger_POST_MMS_MESSAGE_FILE_UPLOAD									= $_POST['AMM_Messenger_MMS_Message_File_Upload'];
+
+$_Application_Module_Member_Messenger_POST_VISIBLE_ENCRYPTED_TEXT_FILE_MESSENGER_MESSAGE						= $_POST['AMM_Messenger_Visible_Encrypted_Text_File_Messenger_Room_Message'];
+
 /*
  ============================================================================================================
  +
@@ -1298,6 +1394,18 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Members_Private_Files_POST_DELETE_FILE_IMAGE_PROFILE				= $_POST['AMM_Private_Files_Delete_File_Image_Profile'];
+$_Application_Module_Members_Private_Files_POST_DELETE_DIRECTORY_GALLERY_IMAGE				= $_POST['AMM_Private_Files_Delete_Directory_Gallery_Image'];
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_GALLERY_IMAGE				= $_POST['AMM_Private_Files_Upload_Directory_Gallery_Image'];
+
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_AUDIO				= $_POST['AMM_Private_Files_Create_Directory_Gallery_Audio'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_DOCUMENT			= $_POST['AMM_Private_Files_Create_Directory_Gallery_Document'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_IMAGE				= $_POST['AMM_Private_Files_Create_Directory_Gallery_Image'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_VIDEO				= $_POST['AMM_Private_Files_Create_Directory_Gallery_Video'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_VIDEO_LIVE			= $_POST['AMM_Private_Files_Create_Directory_Gallery_Video_Live'];
+
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY				= $_POST['AMM_Private_Files_Upload_Directory_Temporary'];
+
 /*
  ============================================================================================================
  +
@@ -1309,6 +1417,16 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_YEAR				= $_POST['AMM_Profile_Streams_Search_Archived_Date_Year'];
+$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_MONTH				= $_POST['AMM_Profile_Streams_Search_Archived_Date_Month'];
+$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_MONTH_DAY				= $_POST['AMM_Profile_Streams_Search_Archived_Date_Month_Day'];
+
+$_Application_Module_Member_Profile_POST_STREAM_NAME								= $_POST['AMM_Profile_Streams_Stream_Name'];
+$_Application_Module_Member_Profile_POST_STREAM_DATA								= $_POST['AMM_Profile_Streams_Stream_Data'];
+
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE							= $_POST['AMM_Profile_Streams_Upload_File'];
+$_Application_Module_Member_Profile_STREAMS_POST_UPLOAD_FILE_HIDDEN						= $_POST['AMM_Profile_Streams_Upload_File_Hidden'];
 
 /*
  ============================================================================================================
@@ -1334,6 +1452,31 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Member_Referrers_POST_SELECT_DATE_YEAR				= $_POST['AMM_Referrers_Specify_Date_Year'];
+$_Application_Module_Member_Referrers_POST_SELECT_DATE_MONTH				= $_POST['AMM_Referrers_Specify_Date_Month'];
+$_Application_Module_Member_Referrers_POST_SELECT_DATE_MONTH_DAY			= $_POST['AMM_Referrers_Specify_Date_Month_Day'];
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ @ ] Application :: Member :: Register
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Register_POST_REGISTRAR_FIRST_NAME				= $_POST['AMM_Register_Registrar_First_Name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_LAST_NAME				= $_POST['AMM_Register_Registrar_Last_Name'];
+$_Application_Module_Member_Register_POST_REGISTRAR_ELECTRONIC_MAIL_ADDRESS		= $_POST['AMM_Register_Registrar_Electronic_Mail_Address'];
+$_Application_Module_Member_Register_POST_REGISTRAR_BIRTHDATE				= $_POST['AMM_Register_Registrar_Birthdate'];
+$_Application_Module_Member_Register_POST_REGISTRAR_GENDER				= $_POST['AMM_Register_Registrar_Gender'];
+$_Application_Module_Member_Register_POST_REGISTRAR_USERNAME				= $_POST['AMM_Register_Registrar_UserName'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY				= $_POST['AMM_Register_Registrar_Random_Key'];
+$_Application_Module_Member_Register_POST_REGISTRAR_RANDOM_KEY_CHECK			= $_POST['AMM_Register_Registrar_Random_Key_Check'];
+
 /*
  ============================================================================================================
  +
@@ -1346,6 +1489,11 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  ============================================================================================================
 */
 
+$_Application_Module_Reset_Password_POST_ELECTRONIC_MAIL_ADDRESS	= $_POST['AMM_Reset_Password_Electronic_Mail_Address'];
+$_Application_Module_Reset_Password_POST_USERNAME			= $_POST['AMM_Reset_Password_UserName'];
+$_Application_Module_Reset_Password_POST_RECOVERY_KEY			= $_POST['AMM_Reset_Password_Recovery_Key'];
+$_Application_Module_Reset_Password_POST_PICTOGRAPHIC_TEXT		= $_POST['AMM_Reset_Password_Pictographic_Text'];
+
 /*
  ============================================================================================================
  +
@@ -1357,6 +1505,9 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Member_Search_POST_KEYWORD						= $_POST['AMM_Search_Search_Keyword'];
+$_Application_Module_Member_Search_POST_SECTION						= $_POST['AMM_Search_Search_Section'];
 
 /*
  ============================================================================================================
@@ -1381,6 +1532,8 @@ $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DAT
  +
  ============================================================================================================
 */
+
+$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE				= $_POST['AMM_Submit_News_Message_Data'];
 
 /*
  ============================================================================================================
