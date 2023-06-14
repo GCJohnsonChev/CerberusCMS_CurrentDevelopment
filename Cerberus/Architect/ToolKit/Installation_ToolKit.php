@@ -119,8 +119,8 @@ echo ("
 	
 if ($_GET["Application"] == "Unpack") {
 
-$_Installation_ToolKit_POST_ZIP_ARCHIVE_UNPACK_FILE			$_POST['Installation_ToolKit_Zip_Archive_Unpack_File'];
-$_Installation_ToolKit_POST_ZIP_ARCHIVE_UNPACK_FILE_LOCATION		$_POST['Installation_ToolKit_Zip_Archive_Unpack_File_Location'];
+$_Installation_ToolKit_POST_ZIP_ARCHIVE_UNPACK_FILE			= $_POST['Installation_ToolKit_Zip_Archive_Unpack_File'];
+$_Installation_ToolKit_POST_ZIP_ARCHIVE_UNPACK_FILE_LOCATION		= $_POST['Installation_ToolKit_Zip_Archive_Unpack_File_Location'];
 $_Installation_ToolKit_ZIP_Archive_Initialize				= new ZipArchive;
 $_Installation_ToolKit_ZIP_Archive_Unpack				= $_Installation_ToolKit_ZIP_Archive_Initialize->open('$_Installation_ToolKit_POST_ZIP_ARCHIVE_UNPACK');
 
