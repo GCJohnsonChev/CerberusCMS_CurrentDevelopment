@@ -488,11 +488,10 @@ $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE	
 
 /*
  ============================================================================================================
- + Limit, Replace Post Data
+ + Limit Post Data
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
 $_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE_LENGTH		= strlen($_Application_Module_Administration_Accounts_POST_SYSTEM_MESSAGE_MEMBER_MESSAGE);
 
 /*

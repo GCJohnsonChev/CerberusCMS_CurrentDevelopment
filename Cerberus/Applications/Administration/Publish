@@ -155,17 +155,6 @@ $_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE			= 
 
 /*
  ============================================================================================================ 
- + Character Replace
- ============================================================================================================ 
-*/
-
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_NAME);
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MOOD);
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Publish_POST_Publish_News_Article_AUTHOR_MUSIC);
-$_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Publish_POST_Publish_News_Article_TITLE);
-
-/*
- ============================================================================================================ 
  + Safe-Hyper-Text-Markup-Language Code && Smiley Code Replace
  ============================================================================================================ 
 */
@@ -282,14 +271,6 @@ $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME		= 
 $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE			= $_POST['AMA_Publish_Article_Title'];
 $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT			= $_POST['AMA_Publish_Article_Text'];
 
-/*
- ============================================================================================================ 
- + Character Replace
- ============================================================================================================ 
-*/
-
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_AUTHOR_NAME);
-$_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TITLE);
 $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT);
 $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Publish_POST_PUBLISH_ARTICLE_TEXT);
 
@@ -356,7 +337,7 @@ fwrite($_Application_Module_Administration_Publish_OPEN_ARTICLE_FILE, "$_Applica
 
 /*
  ============================================================================================================ 
- + Close Article File
+ + Close File: Article File
  ============================================================================================================ 
 */
 

@@ -76,15 +76,6 @@ $_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE	
 
 /*
  ============================================================================================================
- + Application Panel :: Installation Form :: Variables :: Character Replacement
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_FILE_NAME);
-$_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE					= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_INSTALL_APPLICATION_PANEL_TITLE);
-
-/*
- ============================================================================================================
  +
  + Install Application Panel Form
  +
@@ -247,15 +238,6 @@ $_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE				= $_P
 
 /*
  ============================================================================================================
- + Application Panel :: Update Slected Application Panel Form :: Variables :: Post Variables :: Character Replacement
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_NAME);
-$_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Panels_POST_UPDATE_PANEL_FILE_TITLE);
-
-/*
- ============================================================================================================
  + If Update Application Panel Form Has Not Executed, Display Form
  ============================================================================================================
 */
@@ -414,8 +396,8 @@ $DB->free($_Application_Module_Administration_Panels_DB_Query_SELECT_APPLICATION
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Panels_SPECIFY_APPLICATION_PANEL_UPLOAD_DIRECTORY 		= "./Applications/Panel/";
-$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE			= $_Application_Module_Administration_Panels_SPECIFY_APPLICATION_PANEL_UPLOAD_DIRECTORY . basename($_FILES['AMA_Panels_Upload_Application_Panel_File_Name']['name']);
+$_Application_Module_Administration_Panels_SPECIFY_APPLICATION_PANEL_DIRECTORY_UPLOAD 		= "./Applications/Panel/";
+$_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE			= $_Application_Module_Administration_Panels_SPECIFY_APPLICATION_PANEL_DIRECTORY_UPLOAD . basename($_FILES['AMA_Panels_Upload_Application_Panel_File_Name']['name']);
 $_Application_Module_Administration_Panels_POST_UPLOAD_APPLICATION_PANEL_FILE_TEMPORARY		= $_POST['AMA_Panels_Upload_Application_Panel_Temporary'];
 
 /*

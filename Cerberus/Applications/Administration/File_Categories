@@ -84,15 +84,6 @@ $_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_D
 
 /*
  ============================================================================================================
- + Post Variables :: File Category Name and Description :: Sanitization
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_NAME);
-$_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION		= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_INSTALL_FILE_CATEGORY_DESCRIPTION);
-
-/*
- ============================================================================================================
  + IF: Input Form Variables Have Not Executed, Display File Category Form
  ============================================================================================================
 */
@@ -136,7 +127,7 @@ if ($_Application_Module_Administration_File_Categories_DB_Query_INSTALL_CATEGOR
 
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
 
-} // [ + ] IF: S.Q.L. Query Install File Category Entry
+} // [ + ] IF: Database Server Query :: Install :: File Category Entry
 
 /*
  ============================================================================================================
@@ -151,7 +142,7 @@ $DB->free($_Application_Module_Administration_File_Categories_DB_Query_INSTALL_C
 /*
  ============================================================================================================
  +
- + Display Existing File Category Entries
+ + Display :: Existing File Category Entries
  +
  ============================================================================================================
 */
@@ -187,14 +178,26 @@ echo ("
 /*
  ============================================================================================================
  +
- + Delete File Category By ID
+ + IF: Internal Application: Delete :: File Category By ID
  +
  ============================================================================================================
 */
 
 if ($_GET["DeleteID"] == "$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID") {
 
+/*
+ ============================================================================================================
+ + Database Server Query :: Delete :: File Category Entry
+ ============================================================================================================
+*/
+
 $_Application_Module_Administration_File_Categories_DB_Query_DELETE_FILE_CATEGORY				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories WHERE id='$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Delete :: File Category Entry
+ ============================================================================================================
+*/
 
 if ($_Application_Module_Administration_File_Categories_DB_Query_DELETE_FILE_CATEGORY) {
 
@@ -213,7 +216,7 @@ $DB->free($_Application_Module_Administration_File_Categories_DB_Query_DELETE_FI
 /*
  ============================================================================================================
  +
- + Update File Category By ID
+ + IF: Internal Application: Update :: File Category Entry By ID
  +
  ============================================================================================================
 */
@@ -239,15 +242,6 @@ $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DE
 
 /*
  ============================================================================================================
- + Post Variables Character Sanitization
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME				= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME);
-$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION);
-
-/*
- ============================================================================================================
  + IF: Update Form Has Not Posted, Display Update Form
  ============================================================================================================
 */
@@ -269,11 +263,17 @@ echo ("
 
 /*
  ============================================================================================================
- + Update Form Has Posted, Update SQL Database Server Table Row Entry
+ + Update Form Has Posted, Update :: File Category Entry
  ============================================================================================================
 */
 
 $_Application_Module_Administration_File_Categories_DB_Query_UPDATE_CATEGORY					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_file_categories SET file_category_description='$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DESCRIPTION',file_category_title='$_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_NAME' WHERE id='$_Application_Module_Administration_File_Categories_LIST_FILE_CATEGORY_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Update :: File Category Entry
+ ============================================================================================================
+*/
 
 if ($_Application_Module_Administration_File_Categories_DB_Query_UPDATE_CATEGORY) {
 

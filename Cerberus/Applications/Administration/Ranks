@@ -143,18 +143,6 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_4			= $
 
 /*
  ============================================================================================================
- + Update :: Registered Member Account Ranks :: Variables :: Post Variables :: Female Ranks :: Sanitization
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_0			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_0);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_1			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_1);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_2			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_2);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_3			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_3);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_4			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_FEMALE_4);
-
-/*
- ============================================================================================================
  + Update :: Registered Member Account Ranks :: Form :: Variables :: Post Variables :: Male Ranks
  ============================================================================================================
 */
@@ -164,18 +152,6 @@ $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_1			= $_P
 $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_2			= $_POST['AMA_Ranks_Update_Rank_Male_2'];
 $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_3			= $_POST['AMA_Ranks_Update_Rank_Male_3'];
 $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_4			= $_POST['AMA_Ranks_Update_Rank_Male_4'];
-
-/*
- ============================================================================================================
- + Update :: Registered Member Account Ranks :: Variables :: Post Variables :: Male Ranks :: Sanitization
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_0			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_0);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_1			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_1);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_2			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_2);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_3			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_3);
-$_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_4			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Ranks_POST_UPDATE_RANK_GENDER_MALE_4);
 
 /*
  ============================================================================================================

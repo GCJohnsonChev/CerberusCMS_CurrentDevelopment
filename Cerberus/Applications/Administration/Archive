@@ -134,8 +134,8 @@ if (system("zip -r ./Applications/Administration/System_Archive/$_Application_Mo
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Archive_SPECIFY_ARCHIVE_DIRECTORY				= "./Applications/Administration/System_Archive/";
-$_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY				= opendir($_Application_Module_Administration_Archive_SPECIFY_ARCHIVE_DIRECTORY);
+$_Application_Module_Administration_Archive_FIND_ARCHIVE_DIRECTORY				= "./Applications/Administration/System_Archive/";
+$_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY				= opendir($_Application_Module_Administration_Archive_FIND_ARCHIVE_DIRECTORY);
 
 													echo ("<HR><CENTER><B>Existing Archives</B></CENTER><HR>");
 
@@ -161,12 +161,18 @@ echo ("
 /*
  ============================================================================================================
  +
- + Delete Archive Packages
+ + IF: Internal Application: Delete :: Archive
  +
  ============================================================================================================
 */
 
 if ($_GET["Delete"] == "$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY") {
+
+/*
+ ============================================================================================================
+ + IF: Delete :: Archive
+ ============================================================================================================
+*/
 
 if (unlink("./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY"))
 

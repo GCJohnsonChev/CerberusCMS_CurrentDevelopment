@@ -64,12 +64,11 @@
 											echo ("<CENTER><B>Install Forum</B></CENTER><HR>");
 
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE				= $_POST['AMA_Forum_Install_Forum_Title'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE				= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE);
 
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION			= $_POST['AMA_Forum_Install_Forum_Description'];
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
-
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
+
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL			= $_POST['AMA_Forum_Install_Forum_Access_Level'];
 
 /*
@@ -207,7 +206,6 @@ if ($_GET["UpdateForumID"] == "$_Application_Module_Administration_Forum_LIST_FO
 */
 
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE				= $_POST['AMA_Forum_Update_Forum_Title'];
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE				= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE);
 
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE				= $_POST['AMA_Forum_Update_Forum_Date'];
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL			= $_POST['AMA_Forum_Update_Forum_Access_Level'];
@@ -335,7 +333,6 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS);
 */
 
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE			= $_POST['AMA_Forum_Install_Forum_Topic_Title'];
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE			= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE);
 
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID			= $_POST['AMA_Forum_Install_Forum_Topic_ID'];
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL			= $_POST['AMA_Forum_Install_Forum_Topic_Access_Level'];
@@ -487,8 +484,6 @@ if ($_GET["UpdateTopicID"] == "$_Application_Module_Administration_Forum_LIST_FO
 */
 
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE				= $_POST['AMA_Forum_Update_Forum_Topic_Title'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE				= str_replace("'", "&#39;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE);
-
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE				= $_POST['AMA_Forum_Update_Forum_Topic_Date'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL			= $_POST['AMA_Forum_Update_Forum_Topic_Access_Level'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID			= $_POST['AMA_Forum_Update_Forum_Topic_Forum_ID'];
@@ -501,7 +496,7 @@ $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION			
 
 /*
  =============================================================================================================
- + Update Forum Topic Form
+ + IF: Update Forum Topic Input Form Variables HAVE NOT Executed, Display Input Form
  =============================================================================================================
 */
 

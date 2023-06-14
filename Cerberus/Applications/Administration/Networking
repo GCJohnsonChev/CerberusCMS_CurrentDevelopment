@@ -70,7 +70,6 @@
 */
 
 $_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING		= $_POST['AMA_Networking_Block_Internet_Protocol_Address_String'];
-$_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING);
 
 /*
  ============================================================================================================

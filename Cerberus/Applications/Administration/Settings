@@ -281,8 +281,8 @@ echo ("
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Settings_SPECIFY_THEME_DIRECTORY						= "./Theme/";
-$_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY						= opendir($_Application_Module_Administration_Settings_SPECIFY_THEME_DIRECTORY);
+$_Application_Module_Administration_Settings_FIND_THEME_DIRECTORY						= "./Theme/";
+$_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY						= opendir($_Application_Module_Administration_Settings_FIND_THEME_DIRECTORY);
 
 while (($_Application_Module_Administration_Settings_READ_THEME_DIRECTORY = readdir($_Application_Module_Administration_Settings_OPEN_THEME_DIRECTORY))) {
 

@@ -140,16 +140,6 @@ $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_DATA			= $_POST['
 
 /*
  ============================================================================================================
- + Sanitize Data
- ============================================================================================================
-*/
-
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_AUTHOR);
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TIME);
-$_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_ARTICLE_TITLE);
-
-/*
- ============================================================================================================
  + Safe-Hyper-Text-Markup-Language Code, Replace
  ============================================================================================================
 */
@@ -323,24 +313,18 @@ if ($_GET["UpdateLinkID"] == "$_Application_Module_Administration_Update_LIST_LI
 */
 
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR			= $_POST['AMA_Update_Link_Author'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_AUTHOR);
 
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION			= $_POST['AMA_Update_Link_Description'];
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_LINK_DESCRIPTION);
 
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME			= $_POST['AMA_Update_Link_Time'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TIME);
-
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE			= $_POST['AMA_Update_Link_Title'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_TITLE);
-
 $_Application_Module_Administration_Update_POST_UPDATE_LINK_URL				= $_POST['AMA_Update_Link_URL'];
-$_Application_Module_Administration_Update_POST_UPDATE_LINK_URL				= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_LINK_URL);
 
 /*
  ============================================================================================================
- + Update Link Entry Form
+ + Update :: Link Entry Form
  ============================================================================================================
 */
 
@@ -450,25 +434,16 @@ if ($_GET["UpdateNewsID"] == "$_Application_Module_Administration_Update_LIST_NE
 */
 
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR			= $_POST['AMA_Update_News_Author'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR);
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR			= $_POST['AMA_Update_News_Avatar'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AVATAR);
 
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA			= $_POST['AMA_Update_News_Data'];
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA);
 
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD			= $_POST['AMA_Update_News_Mood'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MOOD);
-
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC			= $_POST['AMA_Update_News_Music'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_MUSIC);
-
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME			= $_POST['AMA_Update_News_Time'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TIME);
-
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE			= $_POST['AMA_Update_News_Title'];
-$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE);
 
 /*
  ============================================================================================================
@@ -512,18 +487,18 @@ $_Application_Module_Administration_Update_DB_Query_UPDATE_NEWS				= $DB->query(
 
 if ($_Application_Module_Administration_Update_DB_Query_UPDATE_NEWS) {
 
-$_SPECIFY_NEWS_FILE						= "System/Printable/News/$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE.html";
-$_SPECIFY_NEWS_DATA	= "
+$_FIND_FILE_NEWS_ARTICLE						= "./System/Printable/News/$_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE.html";
+$_OPEN_FILE_NEWS_ARTICLE						= "
 Title: $_Application_Module_Administration_Update_POST_UPDATE_NEWS_TITLE<HR>
 $_Application_Module_Administration_Update_POST_UPDATE_NEWS_DATA
 <HR>
 Written by: $_Application_Module_Administration_Update_POST_UPDATE_NEWS_AUTHOR On: $_GLOBAL_DATE<BR>
 [ <A HREF=\"javascript:print();\">Print Page</A> ]";
 
-$_SPECIFY_NEWS_DATA						= stripslashes($_SPECIFY_NEWS_DATA);
-$_OPEN_NEWS_FILE						= fopen($_SPECIFY_NEWS_FILE, "w");
+$_OPEN_FILE_NEWS_ARTICLE						= stripslashes($_OPEN_FILE_NEWS_ARTICLE);
+$_OPEN_NEWS_FILE							= fopen($_FIND_FILE_NEWS_ARTICLE, "w");
 
-fwrite($_OPEN_NEWS_FILE, "$_SPECIFY_NEWS_DATA");
+fwrite($_OPEN_NEWS_FILE, "$_OPEN_FILE_NEWS_ARTICLE");
 fclose($_OPEN_NEWS_FILE);
 
 													echo ($_Application_Module_Administration_Message_Update_NEWS_UPDATED_SUCCESSFULLY);
@@ -677,16 +652,8 @@ $_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS	
 $_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME			= $_POST['AMA_Update_File_Time'];
 $_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE			= $_POST['AMA_Update_File_Title'];
 $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER			= $_POST['AMA_Update_File_Uploader'];
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_AUTHOR);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_CATEGORY);
 $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_CODE, $_GLOBAL_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
 $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION			= str_replace($_GLOBAL_SAFEHTML_SMILEYS, $_GLOBAL_SAFEHTML_SMILEYS_REP, $_Application_Module_Administration_Update_POST_UPDATE_FILE_DESCRIPTION);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_IMAGE);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_LOCATION);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS		= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_NUMBER_OF_DOWNLOADS);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TIME);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_TITLE);
-$_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Update_POST_UPDATE_FILE_UPLOADER);
 
 /*
  ============================================================================================================

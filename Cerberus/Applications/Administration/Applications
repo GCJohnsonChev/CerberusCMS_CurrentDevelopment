@@ -74,8 +74,6 @@ $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_P
 $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_PERMISSION_LOCATION_IP 	= $_POST['AMA_Applications_Install_Application_File_Permission_Location_IP'];
 $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_STATUS 			= $_POST['AMA_Applications_Install_Application_File_Status'];
 
-$_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_INSTALL_APPLICATION_FILE_NAME);
-
 /*
  ============================================================================================================
  +
@@ -199,6 +197,12 @@ application_file_timestamp_installation
 '$_GLOBAL_LOCAL_SERVER_DATE_TIMESTAMP'
 )");
 
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Insert :: Application Installation Data Into Database
+ ============================================================================================================
+*/
+
 if ($_Application_Module_Administration_Applications_DB_Query_Insert_Application) {
 
 											echo ($_Application_Module_Administration_Message_Applications_APPLICATION_INSTALL_SUCCESSFUL);
@@ -233,14 +237,14 @@ $DB->free($_Application_Module_Administration_Applications_DB_Query_Insert_Appli
  ============================================================================================================
 */
 
-$_Application_Module_Administration_Applications_FIND_DIRECTORY_APPLICATION_MEMBER			= "./Applications/Member/";
-$_Application_Module_Administration_Applications_UPLOAD_FILE 						= $_Application_Module_Administration_Applications_FIND_DIRECTORY_APPLICATION_MEMBER . basename($_FILES['AMA_Applications_Upload_Application_File_Name']['name']);
+$_Application_Module_Administration_Applications_FIND_DIRECTORY_UPLOAD_APPLICATION_MEMBER		= "./Applications/Member/";
+$_Application_Module_Administration_Applications_FILE_UPLOAD 						= $_Application_Module_Administration_Applications_FIND_DIRECTORY_UPLOAD_APPLICATION_MEMBER . basename($_FILES['AMA_Applications_Upload_Application_File_Name']['name']);
 $_Application_Module_Administration_Applications_POST_UPLOAD_DIRECTORY_TEMPORARY 			= $_POST['AMA_Applications_Upload_Temporary'];
 
 /*
  ============================================================================================================
  +
- + Display :: Upload Application :: Input Form
+ + Display Upload Application Form
  +
  ============================================================================================================
 */
@@ -258,7 +262,7 @@ echo ("
 
 } else {
 
-if (move_uploaded_file($_FILES['AMA_Applications_Upload_Application_File_Name']['tmp_name'], $_Application_Module_Administration_Applications_UPLOAD_FILE)) {
+if (move_uploaded_file($_FILES['AMA_Applications_Upload_Application_File_Name']['tmp_name'], $_Application_Module_Administration_Applications_FILE_UPLOAD)) {
 
 													echo ($_Application_Module_Administration_Message_Applications_APPLICATION_UPLOAD_SUCCESSFUL);
 
@@ -279,6 +283,12 @@ if (move_uploaded_file($_FILES['AMA_Applications_Upload_Application_File_Name'][
 $_Application_Module_Administration_Applications_DB_Query_Select_Application_File			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications ORDER BY application_file_name ASC");
 
 											echo ("<HR><CENTER><B>Existing Application Entries</B></CENTER><HR>");
+
+/*
+ ============================================================================================================
+ + WHILE: Retrieving :: Application Module Entries From Database Management System Server Database
+ ============================================================================================================
+*/
 
 while ($_Application_Module_Administration_Applications_DB_Query_Select_Application_File_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Applications_DB_Query_Select_Application_File)) {
 
@@ -319,11 +329,17 @@ if ($_GET["Delete"] == "$_Application_Module_Administration_Applications_LIST_AP
 
 /*
  ============================================================================================================
- + Delete Application Module Database Entry From S.Q.L. Database
+ + Database Server Query :: Delete :: Application Module Entry
  ============================================================================================================
 */
 
 $_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Delete :: Application Module Entry
+ ============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Applications_DB_Query_Delete_Application_ID) {
 
@@ -333,7 +349,7 @@ if ($_Application_Module_Administration_Applications_DB_Query_Delete_Application
 
 											echo ($_Message_ERROR_ACTION_UNIVERSAL);
 
-} // [ + ] IF: S.Q.L. Query Delete Application Entry
+} // [ + ] IF: Database Server Query :: Delete :: Application Module Entry
 
 /*
  ============================================================================================================
@@ -374,13 +390,18 @@ $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PE
 $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_LOCATION_IP 	= $_POST['AMA_Applications_Update_Application_File_Permission_Location_IP'];
 $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS 			= $_POST['AMA_Applications_Update_Application_File_Status'];
 
-$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME);
+/*
+ ============================================================================================================
+ + IF: Update Application File Variables HAVE NOT Executed
+ ============================================================================================================
+*/
 
 if (!$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_NAME) {
+
 /*
  ============================================================================================================
  +
- + Display Update Application Form
+ + Display :: Update Application Form
  +
  ============================================================================================================
 */
@@ -437,9 +458,7 @@ echo ("
 
 /*
  ============================================================================================================
- +
- + Update Application Module Database Query
- +
+ + Database Server Query :: Update :: Application Module Entry
  ============================================================================================================
 */
 
@@ -453,6 +472,12 @@ application_file_permission_location_geo='$_Application_Module_Administration_Ap
 application_file_permission_location_internet_protocol_address='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_PERMISSION_LOCATION_IP',
 application_file_status='$_Application_Module_Administration_Applications_POST_UPDATE_APPLICATION_FILE_STATUS' WHERE id='$_Application_Module_Administration_Applications_LIST_APPLICATION_ID'");
 
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Update :: Application Module Entry
+ ============================================================================================================
+*/
+
 if ($_Application_Module_Administration_Applications_DB_Query_Update_Application_ID) {
 
 													echo ($_Application_Module_Administration_Message_Applications_APPLICATION_UPDATE_SUCCESSFUL);
@@ -461,7 +486,7 @@ if ($_Application_Module_Administration_Applications_DB_Query_Update_Application
 
 													echo ($_Message_ERROR_ACTION_UNIVERSAL);
 
-} // [ + ] IF: S.Q.L. Query Update Application Module Database Entry
+} // [ + ] IF: Database Server Query :: Update :: Application Module Database Entry
 
 /*
  ============================================================================================================
@@ -471,11 +496,11 @@ if ($_Application_Module_Administration_Applications_DB_Query_Update_Application
 
 $DB->free($_Application_Module_Administration_Applications_DB_Query_Update_Application_ID);
 
-} // [ + ] IF: Internal Application: Update Application Module
+} // [ + ] IF: Internal Application: Update :: Application Module
 
-} // [ + ] IF: Update Application Database Entry
+} // [ + ] IF: Database Server Query :: Update :: Application Database Entry
 
-} // [ + ] WHILE: Retrieving S.Q.L. Application Data From Database
+} // [ + ] WHILE: Retrieving S.Q.L. Application Data From Database Management System Server
 
 /*
  ============================================================================================================

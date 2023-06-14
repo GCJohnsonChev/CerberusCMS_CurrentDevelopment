@@ -317,9 +317,8 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_LINKS);
 */
 
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_NAME 			= $_POST['AMA_Web_Pages_Install_Web_Page_Name'];
-$_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_NAME 			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_NAME);
-
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_DATA 			= $_POST['AMA_Web_Pages_Install_Web_Page_Data'];
+
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_DATA 			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_DATA);
 $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_DATA 			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Web_Pages_POST_INSTALL_CUSTOM_APPLICATION_DATA);
 
@@ -378,7 +377,7 @@ $DB->free($_Application_Module_Administration_Web_Pages_DB_Query_INSTALL_CUSTOM_
 
 $_Application_Module_Administration_Web_Pages_DB_Query_SELECT_CUSTOM_APPLICATIONS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_applications_custom ORDER BY custom_application_name ASC");
 
-echo ("											<BR><HR><CENTER><B>Existing Custom Application Entries</B></CENTER><HR>");
+echo ("<BR><HR><CENTER><B>Existing Custom Application Entries</B></CENTER><HR>");
 
 while ($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_CUSTOM_APPLICATIONS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Web_Pages_DB_Query_SELECT_CUSTOM_APPLICATIONS)) {
 
@@ -451,8 +450,6 @@ if ($_GET["UpdateCustomApplicationID"] == "$_Application_Module_Administration_W
 */
 
 $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_NAME			= $_POST['AMA_Web_Pages_Update_Custom_Application_Name'];
-$_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_NAME			= preg_replace("/'/","&#39;", $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_NAME);
-
 $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_DATA			= $_POST['AMA_Web_Pages_Update_Custom_Application_Data'];
 $_Application_Module_Administration_Web_Pages_POST_UPDATE_CUSTOM_APPLICATION_TIME			= $_POST['AMA_Web_Pages_Update_Custom_Application_Timestamp'];
 
