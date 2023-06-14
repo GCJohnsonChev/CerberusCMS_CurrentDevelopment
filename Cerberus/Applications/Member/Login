@@ -83,16 +83,6 @@ $_Application_Module_Member_Login_POST_AUTHORIZATION_USERNAME					= $_POST['AMM_
 
 /*
  ============================================================================================================
- + Application Module :: Member :: Login :: Variables :: POST :: Data Sanitization
- ============================================================================================================
-*/
-
-$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS			= preg_replace("/'/","#", $_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS);
-$_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS			= preg_replace("/'/","#", $_Application_Module_Member_Login_POST_AUTHORIZATION_ELECTRONIC_MAIL_ADDRESS);
-$_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN		= preg_replace("/'/","#", $_Application_Module_Member_Login_POST_AUTHORIZATION_INTERNET_PROTOCOL_ADDRESS_TOKEN);
-
-/*
- ============================================================================================================
  + Application Module :: Member :: Login :: Variables :: POST :: String Conversion
  ============================================================================================================
 */

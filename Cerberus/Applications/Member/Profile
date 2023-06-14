@@ -466,9 +466,9 @@ $_Application_Module_Member_Profile_LIST_MEMBER_ACCOUNT_CURRENT_INTERNET_PROTOCO
  ============================================================================================================
 */
 
-$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_YEAR				= $_POST['AMM_Profile_Streams_Search_Archived_Date_Year'];
-$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_MONTH				= $_POST['AMM_Profile_Streams_Search_Archived_Date_Month'];
-$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_MONTH_DAY				= $_POST['AMM_Profile_Streams_Search_Archived_Date_Month_Day'];
+$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_YEAR					= $_POST['AMM_Profile_Streams_Search_Archived_Date_Year'];
+$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_MONTH					= $_POST['AMM_Profile_Streams_Search_Archived_Date_Month'];
+$_Application_Module_Member_Profile_STREAMS_SEARCH_POST_SELECT_DATE_MONTH_DAY					= $_POST['AMM_Profile_Streams_Search_Archived_Date_Month_Day'];
 
 /*
  ============================================================================================================

@@ -154,17 +154,6 @@ $_Application_Module_Member_Links_POST_LINK_DESCRIPTION						= $_POST['AMM_Links
 
 /*
  ============================================================================================================
- + Post Variables Character Replace
- ============================================================================================================
-*/
-
-$_Application_Module_Member_Links_POST_LINK_TITLE						= str_replace("<", "&lt;", $_Application_Module_Member_Links_POST_LINK_TITLE);
-$_Application_Module_Member_Links_POST_LINK_TITLE						= str_replace("'", "&#39;", $_Application_Module_Member_Links_POST_LINK_TITLE);
-$_Application_Module_Member_Links_POST_LINK_URL							= str_replace("<", "&lt;", $_Application_Module_Member_Links_POST_LINK_URL);
-$_Application_Module_Member_Links_POST_LINK_URL							= str_replace("'", "&#39;", $_Application_Module_Member_Links_POST_LINK_URL);
-
-/*
- ============================================================================================================
  + Safe Hyper-Text-Markup-Language Code And Smileys
  ============================================================================================================
 */

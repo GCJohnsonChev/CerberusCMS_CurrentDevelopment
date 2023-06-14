@@ -82,8 +82,6 @@
 */
 
 $_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE				= $_POST['AMM_Submit_News_Message_Data'];
-$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE				= preg_replace("/'/","&#39;", $_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE);
-$_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE				= preg_replace("/</","&lt;", $_Application_Module_Member_Submit_News_POST_NEWS_MESSAGE);
 
 /*
  ============================================================================================================

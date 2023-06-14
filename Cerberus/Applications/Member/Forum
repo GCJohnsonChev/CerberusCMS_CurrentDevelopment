@@ -478,9 +478,7 @@ if ($_GET["Display"] == "Create_Topic") {
 
 $_Application_Module_Member_Forum_DB_Query_SELECT_FORUM_FORUM				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum WHERE forum_access_level='1'");
 
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= $_POST['AMM_Forum_Create_Topic_Title'];
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("'","&#39;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
-$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= str_replace("<","&lt;", $_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE);
+$_Application_Module_Member_Forum_POST_CREATE_TOPIC_TITLE				= $_POST['AMM_Forum_Create_Topic_Title'];			
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= $_POST['AMM_Forum_Create_Topic_Description'];
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);
 $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Forum_POST_CREATE_TOPIC_DESCRIPTION);

@@ -75,9 +75,9 @@
  ============================================================================================================
 */
 
-$_Application_Module_Webspace_SPECIFY_MEMBER_INDEX				= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/index.html";
-$_Application_Module_Webspace_OPEN_MEMBER_INDEX_FILE				= fopen($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX, "r");
-$_Application_Module_Webspace_READ_MEMBER_INDEX_FILE				= fread($_Application_Module_Webspace_OPEN_MEMBER_INDEX_FILE, filesize($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX));
+$_Application_Module_Webspace_FIND_FILE_MEMBER_INDEX				= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/index.html";
+$_Application_Module_Webspace_OPEN_FILE_MEMBER_INDEX				= fopen($_Application_Module_Webspace_FIND_FILE_MEMBER_INDEX, "r");
+$_Application_Module_Webspace_READ_FILE_MEMBER_INDEX				= fread($_Application_Module_Webspace_OPEN_FILE_MEMBER_INDEX, filesize($_Application_Module_Webspace_FIND_FILE_MEMBER_INDEX));
 
 /*
  ============================================================================================================
@@ -104,7 +104,7 @@ $_Application_Module_Webspace_POST_WEBSPACE_DATA				= preg_replace("/<\/OBJECT>/
 /*
  ============================================================================================================
  +
- + Update Member Account Webspace Form
+ + Update :: Member Account Webspace Form
  +
  ============================================================================================================
 */
@@ -113,7 +113,7 @@ if (!$_Application_Module_Webspace_POST_WEBSPACE_DATA) {
 
 echo ("
 												<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Webspace\" METHOD=\"post\">
-													<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AMM_Web_Space_Update_Web_Page_Data\">$_Application_Module_Webspace_READ_MEMBER_INDEX_FILE</TEXTAREA><BR>
+													<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AMM_Web_Space_Update_Web_Page_Data\">$_Application_Module_Webspace_READ_FILE_MEMBER_INDEX</TEXTAREA><BR>
 													<INPUT TYPE=\"submit\" VALUE=\"Update Web Page\">
 												</FORM>
 ");
@@ -124,13 +124,13 @@ echo ("
  ============================================================================================================
 */
 
-fclose($_Application_Module_Webspace_OPEN_MEMBER_INDEX_FILE);
+fclose($_Application_Module_Webspace_OPEN_FILE_MEMBER_INDEX);
 
 } else {
 
-$_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE			= fopen("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/index.html", "w");
+$_Application_Module_Webspace_FIND_FILE_MEMBER_INDEX_FOR_WRITE			= fopen("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/index.html", "w");
 
-if (fwrite($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE, $_Application_Module_Webspace_POST_WEBSPACE_DATA)) {
+if (fwrite($_Application_Module_Webspace_FIND_FILE_MEMBER_INDEX_FOR_WRITE, $_Application_Module_Webspace_POST_WEBSPACE_DATA)) {
 
 											echo ($_Application_Module_Member_Message_Webspace_UPDATE_SUCCESSFUL);
 
@@ -146,7 +146,7 @@ if (fwrite($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE, $_Appli
  ============================================================================================================
 */
 
-fclose($_Application_Module_Webspace_SPECIFY_MEMBER_INDEX_FOR_WRITE);
+fclose($_Application_Module_Webspace_FIND_FILE_MEMBER_INDEX_FOR_WRITE);
 
 } // [ + ] IF: Member Account Web Page Data From Variables Have Executed
 ?>

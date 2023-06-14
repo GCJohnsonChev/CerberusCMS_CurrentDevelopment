@@ -107,13 +107,13 @@ echo ("
 
 if (mail($_ACCESS_ELECTRONIC_MAIL_ADDRESS_SYSTEM_ADMINISTRATOR,"Report From ~ $_GLOBAL_SYSTEM_SITE_TITLE","
 Dear $_ACCESS_ELECTRONIC_MAIL_ADDRESS_SYSTEM_ADMINISTRATOR,
-=============================================================
-[ $_Application_Module_Member_Contact_Administrator_POST_NAME | $_Application_Module_Member_Contact_Administrator_POST_ELECTRONIC_MAIL_ADDRESS ] has sent you this Non-Encrypted Electronic Mail Message from the Contact Systems Administrator Application Module:
+----------------------------------------------------------------
+$_Application_Module_Member_Contact_Administrator_POST_NAME | $_GLOBAL_COOKIE_MEMBER_USERNAME has sent you this Non-Encrypted Electronic Mail Message from the Contact Systems Administrator Application Module:
 
 $_Application_Module_Member_Contact_Administrator_POST_MESSAGE
 
-The Internet Protocol Address associated with the Electronic Mail Message is: [ $_GLOBAL_REMOTE_SERVER_ADDRESS ] :: [ $_GLOBAL_COOKIE_MEMBER_USERNAME ]
-=============================================================
+The Internet Protocol Address associated with the Electronic Mail Message is: $_GLOBAL_REMOTE_SERVER_ADDRESS :: $_GLOBAL_COOKIE_MEMBER_USERNAME
+----------------------------------------------------------------
 Have a nice day,
 
 - $_PROJECT_STRING_NAME_ROBOT_ELECTRONIC_MAIL

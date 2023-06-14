@@ -197,18 +197,6 @@ $_Application_Module_Private_Message_POST_MESSAGE_DATA 						= $_POST['AMM_Priva
 
 /*
  ============================================================================================================
- + Character Replace
- ============================================================================================================
-*/
-
-$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT					= str_replace("<", "&lt;", $_Application_Module_Private_Message_POST_MESSAGE_SUBJECT);
-$_Application_Module_Private_Message_POST_MESSAGE_SUBJECT					= str_replace("'", "&#39;", $_Application_Module_Private_Message_POST_MESSAGE_SUBJECT);
-
-$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= str_replace("<", "&lt;", $_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT);
-$_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT					= str_replace("'", "&#39;", $_Application_Module_Private_Message_POST_MESSAGE_RECIPIENT);
-
-/*
- ============================================================================================================
  + SafeHTML Code && Smileys
  ============================================================================================================
 */

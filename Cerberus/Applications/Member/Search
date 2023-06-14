@@ -73,11 +73,6 @@
 
 $_Application_Module_Member_Search_POST_KEYWORD						= $_POST['AMM_Search_Search_Keyword'];
 $_Application_Module_Member_Search_POST_SECTION						= $_POST['AMM_Search_Search_Section'];
-$_Application_Module_Member_Search_POST_KEYWORD_REPLACE[0]				= "'";
-$_Application_Module_Member_Search_POST_KEYWORD_REPLACE[1]				= "\"";
-$_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH[0]				= "&#39;";
-$_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH[0]				= "&quot;";
-$_Application_Module_Member_Search_POST_KEYWORD						= str_replace($_Application_Module_Member_Search_POST_KEYWORD_REPLACE, $_Application_Module_Member_Search_POST_KEYWORD_REPLACE_WITH, $_Application_Module_Member_Search_POST_KEYWORD);
 
 if ((!$_Application_Module_Member_Search_POST_KEYWORD) || (!$_Application_Module_Member_Search_POST_SECTION)) {
 

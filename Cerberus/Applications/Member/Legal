@@ -67,15 +67,15 @@
  ============================================================================================================
 */
 
-$_LEGAL_DOCUMENT							= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Text/Legal.txt";
+$_FIND_FILE_LEGAL_DOCUMENT							= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Text/Legal.txt";
 
-if (file_exists($_LEGAL_DOCUMENT)) {
+if (file_exists($_FIND_FILE_LEGAL_DOCUMENT)) {
 
-											include_once "$_LEGAL_DOCUMENT";
+											include_once "$_FIND_FILE_LEGAL_DOCUMENT";
 
 } else {
 
-											echo ("Missing: $_LEGAL_DOCUMENT");
+											echo ("Missing: $_FIND_FILE_LEGAL_DOCUMENT");
 
 } // [ + ] IF: File Exists: Specified Legal Document File
 ?>
