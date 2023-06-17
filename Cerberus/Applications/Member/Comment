@@ -1,0 +1,332 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Rosedale In Southern California, U.S.A.
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Rosedale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Comment
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Comment
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Comment_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Comment :: Grab :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Comment :: Grab :: Variables :: Application Module
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_POST_APPLICATION_ID					= $_POST['AMM_Comment_Application_ID'];
+$_Application_Module_Member_Comment_POST_APPLICATION_NAME				= $_POST['AMM_Comment_Application_Name'];
+
+/*
+ ============================================================================================================
+ + Comment :: Grab :: Variables :: Comment Data
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_POST_COMMENT_DATA					= $_POST['AMM_Comment_Comment_Data'];
+
+/*
+ ============================================================================================================
+ + Comment :: Grab :: Variables :: Comment Data :: String Replacements
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_POST_COMMENT_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_COMMENT_DATA);
+$_Application_Module_Member_Comment_POST_COMMENT_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_COMMENT_DATA);
+
+/*
+ ============================================================================================================
+ + IF: Comment :: Variables :: POST Variables :: !Application Module Name, Appplication Module ID, Comment Data
+ ============================================================================================================
+*/
+
+if ((!$_Application_Module_Member_Comment_POST_APPLICATION_NAME) || (!$_Application_Module_Member_Comment_POST_APPLICATION_ID) || (!$_Application_Module_Member_Comment_POST_COMMENT_DATA)) {
+/**
+ * Do Nothing
+**/
+} else {
+
+/*
+ ============================================================================================================
+ + Database Server Query :: Insert :: Comment Entry
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments(comment_author,comment_data,comment_application_id,comment_application_name,comment_time)VALUES('$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Member_Comment_POST_COMMENT_DATA','$_Application_Module_Member_Comment_POST_APPLICATION_ID','$_Application_Module_Member_Comment_POST_APPLICATION_NAME','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD')");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Insert :: Comment Entry
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT) {
+
+											echo ($_Application_Module_Member_Message_Comment_ADD);
+
+											header("Location: $_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Files&FileID=$_Application_Module_Member_Comment_POST_APPLICATION_ID");
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Comment_ADD_ERROR);
+
+} // [ + ] IF: Database Server Query: Insert :: Comment :: Variable :: HAS Executed 
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Insert Comment
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Comment_DB_Query_INSERT_COMMENT);
+
+} // [ + ] IF: Comment :: Variables :: HAVE Executed
+
+/*
+ ============================================================================================================
+ +
+ + List Comment Entries
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Database Server Query: Select :: All Comment Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments WHERE comment_author='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+/*
+ ============================================================================================================
+ + WHILE: Retrieving :: All Comment Entries :: From The Database Management System Server Database
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT)) {
+
+$_Application_Module_Member_Comment_LIST_COMMENT_ID					= $_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT_Fetch_Array['id'];
+$_Application_Module_Member_Comment_LIST_COMMENT_APPLICATION_ID				= $_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT_Fetch_Array['comment_application_id'];
+$_Application_Module_Member_Comment_LIST_COMMENT_AUTHOR					= $_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT_Fetch_Array['comment_author'];
+$_Application_Module_Member_Comment_LIST_COMMENT_DATA					= $_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT_Fetch_Array['comment_data'];
+
+$_Application_Module_Member_Comment_LIST_COMMENT_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK, $_GLOBAL_PLUGIN_SAFEHTML_CODE_BACK_REPLACE, $_Application_Module_Member_Comment_LIST_COMMENT_DATA);
+$_Application_Module_Member_Comment_LIST_COMMENT_DATA					= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_BACK_REPLACE, $_Application_Module_Member_Comment_LIST_COMMENT_DATA);
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application: Update :: Selected Comment ID
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["UpdateCommentID"] == "$_Application_Module_Member_Comment_LIST_COMMENT_ID") {
+
+/*
+ ============================================================================================================
+ +
+ + Update :: Comment :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Update :: Comment :: Variables :: POST Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= $_POST['AMM_Comment_Update_Comment_Data'];
+
+/*
+ ============================================================================================================
+ + Update :: Comment :: Variables :: POST Variables :: String Replacements
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA);
+
+/*
+ ============================================================================================================
+ +
+ + Update :: Comment Entry
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Update :: Comment Entry :: Input Form :: Variables :: HAVE NOT Executed, Display :: Input Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA) {
+
+echo ("
+											<CENTER><B>Update Comment Entry</B></CENTER><HR>
+												$_GLOBAL_PLUGIN_SYSTEM_TEXTEDITOR_BUTTONS
+												<BR><BR>Update Comment<BR>
+													<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Comment&amp;UpdateCommentID&#61;$_Application_Module_Member_Comment_LIST_COMMENT_ID\" METHOD=\"post\">
+														<TEXTAREA ROWS=\"15\" COLS=\"75\" NAME=\"AMM_Comment_Update_Comment_Data\" ID=\"WYSIWYG\">$_Application_Module_Member_Comment_LIST_COMMENT_DATA</TEXTAREA><BR>
+														<INPUT TYPE=\"submit\" VALUE=\"Update Comment\">
+													</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Database Server Query: Update :: Comment Entry
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments SET comment_data='$_Application_Module_Member_Comment_POST_UPDATE_COMMENT_DATA' WHERE id='$_Application_Module_Member_Comment_LIST_COMMENT_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query: Update :: Comment Entry
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT) {
+
+											echo ($_Application_Module_Member_Message_Comment_UPDATE);
+
+											header("Location: $_INTERNAL_FILE_KERNEL?$_INTERNAL_APPLICATION_MODULE_MEMBER=Files&FileID=$_Application_Module_Member_Comment_LIST_COMMENT_APPLICATION_ID");
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Comment_UPDATE_ERROR);
+
+} // [ + ] IF: Database Server Query: Update :: Comment :: Variable :: HAS Executed
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Update Comment Message
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Comment_DB_Query_UPDATE_COMMENT);
+
+} // [ + ] IF: Update :: Comment :: Input Form :: Variables :: HAVE Executed
+
+} // [ + ] IF: Internal Application: Update :: Comment Entry By ID :: Is: Activated
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application: Delete :: Selected Comment ID
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteCommentID"] == "$_Application_Module_Member_Comment_LIST_COMMENT_ID") {
+
+/*
+ ============================================================================================================
+ + Database Server Query: Delete :: Comment Entry
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_comments WHERE id='$_Application_Module_Member_Comment_LIST_COMMENT_ID' AND comment_author='$_GLOBAL_COOKIE_MEMBER_USERNAME'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query: Delete :: Comment Entry
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT) {
+											echo ($_Application_Module_Member_Message_Comment_DELETE);
+} else {
+
+											echo ($_Application_Module_Member_Message_Comment_DELETE_ERROR);
+
+} // [ + ] IF: Database Server Query: Delete :: Comment Entry :: Variable :: HAS Executed
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete Comment Entry
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Comment_DB_Query_DELETE_COMMENT);
+
+} // [ + ] IF: Internal Application: Delete :: Comment By ID :: Is: Activated
+
+} // [ + ] WHILE: Retrieving :: Comment Entries From Database Server
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select :: All From :: All Comment Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Comment_DB_Query_SELECT_COMMENT);
+?>
