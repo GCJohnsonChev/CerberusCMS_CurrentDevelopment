@@ -160,7 +160,7 @@ if (strlen($_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPT
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM 				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum(forum_access_level,forum_date,forum_description,forum_title)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE')");
+$_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM 				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum(forum_access_level,forum_description,forum_timestamp,forum_title)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE')");
 
 /*
  =============================================================================================================
@@ -263,11 +263,10 @@ if ($_GET["UpdateForumID"] == "$_Application_Module_Administration_Forum_LIST_FO
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE				= $_POST['AMA_Forum_Update_Forum_Title'];
-
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE				= $_POST['AMA_Forum_Update_Forum_Date'];
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL			= $_POST['AMA_Forum_Update_Forum_Access_Level'];
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION				= $_POST['AMA_Forum_Update_Forum_Description'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP				= $_POST['AMA_Forum_Update_Forum_Timestamp'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE				= $_POST['AMA_Forum_Update_Forum_Title'];
 
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION);
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION				= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION);
@@ -297,7 +296,7 @@ echo ("
 															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Title\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TITLE\" MAXLENGTH=\"250\"><BR><BR>
 
 														Update Forum :: Installation Timestamp<BR>
-															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Date\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_DATE\" MAXLENGTH=\"250\"><BR><BR>
+															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Timestamp\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_DATE\" MAXLENGTH=\"250\"><BR><BR>
 
 														Update Forum :: Access Level<BR>
 															<SELECT NAME=\"AMA_Forum_Update_Access_Level\">
@@ -324,7 +323,7 @@ echo ("
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum SET forum_access_level='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL',forum_date='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE',forum_description='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION',forum_title='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE' WHERE id='$_Application_Module_Administration_Forum_LIST_FORUM_ID'");
+$_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum SET forum_access_level='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL',forum_description='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION',forum_timestamp='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP',forum_title='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE' WHERE id='$_Application_Module_Administration_Forum_LIST_FORUM_ID'");
 
 /*
  =============================================================================================================
@@ -370,7 +369,7 @@ if ($_GET["DeleteForumID"] == "$_Application_Module_Administration_Forum_LIST_FO
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM					= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_ID'");
+$_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM					= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum WHERE id='$_Application_Module_Administration_Forum_LIST_FORUM_ID'");
 
 /*
  =============================================================================================================
@@ -509,7 +508,7 @@ echo ("
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_date,topic_description,topic_forum_id,topic_last_post,topic_last_poster,topic_title)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE')");
+$_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_description,topic_forum_id,topic_last_poster,topic_timestamp,topic_timestamp_last_message,topic_title)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID','$_GLOBAL_COOKIE_MEMBER_USERNAME','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE')");
 
 /*
  =============================================================================================================
@@ -606,13 +605,13 @@ if ($_GET["UpdateTopicID"] == "$_Application_Module_Administration_Forum_LIST_FO
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE				= $_POST['AMA_Forum_Update_Forum_Topic_Title'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE				= $_POST['AMA_Forum_Update_Forum_Topic_Date'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL			= $_POST['AMA_Forum_Update_Forum_Topic_Access_Level'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION			= $_POST['AMA_Forum_Update_Forum_Topic_Description'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID			= $_POST['AMA_Forum_Update_Forum_Topic_Forum_ID'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST			= $_POST['AMA_Forum_Update_Forum_Topic_Last_Post'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER			= $_POST['AMA_Forum_Update_Forum_Topic_Last_Poster'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION			= $_POST['AMA_Forum_Update_Forum_Topic_Description'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP			= $_POST['AMA_Forum_Update_Forum_Topic_Timestamp'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE				= $_POST['AMA_Forum_Update_Forum_Topic_Title'];
 
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION);
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION);
@@ -633,7 +632,7 @@ echo ("
 															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Topic_Title\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_TITLE\" MAXLENGTH=\"100\"><BR><BR>
 
 														Forum Topic :: Installation Timestamp<BR>
-															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Topic_Date\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_DATE\" MAXLENGTH=\"100\"><BR><BR>
+															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Topic_Timestamp\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_DATE\" MAXLENGTH=\"100\"><BR><BR>
 
 														Forum Topic :: Access Level<BR>
 															<SELECT NAME=\"AMA_Forum_Update_Forum_Topic_Access_Level\" MAXLENGTH=\"1\">
@@ -684,9 +683,6 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_UP
 echo ("
 															</SELECT><BR><BR>
 
-														Forum Topic :: Last Post<BR>
-															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Topic_Last_Post\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_LAST_POST\" MAXLENGTH=\"100\"><BR><BR>
-
 														Forum Topic :: Last Poster<BR>
 															<INPUT TYPE=\"TEXT\" NAME=\"AMA_Forum_Update_Forum_Topic_Last_Poster\" VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_LAST_POSTER\" MAXLENGTH=\"50\"><BR><BR>
 
@@ -705,7 +701,7 @@ echo ("
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic SET topic_access_level='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL',topic_date='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE',topic_description='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION',topic_forum_id='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID',topic_last_post='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST',topic_last_poster='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER',topic_title='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE' WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID'");
+$_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic SET topic_access_level='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL',topic_description='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION',topic_forum_id='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID',topic_last_poster='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER',topic_timestamp='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP',topic_timestamp_last_message='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP_LAST_MESSAGE',topic_title='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE' WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID'");
 
 /*
  =============================================================================================================
