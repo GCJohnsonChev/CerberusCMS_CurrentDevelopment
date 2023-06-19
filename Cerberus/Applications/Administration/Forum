@@ -803,7 +803,15 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_SELECT_TOPICS);
 
 /*
  =============================================================================================================
- + Create Post Form Variables
+ +
+ + Create :: Forum :: Forum Topic :: Forum Topic Message :: Input Form :: Variables
+ +
+ =============================================================================================================
+*/
+
+/*
+ =============================================================================================================
+ + Create :: Forum :: Forum Topic :: Forum Topic Message :: Input Form :: Variables :: POST Variables
  =============================================================================================================
 */
 
@@ -814,6 +822,12 @@ $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCES
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE);
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE);
 
+/*
+ =============================================================================================================
+ + IF: Create :: Forum :: Forum Topic :: Forum Topic Message :: Input Form :: Variables :: HAVE NOT Executed, Display :: Input Form
+ =============================================================================================================
+*/
+
 if ((!$_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID) || (!$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE)) {
 
 echo ("
@@ -823,13 +837,25 @@ echo ("
 													<SELECT NAME=\"AMA_Forum_Install_Forum_Topic_ID_Option\" MAXLENGTH=\"10\">
 ");
 
+/*
+ =============================================================================================================
+ + Database Server Query: Select :: All :: Forum :: Forum Topic :: Forum Topic Message Entries :: From The Database Management System Server Database
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_TOPIC_FOR_MESSAGE		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic ORDER BY id ASC");
+
+/*
+ =============================================================================================================
+ + WHILE: Retrieving: Forum :: Forum Topic :: Forum Topic Message Entries :: From The Database Management System Server Database
+ =============================================================================================================
+*/
 
 while ($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_TOPIC_FOR_MESSAGE_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_TOPIC_FOR_MESSAGE)) {
 
 /*
  =============================================================================================================
- + List Forum Topic Entries
+ + Retrieve :: Forum :: Forum Topic Entries
  =============================================================================================================
 */
 
@@ -840,7 +866,7 @@ echo ("
 													<OPTION VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID_FOR_MESSAGE\">$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_TITLE_FOR_MESSAGE</OPTION>
 ");
 
-} // [ + ] WHILE: Retrieving Forum Topic Message Entries
+} // [ + ] WHILE: Retrieving :: Forum :: Forum Topic Entries
 
 echo ("
 													</SELECT>
@@ -866,7 +892,19 @@ echo ("
 
 } else {
 
+/*
+ =============================================================================================================
+ + Database Server Query: Insert :: Forum :: Forum Topic :: Forum Topic Message Entry
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC_MESSAGE			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post(post_access_level,post_author,post_data,post_date,post_last_edit,post_topic_id)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCESS_LEVEL','$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID')");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Insert :: Forum :: Forum Topic :: Forum Topic Message Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC_MESSAGE) {
 
@@ -876,15 +914,15 @@ if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC_MESSA
 
 											echo ($_Application_Module_Administration_Message_Forum_FORUM_TOPIC_MESSAGE_POST_ERROR);
 
-} // [ + ] IF: Database Server Query: Install Forum Topic Entry Message
+} // [ + ] IF: Database Server Query: Insert :: Forum :: Forum Topic :: Forum Topic Message Entry
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Create Forum Topic Post Entry
+ + Kill SQL Database Server Query: Insert :: Forum :: Forum Topic :: Forum Topic Message Entry
  =============================================================================================================
 */
 
 $DB->free($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC_MESSAGE);
 
-} // [ + ] IF: Create Forum Topic Message Form Variables Have Executed
+} // [ + ] IF: Create :: Forum :: Forum Topic :: Forum Topic Message Entry :: Input Form :: Variables HAVE Executed
 ?>
