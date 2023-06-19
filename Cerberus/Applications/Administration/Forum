@@ -650,7 +650,19 @@ echo ("
 															<SELECT NAME=\"AMA_Forum_Update_Forum_Topic_Forum_ID\" MAXLENGTH=\"10\">
 ");
 
-$_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_UPDATE_TOPIC = $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum ORDER BY id ASC");
+/*
+ =============================================================================================================
+ + Database Server Query: Select :: All :: Forum Entries :: From The Database Management System Server
+ =============================================================================================================
+*/
+
+$_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_UPDATE_TOPIC		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum ORDER BY id ASC");
+
+/*
+ =============================================================================================================
+ + WHILE: Retrieving: All :: Forum Entries :: From The Database Management System Server Database
+ =============================================================================================================
+*/
 
 while ($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_UPDATE_TOPIC_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_UPDATE_TOPIC)) {
 
@@ -659,11 +671,11 @@ $_Application_Module_Administration_Forum_LIST_FORUM_UPDATE_TITLE				= $_Applica
 
 														echo ("<OPTION VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_UPDATE_ID\">$_Application_Module_Administration_Forum_LIST_FORUM_UPDATE_ID: $_Application_Module_Administration_Forum_LIST_FORUM_UPDATE_TITLE</OPTION>");
 
-} // [ + ] WHILE: Retrieving Forum Topic Entries From Database
+} // [ + ] WHILE: Retrieving :: All :: Forum Entries :: From The Database Management System Server Database
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Update Forum Topic
+ + Kill SQL Database Server Query: Select :: All :: Forum Entries
  =============================================================================================================
 */
 
@@ -686,6 +698,12 @@ echo ("
 ");
 
 } else {
+
+/*
+ =============================================================================================================
+ + Kill SQL Database Server Query: Select :: All :: Forum Entries
+ =============================================================================================================
+*/
 
 $_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic SET topic_access_level='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL',topic_date='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE',topic_description='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION',topic_forum_id='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID',topic_last_post='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST',topic_last_poster='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER',topic_title='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE' WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID'");
 
