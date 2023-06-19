@@ -701,11 +701,17 @@ echo ("
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Select :: All :: Forum Entries
+ + Database Server Query: Update :: Forum :: Forum Topic Entry
  =============================================================================================================
 */
 
 $_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC				= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic SET topic_access_level='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL',topic_date='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE',topic_description='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION',topic_forum_id='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID',topic_last_post='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST',topic_last_poster='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER',topic_title='$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE' WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID'");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Update :: Forum :: Forum Topic Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC) {
 
@@ -715,11 +721,11 @@ if ($_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC) {
 
 													echo ($_Application_Module_Administration_Message_Forum_FORUM_TOPIC_UPDATE_ERROR);
 
-} // [ + ] IF: Database Server Query: Update Forum Topic Entry
+} // [ + ] IF: Database Server Query: Update :: Forum Topic Entry
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Update Forum Topic
+ + Kill SQL Database Server Query: Update :: Forum Topic Entry
  =============================================================================================================
 */
 
@@ -732,14 +738,26 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM_TOPIC)
 /*
  =============================================================================================================
  +
- + IF: Internal Application: Delete :: Selected Forum Topic ID
+ + IF: Internal Application: Delete :: Selected Forum Topic Entry
  +
  =============================================================================================================
 */
 
 if ($_GET["DeleteTopicID"] == "$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID") {
 
+/*
+ =============================================================================================================
+ + Database Server Query: Delete :: Selected :: Forum :: Forum Topic Entry
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM_TOPIC					= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID'");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Delete :: Selected :: Forum :: Forum Topic Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM_TOPIC) {
 
