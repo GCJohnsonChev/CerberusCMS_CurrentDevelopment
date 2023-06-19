@@ -1494,7 +1494,7 @@ $_Application_Module_Administration_File_Categories_POST_UPDATE_FILE_CATEGORY_DE
  + [ @ ] Application :: Administration :: Forum
  +
  + Number of Variables :: GET  :: 
- + Number of Variables :: POST :: 21
+ + Number of Variables :: POST :: 20
  ============================================================================================================
 */
 
@@ -1510,7 +1510,7 @@ $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE						= $_POST
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION					= $_POST['AMA_Forum_Install_Forum_Description'];
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL					= $_POST['AMA_Forum_Install_Forum_Access_Level'];
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= $_POST['AMA_Forum_Update_Forum_Title'];
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= $_POST['AMA_Forum_Update_Forum_Date'];
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= $_POST['AMA_Forum_Update_Forum_Timestamp'];
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL					= $_POST['AMA_Forum_Update_Forum_Access_Level'];
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION						= $_POST['AMA_Forum_Update_Forum_Description'];
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE					= $_POST['AMA_Forum_Install_Forum_Topic_Title'];
@@ -1518,10 +1518,9 @@ $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID					
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL					= $_POST['AMA_Forum_Install_Forum_Topic_Access_Level'];
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION					= $_POST['AMA_Forum_Install_Forum_Topic_Description'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE						= $_POST['AMA_Forum_Update_Forum_Topic_Title'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= $_POST['AMA_Forum_Update_Forum_Topic_Date'];
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP					= $_POST['AMA_Forum_Update_Forum_Topic_Timestamp'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_ACCESS_LEVEL					= $_POST['AMA_Forum_Update_Forum_Topic_Access_Level'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_FORUM_ID					= $_POST['AMA_Forum_Update_Forum_Topic_Forum_ID'];
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POST					= $_POST['AMA_Forum_Update_Forum_Topic_Last_Post'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER					= $_POST['AMA_Forum_Update_Forum_Topic_Last_Poster'];
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION					= $_POST['AMA_Forum_Update_Forum_Topic_Description'];
 $_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID						= $_POST['AMA_Forum_Install_Forum_Topic_ID_Option'];
@@ -1598,36 +1597,36 @@ $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= str_rep
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= str_replace("_", "&lowbar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE);
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE						= str_replace("|", "&verbar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE);
 
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("`", "", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("@", "&commat;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("<", "&lt;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace(">", "&gt;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("\"", "&quot;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("&", "&amp;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("'", "&apos;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("~", "&#126;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("$", "&#36;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("=", "&#61;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("{", "&lcub;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("}", "&rcub;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("(", "&lpar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace(")", "&rpar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("#", "&num;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("%", "&percnt;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("*", "&ast;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("+", "&plus;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace(",", "&comma;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("-", "&minus;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace(".", "&period;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("/", "&sol;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace(":", "&colon;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("\;", "&semi;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("?", "&quest;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("[", "&lsqb;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("]", "&rsqb;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("^", "&hat;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("_", "&lowbar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
-$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE						= str_replace("|", "&verbar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("`", "", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("@", "&commat;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("<", "&lt;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace(">", "&gt;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("\"", "&quot;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("&", "&amp;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("'", "&apos;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("~", "&#126;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("$", "&#36;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("=", "&#61;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("{", "&lcub;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("}", "&rcub;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("(", "&lpar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace(")", "&rpar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("#", "&num;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("%", "&percnt;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("*", "&ast;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("+", "&plus;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace(",", "&comma;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("-", "&minus;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace(".", "&period;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("/", "&sol;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace(":", "&colon;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("\;", "&semi;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("?", "&quest;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("[", "&lsqb;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("]", "&rsqb;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("^", "&hat;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("_", "&lowbar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP						= str_replace("|", "&verbar;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TIMESTAMP);
 
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION						= str_replace("`", "", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION);
 $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION						= str_replace("@", "&commat;", $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION);
@@ -1753,36 +1752,36 @@ $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE							= 
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE							= str_replace("_", "&lowbar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE);
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE							= str_replace("|", "&verbar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TITLE);
 
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("`", "", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("@", "&commat;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("<", "&lt;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace(">", "&gt;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("\"", "&quot;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("&", "&amp;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("'", "&apos;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("~", "&#126;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("$", "&#36;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("=", "&#61;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("{", "&lcub;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("}", "&rcub;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("(", "&lpar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace(")", "&rpar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("#", "&num;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("%", "&percnt;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("*", "&ast;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("+", "&plus;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace(",", "&comma;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("-", "&minus;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace(".", "&period;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("/", "&sol;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace(":", "&colon;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("\;", "&semi;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("?", "&quest;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("[", "&lsqb;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("]", "&rsqb;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("^", "&hat;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("_", "&lowbar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
-$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE						= str_replace("|", "&verbar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DATE);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("`", "", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("@", "&commat;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("<", "&lt;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace(">", "&gt;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("\"", "&quot;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("&", "&amp;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("'", "&apos;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("~", "&#126;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("$", "&#36;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("=", "&#61;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("{", "&lcub;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("}", "&rcub;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("(", "&lpar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace(")", "&rpar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("#", "&num;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("%", "&percnt;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("*", "&ast;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("+", "&plus;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace(",", "&comma;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("-", "&minus;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace(".", "&period;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("/", "&sol;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace(":", "&colon;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("\;", "&semi;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("?", "&quest;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("[", "&lsqb;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("]", "&rsqb;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("^", "&hat;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("_", "&lowbar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
+$_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP						= str_replace("|", "&verbar;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_TIMESTAMP);
 
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER					= str_replace("`", "", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER);
 $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER					= str_replace("@", "&commat;", $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_LAST_POSTER);
@@ -5020,7 +5019,7 @@ $_Application_Module_Member_Electronic_Mail_POST_MESSAGE							= str_replace("|"
  + [ @ ] Application :: Member :: Forum
  +
  + Number of Variables :: GET  :: 
- + Number of Variables :: POST :: 01
+ + Number of Variables :: POST :: 13
  ============================================================================================================
 */
 
