@@ -898,7 +898,7 @@ echo ("
  =============================================================================================================
 */
 
-$_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC_MESSAGE			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post(post_access_level,post_author,post_data,post_date,post_last_edit,post_topic_id)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCESS_LEVEL','$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_CREATE_POST_TOPIC_ID')");
+$_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC_MESSAGE			= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic_message(message_access_level,message_author,message_data,message_forum_topic_id,message_timestamp,message_timestamp_last_update)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE_ACCESS_LEVEL','$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_MESSAGE','$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_ID_FOR_MESSAGE','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD'");
 
 /*
  =============================================================================================================
