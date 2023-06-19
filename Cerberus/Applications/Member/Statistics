@@ -195,8 +195,8 @@ echo ("
 											<B>System Security Settings</B><HR>
 
 											<B>Security Modules</B><BR>
-												*&nbsp;Security Module :: Master Sanitization Module :: Directory :: $_GLOBAL_SYSTEM_SECURITY_MASTER_SANITIZATION_FILE<BR>
-												*&nbsp;Security Module :: Master Sanitization Module :: Status :: $_GLOBAL_SYSTEM_SECURITY_MODULE_STATUS_SANITIZATION<BR><BR>
+												*&nbsp;Security Module :: Master Sanitization Module :: Directory :: $_GLOBAL_SETTING_SYSTEM_SECURITY_MODULE_DIRECTORY_MASTER_SANITIZATION<BR>
+												*&nbsp;Security Module :: Master Sanitization Module :: Status :: $_GLOBAL_SETTING_SYSTEM_SECURITY_MODULE_STATUS_MASTER_SANITIZATION<BR><BR>
 
 											<B>Security Settings :: Account Authorization</B><BR>
 												*&nbsp;Account Restrictions :: MAC Address: $_GLOBAL_SYSTEM_SETTING_ACCOUNT_SECURITY_RESTRICT_AUTHORIZED_MAC_ADDRESS<BR>
@@ -242,7 +242,7 @@ echo ("
 												*&nbsp;Visitor' Server Connection Type :: $_GLOBAL_LOCAL_SERVER_HTTP_CONNECTION_TYPE<BR>
 												*&nbsp;Visitor' Internet Protocol Address :: $_GLOBAL_REMOTE_SERVER_ADDRESS<BR>
 												*&nbsp;Visitor' Internet Protocol Address :: Connecting Port :: $_GLOBAL_REMOTE_SERVER_PORT<BR>
-												*&nbsp;Visitor' Web-Browser :: User-Agent :: $_GLOBAL_LOCAL_SERVER_HTTP_USER_AGENT_DISPLAY<BR><BR>
+												*&nbsp;Visitor' Web-Browser :: User-Agent :: $_GLOBAL_REMOTE_SERVER_HTTP_USER_AGENT_DISPLAY<BR><BR>
 
 											<B>Local Web Server Information</B><BR>
 												*&nbsp;Local Hyper-Text-Transfer-Protocol Host :: $_GLOBAL_LOCAL_SERVER_HTTP_HOST<BR>
