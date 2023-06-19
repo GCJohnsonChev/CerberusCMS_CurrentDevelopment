@@ -48,8 +48,18 @@
  +
  +
  +
- + [ ^ ] Application Module :: Administration :: Forum, Forum Topic, Forum Post Management
+ + [ ^ ] Application Module :: Administration :: Forum, Forum Topic, Forum Topic Message Management
  +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Forum Entries
  +
  +
  ============================================================================================================
@@ -58,32 +68,39 @@
 /*
  =============================================================================================================
  +
- + Install Forum :: Variables
+ + Variables
  +
  =============================================================================================================
-*/											echo ("<CENTER><B>Install Forum</B></CENTER><HR>");
+*/
 
+/*
+ =============================================================================================================
+ + Variables :: Forum :: Install Forum
+ =============================================================================================================
+*/									
+
+$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL			= $_POST['AMA_Forum_Install_Forum_Access_Level'];
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE				= $_POST['AMA_Forum_Install_Forum_Title'];
-
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION			= $_POST['AMA_Forum_Install_Forum_Description'];
+
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_CODE, $_GLOBAL_PLUGIN_SAFEHTML_CODE_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
 $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION			= str_replace($_GLOBAL_PLUGIN_SAFEHTML_SMILEYS, $_GLOBAL_PLUGIN_SAFEHTML_SMILEYS_REPLACE, $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION);
 
-$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL			= $_POST['AMA_Forum_Install_Forum_Access_Level'];
-
 /*
  =============================================================================================================
  +
- + Install Forum Input Form
+ + Install Forum
  +
  =============================================================================================================
 */
 
 /*
  =============================================================================================================
- + IF: Form Has Not Posted, Display Form
+ + IF: Forum :: Install Forum :: Input Form :: Variables :: HAVE NOT Executed, Display :: Input Form
  =============================================================================================================
 */
+
+												echo ("<CENTER><B>Install Forum</B></CENTER><HR>");
 
 if ((!$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE) || (!$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION)) {
 
@@ -113,11 +130,23 @@ echo ("
 
 } else {
 
+/*
+ =============================================================================================================
+ + IF: Forum :: Install Forum :: Sring Length :: Forum Title :: IS Greater Than: 100 Characters
+ =============================================================================================================
+*/
+
 if (strlen($_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE) > "100") {
 
 											echo ($_Application_Module_Administration_Message_Forum_FORUM_TITLE_TOO_LONG);
 
 } else {
+
+/*
+ =============================================================================================================
+ + IF: Forum :: Install Forum :: Sring Length :: Forum Description :: IS Greater Than: 100 Characters
+ =============================================================================================================
+*/
 
 if (strlen($_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION) > "100") {
 
@@ -125,7 +154,19 @@ if (strlen($_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPT
 
 } else {
 
+/*
+ =============================================================================================================
+ + Database Server Query: Insert :: Forum Entry
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM 				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum(forum_access_level,forum_date,forum_description,forum_title)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_ACCESS_LEVEL','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_DESCRIPTION','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TITLE')");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Insert :: Forum Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM) {
 
@@ -135,11 +176,11 @@ if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM) {
 
 											echo ($_Application_Module_Administration_Message_Forum_INSTALL_FORUM_ERROR);
 
-} // [ + ] IF: String Length: Forum Title IS Greater Than 100 Characters
+} // [ + ] IF: String Length: Forum Entry Title :: IS Greater Than: 100 Characters
 
-} // [ + ] IF: String Length: Forum Description IS Greater Than 100 Characters
+} // [ + ] IF: String Length: Forum Entry Description :: IS Greater Than: 100 Characters
 
-} // [ + ] IF: Database Server Query: Install Forum
+} // [ + ] IF: Database Server Query: Install :: Forum Entry
 
 /*
  =============================================================================================================
@@ -149,7 +190,7 @@ if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM) {
 
 $DB->free($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM);
 
-} // [ + ] IF: Install Forum Form Variables Have Not Executed
+} // [ + ] IF: Install Forum :: Input Form :: Variables :: HAVE Executed
 
 /*
  =============================================================================================================
@@ -161,19 +202,37 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM);
 
 											echo ("<HR><CENTER><B>Existing Forum Entries</B></CENTER><HR>");
 
+/*
+ =============================================================================================================
+ + Database Server Query: Insert :: Select :: All :: Forum Entries
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS 				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum");
+
+/*
+ =============================================================================================================
+ + IF: Forum Entry :: Number Of Rows :: IS Less Than OR Equal To: Zero
+ =============================================================================================================
+*/
 
 if ($DB->num_rows($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS) <= 0) {
 
 											echo ($_Application_Module_Administration_Message_Forum_NO_FORUMS_EXIST);
 
-} // [ + ] IF: Forum Entry Number of Rows IS Less Than Or Equal To Zero
+} // [ + ] IF: Database Server Query: Forum Entry :: Number Of Rows :: IS Less Than Or Equal To: Zero
+
+/*
+ =============================================================================================================
+ + WHILE: Retrieving :: Forum Entries :: From The Database Management System Server
+ =============================================================================================================
+*/
 
 while ($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS)) {
 
 /*
  =============================================================================================================
- + List Forum Entries Variables
+ + Variables :: List :: Forum Entries
  =============================================================================================================
 */
 
@@ -191,7 +250,7 @@ echo ("																Forum Name: <B>$_Application_Module_Administration_Forum_
 /*
  =============================================================================================================
  +
- + IF: Internal Application: Update :: Selected Forum ID
+ + IF: Internal Application: Update :: Selected Forum Entry
  +
  =============================================================================================================
 */
@@ -200,7 +259,7 @@ if ($_GET["UpdateForumID"] == "$_Application_Module_Administration_Forum_LIST_FO
 
 /*
  =============================================================================================================
- + Update Forum Form Variables
+ + Update :: Forum :: Input Form Variables
  =============================================================================================================
 */
 
@@ -216,14 +275,14 @@ $_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION				= str
 /*
  =============================================================================================================
  +
- + Update :: Selected Forum
+ + Update :: Selected Forum Entry
  +
  =============================================================================================================
 */
 
 /*
  =============================================================================================================
- + IF: Update :: Selected Forum :: Input Form :: Variables HAVE NOT Posted, Display :: Update Forum Input Form
+ + IF: Update :: Selected Forum Entry :: Input Form :: Variables HAVE NOT Executed, Display :: Update Forum Input Form
  =============================================================================================================
 */
 
@@ -259,7 +318,19 @@ echo ("
 
 } else {
 
+/*
+ =============================================================================================================
+ + Database Server Query: Update :: Forum Entry
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM					= $DB->query("UPDATE {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum SET forum_access_level='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_ACCESS_LEVEL',forum_date='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DATE',forum_description='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_DESCRIPTION',forum_title='$_Application_Module_Administration_Forum_POST_FORUM_UPDATE_TITLE' WHERE id='$_Application_Module_Administration_Forum_LIST_FORUM_ID'");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Update :: Forum Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM) {
 
@@ -269,31 +340,43 @@ if ($_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM) {
 
 													echo ($_Application_Module_Administration_Message_Forum_FORUM_UPDATE_ERROR);
 
-} // [ + ] IF: Database Server Query: Update Selected Forum Entry
+} // [ + ] IF: Database Server Query: Update :: Selected Forum Entry
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Update Forum
+ + Kill SQL Database Server Query: Update :: Forum Entry
  =============================================================================================================
 */
 
 $DB->free($_Application_Module_Administration_Forum_DB_Query_UPDATE_FORUM);
 
-} // [ + ] IF: Update Forum Form Variables Have Not Executed
+} // [ + ] IF: Update :: Forum Entry :: Input Form Variables HAVE NOT Executed
 
-} // [ + ] IF: Internal Application: Update Forum Is: Activated
+} // [ + ] IF: Internal Application: Update :: Forum Entry :: Is: Activated
 
 /*
  =============================================================================================================
  +
- + IF: Delete :: Selected Forum ID
+ + IF: Delete :: Selected Forum Entry
  +
  =============================================================================================================
 */
 
 if ($_GET["DeleteForumID"] == "$_Application_Module_Administration_Forum_LIST_FORUM_ID") {
 
+/*
+ =============================================================================================================
+ + Database Server Query: Delete :: Forum Entry
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM					= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum WHERE ID='$_Application_Module_Administration_Forum_LIST_FORUM_ID'");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Delete :: Forum Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM) {
 
@@ -303,13 +386,13 @@ if ($_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM) {
 
 													echo ($_Application_Module_Administration_Message_Forum_FORUM_DELETE_ERROR);
 
-} // [ + ] IF: Database Server Query: Delete Forum By ID
+} // [ + ] IF: Database Server Query: Delete :: Forum Entry
 
 $DB->free($_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM);
 
-} // [ + ] IF: Internal Application: Delete Forum IS Activated
+} // [ + ] IF: Internal Application: Delete :: Forum :: Is: Activated
 
-} // [ + ] WHILE: Retrieving Forum Entries
+} // [ + ] WHILE: Retrieving :: Forum Entries
 
 /*
  =============================================================================================================
@@ -323,7 +406,7 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS);
  ============================================================================================================
  +
  +
- + Install / Delete / Update Topic(s)
+ + [ @ ] Forum Topic Entries
  +
  +
  ============================================================================================================
@@ -332,7 +415,7 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUMS);
 /*
  =============================================================================================================
  +
- + Install :: Forum Topic :: Input Form :: Variables
+ + Install :: Forum :: Forum Topic :: Input Form :: Variables
  +
  =============================================================================================================
 */
@@ -348,7 +431,7 @@ $_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION		
 
 /*
  =============================================================================================================
- + IF: Install :: Forum Topic :: Input Form :: Variables HAVE NOT Executed
+ + IF: Install :: Forum :: Forum Topic :: Input Form :: Variables HAVE NOT Executed, Display :: Input Form
  =============================================================================================================
 */
 
@@ -365,7 +448,19 @@ echo ("
 													<SELECT NAME=\"AMA_Forum_Install_Forum_Topic_ID\" MAXLENGTH=\"10\">
 ");
 
+/*
+ =============================================================================================================
+ + Database Server Query: Select :: All :: Forum :: Forum Topic Entries
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_TOPICS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum");
+
+/*
+ =============================================================================================================
+ + WHILE: Retrieving :: All :: Forum :: Forum Topic Entries :: From The Database Management System Server
+ =============================================================================================================
+*/
 
 while ($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_TOPICS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Forum_DB_Query_SELECT_FORUM_FOR_TOPICS)) {
 
@@ -374,11 +469,11 @@ $_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_FORUM_TITLE				= $_Ap
 
 											echo ("<OPTION VALUE=\"$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_FORUM_ID\">$_Application_Module_Administration_Forum_LIST_FORUM_TOPIC_FORUM_TITLE</OPTION>");
 
-} // [ + ] WHILE: Retrieving List of Forum Topic Entries From Database
+} // [ + ] WHILE: Retrieving :: All :: Forum :: Forum Topic Entries :: From The Database Management System Server
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Select All Forum Topics
+ + Kill SQL Database Server Query: Select :: All :: Forum :: Forum Topic Entries
  =============================================================================================================
 */
 
@@ -408,7 +503,19 @@ echo ("
 
 } else {
 
+/*
+ =============================================================================================================
+ + Database Server Query: Install :: Forum :: Forum Topic Entry
+ =============================================================================================================
+*/
+
 $_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC				= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic(topic_access_level,topic_date,topic_description,topic_forum_id,topic_last_post,topic_last_poster,topic_title)VALUES('$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_ACCESS_LEVEL','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_DESCRIPTION','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_FORUM_ID','$_GLOBAL_LOCAL_SERVER_DATE_STANDARD','$_GLOBAL_COOKIE_MEMBER_USERNAME','$_Application_Module_Administration_Forum_POST_INSTALL_FORUM_TOPIC_TITLE')");
+
+/*
+ =============================================================================================================
+ + IF: Database Server Query: Install :: Forum :: Forum Topic Entry
+ =============================================================================================================
+*/
 
 if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC) {
 
@@ -418,7 +525,7 @@ if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC) {
 
 											echo ($_Application_Module_Administration_Message_Forum_INSTALL_FORUM_TOPIC_ERROR);
 
-} // [ + ] IF: Database Server Query: Install Forum Topic Entry
+} // [ + ] IF: Database Server Query: Install :: Forum :: Forum Topic Entry
 
 /*
  =============================================================================================================
@@ -428,12 +535,12 @@ if ($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC) {
 
 $DB->free($_Application_Module_Administration_Forum_DB_Query_INSTALL_FORUM_TOPIC);
 
-} // [ + ] IF: Install Forum Topic Entry Form Variables Have NOT Executed
+} // [ + ] IF: Install :: Forum :: Forum Topic Entry :: Input Form :: Variables HAVE NOT Executed
 
 /*
  =============================================================================================================
  +
- + Forum Topic Delete / Manage Form
+ + Forum :: Forum Topic Entries
  +
  =============================================================================================================
 */
@@ -442,11 +549,23 @@ $_Application_Module_Administration_Forum_DB_Query_SELECT_TOPICS				= $DB->query
 
 													echo ("<HR><CENTER><B>Existing Forum Topic Entries</B></CENTER><HR>");
 
+/*
+ =============================================================================================================
+ + IF: Forum :: Forum Topic Entries :: Number Of Rows :: IS Less Than OR Equal To: Zero
+ =============================================================================================================
+*/
+
 if ($DB->num_rows($_Application_Module_Administration_Forum_DB_Query_SELECT_TOPICS) <=0) {
 
 													echo ($_Application_Module_Administration_Message_Forum_NO_TOPICS_EXIST);
 
 } else {
+
+/*
+ =============================================================================================================
+ + WHILE: Retrieving :: Forum :: Forum Topic Entries :: From The Database Management System Server Database
+ =============================================================================================================
+*/
 
 while ($_Application_Module_Administration_Forum_DB_Query_SELECT_TOPICS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Forum_DB_Query_SELECT_TOPICS)) {
 
@@ -474,7 +593,7 @@ echo ("
 /*
  =============================================================================================================
  +
- + IF: Update :: Selected Forum Topic
+ + IF: Update :: Selected :: Forum :: Forum Topic Entry
  +
  =============================================================================================================
 */
@@ -483,7 +602,7 @@ if ($_GET["UpdateTopicID"] == "$_Application_Module_Administration_Forum_LIST_FO
 
 /*
  =============================================================================================================
- + Update Forum Topic Form Variables
+ + Update :: Forum :: Forum Topic Entry :: Input Form :: Variables :: POST Variables
  =============================================================================================================
 */
 
@@ -500,7 +619,7 @@ $_Application_Module_Administration_Forum_POST_UPDATE_FORUM_TOPIC_DESCRIPTION			
 
 /*
  =============================================================================================================
- + IF: Update :: Forum Topic Input Form Variables HAVE NOT Executed, Display Input Form
+ + IF: Update :: Forum :: Forum Topic Entry :: Input Form :: Variables :: HAVE NOT Executed, Display :: Input Form
  =============================================================================================================
 */
 
