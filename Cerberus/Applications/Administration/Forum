@@ -767,21 +767,21 @@ if ($_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM_TOPIC) {
 
 													echo ($_Application_Module_Administration_Message_Forum_FORUM_TOPIC_DELETE_ERROR);
 
-} // [ + ] IF: Database Server Query: Delete Forum Topic By ID
+} // [ + ] IF: Database Server Query: Delete :: Selected :: Forum :: Forum Topic Entry :: By ID Number
 
 /*
  =============================================================================================================
- + Kill SQL Database Server Query: Delete Forum Topic
+ + Kill SQL Database Server Query: Delete :: Selected :: Forum :: Forum Topic Entry
  =============================================================================================================
 */
 
 $DB->free($_Application_Module_Administration_Forum_DB_Query_DELETE_FORUM_TOPIC);
 
-} // [ + ] IF: Database Server Query: Delete Forum Topic By ID
+} // [ + ] IF: Database Server Query: Delete :: Selected :: Forum :: Forum Topic Entry :: By ID Number
 
-} // [ + ] IF: Number of Rows For Forum Topic Exists
+} // [ + ] IF: Database Server Query: Number of Rows :: For Forum :: Forum Topics :: Exists
 
-} // [ + ] WHILE: Retrieving Forum Topic Entries
+} // [ + ] WHILE: Retrieving :: Forum :: Forum Topic Entries :: From The Database Management System Server Database
 
 /*
  =============================================================================================================
@@ -795,7 +795,7 @@ $DB->free($_Application_Module_Administration_Forum_DB_Query_SELECT_TOPICS);
  ===========================================================================================================================
  +
  +
- + Create / Update / Delete Forum Topic Post(s)
+ + [ @ ] Forum :: Forum Topic :: Forum Topic Messages
  +
  +
  ===========================================================================================================================
