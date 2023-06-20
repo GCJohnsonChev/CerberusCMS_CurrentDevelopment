@@ -85,7 +85,7 @@ $_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS						= $DB->quer
 $_Application_Module_Member_Statistics_DB_Query_SELECT_FILES						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_files");
 $_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_forum");
 $_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic");
-$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS					= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_post");
+$_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPIC_MESSAGES				= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_forum_topic_message");
 
 /*
  ============================================================================================================
@@ -93,9 +93,9 @@ $_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS					= $DB->qu
  ============================================================================================================
 */
 
-$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS				= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_POSTS);
-$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS				= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS);
 $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM					= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS				= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPICS);
+$_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPIC_MESSAGES			= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FORUM_TOPIC_MESSAGES);
 $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FILES					= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_FILES);
 $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS					= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_COMMENTS);
 $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_MEMBERS					= $DB->num_rows($_Application_Module_Member_Statistics_DB_Query_SELECT_MEMBERS);
@@ -116,7 +116,7 @@ $_Application_Module_Member_Statistics_LIST_INSTALLATION_DATE						= $_Applicati
 
 /*
  ============================================================================================================
- + Is GZIP Compression On or Off ?
+ + IF: Is G.N.U. ZIP Compression On or Off ?
  ============================================================================================================
 */
 
@@ -132,7 +132,7 @@ if ($_GLOBAL_SYSTEM_GZIP_STATUS <= 0) {
 
 /*
  ============================================================================================================
- + Is The Safe-HTML Plugin On or Off ?
+ + IF: Is The Safe-HTML Plugin On or Off ?
  ============================================================================================================
 */
 
@@ -215,9 +215,9 @@ echo ("
 											<B>System-Wide Social Interaction Information & Statistics</B><HR>
 
 											<B>System-Wide :: Forum Information & Statistics</B><BR>
-												*&nbsp;Total Number of Forums: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM<BR>
-												*&nbsp;Total Number of Forum' Topics: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS<BR>
-												*&nbsp;Total Number of Forum' Topic' Posts: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS<BR><BR>
+												*&nbsp;Total Number of Forum Entries: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM<BR>
+												*&nbsp;Total Number of Forum' Topic Entries: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPICS<BR>
+												*&nbsp;Total Number of Forum' Topic' Message Entries: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPIC_MESSAGES<BR><BR>
 
 											<B>System-Wide :: Commentation Information & Statistics</B><BR>
 												*&nbsp;Total Number of Comments: $_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_COMMENTS<BR><BR>
@@ -341,5 +341,5 @@ $DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_T
  ============================================================================================================
 */
 
-$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_POSTS);
+$DB->free($_Application_Module_Member_Statistics_DB_Query_NUMBER_OF_ROWS_FORUM_TOPIC_MESSAGES);
 ?>
