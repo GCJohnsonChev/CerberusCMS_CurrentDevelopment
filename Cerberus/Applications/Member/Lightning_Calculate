@@ -2104,16 +2104,917 @@ $_Application_Module_Member_Lightning_Calculate_POST_ADDITION_10D_10D_COMPUTATIO
 /*
  ============================================================================================================
  +
+ +
  + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences
+ +
  +
  ============================================================================================================
 */
 
 /*
  ============================================================================================================
- + Subtraction
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 1 Digit OR 1 Place
+ +
  ============================================================================================================
 */
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 1 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_1D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_1D_2				= rand(0, 9);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_1D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_1D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_1D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_1D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_1D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_1D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_1D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_1D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_1D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_1D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_1D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 2 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_2D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_2D_2				= rand(10, 99);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_2D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_2D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_2D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_2D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_2D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_2D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_2D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_2D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_2D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_2D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_2D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 3 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_3D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_3D_2				= rand(100, 999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_3D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_3D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_3D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_3D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_3D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_3D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_3D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_3D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_3D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_3D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_3D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 4 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_4D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_4D_2				= rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_4D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_4D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_4D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_4D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_4D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_4D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_4D_2;
+
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 5 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_5D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_5D_2				= rand(10000, 99999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_5D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_5D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_5D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_5D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_5D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_5D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_5D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_5D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_5D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_5D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_5D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 6 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_6D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_6D_2				= rand(100000, 999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_6D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_6D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_6D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_6D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_6D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_6D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_6D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_6D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_6D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_6D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_6D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 7 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_7D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 8 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_8D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 9 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_9D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 1 Digit - 10 Digit
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_10D_1				= rand(0, 9);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_1D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_1D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_1D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 2 Digits OR 2 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 2 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_2D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_2D_2				= rand(10, 99);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_2D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_2D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_2D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_2D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_2D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_2D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_2D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_2D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_2D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_2D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_2D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 3 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_3D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_3D_2				= rand(100, 999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_3D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_3D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_3D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_3D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_3D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_3D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_3D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_3D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_3D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_3D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_3D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 4 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_4D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_4D_2				= rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_4D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_4D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_4D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_4D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_4D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_4D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_4D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 5 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_5D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_5D_2				= rand(10000, 99999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_5D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_5D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_5D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_5D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_5D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_5D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_5D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_5D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_5D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_5D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_5D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 6 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_6D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_6D_2				= rand(100000, 999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_6D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_6D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_6D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_6D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_6D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_6D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_6D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_6D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_6D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_6D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_6D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 7 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_7D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_8D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_9D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 2 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_10D_1				= rand(10, 99);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_2D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_2D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_2D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 3 Digits OR 3 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 3 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_3D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_3D_2				= rand(100, 999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_3D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_3D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_3D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_3D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_3D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_3D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_3D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_3D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_3D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_3D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_3D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 4 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_4D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_4D_2				= rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_4D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_4D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_4D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_4D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_4D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_4D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_4D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 5 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_5D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_5D_2				= rand(10000, 99999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_5D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_5D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_5D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_5D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_5D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_5D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_5D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_5D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_5D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_5D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_5D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 6 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_6D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_6D_2				= rand(100000, 999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_6D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_6D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_6D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_6D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_6D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_6D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_6D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_6D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_6D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_6D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_6D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 7 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_7D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_8D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_9D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 3 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_10D_1				= rand(100, 999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_3D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_3D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_3D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 4 Digits OR 4 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 4 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_4D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_4D_2				= rand(1000, 9999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_4D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_4D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_4D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_4D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_4D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_4D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_4D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_4D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_4D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_4D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_4D_2;
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 5 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_5D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_5D_2				= rand(10000, 99999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_5D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_5D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_5D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_5D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_5D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_5D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_5D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_5D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_5D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_5D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_5D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 6 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_6D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_6D_2				= rand(100000, 999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_6D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_6D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_6D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_6D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_6D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_6D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_6D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_6D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_6D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_6D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_6D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 7 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_7D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_8D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_9D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 4 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_10D_1				= rand(1000, 9999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_4D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_4D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_4D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 5 Digits OR 5 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 5 Digits - 5 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_5D_1				= rand(10000, 99999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_5D_2				= rand(10000, 99999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_5D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_5D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_5D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_5D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_5D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_5D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_5D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_5D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_5D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_5D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_5D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 5 Digits - 6 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_6D_1				= rand(10000, 99999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_6D_2				= rand(100000, 999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_6D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_6D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_6D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_6D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_6D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_6D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_6D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_6D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_6D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_6D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_6D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 5 Digits - 7 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_7D_1				= rand(10000, 99999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 5 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_8D_1				= rand(10000, 99999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 5 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_9D_1				= rand(10000, 99999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 5 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_10D_1				= rand(10000, 99999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_5D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_5D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_5D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 6 Digits OR 6 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 6 Digits - 6 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_6D_1				= rand(100000, 999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_6D_2				= rand(100000, 999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_6D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_6D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_6D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_6D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_6D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_6D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_6D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_6D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_6D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_6D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_6D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 6 Digits - 7 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_7D_1				= rand(100000, 999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 6 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_8D_1				= rand(100000, 999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 6 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_9D_1				= rand(100000, 999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 6 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_10D_1				= rand(100000, 999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_6D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_6D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_6D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 7 Digits OR 7 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 7 Digits - 7 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_7D_1				= rand(1000000, 9999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_7D_2				= rand(1000000, 9999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_7D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_7D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_7D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_7D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_7D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_7D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_7D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_7D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_7D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_7D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_7D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 7 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_8D_1				= rand(1000000, 9999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 7 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_9D_1				= rand(1000000, 9999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 7 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_10D_1				= rand(1000000, 9999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_7D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_7D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_7D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 8 Digits OR 8 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 8 Digits - 8 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_8D_1				= rand(10000000, 99999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_8D_2				= rand(10000000, 99999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_8D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_8D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_8D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_8D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_8D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_8D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_8D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_8D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_8D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_8D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_8D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 8 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_9D_1				= rand(10000000, 99999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 8 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_10D_1				= rand(10000000, 99999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_8D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 9 Digits OR 9 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 9 Digits - 9 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_9D_1				= rand(100000000, 999999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_9D_2				= rand(100000000, 999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_9D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_9D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_9D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_9D_2;
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 9 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_10D_1				= rand(100000000, 999999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_VALUE_1					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_VALUE_2					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_8D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_8D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_9D_10D_2;
+
+/*
+ ============================================================================================================
+ +
+ + Lightning Calculate :: Variables :: Exercises :: Subtraction and Differences :: First Minuend :: 10 Digits OR 10 Places
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Addition :: First Minuend :: 10 Digits - 10 Digits
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_10D_10D_1				= rand(1000000000, 9999999999);
+$_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_10D_10D_2				= rand(1000000000, 9999999999);
+
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_10D_10D_INPUT					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_10D_10D_Input'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_10D_10D_VALUE_1				= $_POST['AMM_Lightning_Calculate_SUBTRACTION_10D_10D_Value_1'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_10D_10D_VALUE_2				= $_POST['AMM_Lightning_Calculate_SUBTRACTION_10D_10D_Value_2'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_10D_10D_ANSWER					= $_POST['AMM_Lightning_Calculate_SUBTRACTION_10D_10D_Answer'];
+$_Application_Module_Member_Lightning_Calculate_POST_SUBTRACTION_10D_10D_COMPUTATION				= $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_10D_10D_1 - $_Application_Module_Member_Lightning_Calculate_RANDOM_GENERATOR_SUBTRACTION_10D_10D_2;
 
 /*
  ============================================================================================================
