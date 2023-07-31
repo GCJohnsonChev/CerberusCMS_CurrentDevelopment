@@ -84,14 +84,17 @@
 if ($_GET["Display"] == "Options") {
 
 echo ("
-<B>About The Author</B><BR>
+<BIG><B>About The Author</B></BIG><BR>
 <A HREF=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Lightning_Calculate/G.C._Johnson.jpeg\" TITLE=\":: Digital Picture of Lightning Mental Calculator and Mathematics Enthusiast G.C. Johnson-Edwards &copy; 2021 ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Lightning_Calculate/G.C._Johnson.jpeg\" CLASS=\"AMAForumTMAuthor\" TITLE=\":: Digital Picture of Lightning Mental Calculator G.C. Johnson-Edwards &copy; 2021 ::\"></A></IMG>
-The Author of this Web Application, Free Mathematics Book and Training Instructions started with mental Addition Methods from Left to Right by adding the base numbers together at a young age. The author is 100% self-taught and is privately researched. The author is a Great Great Grandson of the <A HREF=\"https://en.wikipedia.org/wiki/Christian_VIII_of_Denmark#/media/File:Christianviiidenmark.jpg\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: The King of Denmark and Norway, Christian VIII ::\" TARGET=\"_NEW\">King of Denmark and Norway, Christian VIII</A> - <A HREF=\"https://en.wikipedia.org/wiki/House_of_Glücksburg\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: House of Glücksburg ::\" TARGET=\"_NEW\">Danish and Norwegian Royal House of Glücksburg</A> and <A HREF=\"https://en.wikipedia.org/wiki/House_of_Oldenburg\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: House of Oldenburg ::\" TARGET=\"_NEW\">German Royal House of Oldenburg</A> as he shares the same Great Great Great Grandparents of <A HREF=\"https://en.wikipedia.org/wiki/Margrethe_II_of_Denmark\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Her Royal Highness, Margarethe II ::\" TARGET=\"_NEW\">Her Royal Highness Margarethe II, Queen of Denmark</A>. He is a distant <A HREF=\"https://en.wikipedia.org/wiki/Heir_presumptive\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Heir-Presumptive ::\" TARGET=\"_TARGET\">Heir-Presumptive</A> to the <A HREF=\"https://en.wikipedia.org/wiki/Earl_of_Essex\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Earldom of Essex ::\" TARGET=\"_TARGET\">Earldom of Essex and Baron of Hadham, Kingdom of England</A> through <A HREF=\"https://en.wikipedia.org/wiki/Michael_Antoine_Garoutte\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Michel Antoine Garoutte-Lascour ::\" TARGET=\"_NEW\">Michel Antoine Garoutte-Lascour</A> as of 2023 and is directly descended from The <A HREF=\"https://en.wikipedia.org/wiki/House_of_Bourbon\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: The House of Bourbon ::\" TARGET=\"_NEW\">French and Spanish Royal House of Bourbon</A>, <A HREF=\"https://en.wikipedia.org/wiki/Antoine_Joseph_Marie_d%27Espinassy\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: House of Espinassy\" TARGET=\"_NEW\">The French and Spanish Royal House of Espinassy</A>, as well as is descended from lesser origins.<BR><BR>
+The Author of this Web Application, Free Mathematics Book and Training Instructions started with mental Addition Methods from Left to Right by adding the base numbers together at a young age. The author is 100% self-taught and is privately researched. The author is an illegitimate Great Great Grandson of the <A HREF=\"https://en.wikipedia.org/wiki/Christian_VIII_of_Denmark#/media/File:Christianviiidenmark.jpg\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: The King of Denmark and Norway, Christian VIII ::\" TARGET=\"_NEW\">King of Denmark and Norway, Christian VIII</A> - <A HREF=\"https://en.wikipedia.org/wiki/House_of_Glücksburg\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: House of Glücksburg ::\" TARGET=\"_NEW\">Danish and Norwegian Royal House of Glücksburg</A> and <A HREF=\"https://en.wikipedia.org/wiki/House_of_Oldenburg\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: House of Oldenburg ::\" TARGET=\"_NEW\">German Royal House of Oldenburg</A> as he shares the same Great Great Great Grandparents of <A HREF=\"https://en.wikipedia.org/wiki/Margrethe_II_of_Denmark\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Her Royal Highness, Her Majesty Margarethe II ::\" TARGET=\"_NEW\">Her Royal Highness, Her Majesty Margarethe II, Queen of Denmark</A>, her being directly descended from <A HREF=\"https://en.wikipedia.org/wiki/Christian_IX_of_Denmark\" TITLE=\":: Open & Display :: The Wikipedia Article Entry :: For :: Christian IX, The King of Denmark ::\" TARGET=\"_NEW\">Christian IX, The King of Denmark</A>. He is a legitimate distant <A HREF=\"https://en.wikipedia.org/wiki/Heir_presumptive\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Heir-Presumptive ::\" TARGET=\"_TARGET\">Heir-Presumptive</A> to the <A HREF=\"https://en.wikipedia.org/wiki/Earl_of_Essex\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Earldom of Essex ::\" TARGET=\"_TARGET\">Earldom of Essex and Baron of Hadham, Kingdom of England</A> through <A HREF=\"https://en.wikipedia.org/wiki/Michael_Antoine_Garoutte\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Michel Antoine Garoutte-Lascour ::\" TARGET=\"_NEW\">Michel Antoine Garoutte-Lascour</A> as of 2023 and is directly descended from The <A HREF=\"https://en.wikipedia.org/wiki/House_of_Bourbon\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: The House of Bourbon ::\" TARGET=\"_NEW\">French and Spanish Royal House of Bourbon</A>, <A HREF=\"https://en.wikipedia.org/wiki/Antoine_Joseph_Marie_d%27Espinassy\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: House of Espinassy\" TARGET=\"_NEW\">The French and Spanish Royal House of Espinassy</A>, as well as is descended from lesser origins.<BR><BR>
 
 <B>My research and collection</B> of what I like to call <B>\"Lightning Mental Mathematical Algorithms\"</B>, Lightning Mental Mathematical Tables and Lightning Mental Mathematical Proceedures began in ~2006 and 2007 at the age of 20 and 21 and as of 2023 I know and have detailed ~183 Lightning Mental Mathematical Algorithms that are apparently mostly or completely unknown to the rest of the world. How do I know these things are unknown to the rest of the world ? Becuase none of them exist in any books searchable on the Internet and no Mathematics Professor that I have talked to yet knew what I was talking about. Why don't they know about it ? Because they weren't shown or taught or they haven't figured it out for themselves yet.
-From the years 2000 to present-day it seems that a new interest in this kind of Mathematics has sparked. I have seen several videos on the Internet where people are either fraudulently attempting these things or are using some kind of Mathematics Table. I decided to write this Web Application, Free Book and other resources and give it out to the public for free so as to demystify some of it as well as to show everyone who the fraudsters are since they have already put their videos on the Internet or have been recorded and have thus proved themselves as frauds and liars to everyone who has seen them. At this point in time I can compete with the world's foremost <A HREF=\"https://en.wikipedia.org/wiki/Mental_calculator\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Lightning Mental Calculator ::\" TARGET=\"_NEW\">Lightning Mental Calculators</A> who are already known. People such as <A HREF=\"https://en.wikipedia.org/wiki/Rüdiger_Gamm\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Rüdiger Gamm ::\" TARGET=\"_NEW\">Rüdiger Gamm</A> and <A HREF=\"https://en.wikipedia.org/wiki/Gert_Mittring\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For Gert Mittring ::\" TARGET=\"_NEW\">Gert Mittring</A>. I was very fortunate to have been taught by an expert and very gifted Mathematician in my early 20s.<BR><BR>
+From the years 2000 to present-day it seems that a new interest in this kind of Mathematics has sparked. I have seen several videos on the Internet where people are either fraudulently attempting these things or are using some kind of Mathematics Table. I decided to write this Web Application, Free Book and other resources and give it out to the public for free so as to demystify some of it as well as to show everyone who the fraudsters are since they have already put their videos on the Internet or have been recorded and have thus proved themselves as frauds and liars to everyone who has seen them. At this point in time I can compete with the world's foremost <A HREF=\"https://en.wikipedia.org/wiki/Mental_calculator\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Lightning Mental Calculator ::\" TARGET=\"_NEW\">Lightning Mental Calculators</A> who are already known. The world's foremost Lightning Mental Calculators are people such as <A HREF=\"https://en.wikipedia.org/wiki/Rüdiger_Gamm\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Rüdiger Gamm ::\" TARGET=\"_NEW\">Rüdiger Gamm</A> and <A HREF=\"https://en.wikipedia.org/wiki/Gert_Mittring\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For Gert Mittring ::\" TARGET=\"_NEW\">Gert Mittring</A>. I was very fortunate to have been taught by an expert and very gifted Mathematician in my early 20s.<BR><BR>
 
-<B>This Application Module</B><BR>
+<B>My Academic Adventures</B><BR>
+Personally I have memorized 27 Encyclopedias, The Holy Bible, Several Hundred Books, World Histories, Complete Mathematics Histories and many more things.<BR><BR>
+
+<BIG><B>This Application Module</B></BIG><BR>
 This digital Application Module is meant for the <B>\"Lightning Mental Calculating\" community</B>. If you are a <B>Natural Lightning Mental Calculator</B>
 or otherwise known as a <B>Counter</B> then this Application Module can train your mind through repeating steps and procedures in a repetitive pattern. With this Application Module you
 can train your mind to acquire a faster <B>Mental Computation Time</B> and a higher and then perfect <B>Mental Computation Accuracy</B>. This digital Application Module generates
@@ -106,7 +109,7 @@ of this Application Module is good because it can be accessed freely through the
 <B>Digital Record Keeping</B><BR>
 If you have a Registered Member Account on this system: This Application Module will keep perfect track of your <B>Mental Computation Time</B> and your <B>Mental Computation Accuracy</B> with Statistics. This Timestampped log is viewable in the Registered Member Account logs. All of the Statistical Information is kept private.<BR><BR>
 
-<B>What is \"Lightning Calculating\" and \"Lightning Mental Calculating\" ?</B><BR>
+<BIG><B>What is \"Lightning Calculating\" and \"Lightning Mental Calculating\" ?</B></BIG><BR>
 <A HREF=\"https://en.wikipedia.org/wiki/Mental_calculator\" TITLE=\":: Open & Display The Wikipedia Article Entry For :: Lightning Mental Calculating ::\" TARGET=\"_NEW\">Lightning Mental Calculating</A> is the art of <A HREF=\"https://en.Wikipedia.org/wiki/Mental_Computation\" TITLE=\":: Open & Display The Wikipedia Article Entry For :: Mental Computation ::\" TARGET=\"_NEW\">Mentally Computing</A> long Arithmetic and mentally computing just about
 any other kind of Mathematics at the <A HREF=\"https://en.wikipedia.org/wiki/Lightning\" TITLE=\":: Open & Display The Wikipedia Article Entry For :: Lightning\" TARGET=\"_NEW\">\"Speed of Lightning\"</A> or at least very quickly.<BR><BR>
 
@@ -148,18 +151,19 @@ develop your ability you then acquire new ability and the ability to retain valu
 * Rich Corporate Executive Officers and Rich Merchants<BR>
 * Academics<BR><BR>
 
-<B>Where Do Some of These Human Memory Techniques Come From ?</B><BR>
-<A HREF=\"https://en.wikipedia.org/wiki/Simonides_of_Ceos\" TITLE=\":: Digitized WoodCut of Simonides of Ceos Holding His Book -- Digitized WoodCut From The Nuremberg Chronicles or Liber Chronicarum ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Lightning_Calculate/SimonidesofCeos.png\" CLASS=\"AMAForumTMAuthor\" TITLE=\":: Digitized WoodCut of Simonides of Ceos Holding His Book -- Digitized WoodCut From The Nuremberg Chronicles or Liber Chronicarum ::\"></IMG></A>
-The author of this web application has written an extensively thorough and academic book of ~2,000 pages that has chapters within it that completely detail the origins of the Methods of Loci to Simonides of Ceos, Cicero and others during and before the time of Simonides of Ceos. Bacchylides and the earlier Aristotle apparently knew the location memory techniques as some elements of them are shown in their attributed works. The location memory techniques were found again in preserved works by raiding Knights of the Roman Catholic Church
+<BIG><B>Where Do Some of These Human Memory Techniques Come From ?</B></BIG><BR>
+
+<A HREF=\"https://cudl.lib.cam.ac.uk/view/PR-INC-00000-A-00007-00002-00888/5\" TITLE=\":: Digitized WoodCut of Simonides of Ceos Holding His Book -- Digitized WoodCut From The Nuremberg Chronicles or Liber Chronicarum ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Lightning_Calculate/SimonidesofCeos.png\" CLASS=\"AMAForumTMAuthor\" TITLE=\":: Digitized WoodCut of Simonides of Ceos Holding His Book -- Digitized WoodCut From The Nuremberg Chronicles or Liber Chronicarum ::\"></IMG></A>
+The author of this web application has written an extensively thorough and academic book of ~2,000 pages that has chapters within it that completely detail the origins of the Methods of Loci to <A HREF=\"https://en.wikipedia.org/wiki/Simonides_of_Ceos\" TITLE=\":: Open & Display :: The :: Wikpedia Article Entry :: For :: Simonides of Ceos ::\" TARGET=\"_NEW\">Simonides of Ceos</A>, Marcus Tullius Cicero and others during and before the time of Simonides of Ceos. Bacchylides and the earlier Aristotle apparently knew the location memory techniques as some elements of them are shown in their attributed works. The location memory techniques were found again in preserved works by raiding Knights of the Roman Catholic Church
 in the <A HREF=\"https://en.wikipedia.org/wiki/Crusades\" TITLE=\":: Open and Display :: The Wikipedia Article Entry :: For :: Catholic Crusades ::\" TARGET=\"_NEW\">Catholic Crusades</A> from the years 1100 onward and in the Roman Catholic raiding of the Eastern Orthodox territories especially in the raiding and <A HREF=\"https://en.wikipedia.org/wiki/Sack_of_Constantinople\" TITLE=\":: Open and Display :: The Wikipedia Article Entry :: For :: The Raiding and Sacking of Constantinople ::\" TARGET=\"_NEW\">Sacking of the Historical City of Contantinople in Modern Day Istanbul, Turkey</A> where they took much the knowledge back to Western Europe and it passed down through the ages to the French and Italian Rennaisance from approximately 1300 to 1600 and some of the methods were made public during this time by oratores.<BR><BR>
 
-The city of Constantinople historically was fought over by Western European Catholics and <A HREF=\"https://en.wikipedia.org/wiki/Eastern_Orthodox_Church\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Eastern Orthodox Church ::\" TARGET=\"_NEW\">Eastern Orthodox Greeks</A> for over a <A HREF=\"https://en.wikipedia.org/wiki/Millennium\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Millenium ::\" TARGET=\"_NEW\">millenia</A> from the years of ~400 A.D. to present-day due to the relics of the Churches. Every time each side won over the Muslims and the Jews the city transferred ownership to either Western European Catholics or the Eastern Orthodox Christians. The location memory techniques disappeared into scarcity and the Western European Roman Catholic Church is known to have preserved much of the location memory techniques as they are seen
+The city of Constantinople historically was fought over by Western European Catholics and <A HREF=\"https://en.wikipedia.org/wiki/Eastern_Orthodox_Church\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Eastern Orthodox Church ::\" TARGET=\"_NEW\">Eastern Orthodox Greeks</A> for over a <A HREF=\"https://en.wikipedia.org/wiki/Millennium\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Millenium ::\" TARGET=\"_NEW\">millenia</A> from the years of ~400 A.D. to present-day due to the relics of the Churches being there as well as the entire place being Holy because of the Councils of Nicea and the Councils of Constantinople. Every time each side won over the Muslims and the Jews the city transferred ownership to either Western European Catholics or the Eastern Orthodox Christians. The location memory techniques disappeared into scarcity and the Western European Roman Catholic Church is known to have preserved much of the location memory techniques as they are seen
 in the writings from 1100 to 1700. The Eastern Church which is also known as the Eastern Orthodox Church of the Greek and Eastern Rites call some of the techniques Greek Lightning.<BR><BR>
 
 Simonides of Ceos, Greece was known to have memorized every name and every face living in a Greek City within a few weeks of meeting them all in person. Supposedly Simonides memorized the names and faces of more than 1,500 people and then he recited each of their names in front of them more than a Greek month later. Everyone in the city thought that Simonides of Ceos was a <A HREF=\"https://en.wikipedia.org/wiki/Demigod\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Demi-God ::\" TARGET=\"_NEW\">Demi-God</A>.<BR><BR>
 
 <B>The Mutated Legend of Simonides of Ceos</B><BR>
-Legend has it that Simonides himself was approached by Zeus and an unnamed female deity to be given the <A HREF=\"https://en.wikipedia.org/wiki/Eidetic_memory\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Eidetic Memory, Photographic Memory and Total Recall\" TARGET=\"_NEW\">Methods of Loci and Total Recall</A>. Early documents show that when Simonides taught some of this to the local politicians and officials who after seeing Simonides
+Legend has it that Simonides himself was approached by Zeus and an unnamed female deity to be given the <A HREF=\"https://en.wikipedia.org/wiki/Eidetic_memory\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Eidetic Memory, Photographic Memory and Total Recall ::\" TARGET=\"_NEW\">Methods of Loci, Eidetic Memory, Photographic Memory and Total Recall</A>. Early documents show that when Simonides taught some of this to the local politicians and officials who after seeing Simonides
 godly mental faculties demanded to know how he had amassed a perfect memory of everything in the city and all of the people’s names and faces.. they were thereafter destroyed by Zeus for their corruption while seated within a banquet hall seated also by Simonides himself who was spared.
 The banquet hall was destroyed by a sudden earthquake where parts of the building came crashing down crushing and killing all of the people who were sitting around the tables. Simonides was later called upon by the local authorities to identify the bodies of the people who died at the tables because their bodies were disfigured and not identifiable.<BR><BR>
 
@@ -167,10 +171,10 @@ The local authorities were amazed to see that Simonides identified them all base
 spread around parts of Greece and Rome that there was a man gifted by the Gods who could memorize anything including entire books word for word, histories, thousands of citizen’s names and faces in a city. A man
 who mastered Mathematics, Poetry, History and several other academic subjects.<BR><BR>
 
-<B>Other Techniques</B><BR>
+<B>Other Memory Techniques</B><BR>
 Writings found in some historical documents show that Scandinavians and Germans identified and developed Non-Mnemonic Memory Techniques known as...<BR><BR>
 
-<B>Quick Example of Counting</B><BR>
+<BIG><B>Quick Example of Counting</B></BIG><BR>
 One quick and simple example of <B>\"Counting at Lightning Speed\"</B> would be mentally adding together the random numbers 9256 + 8431 in around or less than 1 second.<BR>
 * Firstly: You would mentally add together the 9,000 + 8,000 and this becomes the sum: 17,000<BR>
 * Secondly: You would then add together the 200 + 400 and this becomes the sum: 600, after that you would then add that sum to the previous sum and this becomes the sum 17,600<BR>
@@ -220,30 +224,206 @@ In between the four steps shown above this statement one would quickly add toget
 to arrive at the sum 5,208 in 0 to 5 seconds. If one can accurately and quickly compute this by using the proceedure shown above this statement then one could be considered a Lightning Human Calculator. This mental feat can be attributed
 to numerous historical and present-day Mathematicians such as Leonard Euler and others such as the world famous Rüdiger Gamm. Once after these proceedures are mastered the Lightning Human Calculator can then move on to <B>\"Higher Numbers\"</B> such as 381 * 925 or 4423 * 9272.<BR><BR>
 
-<B>Fraudulent Mental Calculating Competitions, Fraudulent Mental Calculating Software and Fraudulent Mental Calculating World Records</B><BR>
+<BIG><B>Fraudulent Mental Calculating Competitions, Fraudulent Mental Calculating Software and Fraudulent Mental Calculating World Records</B></BIG><BR>
 There are numerous fraudulent \"World Records\" on Lightning Mental Calculating.<BR>
 * Firstly: there exist a few organizations who allow for digital competitions between supposed Lightning Human Calculators. Lightning Mental Calculating Digital Competition Scores can be completely <B>\"thrown under the bus\"</B> and rejected instantly because no digital competition scores can ever be trusted as accurate due to the possibility of cheating.<BR>
 * Secondly: Most software for Lightning Mental Calculating cannot be trusted as accurate because most of the software is flawed and allows for cheating due to non-random and repeating numbers as well as numbers with too many zeros in a pattern that allow for cheating. Only a one on one competition in person with observers who are not involved with either person or any group where each competitor mentally performs all of the requested calculations without the assistance of a computer and without any visual aid at all whatsoever can be trusted as accurate. Observers could
 be Mathematical Scientists, Mathematics Professors, other Lightning Mental Calculators and general non-associated public people.<BR>
 * Thirdly: Most of the publicly accessible organizations for this use non-standard terminology for things that exist within the Lightning Mental Calculating scenario.<BR><BR>
 
-<B>What Is The Difference Between Speed Mental Mathematics and Lightning Mental Mathematics ?</B><BR>
+<BIG><B>What Is The Difference Between Speed Mental Mathematics and Lightning Mental Mathematics ?</B></BIG><BR>
 <B>Speed Mental Mathematics and Speed Mental Arithmetic</B> is mentally performing the Arithemtic and Mathematics Operations in a length of time that is not considered <B>Lightning Mental Mathematics and Lightning Mental Arithmetic</B>. Lightning Mental Calculating is mentally calculating exponential numbers at the <B>\"Speed of Lightning\"</B> which is usually around 1.5 seconds depending on certain other factors.<BR><BR>
 
-<B>The Anglicized Word Mathematics and Its Origins</B><BR>
+<BIG><B>The Anglicized Word Mathematics and Its Origins</B></BIG><BR>
 The spoken and written word: Mathematics is the anglicized word from the latin word Mathematica which is a plural meaning word that indicates more than one object. Ultimately the word is a mutation across several world languages meaning Universal or counting universally.<BR><BR>
 
-<B>What Will I Gain From This and What Can I Do With It ?</B><BR>
+<BIG><B>What Will I Gain From This and What Can I Do With It ?</B></BIG><BR>
 Once after each system is mastered you will have mastered all of known Mathematics because all of known Mathematics is based on the simple concepts of Addition, Subtraction, Division and Multiplication whether the numbers are whole and perfect positive and negative numbers or the numbers are fractions of whole and perfect positive and negative numbers. All modern Mathematical Expressions, Statements and Equations are easily solved like this because all of it is based on whole and perfect positive and negative numbers or fractions of perfect positive and negative numbers. Just about every modernly used mathematical notation symbol was devised or attached to a special value or concept around or after 1500 Anno Domini or Common Era and the idea of Common Era is actually a very recently introduced system of measuring time. All of the known Mathematical Expressions, Statements, Equations and more can easily be solved part by part and can be broken down to the actual whole or fractional numbers where one can then apply the order of P.E.M.D.A.S. to each set of numbers to then arrive at the correct answer no matter how complicated the Mathematical Expression, Statement or Equation is. Personally I have taken University-Level tests and scored nearly perfect or perfect.<BR><BR> 
 
-<B>Training Course</B><BR>
+<BIG><B>Training Course</B></BIG><BR>
 The author of this digital Application Module has designed a training course for people that already possess the natural counting ability. This specific training course covers a span of 6 months of intensive mental training and internal meditation. The training course can be completed alone or with others. The author of this training system does not socially interact with anyone and the materials are completely public and completely free.
 Once after this specific training course is completed the person who has undergone the training will possess a permanent set of mental abilities and will be capable of mentally calculating and mentally computing just about anything in mathematics with perfect or near perfect accuracy. This training course is meant for 21 years and older.<BR><BR>
 
-<B>Human Organ Care</B><BR>
+<BIG><B>Human Organ Care</B></BIG><BR>
 Every organ in the human body is important to care for. Each organ must be exercised and correctly cared for nutritionally. Most people have a strange thinking pattern where they only concentrate on one part of the body or one organ at a time when they exercise but the entire body is important. The entire body should be cared for simulatenously.<BR><BR>
 
-<B>Recommended Diet</B><BR>
+<BIG><B>Example of the First Method of Loci</B></BIG><BR>
+Mastering the First Methodus of Loci also known as The Method of Loci or The Method of Location Memory would be practicing creating a mental estate or castle where inside of the castle are unlimited and endless hallways
+where each hallway has 10 rooms that are numbered from 0 to 9. Each room has 4 solid walls where inside of each room are objects or things in 10 or more locations in a specific pattern from corner to corner in the room. Placing the
+information to be memorized in each location becomes like a movie or a professional film where you are the director of that mental film and you are placing the scenes of the film reel into each separate in order location in the room.<BR><BR>
+
+Example: Four Wall Room:<BR>
+xxxxxxxxxx<BR><BR>
+x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<BR><BR>
+xxxxxxxxxx<BR><BR>
+
+Example: Four Wall Room With Information Memory Locations:<BR>
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<BR><BR><BR>
+6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<BR><BR><BR>
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<BR><BR><BR>
+
+Once you have mastered your imagination where you can create a film in your head that makes perfect sense to you -- you can then memorize endless amounts of information. This information could be endless strings of numbers,
+facts, histories, dates, lists and just about everything. Once you have mastered the internal meditation and have control of your imagination you will find that mentally creating things and objects with symbolism in specific locations
+in the room will force the brain to release a natural chemical in the brain called <A HREF=\"https://en.wikipedia.org/wiki/Acetylcholine\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Acetylcholine ::\" TARGET=\"_NEW\">Acetylcholine</A> from the <A HREF=\"https://en.wikipedia.org/wiki/Hippocampus\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Hippocampus ::\" TARGET=\"_NEW\">Hippocampus</A> region of the human brain. What happens inside of the human brain is something phenominal. The natural Acetylcholine chemical that is produced from the Hippocampus region of the human brain literally cooks into the regions of the brain that control memory and then cook into the neuronal synapses creating
+a permanent long term memory. The mental film reel has to be looped from beginning to end in order for it this to work correctly. This is what is known as a human photographic memory of specific information and details. There are 20 known types of human photographic memory. By recalling the movie that you created in your head and placed in each room you will recall all of the details of that mentally created film from scene to scene. Once the mental film is made
+and if you ever want to access the information all that needs to be done is to mentally open the door to the room with the film in it and play it. You can fastforward or rewind the mental film to recall the information in whatever order that you want to recall it in. This could be forwards, backwards and randomly selected as well as in a specific pattern of selection.<BR><BR>
+
+<BIG><B>Example of Applying The First Method of Loci</B></BIG><BR>
+Applying the First Method of Loci after having mastered it is very simple. Try now to memorize this list of U.S. States, Federal and Non-Federal Districts and U.S. Territories.<BR><BR>
+
+<B>Memorizing With Full and Permanent Memory Retention: Every U.S. State, Federal District and U.S. Territory In Alphabetical Order In 10 Minutes OR Less</B><BR><BR>
+
+A :: 04 U.S. States<BR>
+Location Number #1 :: Alabama<BR>
+Location Number #2 :: Alaska<BR>
+Location Number #3 :: Arizona<BR>
+Location Number #4 :: Arkansas<BR><BR>
+
+A Civil Rights African American Lady named Ala is riding on a bus in the Deep South of Alabama. She points West to Alaskan Native Americans who are dancing around a totem pole at night time lit up in the snow. The Alaskan Native Americans are drinking Arizona brand Tea. They put a small bottle rocket in the Arizona Tea can and it flies into the Grand Canyon of Arizona
+where it explodes. Visitors in the Grand Canyon find a $1,000,000 Diamond inside of a big Noah's Ark replica by the exploded Arizona Tea can and they turn it into the local lost-and-found. The receptionist
+at the local lost-and-found has long curled red fingernails and she holds the Diamond up in the light. She is curious about the authenticity of the Diamond and attempts to cut it with a jagged saw. She boards a bus and drives to Arkansas where she turns in the Diamond for a reward of $1,000,000.<BR><BR>
+
+C :: 03 U.S. States<BR>
+Location Number #5 :: California<BR>
+Location Number #6 :: Colorado<BR>
+Location Number #7 :: Connecticut<BR><BR>
+
+The receptionist that took the Diamond meets a California Surfer who is holding a surf board and whose name is Color and they fly together to the Colorado Mountains. Then Color gets sick and is taken by helicopter to a location
+where they miss their next flight connection in a layover. They catch the next flight to a specialist doctor in Connecticut. The doctor is named Doctor Nutmeg. She miraculously heals the surfer and they drive away together while drinking
+Nutmeg Tea.<BR><BR>
+
+D :: 01 U.S. States<BR>
+Location Number #8 :: Deleware<BR><BR>
+
+The Doctor Nutmeg and the Surfer Color drive away to a warehouse of storage units with a sign that says Dela Storage to get their stuff from the storage unit and pack up for the next drive.<BR><BR>
+
+F :: 01 U.S. States<BR>
+Location Number #9 :: Florida<BR><BR>
+
+Upon unpacking some of the boxes in the storage unit they find a box full of crocodiles and oranges. The crocodiles are named Ida and her brother's name is George. Ida bites Color's finger until it bleeds.
+
+G :: 01 U.S. States<BR>
+Location Number #10 :: Georgia<BR><BR>
+
+Nutmeg opens a different box with peaches and throws the peaches onto the crocodiles Ida and George. The crocodiles become preoccupied and begin eating the peaches.<BR><BR>
+
+H :: 01 U.S. States<BR>
+Location Number #11 :: Hawaii<BR><BR>
+
+The Doctor Nutmeg and Color the Surfer leave and drive to the airport to board a flight to Hawaii. Once they arrive in Hawaii they are met by Hawaiians where they are then laid by the greeting Hawaiians.<BR><BR>
+
+I :: 04 U.S. States<BR>
+Location Number #12 :: Idaho<BR>
+Location Number #13 :: Illinois<BR>
+Location Number #14 :: Indiana<BR>
+Location Number #15 :: Iowa<BR><BR>
+
+One of the Hawaiians begin throwing rotting potatoes at Color the Surfer and the Doctor Nutmeg. The potatoes are labelled: \"Idaho Potatoes\". They all get into a big free-for-all fight and throw a Hawaiian into a volcano with the
+potatoes. Native Hawaiians begin fleeing the Hawaiian Islands as a new and advanced underwater train has been completed from Oahu, Hawaii to Chicago, Illinois. Thousands of people are getting off and on the train in Oahu, Hawaii while
+eating yellow corn. Indiana Jones is seen eating yellow corn in Hawaii on the beach before boarding the new train. Indiana Jones can be heard yelling \"I AM INDIANUM JONES !\".<BR><BR>
+
+K :: 02 U.S. States<BR>
+Location Number #16 :: Kansas<BR>
+Location Number #17 :: Kentucky<BR><BR>
+
+Indiana Jones is travelling on the train back to Chicago and he and the train get swept up in a Tornado where he reaches for a bottle of Kentucky Bourbon Liquor that is winding around the tornado. Ken from Barbie and flying turkeys are also
+seen flying around in the tornado. Indiana Jones begins drinking the Kentucky Bourbon Liquor.<BR><BR>
+
+L :: 01 U.S. States<BR>
+Location Number #18 :: Louisiana<BR><BR>
+
+King Louis and his wife Queen Ana are seen flying through the tornado after Indiana Jones and they all get into a sword fight while flying through the air in the tornado with Ken from Barbie and the turkeys.<BR><BR>
+
+M :: 08 U.S. States<BR>
+Location Number #19 :: Maine<BR>
+Location Number #20 :: Maryland<BR>
+Location Number #21 :: Massachusetts<BR>
+Location Number #22 :: Michigan<BR>
+Location Number #23 :: Minnesota<BR>
+Location Number #24 :: Mississippi<BR>
+Location Number #25 :: Missouri<BR>
+Location Number #26 :: Montana<BR><BR>
+
+King Louis and Queen Ana defeat Indiana Jones and then they land on the ground to meet a lion with a really big lion's mane.. so big in fact that several birds fly out of the lion's mane. They toast by drinking bloody Mary's at a table
+with graphics of an unknown land on the table top. On the side of the themed table top can been a massive amount of chewing gum. King Louis opens the chewing gum and then spits the chewing gum on a part of the table with graphics
+of the Great Lakes in Michigan. A giant coca-cola soda can that looks like a Viking along with 2 Miss Americas walks up to King Louis and they get married with the Count of Monte Cristo.<BR><BR>
+
+N :: 08 U.S. States<BR>
+Location Number #27 :: Nebraska<BR>
+Location Number #28 :: Nevada<BR>
+Location Number #29 :: New Hampshire<BR>
+Location Number #30 :: New Jersey<BR>
+Location Number #31 :: New Mexico<BR>
+Location Number #32 :: New York<BR>
+Location Number #33 :: North Carolina<BR>
+Location Number #34 :: North Dakota<BR><BR>
+
+A man named Mr. Neb is seen riding up to King Louis and Queen Ana. They all ride away swiftly on horses to Las Vegas where they gamble away a small fortune and win a prize of 1 million brand new empty clothing hampers. They aren't sure of what to do with the clothing hampers. The New Jersey Devil wearing a black suit is seen jumping around on the Casino Gambling Tables with a Mexican who is wearing
+a green poncho. The Italian Casino owners from New York get into a fight with the New Jersey Devil because he gets caught cheating in the Casino Games. The New Jersey Devil pulls out a compass pointing in the direction of North
+and throws it at the Italians after which he steals a rare Egyption artifact from Cairo, Egypt.<BR><BR>
+
+O :: 03 U.S. States<BR>
+Location Number #35 :: Ohio<BR>
+Location Number #36 :: Oklahoma<BR>
+Location Number #37 :: Oregon<BR><BR>
+
+The New Jersey Devil flees Las Vegas heading East and makes his way to a land of people they all speak a funny phrase saying \"Oh, hi. Oh. We are at home.. BUT YOU ARE GONE !\". The people are mining a rare metal in the land
+that is known as the Ore of Gon.<BR><BR>
+
+P :: 01 U.S. States<BR>
+Location Number #38 :: Pennsylvania<BR><BR>
+
+Many of the people mining the Ore of Gon also have special writing pens and pencils in their shirts. One of them is an attractive woman named Vania and she pulls out the special writing pencil and draws something.<BR><BR>
+
+R :: 02 U.S. States<BR>
+Location Number #39 :: Rhode Island<BR><BR>
+
+The picture Vania draws on the paper is an island with too many roads and cars. She asks for your help in taking the Egyption Artifact from Cairo to a Lady named Carolina. She draws a map for you that points South.<BR><BR>
+
+S :: 02 U.S. States<BR>
+Location Number #40 :: South Carolina<BR>
+Location Number #41 :: South Dakota<BR><BR>
+
+T :: 02 U.S. States<BR>
+Location Number #42 :: Tennessee<BR>
+Location Number #43 :: Texas<BR><BR>
+
+You take the map and the Egyption artifact to Lady Carolina and she gives you a bottle of Tennessee Whisky. You toast the Tennessee Whisky with Lady Carolina and also eat a bowl of Tex Mix.<BR><BR>
+
+U :: 01 U.S. States<BR>
+Location Number #44 :: Utah<BR><BR>
+
+A man wearing a red backwards hat approaches you after getting out of a U-Haul van and begins speaking the word hat but it is spoken backwards.. you cannot understand what he is saying because he is speaking backwards.<BR><BR>
+
+V :: 02 U.S. States<BR>
+Location Number #45 :: Vermont<BR>
+Location Number #46 :: Virginia<BR><BR>
+
+The man speaks forwards and you finally understand what he is telling you. He reveals to you that his name is Tom Vermon and today is Monday. Vermon is holding a bottle of Virgin Olive Oil.<BR><BR>
+
+W :: 04 U.S. States<BR>
+Location Number #47 :: Washington<BR>
+Location Number #48 :: West-Virginia<BR>
+Location Number #49 :: Wisconsin<BR>
+Location Number #50 :: Wyoming<BR><BR>
+
+You and Tom Vermon go out to dinner to discuss professionally how to travel back to the beach. President Washington is the restaurant host and the restaurant owner is a Chinese man named Yo Ming. President Washington personally cooks a meal for you
+and Tom Vermon made of Virgin Olive Oil and hairy purple cheese with the Presiden't armpit hair. The Cheese is a special kind of cheese that takes around 30 minutes to make. President George Washington gets into a fist fight with the Chinese Restaurant Owner named Yo Ming. Yo Ming
+then pulls out a African American Civil Rights activist toy from his pocket and throws it at President Washington.<BR><BR>
+
+<B>Recalling The Film</B><BR>
+As you may have noticed it may have taken you approximately 5 to 10 minutes or less to read the stories above this paragraph. Reading these silly stories will not cause the memory to permanently retain the information in the stories. The human brain
+will only memorize and retain the information if it is neatly stored in a special pattern that stands out. Once you have mastered the pattern of making the information stand out you can then play back the mental film that you made in the mind like a movie or a film in the movie theater or at home. The act of recalling the film is what enables the photographic memory.
+By recalling the movie that you created in your mind you will attain a photographic memory of the information memorized because you can then play the movie back in your mind scene by scene by thinking about the starting point in memory-location number: 1. By remembering the memory-location number: 1 and the beginning object it will start the string of memories and then loop back to memory-location number: 1. One must simply remember the African American Activist woman sitting on a bus in the Deep South of Alabama and the entire string of memories will be brought to immediate attention. This memorized information is now permanent and you can now recite in alphabetical order the complete
+list of 50 U.S. States, Federal and Non-Federal Districts and U.S. Territories in 10 - 30 seconds in front of anyone or by writing the answers down on a test if need be. Your test scores will be a perfect 100% because now you know all of the answers due to you memorizing the information. Not only can you now recite each U.S. State in alphabetical order but you instantly know how many U.S. States are within each letter of the Alphabet. Usually what happens
+after creating the film is that the silly made up stories are forgotton after a duration of time unless the information is placed into the memory-locations, but the factual information remains in permanent memory so the recall of the information is now Lightning Fast. This is called memory saturation and purification. You can now go back and keep adding to the factual information such as what year each U.S. State became a U.S. State and who
+fought in the battles and wars for that U.S. State. If the information is neatly placed in each memory-location the act of doing so stimulates the parts of the human brain that control navigation and location information. This would be things like remembering where you live and you will almost always remember that because you go back to it every day. Try now to memorize an entire list of every country in the world in alphabetical order. Applying this kind of the First Method of Loci to that task would only take 10 - 15 minutes for a creative mind.<BR><BR>
+
+<BIG><B>Mastering The Methods of Loci</B></BIG><BR>
+The Methods of Loci are only the beginning of something called the \"Art of Memory\". Mastering all of the Methods of Loci combined with newer modern memorization systems takes several years, but the first one is good enough to memorize an entire encyclopedia as well as the name and face of every human in a metropolis city. The First Method is full of riddled information but as it becomes mastered and automated by exercise a semi-photographic memory is achieved. The next set of Methodus' achieve a photographic memory capability.<BR><BR>
+
+<BIG><B>Recommended Diet For Physical and Mental Training</B></BIG><BR><BR>
+
 <B>Achieving Mental Clarity</B><BR>
 * Fast On Organic, Purified Drinking Water 4 - 7 Days Before Training Course<BR>
 ** Fast Note :: Drink 1 Gallon of Organic, Purified Driking Water per day withouting eating anything while laying in bed for 4 - 7 days before initiating the diet and before beginning the physical training or the mental training. You will not be able to move much due to lack of energy from starvation. <A HREF=\"https://en.wikipedia.org/wiki/Defecation\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Defecation ::\" TARGET=\"_NEW\">Defecation</A> will become pure water after 4 days of fasting. All <A HREF=\"https://en.wikipedia.org/wiki/Eucestoda\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Intestinal Parasites ::\" TARGET=\"_NEW\">Intestinal Parasites ( PinWorm, TapeWorm, Others )</A> and <A HREF=\"https://en.wikipedia.org/wiki/Gut_microbiota\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Intestinal Bacteria ::\" TARGET=\"_NEW\">Harmful Intestinal Bacteria</A> will release in defecation by the 6th day of fasting. According to the U.S. Centers For Disease Control <A HREF=\"https://en.wikipedia.org/wiki/Intestinal_parasite_infection\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Intestinal Parasite Infections ::\" TARGET=\"_NEW\">up to 20% of Americans and up to 40% or more of the world population have microscopic size and or macroscopic size intestinal parasites, blood parasites, microscopic size or macroscopic size muscle parasites ( trichinosis, more ), <A HREF=\"https://en.Wikipedia.org/wiki/Kidney_stone_disease\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Kidney Stones ::\" TARGET=\"_NEW\">kidney stones</A>, <A HREF=\"https://en.Wikipedia.org/wiki/Gallstone\" TITLE=\":: Open & Display :: The :: Wikipedia Article Entry :: For :: Liver Stones ::\" TARGET=\"_NEW\">liver stones</A>, prostate stones and or heavy intestinal bacteria that they don't even know about. It is highly recommended to not eat or touch any fast food or prepared food after this point in time. Pig meat is a huge carrier of these virus, worms and bacteria even if the meat is cooked. These Parasites, Bacteria and Virus all take away from the clarity of the mind and the overall health of the body. The diet and the exercises explained below will wake up the mind and the body and restore them to health and clarity.</A><BR><BR>
@@ -353,7 +533,27 @@ Every organ in the human body is important to care for. Each organ must be exerc
 * Creatine<BR>
 ** Fast Note: The human body will not absorb more than ~20% of compressed powder vitamin mixes such as vitamin pills and other concoctions. Vitamins must be in liquid form in order for the intestines to absorb 100% of it and the vitamins must be at the correct levels to prevent vitaminosis.<BR><BR>
 
-<B>Physical Training Course Instructions</B><BR>
+<B>Minerals</B><BR>
+Collagen<BR>
+Iodine<BR>
+Iron<BR>
+Calcium<BR>
+Potassium<BR>
+Sodium Chloride<BR>
+Magnesium<BR>
+Zinc<BR>
+Chromium<BR>
+Copper<BR>
+Selenium<BR>
+Sulfer<BR>
+Phosphorous<BR>
+Sea Salt<BR>
+Sodium<BR>
+Beta Carotene<BR>
+Acetyl Acids<BR>
+Omega-3<BR><BR>
+
+<BIG><B>Physical Training Course Instructions</B></BIG><BR>
 * Begin Walking 1 Mile // 1.60934 KiloMeters Per Day.<BR>
 ** Fast Note :: Add .2 miles to the 1 mile until you are capable of walking 10 - 18 miles per day at 3 miles per hour // 4.82803 KiloMeters per hour without stopping. Human capacity is limited to ~18 - 20 miles per day without resting.<BR>
 ** Fast Note :: Combine extensive stretching techniques with pushups in different angles, leg scissors and jogging for a few weeks before starting the mental training<BR><BR>
@@ -362,6 +562,36 @@ Every organ in the human body is important to care for. Each organ must be exerc
 
 <B>Mental Training Course Instructions</B><BR>
 Six Months From The 1st of April To The 1st of September<BR><BR>
+
+24 Hour Daily Schedule<BR>
+* 05:00 A.M.<BR>
+** <BR>
+* 06:00 A.M.<BR>
+** <BR>
+* 07:00 A.M.<BR>
+** <BR>
+* 08:00 A.M.<BR>
+** <BR>
+* 09:00 A.M.<BR>
+** <BR>
+* 10:00 A.M.<BR>
+** <BR>
+* 11:00 A.M.<BR>
+** <BR>
+* 12:00 P.M.<BR>
+** <BR>
+* 01:00 P.M.<BR>
+** <BR>
+* 02:00 P.M.<BR>
+** <BR>
+* 03:00 P.M.<BR>
+** <BR>
+* 04:00 P.M.<BR>
+** <BR>
+* 05:00 P.M.<BR>
+** <BR>
+* 06:00 P.M.<BR>
+** <BR><BR>
 
 <B>30 Days, April</B><BR>
 * Week Number 01 :: Mental Addition, Addition Differences, Summation<BR>
