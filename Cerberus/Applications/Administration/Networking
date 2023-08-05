@@ -1,0 +1,248 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Networking
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: Networking :: Blocking and Filtration of Internet Networks
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Network Blocking :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Network Blocking :: Variables :: Internet Protocol Address Strings
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING		= $_POST['AMA_Networking_Block_Internet_Protocol_Address_String'];
+$_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_REDIRECT_URL		= $_POST['AMA_Networking_Block_Internet_Protocol_Address_Redirect_URL'];
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Networking Banishment, Network Blocking and Network Filtering Input Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+													<CENTER><B>Network Banishment, Network Blocking and Network Filtering</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Networking\" METHOD=\"post\">
+															Redirect :: Uniform-Resource-Location<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"AMA_Networking_Block_Internet_Protocol_Address_Redirect_URL\">Example: https://www.Google.com</TEXTAREA><BR><BR>
+
+															String :: Internet Protocol Address<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"AMA_Networking_Block_Internet_Protocol_Address_String\">Internet Protocol Version: 4, Address String - Example: 123.456.789.012 *OR* Internet Protocol Version: 6, Address String - Example: 1234:5678:aa0:9012:44fe:df64:cfde:2990</TEXTAREA><BR><BR>
+
+															Text-Block :: Internet Protocol Address<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"AMA_Networking_Block_Internet_Protocol_Address_Block\">Internet Protocol Version: 4, Address Block - Example: 123.456.789.012 *OR* Internet Protocol Version: 6, Address Block - Example: 1234:5678:aa0:9012:44fe:df64:cfde:2990</TEXTAREA><BR><BR>
+
+															String :: Domain Name Server Address<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"AMA_Networking_Block_Domain_Name_Server_Address_String\">Domain Name Server Address String - Example: 123.456.789.012</TEXTAREA><BR><BR>
+
+
+															Text-Block :: Domain Name Server Address<BR>
+															<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"AMA_Networking_Block_Domain_Name_Server_Address_Block\">Domain Name Server Address Block - Example: 123.456.789.012</TEXTAREA><BR>
+															<INPUT TYPE=\"submit\" VALUE=\"Network Block Selections\">
+														</FORM><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Network Blocking :: Variables :: Post Variables Have Executed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING) {
+
+/*
+ ============================================================================================================
+ + Database Server Query :: Insert :: Internet Protocol Addresses String Into Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Networking_DB_Query_Block_Network_Internet_Protocol_Address_String	= $DB->query("INSERT INTO {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_networking(blocked_ip_address_string,blocked_redirect_url)VALUES('$_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING','$_Application_Module_Administration_Networking_POST_BLOCK_INTERNET_PROTOCOL_REDIRECT_URL')");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Insert :: Internet Protocol Addresses String Into Database Server
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Networking_DB_Query_Block_Network_Internet_Protocol_Address_String) {
+
+													echo ($_Application_Module_Administration_Message_Networking_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING_SUCCESSFUL);
+
+} else {
+
+													echo ($_Application_Module_Administration_Message_Networking_BLOCK_INTERNET_PROTOCOL_ADDRESS_STRING_ERROR);
+
+} // [ + ] IF: Database Server Query :: Insert :: Blocked Network Address
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Block Internet Protocol Address
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Networking_DB_Query_Block_Network_Internet_Protocol_Address_String);
+
+} // [ + ] IF: Network Blocking :: Input Form :: Variables HAVE Executed
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Existing Network Blocks
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Retrieve :: Blocked Network Entries From The Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_networking ORDER BY id ASC");
+
+													echo ("<HR><CENTER><B>Existing Blocked Networks</B></CENTER><HR>");
+
+/*
+ ============================================================================================================
+ + IF: Retrieve :: Blocked Network Entries :: ARE Less Than OR Equal To: Zero
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS) <= 0) {
+
+													echo ($_Application_Module_Administration_Message_Networking_BLOCKED_ENTRIES_NULL);
+
+} else {
+
+/*
+ ============================================================================================================
+ + WHILE: Retrieving :: Network Block Entries :: From The Database Management System Server Database
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS)) {
+
+$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ID				= $_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS_Fetch_Array['id'];
+$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ADDRESS			= $_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS_Fetch_Array['blocked_ip_address_string'];
+
+echo ("
+												String :: Blocked Network Address: <A HREF=\"http://www.WhoIs.sc/$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ADDRESS\" TITLE=\":: Who-Is Lookup Information On Network Address: $_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ADDRESS ::\" TARGET=\"_NEW\">$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ADDRESS</A><HR>
+													* <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Networking&amp;Remove&#61;$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ID\" TITLE=\":: Remove Network Block :: From Network Address :: $_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ADDRESS ::\">Remove Network Block</A><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Remove :: Existing :: Blocked Network Addresses
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Remove"] == "$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ID") {
+
+/*
+ ============================================================================================================
+ + Database Server Query: Delete :: Network Block Entry
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Networking_DB_Query_REMOVE_BLOCKED_NETWORK_ADDRESS			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_networking WHERE id='$_Application_Module_Administration_Networking_LIST_BLOCKED_NETWORK_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query: Delete :: Network Block Entry
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Networking_DB_Query_REMOVE_BLOCKED_NETWORK_ADDRESS) {
+
+													echo ($_Application_Module_Administration_Message_Networking_BLOCK_REMOVAL_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Internal Application: Remove Network Address IS Activated
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete Banned Internet Protocol Address
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Networking_DB_Query_REMOVE_BLOCKED_NETWORK_ADDRESS);
+
+} // [ + ] IF: Database Server Query :: Delete Entry :: From Network Blocking
+
+} // [ + ] WHILE: Retrieving List of Existing Blocked Networks
+
+} // [ + ] IF: Number of Rows IS Less Than OR Equal To: Zero
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Retrieve List of Blocked Network Addresses
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Networking_DB_Query_LIST_BLOCKED_NETWORKS);
+?>

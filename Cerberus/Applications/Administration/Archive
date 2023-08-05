@@ -1,0 +1,312 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Archive
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: Archive Files and Archive Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Archive Files :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Archive Files :: File Selection :: Variables :: Post Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTION				= $_POST['AMA_Archive_File_Selection'];
+
+/*
+ ============================================================================================================
+ + Archive Files :: Date and Timestamp
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_ARCHIVE_TIMESTAMP 					= date("l_F_j_Y_g:i:s-A");
+
+/*
+ ============================================================================================================
+ + IF: Archive Files :: Input Form :: Variables HAVE NOT Executed, Display :: Input Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTION) {
+
+/*
+ ============================================================================================================
+ +
+ + Display :: Archive Files :: Input Form
+ +
+ ============================================================================================================
+*/
+
+echo ("
+													<CENTER><B>Archive System</B></CENTER><HR>
+														<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Archive\" METHOD=\"post\">
+																Archive Specifications<BR>
+																<TEXTAREA ROWS=\"10\" COLS=\"110\" NAME=\"AMA_Archive_File_Selection\">Manually Select Files AND Directories. This Terminal will Archive the entire system by typing: ./</TEXTAREA><BR>
+																<INPUT TYPE=\"submit\" VALUE=\"Archive Selection\">
+														</FORM><BR><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ +
+ + Archive Selection
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_INITIALIZE_ZIP					= new zipArchive();
+
+/*
+ ============================================================================================================
+ + IF: Archive :: Create Archive
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Archive_INITIALIZE_ZIP->open("./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_ARCHIVE_TIMESTAMP", zipArchive::CREATE) === TRUE) {
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_REPLACE_CHARACTERS			= preg_replace('/[\/\]{2,}/', '/', $_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTION."/");
+$_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTIONS				= array($_Application_Module_Administration_Archive_POST_ARCHIVE_REPLACE_CHARACTERS);
+
+/*
+ ============================================================================================================
+ + WHILE: Counting Archive Files AND OR Directories
+ ============================================================================================================
+*/
+
+while (count($_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTIONS)) {
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTION 				= current($_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTIONS);
+
+/*
+ ============================================================================================================
+ + Archive :: Add Files AND OR Directories
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_INITIALIZE_ZIP->addEmptyDir($_Application_Module_Administration_Archive_POST_ARCHIVE_REPLACE_CHARACTERS);
+
+$_Application_Module_Administration_Archive_DIRECTORY_OPEN					= opendir($_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTION);
+
+/*
+ ============================================================================================================
+ + WHILE: Reading Directory :: Archive
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Administration_Archive_DIRECTORY_FILE = readdir($_Application_Module_Administration_Archive_DIRECTORY_OPEN)) {
+
+/*
+ ============================================================================================================
+ + IF: FILE AND OR Directory IS NOT Escaping Directory
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Archive_DIRECTORY_FILE != '.' && $_Application_Module_Administration_Archive_DIRECTORY_FILE != '..') {
+
+/*
+ ============================================================================================================
+ + IF: Archive :: File Selection IS File
+ ============================================================================================================
+*/
+
+if (is_file($_Application_Module_Administration_Archive_DIRECTORY_FILE)) {
+
+$_Application_Module_Administration_Archive_INITIALIZE_ZIP->addFile($_Application_Module_Administration_Archive_POST_ARCHIVE_REPLACE_CHARACTERS.$_Application_Module_Administration_Archive_DIRECTORY_FILE, $_Application_Module_Administration_Archive_POST_ARCHIVE_REPLACE_CHARACTERS.$_Application_Module_Administration_Archive_DIRECTORY_FILE);
+
+/*
+ ============================================================================================================
+ + ELSE IF: File Selection IS Directory
+ ============================================================================================================
+*/
+
+} elseif (is_dir($_Application_Module_Administration_Archive_DIRECTORY_FILE))
+
+$_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTIONS[] 				= $_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTION.$_Application_Module_Administration_Archive_DIRECTORY_FILE."/";
+
+} // [ + ] IF, ELSE IF: Archive :: File Selection: IS File OR Directory
+
+} // [ + ] IF: Archive :: Selection :: IS NOT Escaping Directory
+
+/*
+ ============================================================================================================
+ + Close Directory: File AND OR Directory Selection
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Administration_Archive_DIRECTORY_OPEN);
+
+/*
+ ============================================================================================================
+ + SHIFT: Array of Selection: Archive :: File AND OR Directory Selection
+ ============================================================================================================
+*/
+
+array_shift($_Application_Module_Administration_Archive_POST_ARCHIVE_SELECTIONS);
+
+} // [ + ] WHILE: Reading :: Archive :: File AND OR Directory Selection
+
+/*
+ ============================================================================================================
+ + Close Archive :: File AND OR Directory Selection
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_INITIALIZE_ZIP->close();
+
+													echo ($_Application_Module_Administration_Message_Archive_PACKAGE_COMPRESSION_SUCCESSFUL);
+
+} else {
+
+													echo ("$_Message_ERROR_ACTION_UNIVERSAL [ PHP Version ]");
+
+} // [ + ] IF: Archive :: Open :: New Archive File
+
+} // [ + ] IF: Archive :: Input Form :: Variables HAVE Executed
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Display :: Archived and Packaged Files
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Read :: Directory :: Archive Directory
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Archive_FIND_ARCHIVE_DIRECTORY				= "./Applications/Administration/System_Archive/";
+$_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY				= opendir($_Application_Module_Administration_Archive_FIND_ARCHIVE_DIRECTORY);
+
+													echo ("<HR><CENTER><B>Existing Archives</B></CENTER><HR>");
+
+/*
+ ============================================================================================================
+ + WHILE: Reading :: Directory :: Archive Directory
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY = readdir($_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY))) {
+
+/*
+ ============================================================================================================
+ + IF: STOP: Exploit :: Local-File-Inclusion AND Remote-File-Inclusion
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY == "." || $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY == ".." || $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+echo ("
+Archive: $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY<BR>
+=> <A HREF=\"./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\" TITLE=\":: Download The Archived Package :: $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\">Download</A><BR>
+=> <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Archive&amp;Delete&#61;$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\" TITLE=\":: Delete The Archived Package :: $_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY\">Delete</A><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application: Delete :: Archive
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["Delete"] == "$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY") {
+
+/*
+ ============================================================================================================
+ + IF: Delete :: Archive
+ ============================================================================================================
+*/
+
+if (unlink("./Applications/Administration/System_Archive/$_Application_Module_Administration_Archive_READ_ARCHIVE_DIRECTORY"))
+
+													echo ($_Application_Module_Administration_Message_Archive_PACKAGE_DELETE_SUCCESSFUL);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Unlink :: Selected File
+
+} // [ + ] WHILE: Reading :: Directory :: Archive Directory
+
+} // [ + ] IF: Directory IS NOT The Archived Packages
+
+/*
+ ============================================================================================================
+ + Close Directory: Archive Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Administration_Archive_OPEN_ARCHIVE_DIRECTORY);
+?>
