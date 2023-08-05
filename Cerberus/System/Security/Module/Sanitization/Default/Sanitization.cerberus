@@ -302,6 +302,68 @@ $_Kernel_Set_Member_Account_POST_SET_LANGUAGE									= str_replace(" ", "", $_K
  +
  +
  +
+ + [ @ ] Application :: Internal :: Theme
+ +
+ + Number of Variables :: GET  :: 
+ + Number of Variables :: POST :: 01
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Variables :: POST Variables
+ +
+ ============================================================================================================
+*/
+
+$_Kernel_Set_Member_Account_POST_SET_THEME	 								= $_POST['IAM_Set_Theme'];
+
+/*
+ ============================================================================================================
+ +
+ + Variables :: POST Variables :: Character and String Replacement
+ +
+ ============================================================================================================
+*/
+
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("`", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("@", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("<", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace(">", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("\"", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("&", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("'", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("~", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("$", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("=", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("{", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("}", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("(", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace(")", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("#", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("%", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("*", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("+", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace(",", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("-", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace(".", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("/", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace(":", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("\;", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("?", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("[", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("]", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("^", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("_", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace("|", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+$_Kernel_Set_Member_Account_POST_SET_THEME									= str_replace(" ", "", $_Kernel_Set_Member_Account_POST_SET_THEME);
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
  +
  + [ ^ ] Applications :: Background
  +
