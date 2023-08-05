@@ -1,0 +1,158 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  --  ()
+ +  ()  --  ()  ()
+ +  ------------------------------
+ +  Panel Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Panel => Project_Badges.panel
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Panel :: Cerberus Badges
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<A HREF=\"https://www.SourceForge.net/projects/cerberuscms\" TITLE=\":: Cerberus Content Management System :: Official Software Project Page Hosted On SourceForge ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Cerberus_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Cerberus Content Management System :: Official Software Project Page Hosted On SourceForge ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.ArchLinux.org\" TITLE=\":: Arch-Linux Operating System :: Official Arch-Linux Operating System Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Arch-Linux_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Arch-Linux Operating System :: Official Arch-Linux Operating System Web Server ::\">
+											</A><BR><BR>
+											
+											<A HREF=\"https://www.FreeBSD.org\" TITLE=\":: FreeB.S.D. Operating System :: Official Free-B.S.D. Operating System Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/FreeBSD_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: FreeB.S.D. Operating System :: Official Free-B.S.D. Operating System Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.CoreBoot.org\" TITLE=\":: CoreBoot Firmware :: Official CoreBoot Firmware Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/CoreBoot_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: CoreBoot Firmware :: Official CoreBoot Firmware Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://wiki.LineageOS.org/devices\" TITLE=\":: LineageOS :: Digital Security Hardened Edition :: Official LineageOS Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/LineageOS_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: LineageOS :: Digital Security Hardened Edition :: Official LineageOS Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.FreshTomato.org\" TITLE=\":: Tomato Firmware :: Digital Security Hardened Edition :: Official Tomato Firmware Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/TomatoFirmware_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Tomato Firmware :: Digital Security Hardened Edition :: Official Tomato Firmware Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://wiki.ArchLinux.org/title/Dnscrypt-proxy\" TITLE=\":: Domain-Name-Server-Encryption :: DNSCrypt-Proxy :: Official DNSCrypt-Proxy Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/DNSCrypt_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Domain-Name-Server-Encryption :: DNSCrypt-Proxy :: Official DNSCrypt-Proxy Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.GITHub.com/OpenVPN\" TITLE=\":: Network Packet Encryption :: OpenVPN :: Official OpenVPN Project GITHub Repository ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/OpenVPN_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Network Packet Encryption :: OpenVPN :: Official OpenVPN Project GITHub Repository ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.PHP.net/manual/en/book.gnupg.php\" TITLE=\":: Official Open Pretty-Good-Privacy Encryption :: Pre-Hyper-Text-Post-Processor Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/PGP_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Open Pretty-Good-Privacy Encryption :: Pre-Hyper-Text-Post-Processor Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.PHP.net/manual/en/function.openssl-encrypt.php\" TITLE=\":: Official Advanced Encryption Standard Encryption :: Pre-Hyper-Text-Post-Processor Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/AES_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Advanced Encryption Standard Encryption :: Pre-Hyper-Text-Post-Processor Project Web Server ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.OpenSSL.org\" TITLE=\":: Official Open Secure-Socket-Layer Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/OpenSSL_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Open Secure-Socket-Layer Project Web Server ::\">
+											</A><BR><BR>
+											
+											<A HREF=\"https://www.Apache.org\" TITLE=\":: Apache HTTP Server Lite :: Official Apache Software Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Apache_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Apache HTTP Lite :: Official Apache Software Project Web Server ::\">
+											</A><BR><BR>
+											
+											<A HREF=\"https://www.Chromium.org/\" TITLE=\":: Chromium :: Official Web-Browser Software Project Web Serer ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Chromium_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Chromium :: Official Web-Browser Software Project Web Serer ::\">
+											</A><BR><BR>
+											
+											<A HREF=\"https://www.Mozilla.org/firefox/\" TITLE=\":: Mozilla FireFox :: Official Web-Browser Software Project Web Server ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/FireFox_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Mozilla FireFox :: Official Web-Browser Software Project Web Server ::\">
+											</A><BR><BR>
+											
+											<A HREF=\"https://www.BITBucket.org\" TITLE=\":: Cerberus Content Management System :: Clean Code Project :: Official BITBucket Repository ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/BITBucket_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Cerberus Content Management System Is A Clean Code Project ::\">
+											</A><BR><BR>
+
+											<A HREF=\"https://www.GITHub.com/TinkeSoftware/CerberusCMS\" TITLE=\":: Cerberus Content Management System :: Clean Code Project :: Official GITHub Repository ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/CleanCode_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Cerberus Content Management System Is A Clean Code Project ::\">
+											</A><BR><BR>
+											
+											<A TITLE=\":: Cerberus Content Management System Is Hand Written In Southern California ::\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/MadeInCalifornia.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" WIDTH=\"125\" HEIGHT=\"50\" ALT=\":: Cerberus Content Management System Is Hand Written In Southern California ::\">
+											</A><BR><BR>
+											
+											<A TITLE=\":: Cerberus Content Management System Is A 100% Pure and Clean Pre-HyperText-Post-Processor Software Project Handwritten In Pure Pre-HyperText-Post-Processor Programming Code - JavaScript Programming Code Was Never Allowed ::\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/NoScript_Badge.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" WIDTH=\"125\" HEIGHT=\"50\" ALT=\":: Cerberus Content Management System Is A 100% Pure and Clean Pre-HyperText-Post-Processor Software Project Handwritten In Pure Pre-HyperText-Post-Processor Programming Code - JavaScript Programming Code Was Never Allowed ::\">
+											</A><BR><BR>
+											
+											<A HREF=\"https://www.Apache.org\" TITLE=\":: Apache Software Foundation ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Apache.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Apache Software Foundation ::\">
+											</A><BR>
+											
+											<A HREF=\"https://www.MySQL.com\" TITLE=\":: MySQL Database Management System ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/MySQL.gif\" CLASS=\"PanelProjectBadge\" ALT=\":: MySQL Database Management System ::\"></A><BR>
+											
+											<A HREF=\"https://www.PHP.net\" TITLE=\":: Post-Hyper-Text Pre-Processor / Pre-Hyper-Text-Post-Processor ( P.H.P. ) Scripting Language ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/PHP.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Post-Hyper-Text Pre-Processor / Pre-Hyper-Text-Post-Processor ( P.H.P. ) Scripting Language ::\">
+											</A><BR>
+											
+											<A HREF=\"http://tool.motoricerca.info/robots-checker.phtml\" TITLE=\":: Official Robots Validation Service ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/Robots.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Robots Validation Service ::\">
+											</A><BR>
+											
+											<A HREF=\"https://jigsaw.w3.org/css-validator/\" TITLE=\":: Official Cascading Style Sheet Validation Service ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/W3C_CSS.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Cascading Style Sheet Validation Service ::\">
+											</A><BR>
+											
+											<A HREF=\"https://validator.w3.org/\" TITLE=\":: Official Hyper-Text Markup Language Validation Service ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/W3C_HTML.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Hyper-Text Markup Language Validation Service ::\">
+											</A><BR>
+
+											<A HREF=\"https://validator.w3.org/feed/\" TITLE=\":: Official Really Simple Syndication Validation Service ::\" TARGET=\"_NEW\">
+												<IMG SRC=\"./Theme/$_GLOBAL_SYSTEM_THEME_DIRECTORY/Image/Badges/W3C_RSS.png?$_GLOBAL_SYSTEM_SECURITY_IMAGE_RANDOM_STRING_GENERATION_CACHE_CIRCUMVENTION\" CLASS=\"PanelProjectBadge\" ALT=\":: Official Really Simple Syndication Validation Service ::\">
+											</A>
+");
+?>
