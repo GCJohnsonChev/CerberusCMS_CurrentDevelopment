@@ -1,0 +1,553 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Private_Files
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	- Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 3,419
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Private Files
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ("$_Application_Module_Member_Message_Private_Files_Header");
+
+/*
+ ============================================================================================================
+ +
+ +
+ + Application Variables
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Application Variables :: Find and Open :: Registered Member Account :: Private Directories
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Find and Open :: Registered Member Account :: Private Directory :: Image :: Profile Images
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_UPLOAD_FIND_DIRECTORY_MEMBER_GALLERY_IMAGE_PROFILE		= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile";
+$_Application_Module_Members_Private_Files_UPLOAD_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE_PROFILE		= opendir($_Application_Module_Members_Private_Files_UPLOAD_FIND_DIRECTORY_MEMBER_GALLERY_IMAGE_PROFILE);
+
+/*
+ ============================================================================================================
+ + Find and Open :: Registered Member Account :: Private Directory :: Gallery :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_UPLOAD_FIND_DIRECTORY_MEMBER_GALLERY_IMAGE			= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Gallery";
+$_Application_Module_Members_Private_Files_UPLOAD_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE			= opendir($_Application_Module_Members_Private_Files_UPLOAD_FIND_DIRECTORY_MEMBER_GALLERY_IMAGE);
+
+/*
+ ============================================================================================================
+ + Find and Delete :: Registered Member Account :: Private Directory :: Gallery :: Image
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_DELETE_FIND_DIRECTORY_MEMBER_GALLERY_IMAGE			= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Gallery";
+$_Application_Module_Members_Private_Files_DELETE_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE			= opendir($_Application_Module_Members_Private_Files_DELETE_FIND_DIRECTORY_MEMBER_GALLERY_IMAGE);
+
+/*
+ ============================================================================================================
+ +
+ + Application Variables :: Post Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Variables :: Post Variables :: Image :: Delete
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_POST_DELETE_FILE_IMAGE_PROFILE				= $_POST['AMM_Private_Files_Delete_File_Image_Profile'];
+$_Application_Module_Members_Private_Files_POST_DELETE_DIRECTORY_GALLERY_IMAGE				= $_POST['AMM_Private_Files_Delete_Directory_Gallery_Image'];
+
+/*
+ ============================================================================================================
+ + Application Variables :: Post Variables :: Image :: Upload
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_MAXIMUM_UPLOAD_SIZE						= $_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER / 1024;
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_GALLERY_IMAGE				= $_POST['AMM_Private_Files_Upload_Directory_Gallery_Image'];
+
+/*
+ ============================================================================================================
+ + Application Variables :: Post Variables :: Gallery :: Directory :: Create
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_AUDIO				= $_POST['AMM_Private_Files_Create_Directory_Gallery_Audio'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_DOCUMENT			= $_POST['AMM_Private_Files_Create_Directory_Gallery_Document'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_IMAGE				= $_POST['AMM_Private_Files_Create_Directory_Gallery_Image'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_VIDEO				= $_POST['AMM_Private_Files_Create_Directory_Gallery_Video'];
+$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_VIDEO_LIVE			= $_POST['AMM_Private_Files_Create_Directory_Gallery_Video_Live'];
+
+
+echo ("
+	<CENTER>
+	<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Audio\" TITLE=\":: Open & Display :: The Audio Gallery :: Management Options ::\">Audio</A> -
+	<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Document\" TITLE=\":: Open & Display :: The Document Gallery :: Management Options ::\">Document</A> -
+	<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Image\" TITLE=\":: Open & Display :: The Image Gallery :: Management Options ::\">Image</A> -
+	<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Video\" TITLE=\":: Open & Display :: The Video Gallery :: Management Options ::\">Video</A> -
+	<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;LiveVideo\" TITLE=\":: Open & Display :: The Live Video Gallery :: Management Options ::\">Live Video</A>
+	</CENTER>
+	<HR>
+");
+
+if ($_GET["Display"] == "Gallery") {
+
+if ($_GET["Type"] == "Audio") {
+
+}
+
+if ($_GET["Type"] == "Document") {
+
+}
+
+if ($_GET["Type"] == "Image") {
+
+/*
+ ============================================================================================================
+ +
+ + Find and List :: Registered Member Account :: Images :: Registered Member Account Profile Images
+ +
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Members_Private_Files_POST_DELETE_FILE_IMAGE_PROFILE) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Image\" METHOD=\"post\">
+												<B>Delete :: Image :: Profile Image</B><BR>
+													<SELECT NAME=\"AMM_Private_Files_Delete_File_Image_Profile\">
+");
+
+/*
+ ============================================================================================================
+ + WHILE :: Read :: Directory :: Registered Member Account :: Images :: Registered Member Account Profile Images
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Members_Private_Files_READ_MEMBER_IMAGE_DIRECTORY = readdir($_Application_Module_Members_Private_Files_UPLOAD_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE_PROFILE))) {
+
+/*
+ ============================================================================================================
+ + IF: STOP :: Exploit: Remote-File-Inclusion AND Local-File-Inclusion
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_READ_MEMBER_IMAGE_DIRECTORY == "." || $_Application_Module_Members_Private_Files_READ_MEMBER_IMAGE_DIRECTORY == ".." || $_Application_Module_Members_Private_Files_READ_MEMBER_IMAGE_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+														echo ("<OPTION VALUE=\"$_Application_Module_Members_Private_Files_READ_MEMBER_IMAGE_DIRECTORY\">$_Application_Module_Members_Private_Files_READ_MEMBER_IMAGE_DIRECTORY</OPTION>");
+
+} // [ + ] IF: Specified :: Registered Member Account :: Directory :: Image Directory AND Files ARE NOT Specified Member Account Image Directory AND Files
+
+} // [ + ] WHILE: Reading :: Specified Registered Member Account :: Directory :: Image Directory
+
+/*
+ ============================================================================================================
+ + Close :: Directory :: Registered Member Account Image Directory :: Profile Images
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Members_Private_Files_UPLOAD_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE_PROFILE);
+
+echo ("
+													</SELECT><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Delete File\">
+											</FORM>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + Delete :: File :: Registered Member Account Image :: Selected Registered Member Account Profile Image
+ ============================================================================================================
+*/
+
+if (unlink("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Members_Private_Files_POST_DELETE_FILE_IMAGE_PROFILE")) {
+
+											echo ($_Application_Module_Member_Message_Private_Files_DELETE_SUCCESSFUL);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Private_Files_DELETE_ERROR);
+
+} // [ + ] IF: Unlink: Registered Member Account :: Image :: Profile Image
+
+} // [ + ] IF: Specified :: Registered Member Account :: Directory :: Profile Image Directory IS NOT Specified Registered Member Account Profile Image Directory
+
+/*
+ ============================================================================================================
+ +
+ + Upload :: Registered Member Account Image :: Profile Image File
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Find and Open :: Directory :: Registered Member Account :: 
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_FIND_DIRECTORY_TEMPORARY_UPLOAD				= "./Temporary/";
+$_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE 				= $_Application_Module_Members_Private_Files_FIND_DIRECTORY_TEMPORARY_UPLOAD . basename($_FILES['AMM_Private_Files_Upload_File_Image_Gallery']['name']);
+
+/*
+ ============================================================================================================
+ + Allowed File Extensions
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_UPLOAD_ALLOWED_FILE_EXTENSIONS_IMAGE				= "jpg gif png bmp jpeg";
+$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY				= $_POST['AMM_Private_Files_Upload_Directory_Temporary'];
+
+/*
+ ============================================================================================================
+ + Explode File Data For Upload
+ ============================================================================================================
+*/
+
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO 				= pathinfo($_FILES['AMM_Private_Files_Upload_File_Image_Gallery']['name']);
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXTENSION 				= $_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO['extension'];
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_BASENAME				= $_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_PATHINFO['basename'];
+$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXPLODE				= explode(" ", $_Application_Module_Members_Private_Files_UPLOAD_ALLOWED_FILE_EXTENSIONS_IMAGE);
+
+/*
+ ============================================================================================================
+ + Upload File Form
+ ============================================================================================================
+*/
+
+if (!$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_TEMPORARY) {
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Image\" METHOD=\"post\" ENCTYPE=\"multipart/form-data\">
+												<BR><B>Upload :: Image Gallery :: Profile Image<BR>
+												[ Maximum Image File Upload Size: $_Application_Module_Members_Private_Files_MAXIMUM_UPLOAD_SIZE KB ]</B><BR>
+													<INPUT TYPE=\"hidden\" NAME=\"AMM_Private_Files_Upload_Directory_Temporary\" VALUE=\"1\">
+													<INPUT TYPE=\"file\" NAME=\"AMM_Private_Files_Upload_File_Image_Gallery\"><BR>
+														<SELECT NAME=\"AMM_Private_Files_Upload_Directory_Gallery_Image\">
+");
+
+while (($_Application_Module_Members_Private_Files_UPLOAD_READ_MEMBER_DIRECTORY_GALLERY_IMAGE = readdir($_Application_Module_Members_Private_Files_UPLOAD_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE))) {
+
+/*
+ ============================================================================================================
+ + IF: STOP :: Exploit: Remote-File-Inclusion AND Local-File-Inclusion
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_UPLOAD_READ_MEMBER_DIRECTORY_GALLERY_IMAGE == "." || $_Application_Module_Members_Private_Files_UPLOAD_READ_MEMBER_DIRECTORY_GALLERY_IMAGE == ".." || $_Application_Module_Members_Private_Files_UPLOAD_READ_MEMBER_DIRECTORY_GALLERY_IMAGE == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+														echo ("<OPTION VALUE=\"$_Application_Module_Members_Private_Files_UPLOAD_READ_MEMBER_DIRECTORY_GALLERY_IMAGE\">$_Application_Module_Members_Private_Files_UPLOAD_READ_MEMBER_DIRECTORY_GALLERY_IMAGE</OPTION>");
+
+} // [ + ] IF: Specified Registered Member Account Image Directory AND Files ARE NOT Specified Registered Member Account Image Directory AND Files
+
+} // [ + ] WHILE: Reading :: Specified Registered Member Account Image Directory
+
+/*
+ ============================================================================================================
+ + Close Directory :: Registered Member Account :: Directory :: Image Directory :: Profile Images
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Members_Private_Files_UPLOAD_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE);
+
+echo ("
+														</SELECT><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Upload File\">
+											</FORM><BR>
+");
+
+} else {
+
+/*
+ ============================================================================================================
+ + IF: File Data Exploded, Increment Until Data Is Imploded and Placed
+ ============================================================================================================
+*/
+
+for ($i = 0; $i < count($_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXPLODE); $i++) {
+
+/*
+ ============================================================================================================
+ + IF: Uploaded File Extension Is Allowed, Prepare Variable
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXPLODE[$i] == "$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_EXTENSION") {
+
+	$_Application_Module_Members_Private_Files_OK_FOR_UPLOAD 					= "1";
+
+} // [ + ] IF: Uploaded File :: File Extension :: Is: Allowed
+
+} // [ + ] FOR: Uploaded File Image Explosion To Be Greater Than Variable i, Increment i
+
+/*
+ ============================================================================================================
+ + File Type Is Allowed, Upload File
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_OK_FOR_UPLOAD == "1") {
+
+	move_uploaded_file($_FILES['AMM_Private_Files_Upload_File_Image_Gallery']['tmp_name'], $_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE);
+
+} else {
+
+/*
+ ============================================================================================================
+ + File Type Is Not Allowed, Delete File
+ ============================================================================================================
+*/
+
+	unlink($_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE);
+
+											echo ($_Application_Module_Member_Message_Private_Files_UPLOAD_ERROR_EXTENSION);
+} // [ + ] IF: Uploaded File Image Extension Is Allowed
+
+/*
+ ============================================================================================================
+ + File Exceeds File Size Upload Restrictions, Delete File
+ ============================================================================================================
+*/
+
+if (filesize($_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE) > $_GLOBAL_SYSTEM_UPLOAD_SIZE_PRIVATE_MEMBER) {
+
+	unlink($_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE);
+
+											echo ($_Application_Module_Member_Message_Private_Files_UPLOAD_ERROR_FILESIZE);
+
+} else {
+
+/*
+ ============================================================================================================
+ + File Type Is Allowed, Place File Into Organized Directory Structure
+ ============================================================================================================
+*/
+
+	echo ("Cerberus: Copying Uploaded File From Temporary Directory To Registered Member Account Directory... Wait.<BR>");
+
+	copy($_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE,"./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_BASENAME");
+
+	echo ("Copied: $_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE to ./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Members_Private_Files_POST_UPLOAD_DIRECTORY_GALLERY_IMAGE/$_Application_Module_Members_Private_Files_POST_UPLOAD_FILE_IMAGE_BASENAME<BR>");
+	
+	echo ("Cerberus: Deleting Uploaded File From Temporary Directory... Wait.<BR>");
+
+	unlink($_Application_Module_Members_Private_Files_UPLOAD_FILE_DIRECTORY_GALLERY_IMAGE);
+
+											echo ($_Application_Module_Member_Message_Private_Files_UPLOAD_SUCCESSFUL);
+
+} // [ + ] IF: Uploaded File Is Larger Than Allowed File Size
+
+} // [ + ] IF: Uploaded File Is Null
+
+/*
+ ============================================================================================================
+ +
+ + Create :: Directory :: Gallery :: Image
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Display :: Create :: Gallery :: Image :: Input Form
+ ============================================================================================================
+*/
+
+echo ("
+											<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Image\" METHOD=\"post\" ENCTYPE=\"multipart/form-data\">
+												<BR><B>Create :: Gallery :: Image<BR>
+													<INPUT TYPE=\"text\" NAME=\"AMM_Private_Files_Create_Directory_Gallery_Image\" MAXLENGTH=\"20\"><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Create Gallery\">
+											</FORM><BR>
+");
+
+/*
+ ============================================================================================================
+ + IF: Create :: Gallery :: Image :: Input Form :: Variables Have Executed
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_IMAGE) {
+
+/*
+ ============================================================================================================
+ + IF: Create :: Directory :: Gallery :: Image
+ ============================================================================================================
+*/
+
+if (mkdir("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Gallery/$_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_IMAGE")) {
+
+echo ("Message: Directory Created Successfully: $_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_IMAGE");
+
+} else {
+
+echo ("Message: Error: $_Application_Module_Members_Private_Files_POST_CREATE_DIRECTORY_GALLERY_IMAGE");
+
+} // [ + ] IF: Create Directory :: Registered Member Account :: Gallery :: Image
+
+} // [ + ] IF: Create Directory :: Registered Member Account :: Gallery :: Image Variables Have Executed
+
+/*
+ ============================================================================================================
+ +
+ + List :: Member Account :: Gallery :: Images
+ +
+ ============================================================================================================
+*/
+
+echo ("
+											<BR><FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Private_Files&amp;Display&#61;Gallery&amp;Type&#61;Image\" METHOD=\"post\">
+												<B>Delete :: Image Gallery</B><BR>
+													<SELECT NAME=\"AMM_Private_Files_Delete_Directory_Gallery_Image\">
+");
+
+/*
+ ============================================================================================================
+ + WHILE :: Reading :: Directory :: Registered Member Account :: Gallery :: Images
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Members_Private_Files_DELETE_READ_MEMBER_DIRECTORY_GALLERY_IMAGE = readdir($_Application_Module_Members_Private_Files_DELETE_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE))) {
+
+/*
+ ============================================================================================================
+ + IF: STOP :: Exploit: Remote-File-Inclusion AND Local-File-Inclusion
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_DELETE_READ_MEMBER_DIRECTORY_GALLERY_IMAGE == "." || $_Application_Module_Members_Private_Files_DELETE_READ_MEMBER_DIRECTORY_GALLERY_IMAGE == ".." || $_Application_Module_Members_Private_Files_DELETE_READ_MEMBER_DIRECTORY_GALLERY_IMAGE == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+														echo ("<OPTION VALUE=\"$_Application_Module_Members_Private_Files_DELETE_READ_MEMBER_DIRECTORY_GALLERY_IMAGE\">$_Application_Module_Members_Private_Files_DELETE_READ_MEMBER_DIRECTORY_GALLERY_IMAGE</OPTION>");
+
+} // [ + ] IF: Specified :: Directory :: Registered Member Account Image Directory AND Files ARE NOT Specified Registered Member Account Image Directory AND Files
+
+} // [ + ] WHILE: Reading Specified Member Account Image Directory
+
+/*
+ ============================================================================================================
+ + Close :: Directory :: Registered Member Account :: Gallery :: Image Directory
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Members_Private_Files_DELETE_OPEN_DIRECTORY_MEMBER_GALLERY_IMAGE);
+
+echo ("
+													</SELECT><BR>
+												<INPUT TYPE=\"submit\" VALUE=\"Delete Gallery\">
+											</FORM><BR>
+");
+
+/*
+ ============================================================================================================
+ + Delete :: Registered Member Account :: Gallery :: Selected Image Directory
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Members_Private_Files_POST_DELETE_DIRECTORY_GALLERY_IMAGE) {
+
+if (rmdir("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Image/Gallery/$_Application_Module_Members_Private_Files_POST_DELETE_DIRECTORY_GALLERY_IMAGE")) {
+
+											echo ($_Application_Module_Member_Message_Private_Files_DELETE_DIRECTORY_SUCCESSFUL);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Private_Files_DELETE_DIRECTORY_ERROR);
+
+} // [ + ] IF: Remove Directory: Registered Member Account :: Gallery :: Selected Image Directory
+
+} // [ + ] IF: Application Variables Have Executed
+
+}
+
+if ($_GET["Type"] == "Video") {
+
+}
+
+if ($_GET["Type"] == "LiveVideo") {
+
+}
+
+}
+?>
