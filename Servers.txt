@@ -64,5 +64,6 @@
 * http://rolufsgc.hyperphp.com
 
 gcjohnsoncheval@outlook.com
+GoldenEye2210@Proton
 
 Target Release Date: August of 2023
