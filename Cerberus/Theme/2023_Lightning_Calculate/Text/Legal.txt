@@ -1,0 +1,19 @@
+<CENTER><BIG><B>Legality</B></BIG></CENTER>
+<HR>
+
+<B>This Free and Open Source Software Project is protected by copyright laws</B><HR>
+This CerberusCMS Theme was created by Gary Christopher Johnson<BR><BR>
+
+<IMG SRC="./Theme/2022_TinkeSoftware_Grey/Image/Legal/Author_G.C._Johnson.jpg" WIDTH="300" HEIGHT="400"></IMG><BR><BR>
+
+<B>Theme Credit</B><BR>
+&middot; Theme Image Fills were taken from DBZ Wallpaper by 'Unknown'<BR>
+&middot; Theme Administration and Member Control Panel Icons were taken from <A HREF="https://www.LBaumann.com">Laurent Baumann</A> ( Non-Commercial Use Only )<BR>
+&middot; This Theme was created using the G.N.U. Image Manipulation Program, ULEAD PhotoImpact and Adobe PhotoShop on the Operating Systems: Gentoo-Linux and Microsoft Windows<BR><BR>
+
+<B>Theme Specifications</B><BR>
+&middot; Theme File Size ( Unpacked )<BR>
+0.00 MegaBytes<BR>
+0.00 MegaBits<BR>
+<HR>
+<CENTER>&copy; Tinke Software, Gary Christopher Johnson's Works, 2000 - 2023 — All Rights Reserved.</CENTER>
