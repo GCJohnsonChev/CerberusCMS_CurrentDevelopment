@@ -1,0 +1,77 @@
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()()()() () -- ()
+ +  ()  () () --
+ +  ------
+ + Information Text File
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Master Root Directory => Root Directory => Security.txt
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Project Security Notes
+ +
+ ============================================================================================================
+*/
+
+***Build Cerberus Content Mangement System by scratch-copy from source to eliminate any possiblity of malware carrying onto your server***
+
+It is possbile for any file of any kind to be injected / infected by an undetectable Remote Access Trojan that would remotely connect to a RAT / BOT Server. Some of these
+trojans are completely undetectable even to Linux Operating Systems, FreeBSD Operating Systems, Microsoft Windows Operating Systems, Android Operating Systems, Apple Operating Systems
+and just about all malware scanners no matter how current the malware database is. Trojans like these can be hooked / injected into any kind of file whether it be a document,
+audio file, image file or video file. It doesn't matter. Domestic and Foreign State Sponsored malware and just about ever other type of advanced malware is known to infect commercial
+products and commercial hardware firmware itself to survive the reinstallation of the operating systems. This applies to everything on GITHub and everywhere else on the Internet as well.
+
+It doesn't matter how good your security is. It doesn't matter how good your hardware security or security policies are. 
+
+To eliminate any possibility of this you must build CerberusCMS from scratch-copy from the official GITHub. Every file would need to be duplicated into an
+exact copy without actually using the same files from the official GITHub. You manually take the source code from the GITHub files on the web page
+and then reproduce them on the hard drive without actually downloading them to the hard drive.
+
+First off, each hardware component on the Web Server would need to be flashed with original OEM firmware that is the most up-to-date release.
+Then an operating system would need to be installed and thoroughly configured and secured. After this use the terminal to install, configure and then security harden
+the LAMP / WAMP / AAMP / FAMP / GAMP or other kind of server software and then do a manual scratch-copy build of the latest version of CerberusCMS.
+Once after this is finished you can setup a security hardened web application firewall box. This will eliminate any possibly of any Remote Access Trojans or any other kind of malware 
+infecting any files at all and should make the entire web server really extra difficult to hack remotely.
+
+I wrote some C++ software from scratch that can be copied from source and then compiled in the terminal with G.C.C.. This application then grabs the organized directory structure
+from the official CerberusCMS GITHub and then it copies all of the source code from each of the files and then builds the entire system from scratch without actually downloading
+any of the files from the GITHub in any method at all.
+
+This makes it impossible for any malware to be carried over into an installation of CerberusCMS. The theme however would need to be made from scratch by you.
