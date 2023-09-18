@@ -1,0 +1,187 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Articles
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Articles
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Articles_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve All Article Entries
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Database Server Query :: Retrieve :: All Article Entries
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES		= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_articles");
+
+/*
+ ============================================================================================================
+ + Database Server Query :: Retrieve :: All Article Entries IS Less Than OR Equal To Zero
+ ============================================================================================================
+*/
+
+if ($DB->num_rows($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES) <= 0) {
+
+											echo ($_Application_Module_Member_Message_Articles_NO_ARTICLES);
+
+} // [ + ] IF: Database Server Query :: Retrieve :: Article Entries :: Number of Rows Is Less Than Or Equal To 0
+
+/*
+ ============================================================================================================
+ + WHILE: Retrieving :: All Article Entries :: From The Database Management System Server Database
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES)) {
+
+/*
+ ============================================================================================================
+ +
+ + List All Article Entries :: Variables
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Article Entry :: Variables :: Database Variables
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Articles_LIST_ARTICLE_ID			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['id'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_AUTHOR		= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_author'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_DATA			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_data'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_TIME			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_time'];
+$_Application_Module_Member_Articles_LIST_ARTICLE_TITLE			= $_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES_Fetch_Array['article_title'];
+
+/*
+ ============================================================================================================
+ + Article Entry :: Variables :: Reduce Data To 50 Alpha-Numeric Characters
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Articles_LIST_ARTICLE_DATA_REDUCED		= substr($_Application_Module_Member_Articles_LIST_ARTICLE_DATA, 0, 50);
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application: Display :: All Article Entries
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DisplayID"] == "All") {
+
+echo ("
+														<BR>Article Entry: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE
+														<HR>
+															<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Article/Icon_Article.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" ALT=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE\" WIDTH=\"60\" HEIGHT=\"60\"></A><BR>
+															$_Application_Module_Member_Articles_LIST_ARTICLE_DATA_REDUCED...<BR>
+														<HR>
+															<B>This Article Was Written By</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_AUTHOR</I><BR>
+															<B>This Article Was Published On</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_TIME</I><BR><BR>
+");
+
+} // [ + ] IF: Internal Application: Display :: All Article Entries
+
+/*
+ ============================================================================================================
+ +
+ + IF: Internal Application: Display :: Selected Article ID
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DisplayID"] == "$_Application_Module_Member_Articles_LIST_ARTICLE_ID") {
+
+echo ("
+
+														<BR>Article Entry: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE
+														<HR>
+														<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Articles&amp;DisplayID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Article/Icon_Article.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" ALT=\":: Open & Display The Article :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE\" WIDTH=\"60\" HEIGHT=\"60\"></A><BR>
+														$_Application_Module_Member_Articles_LIST_ARTICLE_DATA<BR>
+														<HR>
+														<B>This Article Was Written By</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_AUTHOR</I><BR>
+														<B>This Article Was Published On</B>:&nbsp;<I>$_Application_Module_Member_Articles_LIST_ARTICLE_TIME</I><BR><BR>
+														&#8212;&nbsp;<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Forward&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Share This Article Entry Via Electronic Mail ::\">Share</A> - 
+														<A HREF=\"./System/Printable/Article/$_Application_Module_Member_Articles_LIST_ARTICLE_TITLE.html?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Print This Article Entry ::\">Print</A> - <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;UpdateArticleID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Update The Article Entry :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\">Update</A> - 
+														<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Update&amp;Data&#61;Articles&amp;DeleteArticleID&#61;$_Application_Module_Member_Articles_LIST_ARTICLE_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Delete The Article Entry :: $_Application_Module_Member_Articles_LIST_ARTICLE_TITLE ::\">Delete</A>&nbsp;&#8212;
+");
+
+} // [ + ] IF: Internal Application: Display :: Article Entry By ID
+
+} // [ + ] WHILE: Retrieving All Article Entries
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select :: All Article Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Articles_DB_Query_SELECT_ARTICLES);
+?>

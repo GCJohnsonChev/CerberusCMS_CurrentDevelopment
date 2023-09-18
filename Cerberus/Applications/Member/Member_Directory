@@ -1,0 +1,192 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Member_Directory
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Registered Member Account Directory
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Member_Directory_Header);
+
+echo ("
+										<FORM ACTION=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Search\" METHOD=\"POST\">
+											Search For Registered Member Account Details<BR>
+												<INPUT TYPE=\"TEXT\" NAME=\"AMM_Search_Search_Keyword\"><BR>
+												<INPUT TYPE=\"HIDDEN\" NAME=\"AMM_Search_Search_Section\" VALUE=\"4\">
+											<INPUT TYPE=\"SUBMIT\" VALUE=\"Search\">
+										</FORM><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ + Database Server Query: Retrieve :: All Registered Member Accounts From The Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY member_username ASC");
+
+/*
+ ============================================================================================================
+ + WHILE: Retrieving :: Registered Member Account Entries
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS)) {
+
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_ID							= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL						= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_access_level'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS				= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME						= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_NAME_FIRST						= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_first'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_NAME_LAST						= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_name_last'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS_ACCOUNT_BANNED					= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_banned'];
+$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE						= $_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS_Fetch_Array['member_image_picture'];
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Status :: Is: Active
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS_ACCOUNT_BANNED == "0") {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY		= "Active";
+
+} // [ + ] IF: Member Account Banned Status IS: Off
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Status :: Is: Banished
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS_ACCOUNT_BANNED == "1") {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_STATUS_ACCOUNT_BANNED_DISPLAY		= "Banished";
+
+} // [ + ] IF: Member Account Banned Status IS: On
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Priviledge Level :: Registered Member Account
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL == "1") {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_PERMISSION	= "Member";
+
+} // [ + ] IF: Member Account Access Level IS: Registered Member Account-Level
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Priviledge Level :: Registered Member Account With Moderator Privileges
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL >= "2") {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_PERMISSION	= "Moderator";
+
+} // [ + ] IF: Member Account Access Level IS: Moderator-Level
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Priviledge Level :: Administrator
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Member_Directory_LIST_MEMBER_ACCESS_LEVEL >= "3") {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_PERMISSION	= "Administrator";
+
+} // [ + ] IF: Member Account Access Level IS: Administration-Level
+
+/*
+ ============================================================================================================
+ + IF: Regsitered Member Account :: Image :: Profile Picture :: DOES NOT Exist, Set: No_Image Picture
+ ============================================================================================================
+*/
+
+if (!file_exists("./Member/$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE")) {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE_DISPLAY 			= "./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon/No_Image.$_GLOBAL_SYSTEM_IMAGE_EXTENSION";
+
+} else {
+
+	$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE_DISPLAY			= "./Member/$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME/Files/Image/Profile/$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE";
+
+} // [ + ] IF: Registered Member Account :: Image :: Profile Image :: DOES OR DOES NOT Exist
+
+echo ("
+														Registered Member: $_Application_Module_Member_Member_Directory_LIST_MEMBER_NAME_LAST, $_Application_Module_Member_Member_Directory_LIST_MEMBER_NAME_FIRST<HR>
+														<A HREF=\"$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Registered Member Account :: Profile Image For :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME ::\"><IMG SRC=\"$_Application_Module_Member_Member_Directory_LIST_MEMBER_IMAGE_PICTURE_DISPLAY?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" WIDTH=\"75\" HEIGHT=\"75\" CLASS=\"MemberDirectory\" TITLE=\":: Open & Display :: This Registered Member Account :: Profile Image ::\"></A><BR>
+														* Registered Member Account' UserName: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Registered Member Account Profile For :: $_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME ::\">$_Application_Module_Member_Member_Directory_LIST_MEMBER_USERNAME</A><BR><BR>
+
+");
+
+} // [ + ] WHILE: Retrieving :: Registered Member Accounts :: From The Database Management System Server Database
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select :: All :: Registered Member Account Entries
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Member_Directory_DB_Query_SELECT_MEMBERS);
+?>

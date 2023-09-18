@@ -1,0 +1,173 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Robot_Monitor
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: Automation and Robot Account Management
+ +
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_status_account_activation='0' ORDER BY id DESC");
+
+echo ("
+													<CENTER><B>Robot Monitor</B></CENTER><HR>
+														If any Registered Member Account OR Registrar has not Authenticated after 24 hours of Registering, Delete.<BR>
+														[ <|= 0 Authentications & Registration Date = 24 Hours > Todays Date = Immediate Account Deletion ]<BR><BR>
+													<CENTER>
+														<TABLE WIDTH=\"100%\" BORDER=\"1\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+															<TR>
+																<TD WIDTH=\"33%\" BORDER=\"1\"><CENTER><B>Member Account ID# & Name</B></CENTER></TD>
+																<TD WIDTH=\"33%\" BORDER=\"1\"><CENTER><B>Member Account Electronic Mail Address</B></CENTER></TD>
+																<TD WIDTH=\"33%\" BORDER=\"1\"><CENTER><B>Member Account Registration Date</B></CENTER></TD>
+																</TD>
+															</TR>
+														</TABLE>
+													</CENTER>
+");
+
+if ($DB->num_rows($_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS) <= "0") {
+
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_NO_ROBOTS_FOUND);
+
+} else {
+
+while ($_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS)) {
+
+$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_ID				= $_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME				= $_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS		= $_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS_Fetch_Array['member_electronic_mail_address'];
+$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_REGISTRATION_DATE			= $_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS_Fetch_Array['member_registration_date'];
+$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_STATUS_ACCOUNT_ACTIVATION		= $_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS_Fetch_Array['member_status_account_activation'];
+
+echo ("
+													<CENTER>
+														<TABLE WIDTH=\"100%\" BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"0\">
+															<TR>
+																<TD WIDTH=\"33%\" BORDER=\"0\">Non-Activated Member Account: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display The Member Account Profile For :: $_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME\">$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME</A> - [ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Robot_Monitor&amp;DeleteID&#61;$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Delete The Member Account :: $_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_USERNAME\">Delete</A> ]</TD>
+																<TD WIDTH=\"33%\" BORDER=\"0\">$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_ELECTRONIC_MAIL_ADDRESS</TD>
+																<TD WIDTH=\"33%\" BORDER=\"0\">$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_REGISTRATION_DATE</TD>
+																</TD>
+															</TR>
+														</TABLE>
+													</CENTER>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Delete Specified Non-Activated Member Account
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteID"] == "$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_ID") {
+
+$_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account			= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE id='$_Application_Module_Administration_Robot_Monitor_LIST_MEMBER_ID' AND member_status_account_activation='0'");
+
+/*
+ ============================================================================================================
+ + IF: Database Query: Delete Specified Non-Activated Member Account From Database Server
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Robot_Monitor_DB_Query_Delete_Account) {
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_SPECIFIED_ACCOUNT_0);
+
+} // [ + ] IF: Database Server Query: Delete Specified Member Account From Database Server
+
+} // [ + ] IF: Internal Application: Delete Specified Non-Activated Member Account From Database Server Is Activated
+
+} // [ + ] WHILE: Retrieving List of Non-Activated Member Account Entries From Database Server
+
+} // [ + ] IF: Non-Activated Member Account Entries In Database Server Is Less Than Or Equal To Zero
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Delete All Non-Activated Member Accounts From Database Server
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteID"] == "All") {
+
+
+$_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members WHERE member_status_account_activation='0'");
+
+/*
+ ============================================================================================================
+ + IF: Database Query: Delete All Non-Activated Member Accounts From Database Server
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL) {
+													echo ($_Application_Module_Administration_Message_Robot_Monitor_DELETE_ALL_ACCOUNTS_0);
+
+} // [ + ] IF: Delete All Non-Activated Member Accounts Database Server Query Is Executed
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Delete All Non-Activated Member Accounts
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_DELETE_ALL);
+
+} // [ + ] IF: Internal Application: Delete All Non-Activated Member Accounts Is Activated
+
+													echo ("<BR><BR>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Robot_Monitor&amp;DeleteID&#61;All&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Delete All Potential Automated and Malicious Non-Activated Member Accounts ::\">Delete All</A> ]<BR>");
+
+/*
+ ============================================================================================================
+ + Kill SQL Database Server Query: Select All Non-Activated Member Accounts
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Administration_Robot_Monitor_DB_Query_SELECT_MEMBERS);
+?>

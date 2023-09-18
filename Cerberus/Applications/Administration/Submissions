@@ -1,0 +1,139 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Submissions
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: News Article Submissions Management
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve :: News Article Submissions
+ +
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS			= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news_submissions");
+
+													echo ("<CENTER><B>News Article & Message Submissions</B></CENTER><HR>");
+
+if ($DB->num_rows($_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS) <= 0) {
+
+													echo ($_Application_Module_Administration_Message_Submissions_NO_SUBMISSIONS_EXIST);
+
+} else {
+
+/*
+ ============================================================================================================
+ + WHILE: Retrieving :: News Article Submission Entries
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS_Fetch_Array = $DB->fetch_array($_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS)) {
+
+$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_ID				= $_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS_Fetch_Array['id'];
+$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_AUTHOR			= $_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS_Fetch_Array['news_submission_author'];
+$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_DATA			= $_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS_Fetch_Array['news_submission_data'];
+$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_TIME			= $_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS_Fetch_Array['news_submission_time'];
+
+echo ("
+													News Article Entry Submitted On: $_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_TIME - By: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_AUTHOR&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display The Profile For :: $_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_AUTHOR ::\">$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_AUTHOR</A><HR>
+													<I>$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_DATA</I><HR>
+													=> <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Submissions&amp;DeleteID&#61;$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Delete This News Article Submission ::\">Delete</A><BR>
+													=> <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Publish&amp;SubmissionID&#61;$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_ID&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Publish This News Article Submission ::\">Publish</A><BR><BR>
+");
+
+/*
+ ============================================================================================================
+ +
+ + Internal Application: Delete :: News Article Submission
+ +
+ ============================================================================================================
+*/
+
+if ($_GET["DeleteID"] == "$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_ID") {
+
+/*
+ ============================================================================================================
+ + Database Server Query :: Delete :: News Article Submission
+ ============================================================================================================
+*/
+
+$_Application_Module_Administration_Submissions_DB_Query_DELETE_SUBMISSION				= $DB->query("DELETE FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_news_submissions WHERE id='$_Application_Module_Administration_Submissions_LIST_NEWS_SUBMISSION_ID'");
+
+/*
+ ============================================================================================================
+ + IF: Database Server Query :: Delete :: News Article Submission
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Administration_Submissions_DB_Query_DELETE_SUBMISSION) {
+
+													echo ($_Application_Module_Administration_Message_Submissions_SUBMISSION_DELETED_SUCCESSFULLY);
+
+} else {
+
+													echo ($_Message_ERROR_ACTION_UNIVERSAL);
+
+} // [ + ] IF: Database Server Query: Delete News Article Submission By ID
+
+$DB->free($_Application_Module_Administration_Submissions_DB_Query_DELETE_SUBMISSION);
+
+} // [ + ] IF: Internal Application: DeleteID Is Activated
+
+} // [ + ] WHILE: Retrieving News Article Submissions
+
+} // [ + ] IF: News Article Submission Number Of Rows IS Less Than Or Equal To Zero
+
+$DB->free($_Application_Module_Administration_Submissions_SQL_Query_SELECT_SUBMISSIONS);
+?>

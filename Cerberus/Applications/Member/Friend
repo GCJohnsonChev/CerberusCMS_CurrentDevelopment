@@ -1,0 +1,221 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    ()  ()  ()
+ +  ()  ()  ()
+ +  ------------------------------
+ +  Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Member => Friend
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Member :: Friend
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Application Module Header
+ ============================================================================================================
+*/
+
+											echo ($_Application_Module_Member_Message_Friend_Header);
+
+/*
+ ============================================================================================================
+ +
+ + Display :: All Friends
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Display :: All Friends :: Is: Activated
+ ============================================================================================================
+*/
+
+if ($_GET["Display"] == "All") {
+
+$_Application_Module_Member_Friend_FIND_DIRECTORY_FRIEND_LIST					= "./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Friends/";
+$_Application_Module_Member_Friend_OPEN_DIRECTORY_FRIEND_LIST					= opendir($_Application_Module_Member_Friend_FIND_DIRECTORY_FRIEND_LIST);
+
+/*
+ ============================================================================================================
+ + WHILE: Reading :: Directory :: Registered Member Account :: Friends
+ ============================================================================================================
+*/
+
+while (($_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST = readdir($_Application_Module_Member_Friend_OPEN_DIRECTORY_FRIEND_LIST))) {
+
+/*
+ ============================================================================================================
+ + IF: STOP :: Exploit :: Local-File-Inclusion and Remote-File-Inclusion
+ ============================================================================================================
+*/
+
+if ($_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST == "." || $_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST == ".." || $_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+echo ("
+<B>Friend Name</B>: <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Profile&amp;Name&#61;$_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display :: The Registered Member Account :: Profile :: For Friend :: $_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST ::\">$_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST</A><HR>
+<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_MEMBER&#61;Friend&amp;RemoveFriend&#61;$_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST\" TITLE=\":: Remove :: From Friend List :: $_Application_Module_Member_Friend_READ_DIRECTORY_FRIEND_LIST ::\">Remove From Friend List</A><BR><BR>
+");
+
+} // [ + ] IF: Stop :: Exploit :: Local-File-Inclusion and Remote-File-Inclusion
+
+} // [ + ] WHILE: Reading :: Specified Friend List Directory AND Files
+
+/*
+ ============================================================================================================
+ + Close Directory :: Registered Member Account :: Friends
+ ============================================================================================================
+*/
+
+closedir($_Application_Module_Member_Friend_OPEN_DIRECTORY_FRIEND_LIST);
+
+} // [ + ] IF: Internal Application: Display :: All Friends From Friend List :: Is: Activated
+
+/*
+ ============================================================================================================
+ +
+ + Retrieve :: All Registered Member Account Entries From The Database Server
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Database Server Query: Retrieve :: All Registered Member Account Entries From The Database Server
+ ============================================================================================================
+*/
+
+$_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS 						= $DB->query("SELECT * FROM {$_ACCESS_DATABASE_SERVER_DATABASE_TABLE_PREFIX}_members ORDER BY id ASC");
+
+/*
+ ============================================================================================================
+ + WHILE: Database Server Query: List :: Registered Member Account Entries
+ ============================================================================================================
+*/
+
+while ($_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS_Fetch_Array = $DB->fetch_array($_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS)) {
+
+$_Application_Module_Member_Friend_LIST_MEMBER_ID							= $_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS_Fetch_Array['id'];
+$_Application_Module_Member_Friend_LIST_MEMBER_USERNAME							= $_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS_Fetch_Array['member_username'];
+$_Application_Module_Member_Friend_LIST_MEMBER_IMAGE_PICTURE_PROFILE					= $_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS_Fetch_Array['member_image_picture'];
+
+/*
+ ============================================================================================================
+ + IF: Internal Application: Add Friend
+ ============================================================================================================
+*/
+
+if ($_GET["AddFriend"] == "$_Application_Module_Member_Friend_LIST_MEMBER_USERNAME") {
+
+/*
+ ============================================================================================================
+ + IF: Copy: Friend File To: Registered Member Account :: Directory :: Friends
+ ============================================================================================================
+*/
+
+if (copy("./System/Default/Friend/Friend.$_INTERNAL_FILE_EXTENSION","./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Friends/$_Application_Module_Member_Friend_LIST_MEMBER_USERNAME")) {
+
+											echo ($_Application_Module_Member_Message_Friend_ADD_SUCCESS);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Friend_ADD_ERROR);
+
+} // [ + ] IF: Copy: Friend File :: To: Registered Member Account :: Directory :: Friend
+
+} // [ + ] IF: Internal Application: Add Friend :: IS: Registered Member Account UserName
+
+/*
+ ============================================================================================================
+ +
+ + Remove :: Selected Friend
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + IF :: Internal Application: Remove Friend :: Is: Activated
+ ============================================================================================================
+*/
+
+if ($_GET["RemoveFriend"] == "$_Application_Module_Member_Friend_LIST_MEMBER_USERNAME") {
+
+/*
+ ============================================================================================================
+ + IF: Unlink :: Selected Friend :: File :: From Friends Directory
+ ============================================================================================================
+*/
+
+if (unlink("./Member/$_GLOBAL_COOKIE_MEMBER_USERNAME/Files/Document/Friends/$_Application_Module_Member_Friend_LIST_MEMBER_USERNAME")) {
+
+											echo ($_Application_Module_Member_Message_Friend_REMOVE_SUCCESS);
+
+} else {
+
+											echo ($_Application_Module_Member_Message_Friend_REMOVE_ERROR);
+
+} // [ + ] IF: Unlink: Friend File From Friend List
+
+} // [ + ] IF: Internal Application: Remove Friend :: IS Registered Member Account :: UserName :: Is: Activated
+
+} // [ + ] WHILE: Retrieving :: Registered Member Account :: Entries :: From Database Management System :: Database Server
+
+/*
+ ============================================================================================================
+ + Kill Database Server Query :: Select ALL Registered Member Account Entries From Database Server
+ ============================================================================================================
+*/
+
+$DB->free($_Application_Module_Member_Friend_DB_Query_SELECT_ALL_MEMBERS);
+?>

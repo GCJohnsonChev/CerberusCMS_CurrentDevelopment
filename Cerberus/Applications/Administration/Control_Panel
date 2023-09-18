@@ -1,0 +1,215 @@
+<?php
+/*
+ ============================================================================================================
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ + Cerberus Content Management System
+ + ----------------------------------------------------------------------------------------------------------
+ + - Author			 : Gary Christopher Johnson of Oildale and SouthGate In Southern California
+ + - Company			 : Tinke Software, Free and Open Source Software
+ + - Company Address		 : Oildale In Southern California, United States of America
+ + - Electronic Mail Address	 : CerberusCMS@Protonmail.com, TinkeSoftware@Protonmail.com
+ + - Document Notes		 : View this file in a non-formatting text editor without word-wrap for the
+ +				 : correct display of this programming code and its indentation.
+ + ----------------------------------------------------------------------------------------------------------
+ +    () ()()() --- ()
+ +  ()  () () ()()()
+ +  ------------------------------
+ +  Administration-Level Application Module
+ + ----------------------------------------------------------------------------------------------------------
+ + - This File, Location	 : Root Directory => Applications => Administration => Control_Panel
+ + - This File, Version		 : 0.7.1
+ + - This File, Programming Code : Pure Pre-Hyper-Text-Post-Processor
+ + - Programming Code Model	 : Procedural, Functional, Object Oriented :: Pre-Order Algebraic
+ + -				 :					   :: Pre-Order Logical
+ + - Compatibility		 : Pre-Hyper-Text-Post-Processor 	   :: Version Numbers: 5, 7, 8
+ + -				 : Zend Engine				   :: Version Numbers: 3, 4
+ + - Official Release Date	 : Wednesday, November 1st of 2023
+ + ----------------------------------------------------------------------------------------------------------
+ + -------------------------------------------------------------------------------	 - Nyx -
+ + --[][]--[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[][][]------------   []++++||=======>
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |'-._/\_.-'|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |    []    |
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    |___-[]-___|
+ + -[]-----[][][]--[][][]--[][][]---[][][]--[][][]--[]--[]------[]----------------    |__((**))__|
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]----------------    \   -[]-   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]------------/-\-     \   []   /
+ + -[]-----[]------[]--[]--[]---[]--[]------[]--[]--[]--[]------[]---VERSION--|4|-	\  []  /
+ + --[][]--[][][]--[]--[]--[][][]---[][][]--[]--[]--[][][]--[][][]------------\-/-	 '.[].'
+ + -------------------------------------------------------------------------------
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Build Number: 0.8 - Final
+ + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Edit Number : 4,325
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ +
+ + [ ^ ] Application Module :: Administration :: Administration Control Panel
+ +
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ @ ] Display :: Control Panel :: Administration-Level
+ +
+ +
+ ============================================================================================================
+*/
+
+echo ("
+										<CENTER>[ <A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Close Open Applications ::\">Administration Control Panel</A> ]</CENTER>
+
+										<HR>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Accounts&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage The Services-Level, Root Administration-Level, Administration-Level, Moderator-Level & Registered Member-Level Accounts ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Administrators.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage The Services-Level, Root Administration-Level, Administration-Level, Moderator-Level & Registered Member-Level Accounts ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Applications&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage All Applications ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Applications.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage All Applications ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Archive&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Archive & Restore Files ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Backup.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Archive and Restore Files ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Networking&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Extensive Networking Options ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Networking.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage The Networking Configurations ::\"></A>
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Emulators&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage The System Video Game Emulators ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Emulators.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage The System Video Game Emulators ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;GIT&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Execute GIT Specific Commands ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_GITHub.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Execute GIT Specific Commands ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Robot_Monitor&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Monitor and Manage Robot & Spam Accounts ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Robot_Monitor.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Monitor and Manage Robot & Spam Accounts ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Messenger&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage The Instant Messenger, Messenger Platform & Private Messages System ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Messenger.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage The Instant Messenger, Messenger Platform & Private Messages System ::\"></A>
+												&nbsp;
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Panels&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage Application Panels ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Panels.$_GLOBAL_SYSTEM_IMAGE_EXTENSION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Application Panels ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;File_Categories&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage File Download Categories ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_File_Categories.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage File Download Categories ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Forum&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage Forum ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Forum.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Forum ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Publish&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Publish Texts Such As Articles, News and Newsletters ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Publish.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Publish Texts Such As Articles, News Articles and Newsletters ::\"></A>
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Ranks&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage The Member Account Ranking System ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Ranks.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage The Member Account Ranking System ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Referrers&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Open & Display All Administration-Level Referrers ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Referrers.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Open & Display All Administration-Level Referrers ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Settings&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage System Settings ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Settings.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage System Settings ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Terminal&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Execute Terminal Commands ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Terminal.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Execute Terminal Commands ::\"></A>
+										</CENTER>
+
+										<CENTER>
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Submissions&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: View Submissions From Members ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Submissions.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: View Submissions From Members ::\"></A>
+												&nbsp;
+											<A HREF=\"./Applications/Administration/PHP_Information.php?&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: View Detailed Post-Hyper-Text-Pre-Processor Engine Information ::\" TARGET=\"_NEW\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_PHP.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: View Detailed Post-Hyper-Text-Pre-Processor Engine Information ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_ADMINISTRATOR&#61;Control_Panel&amp;Action&#61;Web_Pages&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Manage Links & Custom Pages ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Web_Pages.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Manage Links & Custom Web Pages ::\"></A>
+												&nbsp;
+											<A HREF=\"?$_INTERNAL_APPLICATION_MODULE_INTERNAL&#61;Logout&amp;$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_HTR_RANDOM_STRING_GENERATION\" TITLE=\":: Logout & Secure-Delete Credentials ::\"><IMG SRC=\"./Theme/$_GLOBAL_MEMBER_THEME_DIRECTORY/Image/Icon_Administration/Icon_Logout.$_GLOBAL_SYSTEM_IMAGE_EXTENSION?$_GLOBAL_SYSTEM_SECURITY_CACHE_CIRCUMVENTION_IMAGE_RANDOM_STRING_GENERATION\" WIDTH=\"60\" HEIGHT=\"60\" BORDER=\"1\" ALT=\":: Logout & Secure-Delete Credentials ::\"></A>
+										</CENTER>
+
+										<HR>
+
+										<CENTER><B>[ <A HREF=\"$_PROJECT_SERVER_URL_SECURE/Projects/CerberusCMS/Validation/Validate.php?Version&#61;$_PROJECT_VERSION_SHORT\" TITLE=\":: Validate This Cerberus Content Management System Installation ::\">$_PROJECT_VERSION_EXTENDED</A> ]</B></CENTER>
+
+										<HR>
+");
+
+/*
+ ============================================================================================================
+ +
+ +
+ + [ @ ] Internal Application :: Administration-Level Applications
+ +
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ +
+ + Administration Applications Directory
+ +
+ ============================================================================================================
+*/
+
+/*
+ ============================================================================================================
+ + Find and Open :: Directory :: Administration Applications
+ ============================================================================================================
+*/
+
+$_FIND_ADMINISTRATION_APPLICATIONS_DIRECTORY			= "./Applications/Administration";
+$_OPEN_ADMINISTRATION_APPLICATIONS_DIRECTORY			= opendir($_FIND_ADMINISTRATION_APPLICATIONS_DIRECTORY);
+
+/*
+ ============================================================================================================
+ + WHILE: Reading :: Directory :: Administration Applications
+ ============================================================================================================
+*/
+
+while (($_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY = readdir($_OPEN_ADMINISTRATION_APPLICATIONS_DIRECTORY))) {
+
+/*
+ ============================================================================================================
+ + IF: Stop :: Exploit :: Local-File-Inclusion and Remote-File-Inclusion
+ ============================================================================================================
+*/
+
+if ($_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY == "." || $_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY == ".." || $_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY == "index.php") {
+/**
+ * Do Nothing
+**/
+} else {
+
+/*
+ ============================================================================================================
+ + IF: Internal Application :: Action :: Is: Application Module :: Administration
+ ============================================================================================================
+*/
+
+if ($_GET["Action"] == "$_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY") {
+
+/*
+ ============================================================================================================
+ + IF: Registered Member Account :: Administrator :: Access Level :: Is: >= 3
+ ============================================================================================================
+*/
+
+if ($_GLOBAL_COOKIE_MEMBER_USERNAME && $_GLOBAL_COOKIE_MEMBER_PASSWORD != null && $_GLOBAL_MEMBER_ACCESS_LEVEL >= 3) {
+
+										include_once "$_FIND_ADMINISTRATION_APPLICATIONS_DIRECTORY/$_READ_ADMINISTRATION_APPLICATIONS_DIRECTORY";
+
+} else {
+
+	echo ($_Message_Kernel_APPLICATION_ADMINISTRATOR_APPLICATION_ACCESS_RESTRICTED_ADMINISTRATOR);
+
+} // [ + ] IF: Registered Member Account :: Cookies :: Credentials :: Exist, are Valid and Registered Member Account Access-Level Is: Administrator, >= 3
+
+} // [ + ] IF: Internal Application: Action :: Is: Activated
+
+} // [ + ] IF: Administration Applications Directory IS Anything ELSE Except The Administration Application
+
+} // [ + ] WHILE: Reading :: The Administration Applications Directory
+
+/*
+ ============================================================================================================
+ + Close :: Directory :: Applications :: Administration
+ ============================================================================================================
+*/
+
+closedir($_OPEN_ADMINISTRATION_APPLICATIONS_DIRECTORY);
+?>
