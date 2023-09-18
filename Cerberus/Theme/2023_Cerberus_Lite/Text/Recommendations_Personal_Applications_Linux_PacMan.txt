@@ -1,0 +1,79 @@
+- NETWORK TOOLS
+sudo pacman -S net-tools wireshark-cli wireshark-qt traceroute whois tcpdump aircrack-ng macchanger nmap openvpn dnscrypt-proxy
+
+- GOOGLE ANDROID OPEN SOURCE SOFTWARE APPLICATIONS
+sudo pacman -S android-tools heimdall
+
+- VIDEO GAME CONSOLE EMULATION APPLICATIONS
+sudo pacman -S ppsspp zsnes dolphin-emu mupen64plus snes9x mame scummvm
+
+- VIDEO GAME PLATFORM APPLICATIONS
+sudo pacman -S steam
+
+- MICROSOFT WINDOWS EMULATION APPLICATIONS
+sudo pacman -S wine wine-mono wine-gecko wine-staging
+
+- VIRTUAL MACHINE APPLICATIONS
+sudo pacman -S virtualbox
+
+- PYTHON SCRIPTING LANGUAGE APPLICATIONS
+sudo pacman -S python-beautifulsoup4 python-setuptools
+
+- PENETRATION TESTING APPLICATIONS
+sudo pacman -S metasploit sqlmap
+
+- COMMUNICATIONS APPLICATIONS
+sudo pacman -S keybase telegram-desktop discord irssi weechat pidgin pidgin-otr
+
+- MEDIA PLAYER APPLICATIONS
+sudo pacman -S kodi vlc cmus
+
+- WEB BROWSER APPLICATIONS
+sudo pacman -S chromium firefox
+
+- WEB CAMERA PROCESSING APPLICATIONS
+sudo pacman -S cheese kamoso
+
+- TEXT PROCESSING APPLICATIONS
+sudo pacman -S mousepad notepadqq
+
+- GIT APPLICATIONS
+sudo pacman -S git
+
+- PASSWORD MANAGEMENT APPLICATIONS
+sudo pacman -S keepass
+
+- VIDEO EDITING APPLICATIONS
+sudo pacman -S openshot kdenlive
+
+- IMAGE PROCESSING APPLICATIONS
+sudo pacman -S gimp krita digikam
+
+- AUDIO PROCESSING APPLICATIONS
+sudo pacman -S audacity
+
+- TORRENT APPLICATIONS
+sudo pacman -S qbittorrent
+
+- OFFICE PROCESSING APPLICATIONS
+sudo pacman -S libreoffice
+
+- OPENPGP APPLICATIONS
+sudo pacman -S seahorse
+
+- ENCRYPTION APPLICATIONS
+sudo pacman -S veracrypt
+
+- MOZILLA FIREFOX WEB BROWSER ADD-ONS
+AdBlocker
+NoScript
+HTTPS Everywhere
+Cookie Editor
+Ghostery
+DarkReading
+FireFox Dark Theme
+
+- ALL SOFTWARE
+sudo pacman -S net-tools wireshark-cli wireshark-qt traceroute whois tcpdump aircrack-ng macchanger nmap openvpn dnscrypt-proxy android-tools heimdall ppsspp zsnes dolphin-emu mupen64plus snes9x mame scummvm
+steam wine wine-mono wine-gecko wine-staging virtualbox python-beautifulsoup4 python-setuptools metasploit sqlmap keybase telegram-desktop discord irssi weechat pidgin pidgin-otr kodi vlc cmus chromium firefox
+cheese kamoso mousepad notepadqq git keepass openshot kdenlive gimp krita digikam audacity qbittorrent libreoffice seahorse veracrypt
