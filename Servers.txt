@@ -50,7 +50,6 @@
 */
 
 * https://cerberusdevelopment.000webhostapp.com
-* https://ccmsandbox4.000webhostapp.com
 
 /*
  ================================================================
@@ -59,12 +58,7 @@
 */
 
 * https://cerberusdevelopment.000webhostapp.com
-* https://ccmsandbox4.000webhostapp.com
-* https://ccmssandbox3.000webhostapp.com
-* http://rolufsgc.hyperphp.com
-* http://cerberusdevelopment.hyperphp.com
 
-gcjohnsoncheval@outlook.com
 GoldenEye2210@Proton
 
-Target Release Date: August of 2023
+Target Release Date: December of 2023
