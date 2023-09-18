@@ -1,0 +1,70 @@
+- NETWORK TOOLS
+pkg install net-tools wireshark-cli wireshark-qt traceroute whois tcpdump aircrack-ng macchanger nmap openvpn dnscrypt-proxy
+
+- GOOGLE ANDROID OPEN SOURCE SOFTWARE APPLICATIONS
+pkg install android-tools heimdall
+
+- VIDEO GAME CONSOLE EMULATION APPLICATIONS
+pkg install ppsspp zsnes dolphin-emu mupen64plus snes9x mame scummvm
+
+- VIDEO GAME PLATFORM APPLICATIONS
+pkg install steam
+
+- MICROSOFT WINDOWS EMULATION APPLICATIONS
+pkg install wine wine-mono wine-gecko wine-staging
+
+- VIRTUAL MACHINE APPLICATIONS
+pkg install virtualbox
+
+- PYTHON SCRIPTING LANGUAGE APPLICATIONS
+pkg install python-beautifulsoup4 python-setuptools
+
+- PENETRATION TESTING APPLICATIONS
+pkg install metasploit sqlmap
+
+- COMMUNICATIONS APPLICATIONS
+pkg install keybase telegram-desktop discord irssi weechat pidgin pidgin-otr
+
+- MEDIA PLAYER APPLICATIONS
+pkg install kodi vlc cmus
+
+- WEB BROWSER APPLICATIONS
+pkg install chromium firefox
+
+- WEB CAMERA PROCESSING APPLICATIONS
+pkg install cheese kamoso
+
+- TEXT PROCESSING APPLICATIONS
+pkg install mousepad notepadqq
+
+- GIT APPLICATIONS
+pkg install git
+
+- PASSWORD MANAGEMENT APPLICATIONS
+pkg install keepass
+
+- VIDEO EDITING APPLICATIONS
+pkg install openshot kdenlive
+
+- IMAGE PROCESSING APPLICATIONS
+pkg install gimp krita digikam
+
+- AUDIO PROCESSING APPLICATIONS
+pkg install audacity
+
+- TORRENT APPLICATIONS
+pkg install qbittorrent
+
+- OFFICE PROCESSING APPLICATIONS
+pkg install libreoffice
+
+- OPENPGP APPLICATIONS
+pkg install seahorse
+
+- ENCRYPTION APPLICATIONS
+pkg install veracrypt
+
+- ALL SOFTWARE
+pkg install net-tools wireshark-cli wireshark-qt traceroute whois tcpdump aircrack-ng macchanger nmap openvpn dnscrypt-proxy android-tools heimdall ppsspp zsnes dolphin-emu mupen64plus snes9x mame scummvm
+steam wine wine-mono wine-gecko wine-staging virtualbox python-beautifulsoup4 python-setuptools metasploit sqlmap keybase telegram-desktop discord irssi weechat pidgin pidgin-otr kodi vlc cmus chromium firefox
+cheese kamoso mousepad notepadqq git keepass openshot kdenlive gimp krita digikam audacity qbittorrent libreoffice seahorse veracrypt
