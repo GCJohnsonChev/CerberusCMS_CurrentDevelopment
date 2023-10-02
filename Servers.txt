@@ -49,7 +49,7 @@
  ================================================================
 */
 
-* https://cerberusdevelopment.000webhostapp.com
+* https://CCMSDevelopmentBox.000WebHostApp.com
 
 /*
  ================================================================
@@ -57,8 +57,8 @@
  ================================================================
 */
 
-* https://cerberusdevelopment.000webhostapp.com
+* https://CCMSDevBox.000WebHostApp.com
 
-GoldenEye2210@Proton
+CCMSDevBox@HotMail.com
 
-Target Release Date: December of 2023
+Target Release Date: November, 1st of 2023
