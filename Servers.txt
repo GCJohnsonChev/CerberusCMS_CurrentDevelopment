@@ -51,6 +51,12 @@
 
 * https://CCMSDevelopmentBox.000WebHostApp.com
 
+To make CerberusCMS work on 000WebHost.com do the following before installation:
+---------------------------------------------------------------------------------
+* Set PHP Version to: 5.6 In 000WebHost.com Control Panel
+* Add the following line to the .htaccess file in 000WebHost public_html directory to enable setting cookies from the PHP Parser Configuration File:
+php_flag output_buffering on
+
 /*
  ================================================================
  + Current SandBoxing and Development Servers
