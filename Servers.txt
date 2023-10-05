@@ -50,6 +50,7 @@
 */
 
 * https://CCMSDevelopmentBox.000WebHostApp.com
+* http://ccmsdevelopmentserver.000webhostapp.com/Cerberus
 
 To make CerberusCMS work on 000WebHost.com do the following before installation:
 ---------------------------------------------------------------------------------
@@ -64,6 +65,7 @@ php_flag output_buffering on
 */
 
 * https://CCMSDevBox.000WebHostApp.com
+* http://ccmsdevelopmentserver.000webhostapp.com/Cerberus
 
 CCMSDevBox@HotMail.com
 
